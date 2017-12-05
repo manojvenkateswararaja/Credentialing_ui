@@ -1,0 +1,20 @@
+
+<div class="signupContainer">
+ 
+    <h2 id="head"><b><i>Sign up</i></b></h2>
+       Email id 
+      {{validated-input  type="email" model=this  valuePath='email' placeholder="E-mail" required=""}}
+    {{!--<input type="text" id="fd1"name="email" placeholder="E-mail" />--}}
+    <br>
+    password
+      {{validated-input  type="password" model=this  valuePath='password' placeholder="password" required=""}}
+    {{!--<input type="password" name="password" placeholder="Password" />--}}
+    <br>
+    Re-type password
+      {{validated-input  type="password" model=this  valuePath='password2' placeholder="Retype password" required=""}}
+    {{!--<input type="password" name="password2" placeholder="Retype password" />--}}
+    <br>
+    {{!-- <input type="submit" name="signup_submit" value="Sign me up" /> --}}
+    <button id="signup-button" {{action "signup"}}>sign up</button>
+ 
+</div>

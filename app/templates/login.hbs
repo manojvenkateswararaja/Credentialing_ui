@@ -1,0 +1,22 @@
+{{!--<div class="col-xs-1 center-block">--}}
+<br>
+<br>
+<br>
+<br>
+<div class='home'>
+  <header><i><b><u>Login</u></b></i></header>
+  <form>
+    <div class="help-1"></div>
+ <label><b>username </b><span>*</span></label>
+  {{validated-input  type="email" model=this  valuePath='email' placeholder="email" required=""}}
+   <div  class="help-1">enter your username</div>
+
+<div class="help"></div>
+   <label><b>password</b> <span>*</span></label>
+    {{validated-input  type="password" model=this  valuePath='password' placeholder="password" required=""}}
+  <div class="help">Use upper and lowercase lettes as well</div>
+  <div >
+  <button class="btn" {{action "Submit"}}>Login</button>
+  </div>
+  </form>
+</div>
