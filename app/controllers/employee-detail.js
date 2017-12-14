@@ -46,7 +46,7 @@ export default Controller.extend({
       console.log(Emi)
        var Rupees=this.get('Rupees')
       console.log(Rupees)
-      var transactionstring={
+      var transactionstring = {
         "loandetails":{
         "propertyType":propertyType,
         "mortgaugeType":mortgaugeType,
