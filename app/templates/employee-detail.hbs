@@ -1,18 +1,23 @@
-<br>
-<br>
-<div class="employee">
+
+<h2><b><i style="
+    margin-left: -67px;
+">APPLICATION OR REQUEST</i></b></h2> 
+
+<div class="Container">
+    <div class="form">
+      
          <form >
-              <section>
-                  <h3><b><i>Employement Details</i></b></h3>
-                   <div class="detail"><i>Tell us about Employee details?</i></div>
-               </section>
-               <li>
+     
+                  <h3><b><i style="margin-left: -520px;">Employement Details</i></b></h3>
+                   <div class="detail"><i style="margin-left: -451px;">Tell us about Employee details?</i></div>
+             
+                <br>
                   <label>Type of employee</label>
-               </li>
-               <div>
+        
+               
                    {{select-component listitem=TypeOfemployee selectedlist=Employee}}
-               </div>  
-               <li>
+             
+              <br>
                   <label>
                   If employed (Gross Fixed Salary)
                   </label>
@@ -21,26 +26,24 @@
               {{validated-input  type="text" model=this  valuePath='salary' placeholder="salary" required=""}}
                  {{!--{{input type="text" value=salary placeholder="salary"}}--}}
                   </span>
-               </li>
-               <li>
-                   <label>Company Name </label>
-                  <div>
+               <br>
+                               <label>Company Name </label>
+                 
                       <span>
                           {{validated-input  type="text" model=this  valuePath='CompanyName' placeholder="company name" required=""}}
                           {{!--{{input type="text"   value=CompanyName placeholder="company name"}}--}}
                      </span>
-                  </div>
-               </li>
-               <li>
+                 
+               
+               <br>
                   <label>Existing EMI</label>
-                  <div>
+                 
                       <span>
                           {{validated-input  type="number" model=this  valuePath='Emi' placeholder="previous Emi" required=""}}
                       {{!--{{input type="number" value=Emi placeholder="EMI"}}--}}
                       </span>
-                      </div>
-               </li>
-               <li>
+                      
+               <br>
                   <label>
                   Spouse Income
                   </label>
@@ -49,9 +52,10 @@
                   {{validated-input  type="number" model=this  valuePath='Rupees' placeholder="income" required=""}}
                   {{!--{{input  type="text" class="field text currency nospin" value=Rupees size="10"}} --}}
                   </span>
-               </li>  
-          
-            <button {{action "next"}}>next</button>
+                 
+          <br>
+            <button class="btn" {{action "next"}}>next</button>
          </form>
 
+</div>
 </div>

@@ -8,8 +8,12 @@ export default Controller.extend({
        gotosignup:function(){
            this.transitionToRoute('signup');
        },
-         gotoApply:function(){
-            this.transitionToRoute('newrequest');
-        }
+       gotobank:function(){
+        this.transitionToRoute('bankdashboard');
+    },
+
+        //  gotoApply:function(){
+        //     this.transitionToRoute('newrequest');
+        // }
    }
 });

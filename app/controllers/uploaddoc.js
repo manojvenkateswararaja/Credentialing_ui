@@ -53,7 +53,7 @@ export default Controller.extend({
           console.log(file3)
           var file4=this.get('file4')
           console.log(file4)
-          var DataString={
+          var loandetails={
         "propertyType":propertyType,
         "mortgaugeType":mortgaugeType,
         "Amount":Amount,
@@ -79,17 +79,18 @@ export default Controller.extend({
        "file3":file3,
        "file4":file4
     };
-       console.log("datastring"+  JSON.stringify(DataString));
+       console.log("datastring"+  JSON.stringify(loandetails));
             
             return $.ajax({
-            url:'http://localhost:8082/Apply/new-request',
+            url:'http://192.168.11.222:8082/loandetails',
             type: 'POST',
             contentType: 'application/json',
-            data: JSON.stringify(DataString),
+            data: JSON.stringify(loandetails),
             success: function(response) {
             console.log(JSON.stringify(response));
             var message = response.message;
-            console.log("message" + message);     
+            console.log("message" + message);  
+            alert("your details has been uploaded successfully")   
             }   
             });
          }

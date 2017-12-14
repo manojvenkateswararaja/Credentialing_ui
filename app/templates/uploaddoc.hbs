@@ -1,56 +1,56 @@
-<br>
-<br>
-<br>
+
+<h2><b><i style="
+    margin-left: -67px;
+">APPLICATION OR REQUEST</i></b></h2> 
+
+<div class="Container">
 <div class="upload">
          <form >
-              <section>
-                  <h3><b><i>Upload Document</i></b></h3>
-                   <div class="detail"><i>please fill your documents details?</i></div>
-               </section>
-               <li>
+            
+                  <h3><b><i style="margin-left: -480px;">Upload Document</i></b></h3>
+                   <div class="detail"><i style="margin-left: -480px;" >please fill your documents details?</i></div>
+              
+                <br>
                    <label >Id proof Document</label>
-                       <div>
-                           <span>
+                       
+                          
                                {{!--{{input type="file" value=file id="field19" }}--}}
                             {{validated-input  id="f1" type="file" model=this  valuePath='file' placeholder="" required=""}}
-                           </span>
-                           </div>
-                   </li>
-                   <li>
-                 <label > BannkStatement Document</label>
-                       <div>
+                           
+                           
+                   <br>
+                                   <label > BannkStatement Document</label>
+                       
                            {{validated-input  id="f1" type="file" model=this  valuePath='file1' placeholder="lastname" required=""}}
                            {{!--<span>{{input type="file"  value=file1}}</span>--}}
-                           </div>
-                   </li>
-                <li>
-                 <label >Income tax return Document</label>
-                       <div>
-                           <span>
+                           
+                   <br>
+                                 <label >Income tax return Document</label>
+                                                <span>
                                {{validated-input  id="f1"  type="file" model=this  valuePath='file2' placeholder="lastname" required=""}}
                            {{!--{{input type="file" value=file2 }}--}}
                            </span>
-                           </div>
-                   </li>
-                    <li>
+                           
+                   <br>
                  <label >Address proof Document</label>
-                       <div>
+                      
                            <span>
                                {{validated-input id="f1"  type="file" model=this  valuePath='file3' placeholder="lastname" required=""}}
                                {{!--{{input type="file" value=file3 }}--}}
 
                            </span>
-                           </div>
-                   </li>
-                    <li>
+                           
+                   
+                    <br>
                  <label>property Document</label>
-                       <div>
+                      
                            <span>
                                {{!--{{input type="file" value=file4}}--}}
                             {{validated-input id="f1"  type="file" model=this  valuePath='file4' placeholder="" required=""}}
                            </span>
-                           </div>
-                   </li>     
-            <button {{action "apply"}}>Apply</button>
-         </form>
+                           
+                    <br>
+            <button class="btn" {{action "apply"}}>Apply</button>
+         </form> 
+</div>
 </div>

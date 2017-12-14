@@ -1,25 +1,72 @@
+
+@import "ember-modal-dialog/ember-modal-structure";
+@import "ember-modal-dialog/ember-modal-appearance";
+
 @import 'ember-paper';
+
 .Home-align{
   margin-left: 50px;
   margin-right: 50px;
   height:300px;
   width:300px;
   }
+  #man{
+    background-color: currentColor;
+    font-size: 20px;
+    font-weight: 200;
+  }
+  #myNavbar{
+    color: #FFF8DC
+  }
+  .navbar {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border: 0;
+    border-radius: 0;
+    margin-bottom: 0;
+    font-size: 12px;
+    letter-spacing: 5px;
+  }
+  #deep{
+    color:deepskyblue
+  }
   
   #head{
       margin-left:-2px;
       margin-right:0px;
   }
- 
+  .card{
+    background-color: lightgrey;
+    width: 300px;
+    padding: 25px;
+    margin: 25px;
+}
   .signupContainer{
-    background-color: lightskyblue;
-    border-radius: 14px;
-    padding-right: 110px;
-    margin-left: 455px;
+    background-color: lightblue;
+    /* border-radius: 22px; */
+    padding-right: 116px;
+    margin-left: 346px;
     text-align: center;
-    padding-left: 67px;
-    margin-right: 443px;
+    padding-left: 65px;
+    box-shadow: 0px 0px 11px 3px #e6d9d9;
+    margin-right: 300px;
+    padding-bottom: 20px;
+    margin-bottom: 30px;
   }
+  .Container{
+    
+    background-color: lightblue;
+    border-radius: 0px;
+    box-shadow: 0px 0px 20px #888;
+    padding-right: 116px;
+    margin-left: 105px;
+    text-align: center;
+    padding-left: 65px;
+    margin-right: 79px;
+    padding-bottom: 20px;
+    margin-bottom: 95px;
+    }
+  
   .detail{
       margin-left:517px;
       margin-right:50px;
@@ -36,13 +83,14 @@
     margin-right: 67px;
    
     }
-#f1{
-    display:inline-block;
-    width:100px;
-    margin-top:50px;
-    margin-bottom:50px;
+// #f1{
+//     display:inline-block;
+//     width:100px;
+//     margin-top:50px;
+//     margin-bottom:50px;
+//     padding:37px;
     
-}
+// }
  
   .square{
     margin-left: 50px;
@@ -98,13 +146,16 @@
     border: 1px solid #ccc;
   }*/
   .home{
-   position: absolute;
+  
     margin-left: 497px;
-    width: 402px;
+    // width: 402px;
     height: 457px;
     border: 3px solid white;
-    padding: 10px;
+    // padding: 10px;
     background: skyblue;
+    width: 300px;
+    padding: 25px;
+    margin: 25px;
   }
   form .help-1 {
     margin-left: 20px;
@@ -123,7 +174,8 @@
   }
   
   form button:hover {
-    background: #ff5252;
+    background-color: gray;
+    color: black;;
   
   }
  
@@ -170,15 +222,37 @@ input[type="password"]:focus {
  */
 
 
- .btn{  
+ 
+.btn {
     margin-left: 76px;
     margin-right: 68px;
-    border: 1px solid white;
+    border: 0px solid white;
     padding: 4px;
-    width: 58%;
-    margin-top: 56px;
+    width: 29%;
+    margin-top: 43px;
+    background-color: gray;
+    color: black;
+    border-radius: inherit;
+
+
+}
+
+.table{
+  width:500px;
+  margin: auto;
+  border: 3px solid #73AD21;
 }
  
-  
+
+  input {
+    width: 338px;
+    height: 0px;
+    margin: 21px;
+    /* border-radius: 11px; */
+    padding: 18px;
+}
+
+
+
   
 

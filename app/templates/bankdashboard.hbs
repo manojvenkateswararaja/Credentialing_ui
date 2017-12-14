@@ -1,0 +1,74 @@
+<script>
+   $(document).ready(function() {
+       // Show or hide the sticky footer button
+       $(window).scroll(function() {
+           if ($(this).scrollTop() > 200) {
+               $('.go-top').fadeIn(200);
+           } else {
+               $('.go-top').fadeOut(200);
+           }
+       });
+       // Animate the scroll to top
+       $('.go-top').click(function(event) {
+           event.preventDefault();
+           $('html, body').animate({
+               scrollTop: 0
+           }, 300);
+       });
+      
+   });
+</script>
+<div id="historyheader">
+   <div id="cont-lock" style="text-align:center ;color:white ">
+      <h1><b>Bank Dashboard</b></h1>
+   </div>
+</div>
+<div class="dashbord-container">
+   <br/>
+   <h3 style="text-align:center;color:#808080 "><b>Total Request</b></h3>
+   <div class="container">
+      <br/>
+      <h6 class="progress">OPEN Request</h6>
+   </div>
+   <div class="container" style="padding-left:50px">
+      <br/>
+      <div class="progressgreen">
+         <h3 class="progress-title">Get All Request to click on button</h3>
+      </div>
+      <br/>
+      <div>
+         <button  style="text-align:center;margin:67px 0px;color:black" {{action 'toggle'}}>GetRequests</button>
+         </div>
+        <div class="AllDetails">
+         {{#each id as |item|}}
+          Request ID:
+            <a href="" {{action "requestid" item}} ><b style="color:#2d8cff ">{{ item.requestid}}<br></b></a>
+           {{/each}}
+              {{#if isShowingModel }}<br>
+              <table>
+              <tr>
+              <th>Request ID:</th>
+              <th>Name :</th>
+              <th> puropse of loan :</th>
+              <th>Need Amount :</th>
+              <th> Status :</th>  
+             <th> creditscore:</th>
+              </tr>
+              <tr>
+                  <td>{{id}}</td>
+                  <td>{{name}}</td>
+                  <td>{{purposeOfloan}}</td>
+                  <td>{{needAmt}}</td>
+                  <td>{{Status}}</td>
+                  <td>{{creditscore}}</td>
+                  </tr>
+              </table>
+           {{/if}}  
+          {{!-- <div  class="reject" >
+         <button {{action "Reject"}}>Reject</button>
+         </div>
+          <button  class="Accept" {{action "Accept"}}>Accept</button>--}}
+         </div>
+   </div>
+</div>
+<a href="#" class="go-top">Scroll to Top</a>

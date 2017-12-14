@@ -29,7 +29,7 @@ export default Ember.Component.extend({
         change: function() {
             let selectedIndex = this.$('select')[0].selectedIndex;
             console.log(selectedIndex)
-            let listitem = this.get('listitem');
+            let listitem = this.get('listitem');i
             // console.log(listitem)
             //  console.log(selectedIndex)
        // decrement index by 1 if we have a prompt

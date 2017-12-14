@@ -5,7 +5,7 @@ export default Controller.extend({
     TypeOfemployee:["Self-employed","Employee"],
     actions:{
       next:function(){
-        alert("i m in employee controller")
+       
           var propertyType=this.get('propertyType');
            this.set('propertyType',propertyType)
         var mortgaugeType=this.get('mortgaugeType');
@@ -46,8 +46,44 @@ export default Controller.extend({
       console.log(Emi)
        var Rupees=this.get('Rupees')
       console.log(Rupees)
-      alert("leaving page2")
-        this.transitionToRoute("uploaddoc")
+      var transactionstring={
+        "loandetails":{
+        "propertyType":propertyType,
+        "mortgaugeType":mortgaugeType,
+        "Amount":Amount,
+        "location":location,
+        "price":price,
+        "country":country,
+        "paymentPercentage":paymentPercentage,
+        "Age":Age,
+        "occupation":occupation,
+        "Choice":Choice, 
+        "income":income,  
+        "firstname":firstname,  
+        "lastname":lastname, 
+        "number":number,  
+        "email":email ,
+        "salary":salary,
+        "CompanyName":CompanyName,
+        "Emi":Emi,
+        "Rupees":Rupees,
+        }
+    };
+      console.log("datastring"+  JSON.stringify(transactionstring));
+      
+      return $.ajax({
+      url:'http://192.168.0.20:8082/loandetails',
+      type: 'POST',
+      contentType: 'application/json',
+      data: JSON.stringify(transactionstring),
+      success: function(response) {
+      console.log(JSON.stringify(response));
+      var message = response.message;
+      console.log("message" + message);  
+      alert("your details has been uploaded successfully")   
+      }   
+    })
+        // this.transitionToRoute("uploaddoc")
       }
        }
 });

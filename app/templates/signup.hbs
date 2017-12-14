@@ -1,20 +1,30 @@
 
 <div class="signupContainer">
+  
  
     <h2 id="head"><b><i>Sign up</i></b></h2>
-       Email id 
-      {{validated-input  type="email" model=this  valuePath='email' placeholder="E-mail" required=""}}
+    <label>First Name</label>
+     {{validated-input  type="text" model=this  valuePath='firstname' placeholder="firstname" required=""}}
+    <label>Last Name</label>
+     {{validated-input  type="text" model=this  valuePath='lastname' placeholder="lastname" required=""}}
+      {{!-- <label>Gender</label>
+    {{select-component listitem=genderlist selecteditemlist=genderType}} --}}
+    {{!-- <br> --}}
+      <label>Mobile Number</label>
+     {{validated-input  type="number" model=this  valuePath='mobilenumber' placeholder="number" required=""}}  
+     <label>D.O.B</label>
+     {{validated-input  type="" model=this  valuePath='DateOfBirth' placeholder="D.O.B" required=""}} 
+      <label> Email id </label>
+    {{validated-input  type="email" model=this  valuePath='email' placeholder="E-mail" required=""}}
     {{!--<input type="text" id="fd1"name="email" placeholder="E-mail" />--}}
-    <br>
-    password
+
+    <label>Password</label>
       {{validated-input  type="password" model=this  valuePath='password' placeholder="password" required=""}}
     {{!--<input type="password" name="password" placeholder="Password" />--}}
-    <br>
-    Re-type password
+  
+   <label> Re-type password</label>
       {{validated-input  type="password" model=this  valuePath='password2' placeholder="Retype password" required=""}}
-    {{!--<input type="password" name="password2" placeholder="Retype password" />--}}
-    <br>
-    {{!-- <input type="submit" name="signup_submit" value="Sign me up" /> --}}
-    <button id="signup-button" {{action "signup"}}>sign up</button>
+  
+    <button class="btn" {{action "signup"}}>sign up</button>
  
 </div>

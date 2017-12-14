@@ -13,6 +13,8 @@ Router.map(function() {
   this.route('newrequest');
   this.route('EmployeeDetail');
   this.route('uploaddoc');
+  this.route('header');
+  this.route('bankdashboard');
 });
 
 export default Router;

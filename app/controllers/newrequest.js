@@ -107,7 +107,7 @@ export default Controller.extend(Validations, {
                      amt:Amount
                    };*/
 
-                  alert("leaving page1")
+                  
    this.transitionToRoute('EmployeeDetail')
         }
         }
