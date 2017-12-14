@@ -15,6 +15,7 @@ Router.map(function() {
   this.route('uploaddoc');
   this.route('header');
   this.route('bankdashboard');
+  this.route('head');
 });
 
 export default Router;

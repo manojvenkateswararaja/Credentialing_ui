@@ -8,9 +8,9 @@ export default Controller.extend({
        gotosignup:function(){
            this.transitionToRoute('signup');
        },
-       gotobank:function(){
-        this.transitionToRoute('bankdashboard');
-    },
+    //    gotobank:function(){
+    //     this.transitionToRoute('bankdashboard');
+    // },
 
         //  gotoApply:function(){
         //     this.transitionToRoute('newrequest');

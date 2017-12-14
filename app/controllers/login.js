@@ -26,7 +26,7 @@ var Validations = buildValidations({
 });
 export default Controller.extend(Validations,{
    isShowingModal:false,
-   isShowAdmin:false,
+   showLogin:true,
    actions:{
         Submit:function(){  
        var email = this.get('email');
@@ -95,7 +95,8 @@ export default Controller.extend(Validations,{
     proceed:function()
     {
         var mycontroller=this;
-        mycontroller.transitionToRoute('header')
+        mycontroller.transitionToRoute('home')
+       
     }
     // Proceed:function(usertype){
     //     var usertype=this.get('usertype')
@@ -105,6 +106,7 @@ export default Controller.extend(Validations,{
     //          this.transitionToRoute('BankDashboard')
     //   }
     // }
+  
 
 },
 
