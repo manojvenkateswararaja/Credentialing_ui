@@ -1,17 +1,6 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-
-    /* actions: {
-         change: function() {
-             let selectedIndex = this.$('select')[0].selectedIndex;
-             console.log(selectedIndex);
-             selectedIndex--;
-             let listitem = this.get('listitem');
-             var selecteditem = listitem[selectedIndex];
-             this.set('selecteditem', selecteditem);
-         }
-     }*/
     listitem: [],
     prompt: null,
     optionValuePath: 'value',
@@ -29,7 +18,7 @@ export default Ember.Component.extend({
         change: function() {
             let selectedIndex = this.$('select')[0].selectedIndex;
             console.log(selectedIndex)
-            let listitem = this.get('listitem');i
+            let listitem = this.get('listitem');
             // console.log(listitem)
             //  console.log(selectedIndex)
        // decrement index by 1 if we have a prompt

@@ -3,12 +3,13 @@ import Route from '@ember/routing/route';
 export default Route.extend({
 
     model(){
-        alert("in employee model")
+        
         var newRequestController = this.controllerFor('newrequest');
         var genderType=newRequestController.get('genderType');
         var nationalityType=newRequestController.get('nationalityType');
         var propertyType = newRequestController.get('propertyType');
         var mortgaugeType=newRequestController.get('mortgaugeType');
+        
         var Amount=newRequestController.get('Amount');
         var price=newRequestController.get('price');
         var location=newRequestController.get('location');
@@ -22,8 +23,8 @@ export default Route.extend({
         var lastname=newRequestController.get('lastname');
         var number=newRequestController.get('number');
         var email=newRequestController.get('email');
-         this.controllerFor('employee-detail').set('genderType',genderType);
-          this.controllerFor('employee-detail').set('propertyType',propertyType);
+        this.controllerFor('employee-detail').set('genderType',genderType);
+        this.controllerFor('employee-detail').set('nationalityType',nationalityType);
         this.controllerFor('employee-detail').set('propertyType',propertyType);
         this.controllerFor('employee-detail').set('mortgaugeType',mortgaugeType);
         this.controllerFor('employee-detail').set('Amount',Amount);

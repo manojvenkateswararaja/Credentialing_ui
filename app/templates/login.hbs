@@ -1,6 +1,5 @@
+{{partial header}}
 
-{{partial 'head'}}
-{{outlet}}
 {{#if showLogin}}
 {{!--<div class="col-xs-1 center-block">--}}
 <br>
@@ -15,7 +14,6 @@
  <label><b>EmailID </b><span>*</span></label>
   {{validated-input  type="email" model=this  valuePath='email' placeholder="email" required=""}}
    {{!-- <div  class="help-1">enter your emailid</div> --}}
-
 <div class="help"></div>
    <label><b>password</b> <span>*</span></label>
    {{validated-input  type="password" model=this  valuePath='password' placeholder="password" required=""}}
@@ -27,8 +25,9 @@
                   targetAttachment="center"
                   translucentOverlay=true}}
     Login succesfull!!!
+    {{usertype}}
     {{!-- <button {{action "Proceed" usertype}} >Proceed</button> --}}
-    <button class="btn" {{action "proceed"}}>Proceed</button>
+    <button class="btn" {{action "proceed" usertype}}>Proceed</button>
   {{/modal-dialog}}
   {{/if}}
   <div class="link">

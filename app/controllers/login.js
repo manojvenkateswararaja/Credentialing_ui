@@ -29,6 +29,7 @@ export default Controller.extend(Validations,{
    showLogin:true,
    actions:{
         Submit:function(){  
+            console.log("115")
        var email = this.get('email');
         console.log(email);
         var password = this.get('password');
@@ -50,7 +51,7 @@ export default Controller.extend(Validations,{
             var mycontroller = this;
             console.log(email);
             return $.ajax({
-            url:'http://192.168.0.20:8082/login',
+            url:'http://localhost:8082/mock/Login',
             type: 'POST',
             contentType: 'application/json',
             data: JSON.stringify(dataString),
@@ -60,54 +61,29 @@ export default Controller.extend(Validations,{
             console.log("message" + message);
             var usertype=response.userType;
             var status=response.status
-            // mycontroller.set('usertype',usertype)
-            // console.log(usertype)
-            // sessionStorage.setItem('usertype', usertype);
+             mycontroller.set('usertype',usertype)
+            console.log(usertype)
+               sessionStorage.setItem('usertype', usertype);
             // mycontroller.set("usertype",usertype);
-            if (message == "Login Successful"){
+          if (message == "Login Successful"){
                 console.log(">>>>>>>>>>>>>>>>>>>>in")
-                        mycontroller.set('isShowingModal',true);
-            }
-                        // mycontroller.transitionToRoute('header')
-                      
-                        //mycontroller.set('showUser',true);
-                        //mycontroller.transitionToRoute('userhome')    
-                       //mycontroller.transitionToRoute('home');      
-            },      
-               // transitionToPreviousRoute(){
-                // var previousTransition = this.get('previousTransition');
-                // if (previousTransition) {
-                //   this.set('previousTransition', null);
-                //   previousTransition.retry();
-                // } else {
-                // Default back to homepage
-                //   this.transitionToRoute('index');
-                // }
-            // },
+                     mycontroller.set('isShowingModal',true);            
+            } 
+            }    
             });
-          
-
-       //this.set('isShowingModal', false);
-        //this.set('showUser',true);
-         }
-         
-    },
-    proceed:function()
-    {
-        var mycontroller=this;
-        mycontroller.transitionToRoute('home')
-       
+            }
+         },
+    proceed:function(usertype){
+        // mycontroller.transitionToRoute('home');
+        var mycontroller=this
+        var usertype=mycontroller.get('usertype')
+        mycontroller.set('usertype',usertype)
+        if(usertype =="user"){
+         this.transitionToRoute('home');
+      }else if(usertype =="admin"){
+        this.transitionToRoute('bankdashboard');
+      }
     }
-    // Proceed:function(usertype){
-    //     var usertype=this.get('usertype')
-    //     if(usertype =='user'){
-    //       this.transitionToRoute('home');
-    //   }else if(usertype =='admin'){
-    //          this.transitionToRoute('BankDashboard')
-    //   }
-    // }
-  
-
 },
 
 });

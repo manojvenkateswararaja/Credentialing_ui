@@ -178,8 +178,37 @@
     color: black;;
   
   }
- 
   
+  .vl {
+     border-left: 2px solid grey;
+      height: 28px;
+      margin-left: 27%;
+     margin-top: -6%;
+    padding-left: 1%;
+    }
+ 
+    .vl2{
+      border-left: 2px solid grey;
+      height: 28px;
+      margin-left: 59%;
+      margin-top: -5%;
+      padding-left: 1%;
+     }
+     .vl3 {
+      border-left: 2px solid grey;
+      height: 28px;
+      margin-left: 44%;
+      margin-top: -5%;
+      padding-left: 1%;
+     }
+     .vl4 {
+      border-left: 2px solid grey;
+      height: 28px;
+      margin-left: 78%;
+      margin-top: -5%;
+      padding-left: 1%;
+     }
+   
 /*input[type="text"],
 input[type="password"] {
    display: block;
@@ -228,7 +257,7 @@ input[type="password"]:focus {
     margin-right: 68px;
     border: 0px solid white;
     padding: 4px;
-    width: 29%;
+    width: 35%;
     margin-top: 43px;
     background-color: gray;
     color: black;
@@ -236,21 +265,89 @@ input[type="password"]:focus {
 
 
 }
+.top{
+  margin-bottom: 15px;
+  margin-top: -108px;
+  margin-left: 385px;
+}
 
 .table{
   width:500px;
   margin: auto;
   border: 3px solid #73AD21;
 }
- 
-
-  input {
-    width: 338px;
-    height: 0px;
-    margin: 21px;
-    /* border-radius: 11px; */
-    padding: 18px;
+.dashbord-container{
+  margin: auto;
+  height: 1000px;
+  width: 800px;
+  top: 40px;
+  z-index: 200;
+  color:#666;
+  border-radius: 3px;
+  background:lightgray;
+ margin-bottom: 100px;
+ box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+//overflow: hidden;
 }
+#cont-lock{
+  width: 900px;
+  margin-left: -458px;
+  margin-right: 87px;
+  position: relative;
+  }
+  .dash-label{
+    margin-left: -570px;
+    margin-right: 57px;
+    margin-top: -41px;
+  }
+  .head-request{
+    margin-left: 8px;
+    margin-right: 57px;
+    margin-top: 100px;
+  }
+  #historyheader{
+    background: antiquewhite;
+    height: 55px;
+    width: 33%;
+    margin: 0 auto;
+    margin-bottom: 18px;
+    margin-top: -100px;}
+  
+  .dash-container{
+   margin-left:50px;
+   margin-right:50px;
+  }
+  // .container{
+  //   margin-left: -5px;
+  //   margin-right: 129px;
+  //   height: 108px;
+  //   width: 808px;
+  //   background: lightskyblue;
+  // }
+  .go-top {
+    position: fixed;
+    bottom: 2em;
+    right: 2em;
+    text-decoration: none;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.3);
+    font-size: 12px;
+    padding: 1em;
+    display: none;
+  }
+  .go-top:hover {
+    background-color: #14661D;
+  }
+  .AllDetails{
+    margin-left: 1px;
+    margin-right: 87px;
+    margin-top:81px;
+    margin-bottom:0px;
+    position: relative;
+  }
+  
+
+ 
 
 
 

@@ -1,24 +1,20 @@
-
-<h2><b><i style="
-    margin-left: -67px;
-">APPLICATION OR REQUEST</i></b></h2> 
+{{partial 'head'}}
+<div class="top">
+   <h2>
+  <b><i style="margin-left: -394px;">APPLICATION OR REQUEST</i></b>
+  </h2></div> 
+{{#if showhome}}
 <div class="Container">
-   <h3><i><u style="
-    margin-left: -511px;
-">Personal Details</u></i></h3>
+   <h3><i><u style="margin-left: -511px;">Personal Details</u></i></h3>
   <form action="/action_page.php">
     <br> FirstName  <br>
     {{validated-input  type="text" model=this  valuePath='firstname' placeholder="firstname" required=""}}
     <br>LastName  <br>
    {{validated-input  type="text" model=this  valuePath='lastname' placeholder="lastname" required=""}}
    <br>gender<br>
-  
       {{select-component listitem=genderlist selecteditemlist=genderType}}
-    
    {{!-- {{validated-input  type="text" model=this  valuePath='lastname' placeholder="lastname" required=""}} --}}
-  
      <br>nationality<br>
-    
        {{select-component listitem=nationalitylist selecteditemlist=nationalityType}}
         <br>Primary Phone<br>
    {{validated-input  type="number" model=this  valuePath='number' placeholder="contact" required=""}}
@@ -82,3 +78,4 @@
 
 </form> 
 </div>
+{{/if}}

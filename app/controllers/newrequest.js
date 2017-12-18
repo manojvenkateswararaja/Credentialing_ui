@@ -51,6 +51,7 @@ var Validations = buildValidations({
 });
 
 export default Controller.extend(Validations, {
+    showhome:true,
         selectedOption: null,
         mylist: ["house","condo","land"],
         mortgaugeTypeList:["home","car"],
@@ -71,13 +72,15 @@ export default Controller.extend(Validations, {
             console.log(propertyType);
              var mortgaugeType=this.get('mortgaugeType')
             console.log(mortgaugeType);
+            var nationalityType=this.get('nationalityType')
+            console.log(nationalityType);
              var paymentPercentage=this.get('paymentPercentage')
             console.log(paymentPercentage);
              var Company=this.get('Company')
             console.log(Company);
                var Choice=this.get('Choice')
             console.log(Choice);
-             var Choice=this.get('income')
+             var income=this.get('income')
             console.log(income);
            var amount=this.get('Amount');
            console.log(amount);
