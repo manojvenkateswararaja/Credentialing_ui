@@ -9,7 +9,7 @@ export default Route.extend({
         var nationalityType=newRequestController.get('nationalityType');
         var propertyType = newRequestController.get('propertyType');
         var mortgaugeType=newRequestController.get('mortgaugeType');
-        
+        var Company=newRequestController.get('Company');
         var Amount=newRequestController.get('Amount');
         var price=newRequestController.get('price');
         var location=newRequestController.get('location');
@@ -23,6 +23,7 @@ export default Route.extend({
         var lastname=newRequestController.get('lastname');
         var number=newRequestController.get('number');
         var email=newRequestController.get('email');
+        this.controllerFor('employee-detail').set('Company',Company);
         this.controllerFor('employee-detail').set('genderType',genderType);
         this.controllerFor('employee-detail').set('nationalityType',nationalityType);
         this.controllerFor('employee-detail').set('propertyType',propertyType);

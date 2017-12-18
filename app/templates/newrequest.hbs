@@ -20,37 +20,25 @@
    {{validated-input  type="number" model=this  valuePath='number' placeholder="contact" required=""}}
     <br>
      <br>Email Address <br> 
-   
      {{validated-input  type="email" model=this  valuePath='email' placeholder="Enter email" required=""}}
       {{!--{{input  type="email" spellcheck=true  value=email maxlength="255" placeholder="email"}}--}}
-   
    <br>purpose of mortgage type<br>
-   
       {{select-component listitem=mortgaugeTypeList selecteditemlist=mortgaugeType}}
-   
     <br> Loan Amount<br>  
      {{validated-input  type="number" model=this  valuePath='Amount' placeholder="Amount" required=""}}
    <br>Type of Property <br> 
-   
       {{select-component listitem=mylist selecteditemlist=propertyType}}
-   
      <br>Estimated Price or Value of Property<br>
       {{validated-input  type="number" model=this  valuePath='price' placeholder="price" required=""}} 
     {{!--${{input  type="text" value=price}} --}}
     <br><span> Location of Property</span> 
-   
         <br>Street Address<br>  
          {{validated-input  type="location" model=this  valuePath='location' placeholder="location" required=""}}
        <br> country <br>
         {{validated-input  type="text" model=this  valuePath='country' placeholder="country" required=""}}
-   
-    
     <br>Down Payment Percentage  <br>
       {{select-component listitem=downPaymentList selecteditemlist=paymentPercentage}}
-   
-   
    <br>Current Mortgage Company<br>
-   
       {{select-component listitem=CompanytList selecteditemlist=Company }}
    
     <br> Age  <br>

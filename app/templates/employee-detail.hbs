@@ -8,13 +8,12 @@
     <div class="form">
       
          <form >
-     
                   <h3><b><i style="margin-left: -520px;">Employement Details</i></b></h3>
                    <div class="detail"><i style="margin-left: -451px;">Tell us about Employee details?</i></div>
              
                 <br>
-                  <label>Type of employee</label>
-                   {{select-component listitem=TypeOfemployee selectedlist=Employee}}
+                  {{!-- <label>Type of employee</label>
+                   {{select-component listitem=TypeOfemployee selectedlist=Employeexx}} --}}
               <br>
                   <label>
                   If employed (Gross Fixed Salary)
@@ -25,14 +24,11 @@
                  {{!--{{input type="text" value=salary placeholder="salary"}}--}}
                   </span>
                <br>
-                               <label>Company Name </label>
-                 
+                <label>Company Name </label>
                       <span>
                           {{validated-input  type="text" model=this  valuePath='CompanyName' placeholder="company name" required=""}}
                           {{!--{{input type="text"   value=CompanyName placeholder="company name"}}--}}
                      </span>
-                 
-               
                <br>
                   <label>Existing EMI</label>
                  

@@ -67,7 +67,7 @@ export default Controller.extend(Validations, {
          },*/
        next:function(){
 
-            alert("i m in newrequest")
+            
             var propertyType=this.get('propertyType')
             console.log(propertyType);
              var mortgaugeType=this.get('mortgaugeType')
