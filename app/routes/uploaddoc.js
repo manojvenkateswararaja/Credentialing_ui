@@ -1,7 +1,6 @@
 import Route from '@ember/routing/route';
 
 export default Route.extend({
-
     model(){
         alert("in upload model")
         var employeedetail = this.controllerFor('employee-detail');
@@ -22,8 +21,8 @@ export default Route.extend({
         var lastname=employeedetail.get('lastname');
         var number=employeedetail.get('number');
         var email=employeedetail.get('email');
-         this.controllerFor('uploaddoc').set('genderType',genderType);
-          this.controllerFor('uploaddoc').set('nationalityType',nationalityType);
+        this.controllerFor('uploaddoc').set('genderType',genderType);
+        this.controllerFor('uploaddoc').set('nationalityType',nationalityType);
         this.controllerFor('uploaddoc').set('propertyType',propertyType);
         this.controllerFor('uploaddoc').set('mortgaugeType',mortgaugeType);
         this.controllerFor('uploaddoc').set('Amount',Amount);
@@ -34,11 +33,11 @@ export default Route.extend({
         this.controllerFor('uploaddoc').set('Age',Age);
         this.controllerFor('uploaddoc').set('occupation',occupation);
         this.controllerFor('uploaddoc').set('Choice',Choice);  
-       this.controllerFor('uploaddoc').set('income',income);  
-       this.controllerFor('uploaddoc').set('firstname',firstname);  
-      this.controllerFor('uploaddoc').set('lastname',lastname); 
-      this.controllerFor('uploaddoc').set('number',number);  
-      this.controllerFor('uploaddoc').set('email',email);  
+        this.controllerFor('uploaddoc').set('income',income);  
+        this.controllerFor('uploaddoc').set('firstname',firstname);  
+        this.controllerFor('uploaddoc').set('lastname',lastname); 
+        this.controllerFor('uploaddoc').set('number',number);  
+        this.controllerFor('uploaddoc').set('email',email);  
 }
 });
 

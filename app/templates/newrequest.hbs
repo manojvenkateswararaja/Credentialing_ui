@@ -55,15 +55,9 @@
   {{select-component listitem=jobOption selecteditemlist=Choice}}
    
          <br> Household Income <br>
-    {{validated-input  type="number" model=this min="0" max="200" valuePath='income' placeholder="" required=""}}
-   {{!--{{input   type="text" class="field text currency nospin" value=income size="10" placeholder="" }}--}}
-   {{!--{{input    type="text" name="firstname" value=firstname  placeholder="firstname"}}--}}
-   {{!--{{input  type="text" name="lastname" value=lastname  placeholder="lastname"}}--}}
-   {{!--{{input  type="tel" name="number" value=number placeholder="Phone number"}}--}}
+    {{validated-input  type="number" model=this min="0" max="200" valuePath='income' placeholder="income" required=""}}
    <br>
    <button class="btn" {{action "next" }} >next</button><br>
-
-
 </form> 
 </div>
 {{/if}}

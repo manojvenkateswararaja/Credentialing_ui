@@ -1,24 +1,24 @@
-{{partial header}}
-
+{{partial 'header'}}
 {{#if showLogin}}
-{{!--<div class="col-xs-1 center-block">--}}
+{{showLogin}}
 <br>
 <br>
 <br>
 <br>
- 
 <div class='signupContainer'>
   <header><i><b><u>Login</u></b></i></header>
   <form>
-    
  <label><b>EmailID </b><span>*</span></label>
+ 
   {{validated-input  type="email" model=this  valuePath='email' placeholder="email" required=""}}
+  
    {{!-- <div  class="help-1">enter your emailid</div> --}}
 <div class="help"></div>
    <label><b>password</b> <span>*</span></label>
    {{validated-input  type="password" model=this  valuePath='password' placeholder="password" required=""}}
   {{!-- <div class="help">Use upper and lowercase lettes as well</div> --}}
   <div >
+    
   <button class="btn" {{action "Submit"}}>Login</button>
   {{#if isShowingModal}}
   {{#modal-dialog onClose="Submit"

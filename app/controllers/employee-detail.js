@@ -7,8 +7,9 @@ export default Controller.extend({
     TypeOfemployee:["Self-employed","Employed"],
     actions:{
       next:function(){
-            // var Employeexx = JSON.stringify(this.get('Employeexx'))
-            // console.log(Employeexx)
+            var Employee = this.get('Employee')
+            //this.set('Employee',Employee)
+            console.log("employee detail",Employee)
             var propertyType=this.get('propertyType');
             this.set('propertyType',propertyType)
             var mortgaugeType=this.get('mortgaugeType');
@@ -56,7 +57,7 @@ export default Controller.extend({
             console.log(Rupees)
             var transactionstring = {
             "loandetails":{
-            // "22222":Employeexx,
+             "Emp":Employee,
             "propertyType":propertyType,
             "mortgaugeType":mortgaugeType,
             "Amount":Amount,
@@ -90,20 +91,26 @@ export default Controller.extend({
       success: function(response) {
       console.log(JSON.stringify(response));
       var message = response.message;
+      var reqid=response.requestid;
+      mycontroller.set('reqid',reqid)
       mycontroller.set('message',message)
       sessionStorage.setItem('message', message);
-      console.log("message" + message);  
+      console.log("message>>>>>>>>>>" + message);  
       alert("your details has been uploaded successfully") 
-      mycontroller.set('isShowingNewPage',true);   
+      if(message =="your loan details entered successfully !"){
+        mycontroller.set('isShowingNewPage',true);   
+      }
+     
       }   
     })    // this.transitionToRoute("uploaddoc")
     }
     },
     proceed:function(message){
+      console.log("fgfhfjhgjkjhkjhkjh")
         var mycontroller=this
         var message=mycontroller.get('message')
         mycontroller.set('message',message)
-        if(message =="loan details entered successfully"){
+        if(message =="your loan details entered successfully !"){
           this.transitionToRoute('uploaddoc')
         }
       }

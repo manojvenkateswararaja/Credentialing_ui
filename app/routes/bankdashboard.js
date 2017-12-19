@@ -3,6 +3,11 @@ import Route from '@ember/routing/route';
 
 export default Route.extend({
     model(){
+        // var employee=this.controllerFor('employee-detail').get('reqid')
+        // var reqid=employee.get('reqid')
+        // alert(employee)
+        // this.controllerFor('bankdashboard').set('reqid',reqid)
+        // alert(reqid)
         var myroute=this
         var  AlRequest;
         return $.ajax({
@@ -19,33 +24,7 @@ export default Route.extend({
         console.log(id)
         console.log('DEBUG: GET Enquiries OK');
         console.log("fsdhgbhdf>>>>>>>>>>",id)
-        // columns: [
-        //     {
-        //       "propertyName": "requestid",
-        //       "title": "Request ID"
-        //     },
-        //     {
-        //       "propertyName": "date",
-        //       "title": "Date"
-        //     },
-        //     {
-        //       "propertyName": "name",
-        //       "title": "Name"
-        //     },
-        //     {
-        //       "propertyName": "purposeOfloan",
-        //       "title": "Purpose Of Loan"
-        //     },
-        //     {
-        //         "propertyName": "needAmt",
-        //         "title": "Needed Amount"
-        //       },
-        //       {
-        //         "propertyName": "Status",
-        //         "title": "status Of Loan"
-        //       },
-    
-        //   ]
+      
         }
     });
    
