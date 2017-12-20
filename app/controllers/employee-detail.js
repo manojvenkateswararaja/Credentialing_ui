@@ -3,7 +3,7 @@ import Controller from '@ember/controller';
 export default Controller.extend({
      selectedOption: null,
      showhome:true,
-     isShowingNewPage:false,
+     isShowingModalss:false,
     TypeOfemployee:["Self-employed","Employed"],
     actions:{
       next:function(){
@@ -55,9 +55,9 @@ export default Controller.extend({
             console.log(CompanyName)
             var Rupees=this.get('Rupees')
             console.log(Rupees)
-            var transactionstring = {
-            "loandetails":{
-             "Emp":Employee,
+            var transactionstring ={
+              transactionstring:{
+            "Emp":Employee,
             "propertyType":propertyType,
             "mortgaugeType":mortgaugeType,
             "Amount":Amount,
@@ -98,7 +98,7 @@ export default Controller.extend({
       console.log("message>>>>>>>>>>" + message);  
       alert("your details has been uploaded successfully") 
       if(message =="your loan details entered successfully !"){
-        mycontroller.set('isShowingNewPage',true);   
+        mycontroller.set('isShowingModalss',true);   
       }
      
       }   
@@ -106,12 +106,13 @@ export default Controller.extend({
     }
     },
     proceed:function(message){
-      console.log("fgfhfjhgjkjhkjhkjh")
-        var mycontroller=this
-        var message=mycontroller.get('message')
-        mycontroller.set('message',message)
-        if(message =="your loan details entered successfully !"){
-          this.transitionToRoute('uploaddoc')
+    console.log("close");
+    var message=this.get('message');
+    this.set('message',message)  
+    this.set('isShowingModalss',false);
+    var mymodalstatus = this.get('isShowingModalss');
+    if(!mymodalstatus){
+    this.transitionToRoute('uploaddoc')
         }
       }
     

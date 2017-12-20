@@ -1,0 +1,6 @@
+{
+  "name": "web-app",
+  "dependencies": {
+    "dinosheets": "0.1.1"
+  }
+}

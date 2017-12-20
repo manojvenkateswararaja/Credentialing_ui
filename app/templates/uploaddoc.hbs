@@ -1,58 +1,63 @@
-{{partial 'head'}}
-{{#if showhome}}
-<h2><b><i style="
+{{!--{{partial 'head'}}--}}
+{{!--{{#if Myshowhome}}--}}
+{{!-- <h2><b><i style="
     margin-left: -67px;
-">APPLICATION OR REQUEST</i></b></h2> 
+">APPLICATION OR REQUEST</i></b></h2>  --}}
 
 <div class="Container">
 <div class="upload">
-         <form >
+         
             
                   <h3><b><i style="margin-left: -480px;">Upload Document</i></b></h3>
                    <div class="detail"><i style="margin-left: -480px;" >please fill your documents details?</i></div>
               
                 <br>
-                   <label >Id proof Document</label>
-                       
-                          
-                               {{!--{{input type="file" value=file id="field19" }}--}}
-                            {{validated-input  id="f1" type="file" model=this  valuePath='file' placeholder="" required=""}}
+                  <label >Id proof Document</label>
+                   {{#pl-uploader  for="upload_file1" runtimes="html5 flash silverlight" onfileadd="uploadDoc" as |queue|}}
+          <a id="upload_file1" style="font-size:18px"> <p style="margin-top:3mm"> <img src="assets/images/upload.svg" alt="Smiley face" width="20" height="20" style="margin-bottom:3mm">&nbsp; Choose File to Upload</p></a>
+         {{/pl-uploader}}
                            
                            
                    <br>
-                                   <label > BannkStatement Document</label>
-                       
-                           {{validated-input  id="f1" type="file" model=this  valuePath='file1' placeholder="lastname" required=""}}
-                           {{!--<span>{{input type="file"  value=file1}}</span>--}}
+                   <label > BankStatement Document</label>
+                                 {{#pl-uploader  for="upload_file2" runtimes="html5 flash silverlight" onfileadd="uploadDoc" as |queue|}}
+          <a id="upload_file2" style="font-size:18px"> <p style="margin-top:3mm"> <img src="assets/images/upload.svg" alt="Smiley face" width="20" height="20" style="margin-bottom:3mm">&nbsp; Choose File to Upload</p></a>
+         {{/pl-uploader}}
                            
                    <br>
-                                 <label >Income tax return Document</label>
-                                                <span>
-                               {{validated-input  id="f1"  type="file" model=this  valuePath='file2' placeholder="lastname" required=""}}
-                           {{!--{{input type="file" value=file2 }}--}}
-                           </span>
+                   <label >Address proof Document</label>
+                                 {{#pl-uploader  for="upload_file3" runtimes="html5 flash silverlight" onfileadd="uploadDoc" as |queue|}}
+          <a id="upload_file3" style="font-size:18px"> <p style="margin-top:3mm"> <img src="assets/images/upload.svg" alt="Smiley face" width="20" height="20" style="margin-bottom:3mm">&nbsp; Choose File to Upload</p></a>
+         {{/pl-uploader}}
+                         
                            
                    <br>
-                 <label >Address proof Document</label>
-                      
-                           <span>
-                               {{validated-input id="f1"  type="file" model=this  valuePath='file3' placeholder="lastname" required=""}}
-                               {{!--{{input type="file" value=file3 }}--}}
-
-                           </span>
+                    <label>property Document</label>
+                {{#pl-uploader  for="upload_file4" runtimes="html5 flash silverlight" onfileadd="uploadDoc" as |queue|}}
+          <a id="upload_file4" style="font-size:18px"> <p style="margin-top:3mm"> <img src="assets/images/upload.svg" alt="Smiley face" width="20" height="20" style="margin-bottom:3mm">&nbsp; Choose File to Upload</p></a>
+         {{/pl-uploader}}
                            
                    
                     <br>
-                 <label>property Document</label>
-                      
-                           <span>
-                               {{!--{{input type="file" value=file4}}--}}
-                            {{validated-input id="f1"  type="file" model=this  valuePath='file4' placeholder="" required=""}}
-                           </span>
+                  <label >Income tax return Document</label>
+                {{#pl-uploader  for="upload_file5" runtimes="html5 flash silverlight" onfileadd="uploadDoc" as |queue|}}
+          <a id="upload_file5" style="font-size:18px"> <p style="margin-top:3mm"> <img src="assets/images/upload.svg" alt="Smiley face" width="20" height="20" style="margin-bottom:3mm">&nbsp; Choose File to Upload</p></a>
+         {{/pl-uploader}}
                            
                     <br>
-            <button class="btn" {{action "apply"}}>Apply</button>
-         </form> 
+            {{!-- <button class="btn" {{action "apply"}}>Apply</button> --}}
+        
 </div>
 </div>
+{{!--{{/if}}--}}
+{{#if isShow_fileupload}}
+ {{#modal-dialog onClose="Myfileupload"
+                  targetAttachment="center"
+                  translucentOverlay=true}}
+                  
+                 <h5> File Uploaded sucesfully!!</h5>
+    {{!-- <button {{action "Proceed" usertype}} >Proceed</button> --}}
+    <button class="btn" {{action "OKbutton"}}>OK</button>
+  {{/modal-dialog}}
+
 {{/if}}

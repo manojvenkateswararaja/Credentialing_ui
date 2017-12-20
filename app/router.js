@@ -16,6 +16,7 @@ Router.map(function() {
   this.route('header');
   this.route('bankdashboard');
   this.route('head');
+  this.route('userdetails');
 });
 
 export default Router;

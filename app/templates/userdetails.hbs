@@ -1,0 +1,129 @@
+
+<script>
+   $(document).ready(function() {
+       // Show or hide the sticky footer button
+       $(window).scroll(function() {
+           if ($(this).scrollTop() > 200) {
+               $('.go-top').fadeIn(200);
+           } else {
+               $('.go-top').fadeOut(200);
+           }
+       });
+       // Animate the scroll to top
+       $('.go-top').click(function(event) {
+           event.preventDefault();
+           $('html, body').animate({
+               scrollTop: 0
+           }, 300);
+       });
+      
+   });
+</script>
+<div class="container">
+   <div id="usercont-lock">
+      <h2><i>User Details </i></h2>
+</div>
+<div class="user-container">
+   <br/>
+   <p style="text-align:center;color:#808080 "><b>Total Request</b></p>
+      {{!-- <p class="user-request"><b>RequestID</b></p> --}}
+      <i style="margin-left:70px">Request Id:</i><i id="req">{{loanID.requestid}}</i>
+      <br>
+      <br>
+      <br>
+   <div class="dash-container" >
+            <style>
+             table, th, {
+            border-width: thin;
+             }
+           </style>
+            <h1 id="data">Personal information</h1>   
+           <div class="table-block">
+ <table>
+  {{!-- <tr>
+    <th colspan="1000">RequestID</th>
+  </tr> --}}
+    <tr>
+    <td>firstname:</td>
+    <td style="color:gray;">{{loanID.transactionstring.firstname}}</td>
+  </tr>
+    <tr>
+    <td>lastname:</td>
+    <td style="color:gray;">{{loanID.transactionstring.lastname}}</td>
+  </tr>
+    <tr>
+    <td>contact number:</td>
+    <td style="color:gray;">{{loanID.transactionstring.number}}</td>
+  </tr>
+   <tr>
+    <td>country:</td>
+    <td style="color:gray;">{{loanID.transactionstring.country}}</td>
+  </tr>
+   <tr>
+    <td>occupation:</td>
+    <td style="color:gray;">{{loanID.transactionstring.occupation}}</td>
+  </tr>
+   <tr>
+    <td>income:</td>
+    <td style="color:gray;">{{loanID.transactionstring.income}}</td>
+  </tr>
+</table>
+ <button  id="user-btn" {{action "details"}}>Request More Details</button>
+
+  </div>
+    <div class="division">
+    <h1 id="data2">Property information</h1>   
+    <div class="table2-block">
+ <table>
+  {{!-- <tr>
+    <th colspan="1000">RequestID</th>
+  </tr> --}}
+  
+    <tr>
+    <td>mortgaugeType</td>
+    <td style="color:gray;">{{loanID.transactionstring.mortgaugeType}}</td>
+   </tr>
+    <tr>
+    <td>Need Amount:</td>
+    <td style="color:gray;">{{loanID.transactionstring.Amount}}</td>
+  </tr>
+  <tr>
+    <td>location</td>
+    <td style="color:gray;">{{loanID.transactionstring.location}}</td>
+  </tr>
+   
+  {{!-- <tr>
+    <td>Status:</td>
+    <td>{{loanID.transactionstring.firstname}}</td>
+  </tr> --}}
+  {{!-- <tr>
+    <td>creditscore:</td>
+    <td>{{loanID.transactionstring.firstname}}</td>
+  </tr> --}}
+   <tr>
+    <td>price:</td>
+    <td style="color:gray;">{{loanID.transactionstring.price}}</td>
+  </tr>
+   <tr>
+    <td>country:</td>
+    <td style="color:gray;">{{loanID.transactionstring.country}}</td>
+  </tr>
+   <tr>
+    <td>paymentPercentage:</td>
+    <td style="color:gray;">{{loanID.transactionstring.paymentPercentage}}</td>
+  </tr>
+  </table>
+  
+  <button  id="user-btn2" {{action "userdetails" loanID.requestid}}>Get Credit Score</button>
+   {{#if showCredit}}
+   Creditscore For RequestID:{{loanID.requestid}}<br>
+   Credit Score:<i style="color:#69f;">{{creditscore}}</i>
+   {{/if}}
+  <button  id="user-btn" {{action "details"}}>Approve</button>
+  <button  id="user-btn" {{action "details"}}>Rejected</button>
+   </div>
+   </div>
+   </div>
+   </div>
+   </div>
+<a href="#" class="go-top">Scroll to Top</a>

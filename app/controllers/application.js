@@ -1,6 +1,8 @@
 import Controller from '@ember/controller';
 
 export default Controller.extend({
+    showLogin:true,
+    
    actions:{
        gotologin:function(){
            this.transitionToRoute('login');       
@@ -8,6 +10,9 @@ export default Controller.extend({
        gotosignup:function(){
            this.transitionToRoute('signup');
        },
+    //    gotohome:function(){
+    //     this.transitionToRoute('home');
+    // },
     //    gotobank:function(){
     //     this.transitionToRoute('bankdashboard');
     // },

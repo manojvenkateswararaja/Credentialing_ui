@@ -42,6 +42,7 @@
     "ember-models-table": "^2.2.3",
     "ember-paper": "^1.0.0-beta.3",
     "ember-paper-stepper": "0.0.6",
+    "ember-plupload": "^1.13.19",
     "ember-progress-bar": "0.0.7",
     "ember-resolver": "^4.0.0",
     "ember-source": "~2.16.0",

@@ -1,31 +1,31 @@
-
-{{#if showhome}}
-
-<div class="w3-top-right">
-         <div class="w3-bar w3-red w3-card w3-left-align w3-large">
+  {{#if showLogin}}
+  <div class="w3-top-right">
+            <div class="w3-bar w3-red w3-card w3-left-align w3-large">
             <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-red"><i class="fa fa-bars"></i></a>
             <a href="#" class="w3-bar-item w3-button w3-padding-large w3-white">Home</a>
-            <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"{{action "gotobank"}}>Status</a>
-            <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"{{action "gotologin"}}>Login</a>
+            <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"{{action "gotologin"}}>sign in</a>
             <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"{{action "gotosignup"}}>Signup</a>
          </div>
       </div>
-      {{/if}}
-       {{#if showLogin}}
- <div class="form-group has-success has-feedback">
-  <label class="control-label" for="inputSuccess2">Input with success</label>
-  <input type="text" class="form-control" id="inputSuccess2" aria-describedby="inputSuccess2Status">
-  <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
-  <span id="inputSuccess2Status" class="sr-only">(success)</span>
- </div>
-
-       <div class="w3-top-right">
-         <div class="w3-bar w3-red w3-card w3-left-align w3-large">
+{{/if}}
+{{#if showhome}}
+            <div class="w3-top-right">
+            <div class="w3-bar w3-red w3-card w3-left-align w3-large">
             <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-red"><i class="fa fa-bars"></i></a>
             <a href="#" class="w3-bar-item w3-button w3-padding-large w3-white">Home</a>
-            {{!-- <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"{{action "gotobank"}}>Status</a> --}}
-            <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"{{action "gotologin"}}>Login</a>
-            <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"{{action "gotosignup"}}>Signup</a>
+            <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"{{action "gotobank"}}>Status</a>
+            <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"{{action ""}}>logout</a>
          </div>
-      </div>  
+      </div>
       {{/if}}
+      {{#if isShowUserDetails}}
+       <div class="w3-top-right">
+             <div class="w3-bar w3-red w3-card w3-left-align w3-large">
+            <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-red"><i class="fa fa-bars"></i></a>
+            <a href="#" class="w3-bar-item w3-button w3-padding-large w3-white"{{action "gotohome"}}>Home</a>
+            <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"{{action "gotobank"}}>Status</a>
+            <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"{{action ""}}>logout</a>
+         </div>
+      </div>
+      {{/if}}
+   

@@ -1,16 +1,13 @@
-{{partial 'head'}}
-{{#if showhome}}
+
+
 {{!-- <h2><b><i style="
     margin-left: -67px;
 ">APPLICATION OR REQUEST</i></b></h2>  --}}
-
 <div class="Container">
     <div class="form">
-      
          <form >
                   <h3><b><i style="margin-left: -520px;">Employement Details</i></b></h3>
                    <div class="detail"><i style="margin-left: -451px;">Tell us about Employee details?</i></div>
-             
                 <br>
                    <label>Type of employee</label>
                     {{select-component listitem=TypeOfemployee selecteditemlist=Employee}} 
@@ -19,7 +16,8 @@
                     2.{{TypeOfemployee}}
                     3.{{selectedlist}}
                     4.{{listitem}}
-              <br>
+
+                   <br>
                   <label>
                   If employed (Gross Fixed Salary)
                   </label>
@@ -54,7 +52,7 @@
                  
           <br>
             <button class="btn" {{action "next"}}>Apply</button>
-             {{#if isShowingNewPage}}
+             {{#if isShowingModalss}}
              {{#modal-dialog onClose="next"
                   targetAttachment="center"
                   translucentOverlay=true}}
@@ -67,4 +65,3 @@
 
 </div>
 </div>
-{{/if}}
