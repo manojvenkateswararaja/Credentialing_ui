@@ -10,6 +10,11 @@
 @import "ember-bootstrap/bootstrap/type.scss";
 @import "ember-bootstrap/bootstrap/buttons.scss";
 //userdetails
+img{
+ 
+  height: 100%;
+  width: 100%;
+}
 #req{
   margin-left:10px;
   color: #69f;
@@ -327,7 +332,7 @@
 }
 .top{
   margin-bottom: 15px;
-  margin-top: -108px;
+  margin-top: -25px;
   margin-left: 385px;
 }
 

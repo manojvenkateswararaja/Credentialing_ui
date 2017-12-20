@@ -1,8 +1,8 @@
 import Controller from '@ember/controller';
-
 export default Controller.extend({
     isShowUserDetails:true,
     showCredit:false,
+    isShowSCheduleLoan:false,
     actions:{
         userdetails:function(requestid){
               var mycontroller=this;
@@ -15,13 +15,32 @@ export default Controller.extend({
               data:JSON.stringify(reqid),
               success: function(response) {
               console.log("service")
-              var creditscore=response
+              mycontroller.set('showCredit',true)
+              var creditscore=response.creditscore
+              mycontroller.set('creditscore',creditscore)
               console.log("my credit ccore>>>>>>",creditscore)
-             
-                                   }
-                                              
-                  })
-          }
+                }
+                })
+          },
+          Approve:function(){
+            console.log("close");
+            this.toggleProperty('isShowSCheduleLoan');
+            var message=this.get('message');
+            this.set('message',message) 
+            var mymodal= this.get('isShowSCheduleLoan');
+            console.log(mymodal);
+            //   this.transitionToRoute('loanschedule')
+            },
+            Schedule:function(){
+                var mymodal= this.get('isShowSCheduleLoan');
+                console.log(mymodal)
+                if(mymodal){
+                this.transitionToRoute('uploaddoc')
+                    }
+                },
+                      Rejected:function(){
+                          
+                      }
   },
   
 });

@@ -116,11 +116,21 @@
   
   <button  id="user-btn2" {{action "userdetails" loanID.requestid}}>Get Credit Score</button>
    {{#if showCredit}}
-   Creditscore For RequestID:{{loanID.requestid}}<br>
+   Creditscore For RequestID:<i style="color:#69f;">{{loanID.requestid}}</i><br>
    Credit Score:<i style="color:#69f;">{{creditscore}}</i>
    {{/if}}
-  <button  id="user-btn" {{action "details"}}>Approve</button>
-  <button  id="user-btn" {{action "details"}}>Rejected</button>
+  <button  id="user-btn" {{action "Approve"}}>Approve</button>
+  {{!-- start --}}
+             {{#if isShowSCheduleLoan}}
+             {{#modal-dialog onClose="Approve"
+                  targetAttachment="center"
+                  translucentOverlay=true}}
+                succefully Approved Loan!!
+    <button class="btn" {{action "Schedule" }}>Schedule</button>{{isShowSCheduleLoan}}
+    {{/modal-dialog}}
+    {{/if}}
+    {{!-- end --}}
+  <button  id="user-btn" {{action "Rejected"}}>Rejected</button>
    </div>
    </div>
    </div>

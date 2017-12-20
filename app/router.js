@@ -17,6 +17,8 @@ Router.map(function() {
   this.route('bankdashboard');
   this.route('head');
   this.route('userdetails');
+  this.route('loanschedule');
+  this.route('preclosure');
 });
 
 export default Router;

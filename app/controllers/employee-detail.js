@@ -4,7 +4,7 @@ export default Controller.extend({
      selectedOption: null,
      showhome:true,
      isShowingModalss:false,
-    TypeOfemployee:["Self-employed","Employed"],
+     TypeOfemployee:["Self-employed","Employed"],
     actions:{
       next:function(){
             var Employee = this.get('Employee')
@@ -97,13 +97,12 @@ export default Controller.extend({
       sessionStorage.setItem('message', message);
       console.log("message>>>>>>>>>>" + message);  
       alert("your details has been uploaded successfully") 
-      if(message =="your loan details entered successfully !"){
+      // if(message =="your loan details entered successfully !"){
         mycontroller.set('isShowingModalss',true);   
-      }
+      // }
      
       }   
     })    // this.transitionToRoute("uploaddoc")
-    }
     },
     proceed:function(message){
     console.log("close");
@@ -115,6 +114,7 @@ export default Controller.extend({
     this.transitionToRoute('uploaddoc')
         }
       }
+    }
     
 });
 

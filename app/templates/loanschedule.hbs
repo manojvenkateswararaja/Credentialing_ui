@@ -1,0 +1,50 @@
+<div class="Container">
+   <div class="form">
+        <form >
+               <h3><b><i style="margin-left: -520px;">Loan Schedule Info</i></b></h3>
+               <br>
+                 <label>Loan Amount</label>
+                  <span class="symbol">Rs</span>
+                  {{validated-input  type="text" model=this  valuePath='loanAmount' placeholder="amount" required=""}}
+                 <br>
+                 <label>
+                 Loan Terms
+                 </label>
+               <span>
+             {{validated-input  type="text" model=this  valuePath='years' placeholder="loan terms" required=""}}
+                {{!--{{input type="text" value=salary placeholder="salary"}}--}}
+                 </span>
+              <br>
+               <label>Annual Interest Rate </label>
+                     <span>
+                         {{validated-input  type="text" model=this  valuePath='interestRate' placeholder="Interest rate" required=""}}
+                         {{!--{{input type="text"   value=CompanyName placeholder="company name"}}--}}
+                    </span>
+              <br>
+                 <label>Payment Per Year</label>
+               
+                     <span>
+                         {{validated-input  type="number" model=this  valuePath='paymentYear' placeholder="payment per year" required=""}}
+                     {{!--{{input type="number" value=Emi placeholder="EMI"}}--}}
+                     </span>      
+                <br>
+                <label>
+                Installment per month
+                </label>
+                <span class="symbol">$</span>
+                <span><label>Rupees</label>
+                {{validated-input  type="number" model=this  valuePath='Installment' placeholder="per month" required=""}}
+                 {{!--{{input  type="text" class="field text currency nospin" value=Rupees size="10"}} --}}
+                </span>
+               
+         <br>
+           <button class="btn" {{action "loanschedule"}}>Schedule</button>
+            <span id="help-me" class="icon-help"></span>
+           
+   
+   
+ 
+        </form>
+
+</div>
+</div>

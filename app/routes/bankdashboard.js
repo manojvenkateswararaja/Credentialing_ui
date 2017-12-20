@@ -11,7 +11,7 @@ export default Route.extend({
         //data: JSON.stringify(AlRequest),
         success: function(response){
         //console.log("console",JSON.stringify(response));
-        var id=response; 
+        var id=response.message; 
         console.log("Allrequest",id)
         myroute.controllerFor('bankdashboard').set('id',id)
         // console.log("fsdhgbhdf>>>>>>>>>>",id)

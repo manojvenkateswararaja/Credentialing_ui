@@ -56,12 +56,11 @@
              {{#modal-dialog onClose="next"
                   targetAttachment="center"
                   translucentOverlay=true}}
-             {{message}}
-              your requestID:{{reqid}}<br>
-    <button class="btn" {{action "proceed" message}}>Proceed</button>
-  {{/modal-dialog}}
-  {{/if}}
-         </form>
-
+                  {{message}}
+                  your requestId:{{reqid}}<br>
+    <button class="btn" {{action "proceed" }}>Proceed</button>
+    {{/modal-dialog}}
+    {{/if}}
+    </form>
 </div>
 </div>
