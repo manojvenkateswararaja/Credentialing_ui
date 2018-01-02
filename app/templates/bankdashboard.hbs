@@ -35,42 +35,13 @@
          {{#each id as |item|}}
          <ul>
              <div style="background:lightgrey">
-            {{!-- reqid<b style="color:#2d8cff ">{{ item.requestid}}</b> --}}
-            {{!-- Req ID<a href="" {{action "requestid" item}} > --}}
             Requestid<a href="" {{action 'userdetails' item }}><b style="color:#2d8cff ">{{item.requestid}}</b></a>
-               {{!-- Requestid {{action 'userdetails' item}}<b style="color:#2d8cff ">{{ item.requestid}}<br></b>  --}}
             <div class="vl">{{ item.transactionstring.firstname}}</div> 
             <div class="vl2 ">{{ item.transactionstring.propertyType}}</div>
             <div class="vl3 ">{{ item.transactionstring.CompanyName}}</div>
             </div>
             </ul>
             {{/each}}
-              {{!-- {{#if isShowingModel}}<br>
-              <style>
-             table, th, td {
-             border: 1px solid grey;
-             border-width: thin;
-             }
-           </style>
-              <table style="border:0">
-              <tr>
-              <th>Request ID</th>
-              <th>Name</th>
-              <th>puropse of loan </th>
-              <th>Need Amount </th>
-              <th> Status </th>  
-              <th>creditscore</th>
-              </tr>
-              <tr>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  </tr>
-              </table>
-           {{/if}}   --}}
          
    </div>
    </div>

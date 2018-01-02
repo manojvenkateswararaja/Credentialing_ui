@@ -28,6 +28,7 @@
     "ember-cli-htmlbars": "^2.0.1",
     "ember-cli-htmlbars-inline-precompile": "^1.0.0",
     "ember-cli-inject-live-reload": "^1.4.1",
+    "ember-cli-notifications": "^4.2.1",
     "ember-cli-qunit": "^4.0.0",
     "ember-cli-sass": "^7.1.2",
     "ember-cli-shims": "^1.1.0",
@@ -41,6 +42,7 @@
     "ember-model-validator": "^2.13.0",
     "ember-models-table": "^2.2.3",
     "ember-paper": "^1.0.0-beta.3",
+    "ember-paper-input": "0.0.4",
     "ember-paper-stepper": "0.0.6",
     "ember-plupload": "^1.13.19",
     "ember-progress-bar": "0.0.7",
@@ -56,6 +58,7 @@
   },
   "dependencies": {
     "ember-cp-validations": "^3.5.1",
+    "react-side-menu": "^0.1.2",
     "validator": "^9.1.2"
   }
 }

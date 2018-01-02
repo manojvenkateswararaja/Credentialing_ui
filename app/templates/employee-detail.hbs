@@ -3,12 +3,16 @@
 {{!-- <h2><b><i style="
     margin-left: -67px;
 ">APPLICATION OR REQUEST</i></b></h2>  --}}
-<div class="Container">
-    <div class="form">
+{{!-- <div class="Container">
+    <div class="form"> --}}
+        <div class="top"> 
+        
+    <div class="container-fluid">
+
          <form >
-                  <h3><b><i style="margin-left: -520px;">Employement Details</i></b></h3>
+                 <h3><b><i style="margin-left: -520px;">Employement Details</i></b></h3>
                    <div class="detail"><i style="margin-left: -451px;">Tell us about Employee details?</i></div>
-                <br>
+                 <br>
                    <label>Type of employee</label>
                     {{select-component listitem=TypeOfemployee selecteditemlist=Employee}} 
 
@@ -23,13 +27,13 @@
                   </label>
                   <span class="symbol">Rs</span>
                   <span>
-              {{validated-input  type="text" model=this  valuePath='salary' placeholder="salary" required=""}}
+    {{validated-input  type="text" model=this  valuePath='salary' placeholder="salary" required=""}}
                  {{!--{{input type="text" value=salary placeholder="salary"}}--}}
                   </span>
-               <br>
+                <br>
                 <label>Company Name </label>
-                      <span>
-                          {{validated-input  type="text" model=this  valuePath='CompanyName' placeholder="company name" required=""}}
+                <span>
+    {{validated-input  type="text" model=this  valuePath='CompanyName' placeholder="company name" required=""}}
                           {{!--{{input type="text"   value=CompanyName placeholder="company name"}}--}}
                      </span>
                <br>

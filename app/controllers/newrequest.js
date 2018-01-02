@@ -51,7 +51,8 @@ var Validations = buildValidations({
 });
 
 export default Controller.extend(Validations, {
-    showhome:true,
+    // showhome:true,
+        showRequest:true,
         selectedOption: null,
         mylist: ["house","condo","land"],
         mortgaugeTypeList:["home","car"],
@@ -66,19 +67,17 @@ export default Controller.extend(Validations, {
             alert("i am called")
          },*/
        next:function(){
-
-            
             var propertyType=this.get('propertyType')
             console.log(propertyType);
-             var mortgaugeType=this.get('mortgaugeType')
+            var mortgaugeType=this.get('mortgaugeType')
             console.log(mortgaugeType);
             var nationalityType=this.get('nationalityType')
             console.log(nationalityType);
-             var paymentPercentage=this.get('paymentPercentage')
+            var paymentPercentage=this.get('paymentPercentage')
             console.log(paymentPercentage);
-             var Company=this.get('Company')
+            var Company=this.get('Company')
             console.log(Company);
-               var Choice=this.get('Choice')
+            var Choice=this.get('Choice')
             console.log(Choice);
              var income=this.get('income')
             console.log(income);
@@ -102,16 +101,12 @@ export default Controller.extend(Validations, {
            console.log(lastname);
            var number=this.get('number');
            console.log(number);
-            var email = this.get('email');
-        console.log(email);
-                /*  dataString={
-                     'home:home mortgage,
-                     car:car mortgage,
-                     amt:Amount
-                   };*/
-
-                  
-   this.transitionToRoute('EmployeeDetail')
+           var email = this.get('email');
+        console.log(email);    
+        this.transitionToRoute('propertydetail')
+        },
+        saveModel: function() {
+            console.log("Steps completed");
         }
         }
         

@@ -4,13 +4,11 @@
     margin-left: -67px;
 ">APPLICATION OR REQUEST</i></b></h2>  --}}
 
-<div class="Container">
+<div class="container">
 <div class="upload">
-         
-            
+     {{!-- <div class="container-fluid">   --}}
                   <h3><b><i style="margin-left: -480px;">Upload Document</i></b></h3>
                    <div class="detail"><i style="margin-left: -480px;" >please fill your documents details?</i></div>
-              
                 <br>
                   <label >Id proof Document</label>
                    {{#pl-uploader  for="upload_file1" runtimes="html5 flash silverlight" onfileadd="uploadDoc" as |queue|}}

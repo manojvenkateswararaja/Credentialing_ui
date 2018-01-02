@@ -129,8 +129,14 @@
     <button class="btn" {{action "Schedule" }}>Schedule</button>{{isShowSCheduleLoan}}
     {{/modal-dialog}}
     {{/if}}
-    {{!-- end --}}
-  <button  id="user-btn" {{action "Rejected"}}>Rejected</button>
+   <button  id="user-btn" {{action "Rejected"}}>Rejected</button>
+             {{#if isShowReject}}
+             {{#modal-dialog onClose="Rejected"
+                  targetAttachment="center"
+                  translucentOverlay=true}}
+                 Loan Rejected!!
+    {{/modal-dialog}}
+    {{/if}}
    </div>
    </div>
    </div>

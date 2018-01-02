@@ -19,6 +19,8 @@ Router.map(function() {
   this.route('userdetails');
   this.route('loanschedule');
   this.route('preclosure');
+  this.route('ember-paper-stepper');
+  this.route('propertydetail');
 });
 
 export default Router;

@@ -1,63 +1,82 @@
-
-<div class="top">
-   <h2>
-  <b><i style="margin-left: -394px;">APPLICATION OR REQUEST</i></b>
-  </h2></div> 
-{{#if showhome}}
-<div class="Container">
+{{!-- {{#paper-stepper currentStep=currentStep onStepChange=(action (mut currentStep))
+  onStepperCompleted=(action "saveModel") as |stepper|}}
+ 
+  {{#stepper.step label="Select how it looks" as |step|}}
+    {{#step.body}} --}}
+    {{partial 'head'}}
+{{#if showRequest}}
+  <div class="top"> 
+     <h2>
+  <b><i style="margin-left: -1105px;">APPLICATION OR REQUEST</i></b>
+  </h2>
+  {{!-- </div>  --}}
+<div class="container">
    <h3><i><u style="margin-left: -511px;">Personal Details</u></i></h3>
-  <form action="/action_page.php">
-    <br> FirstName  <br>
-    {{validated-input  type="text" model=this  valuePath='firstname' placeholder="firstname" required=""}}
-    <br>LastName  <br>
+  
+   {{!-- <div class="inner-container"> --}}
+     {{!-- {{#ember-paper-input}}
+    {{input id="txt-firstname" type="text" required=true placeholder='John'}}
+    <label for="txt-firstname">First name</label>
+   {{/ember-paper-input}} --}}
+
+    <label>FirstName </label>{{validated-input  type="text" model=this  valuePath='firstname' placeholder="firstname" required=""}}
+
+    <br>LastName
    {{validated-input  type="text" model=this  valuePath='lastname' placeholder="lastname" required=""}}
-   <br>gender<br>
+   <br>gender
       {{select-component listitem=genderlist selecteditemlist=genderType}}
-   {{!-- {{validated-input  type="text" model=this  valuePath='lastname' placeholder="lastname" required=""}} --}}
-     <br>nationality<br>
+     <br>nationality>
        {{select-component listitem=nationalitylist selecteditemlist=nationalityType}}
-        <br>Primary Phone<br>
+        <br>Primary Phone
    {{validated-input  type="number" model=this  valuePath='number' placeholder="contact" required=""}}
-    <br>
      <br>Email Address <br> 
      {{validated-input  type="email" model=this  valuePath='email' placeholder="Enter email" required=""}}
       {{!--{{input  type="email" spellcheck=true  value=email maxlength="255" placeholder="email"}}--}}
-   <br>purpose of mortgage type<br>
+   {{!-- <br>purpose of mortgage type<br>
       {{select-component listitem=mortgaugeTypeList selecteditemlist=mortgaugeType}}
     <br> Loan Amount<br>  
      {{validated-input  type="number" model=this  valuePath='Amount' placeholder="Amount" required=""}}
    <br>Type of Property <br> 
       {{select-component listitem=mylist selecteditemlist=propertyType}}
      <br>Estimated Price or Value of Property<br>
-      {{validated-input  type="number" model=this  valuePath='price' placeholder="price" required=""}} 
+      {{validated-input  type="number" model=this  valuePath='price' placeholder="price" required=""}}  --}}
     {{!--${{input  type="text" value=price}} --}}
-    <br><span> Location of Property</span> 
+    {{!-- </div> --}}
+    {{!-- <br><span> Location of Property</span> 
         <br>Street Address<br>  
          {{validated-input  type="location" model=this  valuePath='location' placeholder="location" required=""}}
        <br> country <br>
         {{validated-input  type="text" model=this  valuePath='country' placeholder="country" required=""}}
     <br>Down Payment Percentage  <br>
       {{select-component listitem=downPaymentList selecteditemlist=paymentPercentage}}
-   <br>Current Mortgage Company<br>
+    <br>Current Mortgage Company<br>
       {{select-component listitem=CompanytList selecteditemlist=Company }}
-   
     <br> Age  <br>
-         {{validated-input  type="number" model=this  valuePath='Age' placeholder="age" required=""}}
+         {{validated-input  type="number" model=this  valuePath='Age' placeholder="age" required=""}} --}}
       {{!--{{input  type="number"  value=Age  placeholder="age"}}--}}
-   
-     <br>Occupation  <br>
-   
-     {{validated-input  type="text" model=this  valuePath='occupation' placeholder="Enter your occupation" required=""}}
+     {{!-- <br>Occupation  <br>
+     {{validated-input  type="text" model=this  valuePath='occupation' placeholder="Enter your occupation" required=""}} --}}
       {{!--{{input  type="text"  value=occupation  placeholder="occupation"}}--}}
-   
-     <br>How long have you been at your current job?  <br>
-   
-  {{select-component listitem=jobOption selecteditemlist=Choice}}
-   
+     {{!-- <br>How long have you been at your current job?  <br>
+     {{select-component listitem=jobOption selecteditemlist=Choice}}
          <br> Household Income <br>
     {{validated-input  type="number" model=this min="0" max="200" valuePath='income' placeholder="income" required=""}}
-   <br>
+   <br> --}}
    <button class="btn" {{action "next" }} >next</button><br>
-</form> 
+
+</div>
 </div>
 {{/if}}
+    {{!-- {{/step.body}}
+    {{#step.actions as |nextStep previousStep|}}
+      {{#paper-button primary=true raised=true onClick=(action nextStep)}}
+        Continue
+      {{/paper-button}}
+      {{#paper-button onClick=(action previousStep)}}
+        Back
+      {{/paper-button}}
+    {{/step.actions}}
+  {{/stepper.step}}--}}
+  
+  {{!-- add as many steps as necessary --}}
+{{!-- {{/paper-stepper}} --}}

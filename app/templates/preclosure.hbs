@@ -1,1 +1,39 @@
-{{outlet}}
+
+<div class="Container">
+    <div class="form">
+         <form>
+        <h3><b><i style="margin-left: -520px;">Pre-Closing</i></b></h3>
+                <br>
+                  <label>EMI Remaining</label>
+                   <span class="symbol">Rs</span>
+                   {{validated-input  type="text" model=this  valuePath='EMI' placeholder="amount" required=""}}
+              <br>
+                  <label>
+                Penality for Preclose
+                  </label>
+                  <span>
+              {{validated-input  type="text" model=this  valuePath='penality' placeholder="penality" required=""}}
+                  </span>
+               <br>
+                <label>Installment Per month </label>
+                      <span>
+                          {{validated-input  type="number" model=this  valuePath='installment' placeholder="installment per month" required=""}}
+                     </span>
+               <br>
+                  <label>Document Required for Closing</label>
+                  {{#pl-uploader  for="upload_file5" runtimes="html5 flash silverlight" onfileadd="uploadDoc" as |queue|}}
+                  <a id="upload_file6" style="font-size:18px"> <p style="margin-top:3mm"> <img src="assets/images/upload.svg" alt="Smiley face" width="20" height="20" style="margin-bottom:3mm">&nbsp; Choose File to Upload</p></a>
+                  {{/pl-uploader}}   
+               <br>
+                  <label>
+               Payment Mode
+                  </label>
+                   {{select-component listitem=PaymentMode selecteditemlist=Payment}}
+                 
+          <br>
+            <button class="btn" {{action "loanschedule"}}>Apply</button>
+             <span id="help-me" class="icon-help"></span>
+         </form>
+
+</div>
+</div>

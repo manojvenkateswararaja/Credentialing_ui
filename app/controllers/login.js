@@ -27,6 +27,7 @@ var Validations = buildValidations({
 export default Controller.extend(Validations,{
    isShowingModal:false,
    showLogin:true,
+//    isShowHome:false,
    actions:{
         Submit:function(){  
             console.log("115")
@@ -79,9 +80,14 @@ export default Controller.extend(Validations,{
         var usertype=mycontroller.get('usertype')
         mycontroller.set('usertype',usertype)
         if(usertype =="user"){
-         this.transitionToRoute('home');
+         //mycontroller.set('showLogin',false)
+         this.set('isShowHome',true)
+          this.transitionToRoute('home'); 
       }else if(usertype =="admin"){
-        this.transitionToRoute('bankdashboard');
+        // mycontroller.set('showLogin',false)
+        this.set('isShowHome',true)
+         this.transitionToRoute('bankdashboard');
+        
       }
     }
 },
