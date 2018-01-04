@@ -5,9 +5,10 @@ export default Route.extend({
         // this.transitionTo('login')
         // this.transitionTo('propertydetail')
         //  this.transitionTo('bankdashboard')
-         this.transitionTo('userdetails')
+        //  this.transitionTo('userdetails')
         //   this.transitionTo('userdetailsdec')
         //  this.transitionTo('loanschedule')
         //  this.transitionTo('loanquotation')
+        this.transitionTo('fundnegotiation')
     }
 });

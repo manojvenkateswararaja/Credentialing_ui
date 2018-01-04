@@ -24,6 +24,7 @@ Router.map(function() {
   this.route('userdetailsdec');
   this.route('loanquotation');
   this.route('fundnegotiation');
+  this.route('creditscore');
 });
 
 export default Router;
