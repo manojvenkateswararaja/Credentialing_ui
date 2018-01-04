@@ -6,9 +6,12 @@ export default Controller.extend({
   //   apply:function(){
   //    var message=this.get('message');
   //    this.set('message',message)   
-  Okay:function(){
+  okay:function(){
     this.set('showDialog',false)
   },
+  closeDialog:function(){
+    this.set('showDialog',false)
+},
   openNav:function(){
     document.getElementById("mySidenav").style.width = "250px";
     document.getElementById("main").style.marginLeft = "250px";

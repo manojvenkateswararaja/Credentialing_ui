@@ -7,7 +7,7 @@ export default Route.extend({
             console.log("entering upload FIR 3");
     var mycontroller = this;
              console.log(file)
-   var requestid=this.controllerFor('employee-detail').get('reqid');
+   var requestid=this.controllerFor('page4').get('reqid');
    this.controllerFor('uploaddoc').set('requestid',requestid);
    console.log(requestid);
 
@@ -15,13 +15,13 @@ export default Route.extend({
 // console.log("isShowingModalss",isShowingModalss)
 // this.controllerFor('uploaddoc').set('isShowingModalss',isShowingModalss);
 
-file.upload('http://192.168.0.20:8082/UploadDocs?requestid='+requestid).then(function (response) {
+file.upload('http://192.168.11.149:8082/UploadDocs?requestid='+requestid).then(function (response) {
     console.log(JSON.stringify(response));
     var url =response.body.url;
     console.log("url ::",JSON.stringify(url));
    // mycontroller.controllerFor('deliveryorder').set('url',url);
   //  alert("Document uploaded sucessfully!!!!");
-    mycontroller.controllerFor('uploaddoc').set("isShow_fileupload",true);
+    mycontroller.controllerFor('uploaddoc').set("showDialog",true);
   //mycontroller.controllerFor('alldetails').set("Notshow_fileupload",false);
     console.log("saviing file...");
     console.log("file upload sucessfully. 1..");
@@ -35,8 +35,10 @@ file.upload('http://192.168.0.20:8082/UploadDocs?requestid='+requestid).then(fun
 },
     },
 model(){
-    var requestid =this.controllerFor('employee-detail').get('reqid');
+    var requestid =this.controllerFor('page4').get('reqid');
     this.controllerFor('uploaddoc').set('requestid',requestid);
    console.log("reqid--",requestid);
 }
-    })
+   
+});
+// var requestid=mycontroller.controllerFor('page4').get('reqid');

@@ -27,6 +27,8 @@ Router.map(function() {
   this.route('page2');
   this.route('page3');
   this.route('page4');
+  this.route('creditscore');
+  this.route('FillCreditScore');
 });
 
 export default Router;

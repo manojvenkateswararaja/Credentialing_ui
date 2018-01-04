@@ -1,7 +1,7 @@
 
 {{partial 'head'}}
 {{#if showUserLoanQuote}}
-<div class="container">
+<div class="container-fluid" style="background-color:lightgrey">
    <div class="form">
         <form >
                <h3><b><i style="margin-left: -638px;">Negotiable Quotation</i></b></h3>
@@ -18,7 +18,6 @@
                <label>Annual Interest Rate </label>
            
               <br>
-             
                  <label>Payment Per Year</label>
                
                         <br>
@@ -26,7 +25,7 @@
                 <span class="symbol">$</span>
                 
                   <br>
-           <button class="btn" {{action "loanschedule"}}>Agree</button>
+           <button class="btn" {{action "Agree"}}>Agree</button>
        
         </form>
 </div>

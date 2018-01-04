@@ -15,9 +15,6 @@ export default Route.extend({
         myroute.controllerFor('bankdashboard').set('id',id)
         console.log('DEBUG: GET Enquiries OK');
         }
-    });
-   
-       
-    
+    });      
     }
 })
