@@ -1,0 +1,27 @@
+<div class="container-fluid" style="background-color:lightgrey">
+         <div class="credit-container">
+               <b style="margin-left:510px">Property Information</b><br>
+               <br>
+               <div class="input-container">
+               PropertyType:{{loanID.transactionstring.propertyType}}
+               <br>
+              <br>
+               Address:{{loanID.transactionstring.address}}
+               <br>
+               <br>
+               Propertyvalue:{{loanID.transactionstring.propertyvalue}}
+            <br>
+            <br>
+              Ownership Name:{{loanID.transactionstring.firstname}}
+             <br>
+             property Document:{{loanID.transactionstring.file_upload1}}
+                   <br>
+              <button  id="user-btn2" {{action "approval"}}>Approve</button>
+              <button  id="user-btn2" {{action "reject"}}>Rejected</button>
+             
+             <br>
+             <br>
+             </div>   
+             </div>
+  
+    </div>

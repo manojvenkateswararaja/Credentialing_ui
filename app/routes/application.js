@@ -9,6 +9,8 @@ export default Route.extend({
         //   this.transitionTo('userdetailsdec')
         //  this.transitionTo('loanschedule')
         //  this.transitionTo('loanquotation')
-        this.transitionTo('newrequest')
+        //this.transitionTo('newrequest')
+        this.transitionTo('legalverification')
+       // this.transitionTo('legalverification2')
     }
 });

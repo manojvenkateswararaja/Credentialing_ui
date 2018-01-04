@@ -29,6 +29,8 @@ Router.map(function() {
   this.route('page4');
   this.route('creditscore');
   this.route('FillCreditScore');
+  this.route('legalverification');
+  this.route('legalverification2');
 });
 
 export default Router;
