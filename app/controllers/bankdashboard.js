@@ -4,6 +4,7 @@ export default Controller.extend({
   isShowingModel:false,
   showhome:true,
   shoUserInfo:false,
+  showDashboard:true,
     
   // accept:function(item){
   //   var mycontroller=this;

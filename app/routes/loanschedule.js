@@ -6,10 +6,10 @@ export default Route.extend({
         console.log(reqid)
         this.controllerFor('loanschedule').set('reqid',reqid) 
         console.log("this is request requestid",reqid) 
-        for(var i=0;i<reqid.length;i++){
-        var  loanReqId=reqid[i].reqid
-        console.log("loan id>>>>",loanReqId)
-        }
+        // for(var i=0;i<reqid.length;i++){
+        // var  loanReqId=reqid[i].reqid
+        // console.log("loan id>>>>",loanReqId)
+        //}
         
     }
 });

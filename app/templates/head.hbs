@@ -50,6 +50,21 @@
   </div>
 </nav>
 {{/if}}
+{{#if showUserLoanQuote}}
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    {{notification-container position="top-right"}}
+    <div class="navbar-header">
+     <a class="navbar-brand" href="#">Mortgage Loan</a>
+    </div>
+    <ul class="nav navbar-nav" style="margin-left: 795px;">
+      <li ><a href="#">sign out</a></li>
+      {{!-- <li><a href="#"></a></li> --}}
+    </ul>
+    </div>
+    </nav>
+
+{{/if}}
 {{#if showRequest}}
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
@@ -74,7 +89,47 @@
   </div>
 </nav>
 {{/if}}
- 
+ {{#if showDashboard}}
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    {{notification-container position="top-right"}}
+    <div class="navbar-header">
+     <a class="navbar-brand" href="#">Mortgage Loan</a>
+    </div>
+    <ul class="nav navbar-nav" style="margin-left: 795px;">
+      <li ><a href="#">sign out</a></li>
+      {{!-- <li><a href="#"></a></li> --}}
+    </ul>
+    </div>
+    </nav>
+    {{/if}}
+    {{#if showUserDetails}}
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    {{notification-container position="top-right"}}
+    <div class="navbar-header">
+     <a class="navbar-brand" href="#">Mortgage Loan</a>
+    </div>-641px
+    <ul class="nav navbar-nav" style="margin-left: 795px;">
+      <li ><a href="#">sign out</a></li>
+      {{!-- <li><a href="#"></a></li> --}}
+    </ul>
+    </div>
+    </nav>
+    {{/if}}
+      {{#if showUserSchedule}}
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    {{notification-container position="top-right"}}
+    <div class="navbar-header">
+     <a class="navbar-brand" href="#">Mortgage Loan</a>
+    </div>
+    <ul class="nav navbar-nav" style="margin-left: 795px;">
+      <li ><a href="#">sign out</a></li>
+    </ul>
+    </div>
+    </nav>
+    {{/if}}
  {{!-- {{#if showLogin}}
   <div class="w3-top-right">
             <div class="w3-bar w3-red w3-card w3-left-align w3-large">

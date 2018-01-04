@@ -20,15 +20,23 @@
   margin-left: 0px;
   margin-bottom:0px;
 }
-#data2{
-  font-family: "Montserrat", sans-serif;
-  background: tomato;
-  margin-bottom: 1000px;
-  margin-left: 730px;
-  margin-top: -1490px !important;
-  width: 30%;
-
+#data3{
+    font-family: "Montserrat", sans-serif;
+    background: tomato;
+    margin-bottom: 1000px;
+    margin-left: 595px;
+    margin-top: -1548px !important;
+    width: 30%;
 }
+#data2{
+    font-family: "Montserrat", sans-serif;
+    background: tomato;
+    margin-bottom: 1000px;
+    margin-left: 595px;
+    margin-top: -1384px !important;
+    width: 30%;
+}
+
 #user-btn2{
   margin-left: -11px;
   margin-right: 68px;
@@ -39,14 +47,23 @@
   margin-top: 120px !important;
   background: #69f;
 }
+.table3-block{
+    background: lightgrey;
+    margin-bottom: 1000px;
+    margin-left: 595px;
+    margin-top: -965px !important;
+    text-align: left;
+    width: 30%;
+    font-size: 1.5;
+}
 .table2-block{
-  background: lightgrey;
-  margin-bottom: 1000px;
-  margin-left: 730px;
-  margin-top: -970px !important;
-  text-align: left;
-  width: 30%;
-  font-size:1.5;
+    background: lightgrey;
+    margin-bottom: 1000px;
+    margin-left: 595px;
+    margin-top: -965px !important;
+    text-align: left;
+    width: 30%;
+    font-size: 1.5;
 }
 #data{
   font-family: "Montserrat", sans-serif;
@@ -253,6 +270,7 @@
   //   width: 119%;
   text-align:left;
   padding-left: 65px;
+  background-color: lightgrey;
     
 }
 .component{

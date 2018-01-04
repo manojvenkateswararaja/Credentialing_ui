@@ -1,5 +1,5 @@
 {{partial 'head'}}
-{{#if showUserDetails}}
+{{#if showDashboard}}
 <script>
    $(document).ready(function() {
        // Show or hide the sticky footer button
@@ -66,12 +66,12 @@
     <td style="color:gray;">{{loanID.transactionstring.income}}</td>
   </tr>
 </table>
- {{!-- <button  id="user-btn" {{action "details"}}>Request More Details</button> --}}
+ <button  id="user-btn" {{action "details"}}>Request More Details</button>
 
   </div>
     <div class="division">
-    <h1 id="data2">Property information</h1>   
-    <div class="table2-block">
+    <h1 id="data3">Property information</h1>   
+    <div class="table3-block">
  <table> 
     <tr>
     <td>mortgaugeType</td>
@@ -98,30 +98,24 @@
     <td style="color:gray;">{{loanID.transactionstring.paymentPercentage}}</td>
   </tr>
   </table>
-  
-  <button  id="user-btn2" {{action "userdetails" loanID.requestid}}>Get Credit Score</button>
-   {{#if showCredit}}
-   Creditscore For RequestID:<i style="color:#69f;">{{loanID.requestid}}</i><br>
-   Credit Score:<i style="color:#69f;">{{creditscore}}</i>
-   {{/if}}
-  {{!-- <button  id="user-btn" {{action "Approve"}}>Approve</button>
+  <button  id="user-btn" {{action "Approve"}}>Approve</button>
   {{!-- start --}}
-            {{!-- {{#if isShowSCheduleLoan}}
+            {{#if isShowSCheduleLoan}}
              {{#modal-dialog onClose="Approve"
                   targetAttachment="center"
                   translucentOverlay=true}}
                 succefully Approved Loan!!
     <button class="btn" {{action "Schedule" }}>Schedule</button>{{isShowSCheduleLoan}}
     {{/modal-dialog}}
-    {{/if}} --}}
-   {{!-- <button  id="user-btn" {{action "Rejected"}}>Rejected</button>
+    {{/if}} 
+   <button  id="user-btn" {{action "Rejected"}}>Rejected</button>
              {{#if isShowReject}}
              {{#modal-dialog onClose="Rejected"
                   targetAttachment="center"
                   translucentOverlay=true}}
                  Loan Rejected!!
     {{/modal-dialog}}
-    {{/if}} --}}
+    {{/if}}
    </div>
    </div>
    </div>

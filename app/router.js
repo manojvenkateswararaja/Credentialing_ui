@@ -21,6 +21,9 @@ Router.map(function() {
   this.route('preclosure');
   this.route('ember-paper-stepper');
   this.route('propertydetail');
+  this.route('userdetailsdec');
+  this.route('loanquotation');
+  this.route('fundnegotiation');
 });
 
 export default Router;

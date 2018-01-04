@@ -1,33 +1,26 @@
+
 {{partial 'head'}}
-{{#if showUserSchedule}}
+{{#if showUserLoanQuote}}
 <div class="container">
    <div class="form">
         <form >
-               <h3><b><i style="margin-left: -638px;">Loan Schedule </i></b></h3>
+               <h3><b><i style="margin-left: -638px;">Loan Quotation</i></b></h3>
                <br>
-        Request ID:{{validated-input  type="text" model=this  valuePath='requestid' placeholder="Request Id" required=""}}
+               Request ID:<input  type="text" model=this  valuePath='requestid' placeholder="Request Id" required="">
                  <br>
                <br>
                  <label>Loan Amount in Rs</label>
                   {{validated-input  type="text" model=this  valuePath='loanamount' placeholder="amount" required=""}}
                  <br>
-            
                    <label>Loan Terms</label>
-             {{validated-input  type="number" model=this  valuePath='loanterms' placeholder="loan terms" required=""}} 
-                {{!-- {{input type="text" value=salary placeholder="salary"}} --}}
-                
+                {{validated-input  type="number" model=this  valuePath='loanterms' placeholder="loan terms" required=""}} 
               <br>
                <label>Annual Interest Rate </label>
             {{select-component listitem=InterestRate selecteditemlist=amountinterestrate}}
                          {{!-- {{validated-input  type="number" model=this  valuePath='amountinterestrate' placeholder="Interest rate" required=""}} --}}
                          {{!-- {{input type="text"   value=CompanyName placeholder="company name"}} --}}
               <br>
-                {{!-- "requestid":requestid,
-       "loanamount": loanamount,
-       "loanterms": loanterms,
-       "amountinterestrate":amountinterestrate,
-       "paymentperyear": paymentperyear,
-       "installmentpermonth": installmentpermonth, --}}
+             
                  <label>Payment Per Year</label>
                
           {{validated-input  type="number" model=this  valuePath='paymentperyear' placeholder="payment per year" required=""}}
@@ -40,17 +33,15 @@
                  {{!--{{input  type="text" class="field text currency nospin" value=Rupees size="10"}} --}}
             <br>
            <button class="btn" {{action "loanschedule"}}>Schedule</button>
-            {{#if isShchedule}}
+            {{!-- {{#if isShchedule}}
          {{#modal-dialog onClose="loanschedule"
                   targetAttachment="center"
                   translucentOverlay=true}}
          <label>loan schedule succesfully</label>
     <button class="btn" {{action "proceed" message}}>Proceed</button>
           {{/modal-dialog}}
-          {{/if}}
-           {{isShchedule}}
+          {{/if}} --}}
         </form>
-
 </div>
 </div>
 {{/if}}

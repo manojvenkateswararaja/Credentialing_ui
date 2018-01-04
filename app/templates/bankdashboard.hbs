@@ -1,5 +1,6 @@
 
-
+{{partial 'head'}}
+{{#if showDashboard }}
 <script>
    $(document).ready(function() {
        // Show or hide the sticky footer button
@@ -23,15 +24,13 @@
    <div id="cont-lock" style="text-align:left ;color:white ">
       <h1><b>Bank Dashboard</b></h1>
    </div>
-<div class="dashbord-container">
+<div class="container" style="background-color:#808080">
    <br/>
-   <p style="text-align:center;color:#808080 "><b>Total Request</b></p>
+   <p style="text-align:center;color:black"><b>Total Request</b></p>
       <p class="head-request"><b>ALL Request</b></p>
-   <div class="dash-container" >
-      <div>
-         {{!-- <button  style="text-align:center;margin:67px 0px;color:black" {{action 'toggle'}}>GetRequests</button> --}}
-         </div>
-        <div class="AllDetails">
+   <div class="dash-container" style="background-color:#2d8cff">
+     
+    
          {{#each id as |item|}}
          <ul>
              <div style="background:lightgrey">
@@ -43,7 +42,8 @@
             </ul>
             {{/each}}
          
-   </div>
+   
    </div>
 </div>
 <a href="#" class="go-top">Scroll to Top</a>
+{{/if}}

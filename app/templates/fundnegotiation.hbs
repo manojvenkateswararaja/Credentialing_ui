@@ -1,0 +1,34 @@
+
+{{partial 'head'}}
+{{#if showUserLoanQuote}}
+<div class="container">
+   <div class="form">
+        <form >
+               <h3><b><i style="margin-left: -638px;">Negotiable Quotation</i></b></h3>
+               <br>
+               Request ID:
+                 <br>
+               <br>
+                 <label>Loan Amount in Rs</label>
+                 
+                 <br>
+                   <label>Loan Terms</label>
+                
+              <br>
+               <label>Annual Interest Rate </label>
+           
+              <br>
+             
+                 <label>Payment Per Year</label>
+               
+                        <br>
+               <label>Installment per month</label> 
+                <span class="symbol">$</span>
+                
+                  <br>
+           <button class="btn" {{action "loanschedule"}}>Agree</button>
+       
+        </form>
+</div>
+</div>
+{{/if}}
