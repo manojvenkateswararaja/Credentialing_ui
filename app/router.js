@@ -25,6 +25,7 @@ Router.map(function() {
   this.route('loanquotation');
   this.route('fundnegotiation');
   this.route('creditscore');
+  this.route('FillCreditScore');
 });
 
 export default Router;

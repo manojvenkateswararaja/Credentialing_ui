@@ -1,0 +1,90 @@
+{{partial 'head'}}
+{{#if showCreditscore}}
+<div class="container">
+   <div id="usercont-lock">
+      <h2><i>Credit Score</i></h2>
+</div>
+<div class="user-container">
+   <br/>
+   <p style="text-align:center;color:#808080 "><b>Total Request</b></p>
+      <i style="margin-left:70px">Request Id:</i><i id="req">{{loanID.requestid}}</i>
+      <br>
+      <br>
+      <br>
+   <div class="dash-container" >
+            <style>
+             table, th, {
+            border-width: thin;
+             }
+           </style>
+            <h1 id="data">Personal information</h1>   
+           <div class="table-block">
+ <table>
+    <tr>
+    <td>firstname:</td>
+    <td style="color:gray;">{{loanID.transactionstring.firstname}}</td>
+  </tr>
+    <tr>
+    <td>lastname:</td>
+    <td style="color:gray;">{{loanID.transactionstring.lastname}}</td>
+  </tr>
+    <tr>
+    <td>contact number:</td>
+    <td style="color:gray;">{{loanID.transactionstring.number}}</td>
+  </tr>
+   <tr>
+    <td>country:</td>
+    <td style="color:gray;">{{loanID.transactionstring.country}}</td>
+  </tr>
+   <tr>
+    <td>occupation:</td>
+    <td style="color:gray;">{{loanID.transactionstring.occupation}}</td>
+  </tr>
+   <tr>
+    <td>income:</td>
+    <td style="color:gray;">{{loanID.transactionstring.income}}</td>
+  </tr>
+</table>
+  </div>
+    <div class="division">
+    <h1 id="data6">Property information</h1>   
+    <div class="table2-block">
+ <table> 
+    <tr>
+    <td>mortgaugeType</td>
+    <td style="color:gray;">{{loanID.transactionstring.mortgaugeType}}</td>
+   </tr>
+    <tr>
+    <td>Need Amount:</td>
+    <td style="color:gray;">{{loanID.transactionstring.Amount}}</td>
+  </tr>
+  <tr>
+    <td>location</td>
+    <td style="color:gray;">{{loanID.transactionstring.location}}</td>
+  </tr>
+   <tr>
+    <td>price:</td>
+    <td style="color:gray;">{{loanID.transactionstring.price}}</td>
+  </tr>
+   <tr>
+    <td>country:</td>
+    <td style="color:gray;">{{loanID.transactionstring.country}}</td>
+  </tr>
+   <tr>
+    <td>paymentPercentage:</td>
+    <td style="color:gray;">{{loanID.transactionstring.paymentPercentage}}</td>
+  </tr>
+  </table>
+  
+   <button  id="userbtn" {{action "creditscore"}}>CreditScore</button>
+   {{!-- {{#if showCredit}}
+   Creditscore For RequestID:<i style="color:#69f;">{{loanID.requestid}}</i><br>
+   Credit Score:<i style="color:#69f;">{{creditscore}}</i>
+   {{/if}}  --}}
+   </div>
+   </div>
+   </div>
+   </div>
+   </div>
+   {{/if}}
+

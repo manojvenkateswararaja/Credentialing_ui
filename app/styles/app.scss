@@ -20,32 +20,40 @@
   margin-left: 0px;
   margin-bottom:0px;
 }
+#data6{
+    font-family: "Montserrat", sans-serif;
+    background: tomato;
+    margin-bottom: 1002px;
+    margin-left: 595px;
+    margin-top: -1380px !important;
+    width: 30%; 
+}
 #data3{
     font-family: "Montserrat", sans-serif;
     background: tomato;
-    margin-bottom: 1000px;
+    margin-bottom: 1002px;
     margin-left: 595px;
-    margin-top: -1548px !important;
+    margin-top: -1473px !important;
     width: 30%;
 }
 #data2{
     font-family: "Montserrat", sans-serif;
     background: tomato;
-    margin-bottom: 1000px;
+    margin-bottom: 1006px;
     margin-left: 595px;
-    margin-top: -1384px !important;
+    margin-top: -1310px !important;
     width: 30%;
 }
 
 #user-btn2{
-  margin-left: -11px;
-  margin-right: 68px;
-  border: 0px solid white;
-  padding: 4px;
-  width: 90%;
-  height: 80%;
-  margin-top: 120px !important;
-  background: #69f;
+    margin-left: 160px;
+    margin-right: 68px;
+    border: 0px solid white;
+    padding: 4px;
+    width: 25%;
+    height: 80%;
+    margin-top: 73px !important;
+    background: #69f;
 }
 .table3-block{
     background: lightgrey;
@@ -135,6 +143,36 @@
     font-size: 20px;
     font-weight: 200;
   }
+  .credit-container{
+      height:100%;
+      background-color:lightgrey;
+  }
+  .input-container{
+    margin-left:330px;
+  }
+  #btn{
+      margin-left:184px;
+  }
+  #userbtn{
+    margin-left: -9px;
+    margin-right: 68px;
+    border: 0px solid white;
+    padding: 4px;
+    width: 90%;
+    height: 80%;
+    margin-top: 122px !important;
+    background: #69f;
+
+  }
+  #btn2{
+    margin-left:30px;
+}
+#btn3{
+    margin-left:100px;
+}
+#btn4{
+    margin-left:119px;
+}
   #myNavbar{
     color: #FFF8DC
   }
