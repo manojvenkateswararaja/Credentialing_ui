@@ -1,6 +1,7 @@
 {
   "name": "web-app",
   "dependencies": {
-    "dinosheets": "0.1.1"
+    "dinosheets": "0.1.1",
+    "plupload": "v2.1.8"
   }
 }

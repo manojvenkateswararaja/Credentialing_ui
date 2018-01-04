@@ -1,5 +1,5 @@
 
-{{partial 'head'}}
+{{!-- {{partial 'head'}}
 {{#if showDashboard }}
 <script>
    $(document).ready(function() {
@@ -20,7 +20,7 @@
        });
       
    });
-</script>
+</script> --}}
    <div id="cont-lock" style="text-align:left ;color:white ">
       <h1><b>Bank Dashboard</b></h1>
    </div>
@@ -36,6 +36,7 @@
              <div style="background:lightgrey">
             Requestid<a href="" {{action 'userdetails' item }}><b style="color:#2d8cff ">{{item.requestid}}</b></a>
             <div class="vl">{{ item.transactionstring.firstname}}</div> 
+          
             <div class="vl2 ">{{ item.transactionstring.propertyType}}</div>
             <div class="vl3 ">{{ item.transactionstring.CompanyName}}</div>
             </div>
@@ -46,4 +47,4 @@
    </div>
 </div>
 <a href="#" class="go-top">Scroll to Top</a>
-{{/if}}
+{{!-- {{/if}} --}}

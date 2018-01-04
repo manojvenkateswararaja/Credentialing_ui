@@ -6,9 +6,18 @@ export default Controller.extend({
   //   apply:function(){
   //    var message=this.get('message');
   //    this.set('message',message)   
-  OKbutton:function(){
-    this.set('isShow_fileupload',false)
-  }
+  Okay:function(){
+    this.set('showDialog',false)
+  },
+  openNav:function(){
+    document.getElementById("mySidenav").style.width = "250px";
+    document.getElementById("main").style.marginLeft = "250px";
+},
+
+closeNav: function() {
+    document.getElementById("mySidenav").style.width = "0";
+    document.getElementById("main").style.marginLeft= "0";
+},
     }
   
 })
