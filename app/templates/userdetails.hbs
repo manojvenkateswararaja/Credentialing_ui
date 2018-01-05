@@ -21,13 +21,20 @@
    });
 </script>
 <div class="container-fluid" style="background-color:lightgrey">
-   {{!-- <div id="usercont-lock">
-      <h2><i>User Details </i></h2>
-</div> --}}
 <div class="user-container">
    <br/>
    <p style="text-align:center;color:#808080 "><b>User Requestid</b></p>
-      <i style="margin-left:70px">Request Id:</i><i id="req">{{loanID.requestid}}</i>
+   <br>
+   <br>
+   <div>
+      <i style="margin-left:5%">Request Id:</i><i id="req">{{loanID.Key}}</i>
+      <div class="form-cont">
+      <div class="vl">{{item.Record.transactiondetails.companyname}}</div> 
+            <div class="vl5">{{loanID.Record.transactiondetails.firstname}}</div>
+           <div class="vl6">{{loanID.Record.transactiondetails.location}}</div> 
+           <div class="vl7">{{loanID.Record.transactiondetails.propertyvalue}}</div>
+           </div>
+           </div>
       <br>
       <br>
       <br>
@@ -42,27 +49,27 @@
  <table>
     <tr>
     <td>firstname:</td>
-    <td style="color:gray;">{{loanID.transactionstring.firstname}}</td>
+    <td style="color:gray;">{{loanID.Record.transactiondetails.firstname}}</td>
   </tr>
     <tr>
     <td>lastname:</td>
-    <td style="color:gray;">{{loanID.transactionstring.lastname}}</td>
+    <td style="color:gray;">{{loanID.Record.transactiondetails.lastname}}</td>
   </tr>
     <tr>
     <td>contact number:</td>
-    <td style="color:gray;">{{loanID.transactionstring.number}}</td>
+    <td style="color:gray;">{{loanID.Record.transactiondetails.number}}</td>
   </tr>
    <tr>
     <td>country:</td>
-    <td style="color:gray;">{{loanID.transactionstring.country}}</td>
+    <td style="color:gray;">{{loanID.Record.transactiondetails.country}}</td>
   </tr>
    <tr>
     <td>occupation:</td>
-    <td style="color:gray;">{{loanID.transactionstring.occupation}}</td>
+    <td style="color:gray;">{{loanID.Record.transactiondetails.occupation}}</td>
   </tr>
    <tr>
     <td>income:</td>
-    <td style="color:gray;">{{loanID.transactionstring.income}}</td>
+    <td style="color:gray;">{{loanID.Record.transactiondetails.income}}</td>
   </tr>
 </table>
  {{!-- <button  id="user-btn" {{action "details"}}>Request More Details</button> --}}
@@ -74,35 +81,34 @@
  <table> 
     <tr>
     <td>mortgaugeType</td>
-    <td style="color:gray;">{{loanID.transactionstring.mortgaugeType}}</td>
+    <td style="color:gray;">{{loanID.Record.transactiondetails.mortgaugeType}}</td>
    </tr>
     <tr>
     <td>Need Amount:</td>
-    <td style="color:gray;">{{loanID.transactionstring.Amount}}</td>
+    <td style="color:gray;">{{loanID.Record.transactiondetails.Amount}}</td>
   </tr>
   <tr>
     <td>location</td>
-    <td style="color:gray;">{{loanID.transactionstring.location}}</td>
+    <td style="color:gray;">{{loanID.Record.transactiondetails.location}}</td>
   </tr>
    <tr>
     <td>price:</td>
-    <td style="color:gray;">{{loanID.transactionstring.price}}</td>
+    <td style="color:gray;">{{loanID.Record.transactiondetails.price}}</td>
   </tr>
    <tr>
     <td>country:</td>
-    <td style="color:gray;">{{loanID.transactionstring.country}}</td>
+    <td style="color:gray;">{{loanID.Record.transactiondetails.country}}</td>
   </tr>
    <tr>
     <td>paymentPercentage:</td>
-    <td style="color:gray;">{{loanID.transactionstring.paymentPercentage}}</td>
+    <td style="color:gray;">{{loanID.Record.transactiondetails.paymentPercentage}}</td>
   </tr>
   </table>
-  
-  <button  id="user-btn2" {{action "userdetails" loanID.requestid}}>Get Credit Score</button>
-   {{#if showCredit}}
+  <button  id="user-btn3" {{action "credit" loanID.Key}}>Get Credit Score</button>
+   {{!-- {{#if showCredit}}
    Creditscore For RequestID:<i style="color:#69f;">{{loanID.requestid}}</i><br>
    Credit Score:<i style="color:#69f;">{{creditscore}}</i>
-   {{/if}}
+   {{/if}} --}}
   {{!-- <button  id="user-btn" {{action "Approve"}}>Approve</button>
   {{!-- start --}}
             {{!-- {{#if isShowSCheduleLoan}}
