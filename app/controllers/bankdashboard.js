@@ -21,8 +21,8 @@ export default Controller.extend({
   // }
 
   actions: {
-    userdetails: function(id) {
-      this.set('loanID', id);
+    userdetails: function(showrecords) {
+      this.set('record', showrecords);
       this.transitionToRoute('userdetails');
     }
   }  

@@ -20,14 +20,19 @@
       
    });
 </script>
+  
 <div class="container-fluid" style="background-color:lightgrey">
-   {{!-- <div id="usercont-lock">
-      <h2><i>User Details </i></h2>
-</div> --}}
 <div class="user-container">
    <br/>
+
+
+
+   
    <p style="text-align:center;color:#808080 "><b>UserRequestid</b></p>
-      <i style="margin-left:70px">Request Id:</i><i id="req">{{key}}</i>
+
+
+      <i style="margin-left:70px;">Request Id:</i><i id="req" style="color:black">{{record.Key}}</i>
+        
       <br>
       <br>
       <br>
@@ -39,70 +44,76 @@
            </style>
             <h1 id="data">Personal information</h1>   
            <div class="table-block">
+ {{#each record.Record.transactionlist   as |item1|}}
  <table>
+    
     <tr>
     <td>firstname:</td>
-    <td style="color:gray;">{{showrecords.firstname}}</td>
+    <td style="color:black;">{{item1.transactiondetails.firstname}}</td>
   </tr>
     <tr>
     <td>lastname:</td>
-    <td style="color:gray;">{{showrecords.lastname}}</td>
+    <td style="color:black;">{{item1.transactiondetails.lastname}}</td>
   </tr>
     <tr>
     <td>contact number:</td>
-    <td style="color:gray;">{{showrecords.number}}</td>
+    <td style="color:black;">{{item1.transactiondetails.number}}</td>
   </tr>
    <tr>
     <td>country:</td>
-    <td style="color:gray;">{{showrecords.country}}</td>
+    <td style="color:black;">{{item1.transactiondetails.country}}</td>
   </tr>
    <tr>
     <td>occupation:</td>
-    <td style="color:gray;">{{showrecords.occupation}}</td>
+    <td style="color:black;">{{item1.transactiondetails.occupation}}</td>
   </tr>
    <tr>
     <td>income:</td>
-    <td style="color:gray;">{{showrecords.income}}</td>
+    <td style="color:black;">{{item1.transactiondetails.income}}</td>
   </tr>
 </table>
+  {{/each}}
  {{!-- <button  id="user-btn" {{action "details"}}>Request More Details</button> --}}
 
   </div>
     <div class="division">
     <h1 id="data2">Property information</h1>   
     <div class="table2-block">
+       {{#each record.Record.transactionlist   as |item1|}}
  <table> 
     <tr>
     <td>mortgaugeType</td>
-    <td style="color:gray;">{{loanID.transactionstring.mortgaugeType}}</td>
+    <td style="color:black;">{{item1.transactiondetails.mortgaugeType}}</td>
    </tr>
     <tr>
     <td>Need Amount:</td>
-    <td style="color:gray;">{{loanID.transactionstring.Amount}}</td>
+    <td style="color:black;">{{item1.transactiondetails.Amount}}</td>
   </tr>
   <tr>
     <td>location</td>
-    <td style="color:gray;">{{loanID.transactionstring.location}}</td>
+    <td style="color:black;">{{item1.transactiondetails.location}}</td>
   </tr>
    <tr>
     <td>price:</td>
-    <td style="color:gray;">{{loanID.transactionstring.price}}</td>
+    <td style="color:black;">{{item1.transactiondetails.price}}</td>
   </tr>
    <tr>
     <td>country:</td>
-    <td style="color:gray;">{{loanID.transactionstring.country}}</td>
+    <td style="color:black;">{{item1.transactiondetails.country}}</td>
   </tr>
    <tr>
     <td>paymentPercentage:</td>
-    <td style="color:gray;">{{loanID.transactionstring.paymentPercentage}}</td>
+    <td style="color:black;">{{item1.transactiondetails.paymentPercentage}}</td>
   </tr>
   </table>
-  
-  <button  id="user-btn2" {{action "userdetails" loanID.requestid}}>Get Credit Score</button>
-   {{#if showCredit}}
+  {{/each}}
+  <button  id="user-btn3" {{action "credit" loanID.Key}}>Get Credit Score</button>
+
+
+   {{!-- {{#if showCredit}}
    Creditscore For RequestID:<i style="color:#69f;">{{loanID.requestid}}</i><br>
    Credit Score:<i style="color:#69f;">{{creditscore}}</i>
-   {{/if}}
+   {{/if}} --}}
   {{!-- <button  id="user-btn" {{action "Approve"}}>Approve</button>
   {{!-- start --}}
             {{!-- {{#if isShowSCheduleLoan}}
@@ -126,5 +137,6 @@
    </div>
    </div>
    </div>
+
    {{/if}}
 <a href="#" class="go-top">Scroll to Top</a>

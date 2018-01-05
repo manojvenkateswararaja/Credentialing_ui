@@ -66,10 +66,10 @@ export default Controller.extend(Validations,{
             console.log(usertype)
                sessionStorage.setItem('usertype', usertype);
             // mycontroller.set("usertype",usertype);
-          if (message == "Login Successful"){
-                console.log(">>>>>>>>>>>>>>>>>>>>in")
-                     mycontroller.set('isShowingModal',true);            
-            } 
+        //   if (message == "Login Successful"){
+        //         console.log(">>>>>>>>>>>>>>>>>>>>in")
+        //              mycontroller.set('isShowingModal',true);            
+        //     } 
             }    
             });
             }
@@ -105,8 +105,16 @@ export default Controller.extend(Validations,{
         // mycontroller.set('showLogin',false)
         this.set('showDialog',true)
          this.transitionToRoute('bankdashboard');
-        
+      }else if(usertype=="creditscoregenerator"){
+          this.set('showDialog',true)
+          this.transitionToRoute('creditscore');
+
+      }else if(usertype=="legalactor"){
+        this.set('showDialog',true)
+        this.transitionToRoute('legalverification');
       }
+        
+      
         
     },
 },
