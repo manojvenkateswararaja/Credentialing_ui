@@ -11,8 +11,6 @@ export default Route.extend({
         contentType: 'application/json',
         success: function(response){
         var id=response.readAllRequest; 
-        // var key=id.Record.transactiondetails
-        // console.log("Allrequest",key)
         myroute.controllerFor('bankdashboard').set('id',id)
         console.log('DEBUG: GET Enquiries OK');
         }

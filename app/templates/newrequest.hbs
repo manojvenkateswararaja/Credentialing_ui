@@ -1,4 +1,7 @@
 {{! without contextual components }}
+{{partial 'head'}}
+{{#if showRequest}}
+<div class="bar">
 <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" {{action "closeNav"}}>&times;</a>
   <a >Home</a>
@@ -6,19 +9,22 @@
   <a {{action "goToloan"}}>Loan details</a>
   <a {{action "goToproperty"}}>Property details</a>
   <a {{action "goToemployment"}}>Employment details</a>
-
 </div>
 <div id="main">
-      <span style="font-size:30px;cursor:pointer;" {{action "openNav"}}>&#9776; open</span>
+<span style="font-size:30px;cursor:pointer;" {{action "openNav"}}>&#9776; open</span>
 </div>
-
+</div>
+{{#bs-progress as |p|}}
+  {{p.bar value=value minValue=minValue maxValue=maxValue showLabel=showLabel roundDigits=roundDigits type=type striped=striped animate=animate}}
+{{/bs-progress}}
+<div class="container-fluid">
   {{#paper-grid-list
     cols="1 md-2 gt-md-6"
     rowHeight="gt-md-1:1 2:2"
     gutter="12px gt-sm-8px" as |grid|}}
 
     
-<h2 style="background-color:darkgrey;margin-top: auto;padding-top: 0px;margin-left:0">Tell us about your Personal details</h2>
+<h2 style=";margin-top: auto;padding-top: 0px;margin-left:0"><i>Tell us about your Personal details</i></h2>
 <p style="background-color:cornsilk;margin-top:-20px">
   {{paper-input label="FirstName" value=fname onChange=(action (mut fname)) icon="person"}}
   {{paper-input label="LastName" value=lname onChange=(action (mut lname)) icon="person"}}
@@ -48,16 +54,8 @@ Gender
     <br>
     
 
-     {{#paper-button raised=true warn=true onClick=(action "targetButton")}}Submit{{/paper-button}}
-
-
-
-  
-    
+     {{#paper-button raised=true warn=true onClick=(action "targetButton")}}Submit{{/paper-button}} 
 </p>
-
-  
- 
  {{/paper-grid-list}}
-   
-
+   </div>
+{{/if}}

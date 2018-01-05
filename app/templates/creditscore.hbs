@@ -75,8 +75,11 @@
     <td style="color:gray;">{{loanID.transactionstring.paymentPercentage}}</td>
   </tr>
   </table>
-  
-   <button  id="userbtn" {{action "creditscore"}}>CreditScore</button>
+  <br>
+  <br>
+  <br>
+   <button type="button" id="myButton" class="btn btn-primary" {{action "creditscore"}}>CreditScore</button>
+   {{!-- <button  id="userbtn" >CreditScore</button> --}}
    {{!-- {{#if showCredit}}
    Creditscore For RequestID:<i style="color:#69f;">{{loanID.requestid}}</i><br>
    Credit Score:<i style="color:#69f;">{{creditscore}}</i>

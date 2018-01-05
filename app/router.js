@@ -31,6 +31,7 @@ Router.map(function() {
   this.route('FillCreditScore');
   this.route('legalverification');
   this.route('legalverification2');
+  this.route('userloanschedule');
 });
 
 export default Router;

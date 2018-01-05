@@ -4,7 +4,10 @@ export default Controller.extend({
 showLogin:true,
 isShowHome:false,
    actions:{
-      gotologin:function(){
+    gotoPreclose:function(){
+        this.transitionToRoute('preclosure');    
+    },
+    gotologin:function(){
         // 
            this.transitionToRoute('login');       
        },

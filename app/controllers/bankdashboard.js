@@ -22,7 +22,9 @@ export default Controller.extend({
 
   actions: {
     userdetails: function(id) {
+      var loanID=this.get('id')
       this.set('loanID', id);
+      console.log(">>>>",loanID)
       this.transitionToRoute('userdetails');
     }
   }  
