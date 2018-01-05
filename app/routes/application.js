@@ -11,10 +11,13 @@ export default Route.extend({
         // this.transitionTo('loanquotation')
         // this.transitionTo('newrequest')
         // this.transitionTo('legalverification')
-       // this.transitionTo('legalverification2')
-         this.transitionTo('home')
-    // this.transitionTo('fundnegotiation')
-    // this.transitionTo('userloanschedule')
-    // this.transitionTo('creditscore')
+        // this.transitionTo('legalverification2')
+        // this.transitionTo('home')
+        // this.transitionTo('fundnegotiation')
+        // this.transitionTo('userloanschedule')
+        // this.transitionTo('creditscore')
+        // this.transitionTo('preclosure')
+        // this.transitionTo('FillCreditScore')
+           this.transitionTo('signup')
     }
 });

@@ -36,6 +36,7 @@ var Validations = buildValidations({
     ],
 });
 export default Controller.extend({
+     showLogin:true,
     genderlist:["male","female"],
     actions:{
         signup:function(){

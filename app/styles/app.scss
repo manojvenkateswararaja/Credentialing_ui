@@ -170,16 +170,28 @@
 //     height:100%;
 //     margin-top:10px;
 // }
+.form-control{
+  display: block;
+    width: 25%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857;
+    color: #555555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-top: -35px;
+    margin-left: 355px;
+}
 .table-block{
- 
   margin-bottom: 1000px;
   margin-left: 20px;
   margin-top: -970px !important;
   text-align: left;
   width: 30%;
   font-size:1.5;
-
-
 }
 #usercont-lock{
     height: 69px;
@@ -335,10 +347,9 @@
     margin: 25px;
 }
   .signupContainer{
-    background-color: lightblue;
-    /* border-radius: 22px; */
+    background-color: lightgrey;
     width:500px;
-    background:url('');
+    height:700px;
     padding-right: 116px;
     margin-left: 435px;
     text-align: center;

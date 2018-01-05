@@ -1,23 +1,27 @@
-
-<div class="Container">
+{{partial 'head'}}
+{{#if showPreclosure}}
+<div class="container">
     <div class="form">
          <form>
-        <h3><b><i style="margin-left: -520px;">Pre-Closing</i></b></h3>
-                <br>
+        <h3><b><i style="margin-left: -600px;">Pre-Closing</i></b></h3>
+                  <br>
                   <label>EMI Remaining</label>
-                   <span class="symbol">Rs</span>
-                   {{validated-input  type="text" model=this  valuePath='EMI' placeholder="amount" required=""}}
-              <br>
+              
+                    <input type="number" class="form-control" id="exampleInputEmail1" valuePath='EMI' placeholder="number of emi" required="true">
+                   {{!-- {{validated-input  type="text" model=this  valuePath='EMI' placeholder="amount" required=""}} --}}
+                  <br>
                   <label>
-                Penality for Preclose
+                  Penality for Preclose
                   </label>
                   <span>
-              {{validated-input  type="text" model=this  valuePath='penality' placeholder="penality" required=""}}
+                       <input type="number" class="form-control" id="exampleInputEmail1" valuePath='penality' placeholder="penality">
+                {{!-- {{validated-input  type="text" model=this  valuePath='penality' placeholder="penality" required=""}} --}}
                   </span>
                <br>
                 <label>Installment Per month </label>
                       <span>
-                          {{validated-input  type="number" model=this  valuePath='installment' placeholder="installment per month" required=""}}
+                             <input type="number" class="form-control" id="exampleInputEmail1" valuePath='installment' placeholder="installment per month">
+                          {{!-- <input  type="number" model=this  valuePath='installment' placeholder="installment per month" required=""> --}}
                      </span>
                <br>
                   <label>Document Required for Closing</label>
@@ -28,12 +32,16 @@
                   <label>
                Payment Mode
                   </label>
-                   {{select-component listitem=PaymentMode selecteditemlist=Payment}}
-                 
+                  <div class="drop" style="margin-left:314px; margin-top:-28px">
+                {{select-component listitem=PaymentMode selecteditemlist=Payment}}
+                 </div>
           <br>
-            <button class="btn" {{action "loanschedule"}}>Apply</button>
-             <span id="help-me" class="icon-help"></span>
+             <button type="button" id="myButton" class="btn btn-primary" style="margin-left: 42%;width: 20%;margin-bottom: -70px;" {{action }}>Apply</button>
+           <br>
+           <br>
+           <br>
          </form>
 
 </div>
 </div>
+{{/if}}
