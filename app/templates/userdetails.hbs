@@ -26,8 +26,8 @@
 </div> --}}
 <div class="user-container">
    <br/>
-   <p style="text-align:center;color:#808080 "><b>User Requestid</b></p>
-      <i style="margin-left:70px">Request Id:</i><i id="req">{{loanID.requestid}}</i>
+   <p style="text-align:center;color:#808080 "><b>UserRequestid</b></p>
+      <i style="margin-left:70px">Request Id:</i><i id="req">{{key}}</i>
       <br>
       <br>
       <br>
@@ -42,27 +42,27 @@
  <table>
     <tr>
     <td>firstname:</td>
-    <td style="color:gray;">{{loanID.transactionstring.firstname}}</td>
+    <td style="color:gray;">{{showrecords.firstname}}</td>
   </tr>
     <tr>
     <td>lastname:</td>
-    <td style="color:gray;">{{loanID.transactionstring.lastname}}</td>
+    <td style="color:gray;">{{showrecords.lastname}}</td>
   </tr>
     <tr>
     <td>contact number:</td>
-    <td style="color:gray;">{{loanID.transactionstring.number}}</td>
+    <td style="color:gray;">{{showrecords.number}}</td>
   </tr>
    <tr>
     <td>country:</td>
-    <td style="color:gray;">{{loanID.transactionstring.country}}</td>
+    <td style="color:gray;">{{showrecords.country}}</td>
   </tr>
    <tr>
     <td>occupation:</td>
-    <td style="color:gray;">{{loanID.transactionstring.occupation}}</td>
+    <td style="color:gray;">{{showrecords.occupation}}</td>
   </tr>
    <tr>
     <td>income:</td>
-    <td style="color:gray;">{{loanID.transactionstring.income}}</td>
+    <td style="color:gray;">{{showrecords.income}}</td>
   </tr>
 </table>
  {{!-- <button  id="user-btn" {{action "details"}}>Request More Details</button> --}}

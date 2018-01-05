@@ -1,0 +1,50 @@
+{{#paper-content class="md-whiteframe-z1 grid-list-demo1"}}
+
+
+{{#paper-card as |card|}}
+  {{#card.content}}
+  <div>
+      <h2>LOGIN</h2>
+  </div>
+    <div class="layout layout-sm-row">
+      {{paper-input
+        class="flex-50"
+        label="User name"
+        value=name
+        onChange=(action (mut name))
+        errors=model.validations.attrs.username.messages
+      }}
+    </div>
+    <div class="layout layout-sm-row">
+      {{paper-input
+        label="Password"
+        class="flex-34"
+        type="password"
+        value=password
+        onChange=(action (mut password))
+        errors=model.validations.attrs.password.messages
+      }}
+    
+    </div>
+    <button class="btn"{{action "login"}}>Submit</button>
+    {{#if showDialog}}
+  {{#paper-dialog class="flex-77" onClose=(action "closeDialog" "cancel") origin=dialogOrigin clickOutsideToClose=true}}
+    {{#paper-toolbar}}
+      {{#paper-toolbar-tools}}
+      Your sucessfully logged in!!!
+        {{#paper-button iconButton=true onClick=(action "closeDialog" "cancel")}}{{paper-icon icon="close"}}{{/paper-button}}
+      {{/paper-toolbar-tools}}
+    {{/paper-toolbar}}
+
+   
+    {{#paper-dialog-actions class="layout-row"}}
+      {{#paper-button onClick=(action "closeDialog" "cancel")}}Cancel{{/paper-button}}
+      {{#paper-button onClick=(action "okay" "ok")}}OK{{/paper-button}}
+    {{/paper-dialog-actions}}
+  {{/paper-dialog}}
+{{/if}}
+  {{/card.content}}
+{{/paper-card}}
+    
+  
+    {{/paper-content}}

@@ -28,21 +28,28 @@
    <br/>
    <p style="text-align:center;color:black"><b>Total Request</b></p>
       <p class="head-request"><b>ALL Request</b></p>
-   <div class="dash-container" style="background-color:#2d8cff">
+   <div class="dash-container" style="background-color:bisque">
      
-    
-         {{#each id as |item|}}
+    <div class ="container">
+         {{#each showrecords   as |item|}}
          <ul>
-             <div style="background:lightgrey">
-            Requestid<a href="" {{action 'userdetails' item }}><b style="color:#2d8cff ">{{item.requestid}}</b></a>
-            <div class="vl">{{ item.transactionstring.firstname}}</div> 
+             <div style="background:lightgrey;margin-bottom:25px">
+            Requestid  <a href="" {{action 'userdetails'  item }}><b style="color:black ">{{item.Key}}</b></a>
+                
+             </div>
+                 </ul>
+
+              {{#each item.Record.transactionlist   as |item1|}}
+            <div class="vl">{{ item1.transactiondetails.firstname}}</div> 
           
-            <div class="vl2 ">{{ item.transactionstring.propertyType}}</div>
-            <div class="vl3 ">{{ item.transactionstring.CompanyName}}</div>
-            </div>
-            </ul>
+            <div class="vl2">{{ item1.transactiondetails.propertyType}}</div>
+            <div class="vl3 ">{{ item1.transactiondetails.CompanyName}}</div>
+        
+             
             {{/each}}
-         
+            {{/each}}
+            
+         </div>
    
    </div>
 </div>
