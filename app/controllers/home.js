@@ -4,6 +4,9 @@ export default Controller.extend({
     gotoApply:function(){
              this.transitionToRoute('newrequest');
              //this.transitionToRoute('ember-paper-stepper');
+        },
+        gotoPreclose:function(){
+            this.transitionToRoute('preclosure');    
         }
     }
    

@@ -1,6 +1,7 @@
 import Controller from '@ember/controller';
 
 export default Controller.extend({
+  showRequest:true,
   emailValidation: [{
     message: 'Please provide email in a valid format',
     validate: (inputValue) => {

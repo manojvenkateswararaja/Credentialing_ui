@@ -1,0 +1,50 @@
+{{partial 'head'}}
+{{#if showUserSchedule}}
+<div class="container-fluid">
+   <div class="form">
+        <form >
+               <h3><b><i style="margin-left: -638px;">Loan Schedule </i></b></h3>
+               <br>
+       <label> Request ID:</label>
+                 <br>
+               <br>
+                 <label>Loan Amount in Rs</label>
+                 
+                 <br>
+            
+                   <label>Loan Terms</label>
+            
+                
+              <br>
+               <label>Annual Interest Rate </label>
+            
+              <br>
+                {{!-- "requestid":requestid,
+       "loanamount": loanamount,
+       "loanterms": loanterms,
+       "amountinterestrate":amountinterestrate,
+       "paymentperyear": paymentperyear,
+       "installmentpermonth": installmentpermonth, --}}
+                 <label>Payment Per Year</label>
+               
+          
+                <br>
+               <label>Installment per month</label> 
+                <span class="symbol">$</span>
+            <br>
+        </form>
+        <button type="button" id="myButton" data-loading-text="Loading..." class="btn btn-primary" autocomplete="off">
+  agree & next
+</button>
+
+{{!-- <script>
+  $('#myButton').on('click', function () {
+    var $btn = $(this).button('loading')
+    // business logic...
+    $btn.button('reset')
+  })
+</script> --}}
+
+</div>
+</div>
+{{/if}}

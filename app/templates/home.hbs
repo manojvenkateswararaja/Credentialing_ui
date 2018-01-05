@@ -1,13 +1,17 @@
 {{partial 'head'}}
 {{#if isShowHome}}
+<div class="container-fluid">
+  
 <header class="w3-container  w3-center" style="padding:128px 16px">
+          <button type="button" id="myButton" class="btn btn-primary"  style="margin-left:953px;margin-top: -210px; width:19%"{{action "gotoPreclose"}}>Pre-closure</button>
+
          <h1 class="w3-margin w3-jumbo">START PAGE</h1>
          <p class="w3-xlarge">Mortgage process</p>
-         <button class="w3-button w3-black w3-padding-large w3-large w3-margin-top" {{action "gotoApply"}}>Apply New Request</button>
+         <button type="button" id="myButton"  class="btn btn-primary" {{action "gotoApply"}}>Apply New Request</button>
       </header>
       <!-- First Grid -->
       <div class="w3-row-padding w3-padding-64 w3-container">
-         <div class="w3-content">
+         {{!-- <div class="w3-content">
             <div class="w3-twothird">
                <h1>Loan Process</h1>
                <h5 class="w3-padding-32">As an experienced loan officer I have the knowledge and expertise you need to explore the many financing options available. Ensuring that you make the right choice for you and your family is my ultimate goal, and I am committed to providing my customers with mortgage services that exceed their expectations.</h5>
@@ -16,10 +20,10 @@
             <div class="w3-third w3-center">
                <i class="fa fa-anchor w3-padding-64 w3-text-red"></i>
             </div>
-         </div>
+         </div> --}}
       </div>
       <!-- Second Grid -->
-      <div class="w3-row-padding w3-light-grey w3-padding-64 w3-container">
+      {{!-- <div class="w3-row-padding w3-light-grey w3-padding-64 w3-container">
          <div class="w3-content">
             <div class="w3-third w3-center">
                <i class="fa fa-coffee w3-padding-64 w3-text-red w3-margin-right"></i>
@@ -32,7 +36,8 @@
       </div>
       <div class="w3-container w3-black w3-center w3-opacity w3-padding-64">
          <h1 class="w3-margin w3-xlarge">Quote of the day: live life</h1>
-      </div>
+      </div> --}}
+      
       <!-- Footer -->
       <footer class="w3-container w3-padding-64 w3-center w3-opacity">
          <div class="w3-xlarge w3-padding-32">
@@ -45,6 +50,7 @@
          </div>
          <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">rapid</a></p>
       </footer>
+      </div>
       {{/if}}
 
 

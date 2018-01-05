@@ -18,8 +18,10 @@
    {{validated-input  type="password" model=this  valuePath='password' placeholder="password" required=""}}
   {{!-- <div class="help">Use upper and lowercase lettes as well</div> --}}
   <div >
+    <br>
     
-  <button class="btn" {{action "Submit"}}>Login</button>
+     <button type="button" id="myButton" class="btn btn-primary" {{action "Submit" }}>Login</button>
+  {{!-- <button class="btn" {{action "Submit"}}>Login</button> --}}
   {{#if isShowingModal}}
   {{#modal-dialog onClose="Submit"
                   targetAttachment="center"

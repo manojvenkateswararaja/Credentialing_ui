@@ -20,7 +20,7 @@
       
    });
 </script>
-<div class="container-fluid" style="background-color:#808080">
+<div class="container-fluid" style="background-color:lightgrey">
    {{!-- <div id="usercont-lock"> --}}
       {{!-- <h2><i>User Details </i></h2> --}}
 {{!-- </div> --}}
@@ -66,7 +66,11 @@
     <td style="color:gray;">{{loanID.transactionstring.income}}</td>
   </tr>
 </table>
- <button  id="user-btn" {{action "details"}}>Request More Details</button>
+<br>
+<br>
+<br>
+<br>
+ <button  id="myButton" class="btn btn-primary" {{action "details"}}>Request More Details</button>
 
   </div>
     <div class="division">
@@ -98,17 +102,25 @@
     <td style="color:gray;">{{loanID.transactionstring.paymentPercentage}}</td>
   </tr>
   </table>
-  <button  id="user-btn" {{action "Approve"}}>Approve</button>
+  <br>
+  <br>
+  <br>
+  <br>
+  <button type="button" id="myButton" class="btn btn-primary" style="width:55%"{{action "Approve"}}>Approve</button>
+  {{!-- <button  id="user-btn" {{action "Approve"}}>Approve</button> --}}
   {{!-- start --}}
+   
+
+
             {{#if isShowSCheduleLoan}}
              {{#modal-dialog onClose="Approve"
                   targetAttachment="center"
                   translucentOverlay=true}}
                 succefully Approved Loan!!
-    <button class="btn" {{action "Schedule" }}>Schedule</button>{{isShowSCheduleLoan}}
+    <button class="btn"{{action "Schedule" }}>Schedule</button>{{isShowSCheduleLoan}}
     {{/modal-dialog}}
     {{/if}} 
-   <button  id="user-btn" {{action "Rejected"}}>Rejected</button>
+  <button type="button" id="myButton" class="btn btn-primary"  style="margin-left:245px;margin-top:-65px; width:55%"{{action "Rejected"}}>Reject</button>
              {{#if isShowReject}}
              {{#modal-dialog onClose="Rejected"
                   targetAttachment="center"
