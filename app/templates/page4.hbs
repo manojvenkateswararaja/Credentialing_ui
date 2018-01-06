@@ -1,3 +1,6 @@
+ {{partial 'head'}}
+{{#if showRequest}}
+<div class="container">
 <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" {{action "closeNav"}}>&times;</a>
   <a >Home</a>
@@ -7,18 +10,19 @@
   <a {{action "goToemployment"}}>Employment details</a>
 
 </div>
-<div id="main">
+{{!-- <div id="main">
       <span style="font-size:30px;cursor:pointer" {{action "openNav"}}>&#9776; open</span>
-</div>
-
+</div> --}}
+<div class="container-fluid">
 {{#paper-grid-list
     cols="1 md-2 gt-md-6"
     rowHeight="gt-md-1:1 2:2"
-    gutter="12px gt-sm-8px" as |grid|}}
-
-    
-<h2 style="background-color:darkgrey;margin-top: auto;padding-top: 0px;margin-left:0">Tell us about your Employment details</h2>
+    gutter="12px gt-sm-8px" as |grid|}}  
+<h2 style="margin-top:72px !important;;padding-top: 0px;margin-left:0">Tell us about your Employment details</h2>
 <p style="background-color:cornsilk;margin-top:-20px">
+  <br>
+  <br>
+  <br>
      {{paper-input label="income" value=rupees type="number" onChange=(action (mut rupees)) icon="attach money" }}
   
   {{paper-input label="Company Name" value=company  onChange=(action (mut company)) icon="work"}}
@@ -42,11 +46,17 @@
       {{/paper-toolbar-tools}}
     {{/paper-toolbar}}
 
-   
     {{#paper-dialog-actions class="layout-row"}}
       {{#paper-button onClick=(action "closeDialog" "cancel")}}Cancel{{/paper-button}}
       {{#paper-button onClick=(action "okay" "ok")}}OK{{/paper-button}}
     {{/paper-dialog-actions}}
   {{/paper-dialog}}
 {{/if}}
-     {{/paper-grid-list}}
+  {{/paper-grid-list}}
+  <br>
+  <br>
+  <br>
+  </div>
+  </div>
+  {{/if}}
+     

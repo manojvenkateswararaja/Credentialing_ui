@@ -1,3 +1,7 @@
+ 
+{{partial 'head'}}
+{{#if showRequest}}
+ <div class="container">
  <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" {{action "closeNav"}}>&times;</a>
   <a >Home</a>
@@ -7,19 +11,22 @@
   <a {{action "goToemployment"}}>Employment details</a>
 
 </div>
-<div id="main">
+{{!-- <div id="main">
       <span style="font-size:30px;cursor:pointer" {{action "openNav"}}>&#9776; open</span>
-</div>
+</div> --}}
 
+<div class="container-fluid">
  {{#paper-grid-list
     cols="1 md-2 gt-md-6"
     rowHeight="gt-md-1:1 2:2"
     gutter="12px gt-sm-8px" as |grid|}}
 
     
-<h2 style="background-color:darkgrey;margin-top: auto;padding-top: 0px;margin-left:0">Tell us about your property</h2>
+<h2 style="margin-top:72px !important;;padding-top: 0px;margin-left:0">Tell us about your property</h2>
 <p style="background-color:cornsilk;margin-top:-20px">
- 
+ <br>
+ <br>
+ <br>
   {{paper-input label="year purchased" type="date" value=year onChange=(action (mut year)) icon="date range" }}
   <br>
    {{paper-input label="loaction/address"  value=location onChange=(action (mut location)) icon="location on" }}
@@ -28,4 +35,10 @@
   <br>
    {{#paper-button raised=true warn=true onClick=(action "targetButton")}}Submit{{/paper-button}}
    </p>
-     {{/paper-grid-list}}
+    {{/paper-grid-list}}
+    <br>
+    <br>
+    <br>
+    </div>
+    </div>
+{{/if}}

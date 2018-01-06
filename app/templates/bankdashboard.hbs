@@ -17,11 +17,9 @@
            $('html, body').animate({
                scrollTop: 0
            }, 300);
-       });
-      
+       });    
    });
 </script>
-
    {{!-- <div id="cont-lock" style="text-align:left ;color:black"> --}}
       <h1><b style="margin-left:-2000px">Bank Dashboard</b></h1>
    {{!-- </div> --}}
@@ -29,21 +27,22 @@
    <div class="dashbord-container" style="background-color:lightgrey">
    <p style="text-align:center;color:black"><b>Total Request</b></p>
       <p class="head-request"><b>ALL Request</b></p>
-   <div class="dash-container">
-         {{#each id as |item|}}
+   <div class="dash-container" style="background-color:bisque">
+     
+    <div class ="container">
+         {{#each showrecords   as |item|}}
          <ul>
-             <div style="background:lightgrey"> 
-            {{!-- Requestid<a href="" {{action 'userdetails' item }}><b style="color:#2d8cff ">{{item.Key}}</b></a>  --}}
-             Requestid  <a href=""{{action 'userdetails' item}}><b style="color:#2d8cff ">{{item.Key}}</b></a>
-            <div class="vl">{{item.Record.transactiondetails.companyname}}</div> 
-            <div class="vl2 ">{{ item.Record.transactiondetails.firstname}}</div>
-           <div class="vl3">{{item.Record.transactiondetails.location}}</div> 
-           <div class="vl4">{{item.Record.transactiondetails.propertyvalue}}</div>
+            <div style="background:lightgrey;margin-bottom:25px">
+            Requestid  <a href="" {{action 'userdetails'  item }}><b style="color:black ">{{item.Key}}</b></a>  
             </div>
-            </ul> <br>
+            </ul>
+            {{#each item.Record.transactionlist   as |item1|}}
+            <div class="vl">Name:{{ item1.transactiondetails.firstname}}</div> 
+            <div class="vl2">Properttype:{{ item1.transactiondetails.propertyType}}</div>
+            <div class="vl3 ">Companyname:{{ item1.transactiondetails.CompanyName}}</div>      
             {{/each}}
-         
-   
+            {{/each}}
+         </div>
    </div>
 </div>
 <a href="#" class="go-top">Scroll to Top</a>

@@ -95,5 +95,11 @@ goToemployment:function(){
     this.transitionToRoute('page4');  
     
 },
+saveModel:function(){
+  this.transitionToRoute('page2');  
+},
+nextStep:function(){
+ 
+}
    }
 })

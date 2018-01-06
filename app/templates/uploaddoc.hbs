@@ -3,6 +3,8 @@
 {{!-- <h2><b><i style="
     margin-left: -67px;
 ">APPLICATION OR REQUEST</i></b></h2>  --}}
+{{partial 'head'}}
+{{#if showRequest}}
 <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" {{action "closeNav"}}>&times;</a>
   <a >Home</a>
@@ -12,13 +14,13 @@
   <a {{action "goToemployment"}}>Employment details</a>
 
 </div>
-<div id="main">
+{{!-- <div id="main">
       <span style="font-size:30px;cursor:pointer" {{action "openNav"}}>&#9776; open</span>
-</div>
+</div> --}}
 <div class="container">
 <div class="upload">
      {{!-- <div class="container-fluid">   --}}
-                  <h3><b><i style="margin-left: -480px;">Upload Document</i></b></h3>
+                  <h3><b><i style="margin-left: -525px;">Upload Document</i></b></h3>
                    <div class="detail"><i style="margin-left: -480px;" >please fill your documents details?</i></div>
                 <br>
                   <label >Id proof Document</label>
@@ -73,5 +75,5 @@
 {{/if}}
 </div>
 </div>
-{{!--{{/if}}--}}
+{{/if}}
 

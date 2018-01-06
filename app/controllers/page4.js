@@ -1,6 +1,7 @@
 import Controller from '@ember/controller';
 
 export default Controller.extend({
+    showRequest:true,
     selectedOption: null,
     isShowingModalss:false,
     mylist: ["house","condo","land"],

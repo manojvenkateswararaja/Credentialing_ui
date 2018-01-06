@@ -1,11 +1,9 @@
 import Controller from '@ember/controller';
 
 export default Controller.extend({
-  // Myshowhome:true,
+  showRequest:true,
   actions:{
-  //   apply:function(){
-  //    var message=this.get('message');
-  //    this.set('message',message)   
+  
   okay:function(){
     this.set('showDialog',false)
   },
@@ -16,7 +14,6 @@ export default Controller.extend({
     document.getElementById("mySidenav").style.width = "250px";
     document.getElementById("main").style.marginLeft = "250px";
 },
-
 closeNav: function() {
     document.getElementById("mySidenav").style.width = "0";
     document.getElementById("main").style.marginLeft= "0";

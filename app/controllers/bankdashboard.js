@@ -21,10 +21,8 @@ export default Controller.extend({
   // }
 
   actions: {
-    userdetails: function(id) {
-      var loanID=this.get('id')
-      this.set('loanID', id);
-      console.log(">>>>",loanID)
+    userdetails: function(showrecords) {
+      this.set('record', showrecords);
       this.transitionToRoute('userdetails');
     }
   }  

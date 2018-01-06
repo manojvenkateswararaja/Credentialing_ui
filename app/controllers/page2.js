@@ -1,7 +1,7 @@
 import Controller from '@ember/controller';
 
 export default Controller.extend({
-  
+    showRequest:true,
         selectedOption: null,
         showAnimatedDialog:false,
         mylist: ["house","condo","land"],
@@ -12,8 +12,20 @@ export default Controller.extend({
         genderlist:["male","female"],
         nationalitylist:["indian","other"],
         actions:{
-    
-           
+            saveModel:function(){
+            
+                var loan=this.get('loan');
+                console.log(loan);
+                var amount=this.get('amount');
+                console.log(amount);
+                var property=this.get('propertyType');
+                console.log(property);
+                  this.transitionToRoute('page3');
+                // this.transitionToRoute('page3');
+            },
+            previousStep:function(){
+                this.transitionToRoute('newrequest');
+            },
             targetButton:function(){
             //   var modalvalue = this.get('showAnimatedDialog')
               
@@ -24,13 +36,7 @@ export default Controller.extend({
             //               this.set('showAnimatedDialog',false)
             //             }
     
-              var loan=this.get('loan');
-              console.log(loan);
-              var amount=this.get('amount');
-              console.log(amount);
-              var property=this.get('propertyType');
-              console.log(property);
-                this.transitionToRoute('page3');
+             
             },
             openNav:function(){
                 document.getElementById("mySidenav").style.width = "250px";

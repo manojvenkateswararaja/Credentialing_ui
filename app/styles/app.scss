@@ -2,13 +2,84 @@
 @import "ember-modal-dialog/ember-modal-structure";
 @import "ember-modal-dialog/ember-modal-appearance";
 @import "ember-bootstrap/bootstrap";
-@import 'ember-paper';
+@import "ember-paper";
+@import "ember-paper-stepper";
 @import "ember-bootstrap/bootstrap/variables.scss";
 @import "ember-bootstrap/bootstrap/mixins.scss";
 @import "ember-bootstrap/bootstrap/normalize.scss";
 @import "ember-bootstrap/bootstrap/scaffolding.scss";
 @import "ember-bootstrap/bootstrap/type.scss";
 @import "ember-bootstrap/bootstrap/buttons.scss";
+// stepper
+.make-me-top-and-center {
+//   position: fixed;
+//   left: 0;
+//   right: 0;
+//   margin: 0 auto;
+//   top: 10px;
+//   width: 300px;
+//   z-index: 100000;
+margin-left:10px;
+}
+button, html [type=button], [type=reset], [type=submit] {
+  -webkit-appearance: button;
+}
+.progress {
+  overflow: hidden;
+  margin-left: 73px;
+  height: 2px;
+  margin-bottom: 33px;
+  // background-color: black
+}
+.md-button {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  min-height: 36px;
+  min-width: 88px;
+  line-height: 36px;
+  vertical-align: middle;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 2px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  outline: none;
+  border: 0;
+  padding: 0 6px;
+  margin: 6px 8px;
+  background: transparent;
+  color: currentColor;
+  white-space: nowrap;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 14px;
+  font-style: inherit;
+  font-variant: inherit;
+  font-family: inherit;
+  text-decoration: none;
+  overflow: hidden;
+  margin-left: 357px;
+  margin-top: 27px;
+}
+.md-steppers{
+  display: flex;
+}
+.layout-column > .flex {
+  min-height: 0;
+  margin-top: -9px;
+}
+.layout-column {
+  -webkit-box-orient: vertical;
+  margin-top: 36px;
+}
+// stepper
 .sidenav {
   height: 100%; /* 100% Full-height */
   width: 0; /* 0 width - change this with JavaScript */
@@ -346,6 +417,13 @@
     padding: 25px;
     margin: 25px;
 }
+//ember paper
+.md-button.md-default-theme.md-warn.md-raised, .md-button.md-default-theme.md-warn.md-fab, .md-button.md-warn.md-raised, .md-button.md-warn.md-fab {
+  color: white;
+  background-color: #f44336;
+  margin-left: 44%;
+}
+//ember paper
   .signupContainer{
     background-color: lightgrey;
     width:500px;
@@ -411,6 +489,7 @@
   text-align:left;
   padding-left: 65px;
   background-color: lightgrey;
+  margin-top: -19px;
     
 }
 .component{
@@ -487,26 +566,25 @@
   
   .vl {
     border-left: 2px solid grey;
-    height: 28px;
-    margin-left: 14%;
+    height: 32px;
+    margin-left: 21%;
     margin-top: -3%;
     padding-left: 1%;
     }
  
     .vl2{
-        border-left: 2px solid grey;
-        height: 28px;
-        margin-left: 29%;
-        margin-top: -2%;
-        padding-left: 1%;
+      border-left: 2px solid grey;
+      height: 34px;
+      margin-left: 38%;
+      margin-top: -3%;
+      padding-left: 1%;
      }
      .vl3 {
-        border-left: 2px solid grey;
-        height: 28px;
-        margin-left: 44%;
-        margin-top: -2%;
-        padding-left: 1%;
-    }
+      border-left: 2px solid grey;
+      height: 31px;
+      margin-left: 61%;
+      margin-top: -3%;
+      padding-left: 1%;    }
      .vl4 {
         border-left: 2px solid grey;
         height: 28px;
