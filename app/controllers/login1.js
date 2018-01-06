@@ -31,10 +31,12 @@ export default Controller.extend(Validations,{
    actions:{
         login:function(){  
             console.log("115")
-       var email = this.get('name');
+       var email = this.get('email');
         console.log(email);
         var password = this.get('password');
         console.log(password);
+        // var usertype=this.get('usertype');
+        // console.log(usertype);
         if (email === null || email === undefined || email === "" || password === null || password === undefined || password === "") {
                 alert("please fill details for login");
             } else {
@@ -47,10 +49,12 @@ export default Controller.extend(Validations,{
            var dataString = {
            "email": email,
            "password": password,
+        //    "usertype": usertype,
         };
             console.log(JSON.stringify(dataString));
             var mycontroller = this;
             console.log(email);
+            console.log(password);
             return $.ajax({
             url:'http://192.168.11.149:8082/login',
             type: 'POST',
@@ -60,36 +64,17 @@ export default Controller.extend(Validations,{
             console.log(JSON.stringify(response));
             var message = response.message;
             console.log("message" + message);
-            var usertype=response.userType;
+            var usertype=response.usertype;
             var status=response.status
              mycontroller.set('usertype',usertype)
             console.log(usertype)
-               sessionStorage.setItem('usertype', usertype);
-            // mycontroller.set("usertype",usertype);
-        //   if (message == "Login Successful"){
-        //         console.log(">>>>>>>>>>>>>>>>>>>>in")
-        //              mycontroller.set('isShowingModal',true);            
-        //     } 
+           sessionStorage.setItem('usertype', usertype);
+          mycontroller.set('showDialog',true)
             }    
             });
             }
          },
-    // proceed:function(usertype){
-    //     // mycontroller.transitionToRoute('home');
-    //     var mycontroller=this
-    //     var usertype=mycontroller.get('usertype')
-    //     mycontroller.set('usertype',usertype)
-    //     if(usertype =="user"){
-    //      //mycontroller.set('showLogin',false)
-    //      this.set('isShowHome',true)
-    //       this.transitionToRoute('home'); 
-    //   }else if(usertype =="admin"){
-    //     // mycontroller.set('showLogin',false)
-    //     this.set('isShowHome',true)
-    //      this.transitionToRoute('bankdashboard');
-        
-    //   }
-    // },
+   
     closeDialog:function(){
         this.set('showDialog',false)
     },
@@ -101,7 +86,7 @@ export default Controller.extend(Validations,{
          //mycontroller.set('showLogin',false)
          this.set('showDialog',true)
           this.transitionToRoute('newrequest'); 
-      }else if(usertype =="admin"){
+      }else if(usertype =="Bank"){
         // mycontroller.set('showLogin',false)
         this.set('showDialog',true)
          this.transitionToRoute('bankdashboard');

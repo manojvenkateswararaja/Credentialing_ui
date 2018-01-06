@@ -11,8 +11,7 @@
       <span style="font-size:30px;cursor:pointer" {{action "openNav"}}>&#9776; open</span>
 </div>
 
- {{partial 'head'}}
-{{#if showRequest}}
+
  {{#paper-grid-list
     cols="1 md-2 gt-md-6"
     rowHeight="gt-md-1:1 2:2"
@@ -31,3 +30,4 @@
    {{#paper-button raised=true warn=true onClick=(action "targetButton")}}Submit{{/paper-button}}
    </p>
      {{/paper-grid-list}}
+

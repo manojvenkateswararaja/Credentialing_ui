@@ -5,10 +5,15 @@
         <form >
                <h3><b><i style="margin-left: -638px;">Loan Schedule </i></b></h3>
                <br>
+                <label>RequestID </label>
+                <span>
+    {{validated-input  type="text" model=this  valuePath='requestid' placeholder="requestid" required=""}}
+    </span>
+    <button class="btn" {{action "userschedule"}}>Get loanschedule</button>
        <label> Request ID:</label>
                  <br>
                <br>
-                 <label>Loan Amount in Rs</label>
+                 <label>Loan Amount in Rs:</label>
                  
                  <br>
             

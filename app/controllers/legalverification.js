@@ -6,5 +6,8 @@ export default Controller.extend({
             this.transitionToRoute('legalverification2');
 
         },
+        signout:function(){
+            this.transitionToRoute('login1');
+        }
     }
 });

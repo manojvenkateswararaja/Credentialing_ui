@@ -95,5 +95,8 @@ goToemployment:function(){
     this.transitionToRoute('page4');  
     
 },
+signout:function(){
+  this.transitionToRoute('login1');
+}
    }
 })

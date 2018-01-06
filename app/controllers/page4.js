@@ -114,6 +114,7 @@ export default Controller.extend({
                 "joiningdate":joiningdate,
                 "salary":salary,
                 "address":address,
+                "status":"applied",
               }
             };
             console.log("datastring"+  JSON.stringify(transactionstring));

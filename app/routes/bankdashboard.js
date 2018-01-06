@@ -6,7 +6,7 @@ export default Route.extend({
     model(){
         var myroute=this
         return $.ajax({
-        url:'http://localhost:8082/getloandetails',
+        url:'http://192.168.11.149:8082/getloandetails',
         type: 'GET',
         contentType: 'application/json',
         success: function(response){
@@ -20,7 +20,9 @@ export default Route.extend({
         //myroute.controllerFor('bankdashboard').set('id',id)
         myroute.controllerFor('bankdashboard').set('showrecords',showrecords)
         console.log('DEBUG: GET Enquiries OK');
-        }
+        },
+      
     });      
-    }
+    },
+  
 })

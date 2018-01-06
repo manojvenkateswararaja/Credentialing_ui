@@ -24,6 +24,19 @@ export default Controller.extend({
     userdetails: function(showrecords) {
       this.set('record', showrecords);
       this.transitionToRoute('userdetails');
-    }
+    },
+    signout:function() {
+      this.transitionToRoute('login1');
+  },
+  openNav:function(){
+    document.getElementById("mySidenav").style.width = "250px";
+    document.getElementById("main").style.marginLeft = "250px";
+},
+
+closeNav: function() {
+    document.getElementById("mySidenav").style.width = "0";
+    document.getElementById("main").style.marginLeft= "0";
+},
+  
   }  
 });

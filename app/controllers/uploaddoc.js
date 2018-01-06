@@ -21,6 +21,9 @@ closeNav: function() {
     document.getElementById("mySidenav").style.width = "0";
     document.getElementById("main").style.marginLeft= "0";
 },
+targetButton:function(){
+  this.transitionToRoute('userloanschedule');
+}
     }
   
 })

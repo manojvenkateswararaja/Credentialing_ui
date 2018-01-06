@@ -5,6 +5,9 @@ export default Controller.extend({
     actions:{
         creditscore:function(){
             
+        },
+        signout:function(){
+            this.transitionToRoute('login1');
         }
 
     }
