@@ -5,33 +5,40 @@
         <form >
                <h3><b><i style="margin-left: -638px;">Loan Schedule </i></b></h3>
                <br>
-       <label> Request ID:</label>
-                 <br>
+                <label>RequestID </label>
+                {{!-- <span>
+    {{validated-input  type="text" model=this  valuePath='requestid' placeholder="requestid" required=""}}
+    </span> --}}
+    {{!-- <button class="btn" {{action "userschedule"}}>Get loanschedule</button> --}}
+       {{!-- <label> Request ID:</label> --}}
                  <br>
                  <label>Loan Amount in Rs</label>
                  <br>
-                   <label>Loan Terms</label>
+                 <label>Loan Terms</label>
                  <br>
                  <label>Annual Interest Rate </label>
-                <br>
+                 <br>
                 {{!-- "requestid":requestid,
        "loanamount": loanamount,
        "loanterms": loanterms,
        "amountinterestrate":amountinterestrate,
        "paymentperyear": paymentperyear,
        "installmentpermonth": installmentpermonth, --}}
-                 <label>Payment Per Year</label>
-               
-          
-                <br>
+               <label>Payment Per Year</label>
+               <br>
                <label>Installment per month</label> 
-                <span class="symbol">$</span>
-            <br>
+               <span class="symbol">$</span>
+               <br>
         </form>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div style="margin-left:700px; margin-top:-80px;">
         <button type="button" id="myButton" data-loading-text="Loading..." class="btn btn-primary" autocomplete="off">
   agree & next
 </button>
-
+</div>
 {{!-- <script>
   $('#myButton').on('click', function () {
     var $btn = $(this).button('loading')
@@ -39,7 +46,6 @@
     $btn.button('reset')
   })
 </script> --}}
-
 </div>
 </div>
 {{/if}}

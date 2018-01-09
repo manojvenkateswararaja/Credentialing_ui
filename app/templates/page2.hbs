@@ -1,9 +1,9 @@
 {{partial 'head'}}
 {{#if showRequest}} 
- {{#paper-stepper currentStep=currentStep onStepChange=(action (mut currentStep))
+{{#paper-stepper currentStep=currentStep onStepChange=(action (mut currentStep))
   onStepperCompleted=(action "saveModel") as |stepper|}}
-  {{#stepper.step label="page2" as |step|}}
-    {{#step.body}}
+{{#stepper.step label="page2" as |step|}}
+{{#step.body}}
 <div class="container">
  <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" {{action "closeNav"}}>&times;</a>
@@ -13,12 +13,11 @@
   <a {{action "goToproperty"}}>Property details</a>
   <a {{action "goToemployment"}}>Employment details</a>
 </div>
-
 <div class="container-fluid">
  {{#paper-grid-list
     cols="1 md-2 gt-md-6"
     rowHeight="gt-md-1:1 2:2"
-    gutter="12px gt-sm-8px" as |grid|}}
+    gutter="12px gt-sm-8px" as |grid|}} 
 <h2 style="margin-top:72px !important;;padding-top: 0px;margin-left:0"><i>Tell us what your looking for?</i></h2>
 <br>
 <br>

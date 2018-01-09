@@ -1,5 +1,4 @@
 import Controller from '@ember/controller'; 
-
 export default Controller.extend({
   isShowingModel:false,
   showhome:true,
@@ -19,11 +18,24 @@ export default Controller.extend({
   //   }
   // })
   // }
-
   actions: {
     userdetails: function(showrecords) {
       this.set('record', showrecords);
       this.transitionToRoute('userdetails');
-    }
+    },
+    signout:function() {
+      this.transitionToRoute('login1');
+  },
+  openNav:function(){
+    document.getElementById("mySidenav").style.width = "250px";
+    document.getElementById("main").style.marginLeft = "250px";
+},
+closeNav: function() {
+    document.getElementById("mySidenav").style.width = "0";
+    document.getElementById("main").style.marginLeft= "0";
+},
+  
   }  
 });
+
+

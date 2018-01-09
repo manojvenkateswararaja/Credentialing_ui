@@ -12,5 +12,8 @@ export default Controller.extend({
           closeDialog:function(){
             this.set('showDialog',false)
         },
+        signout:function(){
+            this.transitionToRoute('login1');
+        }
     }
 });

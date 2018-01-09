@@ -4,12 +4,12 @@ export default Controller.extend({
     showCredit:false,
     showUserDetails:true,
     actions:{
-        userdetails:function(requestid){
+        credit:function(requestid){
               var mycontroller=this;
               console.log("requestid>>>>>>>>",requestid)
               var reqid= {"requestid":requestid}
               return $.ajax({
-              url:'http://192.168.0.20:8082/creditscore',//web service for credit score
+              url:'http://192.168.11.149:8082/creditscore',//web service for credit score
               type: 'POST',
               contentType:'application/json',
               data:JSON.stringify(reqid),
@@ -22,6 +22,9 @@ export default Controller.extend({
                 }
                 })
           },
+          signout:function(){
+            this.transitionToRoute('login1');
+        }
     //       Approve:function(){
     //         console.log("close");
     //         this.toggleProperty('isShowSCheduleLoan');

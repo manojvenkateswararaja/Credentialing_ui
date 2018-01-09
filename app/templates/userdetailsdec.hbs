@@ -16,122 +16,115 @@
            $('html, body').animate({
                scrollTop: 0
            }, 300);
-       });
-      
+       });   
    });
 </script>
 <div class="container-fluid" style="background-color:lightgrey">
-   {{!-- <div id="usercont-lock"> --}}
-      {{!-- <h2><i>User Details </i></h2> --}}
-{{!-- </div> --}}
 <div class="user-container">
-   <br/>
-   <p style="text-align:center;color:#808080 "><b>User Requestid</b></p>
-      {{!-- <p class="user-request"><b>RequestID</b></p> --}}
+      <br/>
+      <div style="color: #808080;margin-left: 400px;margin-top: 39px;"><b>User Requestid</b></div>
       <i style="margin-left:70px">Request Id:</i><i id="req">{{loanID.requestid}}</i>
       <br>
       <br>
       <br>
-   <div class="dash-container" >
-            <style>
-             table, th, {
+      <div class="dash-container" >
+         <style>
+            table,th,{
             border-width: thin;
-             }
-           </style>
-            <h1 id="data">Personal information</h1>   
-           <div class="table-block">
- <table>
-    <tr>
-    <td>firstname:</td>
-    <td style="color:gray;">{{loanID.transactionstring.firstname}}</td>
-  </tr>
-    <tr>
-    <td>lastname:</td>
-    <td style="color:gray;">{{loanID.transactionstring.lastname}}</td>
-  </tr>
-    <tr>
-    <td>contact number:</td>
-    <td style="color:gray;">{{loanID.transactionstring.number}}</td>
-  </tr>
-   <tr>
-    <td>country:</td>
-    <td style="color:gray;">{{loanID.transactionstring.country}}</td>
-  </tr>
-   <tr>
-    <td>occupation:</td>
-    <td style="color:gray;">{{loanID.transactionstring.occupation}}</td>
-  </tr>
-   <tr>
-    <td>income:</td>
-    <td style="color:gray;">{{loanID.transactionstring.income}}</td>
-  </tr>
-</table>
-<br>
-<br>
-<br>
-<br>
- <button  id="myButton" class="btn btn-primary" {{action "details"}}>Request More Details</button>
+            }
+         </style>
+         <h1 id="data">Personal information</h1>
+         <div class="table-block">
+            <table>
+               <tr>
+                  <td>firstname:</td>
+                  <td style="color:gray;">{{loanID.transactionstring.firstname}}</td>
+               </tr>
+               <tr>
+                  <td>lastname:</td>
+                  <td style="color:gray;">{{loanID.transactionstring.lastname}}</td>
+               </tr>
+               <tr>
+                  <td>contact number:</td>
+                  <td style="color:gray;">{{loanID.transactionstring.number}}</td>
+               </tr>
+               <tr>
+                  <td>country:</td>
+                  <td style="color:gray;">{{loanID.transactionstring.country}}</td>
+               </tr>
+               <tr>
+                  <td>occupation:</td>
+                  <td style="color:gray;">{{loanID.transactionstring.occupation}}</td>
+               </tr>
+               <tr>
+                  <td>income:</td>
+                  <td style="color:gray;">{{loanID.transactionstring.income}}</td>
+               </tr>
+            </table>
+            <br>
+            <br>
+            <br>
+            <br>
+            <button  id="myButton" class="btn btn-primary" {{action "details"}}>Request More Details</button>
+         </div>
+         
+         {{!-- <div class="division"> --}}
+            <h1 id="data3">Property information</h1>
+            <div class="table3-block">
+               <table>
+                  <tr>
+                     <td>mortgaugeType</td>
+                     <td style="color:gray;">{{loanID.transactionstring.mortgaugeType}}</td>
+                  </tr>
+                  <tr>
+                     <td>Need Amount:</td>
+                     <td style="color:gray;">{{loanID.transactionstring.Amount}}</td>
+                  </tr>
+                  <tr>
+                     <td>location</td>
+                     <td style="color:gray;">{{loanID.transactionstring.location}}</td>
+                  </tr>
+                  <tr>
+                     <td>price:</td>
+                     <td style="color:gray;">{{loanID.transactionstring.price}}</td>
+                  </tr>
+                  <tr>
+                     <td>country:</td>
+                     <td style="color:gray;">{{loanID.transactionstring.country}}</td>
+                  </tr>
+                  <tr>
+                     <td>paymentPercentage:</td>
+                     <td style="color:gray;">{{loanID.transactionstring.paymentPercentage}}</td>
+                  </tr>
+               </table>
+               <br>
+               <br>
+               <br>
+               <br>
+               <button type="button" id="myButton" class="btn btn-primary" style="width:55%"{{action "Approve"}}>Approve</button>
+               {{#if isShowSCheduleLoan}}
+               {{#modal-dialog onClose="Approve"
+               targetAttachment="center"
+               translucentOverlay=true}}
+               succefully Approved Loan!!
+               <button class="btn"{{action "Schedule" }}>Schedule</button>{{isShowSCheduleLoan}}
+               {{/modal-dialog}}
+               {{/if}} 
+               <button type="button" id="myButton" class="btn btn-primary"  style="margin-left:245px;margin-top:-65px; width:55%"{{action "Rejected"}}>Reject</button>
+               {{#if isShowReject}}
+               {{#modal-dialog onClose="Rejected"
+               targetAttachment="center"
+               translucentOverlay=true}}
+               Loan Rejected!!
+               {{/modal-dialog}}
+               {{/if}}
+               
+               
+               {{!-- </div> --}}
+            </div>
+         </div>
+      </div>
+   </div>
 
-  </div>
-    <div class="division">
-    <h1 id="data3">Property information</h1>   
-    <div class="table3-block">
- <table> 
-    <tr>
-    <td>mortgaugeType</td>
-    <td style="color:gray;">{{loanID.transactionstring.mortgaugeType}}</td>
-   </tr>
-    <tr>
-    <td>Need Amount:</td>
-    <td style="color:gray;">{{loanID.transactionstring.Amount}}</td>
-  </tr>
-  <tr>
-    <td>location</td>
-    <td style="color:gray;">{{loanID.transactionstring.location}}</td>
-  </tr>
-   <tr>
-    <td>price:</td>
-    <td style="color:gray;">{{loanID.transactionstring.price}}</td>
-  </tr>
-   <tr>
-    <td>country:</td>
-    <td style="color:gray;">{{loanID.transactionstring.country}}</td>
-  </tr>
-   <tr>
-    <td>paymentPercentage:</td>
-    <td style="color:gray;">{{loanID.transactionstring.paymentPercentage}}</td>
-  </tr>
-  </table>
-  <br>
-  <br>
-  <br>
-  <br>
-  <button type="button" id="myButton" class="btn btn-primary" style="width:55%"{{action "Approve"}}>Approve</button>
-  {{!-- <button  id="user-btn" {{action "Approve"}}>Approve</button> --}}
-  {{!-- start --}}
-   
-
-
-            {{#if isShowSCheduleLoan}}
-             {{#modal-dialog onClose="Approve"
-                  targetAttachment="center"
-                  translucentOverlay=true}}
-                succefully Approved Loan!!
-    <button class="btn"{{action "Schedule" }}>Schedule</button>{{isShowSCheduleLoan}}
-    {{/modal-dialog}}
-    {{/if}} 
-  <button type="button" id="myButton" class="btn btn-primary"  style="margin-left:245px;margin-top:-65px; width:55%"{{action "Rejected"}}>Reject</button>
-             {{#if isShowReject}}
-             {{#modal-dialog onClose="Rejected"
-                  targetAttachment="center"
-                  translucentOverlay=true}}
-                 Loan Rejected!!
-    {{/modal-dialog}}
-    {{/if}}
-   </div>
-   </div>
-   </div>
-   </div>
-   </div>
-   {{/if}}
+{{/if}}
 <a href="#" class="go-top">Scroll to Top</a>

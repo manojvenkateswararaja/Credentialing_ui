@@ -35,7 +35,7 @@ export default Controller.extend({
         console.log(JSON.stringify(datastring))
         var mycontroller=this;
         return $.ajax({
-            url:'http://192.168.0.20:8082/loanscheduleUser',
+            url:'http://192.168.11.149:8082/loanscheduleUser',
             type: 'POST',
             contentType: 'application/json',
             data: JSON.stringify(datastring),

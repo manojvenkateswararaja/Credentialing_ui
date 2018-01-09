@@ -20,7 +20,7 @@ export default Controller.extend({
                 console.log(amount);
                 var property=this.get('propertyType');
                 console.log(property);
-                  this.transitionToRoute('page3');
+                //   this.transitionToRoute('page3');
                 // this.transitionToRoute('page3');
             },
             previousStep:function(){

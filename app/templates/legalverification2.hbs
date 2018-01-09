@@ -1,6 +1,13 @@
-<div class="container-fluid" style="background-color:lightgrey">
-         <div class="credit-container">
-               <b style="margin-left:510px">Property Information</b><br>
+{{partial "head"}}
+{{#if "showCreditscore"}}
+<div class="container">
+   <div id="usercont-lock">
+      <h2><i>Legal verification </i></h2>
+</div>
+<div class="user-container">
+   <br/>
+   <p style="text-align:center;color:#808080 "><b>Total Request</b></p>
+               <b style="margin-left:387px">Property Information</b><br>
                <br>
                <div class="input-container">
                PropertyType:{{loanID.transactionstring.propertyType}}
@@ -25,3 +32,4 @@
              </div>
   
     </div>
+    {{/if}}
