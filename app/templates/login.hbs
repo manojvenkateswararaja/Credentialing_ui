@@ -5,15 +5,14 @@
 <br>
 <br>
 <br>
-<div class='signupContainer'>
+<div class='container' style="background-color:lightgrey; text-align:center; width:25%;">
+  <br>
+  <br>
   <header><i><b><u>Login</u></b></i></header>
-  <form>
+  <br>
  <label><b>EmailID </b><span>*</span></label>
- 
   {{validated-input  type="email" model=this  valuePath='email' placeholder="email" required=""}}
-  
-   {{!-- <div  class="help-1">enter your emailid</div> --}}
-<div class="help"></div>
+<br>
    <label><b>password</b> <span>*</span></label>
    {{validated-input  type="password" model=this  valuePath='password' placeholder="password" required=""}}
   {{!-- <div class="help">Use upper and lowercase lettes as well</div> --}}
@@ -35,7 +34,9 @@
   <div class="link">
   <br>New User? {{#link-to 'signup'}}<i style="color:#2d8cff "> sign up </i>{{/link-to}}
   </div>
+  <br>
+  <br>
   </div>
-  </form>
+  
 </div>
 {{/if}}

@@ -1,8 +1,8 @@
 {{partial 'head'}}
 {{#if showUserSchedule}}
-<div class="container">
-   <div class="form">
-        <form >
+{{!-- <div class="container">
+   <div class="form"> --}}
+        {{!-- <form >
                <h3><b><i style="margin-left: -638px;">Loan Schedule </i></b></h3>
                <br>
         Request ID:{{validated-input  type="text" model=this  valuePath='requestid' placeholder="Request Id" required=""}}
@@ -14,32 +14,70 @@
             
                    <label>Loan Terms</label>
              {{validated-input  type="number" model=this  valuePath='loanterms' placeholder="loan terms" required=""}} 
-                {{!-- {{input type="text" value=salary placeholder="salary"}} --}}
+          
                 
               <br>
                <label>Annual Interest Rate </label>
             {{select-component listitem=InterestRate selecteditemlist=amountinterestrate}}
-                         {{!-- {{validated-input  type="number" model=this  valuePath='amountinterestrate' placeholder="Interest rate" required=""}} --}}
-                         {{!-- {{input type="text"   value=CompanyName placeholder="company name"}} --}}
+                      
               <br>
-                {{!-- "requestid":requestid,
-       "loanamount": loanamount,
-       "loanterms": loanterms,
-       "amountinterestrate":amountinterestrate,
-       "paymentperyear": paymentperyear,
-       "installmentpermonth": installmentpermonth, --}}
+       
                  <label>Payment Per Year</label>
                
           {{validated-input  type="number" model=this  valuePath='paymentperyear' placeholder="payment per year" required=""}}
-                     {{!--{{input type="number" value=Emi placeholder="EMI"}}--}}    
+                        
                 <br>
                <label>Installment per month</label> 
                 <span class="symbol">$</span>
                 
                 {{validated-input  type="number" model=this  valuePath='installmentpermonth' placeholder="per month" required=""}}
-                 {{!--{{input  type="text" class="field text currency nospin" value=Rupees size="10"}} --}}
+               
+            <br> --}}
+            {{!-- boots --}}
+            
             <br>
-           <button class="btn" {{action "loanschedule"}}>Schedule</button>
+            <br>
+   <div class="container">
+     <br>
+    <div class="form-group">
+      <label>Request ID:</label>
+      <input type="number" class="form-control"   value='requestid' placeholder="Requestid" >
+    </div>
+    <div class="form-group">
+      <label for="pwd">Loan Amount in Rs:</label>
+      <input type="number" class="form-control" id="pwd"  value='loanamount' placeholder="Enter Amount">
+    </div>
+    <div class="form-group">
+       <label>Loan Terms:</label>
+      <input type="number"   class="form-control"  value='loanterms' placeholder="loan terms">
+    </div>
+    <div class="form-group">
+     <label>Annual Interest Rate </label>
+     <div style="margin-left:308px; margin-top:-1cm;">
+            {{select-component listitem=InterestRate selecteditemlist=amountinterestrate}}
+      </div>
+      </div>
+      <div class="form-group">
+           <label >Payment Per Year:</label>
+      <input type="number"   class="form-control"  value='paymentperyear' placeholder="Payment Per Year">
+    </div>
+    <div class="form-group">
+       <label >Installment per month:</label>
+      <input type="number"  class="form-control"   value='installmentpermonth' placeholder="Installment per month">
+    </div>
+    <br>
+    <br>
+    
+    <div style="margin-left:363px;">
+   <button type="button" id="myButton" class="btn btn-primary" {{action "loanschedule"}}>Schedule</button>
+</div>
+<br>
+<br>
+
+</div>
+
+            {{!-- boots --}}
+           {{!-- <button class="btn" {{action "loanschedule"}}>Schedule</button> --}}
             {{#if isShchedule}}
          {{#modal-dialog onClose="loanschedule"
                   targetAttachment="center"
@@ -49,8 +87,7 @@
           {{/modal-dialog}}
           {{/if}}
            {{isShchedule}}
-        </form>
-
-</div>
-</div>
+        {{!-- </form>
+     </div>
+      </div> --}}
 {{/if}}

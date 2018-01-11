@@ -1,8 +1,13 @@
 
     {{partial 'head'}}
     {{#if showLogin}}
-    <div class="signupContainer">
-    <h2 id="head"><b><i>Sign up</i></b></h2>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="container" style="background-color:lightgrey; text-align:center; width:25%;">
+    <b><i>Sign up</i></b>
+    <br>
      First Name
      {{validated-input  type="text" model=this  valuePath='firstname' placeholder="firstname" required=""}}
      Last Name
@@ -18,7 +23,7 @@
       Re-type password
       {{validated-input  type="password" model=this  valuePath='password2' placeholder="Retype password" required=""}}
       <button type="button" id="myButton" class="btn btn-primary" style="margin-left: 2%;width: 40%;margin-bottom: -70px;" {{action "signup"}}>sign up</button>
-    {{!-- <button class="btn" {{action "signup"}}>sign up</button> --}}
+   <br>
  </div>
  {{/if}}
 
