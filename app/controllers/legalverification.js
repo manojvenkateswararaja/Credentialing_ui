@@ -1,6 +1,7 @@
 import Controller from '@ember/controller';
 
 export default Controller.extend({
+    showCreditscore:true,
     actions:{
         verification:function(){
             this.transitionToRoute('legalverification2');

@@ -2,7 +2,7 @@ import Route from '@ember/routing/route';
 
 export default Route.extend({
     model(){
-        //this.transitionTo('page4')
+        // this.transitionTo('userloanschedule')14
         //this.transitionTo('propertydetail')
         //this.transitionTo('bankdashboard')
         this.transitionTo('userdetails')

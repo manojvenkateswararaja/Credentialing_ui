@@ -1,8 +1,9 @@
-{{!-- {{partial 'head'}}
-{{#if showCreditscore}} --}}
-<div class="container">
-   <div id="usercont-lock">
-      <h2><i>Legal verification </i></h2>
+{{partial 'head'}} 
+{{#if showCreditscore}}
+<div class="container-fluid">
+  <br>
+   <div  style="text-align:center">
+      <b>Legal verification</b> 
 </div>
 <div class="user-container">
    <br/>
@@ -84,8 +85,9 @@
    Creditscore For RequestID:<i style="color:#69f;">{{loanID.requestid}}</i><br>
    Credit Score:<i style="color:#69f;">{{creditscore}}</i>
    {{/if}} --}}
-   <button id="user-btn2" {{action "verification" loanID.requestid}}>Verify</button>
-   
+   <div style="margin-top:2cm">
+   <button type="button" id="myButton" class="btn btn-primary" {{action "verification" loanID.requestid}}>Verify</button>
+   </div>
    
   {{!-- <button  id="user-btn" {{action "Approve"}}>Approve</button>
   {{!-- start --}}
@@ -110,4 +112,4 @@
    </div>
    </div>
    </div>
-   {{!-- {{/if}} --}}
+   {{/if}} 

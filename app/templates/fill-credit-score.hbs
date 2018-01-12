@@ -1,27 +1,29 @@
 {{partial 'head'}}
 {{#if showCreditscore}}
 <div class="container-fluid" style="background-color:lightgrey">
-         <div class="credit-container">
-               <b style="margin-left:510px">creditscore</b><br>
+  <br>
+  <br>
+         <div class="container" style="background-color:whitesmoke">
+               <b style="text align:center">Fill Creditscore information</b><br>
                <br>
                <div class="input-container">
                 Pan Number<input type="number" class="form-control" id="exampleInputEmail1" valuePath='panno' placeholder="pan number">
                {{!-- Pan no:<input  id="btn" type="text" valuePath='panno' placeholder="pan number"> --}}
                <br>
-              <br>
+              
               Enter Company Name:<input type="text" class="form-control" id="exampleInputEmail1" valuePath='CompanyName' placeholder="company name">
                {{!-- <input  id="btn2" type="text" valuePath='CompanyName' placeholder="company name"> --}}
                <br>
-               <br>
+               
                Employee Type:<input type="text" class="form-control" id="exampleInputEmail1" valuePath='TypeOfemployee' placeholder="Employee type">
                {{!-- <input  id="btn3" type="text" valuePath='TypeOfemployee' placeholder="Employee type"> --}}
             <br>
-            <br>
+            
             Enter Income:<input type="number" class="form-control" id="exampleInputEmail1" valuePath='income' placeholder="income">
                {{!-- <input  id="btn4" type="text" valuePath='income' placeholder="income"> --}}
              <br>
-             <br>
-             <button type="button" id="myButton" class="btn btn-primary" style="margin-left: 42%;width: 20%;margin-bottom: -70px;" {{action "creditscore"}}>Save & Submit</button>
+             
+             <button type="button" id="myButton" class="btn btn-primary" style="margin-left:32%; width: 20%;margin-bottom: -70px;" {{action "creditscore"}}>Save & Submit</button>
               {{!-- <button  id="user-btn2" {{action "creditscore"}}>Save & Submit</button> --}}
              
              <br>
@@ -30,6 +32,9 @@
              <br>
              </div>   
              </div>
-  
+     <br>
+             <br>
+             <br>
+             <br>
     </div>
 {{/if}}

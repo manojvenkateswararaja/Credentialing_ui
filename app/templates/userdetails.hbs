@@ -1,5 +1,6 @@
 {{partial 'head'}}
 {{#if showUserDetails}}
+<<<<<<< HEAD
 <script>
    $(document).ready(function() {
        // Show or hide the sticky footer button
@@ -34,12 +35,53 @@
       <i style="margin-left:70px;">Request Id:</i><i id="req" style="color:black">{{record.Key}}</i>
         
       <br>
+=======
+<div class="container-fluid">
+   <script>
+      $(document).ready(function() {
+          // Show or hide the sticky footer button
+          $(window).scroll(function() {
+              if ($(this).scrollTop() > 200) {
+                  $('.go-top').fadeIn(200);
+              } else {
+                  $('.go-top').fadeOut(200);
+              }
+          });
+          // Animate the scroll to top
+          $('.go-top').click(function(event) {
+              event.preventDefault();
+              $('html, body').animate({
+                  scrollTop: 0
+              }, 300);
+          });
+         
+      });
+   </script>
+   <br>
+   <div class="container">
+      <b style="margin-left:-16cm;">USER REQUESTID</b>
+>>>>>>> 11b672b5f08c87112ba7a9e0c360049e56ae6351
       <br>
       <br>
-   <div class="dash-container" >
-            <style>
-             table, th, {
+      <div class="row">
+         <div style="height:2em;border:1px solid #000;width: 102%;margin-left: -16px;">
+            <div class="col-xs-6 col-sm-3" style="background-color:lightcyan;"><i style="margin-left:5%">Request Id:</i><i id="req">{{loanID.Key}}</i></div>
+            <div class="col-xs-6 col-sm-3" style="background-color:lightcyan;">
+               <div class="vl5">{{loanID.Record.transactiondetails.location}}</div>
+            </div>
+            <div class="col-xs-6 col-sm-3" style="background-color:lightcyan;">
+               <div class="vl5">{{loanID.Record.transactiondetails.propertyvalue}}</div>
+            </div>
+            <div class="col-xs-6 col-sm-3" style="background-color:lightcyan;">
+               <div class="vl5">{{loanID.Record.transactiondetails.location}}</div>
+            </div>
+         </div>
+         <br>
+         <br>
+         <style>
+            table, th, {
             border-width: thin;
+<<<<<<< HEAD
              }
            </style>
             <h1 id="data">Personal information</h1>   
@@ -141,4 +183,80 @@
    </div>
 
    {{/if}}
+=======
+            }
+         </style>
+         <div class="row">
+            <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6" style="background-color:grey;">Personal information</div>
+            <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6" style="background-color:grey;">Property information</div>
+         </div>
+         <br> 
+         <div class="row">
+            <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6">
+               <table>
+                  <tr>
+                     <td>firstname:</td>
+                     <td style="color:gray;">{{loanID.Record.transactiondetails.firstname}}</td>
+                  </tr>
+                  <tr>
+                     <td>lastname:</td>
+                     <td style="color:gray;">{{loanID.Record.transactiondetails.lastname}}</td>
+                  </tr>
+                  <tr>
+                     <td>contact number:</td>
+                     <td style="color:gray;">{{loanID.Record.transactiondetails.number}}</td>
+                  </tr>
+                  <tr>
+                     <td>country:</td>
+                     <td style="color:gray;">{{loanID.Record.transactiondetails.country}}</td>
+                  </tr>
+                  <tr>
+                     <td>occupation:</td>
+                     <td style="color:gray;">{{loanID.Record.transactiondetails.occupation}}</td>
+                  </tr>
+                  <tr>
+                     <td>income:</td>
+                     <td style="color:gray;">{{loanID.Record.transactiondetails.income}}</td>
+                  </tr>
+               </table>
+            </div>
+            <div class= "col-xs-6 col-lg-6 col-md-6 col-sm-6 ">
+               <table>
+                  <tr>
+                     <td>mortgaugeType</td>
+                     <td style="color:gray;">{{loanID.Record.transactiondetails.mortgaugeType}}</td>
+                  </tr>
+                  <tr>
+                     <td>Need Amount:</td>
+                     <td style="color:gray;">{{loanID.Record.transactiondetails.Amount}}</td>
+                  </tr>
+                  <tr>
+                     <td>location</td>
+                     <td style="color:gray;">{{loanID.Record.transactiondetails.location}}</td>
+                  </tr>
+                  <tr>
+                     <td>price:</td>
+                     <td style="color:gray;">{{loanID.Record.transactiondetails.price}}</td>
+                  </tr>
+                  <tr>
+                     <td>country:</td>
+                     <td style="color:gray;">{{loanID.Record.transactiondetails.country}}</td>
+                  </tr>
+                  <tr>
+                     <td>paymentPercentage:</td>
+                     <td style="color:gray;">{{loanID.Record.transactiondetails.paymentPercentage}}</td>
+                  </tr>
+               </table>
+            </div>
+         </div>
+         <div style=" margin-top:1cm;">
+            <button type="button" class="btn btn-primary btn-block"{{action "credit" loanID.Key}}>Get Credit Score</button>
+         </div>
+         <br>
+         <br>
+      </div>
+   </div>
+</div>
+{{/if}}
+>>>>>>> 11b672b5f08c87112ba7a9e0c360049e56ae6351
 <a href="#" class="go-top">Scroll to Top</a>
