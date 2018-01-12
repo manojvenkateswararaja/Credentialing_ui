@@ -1,55 +1,50 @@
 {{partial 'head'}}
 {{#if showUserSchedule}}
 <div class="container-fluid">
-  <br>
-  <br>
+   <br>
+   <br>
    <div class="container">
-        <form >
-               <div style="text-align:center;"><b>Loan Schedule</b></div>
-               <br>
-                <label>RequestID </label>
-                {{!-- <span>
-    {{validated-input  type="text" model=this  valuePath='requestid' placeholder="requestid" required=""}}
-    </span> --}}
-    {{!-- <button class="btn" {{action "userschedule"}}>Get loanschedule</button> --}}
-       {{!-- <label> Request ID:</label> --}}
-                 <br>
-                 <label>Loan Amount in Rs</label>
-                 <br>
-                 <label>Loan Terms</label>
-                 <br>
-                 <label>Annual Interest Rate </label>
-                 <br>
-                {{!-- "requestid":requestid,
-       "loanamount": loanamount,
-       "loanterms": loanterms,
-       "amountinterestrate":amountinterestrate,
-       "paymentperyear": paymentperyear,
-       "installmentpermonth": installmentpermonth, --}}
-               <label>Payment Per Year</label>
-               <br>
-               <label>Installment per month</label> 
-               <span class="symbol">$</span>
-               <br>
-        </form>
-        <br>
-        <br>
-        <br>
-        <br>
-        <div style="margin-left:700px; margin-top:-80px;">
-        <button type="button" id="myButton" data-loading-text="Loading..." class="btn btn-primary" autocomplete="off">
-  agree & next
-</button>
-<br>
-<br>
-</div>
-{{!-- <script>
-  $('#myButton').on('click', function () {
-    var $btn = $(this).button('loading')
-    // business logic...
-    $btn.button('reset')
-  })
-</script> --}}
-</div>
+      <form >
+         <div style="text-align:center;"><b>Loan Schedule</b></div>
+         <br>
+         <label>RequestID </label>
+         <br>
+         <label>Loan Amount in Rs</label>
+         <br>
+         <label>Loan Terms</label>
+         <br>
+         <label>Annual Interest Rate </label>
+         <br>
+         {{!-- "requestid":requestid,
+         "loanamount": loanamount,
+         "loanterms": loanterms,
+         "amountinterestrate":amountinterestrate,
+         "paymentperyear": paymentperyear,
+         "installmentpermonth": installmentpermonth, --}}
+         <label>Payment Per Year</label>
+         <br>
+         <label>Installment per month</label> 
+         <span class="symbol">$</span>
+         <br>
+      </form>
+      <br>
+      <br>
+      <br>
+      <br>
+      <div style="margin-left:700px; margin-top:-80px;">
+         <button type="button" id="myButton" data-loading-text="Loading..." class="btn btn-primary" autocomplete="off">
+         agree & next
+         </button>
+         <br>
+         <br>
+      </div>
+      {{!-- <script>
+         $('#myButton').on('click', function () {
+           var $btn = $(this).button('loading')
+           // business logic...
+           $btn.button('reset')
+         })
+      </script> --}}
+   </div>
 </div>
 {{/if}}
