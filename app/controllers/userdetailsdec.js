@@ -11,7 +11,7 @@ export default Controller.extend({
                     var message=this.get('message');
                     this.set('message',message) 
                    return $.ajax({
-                      url:'http://192.168.0.20:8082/creditscore',//web service for credit score
+                      url:'http://localhost:8082/creditscore',//web service for credit score
                       type: 'POST',
                       contentType:'application/json',
                       data:JSON.stringify(reqid),

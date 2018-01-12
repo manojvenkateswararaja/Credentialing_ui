@@ -3,7 +3,7 @@ import Route from '@ember/routing/route';
 export default Route.extend({
  
         model(){
-            var newRequestController = this.controllerFor('newrequest');
+           var newRequestController = this.controllerFor('newrequest');
             var page2Controller=this.controllerFor('page2');
             var page3Controller=this.controllerFor('page3');
             var genderType=newRequestController.get('genderType');
@@ -43,7 +43,7 @@ export default Route.extend({
             this.controllerFor('page4').set('phone',phone);
     
         }
-    
+     
 
     
 });

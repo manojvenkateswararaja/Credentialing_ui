@@ -20,7 +20,10 @@ closeNav: function() {
 },
 targetButton:function(){
   this.transitionToRoute('userloanschedule');
-}
+},
+signout:function() {
+  this.transitionToRoute('login1');
+},
     }
   
 })

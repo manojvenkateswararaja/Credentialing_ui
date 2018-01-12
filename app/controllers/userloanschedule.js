@@ -23,6 +23,9 @@ export default Controller.extend({
         }
      
     })
-}
+},
+signout:function() {
+    this.transitionToRoute('login1');
+},
     }
 });

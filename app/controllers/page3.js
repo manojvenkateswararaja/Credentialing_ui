@@ -1,7 +1,6 @@
 import Controller from '@ember/controller';
 
 export default Controller.extend({
-    showRequest:true,
     selectedOption: null,
     showAnimatedDialog:false,
     mylist: ["house","condo","land"],
@@ -31,6 +30,8 @@ export default Controller.extend({
           var location=this.get('location');
        
           console.log(location);
+          var estimated=this.get('price');
+          console.log(estimated);
           var size=this.get('size');
    
           console.log(size);
@@ -58,6 +59,9 @@ export default Controller.extend({
         goToemployment:function(){
             this.transitionToRoute('page4');  
             
+        },
+        signout:function() {
+            this.transitionToRoute('login1');
         },
     }
 

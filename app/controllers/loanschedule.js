@@ -24,7 +24,7 @@ export default Controller.extend({
         var installmentpermonth=this.get('installmentpermonth')
         this.set('installmentpermonth',installmentpermonth)
         console.log("installmentpermonth>>",installmentpermonth)
-        var datastring={
+        var transactionstring={transactionstring:{
        "requestid":requestid,
        "loanamount": loanamount,
        "loanterms": loanterms,
@@ -32,13 +32,14 @@ export default Controller.extend({
        "paymentperyear": paymentperyear,
        "installmentpermonth": installmentpermonth,
         }
-        console.log(JSON.stringify(datastring))
+    }
+        console.log(JSON.stringify(transactionstring))
         var mycontroller=this;
         return $.ajax({
-            url:'http://192.168.11.149:8082/loanscheduleUser',
+            url:'http://192.168.11.149:8082/updatetransaction',
             type: 'POST',
             contentType: 'application/json',
-            data: JSON.stringify(datastring),
+            data: JSON.stringify(transactionstring),
             success: function(response) {
             console.log(JSON.stringify(response));
             var message = response.message;
@@ -52,11 +53,14 @@ export default Controller.extend({
           },
           proceed:function(message){
               var message=this.get('message')
-            if(message=="loanschedule created successfully"){
+            if(message=="user loan details updated successfully!"){
                 console.log("insilede if")
                 this.transitionToRoute('bankdashboard')
                 
             }
-          }
+          },
+          signout:function() {
+            this.transitionToRoute('login1');
+        },
     }
 });

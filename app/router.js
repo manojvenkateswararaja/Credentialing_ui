@@ -33,6 +33,8 @@ Router.map(function() {
   this.route('legalverification');
   this.route('legalverification2');
   this.route('userloanschedule');
+  this.route('credit1');
+  this.route('creditscreen');
 });
 
 export default Router;

@@ -5,14 +5,15 @@
         <form >
                <h3><b><i style="margin-left: -638px;">Loan Schedule </i></b></h3>
                <br>
-                <label>RequestID </label>
+                <label>RequestID :{{record.Key}}</label>
                 {{!-- <span>
     {{validated-input  type="text" model=this  valuePath='requestid' placeholder="requestid" required=""}}
     </span> --}}
     {{!-- <button class="btn" {{action "userschedule"}}>Get loanschedule</button> --}}
        {{!-- <label> Request ID:</label> --}}
+       {{!-- {{#each record.Record.transactionlist   as |item1|}} --}}
                  <br>
-                 <label>Loan Amount in Rs</label>
+                 <label>Loan Amount in Rs:{{item1.transactiondetails.amount}}</label>
                  <br>
                  <label>Loan Terms</label>
                  <br>
