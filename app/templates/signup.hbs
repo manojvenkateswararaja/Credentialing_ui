@@ -1,29 +1,33 @@
-
-    {{partial 'head'}}
-    {{#if showLogin}}
-    <br>
-    <br>
-    <br>
-    <br>
-    <div class="container" style="background-color:lightgrey; text-align:center; width:25%;">
-    <b><i>Sign up</i></b>
-    <br>
-     First Name
-     {{validated-input  type="text" model=this  valuePath='firstname' placeholder="firstname" required=""}}
-     Last Name
-     {{validated-input  type="text" model=this  valuePath='lastname' placeholder="lastname" required=""}}
-      Mobile Number
-     {{validated-input  type="number" model=this  valuePath='mobilenumber' placeholder="number" required=""}}  
-      D.O.B
-     {{validated-input  type="" model=this  valuePath='DateOfBirth' placeholder="D.O.B" required=""}} 
-      Email id 
-     {{validated-input  type="email" model=this  valuePath='email' placeholder="E-mail" required="true"}}
-      Password
-      {{validated-input  type="password" model=this  valuePath='password' placeholder="password" required=""}}
-      Re-type password
-      {{validated-input  type="password" model=this  valuePath='password2' placeholder="Retype password" required=""}}
-      <button type="button" id="myButton" class="btn btn-primary" style="margin-left: 2%;width: 40%;margin-bottom: -70px;" {{action "signup"}}>sign up</button>
+{{partial 'head'}}
+{{#if showLogin}}
+<br>
+<br>
+        
+<div class="container" style="background-color:lightgrey; text-align:center; width:25%;">
+   <b><i>Sign up</i></b>
    <br>
- </div>
- {{/if}}
-
+   First Name
+   {{validated-input  type="text" model=this  valuePath='firstname' placeholder="firstname" required=""}}
+   Last Name
+   {{validated-input  type="text" model=this  valuePath='lastname' placeholder="lastname" required=""}}
+   Mobile Number
+   {{validated-input  type="number" model=this  valuePath='mobilenumber' placeholder="number" required=""}}  
+   D.O.B
+   <br>
+  {{bootstrap-datepicker  id="date" value=DateOfBirth format="dd.mm.yy" placeholder="DOB"}}
+   <br>
+   {{!-- {{validated-input  type="" model=this  valuePath='DateOfBirth' placeholder="D.O.B" required=""}}  --}}
+   Email id 
+   {{validated-input  type="email" model=this  valuePath='email' placeholder="E-mail" required="true"}}
+   Password
+   {{validated-input  type="password" model=this  valuePath='password' placeholder="password" required=""}}
+   Re-type password
+   {{validated-input  type="password" model=this  valuePath='password2' placeholder="Retype password" required=""}}
+   <br>
+   <button type="button" id="myButton" class="btn btn-primary" {{action "signup"}}>sign up</button>
+   <br>
+   <br>
+</div>
+<br>
+<br>
+{{/if}}

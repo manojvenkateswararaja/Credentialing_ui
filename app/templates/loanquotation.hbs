@@ -1,47 +1,78 @@
 
 {{partial 'head'}}
 {{#if showUserLoanQuote}}
-<div class="container">
-   <div class="form">
-        <form >
-               <h3><b><i style="margin-left: -638px;">Loan Quotation</i></b></h3>
+<div class="container-fluid">
+<br>
+
+   
+   <div class="container">
+  <br>
+  <div class="text-align:center;">
+  <b>Loan Quotation</b>
+  </div>
+  <br>  
+  <div class="row">
+     <div class="col-xs-6 col-lg-6 col-sm-6" >
+               Request ID:</div>
+   <div class="col-xs-6 col-lg-6 col-sm-6" >
+     {{validated-input  type="text" model=this  valuePath='requestid' placeholder="Request Id" required=""}}
+     {{!-- <input  type="text" model=this  valuePath='requestid' placeholder="Request Id" required=""> --}}
+     </div>  
+     </div>
                <br>
-               Request ID:<input  type="text" model=this  valuePath='requestid' placeholder="Request Id" required="">
+               <div class="row">
+                  <div class="col-xs-6 col-lg-6 col-sm-6" >
+                 Loan Amount in Rs
+                 </div>
+                   <div class="col-xs-6 col-lg-6 col-sm-6" >
+                     {{validated-input  type="text" model=this  valuePath='loanamount' placeholder="amount" required=""}}
+                 </div>
+             </div>
                  <br>
-               <br>
-                 <label>Loan Amount in Rs</label>
-                  {{validated-input  type="text" model=this  valuePath='loanamount' placeholder="amount" required=""}}
-                 <br>
-                   <label>Loan Terms</label>
+                  <div class="row">
+                  <div class="col-xs-6 col-lg-6 col-sm-6" >
+                   Loan Terms
+                   </div>
+                   <div class="col-xs-6 col-lg-6 col-sm-6" >
                 {{validated-input  type="number" model=this  valuePath='loanterms' placeholder="loan terms" required=""}} 
+              </div>
+              </div>
               <br>
-               <label>Annual Interest Rate </label>
+              <div class="row">
+                  <div class="col-xs-6 col-lg-6 col-sm-6">
+              Annual Interest Rate 
+               </div>
+               <div class="col-xs-6 col-lg-6 col-sm-6">
             {{select-component listitem=InterestRate selecteditemlist=amountinterestrate}}
+                         </div>
+                         </div>
                          {{!-- {{validated-input  type="number" model=this  valuePath='amountinterestrate' placeholder="Interest rate" required=""}} --}}
                          {{!-- {{input type="text"   value=CompanyName placeholder="company name"}} --}}
               <br>
-             
-                 <label>Payment Per Year</label>
-               
+              <div class="row">
+                  <div class="col-xs-6 col-lg-6 col-sm-6" >
+                 Payment Per Year
+               </div>
+                <div class="col-xs-6 col-lg-6 col-sm-6">
           {{validated-input  type="number" model=this  valuePath='paymentperyear' placeholder="payment per year" required=""}}
+                     </div>
+                     </div>
                      {{!--{{input type="number" value=Emi placeholder="EMI"}}--}}    
                 <br>
-               <label>Installment per month</label> 
-                <span class="symbol">$</span>
-                
+                <div class="row">
+                  <div class="col-xs-6 col-lg-6 col-sm-6" >
+               Installment per month
+               </div>
+               <div class="col-xs-6 col-lg-6 col-sm-6" >                
                 {{validated-input  type="number" model=this  valuePath='installmentpermonth' placeholder="per month" required=""}}
-                 {{!--{{input  type="text" class="field text currency nospin" value=Rupees size="10"}} --}}
+                 </div>
+            </div>
             <br>
-           <button class="btn" {{action "loanschedule"}}>Schedule</button>
-            {{!-- {{#if isShchedule}}
-         {{#modal-dialog onClose="loanschedule"
-                  targetAttachment="center"
-                  translucentOverlay=true}}
-         <label>loan schedule succesfully</label>
-    <button class="btn" {{action "proceed" message}}>Proceed</button>
-          {{/modal-dialog}}
-          {{/if}} --}}
-        </form>
+            <button type="button"  style="width:20%;margin-left:8cm;margin-top:1cm;"  id="myButton" class="btn btn-primary" {{action "loanschedule"}}>Schedule</button>
+           {{!-- <button class="btn" {{action "loanschedule"}}>Schedule</button> --}}
+     <br>
+     <br>
+     <br>
 </div>
 </div>
 {{/if}}

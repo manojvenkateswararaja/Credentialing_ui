@@ -1,9 +1,6 @@
 {{partial 'head'}}
 {{#if showRequest}} 
-{{#paper-stepper currentStep=currentStep onStepChange=(action (mut currentStep))
-  onStepperCompleted=(action "saveModel") as |stepper|}}
-{{#stepper.step label="page2" as |step|}}
-{{#step.body}}
+
 <div class="container">
  <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" {{action "closeNav"}}>&times;</a>
@@ -40,16 +37,6 @@
   <br>
   </div>
   </div>
-   {{/step.body}}
-    {{#step.actions as |nextStep previousStep|}}
-    {{#paper-button primary=true raised=true onClick=(action nextStep)}}
-     next
-    {{/paper-button}}
-    {{#paper-button onClick=(action previousStep)}}
-        Back
-    {{/paper-button}}
-    {{/step.actions}}
-  {{/stepper.step}}
-{{/paper-stepper}} 
+  
   {{/if}}
      

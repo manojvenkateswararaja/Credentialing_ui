@@ -13,7 +13,6 @@ export default Controller.extend({
         nationalitylist:["indian","other"],
         actions:{
             saveModel:function(){
-            
                 var loan=this.get('loan');
                 console.log(loan);
                 var amount=this.get('amount');
@@ -27,16 +26,14 @@ export default Controller.extend({
                 this.transitionToRoute('newrequest');
             },
             targetButton:function(){
-            //   var modalvalue = this.get('showAnimatedDialog')
+              var modalvalue = this.get('showAnimatedDialog')
               
-            //             if(modalvalue!=true){
-            //               this.set('showAnimatedDialog',true)
-            //             }
-            //             else{
-            //               this.set('showAnimatedDialog',false)
-            //             }
-    
-             
+                        if(modalvalue!=true){
+                          this.set('showAnimatedDialog',true)
+                        }
+                        else{
+                          this.set('showAnimatedDialog',false)
+                        }
             },
             openNav:function(){
                 document.getElementById("mySidenav").style.width = "250px";

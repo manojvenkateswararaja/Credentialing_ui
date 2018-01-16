@@ -4,7 +4,7 @@ export default Route.extend({
     model(){
         var myroute=this
         return $.ajax({
-        url:'http://localhost:8082/getloandetails',
+        url:'http://172.22.0.1:8082/getloandetails',
         type: 'GET',
         contentType: 'application/json',
         success: function(response){
@@ -20,6 +20,6 @@ export default Route.extend({
         },
       
     });      
-    }, 
+    },
+  
 })
-

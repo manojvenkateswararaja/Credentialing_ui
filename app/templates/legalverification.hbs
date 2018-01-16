@@ -2,40 +2,40 @@
 {{#if showCreditscore}}
 <div class="container-fluid">
   <br>
-   <div  style="text-align:center">
-      <b>Legal verification</b> 
+   <div style="margin-left:18cm">
+     <b>Legal verification</b> 
 </div>
 <br>
 {{!-- <div class="user-container"> --}}
-  <div class="jumbotron" style="background-color:lightgrey">
-      <div class="row">
-         <div style="height:2em;border:1px solid #000;width: 102%;margin-left:-15px;">
-            <div class="col-xs-6 col-sm-3" style="background-color:lightcyan;">
-             <div class="vl5"><i style="margin-left:5%">Request Id:</i><i id="req">{{loanID.Key}}</i></div></div>
-            <div class="col-xs-6 col-sm-3" style="background-color:lightcyan;">
-               <div class="vl5">{{loanID.Record.transactiondetails.location}}</div>
+ 
+      <div class="row" style="background-color:lightcyan">
+        {{!-- style="height:2em;border:1px solid #000;width: 102%;margin-left:-15px;"> --}}   
+            <div class="col-xs-3 col-lg-3 col-sm-3" >
+             Request Id:{{loanID.Key}}</div>
+            <div class="col-xs-3 col-lg-3 col-sm-3" >
+               <div class="vl5"><div style="margin-left:8%">{{loanID.Record.transactiondetails.location}}</div></div>
             </div>
-            <div class="col-xs-6 col-sm-3" style="background-color:lightcyan;">
-               <div class="vl5">{{loanID.Record.transactiondetails.propertyvalue}}</div>
+            <div class="col-xs-3 col-lg-3 col-sm-3" >
+               <div class="vl5"><div style="margin-left:8%">{{loanID.Record.transactiondetails.propertyvalue}}</div></div>
             </div>
-            <div class="col-xs-6 col-sm-3" style="background-color:lightcyan;">
-               <div class="vl5">{{loanID.Record.transactiondetails.location}}</div>
+            <div class="col-xs-3 col-lg-3 col-sm-3" >
+               <div class="vl5"><div style="margin-left:8%">{{loanID.Record.transactiondetails.location}}</div></div>
             </div>
-         </div>
-         <br>
+      </div>
          <br>
          <style>
             table, th, {
             border-width: thin;
             }
          </style>
+           <div class="jumbotron" style="background-color:lightgrey">
          <div class="row">
-            <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6" style="background-color:grey;">Personal information</div>
-            <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6" style="background-color:grey;">Property information</div>
+            <div class="col-xs-6 col-lg-6 col-sm-6" style="background-color:grey;">Personal information</div>
+            <div class="col-xs-6 col-lg-6 col-sm-6" style="background-color:grey;">Property information</div>
          </div>
          <br> 
          <div class="row">
-            <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6">
+            <div class="col-xs-6 col-lg-6 col-sm-6">
                <table>
                   <tr>
                      <td>firstname:</td>
@@ -63,7 +63,7 @@
                   </tr>
                </table>
             </div>
-            <div class= "col-xs-6 col-lg-6 col-md-6 col-sm-6 ">
+            <div class= "col-xs-6 col-lg-6 col-sm-6 ">
                <table>
                   <tr>
                      <td>mortgaugeType</td>
@@ -122,5 +122,5 @@
    </div>
    </div>
    </div>
-   </div>
+   
    {{/if}} 

@@ -1,34 +1,75 @@
 {{partial "head"}}
-{{#if "showCreditscore"}}
+{{#if showCreditscore}}
+<div class="container-fluid">
+      <br>
+      <div class="row">
+              <div class="col-xs-2 col-lg-2 col-sm-2" >
+      <b>Legal verification</b>
+      </div>
+      </div>
+      <br>
+      
 <div class="container">
-   <div id="usercont-lock">
-      <h2><i>Legal verification </i></h2>
-</div>
-<div class="user-container">
-   <br/>
-   <p style="text-align:center;color:#808080 "><b>Total Request</b></p>
-               <b style="margin-left:387px">Property Information</b><br>
-               <br>
-               <div class="input-container">
+      <br>
+      <div class="container" style="margin-left:-14px;">
+       <div class="row" style="background-color:lightcyan">
+        {{!-- style="height:2em;border:1px solid #000;width: 102%;margin-left:-15px;"> --}}   
+            <div class="col-xs-3 col-lg-3 col-sm-3" >
+             Request Id:{{loanID.Key}}</div>
+            <div class="col-xs-3 col-lg-3 col-sm-3" >
+               <div class="vl5"><div style="margin-left:8%">{{loanID.Record.transactiondetails.location}}</div></div>
+            </div>
+            <div class="col-xs-3 col-lg-3 col-sm-3" >
+               <div class="vl5"><div style="margin-left:8%">{{loanID.Record.transactiondetails.propertyvalue}}</div></div>
+            </div>
+            <div class="col-xs-3 col-lg-3 col-sm-3" >
+               <div class="vl5"><div style="margin-left:8%">{{loanID.Record.transactiondetails.location}}</div></div>
+            </div>
+      </div>
+      </div>
+   <br>
+      <b style="margin-left:387px">Property Information</b><br>
+  <div class="row">
+               <div class="col-xs-6 col-lg-6 col-sm-6" >
                PropertyType:{{loanID.transactionstring.propertyType}}
-               <br>
-              <br>
+            </div>
+            </div><br>
+              <div class="row">
+             <div class="col-xs-6 col-lg-6 col-sm-6" >
                Address:{{loanID.transactionstring.address}}
-               <br>
-               <br>
+            </div>
+            </div><br>
+              <div class="row">
+             <div class="col-xs-6 col-lg-6 col-sm-6">
                Propertyvalue:{{loanID.transactionstring.propertyvalue}}
-            <br>
-            <br>
+            </div>
+            </div><br>
+              <div class="row">
+             <div class="col-xs-6 col-lg-6 col-sm-6">
               Ownership Name:{{loanID.transactionstring.firstname}}
-             <br>
+             </div>
+             </div><br>
+               <div class="row">
+              <div class="col-xs-6 col-lg-6 col-sm-6">
              property Document:{{loanID.transactionstring.file_upload1}}
+                   </div>
+                   </div><br>
+                  
                    <br>
-              <button  id="user-btn2" {{action "approval"}}>Approve</button>
+                   <div class="row">
+              <div class="col-xs-6 col-lg-6 col-sm-6">
+                    <button type="button"  style="width:40%;" id="myButton" class="btn btn-primary" {{action "approval"}}>Approve</button>
+               </div>
+                <div class="col-xs-6 col-lg-6 col-sm-6">
+               <button type="button"  style="width:40%;"  id="myButton" class="btn btn-primary" {{action "reject"}}>Rejected</button>
+              </div>
+              </div>
+              {{!-- <button  id="user-btn2" {{action "approval"}}>Approve</button>
               <button  id="user-btn2" {{action "reject"}}>Rejected</button>
-             
+              --}}
              <br>
              <br>
-             </div>   
+              
              </div>
   
     </div>

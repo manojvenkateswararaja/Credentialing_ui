@@ -1,6 +1,6 @@
 {{partial 'head'}}
 {{#if showRequest}}
-<div class="container-fluid" style="background-color:whitesmoke">
+<div class="container-fluid" style="">
    <div id="mySidenav" class="sidenav" >
       <a href="javascript:void(0)" class="closebtn" {{action "closeNav"}}>&times;</a>
       <a >Home</a>
@@ -13,7 +13,7 @@
       {{#paper-stepper   currentStep=currentStep onStepChange=(action (mut currentStep))
       onStepperCompleted=(action "saveModel") as |stepper|}}
       {{#stepper.step label="Personal Details" as |step|}}
-      <div class="container" style="margin-left:506px; background-color:lightgrey">
+      <div class="container" style="margin-left:442px; background-color:lightgrey">
          {{#step.body}}
          {{#paper-grid-list
          cols="1 md-2 gt-md-6"
@@ -65,7 +65,7 @@
       {{/stepper.step}}
       {{!-- add as many steps as necessary --}}
       {{#stepper.step label="Mortgage Details" as |step|}}
-      <div class="container" style="margin-left:506px; margin-top:-1cm; background-color:lightgrey">
+      <div class="container" style="margin-left:442px; margin-top:-1cm; background-color:lightgrey">
          {{#step.body}} 
          {{#paper-grid-list
          cols="1 md-2 gt-md-6"
@@ -75,7 +75,7 @@
          <br>
          <br>
          <br>
-         <div style="background-color:cornsilk;margin-top:-20px">
+         <div style="background-color:cornsilk;margin-top:-82px;padding-top: 64px;">
             {{paper-input label="purpose of loan" value=loan onChange=(action (mut loan)) icon="account balance" }}
             {{paper-input label="Required Amount" value=amount onChange=(action (mut amount)) icon="attach money"}}
             <br>
@@ -103,7 +103,7 @@
       {{/step.actions}}
       {{/stepper.step}}
       {{#stepper.step label="Property Details" as |step|}}
-      <div class="container" style="margin-left:506px; margin-top:-1cm; background-color:lightgrey">
+      <div class="container" style="margin-left:442px; margin-top:-1cm; background-color:lightgrey">
          {{#step.body}}
          {{#paper-grid-list
          cols="1 md-2 gt-md-6"
@@ -138,7 +138,7 @@
       {{/stepper.step}}
       {{!-- page4 --}}
       {{#stepper.step label="Employement Details" as |step|}}
-      <div class="container" style="margin-left:506px;margin-top:-2cm; background-color:lightgrey">
+      <div class="container" style="margin-left:442px;margin-top:-2cm; background-color:lightgrey">
          {{#step.body}} 
          {{#paper-grid-list
          cols="1 md-2 gt-md-6"

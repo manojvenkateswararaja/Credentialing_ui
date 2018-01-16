@@ -27,16 +27,17 @@
       <br>
       <br>
       <div class="row">
-         <div style="height:2em;border:1px solid #000;width: 102%;margin-left: -16px;">
+          {{!-- style="height:2em;border:1px solid #000;width: 102%;margin-left: -16px;" --}}
+         <div>
             <div class="col-xs-6 col-sm-3" style="background-color:lightcyan;"><i style="margin-left:5%">Request Id:</i><i id="req">{{loanID.Key}}</i></div>
             <div class="col-xs-6 col-sm-3" style="background-color:lightcyan;">
-               <div class="vl5">{{loanID.Record.transactiondetails.location}}</div>
+               <div class="vl5"><div style="margin-left:8%">{{loanID.Record.transactiondetails.location}}</div></div>
             </div>
             <div class="col-xs-6 col-sm-3" style="background-color:lightcyan;">
-               <div class="vl5">{{loanID.Record.transactiondetails.propertyvalue}}</div>
+               <div class="vl5"><div style="margin-left:8%">{{loanID.Record.transactiondetails.propertyvalue}}</div></div>
             </div>
             <div class="col-xs-6 col-sm-3" style="background-color:lightcyan;">
-               <div class="vl5">{{loanID.Record.transactiondetails.location}}</div>
+               <div class="vl5"><div style="margin-left:8%">{{loanID.Record.transactiondetails.location}}</div></div>
             </div>
          </div>
          <br>
