@@ -7,5 +7,7 @@ export default Route.extend({
         var loanID = this.controllerFor('bankdashboard').get('record');
         this.controllerFor('userdetails').set('record',loanID);
         console.log("userdetails page00",loanID)
+       
+        
    }
 })

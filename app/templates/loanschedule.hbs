@@ -41,15 +41,14 @@
      <br>
     <div class="form-group">
       <label>Request ID:</label>
-      <input type="number" class="form-control"   value='requestid' placeholder="Requestid" >
+    {{validated-input  type="text" model=this  valuePath='requestid' placeholder="Request Id" required=""}}
     </div>
     <div class="form-group">
-      <label for="pwd">Loan Amount in Rs:</label>
-      <input type="number" class="form-control" id="pwd"  value='loanamount' placeholder="Enter Amount">
+      <label for="pwd">Loan Amount in Rs:</label>{{validated-input  type="text" model=this  valuePath='loanamount' placeholder="loanamount" required=""}}
     </div>
     <div class="form-group">
        <label>Loan Terms:</label>
-      <input type="number"   class="form-control"  value='loanterms' placeholder="loan terms">
+      {{validated-input  type="text" model=this  valuePath='loanterms' placeholder="loanterms" required=""}}
     </div>
     <div class="form-group">
      <label>Annual Interest Rate </label>
@@ -59,11 +58,11 @@
       </div>
       <div class="form-group">
            <label >Payment Per Year:</label>
-      <input type="number"   class="form-control"  value='paymentperyear' placeholder="Payment Per Year">
+  {{validated-input  type="text" model=this  valuePath='paymentperyear' placeholder="paymentperyear" required=""}}
     </div>
     <div class="form-group">
        <label >Installment per month:</label>
-      <input type="number"  class="form-control"   value='installmentpermonth' placeholder="Installment per month">
+      {{validated-input  type="text" model=this  valuePath='installmentpermonth' placeholder="installmentpermonth" required=""}}
     </div>
     <br>
     <br>
@@ -78,17 +77,22 @@
 
             {{!-- boots --}}
            {{!-- <button class="btn" {{action "loanschedule"}}>Schedule</button> --}}
-            {{#if isShchedule}}
-         {{#modal-dialog onClose="loanschedule"
-                  targetAttachment="center"
-                  translucentOverlay=true}}
-         <label>loan schedule succesfully</label>
-    <button class="btn" {{action "proceed" message}}>Proceed</button>
-          {{/modal-dialog}}
-          {{/if}}
-           {{isShchedule}}
-        </form>
+         {{#if showDialog}}
+  {{#paper-dialog class="flex-77" onClose=(action "closeDialog" "cancel") origin=dialogOrigin clickOutsideToClose=true}}
+    {{#paper-toolbar}}
+      {{#paper-toolbar-tools}}
+        Loan has been scheduled to the user   ...!!
+        {{#paper-button iconButton=true onClick=(action "closeDialog" "cancel")}}{{paper-icon icon="close"}}{{/paper-button}}
+      {{/paper-toolbar-tools}}
+    {{/paper-toolbar}}
 
-</div>
-</div>
+   
+    {{#paper-dialog-actions class="layout-row"}}
+      {{#paper-button onClick=(action "closeDialog" "cancel")}}Cancel{{/paper-button}}
+      {{#paper-button onClick=(action "okay" "ok")}}OK{{/paper-button}}
+    {{/paper-dialog-actions}}
+  {{/paper-dialog}}
+{{/if}}
+           {{isShchedule}}
+      
 {{/if}}

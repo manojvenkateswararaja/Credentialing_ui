@@ -1,37 +1,36 @@
 {{partial 'head'}}
 {{#if showPreclosure}}
-<div class="container">
-    <div class="form">
+<div class="container-fluid">
+  <br>
+  <br>
+    <div class="container">
          <form>
-        <h3><b><i style="margin-left: -600px;">Pre-Closing</i></b></h3>
+        <div style="text-align:center;"><b>Pre-Closing</b></div>
                   <br>
-                  <label>EMI Remaining</label>
-              
+                  EMI Remaining
                     <input type="number" class="form-control" id="exampleInputEmail1" valuePath='EMI' placeholder="number of emi" required="true">
                    {{!-- {{validated-input  type="text" model=this  valuePath='EMI' placeholder="amount" required=""}} --}}
                   <br>
-                  <label>
                   Penality for Preclose
-                  </label>
                   <span>
                        <input type="number" class="form-control" id="exampleInputEmail1" valuePath='penality' placeholder="penality">
                 {{!-- {{validated-input  type="text" model=this  valuePath='penality' placeholder="penality" required=""}} --}}
                   </span>
                <br>
-                <label>Installment Per month </label>
+                Installment Per month
                       <span>
                              <input type="number" class="form-control" id="exampleInputEmail1" valuePath='installment' placeholder="installment per month">
                           {{!-- <input  type="number" model=this  valuePath='installment' placeholder="installment per month" required=""> --}}
                      </span>
                <br>
-                  <label>Document Required for Closing</label>
+                 Document Required for Closing
+                 <div style="margin-left:355px; margin-top:-35px">
                   {{#pl-uploader  for="upload_file5" runtimes="html5 flash silverlight" onfileadd="uploadDoc" as |queue|}}
                   <a id="upload_file6" style="font-size:18px"> <p style="margin-top:3mm"> <img src="assets/images/upload.svg" alt="Smiley face" width="20" height="20" style="margin-bottom:3mm">&nbsp; Choose File to Upload</p></a>
                   {{/pl-uploader}}   
-               <br>
-                  <label>
+               </div>
+               <br>         
                Payment Mode
-                  </label>
                   <div class="drop" style="margin-left:314px; margin-top:-28px">
                 {{select-component listitem=PaymentMode selecteditemlist=Payment}}
                  </div>

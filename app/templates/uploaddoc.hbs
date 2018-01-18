@@ -14,48 +14,52 @@
   <a {{action "goToemployment"}}>Employment details</a>
 
 </div>
+{{!-- <div id="main">
+      <span style="font-size:30px;cursor:pointer" {{action "openNav"}}>&#9776; open</span>
+</div> --}}
+<div class="container">
+<div class="upload">
+     {{!-- <div class="container-fluid">   --}}
+                  <h3><b><i style="margin-left: -525px;">Upload Document</i></b></h3>
+                   <div class="detail"><i style="margin-left: -480px;" >please fill your documents details?</i></div>
+                <br>
+                  <label >Id proof Document</label>
+                   {{#pl-uploader  for="upload_file1" runtimes="html5 flash silverlight" onfileadd="uploadDoc" as |queue|}}
+          <a id="upload_file1" style="font-size:18px"> <p style="margin-top:3mm"> <img src="assets/images/upload.svg" alt="Smiley face" width="20" height="20" style="margin-bottom:3mm">&nbsp; Choose File to Upload</p></a>
+         {{/pl-uploader}}
+                           
+                           
+                   <br>
+                   <label > BankStatement Document</label>
+          {{#pl-uploader  for="upload_file2" runtimes="html5 flash silverlight" onfileadd="uploadDoc" as |queue|}}
+          <a id="upload_file2" style="font-size:18px"> <p style="margin-top:3mm"> <img src="assets/images/upload.svg" alt="Smiley face" width="20" height="20" style="margin-bottom:3mm">&nbsp; Choose File to Upload</p></a>
+         {{/pl-uploader}}
+                           
+                   <br>
+                   <label >Address proof Document</label>
+                                 {{#pl-uploader  for="upload_file3" runtimes="html5 flash silverlight" onfileadd="uploadDoc" as |queue|}}
+          <a id="upload_file3" style="font-size:18px"> <p style="margin-top:3mm"> <img src="assets/images/upload.svg" alt="Smiley face" width="20" height="20" style="margin-bottom:3mm">&nbsp; Choose File to Upload</p></a>
+         {{/pl-uploader}}
+                         
+                           
+                   <br>
+                    <label>property Document</label>
+                {{#pl-uploader  for="upload_file4" runtimes="html5 flash silverlight" onfileadd="uploadDoc" as |queue|}}
+          <a id="upload_file4" style="font-size:18px"> <p style="margin-top:3mm"> <img src="assets/images/upload.svg" alt="Smiley face" width="20" height="20" style="margin-bottom:3mm">&nbsp; Choose File to Upload</p></a>
+         {{/pl-uploader}}
+                           
+                   
+                    <br>
+                  <label >Income tax return Document</label>
+                {{#pl-uploader  for="upload_file5" runtimes="html5 flash silverlight" onfileadd="uploadDoc" as |queue|}}
+          <a id="upload_file5" style="font-size:18px"> <p style="margin-top:3mm"> <img src="assets/images/upload.svg" alt="Smiley face" width="20" height="20" style="margin-bottom:3mm">&nbsp; Choose File to Upload</p></a>
+         {{/pl-uploader}}
+                           
+                    <br>
+                     {{#paper-button raised=true warn=true onClick=(action "targetButton")}}Submit{{/paper-button}}
 
-<div class="container-fluid" style="background-color:lightgrey">
-  <br>
-<br>
-<div class="container" style="background-color:whitesmoke; ">
-  <br>
-   
-                  <div  style="text-align:center;"><b>UPLOAD DOCUMENTS</b></div>
-                  <br>
-                   <i style="text-align:left; color:grey" >please fill your documents details?</i>
-                   <br>
-                   <br>
-                   Id Proof Document
-                   {{#pl-uploader  runtimes="html5 flash silverlight" onfileadd="uploadDoc" as |queue|}}
-          <a  style="font-size:18px"> <p style="margin-top:3mm"> <img src="assets/images/upload.svg" alt="Smiley face" width="20" height="20" style="margin-bottom:3mm">&nbsp; Choose File to Upload</p></a>
-         {{/pl-uploader}}                  
-                   <br>
-                   BankStatement Document
-          {{#pl-uploader   runtimes="html5 flash silverlight" onfileadd="uploadDoc" as |queue|}}
-          <a  style="font-size:18px"> <p style="margin-top:3mm"> <img src="assets/images/upload.svg" alt="Smiley face" width="20" height="20" style="margin-bottom:3mm">&nbsp; Choose File to Upload</p></a>
-         {{/pl-uploader}}         
-                   <br>
-                   Address proof Document
-          {{#pl-uploader   runtimes="html5 flash silverlight" onfileadd="uploadDoc" as |queue|}}
-          <a  style="font-size:18px"> <p style="margin-top:3mm"> <img src="assets/images/upload.svg" alt="Smiley face" width="20" height="20" style="margin-bottom:3mm">&nbsp; Choose File to Upload</p></a>
-         {{/pl-uploader}}        
-                   <br>
-                property Document
-                {{#pl-uploader  runtimes="html5 flash silverlight" onfileadd="uploadDoc" as |queue|}}
-          <a  style="font-size:18px"> <p style="margin-top:3mm"> <img src="assets/images/upload.svg" alt="Smiley face" width="20" height="20" style="margin-bottom:3mm">&nbsp; Choose File to Upload</p></a>
-         {{/pl-uploader}}        
-                    <br>
-                  Income tax return Document
-                {{#pl-uploader  runtimes="html5 flash silverlight" onfileadd="uploadDoc" as |queue|}}
-          <a style="font-size:18px"> <p style="margin-top:3mm"> <img src="assets/images/upload.svg" alt="Smiley face" width="20" height="20" style="margin-bottom:3mm">&nbsp; Choose File to Upload</p></a>
-         {{/pl-uploader}}             
-                    <br>
-    {{#paper-button raised=true warn=true onClick=(action "targetButton")}}Submit{{/paper-button}}
-            
-            <br>
-            <br>
-  {{#if showDialog}}
+            {{!-- <button class="btn" {{action "apply"}}>Apply</button> --}}
+        {{#if showDialog}}
   {{#paper-dialog class="flex-77" onClose=(action "closeDialog" "cancel") origin=dialogOrigin clickOutsideToClose=true}}
     {{#paper-toolbar}}
       {{#paper-toolbar-tools}}
@@ -63,6 +67,8 @@
         {{#paper-button iconButton=true onClick=(action "closeDialog" "cancel")}}{{paper-icon icon="close"}}{{/paper-button}}
       {{/paper-toolbar-tools}}
     {{/paper-toolbar}}
+
+   
     {{#paper-dialog-actions class="layout-row"}}
       {{#paper-button onClick=(action "closeDialog" "cancel")}}Cancel{{/paper-button}}
       {{#paper-button onClick=(action "okay" "ok")}}OK{{/paper-button}}

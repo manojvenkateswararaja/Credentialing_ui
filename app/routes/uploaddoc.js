@@ -7,7 +7,7 @@ export default Route.extend({
             console.log("entering upload FIR 3");
     var mycontroller = this;
              console.log(file)
-   var requestid=this.controllerFor('page4').get('reqid');
+   var requestid=this.controllerFor('newrequest').get('reqid');
    this.controllerFor('uploaddoc').set('requestid',requestid);
    console.log(requestid);
 
@@ -35,7 +35,7 @@ file.upload('http://192.168.11.149:8082/UploadDocs?requestid='+requestid).then(f
 },
     },
 model(){
-    var requestid =this.controllerFor('page4').get('reqid');
+    var requestid =this.controllerFor('newrequest').get('reqid');
     this.controllerFor('uploaddoc').set('requestid',requestid);
    console.log("reqid--",requestid);
 }

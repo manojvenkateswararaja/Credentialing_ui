@@ -20,6 +20,7 @@ export default Controller.extend({
   // }
   actions: {
     userdetails: function(showrecords) {
+      
       this.set('record', showrecords);
       this.transitionToRoute('userdetails');
     },

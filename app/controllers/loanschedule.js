@@ -6,6 +6,14 @@ export default Controller.extend({
     InterestRate:["1%","2%","3%","4%","5%","6%","7%","8%"],
     actions:{
     loanschedule:function(){
+        var modalvalue = this.get('showDialog')
+        
+                  if(modalvalue!=true){
+                    this.set('showDialog',true)
+                  }
+                  else{
+                    this.set('showDialog',false)
+                  }
         var requestid=this.get('requestid')
         this.set('requestid',requestid)
         console.log("requestid>>",requestid)
@@ -24,8 +32,8 @@ export default Controller.extend({
         var installmentpermonth=this.get('installmentpermonth')
         this.set('installmentpermonth',installmentpermonth)
         console.log("installmentpermonth>>",installmentpermonth)
-        var transactionstring={transactionstring:{
-       "requestid":requestid,
+        var transactionstring={"requestid":requestid,"transactionstring":{
+       
        "loanamount": loanamount,
        "loanterms": loanterms,
        "amountinterestrate":amountinterestrate,
@@ -36,7 +44,7 @@ export default Controller.extend({
         console.log(JSON.stringify(transactionstring))
         var mycontroller=this;
         return $.ajax({
-            url:'http://192.168.11.149:8082/updatetransaction',
+            url:'http://192.168.11.149:8082/loanscheduleUser',
             type: 'POST',
             contentType: 'application/json',
             data: JSON.stringify(transactionstring),
@@ -51,14 +59,14 @@ export default Controller.extend({
           }) 
       
           },
-          proceed:function(message){
-              var message=this.get('message')
-            if(message=="user loan details updated successfully!"){
-                console.log("insilede if")
-                this.transitionToRoute('bankdashboard')
-                
-            }
-          },
+          closeDialog:function(){
+            this.set('showDialog',false)
+        },
+        okay:function(){
+          this.set('showDialog',false)
+        },
+          
+         
           signout:function() {
             this.transitionToRoute('login1');
         },

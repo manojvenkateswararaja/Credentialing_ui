@@ -1,56 +1,55 @@
 {{partial 'head'}}
 {{#if showUserSchedule}}
 <div class="container-fluid">
-  <br>
-  <br>
+   <br>
+   <br>
    <div class="container">
-        <form >
-               <div style="text-align:center;"><b>Loan Schedule</b></div>
-               <br>
-                <label>RequestID :{{record.Key}}</label>
-                {{!-- <span>
-    {{validated-input  type="text" model=this  valuePath='requestid' placeholder="requestid" required=""}}
-    </span> --}}
-    {{!-- <button class="btn" {{action "userschedule"}}>Get loanschedule</button> --}}
-       {{!-- <label> Request ID:</label> --}}
-       {{!-- {{#each record.Record.transactionlist   as |item1|}} --}}
-                 <br>
-                 <label>Loan Amount in Rs:{{item1.transactiondetails.amount}}</label>
-                 <br>
-                 <label>Loan Terms</label>
-                 <br>
-                 <label>Annual Interest Rate </label>
-                 <br>
-                {{!-- "requestid":requestid,
-       "loanamount": loanamount,
-       "loanterms": loanterms,
-       "amountinterestrate":amountinterestrate,
-       "paymentperyear": paymentperyear,
-       "installmentpermonth": installmentpermonth, --}}
-               <label>Payment Per Year</label>
-               <br>
-               <label>Installment per month</label> 
-               <span class="symbol">$</span>
-               <br>
-        </form>
-        <br>
-        <br>
-        <br>
-        <br>
-        <div style="margin-left:700px; margin-top:-80px;">
-        <button type="button" id="myButton" data-loading-text="Loading..." class="btn btn-primary" autocomplete="off">
-  agree & next
-</button>
-<br>
-<br>
+      <form >
+        <div class="form-group">
+      <label>Request ID:</label>
+    {{validated-input  type="text" model=this  valuePath='requestid' placeholder="Request Id" required=""}}
+    </div>
+    <div style="margin-left:363px;">
+   <button type="button" id="myButton" class="btn btn-primary" {{action "userschedule"}}>Schedule</button>
 </div>
-{{!-- <script>
-  $('#myButton').on('click', function () {
-    var $btn = $(this).button('loading')
-    // business logic...
-    $btn.button('reset')
-  })
-</script> --}}
-</div>
+         <div style="text-align:center;"><b>Loan Schedule</b></div>
+         <br>
+         <label>Loan Amount in Rs:{{message.transactionstring.loanamount}}</label>
+         <br>
+         <label>Loan Terms:{{loanterms}}</label>
+         <br>
+         <label>Annual Interest Rate:{{amountinterestrate}} </label>
+         <br>
+         {{!-- "requestid":requestid,
+         "loanamount": loanamount,
+         "loanterms": loanterms,
+         "amountinterestrate":amountinterestrate,
+         "paymentperyear": paymentperyear,
+         "installmentpermonth": installmentpermonth, --}}
+         <label>Payment Per Year:{{paymentperyear}}</label>
+         <br>
+         <label>Installment per month:{{installmentpermonth}}</label> 
+         <span class="symbol">$</span>
+         <br>
+      </form>
+      <br>
+      <br>
+      <br>
+      <br>
+      <div style="margin-left:700px; margin-top:-80px;">
+         <button type="button" id="myButton" data-loading-text="Loading..." class="btn btn-primary" autocomplete="off">
+         agree & next
+         </button>
+         <br>
+         <br>
+      </div>
+      {{!-- <script>
+         $('#myButton').on('click', function () {
+           var $btn = $(this).button('loading')
+           // business logic...
+           $btn.button('reset')
+         })
+      </script> --}}
+   </div>
 </div>
 {{/if}}

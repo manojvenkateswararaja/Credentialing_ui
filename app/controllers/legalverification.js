@@ -3,12 +3,130 @@ import Controller from '@ember/controller';
 export default Controller.extend({
     showCreditscore:true,
     actions:{
-        verification:function(){
-            this.transitionToRoute('legalverification2');
-
-        },
+        
         signout:function(){
             this.transitionToRoute('login1');
+        },
+        reject:function (showrecords,records) {
+            var modalvalue = this.get('showDialog')
+            
+                      if(modalvalue!=true){
+                        this.set('showDialog',true)
+                      }
+                      else{
+                        this.set('showDialog',false)
+                      }
+                var mycontroller=this;
+                console.log("requestid>>>>>>>>",showrecords)
+              
+               var transactionstring={"id":records,"transactionstring":{
+                  "loan":showrecords.loan,
+                  "amount":showrecords.amount,
+                  "propertyType":showrecords.propertyType,
+                  "income":showrecords.income,
+                  "location":showrecords.location,
+                  "year":showrecords.year,
+                  "size":showrecords.size,
+                  "income":showrecords.income,
+                  "fname":showrecords.fname,
+                  "lname":showrecords.lname,
+                  "estimated":showrecords.estimated,
+                  "age":showrecords.age,
+                  "phone":showrecords.phone,
+                  "email":showrecords.email,
+                  "address":showrecords.address,
+                  "country":showrecords.country,
+                  "occupation":showrecords.occupation,
+                  "genderType":showrecords.genderType,
+                  "nationalityType":showrecords.nationalityType,
+                  "Company":showrecords.Company,
+                  "joiningdate":showrecords.joiningdate,
+                  "salary":showrecords.salary,
+                  "address":showrecords.address,
+                  "bank":"applied",
+                  
+                  "legal":"rejected",
+                }}
+              console.log("creditscore------>",transactionstring);
+                return $.ajax({
+                url:'http://192.168.11.149:8082/updatetransaction',//web service for credit score
+                type: 'POST',
+                contentType:'application/json',
+                data:JSON.stringify(transactionstring),
+                success: function(response) {
+                console.log("service")
+               mycontroller.set('showCredit',true)
+            var creditscore=response
+            console.log("credit",creditscore);
+              //   mycontroller.set('creditscore',creditscore)
+              //   console.log("my credit ccore>>>>>>",creditscore)
+                  },
+                })
+            },
+            closeDialog:function(){
+                this.set('showDialog',false)
+            },
+            okay:function(){
+              this.set('showDialog',false)
+            },
+            approved:function (showrecords,records) {
+                var modalvalue = this.get('showDialog')
+                
+                          if(modalvalue!=true){
+                            this.set('showDialog',true)
+                          }
+                          else{
+                            this.set('showDialog',false)
+                          }
+                    var mycontroller=this;
+                    console.log("requestid>>>>>>>>",showrecords)
+                  
+                   var transactionstring={"id":records,"transactionstring":{
+                      "loan":showrecords.loan,
+                      "amount":showrecords.amount,
+                      "propertyType":showrecords.propertyType,
+                      "income":showrecords.income,
+                      "location":showrecords.location,
+                      "year":showrecords.year,
+                      "size":showrecords.size,
+                      "income":showrecords.income,
+                      "fname":showrecords.fname,
+                      "lname":showrecords.lname,
+                      "estimated":showrecords.estimated,
+                      "age":showrecords.age,
+                      "phone":showrecords.phone,
+                      "email":showrecords.email,
+                      "address":showrecords.address,
+                      "country":showrecords.country,
+                      "occupation":showrecords.occupation,
+                      "genderType":showrecords.genderType,
+                      "nationalityType":showrecords.nationalityType,
+                      "Company":showrecords.Company,
+                      "joiningdate":showrecords.joiningdate,
+                      "salary":showrecords.salary,
+                      "address":showrecords.address,
+                      "bank":"applied",
+                      
+                      "legal":"approved",
+                    }}
+                  console.log("creditscore------>",transactionstring);
+                    return $.ajax({
+                    url:'http://192.168.11.149:8082/updatetransaction',//web service for credit score
+                    type: 'POST',
+                    contentType:'application/json',
+                    data:JSON.stringify(transactionstring),
+                    success: function(response) {
+                    console.log("service")
+                   mycontroller.set('showCredit',true)
+                var creditscore=response
+                console.log("credit",creditscore);
+                  //   mycontroller.set('creditscore',creditscore)
+                  //   console.log("my credit ccore>>>>>>",creditscore)
+                      },
+                    })
+                },
+            
         }
-    }
+    
+    
 });

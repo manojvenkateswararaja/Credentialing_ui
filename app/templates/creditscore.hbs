@@ -1,5 +1,4 @@
-{{partial 'head'}}
-{{#if showCreditscore}}
+
 <div class="container">
    <div id="usercont-lock">
       <h2><i>Credit Score</i></h2>
@@ -7,30 +6,17 @@
 <div class="user-container">
    <br/>
    <p style="text-align:center;color:#808080 "><b>Total Request</b></p>
-      <i style="margin-left:70px">Request Id:</i><i id="req">{{record.requestid}}</i>
-      <br>
-      <br>
-      <br>
-      <div class="row">
-         <div style="height:2em;border:1px solid #000;width: 102%;margin-left: -16px;">
-            <div class="col-xs-6 col-sm-3" style="background-color:lightcyan;"><i style="margin-left:5%">Request Id:</i><i id="req">{{loanID.Key}}</i></div>
-            <div class="col-xs-6 col-sm-3" style="background-color:lightcyan;">
-               <div class="vl5">{{loanID.Record.transactiondetails.location}}</div>
-            </div>
-            <div class="col-xs-6 col-sm-3" style="background-color:lightcyan;">
-               <div class="vl5">{{loanID.Record.transactiondetails.propertyvalue}}</div>
-            </div>
-            <div class="col-xs-6 col-sm-3" style="background-color:lightcyan;">
-               <div class="vl5">{{loanID.Record.transactiondetails.location}}</div>
-            </div>
-         </div>
-         <br>
-         <br>
+  
+      <i style="margin-left:70px">Request Id:{{records}}</i>
+
+
+      
          <style>
             table, th, {
             border-width: thin;
             }
          </style>
+        
          <div class="row">
             <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6" style="background-color:grey;">Personal information</div>
             <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6" style="background-color:grey;">Property information</div>
@@ -38,67 +24,97 @@
          <br> 
          <div class="row">
             <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6">
+           
                <table>
                   <tr>
                      <td>firstname:</td>
-                     <td style="color:gray;">{{loanID.Record.transactiondetails.firstname}}</td>
+                     <td style="color:gray;">{{showrecords.fname}}</td>
                   </tr>
                   <tr>
                      <td>lastname:</td>
-                     <td style="color:gray;">{{loanID.Record.transactiondetails.lastname}}</td>
+                     <td style="color:gray;">{{showrecords.lname}}</td>
                   </tr>
                   <tr>
                      <td>contact number:</td>
-                     <td style="color:gray;">{{loanID.Record.transactiondetails.number}}</td>
+                     <td style="color:gray;">{{showrecords.phone}}</td>
                   </tr>
                   <tr>
                      <td>country:</td>
-                     <td style="color:gray;">{{loanID.Record.transactiondetails.country}}</td>
+                     <td style="color:gray;">{{showrecords.country}}</td>
                   </tr>
                   <tr>
                      <td>occupation:</td>
-                     <td style="color:gray;">{{loanID.Record.transactiondetails.occupation}}</td>
+                     <td style="color:gray;">{{showrecords.occupation}}</td>
                   </tr>
                   <tr>
                      <td>income:</td>
-                     <td style="color:gray;">{{loanID.Record.transactiondetails.income}}</td>
+                     <td style="color:gray;">{{showrecords.income}}</td>
                   </tr>
                </table>
+              
             </div>
             <div class= "col-xs-6 col-lg-6 col-md-6 col-sm-6 ">
+                
                <table>
                   <tr>
                      <td>mortgaugeType</td>
-                     <td style="color:gray;">{{loanID.Record.transactiondetails.mortgaugeType}}</td>
+                     <td style="color:gray;">{{showrecords.propertyType}}</td>
                   </tr>
                   <tr>
                      <td>Need Amount:</td>
-                     <td style="color:gray;">{{loanID.Record.transactiondetails.Amount}}</td>
+                     <td style="color:gray;">{{showrecords.amount}}</td>
                   </tr>
                   <tr>
                      <td>location</td>
-                     <td style="color:gray;">{{loanID.Record.transactiondetails.location}}</td>
+                     <td style="color:gray;">{{showrecords.location}}</td>
                   </tr>
                   <tr>
                      <td>price:</td>
-                     <td style="color:gray;">{{loanID.Record.transactiondetails.price}}</td>
+                     <td style="color:gray;">{{showrecords.price}}</td>
                   </tr>
                   <tr>
                      <td>country:</td>
-                     <td style="color:gray;">{{loanID.Record.transactiondetails.country}}</td>
+                     <td style="color:gray;">{{showrecords.country}}</td>
                   </tr>
                   <tr>
                      <td>paymentPercentage:</td>
-                     <td style="color:gray;">{{loanID.Record.transactiondetails.paymentPercentage}}</td>
+                     <td style="color:gray;">{{showrecords.paymentPercentage}}</td>
                   </tr>
                </table>
+          
             </div>
          </div>
+         <table>
+             <tr>
+                 <td>Credit score:</td>
+                 <td style="color:gray;">{{creditscore}}</td>
+             </tr>
+         </table>
          <div style=" margin-top:1cm;">
-           <button type="button" id="myButton" class="btn btn-primary" {{action "creditscore"}}>CreditScore</button>
+            <button type="button" id="myButton" class="btn btn-primary" {{action "creditscore" records}}>CreditScore</button>
          </div>
+           <div style=" margin-top:1cm;">
+            <button type="button" id="myButton" class="btn btn-primary" {{action "update" showrecords records creditscore}}>Approve</button>
+         </div>
+         {{#if showDialog}}
+  {{#paper-dialog class="flex-77" onClose=(action "closeDialog" "cancel") origin=dialogOrigin clickOutsideToClose=true}}
+    {{#paper-toolbar}}
+      {{#paper-toolbar-tools}}
+        Your creditscore has been sent to bank...!!
+        {{#paper-button iconButton=true onClick=(action "closeDialog" "cancel")}}{{paper-icon icon="close"}}{{/paper-button}}
+      {{/paper-toolbar-tools}}
+    {{/paper-toolbar}}
+
+   
+    {{#paper-dialog-actions class="layout-row"}}
+      {{#paper-button onClick=(action "closeDialog" "cancel")}}Cancel{{/paper-button}}
+      {{#paper-button onClick=(action "okay" "ok")}}OK{{/paper-button}}
+    {{/paper-dialog-actions}}
+  {{/paper-dialog}}
+{{/if}}
          <br>
          <br>
       </div>
-   </div>
-   {{/if}}
+
+  </div>
+

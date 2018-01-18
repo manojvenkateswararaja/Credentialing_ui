@@ -58,6 +58,7 @@
   },
   "dependencies": {
     "ember-cp-validations": "^3.5.1",
+    "plupload": "^2.3.6",
     "react-side-menu": "^0.1.2",
     "validator": "^9.1.2"
   }

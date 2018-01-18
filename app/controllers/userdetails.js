@@ -5,6 +5,14 @@ export default Controller.extend({
     showUserDetails:true,
     actions:{
         credit:function(record){
+          var modalvalue = this.get('showDialog')
+          
+                    if(modalvalue!=true){
+                      this.set('showDialog',true)
+                    }
+                    else{
+                      this.set('showDialog',false)
+                    }
               var mycontroller=this;
               console.log("requestid>>>>>>>>",record.Key)
               
@@ -36,7 +44,7 @@ export default Controller.extend({
                 "joiningdate":data.joiningdate,
                 "salary":data.salary,
                 "address":data.address,
-                "bank":"",
+                "bank":"applied",
                 "creditscore":"",
                 "legal":"",
               }}
@@ -55,9 +63,16 @@ export default Controller.extend({
                 }
                 })
           },
+          closeDialog:function(){
+            this.set('showDialog',false)
+        },
+        okay:function(){
+          this.set('showDialog',false)
+        },
           signout:function(){
             this.transitionToRoute('login1');
-        }
+        },
+     
     //       Approve:function(){
     //         console.log("close");
     //         this.toggleProperty('isShowSCheduleLoan');
