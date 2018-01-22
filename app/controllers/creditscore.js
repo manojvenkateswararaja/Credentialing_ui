@@ -16,7 +16,7 @@ export default Controller.extend({
                   this.set('showDialog',false)
                 }
           var mycontroller=this;
-          console.log("requestid>>>>>>>>",showrecords)
+          console.log("record>>>>>>>>loan",showrecords)
           console.log("creditscore>>>>>>",creditscore)
           console.log("key>>>>>>",records)
           
@@ -46,10 +46,10 @@ export default Controller.extend({
             "salary":showrecords.salary,
             "address":showrecords.address,
             "bank":"applied",
-            "creditscore":"generated",
+            "creditscore":creditscore,
             "legal":"",
           }}
-        // console.log("transactionstring-update Approve----->",transactionstring);
+        console.log("transactionstring-update Approve----->",transactionstring);
           return $.ajax({
           url:'http://localhost:8082/updatetransaction',//web service for credit score
           type: 'POST',
@@ -87,7 +87,6 @@ export default Controller.extend({
           mycontroller.set('creditscore',creditscore)
           // myroute.controllerFor('creditscore').set('creditscore',creditscore)
           console.log(creditscore);
-     
             }
             })
       },

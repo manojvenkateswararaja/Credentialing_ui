@@ -47,7 +47,8 @@ export default Controller.extend({
              var d = new Date();
              console.log("date",d);
 
-              var data = { "id":key,
+              var data = { 
+               "id":key,
                "transactionstring":{
                 "loan":data.loan,
                 "amount":data.amount,
@@ -73,11 +74,10 @@ export default Controller.extend({
                 "salary":data.salary,
                 "address":data.address,
                 "bank":"applied",
-                   "date":d,
+                "date":d,
                 "creditscore":"",
                 "legal":"",
               }}
-             
               return $.ajax({
               url:'http://localhost:8082/updatetransaction',//web service for credit score
               type: 'POST',

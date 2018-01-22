@@ -109,7 +109,6 @@ export default Controller.extend({
         "location":location,
         "year":year,
         "size":size,
-        "income":income,
         "fname":fname,
         "lname":lname,
         "estimated":estimated,
@@ -128,7 +127,7 @@ export default Controller.extend({
         "date":d,
         "bank":"",
         "creditscore":"",
-        "legal":"",
+        "legal":""
       }
     };
     console.log("datastring"+JSON.stringify(transactionstring));

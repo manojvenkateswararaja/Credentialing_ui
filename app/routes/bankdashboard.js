@@ -9,10 +9,10 @@ export default Route.extend({
         // var score=creditscorebank.get('creditscore')
         // this.controllerFor('bankdashboard').set('score',score)
         // console.log("creditscore in bank",score)
-        var GetBankCredit = mycontrol.controllerFor('creditscore')
-        var creditscore= GetBankCredit.get('creditscore');
-        this.controllerFor('bankdashboard').set('creditscore',creditscore);
-        console.log(creditscore,"creditscore")
+        //  var GetBankCredit = mycontrol.controllerFor('creditscore')
+        //  var creditscore= GetBankCredit.get('creditscore');
+        //  mycontrol.controllerFor('bankdashboard').set('creditscore',creditscore);
+      
         var myroute=this
         return $.ajax({
         url:'http://localhost:8082/getloandetails',
@@ -31,6 +31,9 @@ export default Route.extend({
         myroute.controllerFor('bankdashboard').set('details',details)
         console.log("details",details)
         console.log('DEBUG: GET Enquiries OK');
+        var creditscore=details.creditscore
+        mycontrol.controllerFor('bankdashboard').set('creditscore',creditscore)
+         console.log(creditscore,"creditscore>>")
         },
     });      
     },

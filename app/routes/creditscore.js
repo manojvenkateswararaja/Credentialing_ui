@@ -11,6 +11,7 @@ export default Route.extend({
         var showrecords=response.readAllRequest; 
         console.log("showrecords",showrecords);
         var record=showrecords[0]
+        console.log("record>>>",record)
         myroute.controllerFor('creditscore').set('record',record)
         console.log("record",record)
         var length=record.Record.transactionlist.length

@@ -9,16 +9,17 @@ export default Controller.extend({
    
     userdetails: function(showrecords) {
       this.set('record', showrecords);
-    // var score=this.get('score')
-    // this.set('score',score)
-    //   console.log("i got creditscore in bank",score)
-    //   if(score == null){
-    //       this.transitionToRoute('userdetails')
-    //   }else{
-    //       this.transitionToRoute('userdetailsdec')   
-    //   }
+
+      var score=this.get('creditscore')
+      this.set('score',score)
+      console.log("i got creditscore in bank",score)
+       if(score == null){
+           this.transitionToRoute('userdetails')
+       }else if(score != null){
+           this.transitionToRoute('userdetailsdec')   
+       }
      
-      this.transitionToRoute('userdetails');
+      // this.transitionToRoute('userdetails');
     },
     signout:function() {
       this.transitionToRoute('login1');
