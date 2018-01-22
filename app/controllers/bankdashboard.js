@@ -5,23 +5,19 @@ export default Controller.extend({
   shoUserInfo:false,
   showDashboard:true,
     
-  // accept:function(item){
-  //   var mycontroller=this;
-  //   console.log("khetesh")
-  //   console.log("requestid==========>")
-  //   return $.ajax({
-  //   url:'http://localhost:8082/Existing-user/NewRequest/Home',
-  //   type: 'GET',
-  //   contentType:'application/json',
-  //   headers:{ 'requestdeatails':item.requestdeatails},
-  //   success: function(response) {
-  //   }
-  // })
-  // }
   actions: {
+   
     userdetails: function(showrecords) {
-      
       this.set('record', showrecords);
+    // var score=this.get('score')
+    // this.set('score',score)
+    //   console.log("i got creditscore in bank",score)
+    //   if(score == null){
+    //       this.transitionToRoute('userdetails')
+    //   }else{
+    //       this.transitionToRoute('userdetailsdec')   
+    //   }
+     
       this.transitionToRoute('userdetails');
     },
     signout:function() {

@@ -1,5 +1,7 @@
 {{partial 'head'}}
-{{#if showUserDetails}}
+ {{#if showUserDetails}}
+ {{/if}}
+<div class="container-fluid" style="">
 <script>
    $(document).ready(function() {
        // Show or hide the sticky footer button
@@ -21,135 +23,142 @@
    });
 </script>
 
+   <br>
 
+   <div class="container">
+   <br>
+   <b style="margin-left:12cm;">USER REQUESTID</b>
+   <br>
+   <br>
+    <div class="row" style="">
    
-   <p style="text-align:center;color:#808080 "><b>UserRequestid</b></p>
-
-  {{#each record   as |item|}}
-      <i style="margin-left:70px;">Request Id:</i><i id="req" style="color:black">{{item.Key}}</i>
-     {{/each}}   
-      <br>
-      <br>
-      <br>
+   <div class="col-xs-3 col-lg-3 col-sm-3" style="background-color:lightcyan;"><i style="margin-left:5%">Request Id:</i><i id="req">{{record.Key}}</i></div>
+   <div class="col-xs-3 col-lg-3 col-md-3 col-sm-3" style="background-color:lightcyan;">
+      <div class="vl5">
+         <div style="margin-left:8%">{{lastdetails.fname}}
+         </div>
+      </div>
+   </div>
+   <div class="col-xs-3 col-lg-3 col-md-3 col-sm-3" style="background-color:lightcyan;">
+      <div class="vl5">
+         <div style="margin-left:8%">{{lastdetails.propertyType}}</div>
+      </div>
+   </div>
+   <div class="col-xs-3 col-lg-3 col-md-3 col-sm-3" style="background-color:lightcyan;">
+      <div class="vl5">
+         <div style="margin-left:8%">{{lastdetails.Company}}</div>
+      </div>
+   </div>
+  
+</div>
+<br>
+<br>
+<style>
+   table, th, {
+   border-width: thin;
+   }
+</style>    
+{{!-- ro1 --}}
+   <div class="row">
+      <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6" style="background-color:grey;">Personal information</div>
+      <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6" style="background-color:grey;">Property information</div>
+   </div>
+   {{!-- ro1 --}}
+   <br> 
+   {{!-- r2 --}}
+   <div class="row" style="">
+      <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6">
+         {{!-- {{#each record.Record.transactionlist   as |item1|}} --}}
+         <table>
+            <tr>
+               <td>firstname:</td>
+               <td style="color:gray;">{{lastdetails.fname}}</td>
+            </tr>
+            <tr>
+               <td>lastname:</td>
+               <td style="color:gray;">{{lastdetails.lname}}</td>
+            </tr>
+            <tr>
+               <td>contact number:</td>
+               <td style="color:gray;">{{lastdetails.phone}}</td>
+            </tr>
+            <tr>
+               <td>country:</td>
+               <td style="color:gray;">{{lastdetails.country}}</td>
+            </tr>
+            <tr>
+               <td>occupation:</td>
+               <td style="color:gray;">{{lastdetails.occupation}}</td>
+            </tr>
+            <tr>
+               <td>income:</td>
+               <td style="color:gray;">{{lastdetails.income}}</td>
+            </tr>
+         </table>
+         {{!-- {{/each}} --}}
+      </div>
       
-         <style>
-            table, th, {
-            border-width: thin;
-             }
-           </style>
-            <h1 id="data">Personal information</h1>   
-           <div class="table-block">
- {{#each record.Record.transactionlist   as |item1|}}
- <table>
-    
-    <tr>
-    <td>firstname:</td>
-    <td style="color:black;">{{item1.transactiondetails.fname}}</td>
-  </tr>
-    <tr>
-    <td>lastname:</td>
-    <td style="color:black;">{{item1.transactiondetails.lname}}</td>
-  </tr>
-    <tr>
-    <td>contact number:</td>
-    <td style="color:black;">{{item1.transactiondetails.phone}}</td>
-  </tr>
-   <tr>
-    <td>country:</td>
-    <td style="color:black;">{{item1.transactiondetails.country}}</td>
-  </tr>
-   <tr>
-    <td>occupation:</td>
-    <td style="color:black;">{{item1.transactiondetails.occupation}}</td>
-  </tr>
-   <tr>
-    <td>income:</td>
-    <td style="color:black;">{{item1.transactiondetails.income}}</td>
-  </tr>
-</table>
-  {{/each}}
- {{!-- <button  id="user-btn" {{action "details"}}>Request More Details</button> --}}
+      <div class= "col-xs-6 col-lg-6 col-md-6 col-sm-6 ">
+         {{!-- {{#each record.Record.transactionlist   as |item1|}} --}}
 
-  </div>
-    <div class="division">
-    <h1 id="data2">Property information</h1>   
-    <div class="table2-block">
-       {{#each record.Record.transactionlist   as |item1|}}
- <table> 
-    <tr>
-    <td>mortgaugeType</td>
-    <td style="color:black;">{{item1.transactiondetails.propertyType}}</td>
-   </tr>
-    <tr>
-    <td>Need Amount:</td>
-    <td style="color:black;">{{item1.transactiondetails.amount}}</td>
-  </tr>
-  <tr>
-    <td>location</td>
-    <td style="color:black;">{{item1.transactiondetails.location}}</td>
-  </tr>
-   <tr>
-    <td>price:</td>
-    <td style="color:black;">{{item1.transactiondetails.price}}</td>
-  </tr>
-   <tr>
-    <td>country:</td>
-    <td style="color:black;">{{item1.transactiondetails.country}}</td>
-  </tr>
-   <tr>
-    <td>paymentPercentage:</td>
-    <td style="color:black;">{{item1.transactiondetails.paymentPercentage}}</td>
-  </tr>
-<tr>
-  <td>creditscore:</td>
-  <td>{{creditscore}}</td>
-</tr>
-  </table>
-  {{/each}}
-  <button  id="user-btn3" {{action "credit" record}}>Get Credit Score from validator</button>
+         <table>
+            <tr>
+               <td>mortgaugeType</td>
+               <td style="color:gray;">{{lastdetails.propertyType}}</td>
+            </tr>
+            <tr>
+               <td>Need Amount:</td>
+               <td style="color:gray;">{{lastdetails.amount}}</td>
+            </tr>
+            <tr>
+               <td>location</td>
+               <td style="color:gray;">{{lastdetails.location}}</td>
+            </tr>
+            <tr>
+               <td>price:</td>
+               <td style="color:gray;">{{lastdetails.price}}</td>
+            </tr>
+            <tr>
+               <td>country:</td>
+               <td style="color:gray;">{{lastdetails.country}}</td>
+            </tr>
+            <tr>
+               <td>paymentPercentage:</td>
+               <td style="color:gray;">{{lastdetails.paymentPercentage}}</td>
+            </tr>
+         </table>
+         {{!-- {{/each}} --}}
+{{!-- 
+<button {{action 'bankcreditscore' record.Key}}>get yourgenerated credit score </button>
+ {{creditscore}} --}}
 
-{{#if showDialog}}
-  {{#paper-dialog class="flex-77" onClose=(action "closeDialog" "cancel") origin=dialogOrigin clickOutsideToClose=true}}
-    {{#paper-toolbar}}
+      </div>
+   </div>
+   {{!-- r2 --}}
+   {{!-- r3 --}}
+   <div style=" margin-top:1cm;">
+      <button type="button" class="btn btn-primary btn-block"{{action "credit" record lastdetails}}>Get Credit Score</button>
+      {{#if showDialog}}
+      {{#paper-dialog class="flex-77" onClose=(action "closeDialog" "cancel") origin=dialogOrigin clickOutsideToClose=true}}
+      {{#paper-toolbar}}
       {{#paper-toolbar-tools}}
-        Your response has been successfully sent to creditscore validator...!!
-        {{#paper-button iconButton=true onClick=(action "closeDialog" "cancel")}}{{paper-icon icon="close"}}{{/paper-button}}
+      Your response has been successfully sent to creditscore validator...!!
+      {{#paper-button iconButton=true onClick=(action "closeDialog" "cancel")}}{{paper-icon icon="close"}}{{/paper-button}}
       {{/paper-toolbar-tools}}
-    {{/paper-toolbar}}
-
-   
-    {{#paper-dialog-actions class="layout-row"}}
+      {{/paper-toolbar}}
+      {{#paper-dialog-actions class="layout-row"}}
       {{#paper-button onClick=(action "closeDialog" "cancel")}}Cancel{{/paper-button}}
       {{#paper-button onClick=(action "okay" "ok")}}OK{{/paper-button}}
-    {{/paper-dialog-actions}}
-  {{/paper-dialog}}
-{{/if}}
-   {{!-- {{#if showCredit}}
-   Creditscore For RequestID:<i style="color:#69f;">{{loanID.requestid}}</i><br>
-   Credit Score:<i style="color:#69f;">{{creditscore}}</i>
-   {{/if}} --}}
-  {{!-- <button  id="user-btn" {{action "Approve"}}>Approve</button>
-  {{!-- start --}}
-            {{!-- {{#if isShowSCheduleLoan}}
-             {{#modal-dialog onClose="Approve"
-                  targetAttachment="center"
-                  translucentOverlay=true}}
-                succefully Approved Loan!!
-    <button class="btn" {{action "Schedule" }}>Schedule</button>{{isShowSCheduleLoan}}
-    {{/modal-dialog}}
-    {{/if}} --}}
-   {{!-- <button  id="user-btn" {{action "Rejected"}}>Rejected</button>
-             {{#if isShowReject}}
-             {{#modal-dialog onClose="Rejected"
-                  targetAttachment="center"
-                  translucentOverlay=true}}
-                 Loan Rejected!!
-    {{/modal-dialog}}
-    {{/if}} --}}
+      {{/paper-dialog-actions}}
+      {{/paper-dialog}}
+      {{/if}} 
+      <br>
+      <br>
    </div>
    </div>
- 
-  
-
-   {{/if}}
+    {{!-- r3 --}}
+   
+</div>
 <a href="#" class="go-top">Scroll to Top</a>
+
+

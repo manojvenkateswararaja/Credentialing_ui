@@ -31,15 +31,15 @@ export default Controller.extend({
                 }
 
     
-      var loan=this.get('loan');
-      this.set("loan",loan);  
-      console.log(loan);
-      var amount=this.get('amount');
-      this.set("amount",amount);
-      console.log(amount);
-      var propertyType=this.get('propertyType');
-      this.set("propertyType",propertyType);
-      console.log(propertyType);
+        var loan=this.get('loan');
+        this.set("loan",loan);  
+        console.log(loan);
+        var amount=this.get('amount');
+        this.set("amount",amount);
+        console.log(amount);
+        var propertyType=this.get('propertyType');
+        this.set("propertyType",propertyType);
+        console.log(propertyType);
         var location=this.get('location');
         this.set("location",location);
         console.log("location",location);
@@ -96,7 +96,12 @@ export default Controller.extend({
         var income=this.get('rupees');
         this.set("income",income);
         console.log(income);
-      var transactionstring={transactionstring:{
+        var d = new Date();
+        console.log("date",d);
+
+
+        var transactionstring={
+        transactionstring:{
         "loan":loan,
         "amount":amount,
         "propertyType":propertyType,
@@ -120,16 +125,17 @@ export default Controller.extend({
         "joiningdate":joiningdate,
         "salary":salary,
         "address":address,
+        "date":d,
         "bank":"",
         "creditscore":"",
         "legal":"",
       }
     };
-    console.log("datastring"+  JSON.stringify(transactionstring));
+    console.log("datastring"+JSON.stringify(transactionstring));
     var mycontroller=this
     return $.ajax({
       
-    url:'http://192.168.11.149:8082/loandetails',
+    url:'http://localhost:8082/loandetails',
     type: 'POST',
     contentType: 'application/json',
     data: JSON.stringify(transactionstring),
@@ -143,7 +149,7 @@ export default Controller.extend({
     console.log("message>>>>>>>>>>" + message);  
     alert("your details has been uploaded successfully")
     console.log("message" + message); 
-    console.log("hii");
+  
     }
   })
     // this.transitionToRoute('page2');

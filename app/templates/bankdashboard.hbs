@@ -28,44 +28,42 @@
    <a {{action "goToemployment"}}>LegalPerson</a>
 </div>
 <div class="container-fluid" style="background-color:lightgrey">
-   <h1><b style="margin-left:-40cm">Bank Dashboard</b></h1>
+    <br>
+        <br>
+      <div class="jumbotron" style="margin-top:-3cm">
+    <br>
+   <h1><b style="margin-left:-28cm">Bank Dashboard</b></h1>
    <br>
-   <div class="jumbotron" style="margin-top:-3cm">
+   <br>
+ 
       <p style="text-align:center;color:black"><b>TOTAL REQUEST</b></p>
+      <br>
       <div class="container" style="background-color:grey"><b>ALL Request</b></div>
       <br>
       <div class ="container">
-         {{#each showrecords   as |item|}}
+         {{!-- {{#each showrecords   as |item|}} --}}
          <div class="row">
-            <div class="col-sm-3">Requestid<a href="" {{action 'userdetails'  item }}><b style="color:blue">{{item.Key}}</b></a></div>
-            {{#each item.Record.transactionlist   as |item1|}}
-            <div class="col-sm-8">
+           <div class="col-xs-3 col-lg-3 col-sm-3">Requestid<a href="" {{action 'userdetails'  record }}><b style="color:blue">{{record.Key}}</b></a></div>
+            {{!-- {{#each item.Record.transactionlist   as |item1|}} --}}
+           <div class="col-xs-9 col-lg-9 col-sm-9"   style="">
                <div class="row">
-                  <div class="col-sm-3">
-                     <div class="vl">Name:{{item1.transactiondetails.fname}}</div>
+                  <div class="col-xs-3 col-lg-3 col-sm-3">
+                     <div class="vl5">Name:{{details.fname}}</div>
                   </div>
-                  <div class="col-sm-3">
-                     <div class="vl" >Properttype:{{item1.transactiondetails.propertyType}}</div>
+                  <div class="col-xs-3 col-lg-3 col-sm-3">
+                     <div class="vl5" >Properttype:{{details.propertyType}}</div>
                   </div>
-                  <div class="col-sm-3">
-                     <div class="vl" style="margin-left: 78px">Companyname:{{item1.transactiondetails.Company}}</div>
+                  <div class="col-xs-3 col-lg-3 col-sm-3">
+                     <div class="vl5" style="margin-left: 78px">Companyname:{{details.Company}}</div>
                   </div>
                   </div>
-                  </div>
-                  
-                  {{!-- <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6">
-                     <div class="vl">status:{{item1.transactiondetails.status}}</div>
-                  </div>
-                --}}
-            
-            {{/each}}
+                  </div> 
+            {{!-- {{/each}} --}}
             </div>
-        
-        
          <br>
-         {{/each}}
+         {{!-- {{/each}} --}}
       </div>
    </div>
 </div>
 <a href="#" class="go-top">Scroll to Top</a>
-{{/if}} --}}
+{{/if}} 

@@ -4,7 +4,29 @@ export default Controller.extend({
     showCredit:false,
     showUserDetails:true,
     actions:{
-        credit:function(record){
+  //     //creditscore
+  //   bankcreditscore: function(records) {
+  //     var requestid={
+  //       "records":records
+  //     }
+  //    console.log("creditscore---request id--->",requestid);
+  //    var mycontroller=this
+  //      return $.ajax({
+  //      url:'http://localhost:8082/creditscore',//web service for credit score
+  //      type: 'POST',
+  //      contentType:'application/json',
+  //      data:JSON.stringify(requestid),
+  //      success: function(response) {
+  //      console.log("service creditscore")   
+  //      var creditscore=response.creditscore
+  //      mycontroller.set('creditscore',creditscore)
+  //     //myroute.controllerFor('creditscore').set('creditscore',creditscore)
+  //     console.log(creditscore);
+  //        }
+  //        })
+  //  },
+    
+        credit:function(record,lastdetails){
           var modalvalue = this.get('showDialog')
           
                     if(modalvalue!=true){
@@ -17,8 +39,14 @@ export default Controller.extend({
               console.log("requestid>>>>>>>>",record.Key)
               
              var key = record.Key
+            //  var Recordlen = record.length
+            //  console.log("Record length",Recordlen)
              var len = record.Record.transactionlist.length
-             var data = record.Record.transactionlist[len-1].transactiondetails;
+             var data = lastdetails;
+             console.log("updated data",data)
+             var d = new Date();
+             console.log("date",d);
+
               var data = { "id":key,
                "transactionstring":{
                 "loan":data.loan,
@@ -45,33 +73,40 @@ export default Controller.extend({
                 "salary":data.salary,
                 "address":data.address,
                 "bank":"applied",
+                   "date":d,
                 "creditscore":"",
                 "legal":"",
               }}
-            console.log("creditscore------>",data);
+             
               return $.ajax({
-              url:'http://192.168.11.149:8082/updatetransaction',//web service for credit score
+              url:'http://localhost:8082/updatetransaction',//web service for credit score
               type: 'POST',
               contentType:'application/json',
               data:JSON.stringify(data),
               success: function(response) {
               console.log("service")
-             mycontroller.set('showCredit',true)
-          var creditscore=response.creditscore
-            //   mycontroller.set('creditscore',creditscore)
-            //   console.log("my credit ccore>>>>>>",creditscore)
-                }
-                })
+              mycontroller.set('showCredit',true)
+              var creditscore=response
+              //mycontroller.set('creditscore',creditscore)
+              console.log("my updatetransaction data response>>>>>>",creditscore)
+              }
+              })
           },
           closeDialog:function(){
             this.set('showDialog',false)
-        },
-        okay:function(){
+          },
+          okay:function(){
           this.set('showDialog',false)
-        },
+          },
           signout:function(){
             this.transitionToRoute('login1');
-        },
+          },
+
+
+
+
+
+          
      
     //       Approve:function(){
     //         console.log("close");

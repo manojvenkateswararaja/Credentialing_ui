@@ -17,10 +17,14 @@
 {{!-- <div id="main">
       <span style="font-size:30px;cursor:pointer" {{action "openNav"}}>&#9776; open</span>
 </div> --}}
+<div class="container-fluid">
+  <br>
+  <br>
+  <h3><b style="text-align:center;">Upload Document</b></h3>
+  <br>
 <div class="container">
-<div class="upload">
      {{!-- <div class="container-fluid">   --}}
-                  <h3><b><i style="margin-left: -525px;">Upload Document</i></b></h3>
+                  
                    <div class="detail"><i style="margin-left: -480px;" >please fill your documents details?</i></div>
                 <br>
                   <label >Id proof Document</label>
@@ -56,7 +60,7 @@
          {{/pl-uploader}}
                            
                     <br>
-                     {{#paper-button raised=true warn=true onClick=(action "targetButton")}}Submit{{/paper-button}}
+ {{#paper-button raised=true warn=true onClick=(action "targetButton")}}Submit{{/paper-button}}
 
             {{!-- <button class="btn" {{action "apply"}}>Apply</button> --}}
         {{#if showDialog}}

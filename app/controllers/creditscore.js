@@ -3,23 +3,10 @@ export default Controller.extend({
   isShowingModel:false,
   showhome:true,
   shoUserInfo:false,
-  showDashboard:true,
-    
-  // accept:function(item){
-  //   var mycontroller=this;
-  //   console.log("khetesh")
-  //   console.log("requestid==========>")
-  //   return $.ajax({
-  //   url:'http://localhost:8082/Existing-user/NewRequest/Home',
-  //   type: 'GET',
-  //   contentType:'application/json',
-  //   headers:{ 'requestdeatails':item.requestdeatails},
-  //   success: function(response) {
-  //   }
-  // })
-  // }
+  showCreditscore:true,
   actions: {
-    update:function (showrecords,records,creditscore) {
+    // ApproveUpdate:function (showrecords,records,creditscore)
+    ApproveUpdate:function (showrecords,records,creditscore) {
       var modalvalue = this.get('showDialog')
       
                 if(modalvalue!=true){
@@ -33,7 +20,8 @@ export default Controller.extend({
           console.log("creditscore>>>>>>",creditscore)
           console.log("key>>>>>>",records)
           
-         var transactionstring={"id":records,"transactionstring":{
+         var transactionstring={
+           "id":records,"transactionstring":{
             "loan":showrecords.loan,
             "amount":showrecords.amount,
             "propertyType":showrecords.propertyType,
@@ -58,22 +46,21 @@ export default Controller.extend({
             "salary":showrecords.salary,
             "address":showrecords.address,
             "bank":"applied",
-            "creditscore":creditscore,
+            "creditscore":"generated",
             "legal":"",
           }}
-        console.log("creditscore------>",transactionstring);
+        // console.log("transactionstring-update Approve----->",transactionstring);
           return $.ajax({
-          url:'http://192.168.11.149:8082/updatetransaction',//web service for credit score
+          url:'http://localhost:8082/updatetransaction',//web service for credit score
           type: 'POST',
           contentType:'application/json',
           data:JSON.stringify(transactionstring),
           success: function(response) {
-          console.log("service")
-         mycontroller.set('showCredit',true)
-      var creditscore=response
-      console.log("credit",creditscore);
-        //   mycontroller.set('creditscore',creditscore)
-        //   console.log("my credit ccore>>>>>>",creditscore)
+          console.log("service update transaction")
+          mycontroller.set('showCredit',true)
+          var creditscore=response
+          console.log("my updated data with creditscore>>>>>>>>>>>>.",creditscore);
+     
             },
           })
         },
@@ -84,31 +71,23 @@ export default Controller.extend({
         this.set('showDialog',false)
       },
     creditscore: function(records) {
-     
-        
-        
-        //  console.log();
-        //  var len = record.Record.transactionlist.length
-        //  var data = record.Record.transactionlist[len-1].transactiondetails;
          var requestid={
            "records":records
          }
-        console.log("creditscore------>",requestid);
+        console.log("creditscore---request id--->",requestid);
         var mycontroller=this
           return $.ajax({
-          url:'http://192.168.11.149:8082/creditscore',//web service for credit score
+          url:'http://localhost:8082/creditscore',//web service for credit score
           type: 'POST',
           contentType:'application/json',
           data:JSON.stringify(requestid),
           success: function(response) {
-          console.log("service")
-       
-      var creditscore=response.creditscore
-      mycontroller.set('creditscore',creditscore)
-      // myroute.controllerFor('creditscore').set('creditscore',creditscore)
-      console.log(creditscore);
-        //   mycontroller.set('creditscore',creditscore)
-        //   console.log("my credit ccore>>>>>>",creditscore)
+          console.log("service creditscore")   
+          var creditscore=response.creditscore
+          mycontroller.set('creditscore',creditscore)
+          // myroute.controllerFor('creditscore').set('creditscore',creditscore)
+          console.log(creditscore);
+     
             }
             })
       },

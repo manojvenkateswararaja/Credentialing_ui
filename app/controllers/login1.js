@@ -56,7 +56,7 @@ export default Controller.extend(Validations,{
             console.log(email);
             console.log(password);
             return $.ajax({
-            url:'http://192.168.11.149:8082/login',
+            url:'http://localhost:8082/login',
             type: 'POST',
             contentType: 'application/json',
             data: JSON.stringify(dataString),

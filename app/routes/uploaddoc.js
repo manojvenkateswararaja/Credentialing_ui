@@ -15,7 +15,7 @@ export default Route.extend({
 // console.log("isShowingModalss",isShowingModalss)
 // this.controllerFor('uploaddoc').set('isShowingModalss',isShowingModalss);
 
-file.upload('http://192.168.11.149:8082/UploadDocs?requestid='+requestid).then(function (response) {
+file.upload('http://localhost:8082/UploadDocs?requestid='+requestid).then(function (response) {
     console.log(JSON.stringify(response));
     var url =response.body.url;
     console.log("url ::",JSON.stringify(url));

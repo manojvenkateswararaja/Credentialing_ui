@@ -19,11 +19,11 @@ closeNav: function() {
     document.getElementById("main").style.marginLeft= "0";
 },
 targetButton:function(){
-  this.transitionToRoute('userloanschedule');
+   this.transitionToRoute('home');
 },
-signout:function() {
-  this.transitionToRoute('login1');
-},
+// signout:function() {
+//   this.transitionToRoute('login1');
+// },
     }
   
 })
