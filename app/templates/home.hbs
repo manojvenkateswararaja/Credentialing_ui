@@ -1,14 +1,46 @@
 {{partial 'head'}}
 {{#if isShowHome}}
+{{/if}}
 <div class="container-fluid">
-<header class="w3-container  w3-center" style="padding:128px 16px">rrquest id generated should display
-          <button type="button" id="myButton" class="btn btn-primary"  style="margin-left:953px;margin-top: -210px; width:19%"{{action "gotoPreclose"}}>Pre-closure</button>
+      <br>
+  <button type="button" id="myButton" class="btn btn-primary"  style="text-align:right;    margin-left: 29cm;" {{action "gotoPreclose"}}>Pre-closure</button>
+      
+<header class="w3-container  w3-center" style="padding:128px 16px">
+       {{!-- margin-left:953px;margin-top: -210px;  --}}
+        
+     {{!-- my account --}}
+      <div class="row" style="">
+   <div class="col-xs-2 col-lg-2 col-md-2 col-sm-2" style="background-color:lightcyan;"><i style="">Request Id:</i><i id="req">{{record.Key}}</i></div>
+   <div class="col-xs-2 col-lg-2 col-md-2 col-sm-2" style="background-color:lightcyan;">
+      <div class="vl5">
+         <div style="margin-left:8%">Name:{{details.fname}}
+         </div>
+      </div>
+   </div>
+   <div class="col-xs-2 col-lg-2 col-md-2 col-sm-2" style="background-color:lightcyan;">
+      <div class="vl5">
+         <div style="margin-left:8%">Property:{{details.propertyType}}</div>
+      </div>
+   </div>
+   <div class="col-xs-2 col-lg-2 col-md-2 col-sm-2" style="background-color:lightcyan;">
+      <div class="vl5">
+         <div style="margin-left:8%">Company:{{details.Company}}</div>
+      </div>
+   </div>
+   <div class="col-xs-2 col-lg-2 col-md-2 col-sm-2" style="background-color:lightcyan;">
+      <div class="vl5">
+         <div style="margin-left:8%">status:</div>
+      </div>
+   </div>
+   </div>
+     {{!-- end --}}
          <h1 class="w3-margin w3-jumbo">Welcome To Mortgage Loan</h1>
          <p class="w3-xlarge">Mortgage process</p>
          <button type="button" id="myButton"  class="btn btn-primary" {{action "gotoApply"}}>Apply New Request</button>
       </header>
       <!-- First Grid -->
-      <div class="w3-row-padding w3-padding-64 w3-container">
+      {{!-- <div class="w3-row-padding w3-padding-64 w3-container"> --}}
+         
          {{!-- <div class="w3-content">
             <div class="w3-twothird">
                <h1>Loan Process</h1>
@@ -19,7 +51,7 @@
                <i class="fa fa-anchor w3-padding-64 w3-text-red"></i>
             </div>
          </div> --}}
-      </div>
+      {{!-- </div> --}}
       <!-- Second Grid -->
       {{!-- <div class="w3-row-padding w3-light-grey w3-padding-64 w3-container">
          <div class="w3-content">
@@ -49,7 +81,7 @@
          <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">rapid</a></p>
       </footer>
       </div>
-      {{/if}}
+      
 
 
 

@@ -44,12 +44,12 @@ export default Controller.extend({
                   "salary":showrecords.salary,
                   "address":showrecords.address,
                   "bank":"applied",
-                  
+                  "creditscore":showrecords.creditscore,
                   "legal":"rejected",
                 }}
               console.log("creditscore------>",transactionstring);
                 return $.ajax({
-                url:'http://192.168.11.149:8082/updatetransaction',//web service for credit score
+                url:'http://localhost:8082/updatetransaction',//web service for credit score
                 type: 'POST',
                 contentType:'application/json',
                 data:JSON.stringify(transactionstring),
@@ -106,22 +106,21 @@ export default Controller.extend({
                       "salary":showrecords.salary,
                       "address":showrecords.address,
                       "bank":"applied",
-                      
+                      "creditscore":showrecords.creditscore,
                       "legal":"approved",
                     }}
                   console.log("creditscore------>",transactionstring);
                     return $.ajax({
-                    url:'http://192.168.11.149:8082/updatetransaction',//web service for credit score
+                    url:'http://localhost:8082/updatetransaction',//web service for credit score
                     type: 'POST',
                     contentType:'application/json',
                     data:JSON.stringify(transactionstring),
                     success: function(response) {
                     console.log("service")
-                   mycontroller.set('showCredit',true)
-                var creditscore=response
-                console.log("credit",creditscore);
-                  //   mycontroller.set('creditscore',creditscore)
-                  //   console.log("my credit ccore>>>>>>",creditscore)
+                    mycontroller.set('showCredit',true)
+                    var creditscore=response
+                    console.log("credit",creditscore);
+                
                       },
                     })
                 },

@@ -12,7 +12,7 @@ export default Controller.extend({
             console.log("datastring"+  JSON.stringify(requestid));
             var mycontroller=this
             return $.ajax({
-            url:'http://192.168.11.149:8082/getloanschedule',
+            url:'http://localhost:8082/getloanschedule',
             type: 'POST',
             contentType: 'application/json',
             data: JSON.stringify(requestid),

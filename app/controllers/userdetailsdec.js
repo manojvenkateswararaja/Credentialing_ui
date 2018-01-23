@@ -2,8 +2,9 @@ import Controller from '@ember/controller';
 
 export default Controller.extend({
   showDashboard:true,
+  showDialogApprove:false,
     actions:{
-        credit:function(records,showrecords){
+      LegalValidater:function(records,showrecords){
             var modalvalue = this.get('showDialog')
             
                       if(modalvalue!=true){
@@ -13,10 +14,11 @@ export default Controller.extend({
                         this.set('showDialog',false)
                       }
                 var mycontroller=this;
-                console.log("requestid>>>>>>>>",records)
-                console.log("showrecords")
+                console.log("requestid>>>>>>>>",records.Key)
+                console.log("records>>>>userdec",records)
                 var data=showrecords
-                var data = { "id":records,
+                console.log("data>>>>",data)
+                var Updateddata = { "id":records.Key,
                  "transactionstring":{
                   "loan":data.loan,
                   "amount":data.amount,
@@ -42,24 +44,28 @@ export default Controller.extend({
                   "salary":data.salary,
                   "address":data.address,
                   "bank":"applied",
-                  "creditscore":"",
-                  "legal":"",
+                  "creditscore":data.creditscore,
+                  
                 }}
               console.log("creditscore------>",data);
                 return $.ajax({
-                url:'http://localhost:8082/updatetransaction',//web service for credit score
+                url:'http://localhost:8082/updatetransaction',//update legal verifier data
                 type: 'POST',
                 contentType:'application/json',
-                data:JSON.stringify(data),
+                data:JSON.stringify(Updateddata),
                 success: function(response) {
                 console.log("service")
-               mycontroller.set('showCredit',true)
-            var creditscore=response
-            console.log(creditscore)
-              //   mycontroller.set('creditscore',creditscore)
-              //   console.log("my credit ccore>>>>>>",creditscore)
+                mycontroller.set('showCredit',true)
+                var creditscore=response
+                console.log(creditscore)
+               
+           
                   }
                   })
+            },
+            LoanApprove:function(record,details){
+              this.transitionToRoute('loanschedule')
+            
             },
             closeDialog:function(){
               this.set('showDialog',false)

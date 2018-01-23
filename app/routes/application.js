@@ -11,7 +11,7 @@ export default Route.extend({
         //this.transitionTo('loanquotation')
         // this.transitionTo('newrequest')
         this.transitionTo('bankdashboard')
-        //this.transitionTo('legalverification')
+        // this.transitionTo('legalverification')
         //this.transitionTo('legalverification2')
         // this.transitionTo('creditscore')
         //this.transitionTo('FillCreditScore')

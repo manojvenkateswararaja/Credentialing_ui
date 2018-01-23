@@ -23,23 +23,30 @@
    </script>
    <br>
    <div class="container" >
-      <div style="text-align:center">USER REQUESTID</div>
+      <h2 style="text-align:center">USER REQUESTID</h2>
       <br>
       <br>
-      <div class="row">
-          {{!-- style="height:2em;border:1px solid #000;width: 102%;margin-left: -16px;" --}}
-         <div>
-            <div class="col-xs-6 col-sm-3" style="background-color:lightcyan;"><i style="margin-left:5%">Request Id:</i><i id="req">{{showrecords.Key}}</i></div>
-            <div class="col-xs-6 col-sm-3" style="background-color:lightcyan;">
-               <div class="vl5"><div style="margin-left:8%">{{showrecords.Record.transactiondetails.location}}</div></div>
-            </div>
-            <div class="col-xs-6 col-sm-3" style="background-color:lightcyan;">
-               <div class="vl5"><div style="margin-left:8%">{{showrecords.Record.transactiondetails.propertyvalue}}</div></div>
-            </div>
-            <div class="col-xs-6 col-sm-3" style="background-color:lightcyan;">
-               <div class="vl5"><div style="margin-left:8%">{{showrecords.Record.transactiondetails.location}}</div></div>
-            </div>
+       <div class="row" style="">
+   
+   <div class="col-xs-3 col-lg-3 col-sm-3" style="background-color:lightcyan;"><i style="margin-left:5%">Request Id:</i><i id="req">{{record.Key}}</i></div>
+   <div class="col-xs-3 col-lg-3 col-md-3 col-sm-3" style="background-color:lightcyan;">
+      <div class="vl5">
+         <div style="margin-left:8%">{{details.fname}}
          </div>
+      </div>
+   </div>
+   <div class="col-xs-3 col-lg-3 col-md-3 col-sm-3" style="background-color:lightcyan;">
+      <div class="vl5">
+         <div style="margin-left:8%">{{details.propertyType}}</div>
+      </div>
+   </div>
+   <div class="col-xs-3 col-lg-3 col-md-3 col-sm-3" style="background-color:lightcyan;">
+      <div class="vl5">
+         <div style="margin-left:8%">{{details.Company}}</div>
+      </div>
+   </div>
+  
+
          <br>
          <br>
          <style>
@@ -57,27 +64,27 @@
                <table>
                   <tr>
                      <td>firstname:</td>
-                     <td style="color:gray;">{{showrecords.fname}}</td>
+                     <td style="color:gray;">{{details.fname}}</td>
                   </tr>
                   <tr>
                      <td>lastname:</td>
-                     <td style="color:gray;">{{showrecords.lname}}</td>
+                     <td style="color:gray;">{{details.lname}}</td>
                   </tr>
                   <tr>
                      <td>contact number:</td>
-                     <td style="color:gray;">{{showrecords.phone}}</td>
+                     <td style="color:gray;">{{details.phone}}</td>
                   </tr>
                   <tr>
                      <td>country:</td>
-                     <td style="color:gray;">{{showrecords.country}}</td>
+                     <td style="color:gray;">{{details.country}}</td>
                   </tr>
                   <tr>
                      <td>occupation:</td>
-                     <td style="color:gray;">{{showrecords.occupation}}</td>
+                     <td style="color:gray;">{{details.occupation}}</td>
                   </tr>
                   <tr>
                      <td>income:</td>
-                     <td style="color:gray;">{{showrecords.income}}</td>
+                     <td style="color:gray;">{{details.income}}</td>
                   </tr>
                </table>
             </div>
@@ -85,31 +92,31 @@
                <table>
                   <tr>
                      <td>mortgaugeType</td>
-                     <td style="color:gray;">{{showrecords.propertyType}}</td>
+                     <td style="color:gray;">{{details.propertyType}}</td>
                   </tr>
                   <tr>
                      <td>Need Amount:</td>
-                     <td style="color:gray;">{{showrecords.amount}}</td>
+                     <td style="color:gray;">{{details.amount}}</td>
                   </tr>
                   <tr>
                      <td>location</td>
-                     <td style="color:gray;">{{showrecords.location}}</td>
+                     <td style="color:gray;">{{details.location}}</td>
                   </tr>
                   <tr>
                      <td>price:</td>
-                     <td style="color:gray;">{{showrecords.price}}</td>
+                     <td style="color:gray;">{{details.price}}</td>
                   </tr>
                   <tr>
                      <td>country:</td>
-                     <td style="color:gray;">{{showrecords.country}}</td>
+                     <td style="color:gray;">{{details.country}}</td>
                   </tr>
                   <tr>
                      <td>paymentPercentage:</td>
-                     <td style="color:gray;">{{showrecords.paymentPercentage}}</td>
+                     <td style="color:gray;">{{details.paymentPercentage}}</td>
                   </tr>
                    <tr>
                      <td>creditscore:</td>
-                     <td style="color:blue;">{{showrecords.paymentPercentage}}</td>
+                     <td style="color:blue;">{{details.creditscore}}</td>
                   </tr>
                </table>
             </div>
@@ -118,13 +125,33 @@
          <br>
           <div style=" margin-top:1cm;">
      
-         </div>      
-         <br>
-              <div style=" margin-top:1cm;">
-      <button type="button" class="btn btn-primary btn-block"{{action "Approve" records showrecords}}>Approve</button>
+         </div>   
+      <div style=" margin-top:1cm;">
+      <button type="button" class="btn btn-primary btn-block" disabled={{isLegalVerifierDone}} {{action "LegalValidater" record details}}>Get verify from legal validator</button>
          {{!-- <button  id="user-btn3" {{action "credit" records showrecords}}>Get verify from legal validator</button> --}}
 
 {{#if showDialog}}
+  {{#paper-dialog class="flex-77" onClose=(action "closeDialog" "cancel") origin=dialogOrigin clickOutsideToClose=true}}
+    {{#paper-toolbar}}
+      {{#paper-toolbar-tools}}
+         Your response has been successfully sent to legal validator...!!
+        {{#paper-button iconButton=true onClick=(action "closeDialog" "cancel")}}{{paper-icon icon="close"}}{{/paper-button}}
+      {{/paper-toolbar-tools}}
+    {{/paper-toolbar}}
+
+   
+    {{#paper-dialog-actions class="layout-row"}}
+      {{#paper-button onClick=(action "closeDialog" "cancel")}}Cancel{{/paper-button}}
+      {{#paper-button onClick=(action "okay" "ok")}}OK{{/paper-button}}
+    {{/paper-dialog-actions}}
+  {{/paper-dialog}}
+{{/if}}
+         </div>         
+         <br>
+              <div style=" margin-top:1cm;">
+      <button type="button" class="btn btn-primary btn-block"  disabled={{isApprove}} {{action "LoanApprove" record details}}> Approve Loan </button>
+        
+{{#if showDialogApprove}}
   {{#paper-dialog class="flex-77" onClose=(action "closeDialog" "cancel") origin=dialogOrigin clickOutsideToClose=true}}
     {{#paper-toolbar}}
       {{#paper-toolbar-tools}}

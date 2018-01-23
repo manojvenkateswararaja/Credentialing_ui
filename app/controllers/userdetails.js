@@ -75,7 +75,6 @@ export default Controller.extend({
                 "address":data.address,
                 "bank":"applied",
                 "date":d,
-                "creditscore":"",
                 "legal":"",
               }}
               return $.ajax({

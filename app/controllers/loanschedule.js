@@ -5,7 +5,7 @@ export default Controller.extend({
     showUserSchedule:true,
     InterestRate:["1%","2%","3%","4%","5%","6%","7%","8%"],
     actions:{
-    loanschedule:function(){
+    loanschedule:function(details,record){
         var modalvalue = this.get('showDialog')
         
                   if(modalvalue!=true){
@@ -32,8 +32,34 @@ export default Controller.extend({
         var installmentpermonth=this.get('installmentpermonth')
         this.set('installmentpermonth',installmentpermonth)
         console.log("installmentpermonth>>",installmentpermonth)
-        var transactionstring={"requestid":requestid,"transactionstring":{
-       
+        var transactionstring={"requestid":record.Key,"transactionstring":{
+          // changes
+          "loan":details.loan,
+          "amount":details.amount,
+          "propertyType":details.propertyType,
+          "income":details.income,
+          "location":details.location,
+          "year":details.year,
+          "size":details.size,
+          "income":details.income,
+          "fname":details.fname,
+          "lname":details.lname,
+          "estimated":details.estimated,
+          "age":details.age,
+          "phone":details.phone,
+          "email":details.email,
+          "address":details.address,
+          "country":details.country,
+          "occupation":details.occupation,
+          "genderType":details.genderType,
+          "nationalityType":details.nationalityType,
+          "Company":details.Company,
+          "joiningdate":details.joiningdate,
+          "salary":details.salary,
+          "address":details.address,
+          "bank":"applied",
+          "creditscore":details.creditscore,
+      //  changes
        "loanamount": loanamount,
        "loanterms": loanterms,
        "amountinterestrate":amountinterestrate,

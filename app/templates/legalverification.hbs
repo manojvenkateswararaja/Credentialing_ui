@@ -1,8 +1,10 @@
+{{partial 'head'}}
+{{#if LegalVerifierParticipant}}
+{{/if}}
+<div class="container-fluid">
+  
+      <h2 style="text-align:center;">Legal Verification</h2>
 
-<div class="container">
-   <div id="usercont-lock">
-      <h2><i>Legal Verification</i></h2>
-</div>
 <div class="user-container">
    <br/>
    <p style="text-align:center;color:#808080 "><b>Total Request</b></p>
@@ -95,20 +97,20 @@
          </div>
          {{#if showDialog}}
   {{#paper-dialog class="flex-77" onClose=(action "closeDialog" "cancel") origin=dialogOrigin clickOutsideToClose=true}}
-    {{#paper-toolbar}}
+  {{#paper-toolbar}}
       {{#paper-toolbar-tools}}
-        Your request has been generated!!!
+        Your Property has been verified Successfully...!!!
         {{#paper-button iconButton=true onClick=(action "closeDialog" "cancel")}}{{paper-icon icon="close"}}{{/paper-button}}
       {{/paper-toolbar-tools}}
-    {{/paper-toolbar}}
+  {{/paper-toolbar}}
 
    
     {{#paper-dialog-actions class="layout-row"}}
-      {{#paper-button onClick=(action "closeDialog" "cancel")}}Cancel{{/paper-button}}
-      {{#paper-button onClick=(action "okay" "ok")}}OK{{/paper-button}}
+    {{#paper-button onClick=(action "closeDialog" "cancel")}}Cancel{{/paper-button}}
+    {{#paper-button onClick=(action "okay" "ok")}}OK{{/paper-button}}
     {{/paper-dialog-actions}}
-  {{/paper-dialog}}
-{{/if}}
+    {{/paper-dialog}}
+    {{/if}}
          <br>
          <br>
       </div>

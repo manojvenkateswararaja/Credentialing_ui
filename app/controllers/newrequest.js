@@ -126,7 +126,6 @@ export default Controller.extend({
         "address":address,
         "date":d,
         "bank":"",
-        "creditscore":"",
         "legal":""
       }
     };

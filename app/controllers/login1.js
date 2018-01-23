@@ -27,6 +27,7 @@ var Validations = buildValidations({
 export default Controller.extend(Validations,{
    isShowingModal:false,
    showLogin:true,
+   
 //    isShowHome:false,
    actions:{
         login:function(){  
@@ -35,8 +36,10 @@ export default Controller.extend(Validations,{
         console.log(email);
         var password = this.get('password');
         console.log(password);
-        // var usertype=this.get('usertype');
-        // console.log(usertype);
+        var mycontroller = this;
+       
+      
+    // end
         if (email === null || email === undefined || email === "" || password === null || password === undefined || password === "") {
                 alert("please fill details for login");
             } else {
@@ -52,7 +55,7 @@ export default Controller.extend(Validations,{
         //    "usertype": usertype,
         };
             console.log(JSON.stringify(dataString));
-            var mycontroller = this;
+          
             console.log(email);
             console.log(password);
             return $.ajax({
@@ -72,7 +75,10 @@ export default Controller.extend(Validations,{
           mycontroller.set('showDialog',true)
             }    
             });
+           
+           
             }
+            //end
          },
    
     closeDialog:function(){
@@ -81,11 +87,21 @@ export default Controller.extend(Validations,{
     okay:function(){
         var mycontroller=this
         var usertype=mycontroller.get('usertype')
+        
         mycontroller.set('usertype',usertype)
+          //mycontroller.set('showLogin',false)
+          
+          this.set('showDialog',true)
         if(usertype =="user"){
-         //mycontroller.set('showLogin',false)
-         this.set('showDialog',true)
-          this.transitionToRoute('newrequest'); 
+            var RequestidOfuser=mycontroller.get('record.Key') 
+            console.log("RequestidOfuser>>>>>",RequestidOfuser)
+            mycontroller.set('RequestidOfuser',RequestidOfuser)
+            if(RequestidOfuser==null){
+                this.transitionToRoute('newrequest'); 
+            }else if(RequestidOfuser!=null){
+                this.transitionToRoute('home'); 
+            }
+        
       }else if(usertype =="Bank"){
         // mycontroller.set('showLogin',false)
         this.set('showDialog',true)
