@@ -103,7 +103,7 @@ Request ID:{{validated-input  type="text" model=this  valuePath='requestid' plac
 {{#paper-dialog class="flex-77" onClose=(action "closeDialog" "cancel") origin=dialogOrigin clickOutsideToClose=true}}
 {{#paper-toolbar}}
 {{#paper-toolbar-tools}}
-Loan has been scheduled to the user   ...!!
+Loan has been scheduled for requested user   ...!!
 {{#paper-button iconButton=true onClick=(action "closeDialog" "cancel")}}{{paper-icon icon="close"}}{{/paper-button}}
 {{/paper-toolbar-tools}}
 {{/paper-toolbar}}
@@ -112,5 +112,5 @@ Loan has been scheduled to the user   ...!!
 {{#paper-button onClick=(action "okay" "ok")}}OK{{/paper-button}}
 {{/paper-dialog-actions}}
 {{/paper-dialog}}
+
 {{/if}}
-{{isShchedule}}

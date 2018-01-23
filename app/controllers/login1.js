@@ -27,8 +27,8 @@ var Validations = buildValidations({
 export default Controller.extend(Validations,{
    isShowingModal:false,
    showLogin:true,
+   ShowRequest:false, //this is to show request id
    
-//    isShowHome:false,
    actions:{
         login:function(){  
             console.log("115")
@@ -87,18 +87,27 @@ export default Controller.extend(Validations,{
     okay:function(){
         var mycontroller=this
         var usertype=mycontroller.get('usertype')
-        
+       var ShowRequest= mycontroller.get('ShowRequest')
+       mycontroller.set('ShowRequest',ShowRequest)
+       console.log("ShowRequest?????",ShowRequest)
         mycontroller.set('usertype',usertype)
           //mycontroller.set('showLogin',false)
           
           this.set('showDialog',true)
         if(usertype =="user"){
             var RequestidOfuser=mycontroller.get('record.Key') 
+           
             console.log("RequestidOfuser>>>>>",RequestidOfuser)
             mycontroller.set('RequestidOfuser',RequestidOfuser)
+          
             if(RequestidOfuser==null){
-                this.transitionToRoute('newrequest'); 
+               
+                this.transitionToRoute('home');
+
             }else if(RequestidOfuser!=null){
+              
+                this.set('ShowRequest',true)
+                
                 this.transitionToRoute('home'); 
             }
         
@@ -115,7 +124,7 @@ export default Controller.extend(Validations,{
         this.transitionToRoute('legalverification');
       }
         
-      
+      this.set('showDialog',false)
         
     },
   

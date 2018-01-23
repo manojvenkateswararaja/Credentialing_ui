@@ -1,22 +1,19 @@
 import Controller from '@ember/controller';
-
 export default Controller.extend({
     isShchedule:false,
     showUserSchedule:true,
     InterestRate:["1%","2%","3%","4%","5%","6%","7%","8%"],
     actions:{
-    loanschedule:function(details,record){
-        var modalvalue = this.get('showDialog')
-        
+      loanschedule:function(details,record){
+        var modalvalue = this.get('showDialog')     
                   if(modalvalue!=true){
                     this.set('showDialog',true)
                   }
                   else{
                     this.set('showDialog',false)
                   }
-        var requestid=this.get('requestid')
-        this.set('requestid',requestid)
-        console.log("requestid>>",requestid)
+        
+        
         var loanamount=this.get('loanamount')
         this.set('loanamount',loanamount)
         console.log("loanamount is>>>>>>",loanamount);
@@ -31,9 +28,9 @@ export default Controller.extend({
         console.log("paymentperyear>>",paymentperyear)
         var installmentpermonth=this.get('installmentpermonth')
         this.set('installmentpermonth',installmentpermonth)
-        console.log("installmentpermonth>>",installmentpermonth)
-        var transactionstring={"requestid":record.Key,"transactionstring":{
-          // changes
+        console.log("installmentpermonth>>",installmentpermonth,details.loan)
+        var transactionstring={
+          "id":record.Key,"transactionstring":{
           "loan":details.loan,
           "amount":details.amount,
           "propertyType":details.propertyType,
@@ -57,44 +54,43 @@ export default Controller.extend({
           "joiningdate":details.joiningdate,
           "salary":details.salary,
           "address":details.address,
+          "legal":details.legal,
           "bank":"applied",
           "creditscore":details.creditscore,
-      //  changes
-       "loanamount": loanamount,
-       "loanterms": loanterms,
-       "amountinterestrate":amountinterestrate,
-       "paymentperyear": paymentperyear,
-       "installmentpermonth": installmentpermonth,
+          "loanamount": loanamount,
+          "loanterms": loanterms,
+          "amountinterestrate":amountinterestrate,
+          "paymentperyear": paymentperyear,
+          "installmentpermonth": installmentpermonth,
+          
         }
     }
         console.log(JSON.stringify(transactionstring))
         var mycontroller=this;
         return $.ajax({
-            url:'http://192.168.11.149:8082/loanscheduleUser',
+            url:'http://localhost:8082/updatetransaction',
             type: 'POST',
             contentType: 'application/json',
             data: JSON.stringify(transactionstring),
             success: function(response) {
             console.log(JSON.stringify(response));
-            var message = response.message;
+            var message = response;
             mycontroller.set('message',message)
             sessionStorage.setItem('message', message);
             console.log("message>>>>>>>>>>" + message); 
             mycontroller.set('isShchedule',true)
             }   
           }) 
-      
-          },
-          closeDialog:function(){
-            this.set('showDialog',false)
+        },
+        closeDialog:function(){
+        this.set('showDialog',false)
         },
         okay:function(){
-          this.set('showDialog',false)
+        this.set('showDialog',false)
+        }, 
+        signout:function() {
+        this.transitionToRoute('login1');
         },
-          
-         
-          signout:function() {
-            this.transitionToRoute('login1');
-        },
+       
     }
 });

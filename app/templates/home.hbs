@@ -9,8 +9,9 @@
        {{!-- margin-left:953px;margin-top: -210px;  --}}
         
      {{!-- my account --}}
+     {{#if ShowRequest}}
       <div class="row" style="">
-   <div class="col-xs-2 col-lg-2 col-md-2 col-sm-2" style="background-color:lightcyan;"><i style="">Request Id:</i><i id="req">{{record.Key}}</i></div>
+   <div class="col-xs-2 col-lg-2 col-md-2 col-sm-2" style="background-color:lightcyan;">Request Id:<i style="color:blue">{{#link-to 'userloanschedule'}}{{record.Key}}{{/link-to}}</i></div>
    <div class="col-xs-2 col-lg-2 col-md-2 col-sm-2" style="background-color:lightcyan;">
       <div class="vl5">
          <div style="margin-left:8%">Name:{{details.fname}}
@@ -29,10 +30,11 @@
    </div>
    <div class="col-xs-2 col-lg-2 col-md-2 col-sm-2" style="background-color:lightcyan;">
       <div class="vl5">
-         <div style="margin-left:8%">status:</div>
+         <div style="margin-left:8%">status:{{status}}</div>
       </div>
    </div>
    </div>
+   {{/if}}
      {{!-- end --}}
          <h1 class="w3-margin w3-jumbo">Welcome To Mortgage Loan</h1>
          <p class="w3-xlarge">Mortgage process</p>

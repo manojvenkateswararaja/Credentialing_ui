@@ -1,55 +1,54 @@
 {{partial 'head'}}
 {{#if showUserSchedule}}
+{{/if}}
 <div class="container-fluid">
    <br>
+    <div style="text-align:center;"><b>Loan Schedule</b></div>
    <br>
    <div class="container">
-      <form >
-        <div class="form-group">
       <label>Request ID:</label>
-    {{validated-input  type="text" model=this  valuePath='requestid' placeholder="Request Id" required=""}}
-    </div>
-    <div style="margin-left:363px;">
-   <button type="button" id="myButton" class="btn btn-primary" {{action "userschedule"}}>Schedule</button>
-</div>
-         <div style="text-align:center;"><b>Loan Schedule</b></div>
+     <div style="color:blue"> {{record.Key}}</div>
+   
+        
          <br>
-         <label>Loan Amount in Rs:{{message.transactionstring.loanamount}}</label>
+         <label>Loan Amount in Rs:{{details.loanamount}}</label>
          <br>
-         <label>Loan Terms:{{loanterms}}</label>
+         <label>Loan Terms:{{details.loanterms}}</label>
          <br>
-         <label>Annual Interest Rate:{{amountinterestrate}} </label>
+         <label>Annual Interest Rate:{{details.amountinterestrate}} </label>
          <br>
-         {{!-- "requestid":requestid,
-         "loanamount": loanamount,
-         "loanterms": loanterms,
-         "amountinterestrate":amountinterestrate,
-         "paymentperyear": paymentperyear,
-         "installmentpermonth": installmentpermonth, --}}
-         <label>Payment Per Year:{{paymentperyear}}</label>
+       
+         <label>Payment Per Year:{{details.paymentperyear}}</label>
          <br>
-         <label>Installment per month:{{installmentpermonth}}</label> 
-         <span class="symbol">$</span>
+         <label>Installment per month:{{details.installmentpermonth}}</label> 
          <br>
-      </form>
       <br>
       <br>
       <br>
       <br>
-      <div style="margin-left:700px; margin-top:-80px;">
-         <button type="button" id="myButton" data-loading-text="Loading..." class="btn btn-primary" autocomplete="off">
+      
+<button type="button" id="myButton" class="btn btn-primary" {{action "userschedule" record.Key details}}>
          agree & next
          </button>
+          {{#if showDialog}}
+  {{#paper-dialog class="flex-77" onClose=(action "closeDialog" "cancel") origin=dialogOrigin clickOutsideToClose=true}}
+    {{#paper-toolbar}}
+      {{#paper-toolbar-tools}}
+        Loan has been successfully accepted ...!! 
+        {{#paper-button iconButton=true onClick=(action "closeDialog" "cancel")}}{{paper-icon icon="close"}}{{/paper-button}}
+      {{/paper-toolbar-tools}}
+    {{/paper-toolbar}}
+
+   
+    {{#paper-dialog-actions class="layout-row"}}
+      {{#paper-button onClick=(action "closeDialog" "cancel")}}Cancel{{/paper-button}}
+      {{#paper-button onClick=(action "okay" "ok")}}OK{{/paper-button}}
+    {{/paper-dialog-actions}}
+  {{/paper-dialog}}
+{{/if}}
          <br>
          <br>
-      </div>
-      {{!-- <script>
-         $('#myButton').on('click', function () {
-           var $btn = $(this).button('loading')
-           // business logic...
-           $btn.button('reset')
-         })
-      </script> --}}
+      
+    
    </div>
 </div>
-{{/if}}
