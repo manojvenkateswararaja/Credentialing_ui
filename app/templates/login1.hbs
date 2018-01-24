@@ -1,10 +1,19 @@
-<div class="layout-row layout-xs-column">
+
+
+
+<div class="container-fluid" style="">
+  <br>
+  <br>
+  
+<div class="layout-row layout-xs-column" >
   <div class="layout-column flex-xs flex-gt-xs-50">
    
     {{#paper-card as |card|}}
       {{#card.title as |title|}}
         {{#title.text as |text|}}
-          {{#text.headline}}Login{{/text.headline}}
+          {{#text.headline}}<b>Login</b>{{/text.headline}}
+          <br>
+          
            <div class="layout layout-sm-row">
       {{paper-input
         class="flex-50"
@@ -34,8 +43,10 @@
         {{title.media size="lg" src="assets/images/mort.png" alt="Tomster" title="Tomster"}}
       {{/card.title}}
       {{#card.actions}}
-        {{#paper-button onClick=(action "login")}}Submit{{/paper-button}}
+      <div  style="background-color:#4285f4;">
+        {{#paper-button style="background-color:#4285f4;" onClick=(action "login")}}Submit{{/paper-button}}
         {{!-- {{#paper-button}}Action 2{{/paper-button}} --}}
+        </div>
             {{#if showDialog}}
   {{#paper-dialog class="flex-77" onClose=(action "closeDialog" "cancel") origin=dialogOrigin clickOutsideToClose=true}}
     {{#paper-toolbar}}
@@ -56,6 +67,8 @@
 
     {{/paper-card}}
 
-
+  
 </div>
+</div>
+
 </div>

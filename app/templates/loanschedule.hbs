@@ -1,38 +1,13 @@
 {{partial 'head'}}
 {{#if showUserSchedule}}
 {{/if}}
-{{!-- 
-<div class="container">
-<div class="form">
---}}
-{{!-- 
-<form >
-<h3><b><i style="margin-left: -638px;">Loan Schedule </i></b></h3>
+<div class="container-fluid">
+
 <br>
-Request ID:{{validated-input  type="text" model=this  valuePath='requestid' placeholder="Request Id" required=""}}
-<br>
-<br>
-<label>Loan Amount in Rs</label>
-{{validated-input  type="text" model=this  valuePath='loanamount' placeholder="amount" required=""}}
-<br>
-<label>Loan Terms</label>
-{{validated-input  type="number" model=this  valuePath='loanterms' placeholder="loan terms" required=""}} 
-<br>
-<label>Annual Interest Rate </label>
-{{select-component listitem=InterestRate selecteditemlist=amountinterestrate}}
-<br>
-<label>Payment Per Year</label>
-{{validated-input  type="number" model=this  valuePath='paymentperyear' placeholder="payment per year" required=""}}
-<br>
-<label>Installment per month</label> 
-<span class="symbol">$</span>
-{{validated-input  type="number" model=this  valuePath='installmentpermonth' placeholder="per month" required=""}}
-<br> --}}
-{{!-- boots --}}
-<br>
-<br>
-<div class="container">
+<div class="jumbotron" style="background-color:Lavender ">
+      <div class="row">
   <h2><b style="text-align:center;">LOAN SCHEDULE</b></h2>
+   </div>
    <br>
    <div class="row" style="">
       <div class="col-xs-2 col-lg-2 col-md-2 col-sm-2">
@@ -43,8 +18,7 @@ Request ID:{{validated-input  type="text" model=this  valuePath='requestid' plac
          {{record.Key}}
       </div>
    </div>
-   <br>
-   <br>
+   
      <div class="row" style="">
    <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6">
          <label for="pwd">Loan Amount in Rs:</label>
@@ -91,14 +65,17 @@ Request ID:{{validated-input  type="text" model=this  valuePath='requestid' plac
    </div>
    <br>
    <br>
-   <div class="wrapper">
-      <button type="button" id="myButton" class="btn btn-primary" {{action "loanschedule" details record}}>Schedule</button>
-   </div>
+    <div class="row">
+                  
+           <button type="button" class="btn btn-primary btn-block"{{action "loanschedule" details record}}>Schedule</button>
+            {{!-- <button type="button" id="myButton" class="btn btn-primary" {{action "ApproveUpdate" details record.Key creditscore}}>Approve</button> --}}
+         
+          </div>
+   
    <br>
    <br>
 </div>
-{{!-- boots --}}
-{{!-- <button class="btn" {{action "loanschedule"}}>Schedule</button> --}}
+
 {{#if showDialog}}
 {{#paper-dialog class="flex-77" onClose=(action "closeDialog" "cancel") origin=dialogOrigin clickOutsideToClose=true}}
 {{#paper-toolbar}}
@@ -114,3 +91,4 @@ Loan has been scheduled for requested user   ...!!
 {{/paper-dialog}}
 
 {{/if}}
+</div>

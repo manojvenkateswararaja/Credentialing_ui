@@ -99,12 +99,13 @@
            <br>
              <div class="row">
                   <div class= "col-xs-6 col-lg-6 col-md-6 col-sm-6 ">  
-         
-            <button type="button" id="myButton" class="btn btn-primary" {{action "ApproveUpdate" details record.Key creditscore}}>Approve</button>
+           <button type="button" class="btn btn-primary btn-block"{{action "ApproveUpdate" details record.Key creditscore}}>Creditscore Approve</button>
+            {{!-- <button type="button" id="myButton" class="btn btn-primary" {{action "ApproveUpdate" details record.Key creditscore}}>Approve</button> --}}
          
           </div>
          <div class= "col-xs-6 col-lg-6 col-md-6 col-sm-6 ">  
-            <button type="button" id="myButton" class="btn btn-primary" {{action "creditscore" record.Key}}>CreditScore</button>
+                <button type="button" class="btn btn-primary btn-block"{{action "creditscore" record.Key}}>Generate Creditscore </button>
+            {{!-- <button type="button" id="myButton" class="btn btn-primary" {{action "creditscore" record.Key}}>CreditScore</button> --}}
          </div>
          </div>
          {{#if showDialog}}

@@ -2,7 +2,9 @@ import Controller from '@ember/controller';
 
 export default Controller.extend({
     showUserSchedule:true,
+   
     actions:{
+        
         userschedule:function(key,details){
             var modalvalue = this.get('showDialog')
             

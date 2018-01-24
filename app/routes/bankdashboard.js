@@ -34,8 +34,17 @@ export default Route.extend({
         var creditscore=details.creditscore
         mycontrol.controllerFor('bankdashboard').set('creditscore',creditscore)
          console.log(creditscore,"creditscore>>")
+         var EMI=details.EMI
+         myroute.controllerFor('bankdashboard').set('EMI',EMI)
+         console.log("emi in bank>>>" ,EMI)  
+         if(EMI!=null){
+             var statuspreclose=myroute.controllerFor('bankdashboard').get('details.statuspreclose')
+             myroute.controllerFor('bankdashboard').set('statuspreclose',statuspreclose)
+             console.log("after changing statuspreclose",statuspreclose)
+         }  
         },
-    });      
+    });  
+  
     },
   
 })

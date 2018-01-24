@@ -62,6 +62,7 @@ export default Controller.extend({
           "amountinterestrate":amountinterestrate,
           "paymentperyear": paymentperyear,
           "installmentpermonth": installmentpermonth,
+          "status":"Loan Schedule successfully"
           
         }
     }
