@@ -11,6 +11,7 @@ export default Route.extend({
         //this.transitionTo('loanquotation')
         // this.transitionTo('newrequest')
         // this.transitionTo('bankdashboard')
+        //this.transitionTo('bankdashboard')
         // this.transitionTo('legalverification')
         //this.transitionTo('legalverification2')
         // this.transitionTo('creditscore')
@@ -18,8 +19,11 @@ export default Route.extend({
         // this.transitionTo('uploaddoc')
         // this.transitionTo('creditscore')
         // this.transitionTo('userloanschedule')
-        this.transitionTo('login1')
+        // this.transitionTo('login1')
+        // this.transitionTo('login')
+        // this.transitionTo('login1')
         //this.transitionTo('signup')1
         // this.transitionTo('home')
+        // this.transitionTo('timestamp')
     }
 });

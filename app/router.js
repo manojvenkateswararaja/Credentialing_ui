@@ -35,6 +35,7 @@ Router.map(function() {
   this.route('userloanschedule');
   this.route('credit1');
   this.route('creditscreen');
+  this.route('timestamp');
 });
 
 export default Router;

@@ -18,6 +18,8 @@ export default Controller.extend({
                 console.log("records>>>>userdec",records)
                 var data=showrecords
                 console.log("data>>>>",data)
+                var date=new Date().toLocaleDateString();
+                var time=new Date().toTimeString();
                 var Updateddata = { "id":records.Key,
                  "transactionstring":{
                   "loan":data.loan,
@@ -45,11 +47,13 @@ export default Controller.extend({
                   "address":data.address,
                   "bank":"applied",
                   "creditscore":data.creditscore,
+                  "date":date,
+                  "time":time
                   
                 }}
               console.log("creditscore------>",data);
                 return $.ajax({
-                url:'http://localhost:8082/updatetransaction',//update legal verifier data
+                url:'http://192.168.11.149:8082/updatetransaction',//update legal verifier data
                 type: 'POST',
                 contentType:'application/json',
                 data:JSON.stringify(Updateddata),

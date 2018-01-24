@@ -18,7 +18,8 @@ export default Controller.extend({
                       }
                 var mycontroller=this;
                 console.log("requestid>>>>>>>>",showrecords)
-              
+                var date=new Date().toLocaleDateString();
+                var time=new Date().toTimeString();
                var transactionstring={"id":records,"transactionstring":{
                   "loan":showrecords.loan,
                   "amount":showrecords.amount,
@@ -46,10 +47,12 @@ export default Controller.extend({
                   "bank":"applied",
                   "creditscore":showrecords.creditscore,
                   "legal":"rejected",
+                  "date":date,
+                  "time":time
                 }}
               console.log("creditscore------>",transactionstring);
                 return $.ajax({
-                url:'http://localhost:8082/updatetransaction',//web service for credit score
+                url:'http://192.168.11.149:8082/updatetransaction',//web service for credit score
                 type: 'POST',
                 contentType:'application/json',
                 data:JSON.stringify(transactionstring),
@@ -80,7 +83,8 @@ export default Controller.extend({
                           }
                     var mycontroller=this;
                     console.log("requestid>>>>>>>>",showrecords)
-                  
+                    var date=new Date().toLocaleDateString();
+                    var time=new Date().toTimeString();
                    var transactionstring={"id":records,"transactionstring":{
                       "loan":showrecords.loan,
                       "amount":showrecords.amount,
@@ -108,10 +112,12 @@ export default Controller.extend({
                       "bank":"applied",
                       "creditscore":showrecords.creditscore,
                       "legal":"approved",
+                      "date":date,
+                      "time":time
                     }}
                   console.log("creditscore------>",transactionstring);
                     return $.ajax({
-                    url:'http://localhost:8082/updatetransaction',//web service for credit score
+                    url:'http://192.168.11.149:8082/updatetransaction',//web service for credit score
                     type: 'POST',
                     contentType:'application/json',
                     data:JSON.stringify(transactionstring),

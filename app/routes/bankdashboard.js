@@ -42,6 +42,11 @@ export default Route.extend({
              myroute.controllerFor('bankdashboard').set('statuspreclose',statuspreclose)
              console.log("after changing statuspreclose",statuspreclose)
          }  
+         var date=details.date
+         var time=details.time
+         myroute.controllerFor('bankdashboard').set('date',date)
+         console.log(date)
+         myroute.controllerFor('bankdashboard').set('time',time)
         },
     });  
   

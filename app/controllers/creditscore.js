@@ -19,7 +19,8 @@ export default Controller.extend({
           console.log("record>>>>>>>>loan",showrecords)
           console.log("creditscore>>>>>>",creditscore)
           console.log("key>>>>>>",records)
-          
+          var date=new Date().toLocaleDateString();
+          var time=new Date().toTimeString();
          var transactionstring={
            "id":records,"transactionstring":{
             "loan":showrecords.loan,
@@ -48,10 +49,12 @@ export default Controller.extend({
             "bank":"applied",
             "creditscore":creditscore,
             "legal":"",
+            "date":date,
+            "time":time
           }}
         console.log("transactionstring-update Approve----->",transactionstring);
           return $.ajax({
-          url:'http://localhost:8082/updatetransaction',//web service for credit score
+          url:'http://192.168.11.149:8082/updatetransaction',//web service for credit score
           type: 'POST',
           contentType:'application/json',
           data:JSON.stringify(transactionstring),
@@ -77,7 +80,7 @@ export default Controller.extend({
         console.log("creditscore---request id--->",requestid);
         var mycontroller=this
           return $.ajax({
-          url:'http://localhost:8082/creditscore',//web service for credit score
+          url:'http://192.168.11.149:8082/creditscore',//web service for credit score
           type: 'POST',
           contentType:'application/json',
           data:JSON.stringify(requestid),

@@ -8,5 +8,5 @@ export default Route.extend({
     this.controllerFor('userloanschedule').set('details',Loandetails)
     console.log("userloanschedule>>>>",LoanController)
     console.log("userloanschedule>>>>details",Loandetails)
-    }
+        }
 });

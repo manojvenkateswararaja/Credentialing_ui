@@ -33,6 +33,12 @@ export default Route.extend({
        this.set('status',status)
        console.log("after changing",status)
        }
+       this.controllerFor('home').set('record',HomeController)
+       var details=this.controllerFor('login1').get('details')
+       this.controllerFor('home').set('details',details)
+       console.log("HomeController>>>>",HomeController)
+       console.log("HomeController>>>>details",details)
+   
        
 
     }

@@ -71,27 +71,27 @@
          {{!-- {{#each record.Record.transactionlist   as |item1|}} --}}
          <table>
             <tr>
-               <td>firstname:</td>
+               <td>First name:</td>
                <td style="color:gray;">{{lastdetails.fname}}</td>
             </tr>
             <tr>
-               <td>lastname:</td>
+               <td>Last name:</td>
                <td style="color:gray;">{{lastdetails.lname}}</td>
             </tr>
             <tr>
-               <td>contact number:</td>
+               <td>Contact number:</td>
                <td style="color:gray;">{{lastdetails.phone}}</td>
             </tr>
             <tr>
-               <td>country:</td>
+               <td>Country:</td>
                <td style="color:gray;">{{lastdetails.country}}</td>
             </tr>
             <tr>
-               <td>occupation:</td>
+               <td>Occupation:</td>
                <td style="color:gray;">{{lastdetails.occupation}}</td>
             </tr>
             <tr>
-               <td>income:</td>
+               <td>Income:</td>
                <td style="color:gray;">{{lastdetails.income}}</td>
             </tr>
          </table>
@@ -103,29 +103,29 @@
 
          <table>
             <tr>
-               <td>mortgaugeType</td>
+               <td>Mortgauge type</td>
                <td style="color:gray;">{{lastdetails.propertyType}}</td>
             </tr>
             <tr>
-               <td>Need Amount:</td>
+               <td>Need amount:</td>
                <td style="color:gray;">{{lastdetails.amount}}</td>
             </tr>
             <tr>
-               <td>location</td>
+               <td>Location</td>
                <td style="color:gray;">{{lastdetails.location}}</td>
             </tr>
             <tr>
-               <td>price:</td>
+               <td>Price:</td>
                <td style="color:gray;">{{lastdetails.price}}</td>
             </tr>
             <tr>
-               <td>country:</td>
+               <td>Country:</td>
                <td style="color:gray;">{{lastdetails.country}}</td>
             </tr>
-            <tr>
-               <td>paymentPercentage:</td>
+            {{!-- <tr>
+               <td>PaymentPercentage:</td>
                <td style="color:gray;">{{lastdetails.paymentPercentage}}</td>
-            </tr>
+            </tr> --}}
          </table>
          {{!-- {{/each}} --}}
 {{!-- 
@@ -138,6 +138,23 @@
    {{!-- r3 --}}
    <div style=" margin-top:1cm;">
       <button type="button" class="btn btn-primary btn-block"{{action "credit" record lastdetails}}>Get Credit Score</button>
+      <div style="background-color:lightgrey;">
+             <h3>Time Stamp</h3>
+             <div class="row">
+           <b> Requested For Creditscore Time</b>
+            </div>
+          <div class="row">
+            <div class="col-xs-6 col-lg-6 col-sm-6">
+            Date:{{date}}
+            </div>
+             <div class="col-xs-6 col-lg-6 col-sm-6">
+            Time{{time}}
+            </div>
+        <br>
+        <br>
+       </div>
+        
+      </div>
       {{#if showDialog}}
       {{#paper-dialog class="flex-77" onClose=(action "closeDialog" "cancel") origin=dialogOrigin clickOutsideToClose=true}}
       {{#paper-toolbar}}
