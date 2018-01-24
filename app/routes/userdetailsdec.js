@@ -15,10 +15,20 @@ export default Route.extend({
     // setting legal verification
     var legal=this.controllerFor('userdetailsdec').get('details.legal')
     this.controllerFor('userdetailsdec').set('legal',legal)
+    var date=this.controllerFor('userdetailsdec').get('details.date')
+    this.controllerFor('userdetailsdec').set('date',date)
+    var time=this.controllerFor('userdetailsdec').get('details.time')
+    this.controllerFor('userdetailsdec').set('time',time)
     console.log("legal>>>>>",legal)
+    console.log("date>>>>>",date)
+    console.log("time>>>>>",time)
+
     if(legal==null){
       this.set('isApprove',true)
     }else if(legal!=null){
+      this.set('isApprove',false)
+    }
+    else if(legal=="rejected"){
       this.set('isApprove',false)
     }//set legal property
     //disable the lrgal verification

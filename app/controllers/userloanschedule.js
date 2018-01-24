@@ -12,7 +12,8 @@ export default Controller.extend({
                       else{
                         this.set('showDialog',false)
                       }
-
+                      var date=new Date().toLocaleDateString();
+                      var time=new Date().toTimeString();
             var transactionstring={
                 "id":key,"transactionstring":{
                 "loan":details.loan,
@@ -46,7 +47,9 @@ export default Controller.extend({
                 "amountinterestrate":details.amountinterestrate,
                 "paymentperyear": details.paymentperyear,
                 "installmentpermonth": details.installmentpermonth,
-                "status":" Loan successfully accepted "
+                "status":" Loan successfully accepted ",
+                "time":time,
+                "date":date
                 
               }
           }
@@ -54,7 +57,7 @@ export default Controller.extend({
           console.log(JSON.stringify(transactionstring))
           var mycontroller=this;
           return $.ajax({
-              url:'http://localhost:8082/updatetransaction',
+              url:'http://192.168.11.149:8082/updatetransaction',
               type: 'POST',
               contentType: 'application/json',
               data: JSON.stringify(transactionstring),

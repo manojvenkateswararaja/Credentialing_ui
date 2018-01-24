@@ -1,0 +1,52 @@
+
+<div class="container-fluid">
+   <br>
+    <div style="text-align:center;"><b>Timestamp</b></div>
+   <br>
+   <div class="container">
+      <label>Request ID:</label>
+     <div style="color:blue"> {{record.Key}}</div>
+            <div class="row">
+            <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6">
+               <table>
+                  <tr>
+                     <td>User Request:</td>
+                     <td style="color:gray;">Date:{{date}}</td>
+                       <td style="color:gray;">Time:{{time}}</td>
+                  </tr>
+                  <br>
+                    <tr>
+                     <td>Bank Request for creditscore:</td>
+                     <td style="color:gray;">{{details.loanterms}}</td>
+                  </tr>
+                  <br>
+                   <tr>
+                     <td>Credit response to bank:</td>
+                     <td style="color:gray;">{{details.amountinterestrate}}</td>
+                  </tr>
+                  <br>
+                 <tr>
+                     <td>Bank Request for legalverification:</td>
+                     <td style="color:gray;">{{details.paymentperyear}}</td>
+                  </tr>
+                  <br>
+                   <tr>
+                     <td>Legalverification response to bank :</td>
+                     <td style="color:gray;">{{details.installmentpermonth}}</td>
+                  </tr>
+                  <br>
+                   <tr>
+                     <td>Loanschedule request to user :</td>
+                     <td style="color:gray;">{{details.installmentpermonth}}</td>
+                  </tr>
+                  <br>
+                   <tr>
+                     <td>User accepts the loan :</td>
+                     <td style="color:gray;">{{details.installmentpermonth}}</td>
+                  </tr>
+    </table>
+    </div>
+    </div>
+    </div>
+    </div>
+    

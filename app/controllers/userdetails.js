@@ -44,8 +44,8 @@ export default Controller.extend({
              var len = record.Record.transactionlist.length
              var data = lastdetails;
              console.log("updated data",data)
-             var d = new Date();
-             console.log("date",d);
+             var date=new Date().toLocaleDateString();
+             var time=new Date().toTimeString();
 
               var data = { 
                "id":key,
@@ -74,11 +74,12 @@ export default Controller.extend({
                 "salary":data.salary,
                 "address":data.address,
                 "bank":"applied",
-                "date":d,
+                "date":date,
+                "time":time,
                 "legal":"",
               }}
               return $.ajax({
-              url:'http://localhost:8082/updatetransaction',//web service for credit score
+              url:'http://192.168.11.149:8082/updatetransaction',//web service for credit score
               type: 'POST',
               contentType:'application/json',
               data:JSON.stringify(data),

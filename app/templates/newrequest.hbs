@@ -23,12 +23,12 @@
          <p style="background-color:cornsilk;margin-top:-29px; margin-left:2px;">
             <br>
             <br>
-            {{paper-input label="FirstName" value=fname onChange=(action (mut fname)) icon="person"}}
-            {{paper-input label="LastName" value=lname onChange=(action (mut lname)) icon="person"}}
+            {{paper-input label="Firstname" value=fname onChange=(action (mut fname)) icon="person"}}
+            {{paper-input label="Last name" value=lname onChange=(action (mut lname)) icon="person"}}
             {{paper-input label="Age" type="number" value=age
             icon="person" onChange=(action (mut age))  }}
             <br>
-            {{paper-input label="Phone Number" type="number" 
+            {{paper-input label="Phone number" type="number" 
             value=phone onChange=(action (mut phone)) icon="phone"}}
             {{paper-input label="E-mail" type="email" value=email onChange=(action (mut email))  required=true
             icon="email"  customValidations=emailValidation}}
@@ -76,10 +76,10 @@
          <br>
          <br>
          <div style="background-color:cornsilk;margin-top:-82px;padding-top: 64px;">
-            {{paper-input label="purpose of loan" value=loan onChange=(action (mut loan)) icon="account balance" }}
-            {{paper-input label="Required Amount" value=amount onChange=(action (mut amount)) icon="attach money"}}
+            {{paper-input label="Purpose of loan" value=loan onChange=(action (mut loan)) icon="account balance" }}
+            {{paper-input label="Required amount" value=amount onChange=(action (mut amount)) icon="attach money"}}
             <br>
-            Type of Property 
+            Type of property 
             <div class="drop2" style="margin-left:299px; margin-top:-28px"> 
                {{select-component listitem=mylist selecteditemlist=propertyType}}
             </div>
@@ -114,10 +114,10 @@
             <br>
             <br>
             <br>
-            {{paper-input label="year purchased" type="date" value=year onChange=(action (mut year)) icon="date range" }}
+            {{paper-input label="Year purchased" type="date" value=year onChange=(action (mut year)) icon="date range" }}
             <br>
-            {{paper-input label="loaction/address"  value=location onChange=(action (mut location)) icon="location on" }}
-            {{paper-input label="propertysize"  value=size onChange=(action (mut size)) icon="home"}}  
+            {{paper-input label="Loaction/Address"  value=location onChange=(action (mut location)) icon="location on" }}
+            {{paper-input label="Property size"  value=size onChange=(action (mut size)) icon="home"}}  
             <br>
             {{!-- {{#paper-button raised=true warn=true onClick=(action "targetButton")}}Submit{{/paper-button}} --}}
          </p>
@@ -149,8 +149,8 @@
             <br>
             <br>
             <br>
-            {{paper-input label="income" value=rupees type="number" onChange=(action (mut rupees)) icon="attach money" }}
-            {{paper-input label="Company Name" value=company  onChange=(action (mut company)) icon="work"}}
+            {{paper-input label="Income" value=rupees type="number" onChange=(action (mut rupees)) icon="attach money" }}
+            {{paper-input label="Company name" value=company  onChange=(action (mut company)) icon="work"}}
             <br>
             {{paper-input label="Joining date" type="date" value=joining onChange=(action (mut joining)) icon="work"}}
             {{paper-input label="Gross fixed salary" type="number" value=salary onChange=(action (mut salary)) icon="work" }}

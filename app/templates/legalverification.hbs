@@ -29,27 +29,27 @@
            
                <table>
                   <tr>
-                     <td>firstname:</td>
+                     <td>First name:</td>
                      <td style="color:gray;">{{showrecords.fname}}</td>
                   </tr>
                   <tr>
-                     <td>lastname:</td>
+                     <td>Last name:</td>
                      <td style="color:gray;">{{showrecords.lname}}</td>
                   </tr>
                   <tr>
-                     <td>contact number:</td>
+                     <td>Contact number:</td>
                      <td style="color:gray;">{{showrecords.phone}}</td>
                   </tr>
                   <tr>
-                     <td>country:</td>
+                     <td>Country:</td>
                      <td style="color:gray;">{{showrecords.country}}</td>
                   </tr>
                   <tr>
-                     <td>occupation:</td>
+                     <td>Occupation:</td>
                      <td style="color:gray;">{{showrecords.occupation}}</td>
                   </tr>
                   <tr>
-                     <td>income:</td>
+                     <td>Income:</td>
                      <td style="color:gray;">{{showrecords.income}}</td>
                   </tr>
                </table>
@@ -59,29 +59,29 @@
                 
                <table>
                   <tr>
-                     <td>mortgaugeType</td>
+                     <td>Mortgauge type</td>
                      <td style="color:gray;">{{showrecords.propertyType}}</td>
                   </tr>
                   <tr>
-                     <td>Need Amount:</td>
+                     <td>Need amount:</td>
                      <td style="color:gray;">{{showrecords.amount}}</td>
                   </tr>
                   <tr>
-                     <td>location</td>
+                     <td>Location</td>
                      <td style="color:gray;">{{showrecords.location}}</td>
                   </tr>
                   <tr>
-                     <td>price:</td>
+                     <td>Price:</td>
                      <td style="color:gray;">{{showrecords.price}}</td>
                   </tr>
                   <tr>
-                     <td>country:</td>
+                     <td>Country:</td>
                      <td style="color:gray;">{{showrecords.country}}</td>
                   </tr>
-                  <tr>
-                     <td>paymentPercentage:</td>
+                  {{!-- <tr>
+                     <td>Payment Percentage:</td>
                      <td style="color:gray;">{{showrecords.paymentPercentage}}</td>
-                  </tr>
+                  </tr> --}}
                </table>
           
             </div>
@@ -95,6 +95,18 @@
            <div style=" margin-top:1cm;">
             <button type="button" id="myButton" class="btn btn-primary" {{action "approved" showrecords records }}>Approve</button>
          </div>
+         <div>
+        <h3>STATUS</h3>
+        <table>
+          <tr>
+            UserRequest
+          </tr>
+          <tr>
+            Date<td>{{date}}</td>
+            </tr>
+            <tr>Time<td>{{time}}</td></tr>
+        </table>
+      </div>
          {{#if showDialog}}
   {{#paper-dialog class="flex-77" onClose=(action "closeDialog" "cancel") origin=dialogOrigin clickOutsideToClose=true}}
   {{#paper-toolbar}}

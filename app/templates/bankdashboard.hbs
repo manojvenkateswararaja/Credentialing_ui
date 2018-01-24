@@ -25,7 +25,7 @@
    <a {{action "goTonewrequest"}}>User</a>
    <a {{action "goToloan"}}>Bank</a>
    <a {{action "goToproperty"}}>Creditscoregenerator</a>
-   <a {{action "goToemployment"}}>LegalPerson</a>
+   <a {{action "goToemployment"}}>Legalperson</a>
 </div>
 <div class="container-fluid" style="background-color:lightgrey">
     <br>
@@ -43,7 +43,7 @@
       <div class ="container">
          {{!-- {{#each showrecords   as |item|}} --}}
          <div class="row">
-           <div class="col-xs-3 col-lg-3 col-sm-3">Requestid<a href="" {{action 'userdetails'  record }}><b style="color:blue">{{record.Key}}</b></a></div>
+           <div class="col-xs-3 col-lg-3 col-sm-3">Request id<a href="" {{action 'userdetails'  record }}><b style="color:blue">{{record.Key}}</b></a></div>
             {{!-- {{#each item.Record.transactionlist   as |item1|}} --}}
            <div class="col-xs-9 col-lg-9 col-sm-9"   style="">
                <div class="row">
@@ -51,7 +51,7 @@
                      <div class="vl5">Name:{{details.fname}}</div>
                   </div>
                   <div class="col-xs-3 col-lg-3 col-sm-3">
-                     <div class="vl5" >Properttype:{{details.propertyType}}</div>
+                     <div class="vl5" >Propertytype:{{details.propertyType}}</div>
                   </div>
                   <div class="col-xs-3 col-lg-3 col-sm-3">
                      <div class="vl5" style="margin-left: 78px">Companyname:{{details.Company}}</div>
@@ -60,10 +60,22 @@
                   </div> 
             {{!-- {{/each}} --}}
             </div>
-         <br>
          {{!-- {{/each}} --}}
       </div>
    </div>
 </div>
+<div>
+        <h3>STATUS</h3>
+        <table>
+          <tr>
+            UserRequest
+          </tr>
+          <tr>
+            Date<td>{{date}}</td>
+            </tr>
+            <tr>Time<td>{{time}}</td></tr>
+        </table>
+      </div>
+      <br>
 <a href="#" class="go-top">Scroll to Top</a>
 {{/if}} 

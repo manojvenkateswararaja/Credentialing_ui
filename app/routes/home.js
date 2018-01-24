@@ -17,19 +17,20 @@ export default Route.extend({
        this.controllerFor('home').set('details',details)
        console.log("HomeController>>>>",HomeController)
        console.log("HomeController>>>>details",details)
-       var LoanSchedule=details.loanterms
-       this.set('LoanSchedule',LoanSchedule)
-       console.log("LoanSchedule>>>>",LoanSchedule)
-       var ChangeStatus="Loan Scheduled"
-       this.set('ChangeStatus',ChangeStatus)
-       if(LoanSchedule==null)
-       {
+    //    var LoanSchedule=details.loanterms
+    //    this.set('LoanSchedule',LoanSchedule)
+    //    console.log("LoanSchedule>>>>",LoanSchedule)
+    //    var ChangeStatus="Loan Scheduled"
+    
+    //    this.set('ChangeStatus',ChangeStatus)
+    //    if(LoanSchedule==null)
+    //    {
        
-       }else if(LoanSchedule!=null)
-       {  this.get('ChangeStatus')
-           this.set('ChangeStatus',ChangeStatus)
-           console.log(ChangeStatus)
-       }
+    //    }else if(LoanSchedule!=null)
+    //    {  this.get('ChangeStatus')
+    //        this.set('ChangeStatus',ChangeStatus)
+    //        console.log(ChangeStatus)
+    //    }
        
 
     }
