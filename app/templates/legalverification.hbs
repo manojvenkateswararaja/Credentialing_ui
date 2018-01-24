@@ -2,17 +2,18 @@
 {{#if LegalVerifierParticipant}}
 {{/if}}
 <div class="container-fluid">
+   <h2 style="margin-left:13cm;"><b>Legal Verification</b></h2>
   
-      <h2 style="text-align:center;">Legal Verification</h2>
-
-<div class="user-container">
-   <br/>
+<div class="container">
+   <br>
    <p style="text-align:center;color:#808080 "><b>Total Request</b></p>
-  
-      <i style="margin-left:70px">Request Id:{{records}}</i>
+     <div class="row">
+       <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6">
+      Request Id:<b style="color:blue">{{records}}</b>
+      </div>
+</div>
+     <br>
 
-
-      
          <style>
             table, th, {
             border-width: thin;
@@ -89,13 +90,43 @@
          <table>
            
          </table>
-         <div style=" margin-top:1cm;">
-            <button type="button" id="myButton" class="btn btn-primary" {{action "reject" showrecords records }}>Reject</button>
+         <br>
+         <br>
+          <div style=" margin-top:1cm;">
+
+          <div class="row">
+                  <div class= "col-xs-6 col-lg-6 col-md-6 col-sm-6 ">  
+           <button type="button" class="btn btn-primary btn-block"{{action "reject" showrecords records }}>Reject</button>
+            {{!-- <button type="button" id="myButton" class="btn btn-primary" {{action "ApproveUpdate" details record.Key creditscore}}>Approve</button> --}}
+         
+          </div>
+         <div class= "col-xs-6 col-lg-6 col-md-6 col-sm-6 ">  
+                <button type="button" class="btn btn-primary btn-block" {{action "approved" showrecords records }}>Approve</button>
+            {{!-- <button type="button" id="myButton" class="btn btn-primary" {{action "creditscore" record.Key}}>CreditScore</button> --}}
          </div>
-           <div style=" margin-top:1cm;">
-            <button type="button" id="myButton" class="btn btn-primary" {{action "approved" showrecords records }}>Approve</button>
          </div>
-         <div>
+         </div>
+         <br>
+          <div style="background-color:lightgrey;">
+             <h3>Time Stamp</h3>
+             <div class="row">
+           <b>  Legal Veification Generation Time</b>
+            </div>
+          <div class="row">
+            <div class="col-xs-6 col-lg-6 col-sm-6">
+            Date:{{date}}
+            </div>
+             <div class="col-xs-6 col-lg-6 col-sm-6">
+            Time{{time}}
+            </div>
+        
+        
+       </div>
+       <br>
+       <br>
+       </div>
+       
+         {{!-- <div>
         <h3>STATUS</h3>
         <table>
           <tr>
@@ -106,11 +137,11 @@
             </tr>
             <tr>Time<td>{{time}}</td></tr>
         </table>
-      </div>
+      </div> --}}
          {{#if showDialog}}
   {{#paper-dialog class="flex-77" onClose=(action "closeDialog" "cancel") origin=dialogOrigin clickOutsideToClose=true}}
   {{#paper-toolbar}}
-      {{#paper-toolbar-tools}}
+    {{#paper-toolbar-tools}}
         Your Property has been verified Successfully...!!!
         {{#paper-button iconButton=true onClick=(action "closeDialog" "cancel")}}{{paper-icon icon="close"}}{{/paper-button}}
       {{/paper-toolbar-tools}}

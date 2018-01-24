@@ -2,7 +2,9 @@ import Controller from '@ember/controller';
 
 export default Controller.extend({
     showUserSchedule:true,
+   
     actions:{
+        
         userschedule:function(key,details){
             var modalvalue = this.get('showDialog')
             
@@ -57,7 +59,7 @@ export default Controller.extend({
           console.log(JSON.stringify(transactionstring))
           var mycontroller=this;
           return $.ajax({
-              url:'http://192.168.11.149:8082/updatetransaction',
+              url:'http://localhost:8082/updatetransaction',
               type: 'POST',
               contentType: 'application/json',
               data: JSON.stringify(transactionstring),

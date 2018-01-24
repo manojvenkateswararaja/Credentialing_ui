@@ -2,13 +2,13 @@ import Route from '@ember/routing/route';
 
 export default Route.extend({
     model(){
-          //if it is user request id generated
-          var status="Processing"
-          this.controllerFor('login1').set('status',status)
-          console.log("status>>>>>>property",status)
+         //if it is user request id generated
+         var status="Processing"
+         this.controllerFor('login1').set('status',status)
+         console.log("status>>>>>>property",status)
           var mycontroller=this
           return $.ajax({
-          url:'http://192.168.11.149:8082/getloandetails',
+          url:'http://localhost:8082/getloandetails',
           type: 'GET',
           contentType: 'application/json',
           success: function(response){

@@ -9,7 +9,11 @@
 @import "ember-bootstrap/bootstrap/scaffolding.scss";
 @import "ember-bootstrap/bootstrap/type.scss";
 @import "ember-bootstrap/bootstrap/buttons.scss";
-.wrapper {
+.layout-row > .flex-gt-xs-50 {
+  
+  margin-left: 8cm;
+  }
+  .wrapper {
   text-align: center;
 }
 

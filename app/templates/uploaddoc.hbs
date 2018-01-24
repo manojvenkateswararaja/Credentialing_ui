@@ -1,10 +1,7 @@
-{{!--{{partial 'head'}}--}}
-{{!--{{#if Myshowhome}}--}}
-{{!-- <h2><b><i style="
-    margin-left: -67px;
-">APPLICATION OR REQUEST</i></b></h2>  --}}
+
 {{partial 'head'}}
 {{#if showRequest}}
+{{/if}}
 <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" {{action "closeNav"}}>&times;</a>
   <a >Home</a>
@@ -14,25 +11,19 @@
   <a {{action "goToemployment"}}>Employment details</a>
 
 </div>
-{{!-- <div id="main">
-      <span style="font-size:30px;cursor:pointer" {{action "openNav"}}>&#9776; open</span>
-</div> --}}
 <div class="container-fluid">
-  <br>
-  <br>
+  <br> 
   <h3><b style="text-align:center;">Upload Document</b></h3>
   <br>
 <div class="container">
      {{!-- <div class="container-fluid">   --}}
-                  
+                  <br>
                    <div class="detail"><i style="margin-left: -480px;" >please fill your documents details?</i></div>
                 <br>
                   <label >Id proof Document</label>
                    {{#pl-uploader  for="upload_file1" runtimes="html5 flash silverlight" onfileadd="uploadDoc" as |queue|}}
           <a id="upload_file1" style="font-size:18px"> <p style="margin-top:3mm"> <img src="assets/images/upload.svg" alt="Smiley face" width="20" height="20" style="margin-bottom:3mm">&nbsp; Choose File to Upload</p></a>
-         {{/pl-uploader}}
-                           
-                           
+         {{/pl-uploader}}                        
                    <br>
                    <label > BankStatement Document</label>
           {{#pl-uploader  for="upload_file2" runtimes="html5 flash silverlight" onfileadd="uploadDoc" as |queue|}}
@@ -61,8 +52,6 @@
                            
                     <br>
  {{#paper-button raised=true warn=true onClick=(action "targetButton")}}Submit{{/paper-button}}
-
-            {{!-- <button class="btn" {{action "apply"}}>Apply</button> --}}
         {{#if showDialog}}
   {{#paper-dialog class="flex-77" onClose=(action "closeDialog" "cancel") origin=dialogOrigin clickOutsideToClose=true}}
     {{#paper-toolbar}}
@@ -81,5 +70,5 @@
 {{/if}}
 </div>
 </div>
-{{/if}}
+
 

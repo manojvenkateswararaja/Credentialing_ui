@@ -138,17 +138,22 @@
    {{!-- r3 --}}
    <div style=" margin-top:1cm;">
       <button type="button" class="btn btn-primary btn-block"{{action "credit" record lastdetails}}>Get Credit Score</button>
-      <div>
-        <h3>STATUS</h3>
-        <table>
-          <tr>
-            UserRequest
-          </tr>
-          <tr>
-            Date<td>{{date}}</td>
-            </tr>
-            <tr>Time<td>{{time}}</td></tr>
-        </table>
+      <div style="background-color:lightgrey;">
+             <h3>Time Stamp</h3>
+             <div class="row">
+           <b> Requested For Creditscore Time</b>
+            </div>
+          <div class="row">
+            <div class="col-xs-6 col-lg-6 col-sm-6">
+            Date:{{date}}
+            </div>
+             <div class="col-xs-6 col-lg-6 col-sm-6">
+            Time{{time}}
+            </div>
+        <br>
+        <br>
+       </div>
+        
       </div>
       {{#if showDialog}}
       {{#paper-dialog class="flex-77" onClose=(action "closeDialog" "cancel") origin=dialogOrigin clickOutsideToClose=true}}

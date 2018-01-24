@@ -23,7 +23,7 @@
    </script>
    <br>
    <div class="container" >
-      <h2 style="text-align:center">USER REQUESTID</h2>
+      <h2 style="margin-left:12cm;"><b>USER REQUESTID</b></h2>
       <br>
       <br>
        <div class="row" style="">
@@ -150,7 +150,28 @@
          <br>
               <div style=" margin-top:1cm;">
       <button type="button" class="btn btn-primary btn-block"  disabled={{isApprove}} {{action "LoanApprove" record details}}> Approve Loan </button>
-        <div>
+         <br>
+          <div style="background-color:lightgrey;">
+             <h3>Time Stamp</h3>
+             <div class="row">
+           <b>  Legal Veification Requested Time</b>
+            </div>
+          <div class="row">
+            <div class="col-xs-6 col-lg-6 col-sm-6">
+            Date:{{date}}
+            </div>
+             <div class="col-xs-6 col-lg-6 col-sm-6">
+            Time{{time}}
+            </div>
+        
+        
+       </div>
+       <br>
+       <br>
+       </div>
+       
+       
+        {{!-- <div>
         <h3>STATUS</h3>
         <table>
           <tr>
@@ -161,7 +182,7 @@
             </tr>
             <tr>Time<td>{{time}}</td></tr>
         </table>
-      </div>
+      </div> --}}
 {{#if showDialogApprove}}
   {{#paper-dialog class="flex-77" onClose=(action "closeDialog" "cancel") origin=dialogOrigin clickOutsideToClose=true}}
     {{#paper-toolbar}}

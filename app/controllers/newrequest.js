@@ -134,7 +134,7 @@ export default Controller.extend({
     var mycontroller=this
     return $.ajax({
       
-    url:'http://192.168.11.149:8082/loandetails',
+    url:'http://localhost:8082/loandetails',
     type: 'POST',
     contentType: 'application/json',
     data: JSON.stringify(transactionstring),

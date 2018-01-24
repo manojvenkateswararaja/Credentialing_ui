@@ -1,5 +1,6 @@
 {{partial 'head'}}
 {{#if showDashboard }}
+{{/if}} 
 <script>
    $(document).ready(function() {
        // Show or hide the sticky footer button
@@ -51,31 +52,44 @@
                      <div class="vl5">Name:{{details.fname}}</div>
                   </div>
                   <div class="col-xs-3 col-lg-3 col-sm-3">
-                     <div class="vl5" >Propertytype:{{details.propertyType}}</div>
+                     <div class="vl5" >PropertyType:{{details.propertyType}}</div>
                   </div>
                   <div class="col-xs-3 col-lg-3 col-sm-3">
-                     <div class="vl5" style="margin-left: 78px">Companyname:{{details.Company}}</div>
+                     <div class="vl5" style="margin-left:1cm ">CompanyName:{{details.Company}}</div>
                   </div>
                   </div>
                   </div> 
             {{!-- {{/each}} --}}
+            <br>
+            <div class="row">
+                <br>
+           <div class="" style="margin-left: 8cm">
+                     <div  style="margin-left:;color:DeepSkyBlue;">Status:{{details.statuspreclose}}</div>
+                  </div>
             </div>
          {{!-- {{/each}} --}}
       </div>
+      <br>
+      
+          </div>
    </div>
-</div>
+
 <div>
-        <h3>STATUS</h3>
-        <table>
-          <tr>
-            UserRequest
-          </tr>
-          <tr>
-            Date<td>{{date}}</td>
-            </tr>
-            <tr>Time<td>{{time}}</td></tr>
-        </table>
+    
+        <h3>Time Stamp</h3>
+             <div class="row">
+           <b> User Requested Time</b>
+            </div>
+          <div class="row">
+            <div class="col-xs-6 col-lg-6 col-sm-6">
+            Date:{{date}}
+            </div>
+             <div class="col-xs-6 col-lg-6 col-sm-6">
+            Time{{time}}
+            </div>
+        
+        </div>
       </div>
       <br>
+      </div>
 <a href="#" class="go-top">Scroll to Top</a>
-{{/if}} 

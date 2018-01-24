@@ -2,7 +2,7 @@
 {{#if showCreditscore}}
 {{/if}}
 <div class="container-fluid">
-   {{creditscore}}
+   
       <h2><b style="text-align:center;">CREDIT SCORE</b></h2>
 
 <div class="container">
@@ -99,15 +99,34 @@
            <br>
              <div class="row">
                   <div class= "col-xs-6 col-lg-6 col-md-6 col-sm-6 ">  
-         
-            <button type="button" id="myButton" class="btn btn-primary" {{action "ApproveUpdate" details record.Key creditscore}}>Approve</button>
+           <button type="button" class="btn btn-primary btn-block"{{action "ApproveUpdate" details record.Key creditscore}}>Creditscore Approve</button>
+            {{!-- <button type="button" id="myButton" class="btn btn-primary" {{action "ApproveUpdate" details record.Key creditscore}}>Approve</button> --}}
          
           </div>
          <div class= "col-xs-6 col-lg-6 col-md-6 col-sm-6 ">  
-            <button type="button" id="myButton" class="btn btn-primary" {{action "creditscore" record.Key}}>CreditScore</button>
+                <button type="button" class="btn btn-primary btn-block"{{action "creditscore" record.Key}}>Generate Creditscore </button>
+            {{!-- <button type="button" id="myButton" class="btn btn-primary" {{action "creditscore" record.Key}}>CreditScore</button> --}}
          </div>
          </div>
-         <div>
+          <div style="background-color:lightgrey;">
+             <h3>Time Stamp</h3>
+             <div class="row">
+           <b>  Creditscore Generation Time</b>
+            </div>
+          <div class="row">
+            <div class="col-xs-6 col-lg-6 col-sm-6">
+            Date:{{date}}
+            </div>
+             <div class="col-xs-6 col-lg-6 col-sm-6">
+            Time{{time}}
+            </div>
+        
+        
+       </div>
+       <br>
+       <br>
+       </div>
+         {{!-- <div>
         <h3>STATUS</h3>
         <table>
           <tr>
@@ -118,7 +137,7 @@
             </tr>
             <tr>Time<td>{{time}}</td></tr>
         </table>
-      </div>
+      </div> --}}
          {{#if showDialog}}
   {{#paper-dialog class="flex-77" onClose=(action "closeDialog" "cancel") origin=dialogOrigin clickOutsideToClose=true}}
     {{#paper-toolbar}}
@@ -137,7 +156,8 @@
 {{/if}}
          <br>
          <br>
-      </div>
+      
 
+  </div>
   </div>
 

@@ -3,43 +3,73 @@
 {{/if}}
 <div class="container-fluid">
    <br>
-    <div style="text-align:center;"><b>Loan Schedule</b></div>
+    <div style="margin-left:14cm;"><b>Loan Schedule</b></div>
    <br>
-   <div class="container">
+   <div class="container" style="background-color:Lavender ">
+     <br>
+     <br>
+     <div class="row" style="">
+        <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6" style="">
       <label>Request ID:</label>
-     <div style="color:blue"> {{record.Key}}</div>
-            <div class="row">
-            <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6">
-               <table>
-                  <tr>
-                     <td>Loan amount in Rs:</td>
-                     <td style="color:gray;">{{details.loanamount}}</td>
-                  </tr>
-                    <tr>
-                     <td>Loan terms:</td>
-                     <td style="color:gray;">{{details.loanterms}}</td>
-                  </tr>
-                   <tr>
-                     <td>Annual interest rate:</td>
-                     <td style="color:gray;">{{details.amountinterestrate}}</td>
-                  </tr>
-                 <tr>
-                     <td>Payment per year:</td>
-                     <td style="color:gray;">{{details.paymentperyear}}</td>
-                  </tr>
-                   <tr>
-                     <td>Installment per month:</td>
-                     <td style="color:gray;">{{details.installmentpermonth}}</td>
-                  </tr>
-    </table>
-    </div>
-    </div>
+      </div>
+        {{!-- <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6" style=""> --}}
+        <i style="color:blue; margin-left:-11cm;"> {{record.Key}}</i>
+         {{!-- </div> --}}
+         </div>
+         <br>
+          <div class="row" style="">
+        <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6" style="">
+         <label>Loan Amount in Rs:</label>
+         </div>
+         <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6" style="">
+         {{details.loanamount}}
+         </div>
+         </div>
+         <br>
+          <div class="row" style="">
+        <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6" style="">
+         <label>Loan Terms:</label>
+         </div>
+          <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6" style="">
+           {{details.loanterms}}
+           </div>
+           </div>
+         <br>
+         <div class="row" style="">
+        <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6" style="">
+         <label>Annual Interest Rate:</label>
+         </div>
+         <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6" style="">
+         {{details.amountinterestrate}} 
+         </div>
+         </div>
+         <br>
+           <div class="row" style="">
+        <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6" style="">
+         <label>Payment Per Year:</label>
+         </div>
+          <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6" style="">
+           {{details.paymentperyear}}
+           </div>
+           </div>
+         <br>
+            <div class="row" style="">
+        <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6" style="">
+         <label>Installment per month:</label>
+         </div>
+          <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6" style="">
+         {{details.installmentpermonth}}
+         </div> 
+         </div>
+         <br>
       <br>
       <br>
-      
-<button type="button" id="myButton" class="btn btn-primary" {{action "userschedule" record.Key details}}>
-         Agree & next
-         </button>
+       
+        <div style="margin-top:0cm;">
+      <button type="button" class="btn btn-primary btn-block"{{action "userschedule" record.Key details}}> agree & next</button>   
+{{!-- <button type="button" id="myButton" class="btn btn-primary" {{action "userschedule" record.Key details}}>
+         agree & next
+         </button> --}}
           {{#if showDialog}}
   {{#paper-dialog class="flex-77" onClose=(action "closeDialog" "cancel") origin=dialogOrigin clickOutsideToClose=true}}
     {{#paper-toolbar}}
@@ -56,6 +86,7 @@
     {{/paper-dialog-actions}}
   {{/paper-dialog}}
 {{/if}}
+</div>
          <br>
          <br>
       

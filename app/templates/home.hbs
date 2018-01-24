@@ -1,9 +1,11 @@
 {{partial 'head'}}
 {{#if isShowHome}}
+ {{!-- {{notification-container position="top-right"}} --}}
 {{/if}}
 <div class="container-fluid">
       <br>
-  <button type="button" id="myButton" class="btn btn-primary"  style="text-align:right;    margin-left: 29cm;" {{action "gotoPreclose"}}>Pre-closure</button>
+      <i style="color:LightSlateGrey; margin-left: 13cm;">click here to preclosing</i>
+  <button type="button" id="myButton" class="btn btn-primary"  style="text-align:right;  margin-top:-2cm;  margin-left: 28cm;" {{action "gotoPreclose"}}>Pre-closure</button>
       
 <header class="w3-container  w3-center" style="padding:128px 16px">
        {{!-- margin-left:953px;margin-top: -210px;  --}}
@@ -11,26 +13,26 @@
      {{!-- my account --}}
      {{#if ShowRequest}}
       <div class="row" style="">
-   <div class="col-xs-2 col-lg-2 col-md-2 col-sm-2" style="background-color:lightcyan;">Request Id:<i style="color:blue">{{#link-to 'userloanschedule'}}{{record.Key}}{{/link-to}}</i></div>
-   <div class="col-xs-2 col-lg-2 col-md-2 col-sm-2" style="background-color:lightcyan;">
+   <div class="col-xs-2 col-lg-2 col-md-2 col-sm-2" style="background-color:">Request Id:<i style="color:blue">{{#link-to 'userloanschedule'}}{{record.Key}}{{/link-to}}</i></div>
+   <div class="col-xs-2 col-lg-2 col-md-2 col-sm-2" style="background-color:">
       <div class="vl5">
          <div style="margin-left:8%">Name:{{details.fname}}
          </div>
       </div>
    </div>
-   <div class="col-xs-2 col-lg-2 col-md-2 col-sm-2" style="background-color:lightcyan;">
+   <div class="col-xs-2 col-lg-2 col-md-2 col-sm-2" style="background-color:">
       <div class="vl5">
          <div style="margin-left:8%">Property:{{details.propertyType}}</div>
       </div>
    </div>
-   <div class="col-xs-2 col-lg-2 col-md-2 col-sm-2" style="background-color:lightcyan;">
+   <div class="col-xs-2 col-lg-2 col-md-2 col-sm-2" style="background-color:">
       <div class="vl5">
          <div style="margin-left:8%">Company:{{details.Company}}</div>
       </div>
    </div>
-   <div class="col-xs-2 col-lg-2 col-md-2 col-sm-2" style="background-color:lightcyan;">
+   <div class="col-xs-4 col-lg-4 col-md-4 col-sm-4" style="background-color:">
       <div class="vl5">
-         <div style="margin-left:8%">status:{{status}}</div>
+         <div style="margin-left:1%">status:<i  style="color:DeepSkyBlue " >{{status}}</i></div>
       </div>
    </div>
    </div>
