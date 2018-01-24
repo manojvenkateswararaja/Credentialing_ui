@@ -3,6 +3,7 @@ export default Controller.extend({
     isShowUserDetails:true,
     showCredit:false,
     showUserDetails:true,
+    isCreditRequested:false,
     actions:{
   //     //creditscore
   //   bankcreditscore: function(records) {
@@ -93,9 +94,10 @@ export default Controller.extend({
               })
           },
           closeDialog:function(){
-            this.set('showDialog',false)
+          this.set('showDialog',false)
           },
           okay:function(){
+            this.set('isCreditRequested',true)
           this.set('showDialog',false)
           },
           signout:function(){

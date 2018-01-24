@@ -18,7 +18,7 @@ export default Route.extend({
         this.controllerFor('home').set('details',details)
         console.log("HomeController>>>>",HomeController)
         console.log("HomeController>>>>details",details)
-        var LoanSchedule=details.loanterms
+        var LoanSchedule=this.get('details.loanterms')
         this.set('LoanSchedule',LoanSchedule)
         console.log("LoanSchedule>>>>",LoanSchedule)
        

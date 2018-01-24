@@ -148,11 +148,13 @@
 {{/if}}
          </div>         
          <br>
+         
               <div style=" margin-top:1cm;">
       <button type="button" class="btn btn-primary btn-block"  disabled={{isApprove}} {{action "LoanApprove" record details}}> Approve Loan </button>
          <br>
           <div style="background-color:lightgrey;">
              <h3>Time Stamp</h3>
+         {{#if isLegalRequested}}
              <div class="row">
            <b>  Legal Veification Requested Time</b>
             </div>
@@ -168,6 +170,7 @@
        </div>
        <br>
        <br>
+       {{/if}}
        </div>
        
        

@@ -2,6 +2,7 @@ import Controller from '@ember/controller';
 
 export default Controller.extend({
     showCreditscore:true,
+    isLegalverified:false,
     actions:{
         
         signout:function(){
@@ -70,6 +71,7 @@ export default Controller.extend({
                 this.set('showDialog',false)
             },
             okay:function(){
+              this.set('isLegalverified',true)
               this.set('showDialog',false)
             },
             approved:function (showrecords,records) {

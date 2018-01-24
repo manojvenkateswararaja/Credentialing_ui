@@ -4,6 +4,7 @@ export default Controller.extend({
   showhome:true,
   shoUserInfo:false,
   showCreditscore:true,
+  isCreditGen:false,
   actions: {
     // ApproveUpdate:function (showrecords,records,creditscore)
     ApproveUpdate:function (showrecords,records,creditscore) {
@@ -54,7 +55,7 @@ export default Controller.extend({
           }}
         console.log("transactionstring-update Approve----->",transactionstring);
           return $.ajax({
-          url:'http://192.168.11.149:8082/updatetransaction',//web service for credit score
+          url:'http://localhost:8082/updatetransaction',//web service for credit score
           type: 'POST',
           contentType:'application/json',
           data:JSON.stringify(transactionstring),
@@ -71,6 +72,7 @@ export default Controller.extend({
           this.set('showDialog',false)
       },
       okay:function(){
+        this.set('isCreditGen',true)
         this.set('showDialog',false)
       },
     creditscore: function(records) {
@@ -80,7 +82,7 @@ export default Controller.extend({
         console.log("creditscore---request id--->",requestid);
         var mycontroller=this
           return $.ajax({
-          url:'http://192.168.11.149:8082/creditscore',//web service for credit score
+          url:'http://localhost:8082/creditscore',//web service for credit score
           type: 'POST',
           contentType:'application/json',
           data:JSON.stringify(requestid),
