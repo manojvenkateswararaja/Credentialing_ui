@@ -19,10 +19,10 @@ export default Route.extend({
         // this.transitionTo('uploaddoc')
         // this.transitionTo('creditscore')
         // this.transitionTo('userloanschedule')
-        this.transitionTo('login1')
+      this.transitionTo('login1')
         // this.transitionTo('login')
         //this.transitionTo('signup')1
         // this.transitionTo('home')
-        // this.transitionTo('timestamp')
+         //this.transitionTo('timestamp')
     }
 });

@@ -27,6 +27,8 @@ export default Controller.extend({
               var Payment=this.get('Payment')
               this.set('Payment',Payment)
               console.log("Payment>>",Payment)
+              var date=new Date().toLocaleDateString();
+              var time=new Date().toTimeString();
               var transactionstring={
                 "id":record,"transactionstring":{
                 "loan":details.loan,
@@ -64,7 +66,9 @@ export default Controller.extend({
                 "installment":installment,
                 "EMI":EMI,
                 "statuspreclose":"User Requested For Preclose",
-                "Payment":Payment
+                "Payment":Payment,
+                "date":date,
+                "time":time
               }
           }
               console.log(JSON.stringify(transactionstring))
@@ -84,15 +88,21 @@ export default Controller.extend({
                   }   
                 }) 
               },
-              closeDialog:function(){
+              CloseDialog:function(){
               this.set('showDialog',false)
               },
-              okay:function(){
+            Okay:function(){
               this.set('showDialog',false)
               }, 
               signout:function() {
               this.transitionToRoute('login1');
               },
+              closeDialog:function(){
+                this.set('showDialog',false)
+                },
+                okay:function(){
+                this.set('showDialog',false)
+                }, 
 
 
     }

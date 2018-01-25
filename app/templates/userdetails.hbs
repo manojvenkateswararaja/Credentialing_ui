@@ -114,10 +114,10 @@
                <td>Location</td>
                <td style="color:gray;">{{lastdetails.location}}</td>
             </tr>
-            <tr>
+            {{!-- <tr>
                <td>Price:</td>
                <td style="color:gray;">{{lastdetails.price}}</td>
-            </tr>
+            </tr> --}}
             <tr>
                <td>Country:</td>
                <td style="color:gray;">{{lastdetails.country}}</td>
@@ -139,7 +139,9 @@
    <div style=" margin-top:1cm;">
       <button type="button" class="btn btn-primary btn-block"{{action "credit" record lastdetails}}>Get Credit Score</button>
       <div style="background-color:lightgrey;">
+          
              <h3>Time Stamp</h3>
+          {{#if isCreditRequested}}
              <div class="row">
            <b> Requested For Creditscore Time</b>
             </div>
@@ -153,6 +155,7 @@
         <br>
         <br>
        </div>
+       {{/if}}
         
       </div>
       {{#if showDialog}}

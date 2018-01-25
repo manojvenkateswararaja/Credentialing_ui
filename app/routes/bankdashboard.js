@@ -51,5 +51,8 @@ export default Route.extend({
     });  
   
     },
+    timestamp:function(){
+        this.transitionToRoute('timestamp')
+    }
   
 })

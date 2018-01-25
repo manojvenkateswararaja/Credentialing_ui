@@ -9,7 +9,7 @@
          <br>
         
          <div class="row" >
-        <div class="col-xs-6 col-lg-6 col-sm-6" >EMI Remaining</div>
+        <div class="col-xs-6 col-lg-6 col-sm-6" >EMI remaining</div>
         <div class="col-xs-6 col-lg-6 col-sm-6">
             {{validated-input  type="number"   class="form-group"  model=this  valuePath='EMI' placeholder="number of emi" required=""}}
         {{!-- <input type="number"  class="form-group" id="exampleInputEmail1" value='EMI' placeholder="number of emi" required=""> --}}
@@ -18,14 +18,14 @@
            
             <br>
              <div class="row">
-                <div class="col-xs-6 col-lg-6 col-sm-6">Installment Per month</div>
+                <div class="col-xs-6 col-lg-6 col-sm-6">Installment per month</div>
                <div class="col-xs-6 col-lg-6 col-sm-6"> 
                   {{validated-input  type="number"   class="form-group"  model=this  valuePath='installment' placeholder="installment per month" required=""}}
                      {{!-- <input type="number"  class="form-group" value='installment' placeholder="installment per month"> --}}
                      </div> 
                      </div><br>
                      <div class="row">
-                   <div class="col-xs-6 col-lg-6 col-sm-6">Document Required for Closing</div>
+                   <div class="col-xs-6 col-lg-6 col-sm-6">Document required for closing</div>
                      <div class="col-xs-6 col-lg-6 col-sm-6">
       {{#pl-uploader  for="upload_file6" runtimes="html5 flash silverlight" onfileadd="uploadDoc" as |queue|}}
             <a id="upload_file6" style="font-size:18px">
@@ -43,16 +43,16 @@
 
    
     {{#paper-dialog-actions class="layout-row"}}
-      {{#paper-button onClick=(action "closeDialog" "cancel")}}Cancel{{/paper-button}}
-      {{#paper-button onClick=(action "okay" "ok")}}OK{{/paper-button}}
+      {{#paper-button onClick=(action "CloseDialog" "cancel")}}Cancel{{/paper-button}}
+      {{#paper-button onClick=(action "Okay" "ok")}}OK{{/paper-button}}
     {{/paper-dialog-actions}}
   {{/paper-dialog}}
 {{/if}} 
-                     </div>
+                   </div>
                    </div>
                    <br>
                     <div class="row">
-                    <div class="col-xs-6 col-lg-6 col-sm-6">Payment Mode</div>
+                    <div class="col-xs-6 col-lg-6 col-sm-6">Payment mode</div>
                     <div class="" style="margin-left:47%;"> {{select-component  listitem=PaymentMode selecteditemlist=Payment}}</div>
                     </div>
                     <br>

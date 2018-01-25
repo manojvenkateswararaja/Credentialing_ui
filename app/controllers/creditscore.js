@@ -4,6 +4,7 @@ export default Controller.extend({
   showhome:true,
   shoUserInfo:false,
   showCreditscore:true,
+  isCreditGen:false,
   actions: {
     // ApproveUpdate:function (showrecords,records,creditscore)
     ApproveUpdate:function (showrecords,records,creditscore) {
@@ -71,6 +72,7 @@ export default Controller.extend({
           this.set('showDialog',false)
       },
       okay:function(){
+        this.set('isCreditGen',true)
         this.set('showDialog',false)
       },
     creditscore: function(records) {

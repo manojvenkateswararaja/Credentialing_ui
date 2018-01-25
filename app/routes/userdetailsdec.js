@@ -3,6 +3,7 @@ import Route from '@ember/routing/route';
 export default Route.extend({
     isApprove:true,
     isLegalVerifierDone:false,
+   
     model(){
         //var UserdetailsDecision=this.controllerFor('userdetails')
         var loanID = this.controllerFor('bankdashboard').get('record');

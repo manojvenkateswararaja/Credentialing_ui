@@ -9,7 +9,7 @@
    <p style="text-align:center;color:#808080 "><b>Total Request</b></p>
      <div class="row">
        <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6">
-      Request Id:<b style="color:blue">{{records}}</b>
+      Request id:<b style="color:blue">{{records}}</b>
       </div>
 </div>
      <br>
@@ -71,10 +71,10 @@
                      <td>Location</td>
                      <td style="color:gray;">{{showrecords.location}}</td>
                   </tr>
-                  <tr>
+                  {{!-- <tr>
                      <td>Price:</td>
                      <td style="color:gray;">{{showrecords.price}}</td>
-                  </tr>
+                  </tr> --}}
                   <tr>
                      <td>Country:</td>
                      <td style="color:gray;">{{showrecords.country}}</td>
@@ -109,6 +109,7 @@
          <br>
           <div style="background-color:lightgrey;">
              <h3>Time Stamp</h3>
+             {{#if isLegalverified}}
              <div class="row">
            <b>  Legal Veification Generation Time</b>
             </div>
@@ -124,6 +125,7 @@
        </div>
        <br>
        <br>
+       {{/if}}
        </div>
        
          {{!-- <div>

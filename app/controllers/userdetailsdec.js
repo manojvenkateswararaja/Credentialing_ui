@@ -3,6 +3,7 @@ import Controller from '@ember/controller';
 export default Controller.extend({
   showDashboard:true,
   showDialogApprove:false,
+  isLegalRequested:false,
     actions:{
       LegalValidater:function(records,showrecords){
             var modalvalue = this.get('showDialog')
@@ -75,6 +76,7 @@ export default Controller.extend({
               this.set('showDialog',false)
           },
           okay:function(){
+            this.set(' isLegalRequested',true)
             this.set('showDialog',false)
           },
             signout:function(){
