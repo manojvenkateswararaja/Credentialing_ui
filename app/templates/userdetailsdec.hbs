@@ -23,11 +23,9 @@
          
       });
    </script>
-   <br>
    <div class="container" >
       <h2 style="margin-left:12cm;"><b>USER REQUESTID</b></h2>
-      <br>
-      <br>
+      
        <div class="row" style="">
    
    <div class="col-xs-3 col-lg-3 col-sm-3" style="background-color:lightcyan;"><i style="margin-left:5%">Request Id:</i><i id="req">{{record.Key}}</i></div>
@@ -48,8 +46,8 @@
       </div>
    </div>
   
-
-         <br>
+<br>
+        
          <br>
          <style>
             table, th, {
@@ -65,27 +63,27 @@
             <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6">
                <table>
                   <tr>
-                     <td>firstname:</td>
+                     <td>First name:</td>
                      <td style="color:gray;">{{details.fname}}</td>
                   </tr>
                   <tr>
-                     <td>lastname:</td>
+                     <td>Last name:</td>
                      <td style="color:gray;">{{details.lname}}</td>
                   </tr>
                   <tr>
-                     <td>contact number:</td>
+                     <td>Contact number:</td>
                      <td style="color:gray;">{{details.phone}}</td>
                   </tr>
                   <tr>
-                     <td>country:</td>
+                     <td>Country:</td>
                      <td style="color:gray;">{{details.country}}</td>
                   </tr>
                   <tr>
-                     <td>occupation:</td>
+                     <td>Occupation:</td>
                      <td style="color:gray;">{{details.occupation}}</td>
                   </tr>
                   <tr>
-                     <td>income:</td>
+                     <td>Income:</td>
                      <td style="color:gray;">{{details.income}}</td>
                   </tr>
                </table>
@@ -93,29 +91,29 @@
             <div class= "col-xs-6 col-lg-6 col-md-6 col-sm-6 ">
                <table>
                   <tr>
-                     <td>mortgaugeType</td>
+                     <td>Mortgauge type</td>
                      <td style="color:gray;">{{details.propertyType}}</td>
                   </tr>
                   <tr>
-                     <td>Need Amount:</td>
+                     <td>Need amount:</td>
                      <td style="color:gray;">{{details.amount}}</td>
                   </tr>
                   <tr>
-                     <td>location</td>
+                     <td>Location</td>
                      <td style="color:gray;">{{details.location}}</td>
                   </tr>
-                  <tr>
-                     <td>price:</td>
+                  {{!-- <tr>
+                     <td>Price:</td>
                      <td style="color:gray;">{{details.price}}</td>
-                  </tr>
+                  </tr> --}}
                   <tr>
-                     <td>country:</td>
+                     <td>Country:</td>
                      <td style="color:gray;">{{details.country}}</td>
                   </tr>
-                  <tr>
+                  {{!-- <tr>
                      <td>paymentPercentage:</td>
                      <td style="color:gray;">{{details.paymentPercentage}}</td>
-                  </tr>
+                  </tr> --}}
                    <tr>
                      <td>creditscore:</td>
                      <td style="color:blue;">{{details.creditscore}}</td>
@@ -154,10 +152,9 @@
   {{/paper-dialog}}
 {{/if}}
          </div>         
-         <br> 
+        
       <div style=" margin-top:1cm;">
       <button type="button" class="btn btn-primary btn-block"  disabled={{isApprove}} {{action "LoanApprove" record details}}> Approve Loan </button>
-         <br>
          
        
 {{#if showDialogApprove}}
@@ -215,7 +212,7 @@
           
        </div>
        <br>
-       <br>
+       
        {{/if}}
        </div>    
          <br>

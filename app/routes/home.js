@@ -33,6 +33,23 @@ export default Route.extend({
        console.log("after changing",status)
        }
   
+       
+    //    if(LoanSchedule==null)
+    //    {
+    //     var status=this.controllerFor('login1').get('status')
+    //     this.controllerFor('home').set('status',status)
+    //     console.log("Home>>>>status",status)
+    //    }else if(LoanSchedule!=null)
+    //    { 
+    //    this.get('status')
+    //    this.set('status',status)
+    //    console.log("after changing",status)
+    //    }
+    //    this.controllerFor('home').set('record',HomeController)
+    //    var details=this.controllerFor('login1').get('details')
+    //    this.controllerFor('home').set('details',details)
+    //    console.log("HomeController>>>>",HomeController)
+    //    console.log("HomeController>>>>details",details)
    
     }
 });

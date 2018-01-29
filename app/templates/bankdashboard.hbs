@@ -29,70 +29,75 @@
    <a {{action "goToemployment"}}>Legalperson</a>
 </div>
 <div class="container-fluid" style="background-color:lightgrey">
-    <br>
-        <br>
-      <div class="jumbotron" style="margin-top:-3cm">
-    <br>
+<br>
+<div class="jumbotron" style="margin-top:-3cm">
    <h1><b style="margin-left:-28cm">Bank Dashboard</b></h1>
+   <p style="text-align:center;color:black"><b>TOTAL REQUEST</b></p>
    <br>
+   <div class="container" style="background-color:grey"><b>ALL Request</b></div>
    <br>
- 
-      <p style="text-align:center;color:black"><b>TOTAL REQUEST</b></p>
-      <br>
-      <div class="container" style="background-color:grey"><b>ALL Request</b></div>
-      <br>
-      <div class ="container">
-         {{!-- {{#each showrecords   as |item|}} --}}
-         <div class="row">
-           <div class="col-xs-3 col-lg-3 col-sm-3">Request id<a href="" {{action 'userdetails'  record }}><b style="color:blue">{{record.Key}}</b></a></div>
-            {{!-- {{#each item.Record.transactionlist   as |item1|}} --}}
-           <div class="col-xs-9 col-lg-9 col-sm-9"   style="">
-               <div class="row">
-                  <div class="col-xs-3 col-lg-3 col-sm-3">
-                     <div class="vl5">Name:{{details.fname}}</div>
-                  </div>
-                  <div class="col-xs-3 col-lg-3 col-sm-3">
-                     <div class="vl5" >PropertyType:{{details.propertyType}}</div>
-                  </div>
-                  <div class="col-xs-3 col-lg-3 col-sm-3">
-                     <div class="vl5" style="margin-left:1cm ">CompanyName:{{details.Company}}</div>
-                  </div>
-                  </div>
-                  </div> 
-            {{!-- {{/each}} --}}
-            <br>
+   <div class ="container">
+      {{!-- {{#each showrecords   as |item|}} --}}
+      <div class="row" style="background-color:lightgrey;">
+          <br>
+         <div class="col-xs-3 col-lg-3 col-sm-3">Request id<a href="" {{action 'userdetails'  record }}><b style="color:blue">{{record.Key}}</b></a></div>
+         {{!-- {{#each item.Record.transactionlist   as |item1|}} --}}
+         {{!-- 
+         <div class="col-xs-9 col-lg-9 col-sm-9"   style="">
+            --}}
+            {{!-- 
             <div class="row">
-                <br>
-           <div class="" style="margin-left: 8cm">
-                     <div >Status:<i style="color:DeepSkyBlue;">{{#if precloselink}}{{#link-to 'requestpreclose' disabled=""}}{{details.statuspreclose}}{{/link-to}}{{/if}}</i>
-                     <i style="color:DeepSkyBlue;">{{bankpreclose}}
-                         {{loanReject}}{{status}}{{creditscorestatus}}{{DefaultStatus}}</i></div>
-                  </div>
+               --}}
+               <div class="col-xs-3 col-lg-3 col-sm-3">
+                  <div class="vl5">{{details.fname}}</div>
+               </div>
+               <div class="col-xs-3 col-lg-3 col-sm-3">
+                  <div class="vl5" >{{details.propertyType}}</div>
+               </div>
+               <div class="col-xs-3 col-lg-3 col-sm-3">
+                  <div class="vl5" style="margin-left:1cm ">{{details.Company}}</div>
+               </div>
+               <br>
             </div>
+            <br>
+             <div class="row">
+                  <div class="col-xs-3 col-lg-3 col-sm-3">Get Total Timestamp<a href="" {{action 'timestamp' }}><b style="color:blue">{{record.Key}}</b></a></div>
+                  <div class="col-xs-9 col-lg-9 col-sm-9">
+                     {{!-- 
+                     <div class="" style="margin-left: 8cm">
+                        --}}
+                        <div >Status:<i style="color:DeepSkyBlue;">{{#if precloselink}}{{#link-to 'requestpreclose' disabled=""}}{{details.statuspreclose}}{{/link-to}}{{/if}}</i>
+                           <i style="color:DeepSkyBlue;">{{bankpreclose}}
+                           {{loanReject}}{{status}}{{creditscorestatus}}{{DefaultStatus}}</i>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            {{!-- 
+         </div>
+         --}}
+         {{!-- {{/each}} --}}
          {{!-- {{/each}} --}}
       </div>
       <br>
-      
-          </div>
    </div>
-
+   {{!-- 
+</div>
+--}}
 <div>
-    
-        <h3>Time Stamp</h3>
-        
-             <div class="row">
-           <b> User Requested Time</b>
-            </div>
-          <div class="row">
-            <div class="col-xs-6 col-lg-6 col-sm-6">
+   <div style="background-color:lightgrey;">
+      <h3>Time Stamp</h3>
+      <div class="row">
+         <b> User Requested Time</b>
+      </div>
+      <div class="row">
+         <div class="col-xs-6 col-lg-6 col-sm-6">
             Date:{{date}}
-            </div>
-             <div class="col-xs-6 col-lg-6 col-sm-6">
+         </div>
+         <div class="col-xs-6 col-lg-6 col-sm-6">
             Time{{time}}
-            </div>
-        
-        </div>
+         </div>
       </div>
-      <br>
-      </div>
+   </div>
+</div>
 <a href="#" class="go-top">Scroll to Top</a>

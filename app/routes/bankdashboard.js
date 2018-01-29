@@ -113,5 +113,8 @@ console.log("loanReject in bank>>>" ,CreditScoreGenerated)
     });  
   
     },
+    timestamp:function(){
+        this.transitionToRoute('timestamp')
+    }
   
 })

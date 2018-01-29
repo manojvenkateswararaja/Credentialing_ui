@@ -29,6 +29,7 @@ export default Controller.extend({
               this.set('date',date)
               var time=new Date().toTimeString();
               this.set('time',time)
+             
               var transactionstring={
                 "id":record,"transactionstring":{
                 "loan":details.loan,
@@ -68,7 +69,9 @@ export default Controller.extend({
                 "installment":installment,
                 "EMI":EMI,
                 "statuspreclose":"User Requested For Preclose",
-                "Payment":Payment
+                "Payment":Payment,
+                "date":date,
+                "time":time
               }
           }
               console.log(JSON.stringify(transactionstring))
@@ -88,7 +91,7 @@ export default Controller.extend({
                   }   
                 }) 
               },
-              closeDialog:function(){
+              CloseDialog:function(){
               this.set('showDialog',false)
               },
               okay:function(){
@@ -98,6 +101,12 @@ export default Controller.extend({
               signout:function() {
               this.transitionToRoute('login1');
               },
+              closeDialog:function(){
+                this.set('showDialog',false)
+                },
+                okay:function(){
+                this.set('showDialog',false)
+                }, 
 
 
     }
