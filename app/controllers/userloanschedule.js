@@ -2,7 +2,7 @@ import Controller from '@ember/controller';
 
 export default Controller.extend({
     showUserSchedule:true,
-   
+    isLoanSchedule:false,
     actions:{
         
         userschedule:function(key,details){
@@ -16,6 +16,8 @@ export default Controller.extend({
                       }
                       var date=new Date().toLocaleDateString();
                       var time=new Date().toTimeString();
+                      this.set('date',date)
+                        this.set('time',time)
             var transactionstring={
                 "id":key,"transactionstring":{
                 "loan":details.loan,
@@ -49,7 +51,7 @@ export default Controller.extend({
                 "amountinterestrate":details.amountinterestrate,
                 "paymentperyear": details.paymentperyear,
                 "installmentpermonth": details.installmentpermonth,
-                "status":" Loan successfully accepted ",
+                "status":" Loan successfully accepted by user ",
                 "time":time,
                 "date":date
                 
@@ -77,9 +79,11 @@ closeDialog:function(){
     this.set('showDialog',false)
 },
 okay:function(){
-  this.set('showDialog',false)
-  this.transitionToRoute('home')
+    this.set('isLoanSchedule',true)
+    this.set('showDialog',false)
+
 },
+
 signout:function() {
     this.transitionToRoute('login1');
 },

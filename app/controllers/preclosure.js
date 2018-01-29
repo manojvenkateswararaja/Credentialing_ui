@@ -2,11 +2,9 @@ import Controller from '@ember/controller';
 
 export default Controller.extend({
     showPreclosure:true,
-    
+    isPreclosed:false,
     PaymentMode:["offline","online"],
     actions:{
-
-        
             preclose:function(details,record){
               var modalvalue = this.get('showDialog')     
                         if(modalvalue!=true){
@@ -27,6 +25,10 @@ export default Controller.extend({
               var Payment=this.get('Payment')
               this.set('Payment',Payment)
               console.log("Payment>>",Payment)
+              var date=new Date().toLocaleDateString();
+              this.set('date',date)
+              var time=new Date().toTimeString();
+              this.set('time',time)
               var transactionstring={
                 "id":record,"transactionstring":{
                 "loan":details.loan,
@@ -61,6 +63,8 @@ export default Controller.extend({
                 "amountinterestrate":details.amountinterestrate,
                 "paymentperyear":details.paymentperyear,
                 "installmentpermonth": details.installmentpermonth,
+                "date":date,
+                "time":time,
                 "installment":installment,
                 "EMI":EMI,
                 "statuspreclose":"User Requested For Preclose",
@@ -88,6 +92,7 @@ export default Controller.extend({
               this.set('showDialog',false)
               },
               okay:function(){
+              this.set('isPreclosed',true)
               this.set('showDialog',false)
               }, 
               signout:function() {

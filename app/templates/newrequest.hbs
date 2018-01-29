@@ -183,50 +183,6 @@
    </div>
 </div>
 
-{{!-- <span style="font-size:30px;cursor:pointer;margin-left: -937px;" {{action "openNav"}}>&#9776; open</span> --}}
-
-
-{{!-- {{#bs-progress as |p|}}
-  {{p.bar value=value minValue=minValue maxValue=maxValue showLabel=showLabel roundDigits=roundDigits type=type striped=striped animate=animate}}
-{{/bs-progress}}
-<div class="container-fluid"></div>
-  {{#paper-grid-list
-    cols="1 md-2 gt-md-6"
-    rowHeight="gt-md-1:1 2:2"
-    gutter="12px gt-sm-8px" as |grid|}}
-
-    
-<h2 style=";margin-top: auto;padding-top: 0px;margin-left:0"><i>Tell us about your Personal details</i></h2>
-<p style="background-color:cornsilk;margin-top:-20px">
-  {{paper-input label="FirstName" value=fname onChange=(action (mut fname)) icon="person"}}
-  {{paper-input label="LastName" value=lname onChange=(action (mut lname)) icon="person"}}
-     {{paper-input label="Age" type="number" value=age
-     icon="person" onChange=(action (mut age))  }}
-     <br>
-  {{paper-input label="Phone Number" type="number" 
-      value=phone onChange=(action (mut phone)) icon="phone"}}
-
-{{paper-input label="E-mail" type="email" value=email onChange=(action (mut email))  required=true
-     icon="email"  customValidations=emailValidation}}
-  {{paper-input label="Occupation"  value=occupation   icon="work" onChange=(action (mut occupation))  }}
-<br>
- {{!-- {{paper-input placeholder="Loan Amount" type="number"  icon="account balance" value=loanamount icon="money" onChange=(action (mut loanamount))  }}
-  {{paper-input placeholder="Estimated price or value of property" icon="account balance" type="number" value=property onChange=(action (mut property))  }}
-  {{paper-input placeholder="Location of property"  value=location icon="location on" onChange=(action (mut location)) }} --}}
-  {{!-- <br>
-  {{paper-input label="Address"  value=address icon="streetview" onChange=(action (mut address))  }}
-  {{paper-input label="Country"  value=country icon="add location" onChange=(action (mut country))  }}
-  <br>
-Gender
-{{select-component listitem=genderlist selecteditemlist=genderType  }}
-
-
-     Nationality {{select-component listitem=nationalitylist selecteditemlist=nationalityType}}
-    
-    <br>
-     --}} 
-
-   
 
 
 

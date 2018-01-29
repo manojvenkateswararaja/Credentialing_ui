@@ -18,10 +18,9 @@ export default Route.extend({
         this.controllerFor('home').set('details',details)
         console.log("HomeController>>>>",HomeController)
         console.log("HomeController>>>>details",details)
-        var LoanSchedule=this.get('details.loanterms')
+        var LoanSchedule=this.controllerFor('login1').get('details.loanterms')
         this.set('LoanSchedule',LoanSchedule)
         console.log("LoanSchedule>>>>",LoanSchedule)
-       
        if(LoanSchedule==null)
        {
         var status=this.controllerFor('login1').get('status')
@@ -33,13 +32,7 @@ export default Route.extend({
        this.set('status',status)
        console.log("after changing",status)
        }
-       this.controllerFor('home').set('record',HomeController)
-       var details=this.controllerFor('login1').get('details')
-       this.controllerFor('home').set('details',details)
-       console.log("HomeController>>>>",HomeController)
-       console.log("HomeController>>>>details",details)
+  
    
-       
-
     }
 });

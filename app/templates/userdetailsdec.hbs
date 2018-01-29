@@ -1,6 +1,8 @@
 {{partial 'head'}}
 {{#if showDashboard}}
+{{/if}}
 <div class="container-fluid">
+ 
    <script>
       $(document).ready(function() {
           // Show or hide the sticky footer button
@@ -118,6 +120,10 @@
                      <td>creditscore:</td>
                      <td style="color:blue;">{{details.creditscore}}</td>
                   </tr>
+                   <tr>
+                     <td>Legal Property verified:</td>
+                     <td style="color:blue;">{{details.legal}}</td> 
+                  </tr>
                </table>
             </div>
          </div>
@@ -125,16 +131,62 @@
          <br>
           <div style=" margin-top:1cm;">
      
-         </div>   
+         </div> 
+         
       <div style=" margin-top:1cm;">
-      <button type="button" class="btn btn-primary btn-block" disabled={{isLegalVerifierDone}} {{action "LegalValidater" record details}}>Get verify from legal validator</button>
+      <button type="button" class="btn btn-primary btn-block" disabled={{isApprove}} {{action "LegalValidater" record details}}>Get verify from legal validator</button>
          {{!-- <button  id="user-btn3" {{action "credit" records showrecords}}>Get verify from legal validator</button> --}}
 
 {{#if showDialog}}
   {{#paper-dialog class="flex-77" onClose=(action "closeDialog" "cancel") origin=dialogOrigin clickOutsideToClose=true}}
     {{#paper-toolbar}}
       {{#paper-toolbar-tools}}
-         Your response has been successfully sent to legal validator...!!
+         Your response has been successfully sent to legal validator...!!{{isLegalRequested}}
+        {{#paper-button iconButton=true onClick=(action "closeDialog" "cancel")}}{{paper-icon icon="close"}}{{/paper-button}}
+      {{/paper-toolbar-tools}}
+    {{/paper-toolbar}}
+
+   
+    {{#paper-dialog-actions class="layout-row"}}
+      {{#paper-button onClick=(action "closeDialog" "cancel")}}Cancel{{/paper-button}}
+      {{#paper-button onClick=(action "okay1" "ok")}}OK{{/paper-button}}
+    {{/paper-dialog-actions}}
+  {{/paper-dialog}}
+{{/if}}
+         </div>         
+         <br> 
+      <div style=" margin-top:1cm;">
+      <button type="button" class="btn btn-primary btn-block"  disabled={{isApprove}} {{action "LoanApprove" record details}}> Approve Loan </button>
+         <br>
+         
+       
+{{#if showDialogApprove}}
+  {{#paper-dialog class="flex-77" onClose=(action "closeDialog" "cancel") origin=dialogOrigin clickOutsideToClose=true}}
+    {{#paper-toolbar}}
+      {{#paper-toolbar-tools}}
+        Your response has been successfully Approve...!!{{showDialogApprove}}
+        {{#paper-button iconButton=true onClick=(action "closeDialog" "cancel")}}{{paper-icon icon="close"}}{{/paper-button}}
+      {{/paper-toolbar-tools}}
+    {{/paper-toolbar}}
+
+   
+    {{#paper-dialog-actions class="layout-row"}}
+      {{#paper-button onClick=(action "closeDialog" "cancel")}}Cancel{{/paper-button}}
+      {{#paper-button onClick=(action "okay2" "ok")}}OK{{/paper-button}}
+    {{/paper-dialog-actions}}
+  {{/paper-dialog}}
+{{/if}}
+         </div>  
+        
+      <div style=" margin-top:1cm;">
+      <button type="button" class="btn btn-primary btn-block" disabled={{isReject}} {{action "LegalValidaterRejected" record details}}>Reject</button>
+      
+
+{{#if showDialogForReject}}
+  {{#paper-dialog class="flex-77" onClose=(action "closeDialog" "cancel") origin=dialogOrigin clickOutsideToClose=true}}
+    {{#paper-toolbar}}
+      {{#paper-toolbar-tools}}
+         Loan has been rejected ...!!{{showDialogForReject}}
         {{#paper-button iconButton=true onClick=(action "closeDialog" "cancel")}}{{paper-icon icon="close"}}{{/paper-button}}
       {{/paper-toolbar-tools}}
     {{/paper-toolbar}}
@@ -146,12 +198,7 @@
     {{/paper-dialog-actions}}
   {{/paper-dialog}}
 {{/if}}
-         </div>         
-         <br>
-         
-              <div style=" margin-top:1cm;">
-      <button type="button" class="btn btn-primary btn-block"  disabled={{isApprove}} {{action "LoanApprove" record details}}> Approve Loan </button>
-         <br>
+         </div>  
           <div style="background-color:lightgrey;">
              <h3>Time Stamp</h3>
          {{#if isLegalRequested}}
@@ -165,47 +212,15 @@
              <div class="col-xs-6 col-lg-6 col-sm-6">
             Time{{time}}
             </div>
-        
-        
+          
        </div>
        <br>
        <br>
        {{/if}}
-       </div>
-       
-       
-        {{!-- <div>
-        <h3>STATUS</h3>
-        <table>
-          <tr>
-            UserRequest
-          </tr>
-          <tr>
-            Date<td>{{date}}</td>
-            </tr>
-            <tr>Time<td>{{time}}</td></tr>
-        </table>
-      </div> --}}
-{{#if showDialogApprove}}
-  {{#paper-dialog class="flex-77" onClose=(action "closeDialog" "cancel") origin=dialogOrigin clickOutsideToClose=true}}
-    {{#paper-toolbar}}
-      {{#paper-toolbar-tools}}
-        Your response has been successfully Approve...!!
-        {{#paper-button iconButton=true onClick=(action "closeDialog" "cancel")}}{{paper-icon icon="close"}}{{/paper-button}}
-      {{/paper-toolbar-tools}}
-    {{/paper-toolbar}}
-
-   
-    {{#paper-dialog-actions class="layout-row"}}
-      {{#paper-button onClick=(action "closeDialog" "cancel")}}Cancel{{/paper-button}}
-      {{#paper-button onClick=(action "okay" "ok")}}OK{{/paper-button}}
-    {{/paper-dialog-actions}}
-  {{/paper-dialog}}
-{{/if}}
-         </div>      
+       </div>    
          <br>
       </div>
    </div>
 </div>
-{{/if}}
+
 <a href="#" class="go-top">Scroll to Top</a>

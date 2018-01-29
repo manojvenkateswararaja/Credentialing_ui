@@ -1,0 +1,116 @@
+{{partial 'head'}}
+{{#if isPreclose }}
+  {{/if}}
+ 
+<div class="container-fluid">
+   <br>
+   <div class="jumbotron" style="text-align:center;background-color:lightgrey">
+    <b>PRECLOSING REQUEST OF USER</b>
+   </div>
+   <br>
+   <div class="container">
+       
+        {{#if isGenerated}}
+        <div class="row">
+      
+     <i style="color:black"> {{notify}}</i>
+     </div>
+
+   <div class="row">
+      <label>Request ID:</label>
+     <i style="color:blue"> {{record.Key}}</i>
+     </div>
+     <style>
+#customers {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+#customers td, #customers th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+}
+</style>
+<br>
+           
+               <table id="customers">
+                
+                    <tr>
+                     <td>EMI Remaining:</td>
+                     <td style="color:gray;">{{details.EMI}}</td>
+                  </tr>
+                  <br>
+                   <tr>
+                     <td>Installment Per month:</td>
+                     <td style="color:gray;">{{details.installment}}</td>
+                  </tr>
+                  <br>
+                 <tr>
+                     <td>Document Required for Closing:</td>
+                     <td style="color:gray;">{{details}}</td>
+                  </tr>
+                  <br>
+                   <tr>
+                     <td>Payment Mode:</td>
+                     <td style="color:gray;">{{details.Payment}}</td>
+                  </tr>
+                 
+    </table>
+    <br>
+       <div style="margin-top:0cm;">
+      <button type="button" class="btn btn-primary btn-block"{{action "finalPreclose" record details}}> agree & close the loan</button>   
+   <div style="background-color:lightgrey;">
+          
+             <h3>Time Stamp</h3>
+          {{#if isBankPreclosed}}
+             <div class="row">
+           <b> Requested For Creditscore Time</b>
+            </div>
+          <div class="row">
+            <div class="col-xs-6 col-lg-6 col-sm-6">
+            Date:{{date}}
+            </div>
+             <div class="col-xs-6 col-lg-6 col-sm-6">
+            Time{{time}}
+            </div>
+        <br>
+        <br>
+       </div>
+       {{/if}}
+        
+      </div>
+          {{#if showDialog}}
+  {{#paper-dialog class="flex-77" onClose=(action "closeDialog" "cancel") origin=dialogOrigin clickOutsideToClose=true}}
+    {{#paper-toolbar}}
+      {{#paper-toolbar-tools}}
+        Loan has been successfully accepted ...!! 
+        {{#paper-button iconButton=true onClick=(action "closeDialog" "cancel")}}{{paper-icon icon="close"}}{{/paper-button}}
+      {{/paper-toolbar-tools}}
+    {{/paper-toolbar}}
+
+   
+    {{#paper-dialog-actions class="layout-row"}}
+      {{#paper-button onClick=(action "closeDialog" "cancel")}}Cancel{{/paper-button}}
+      {{#paper-button onClick=(action "okay" "ok")}}OK{{/paper-button}}
+    {{/paper-dialog-actions}}
+  {{/paper-dialog}}
+{{/if}}
+</div>
+{{/if}}
+    {{!-- </div> --}}
+    {{!-- </div> --}}
+    </div>
+    </div>
+  

@@ -5,29 +5,7 @@ export default Controller.extend({
     showUserDetails:true,
     isCreditRequested:false,
     actions:{
-  //     //creditscore
-  //   bankcreditscore: function(records) {
-  //     var requestid={
-  //       "records":records
-  //     }
-  //    console.log("creditscore---request id--->",requestid);
-  //    var mycontroller=this
-  //      return $.ajax({
-  //      url:'http://localhost:8082/creditscore',//web service for credit score
-  //      type: 'POST',
-  //      contentType:'application/json',
-  //      data:JSON.stringify(requestid),
-  //      success: function(response) {
-  //      console.log("service creditscore")   
-  //      var creditscore=response.creditscore
-  //      mycontroller.set('creditscore',creditscore)
-  //     //myroute.controllerFor('creditscore').set('creditscore',creditscore)
-  //     console.log(creditscore);
-  //        }
-  //        })
-  //  },
-    
-        credit:function(record,lastdetails){
+     credit:function(record,lastdetails){
           var modalvalue = this.get('showDialog')
           
                     if(modalvalue!=true){
@@ -80,7 +58,7 @@ export default Controller.extend({
                 "legal":"",
               }}
               return $.ajax({
-              url:'http://192.168.11.149:8082/updatetransaction',//web service for credit score
+              url:'http://localhost:8082/updatetransaction',//web service for credit score
               type: 'POST',
               contentType:'application/json',
               data:JSON.stringify(data),

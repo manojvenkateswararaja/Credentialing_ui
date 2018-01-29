@@ -64,7 +64,9 @@
             <div class="row">
                 <br>
            <div class="" style="margin-left: 8cm">
-                     <div  style="margin-left:;color:DeepSkyBlue;">Status:{{details.statuspreclose}}</div>
+                     <div >Status:<i style="color:DeepSkyBlue;">{{#if precloselink}}{{#link-to 'requestpreclose' disabled=""}}{{details.statuspreclose}}{{/link-to}}{{/if}}</i>
+                     <i style="color:DeepSkyBlue;">{{bankpreclose}}
+                         {{loanReject}}{{status}}{{creditscorestatus}}{{DefaultStatus}}</i></div>
                   </div>
             </div>
          {{!-- {{/each}} --}}

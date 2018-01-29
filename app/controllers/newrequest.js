@@ -98,8 +98,6 @@ export default Controller.extend({
         console.log(income);
         var date=new Date().toLocaleDateString();
         var time=new Date().toTimeString();
-
-
         var transactionstring={
         transactionstring:{
         "loan":loan,
@@ -123,7 +121,6 @@ export default Controller.extend({
         "Company":Company,
         "joiningdate":joiningdate,
         "salary":salary,
-        "address":address,
         "date":date,
         "time":time,
         "bank":"",
@@ -132,8 +129,7 @@ export default Controller.extend({
     };
     console.log("datastring"+JSON.stringify(transactionstring));
     var mycontroller=this
-    return $.ajax({
-      
+    return $.ajax({   
     url:'http://localhost:8082/loandetails',
     type: 'POST',
     contentType: 'application/json',

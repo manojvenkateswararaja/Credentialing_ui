@@ -49,6 +49,7 @@ export default Controller.extend({
             "address":showrecords.address,
             "bank":"applied",
             "creditscore":creditscore,
+            "creditscorestatus":"creditscore has been generated successfully ",
             "legal":"",
             "date":date,
             "time":time
@@ -73,9 +74,10 @@ export default Controller.extend({
       },
       okay:function(){
         this.set('isCreditGen',true)
+        // console.log("isCreditGen",isCreditGen)
         this.set('showDialog',false)
       },
-    creditscore: function(records) {
+      creditscore: function(records) {
          var requestid={
            "records":records
          }
