@@ -9,7 +9,7 @@
       <a {{action "goToproperty"}}>Property details</a>
       <a {{action "goToemployment"}}>Employment details</a>
    </div>
-   <div class="container" >
+   <div class="container">
       {{#paper-stepper   currentStep=currentStep onStepChange=(action (mut currentStep))
       onStepperCompleted=(action "saveModel") as |stepper|}}
       {{#stepper.step label="Personal Details" as |step|}}
@@ -20,7 +20,7 @@
          rowHeight="gt-md-1:1 2:2"
          gutter="12px gt-sm-8px" as |grid|}} 
          <h2 style="margin-top:-30px !important;padding-top: 0px;margin-left:0"><i>Tell us about your Personal details</i></h2>
-         <p style="background-color:cornsilk;margin-top:-29px; margin-left:2px;">
+         <p style="background-color:;margin-top:-29px; margin-left:2px;">
             <br>
             <br>
             {{paper-input label="Firstname" value=fname onChange=(action (mut fname)) icon="person"}}
@@ -29,7 +29,7 @@
             icon="person" onChange=(action (mut age))  }}
             <br>
             {{paper-input label="Phone number" type="number" 
-            value=phone onChange=(action (mut phone)) icon="phone"}}
+            value=phone onChange=(action (mut phone)) icon="phone" maxlength="10"}}
             {{paper-input label="E-mail" type="email" value=email onChange=(action (mut email))  required=true
             icon="email"  customValidations=emailValidation}}
             {{paper-input label="Occupation"  value=occupation   icon="work" onChange=(action (mut occupation))  }}
@@ -49,6 +49,7 @@
             {{select-component listitem=nationalitylist selecteditemlist=nationalityType}}
          </div>
          <br>
+         {{!-- <input type="text" name="city" id="city" placeholder="Enter City or Pincode" class="form-control alpha-num get_city_ddown ui-autocomplete-input valid" autocomplete="off" > --}}
          {{!-- {{#paper-button raised=true  warn=true onClick=(action "targetButton")}}Submit{{/paper-button}}  --}}
          </p>
          {{/paper-grid-list}}
@@ -75,9 +76,9 @@
          <br>
          <br>
          <br>
-         <div style="background-color:cornsilk;margin-top:-82px;padding-top: 64px;">
+         <div style="background-color;margin-top:-82px;padding-top: 64px;">
             {{paper-input label="Purpose of loan" value=loan onChange=(action (mut loan)) icon="account balance" }}
-            {{paper-input label="Required amount" value=amount onChange=(action (mut amount)) icon="attach money"}}
+            {{paper-input label="Required amount" value=amount onChange=(action (mut amount)) icon="attach money" }}
             <br>
             Type of property 
             <div class="drop2" style="margin-left:299px; margin-top:-28px"> 
@@ -110,7 +111,7 @@
          rowHeight="gt-md-1:1 2:2"
          gutter="12px gt-sm-8px" as |grid|}}   
          <h2 style="margin-top:-30px !important;;padding-top: 0px;margin-left:0">Tell us about your property</h2>
-         <p style="background-color:cornsilk;margin-top:-20px">
+         <p style="background-color:;margin-top:-20px">
             <br>
             <br>
             <br>
@@ -145,7 +146,7 @@
          rowHeight="gt-md-1:1 2:2"
          gutter="12px gt-sm-8px" as |grid|}}  
          <h2 style="margin-top:30px !important;;padding-top: 0px;margin-left:0">Tell us about your Employment details</h2>
-         <p style="background-color:cornsilk;margin-top:-20px">
+         <p style="background-color:;margin-top:-20px">
             <br>
             <br>
             <br>
@@ -182,8 +183,5 @@
       {{/paper-stepper}}
    </div>
 </div>
-
-
-
 
 {{/if}}

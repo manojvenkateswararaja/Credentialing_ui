@@ -67,8 +67,11 @@
                      <div class="" style="margin-left: 8cm">
                         --}}
                         <div >Status:<i style="color:DeepSkyBlue;">{{#if precloselink}}{{#link-to 'requestpreclose' disabled=""}}{{details.statuspreclose}}{{/link-to}}{{/if}}</i>
-                           <i style="color:DeepSkyBlue;">{{bankpreclose}}
-                           {{loanReject}}{{status}}{{creditscorestatus}}{{DefaultStatus}}</i>
+                           <i style="color:DeepSkyBlue;">{{#if isBankpreclose}} {{bankpreclose}}{{/if}}</i>
+                           <i style="color:DeepSkyBlue;"> {{#if isLoanReject}} {{loanReject}}{{/if}}</i>
+                            <i style="color:DeepSkyBlue;"> {{#if isStatus}} {{status}}{{/if}}</i>
+                           <i style="color:DeepSkyBlue;">{{#if isCreditscorestatus}} {{creditscorestatus}}{{/if}}</i>
+                          <i style="color:DeepSkyBlue;"> {{#if isDefaultStatus}}{{DefaultStatus}}{{/if}}</i>
                         </div>
                      </div>
                   </div>
