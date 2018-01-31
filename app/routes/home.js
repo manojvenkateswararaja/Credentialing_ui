@@ -1,7 +1,7 @@
 import Route from '@ember/routing/route';
-
 export default Route.extend({
     isBankPreclose:false,
+    isUserstatus:false,
     // notifications: Ember.inject.service('notification-messages'),
     model(){
         // var notification=this.get('notifications').info('You have one unread message');
@@ -22,28 +22,36 @@ export default Route.extend({
         var LoanSchedule=this.controllerFor('login1').get('details.loanterms')
         this.set('LoanSchedule',LoanSchedule)
         console.log("LoanSchedule>>>>",LoanSchedule)
-//preclosure status
-var bankpreclose=this.controllerFor('home').get('details.bankpreclose')
-this.controllerFor('home').set('bankpreclose',bankpreclose)
-console.log("after changing bankpreclose",bankpreclose)
-
-
-
-
-       if(LoanSchedule==null)
-       {
-        var status=this.controllerFor('login1').get('status')
-        this.controllerFor('home').set('status',status)
-        console.log("Home>>>>status",status)
-       }else if(LoanSchedule!=null)
+        //preclosure status
+        var bankpreclose=this.controllerFor('home').get('details.bankpreclose')
+        this.controllerFor('home').set('bankpreclose',bankpreclose)
+        console.log("after changing bankpreclose",bankpreclose)
+        //user
+        var userpreclosestatus=this.controllerFor('home').get('details.userpreclosestatus')
+        this.controllerFor('home').set('userpreclosestatus',userpreclosestatus)
+        console.log("after changing userpreclosestatus",userpreclosestatus)
+        // this.controllerFor('home').set('isBankPreclose',false)
+        // this.controllerFor('home').set('isUserstatus',true)
+        console.log("after changing isUserstatus")
+    //    if(LoanSchedule==null)
+    //    {
+    //     var status=this.controllerFor('login1').get('status')
+    //     this.controllerFor('home').set('status',status)
+    //     console.log("Home>>>>status",status)
+    //    }else
+        if(LoanSchedule!=null)
        { 
-       this.get('status')
-       this.set('status',status)
-       console.log("after changing",status)
-       }else if(bankpreclose!=null){
-           this.controllerFor('home').set('isBankPreclose',true)
-           console.log("isBankPreclose",isBankPreclose)
+        this.controllerFor('home').set('isBankPreclose',true)
+        this.get('status')
+        this.set('status',status)
+        console.log("after changing",status)
+        
+       }else if(userpreclosestatus!=null){
+           console.log("dkjfgnjdkhnfgjdnjk")
+       //userpreclose
+       this.controllerFor('home').set('isBankPreclose',false)
+       this.controllerFor('home').set('isUserstatus',true)
+    
        }
-   
     }
 });

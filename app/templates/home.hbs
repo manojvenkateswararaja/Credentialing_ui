@@ -7,7 +7,7 @@
 <small style="margin-left:-9cm">Remember:<u>click on requestid to check response</u></small>
       <br>
       <i style="color:LightSlateGrey; margin-left: 26cm;">click here to preclose</i>
-  <button type="button" id="myButton" class="btn btn-primary"  style="text-align:right;  margin-top:-4cm;  margin-left:29cm;" {{action "gotoPreclose"}}>Pre-closure</button>
+  <button type="button" id="myButton" class="btn btn-primary"  style="text-align:right;  margin-top:-4cm;  margin-left:27cm;" {{action "gotoPreclose"}}>Pre-closure</button>
       
 <header class="w3-container  w3-center" style="padding:128px 16px">
        {{!-- margin-left:953px;margin-top: -210px;  --}}
@@ -18,24 +18,25 @@
    <div class="col-xs-2 col-lg-2 col-md-2 col-sm-2" style="background-color:">Request Id:<i style="color:blue">{{#link-to 'userloanschedule'}}{{record.Key}}{{/link-to}}</i></div>
    <div class="col-xs-2 col-lg-2 col-md-2 col-sm-2" style="background-color:">
       <div class="vl5">
-         <div style="margin-left:8%">Name:{{details.fname}}
+         <div style="margin-left:8%">{{details.fname}}
          </div>
       </div>
    </div>
    <div class="col-xs-2 col-lg-2 col-md-2 col-sm-2" style="background-color:">
       <div class="vl5">
-         <div style="margin-left:8%">Property:{{details.propertyType}}</div>
+         <div style="margin-left:8%">{{details.propertyType}}</div>
       </div>
    </div>
    <div class="col-xs-2 col-lg-2 col-md-2 col-sm-2" style="background-color:">
       <div class="vl5">
-         <div style="margin-left:8%">Company:{{details.Company}}</div>
+         <div style="margin-left:8%">{{details.Company}}</div>
       </div>
    </div>
    <div class="col-xs-4 col-lg-4 col-md-4 col-sm-4" style="background-color:">
       <div class="vl5">
-         <div style="margin-left:1%">status:<i  style="color:DeepSkyBlue">{{status}}{{isBankPreclose}} </i>
-        <i  style="color:DeepSkyBlue">{{#if isBankPreclose}}{{bankpreclose}}{{/if}}</i>
+         <div style="margin-left:1%">status:<i style="color:DeepSkyBlue">{{#if isBankPreclose}}{{status}}{{/if}}</i>
+        {{!-- <i style="color:DeepSkyBlue">{{#if isBankPreclose}}{{bankpreclose}}{{/if}}</i> --}}
+         <i style="color:DeepSkyBlue">{{#if isUserstatus}}{{userpreclosestatus}}{{/if}}</i>
          </div>
          
       </div>

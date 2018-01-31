@@ -60,7 +60,7 @@ export default Controller.extend({
                 "creditscore":details.creditscore,
                 "loanamount":details.loanamount,
                 "loanterms":details.loanterms,
-                "status":details.status,
+                // "status":details.status,
                 "amountinterestrate":details.amountinterestrate,
                 "paymentperyear":details.paymentperyear,
                 "installmentpermonth": details.installmentpermonth,
