@@ -1,6 +1,5 @@
 {{partial 'head'}}
 {{#if showDashboard }}
-{{/if}} 
 <script>
    $(document).ready(function() {
        // Show or hide the sticky footer button
@@ -26,42 +25,39 @@
    <a {{action "goTonewrequest"}}>User</a>
    <a {{action "goToloan"}}>Bank</a>
    <a {{action "goToproperty"}}>Creditscoregenerator</a>
-   <a {{action "goToemployment"}}>Legalperson</a>
+   <a {{action "goToemployment"}}>LegalPerson</a>
 </div>
 <div class="container-fluid" style="background-color:lightgrey">
-<br>
-<div class="jumbotron" style="margin-top:-3cm">
-   <h1><b style="margin-left:-28cm">Bank Dashboard</b></h1>
-   <p style="text-align:center;color:black"><b>TOTAL REQUEST</b></p>
+   <h1><b style="margin-left:-40cm">Bank Dashboard</b></h1>
    <br>
-   <div class="container" style="background-color:grey"><b>ALL Request</b></div>
-   <br>
-   <div class ="container">
-      {{!-- {{#each showrecords   as |item|}} --}}
-      <div class="row" style="background-color:lightgrey;">
-          <br>
-         <div class="col-xs-3 col-lg-3 col-sm-3">Request id<a href="" {{action 'userdetails'  record }}><b style="color:blue">{{record.Key}}</b></a></div>
-         {{!-- {{#each item.Record.transactionlist   as |item1|}} --}}
-         {{!-- 
-         <div class="col-xs-9 col-lg-9 col-sm-9"   style="">
-            --}}
-            {{!-- 
-            <div class="row">
-               --}}
-               <div class="col-xs-3 col-lg-3 col-sm-3">
-                  <div class="vl5">{{details.fname}}</div>
-               </div>
-               <div class="col-xs-3 col-lg-3 col-sm-3">
-                  <div class="vl5" >{{details.propertyType}}</div>
-               </div>
-               <div class="col-xs-3 col-lg-3 col-sm-3">
-                  <div class="vl5" style="margin-left:1cm ">{{details.Company}}</div>
-               </div>
-               <br>
+   <div class="jumbotron" style="margin-top:-3cm">
+      <p style="text-align:center;color:black"><b>TOTAL REQUEST</b></p>
+      <div class="container" style="background-color:grey"><b>ALL Request</b></div>
+      <br>
+      <div class ="container">
+         {{#each showrecords   as |item|}}
+         <div class="row">
+            <div class="col-xs-3 col-lg-3 col-sm-3">Requestid<a href="" {{action 'userdetails'  item }}><b style="color:blue">{{item.Key}}</b></a></div>
+            
+                  <div class="row">
+            {{!-- {{#each item.Record  as |item1|}} --}}
+               {{!-- {{#each  showrecords as |item1|}}
+                  <div class="col-xs-3 col-lg-3 col-sm-3">
+                     <div class="vl5">Name:{{item1.Records.transactiondetails.firstname}}</div>
+                  </div>
+                  <div class="col-sm-3">
+                     <div class="vl5">Property-type:{{item1.Records.transactiondetails.propertyType}}</div>
+                  </div>
+                  <div class="col-sm-3">
+                     <div class="vl5">Companyname:{{item1.Records.transactiondetails.CompanyName}}</div>
+                  </div>
+               
+            
+            {{/each}} --}}
             </div>
-            <br>
-             <div class="row">
-                  <div class="col-xs-3 col-lg-3 col-sm-3">Get Total Timestamp<a href="" {{action 'timestamp' }}><b style="color:blue">{{record.Key}}</b></a></div>
+            </div>
+         <div class="row">
+                  <div class="col-xs-3 col-lg-3 col-sm-3">Get Total Timestamp<a href="" {{action 'timestamp' }}><b style="color:blue">{{item.Key}}</b></a></div>
                   <div class="col-xs-9 col-lg-9 col-sm-9">
                      {{!-- 
                      <div class="" style="margin-left: 8cm">
@@ -77,19 +73,14 @@
                         </div>
                      </div>
                   </div>
-               </div>
-            {{!-- 
-         </div>
-         --}}
-         {{!-- {{/each}} --}}
-         {{!-- {{/each}} --}}
+            
+         <br>
+        
+         {{/each}}
       </div>
-      <br>
    </div>
-   {{!-- 
 </div>
---}}
-<div>
+ <div>
    <div style="background-color:lightgrey;">
       <h3>Time Stamp</h3>
       <div class="row">
@@ -106,3 +97,4 @@
    </div>
 </div>
 <a href="#" class="go-top">Scroll to Top</a>
+{{/if}}

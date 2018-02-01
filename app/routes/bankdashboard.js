@@ -24,8 +24,9 @@ export default Route.extend({
         success: function(response){
         var showrecords=response.readAllRequest; 
         console.log("Allrequest",showrecords)
-        //myroute.controllerFor('bankdashboard').set('showrecords',showrecords)
-        var record=showrecords[0]
+        myroute.controllerFor('bankdashboard').set('showrecords',showrecords)
+        var records=showrecords.length
+        var record=showrecords[recoeds-1]
         myroute.controllerFor('bankdashboard').set('record',record)
         console.log("record",record)
         var length=record.Record.transactionlist.length
@@ -60,6 +61,8 @@ myroute.controllerFor('bankdashboard').set('precloselink',false)
             myroute.controllerFor('bankdashboard').set('isLoanReject',false)//disable loan reject
             myroute.controllerFor('bankdashboard').set('isCreditscorestatus',false)//disable creditscore
              myroute.controllerFor('bankdashboard').set('isDefaultStatus',false)//disable default
+             myroute.controllerFor('bankdashboard').set('legalstatus',false)
+             myroute.controllerFor('bankdashboard').set('legalstatus',null)
              var statuspreclose=myroute.controllerFor('bankdashboard').get('details.statuspreclose')
              myroute.controllerFor('bankdashboard').set('statuspreclose',statuspreclose)
              console.log("after changing statuspreclose",statuspreclose)
@@ -74,6 +77,8 @@ myroute.controllerFor('bankdashboard').set('precloselink',false)
                 myroute.controllerFor('bankdashboard').set('precloselink',false)//disable preclose
                 myroute.controllerFor('bankdashboard').set('isStatus',false)//disable stutus
                 console.log("precloselink>>>>>>",precloselink)
+                myroute.controllerFor('bankdashboard').set('legalstatus',false)
+                myroute.controllerFor('bankdashboard').set('legalstatus',null)
                 myroute.controllerFor('bankdashboard').set('isBankpreclose',true)
                 myroute.controllerFor('bankdashboard').set('statuspreclose',null)
              var bankpreclose=myroute.controllerFor('bankdashboard').get('details.bankpreclose')
@@ -85,6 +90,8 @@ myroute.controllerFor('bankdashboard').set('precloselink',false)
     myroute.controllerFor('bankdashboard').set('isDefaultStatus',false)//disable default
     myroute.controllerFor('bankdashboard').set('precloselink',false)
     console.log("precloselink>>>>>>",precloselink)
+    myroute.controllerFor('bankdashboard').set('legalstatus',false)
+    myroute.controllerFor('bankdashboard').set('legalstatus',null)
     myroute.controllerFor('bankdashboard').set('isLoanReject',true)
     myroute.controllerFor('bankdashboard').set('isStatus',false)//disable stutus
     myroute.controllerFor('bankdashboard').set('statuspreclose',null)
@@ -100,6 +107,8 @@ myroute.controllerFor('bankdashboard').set('precloselink',false)
     myroute.controllerFor('bankdashboard').set('precloselink',false)
     myroute.controllerFor('bankdashboard').set('isLoanReject',false)//disable loan reject
     console.log("precloselink>>>>>>",precloselink)
+    myroute.controllerFor('bankdashboard').set('legalstatus',false)
+    myroute.controllerFor('bankdashboard').set('legalstatus',null)
     myroute.controllerFor('bankdashboard').set('statuspreclose',null)
     myroute.controllerFor('bankdashboard').set('bankpreclose',null)
     myroute.controllerFor('bankdashboard').set('loanReject',null)
@@ -130,6 +139,7 @@ myroute.controllerFor('bankdashboard').set('precloselink',false)
     myroute.controllerFor('bankdashboard').set('precloselink',false) //disable preclosure status
     myroute.controllerFor('bankdashboard').set('isStatus',false)//disable stutus
     myroute.controllerFor('bankdashboard').set('isLoanReject',false)//disable loan reject
+    myroute.controllerFor('bankdashboard').set('legalstatus',false)
     console.log("precloselink>>>>>>",precloselink)
         myroute.controllerFor('bankdashboard').set('statuspreclose',null)
         myroute.controllerFor('bankdashboard').set('bankpreclose',null)

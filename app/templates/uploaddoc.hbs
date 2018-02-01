@@ -64,24 +64,42 @@
          </div>
          </div>                           
                    <br>
+                   <div class="row">
+                   <div class="col-xs-4 col-lg-4col-md-4 col-sm-4">
                    <label >Address proof Document</label>
+                   </div>
+                    <div class="col-xs-4 col-lg-4col-md-4 col-sm-4">
                                  {{#pl-uploader  for="upload_file3" runtimes="html5 flash silverlight" onfileadd="uploadDoc" as |queue|}}
           <a id="upload_file3" style="font-size:18px"> <p style="margin-top:3mm"> <img src="assets/images/upload.svg" alt="Smiley face" width="20" height="20" style="margin-bottom:3mm">&nbsp; Choose File to Upload</p></a>
          {{/pl-uploader}}
+         </div>
+         </div>
                          
                            
                    <br>
+                    <div class="row">
+                   <div class="col-xs-4 col-lg-4col-md-4 col-sm-4">
                     <label>property Document</label>
+                    </div>
+                     <div class="col-xs-4 col-lg-4col-md-4 col-sm-4">
                 {{#pl-uploader  for="upload_file4" runtimes="html5 flash silverlight" onfileadd="uploadDoc" as |queue|}}
           <a id="upload_file4" style="font-size:18px"> <p style="margin-top:3mm"> <img src="assets/images/upload.svg" alt="Smiley face" width="20" height="20" style="margin-bottom:3mm">&nbsp; Choose File to Upload</p></a>
          {{/pl-uploader}}
+         </div>
+         </div>
                            
                    
                     <br>
+                <div class="row">
+                   <div class="col-xs-4 col-lg-4col-md-4 col-sm-4">
                   <label >Income tax return Document</label>
+                  </div>
+                   <div class="col-xs-4 col-lg-4col-md-4 col-sm-4">
                 {{#pl-uploader  for="upload_file5" runtimes="html5 flash silverlight" onfileadd="uploadDoc" as |queue|}}
           <a id="upload_file5" style="font-size:18px"> <p style="margin-top:3mm"> <img src="assets/images/upload.svg" alt="Smiley face" width="20" height="20" style="margin-bottom:3mm">&nbsp; Choose File to Upload</p></a>
          {{/pl-uploader}}
+         </div>
+         </div>
                            
                     <br>
  {{#paper-button raised=true warn=true onClick=(action "targetButton")}}Submit{{/paper-button}}
