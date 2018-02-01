@@ -2,6 +2,7 @@ import Controller from '@ember/controller';
 export default Controller.extend({
     isShchedule:false,
     showUserSchedule:true,
+    isBnkLoanSchedule:false,
     InterestRate:["1%","2%","3%","4%","5%","6%","7%","8%"],
     actions:{
       loanschedule:function(details,record){
@@ -29,6 +30,11 @@ export default Controller.extend({
         var installmentpermonth=this.get('installmentpermonth')
         this.set('installmentpermonth',installmentpermonth)
         console.log("installmentpermonth>>",installmentpermonth,details.loan)
+        var date=new Date().toLocaleDateString();
+      
+        var time=new Date().toTimeString();
+        this.set('date',date)
+        this.set('time',time)
         var transactionstring={
           "id":record.Key,"transactionstring":{
           "loan":details.loan,
@@ -62,14 +68,16 @@ export default Controller.extend({
           "amountinterestrate":amountinterestrate,
           "paymentperyear": paymentperyear,
           "installmentpermonth": installmentpermonth,
-          "status":"Loan Schedule successfully"
+          "status":"Loan Schedule successfully",
+          "date":date,
+          "time":time,
           
         }
     }
         console.log(JSON.stringify(transactionstring))
         var mycontroller=this;
         return $.ajax({
-            url:'http://localhost:8082/updatetransaction',
+            url:'http://192.168.1.28:8082/updatetransaction',
             type: 'POST',
             contentType: 'application/json',
             data: JSON.stringify(transactionstring),
@@ -88,6 +96,7 @@ export default Controller.extend({
         },
         okay:function(){
         this.set('showDialog',false)
+        this.set('isBnkLoanSchedule',true)
         }, 
         signout:function() {
         this.transitionToRoute('login1');

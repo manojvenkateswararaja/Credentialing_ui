@@ -58,7 +58,7 @@ export default Controller.extend({
                 "legal":"",
               }}
               return $.ajax({
-              url:'http://localhost:8082/updatetransaction',//web service for credit score
+              url:'http://192.168.1.28:8082/updatetransaction',//web service for credit score
               type: 'POST',
               contentType:'application/json',
               data:JSON.stringify(data),

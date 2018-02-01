@@ -2,10 +2,17 @@ import Controller from '@ember/controller';
 
 export default Controller.extend({
   showRequest:true,
+  IdProof:false,
+  IdProof2:false,
   actions:{
-  
+  okay1:function(){
+    this.set('showDialog1',false)
+    this.set('IdProof',true)
+
+  },
   okay:function(){
     this.set('showDialog',false)
+    this.set('IdProof2',true)
   },
   closeDialog:function(){
     this.set('showDialog',false)

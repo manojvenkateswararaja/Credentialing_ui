@@ -8,7 +8,7 @@ export default Route.extend({
          console.log("status>>>>>>property",status)
           var mycontroller=this
           return $.ajax({
-          url:'http://localhost:8082/getloandetails',
+          url:'http://192.168.1.28:8082/getloandetails',
           type: 'GET',
           contentType: 'application/json',
           success: function(response){

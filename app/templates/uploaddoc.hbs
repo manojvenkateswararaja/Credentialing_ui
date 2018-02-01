@@ -12,24 +12,57 @@
 
 </div>
 <div class="container-fluid">
-  <br> 
+
   <h3><b style="text-align:center;">Upload Document</b></h3>
-  <br>
+
 <div class="container">
      {{!-- <div class="container-fluid">   --}}
                   <br>
                    <div class="detail"><i style="margin-left: -480px;" >please fill your documents details?</i></div>
                 <br>
+                <div class="row">
+                   <div class="col-xs-4 col-lg-4col-md-4 col-sm-4">
                   <label >Id proof Document</label>
+                  </div>
+                   <div class="col-xs-4 col-lg-4col-md-4 col-sm-4">
                    {{#pl-uploader  for="upload_file1" runtimes="html5 flash silverlight" onfileadd="uploadDoc" as |queue|}}
           <a id="upload_file1" style="font-size:18px"> <p style="margin-top:3mm"> <img src="assets/images/upload.svg" alt="Smiley face" width="20" height="20" style="margin-bottom:3mm">&nbsp; Choose File to Upload</p></a>
-         {{/pl-uploader}}                        
+         {{/pl-uploader}} 
+         </div>
+         <div class="col-xs-4 col-lg-4 col-md-4 col-sm-4">
+         {{#if IdProof}}<small>id proof sucessfully updated</small> {{/if}}    
+         </div>
+         </div>   
+          {{#if showDialog1}}
+  {{#paper-dialog class="flex-77" onClose=(action "closeDialog" "cancel") origin=dialogOrigin clickOutsideToClose=true}}
+    {{#paper-toolbar}}
+      {{#paper-toolbar-tools}}
+       Your file uploaded successfully!!!
+        {{#paper-button iconButton=true onClick=(action "closeDialog" "cancel")}}{{paper-icon icon="close"}}{{/paper-button}}
+      {{/paper-toolbar-tools}}
+    {{/paper-toolbar}}
+
+   
+    {{#paper-dialog-actions class="layout-row"}}
+      {{#paper-button onClick=(action "closeDialog" "cancel")}}Cancel{{/paper-button}}
+      {{#paper-button onClick=(action "okay1" "ok")}}OK{{/paper-button}}
+    {{/paper-dialog-actions}}
+  {{/paper-dialog}}
+{{/if}}             
                    <br>
-                   <label > BankStatement Document</label>
+                    <div class="row">
+                   <div class="col-xs-4 col-lg-4col-md-4 col-sm-4">
+                   <label> BankStatement Document</label>
+                   </div>
+                   <div class="col-xs-4 col-lg-4col-md-4 col-sm-4">
           {{#pl-uploader  for="upload_file2" runtimes="html5 flash silverlight" onfileadd="uploadDoc" as |queue|}}
           <a id="upload_file2" style="font-size:18px"> <p style="margin-top:3mm"> <img src="assets/images/upload.svg" alt="Smiley face" width="20" height="20" style="margin-bottom:3mm">&nbsp; Choose File to Upload</p></a>
          {{/pl-uploader}}
-                           
+         </div>
+          <div class="col-xs-4 col-lg-4 col-md-4 col-sm-4">
+         {{#if IdProof2}}<small>Bankstatement sucessfully updated</small> {{/if}}    
+         </div>
+         </div>                           
                    <br>
                    <label >Address proof Document</label>
                                  {{#pl-uploader  for="upload_file3" runtimes="html5 flash silverlight" onfileadd="uploadDoc" as |queue|}}

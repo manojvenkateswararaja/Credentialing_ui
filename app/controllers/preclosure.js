@@ -77,7 +77,7 @@ export default Controller.extend({
               console.log(JSON.stringify(transactionstring))
               var mycontroller=this;
               return $.ajax({
-                  url:'http://localhost:8082/updatetransaction',
+                  url:'http://192.168.1.28:8082/updatetransaction',
                   type: 'POST',
                   contentType: 'application/json',
                   data: JSON.stringify(transactionstring),
@@ -91,22 +91,25 @@ export default Controller.extend({
                   }   
                 }) 
               },
-              CloseDialog:function(){
+              closeDialog1:function(){
               this.set('showDialog',false)
               },
-              okay:function(){
+              okay1:function(){
               this.set('isPreclosed',true)
               this.set('showDialog',false)
+              this.transitionToRoute('home');
               }, 
               signout:function() {
               this.transitionToRoute('login1');
               },
               closeDialog:function(){
-                this.set('showDialog',false)
+                this.set('showDialogUpload',false)
                 },
                 okay:function(){
-                this.set('showDialog',false)
+                this.set('showDialogUpload',false)
                 }, 
+                
+  
 
 
     }

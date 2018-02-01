@@ -53,7 +53,7 @@ export default Controller.extend({
                 }}
               console.log("creditscore------>",transactionstring);
                 return $.ajax({
-                url:'http://localhost:8082/updatetransaction',//web service for credit score
+                url:'http://192.168.1.28:8082/updatetransaction',//web service for credit score
                 type: 'POST',
                 contentType:'application/json',
                 data:JSON.stringify(transactionstring),
@@ -87,6 +87,8 @@ export default Controller.extend({
                     console.log("requestid>>>>>>>>",showrecords)
                     var date=new Date().toLocaleDateString();
                     var time=new Date().toTimeString();
+                    this.set('date',date)
+                    this.set('time',time)
                    var transactionstring={"id":records,"transactionstring":{
                       "loan":showrecords.loan,
                       "amount":showrecords.amount,
@@ -114,12 +116,13 @@ export default Controller.extend({
                       "bank":"applied",
                       "creditscore":showrecords.creditscore,
                       "legal":"approved",
+                      "legalstatus":"legalverification has been validated successfully",
                       "date":date,
                       "time":time
                     }}
                   console.log("creditscore------>",transactionstring);
                     return $.ajax({
-                    url:'http://localhost:8082/updatetransaction',//web service for credit score
+                    url:'http://192.168.1.28:8082/updatetransaction',//web service for credit score
                     type: 'POST',
                     contentType:'application/json',
                     data:JSON.stringify(transactionstring),

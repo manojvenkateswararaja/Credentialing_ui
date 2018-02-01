@@ -4,6 +4,7 @@ export default Controller.extend({
   showDashboard:true,
   showDialogApprove:false,
   isLegalRequested:false,
+ 
     actions:{
       LegalValidater:function(records,showrecords){
             var modalvalue = this.get('showDialog')
@@ -20,7 +21,9 @@ export default Controller.extend({
                 var data=showrecords
                 console.log("data>>>>",data)
                 var date=new Date().toLocaleDateString();
+                this.set('date',date)
                 var time=new Date().toTimeString();
+                this.set('time',time)
                 var Updateddata = { "id":records.Key,
                  "transactionstring":{
                   "loan":data.loan,
@@ -54,7 +57,7 @@ export default Controller.extend({
                 }}
               console.log("creditscore------>",data);
                 return $.ajax({
-                url:'http://localhost:8082/updatetransaction',//update legal verifier data
+                url:'http://192.168.1.28:8082/updatetransaction',//update legal verifier data
                 type: 'POST',
                 contentType:'application/json',
                 data:JSON.stringify(Updateddata),
@@ -75,6 +78,7 @@ export default Controller.extend({
           
             this.set('showDialog',false)
             this.set('isLegalRequested',true)
+            
           },
            
           

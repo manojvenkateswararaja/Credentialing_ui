@@ -1,8 +1,8 @@
 {{partial 'head'}}
 {{#if showUserSchedule}}
 {{/if}}
-<div class="container-fluid">
-      <br>
+{{!-- <div class="container-fluid">? --}}
+      
       <div class="jumbotron" style="background-color:lightgrey;text-align:center; ">
    <b style="">LOAN SCHEDULE</b>
    </div>
@@ -74,7 +74,6 @@
           </div>
    
    <br>
-   <br>
 </div>
 
 {{#if showDialog}}
@@ -92,4 +91,24 @@ Loan has been scheduled for requested user   ...!!
 {{/paper-dialog}}
 
 {{/if}}
+     <div class="jumbotron" style="background-color:lightgrey;">
+             <h3>Time Stamp</h3>
+         {{#if isBnkLoanSchedule}}
+             <div class="row">
+           <b>  Loan scheduled time</b>
+            </div>
+          <div class="row">
+            <div class="col-xs-6 col-lg-6 col-sm-6">
+            Date:{{date}}
+            </div>
+             <div class="col-xs-6 col-lg-6 col-sm-6">
+            Time{{time}}
+            </div>
+        
+        
+       </div>
+       <br>
+       <br>
+       {{/if}}
 </div>
+{{!-- </div> --}}

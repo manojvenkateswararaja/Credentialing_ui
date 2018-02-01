@@ -18,7 +18,7 @@ export default Route.extend({
       
         var myroute=this
         return $.ajax({
-        url:'http://localhost:8082/getloandetails',
+        url:'http://192.168.1.28:8082/getloandetails',
         type: 'GET',
         contentType: 'application/json',
         success: function(response){
@@ -108,7 +108,9 @@ myroute.controllerFor('bankdashboard').set('precloselink',false)
     console.log("after changing status",status)
 }else if(CreditScoreGenerated!=null){                         //accepted by user creditscorestatus
     myroute.controllerFor('bankdashboard').set('isLoanReject',false)//disable loan reject
-    myroute.controllerFor('bankdashboard').set('isCreditscorestatus',true)// creditscore
+    myroute.controllerFor('bankdashboard').set('isCreditscorestatus',true)
+    myroute.controllerFor('bankdashboard').set('islegalstatus',true)/// creditscore
+
     myroute.controllerFor('bankdashboard').set('precloselink',false)
     myroute.controllerFor('bankdashboard').set('isDefaultStatus',false)//disable default
     console.log("precloselink>>>>>>",precloselink)
@@ -118,6 +120,9 @@ myroute.controllerFor('bankdashboard').set('precloselink',false)
         myroute.controllerFor('bankdashboard').set('loanReject',null)
         myroute.controllerFor('bankdashboard').set('status',null)
         var creditscorestatus=myroute.controllerFor('bankdashboard').get('details.creditscorestatus')
+        var legalstatus=myroute.controllerFor('bankdashboard').get('details.legalstatus')
+        myroute.controllerFor('bankdashboard').set('legalstatus',legalstatus)
+        console.log(legalstatus);
         myroute.controllerFor('bankdashboard').set('creditscorestatus',creditscorestatus)
         console.log("after changing creditscorestatus",creditscorestatus)
 }else if(EMI==null && loanReject==null && loanAcceptedByUser==null && CreditScoreGenerated==null){
@@ -131,6 +136,7 @@ myroute.controllerFor('bankdashboard').set('precloselink',false)
         myroute.controllerFor('bankdashboard').set('loanReject',null)
         myroute.controllerFor('bankdashboard').set('status',null)
         myroute.controllerFor('bankdashboard').set('creditscorestatus',null)
+        myroute.controllerFor('bankdashboard').set('legalstatus',null)
         var DefaultStatus=myroute.controllerFor('bankdashboard').get('DefaultStatus')
         myroute.controllerFor('bankdashboard').set('DefaultStatus',DefaultStatus)
         console.log("after changing DefaultStatus",DefaultStatus)
