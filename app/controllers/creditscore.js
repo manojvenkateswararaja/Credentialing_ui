@@ -7,7 +7,7 @@ export default Controller.extend({
   isCreditGen:false,
   actions: {
     // ApproveUpdate:function (showrecords,records,creditscore)
-    ApproveUpdate:function (showrecords,records,creditscore) {
+    ApproveUpdate:function (transactiondetails,records,creditscore) {
       var modalvalue = this.get('showDialog')
       
                 if(modalvalue!=true){
@@ -17,39 +17,40 @@ export default Controller.extend({
                   this.set('showDialog',false)
                 }
           var mycontroller=this;
-          console.log("record>>>>>>>>loan",showrecords)
+          console.log("record>>>>>>>>loan",transactiondetails)
           console.log("creditscore>>>>>>",creditscore)
           console.log("key>>>>>>",records)
           var date=new Date().toLocaleDateString();
           var time=new Date().toTimeString();
          var transactionstring={
            "id":records,"transactionstring":{
-            "loan":showrecords.loan,
-            "amount":showrecords.amount,
-            "propertyType":showrecords.propertyType,
-            "income":showrecords.income,
-            "location":showrecords.location,
-            "year":showrecords.year,
-            "size":showrecords.size,
-            "income":showrecords.income,
-            "fname":showrecords.fname,
-            "lname":showrecords.lname,
-            "estimated":showrecords.estimated,
-            "age":showrecords.age,
-            "phone":showrecords.phone,
-            "email":showrecords.email,
-            "address":showrecords.address,
-            "country":showrecords.country,
-            "occupation":showrecords.occupation,
-            "genderType":showrecords.genderType,
-            "nationalityType":showrecords.nationalityType,
-            "Company":showrecords.Company,
-            "joiningdate":showrecords.joiningdate,
-            "salary":showrecords.salary,
-            "address":showrecords.address,
+            "loan":transactiondetails.loan,
+            "amount":transactiondetails.amount,
+            "propertyType":transactiondetails.propertyType,
+            "income":transactiondetails.income,
+            "location":transactiondetails.location,
+            "year":transactiondetails.year,
+            "size":transactiondetails.size,
+            "income":transactiondetails.income,
+            "fname":transactiondetails.fname,
+            "lname":transactiondetails.lname,
+            "estimated":transactiondetails.estimated,
+            "age":transactiondetails.age,
+            "phone":transactiondetails.phone,
+            "email":transactiondetails.email,
+            "address":transactiondetails.address,
+            "country":transactiondetails.country,
+            "occupation":transactiondetails.occupation,
+            "genderType":transactiondetails.genderType,
+            "nationalityType":transactiondetails.nationalityType,
+            "Company":transactiondetails.Company,
+            "joiningdate":transactiondetails.joiningdate,
+            "salary":transactiondetails.salary,
+            "address":transactiondetails.address,
             "bank":"applied",
             "creditscore":creditscore,
             "creditscorestatus":"creditscore has been generated successfully ",
+            "statusForCreditRequest":" Creditscore Generated",
             "legal":"",
             "date":date,
             "time":time
@@ -63,8 +64,13 @@ export default Controller.extend({
           success: function(response) {
           console.log("service update transaction")
           mycontroller.set('showCredit',true)
-          var creditscore=response
-          console.log("my updated data with creditscore>>>>>>>>>>>>.",creditscore);
+          var record=response
+          console.log("my updated data with creditscore>>>>>>>>>>>>.",record);
+          var statusForCreditRequest=transactiondetails.statusForCreditRequest
+          console.log("?????",statusForCreditRequest)
+          if(statusForCreditRequest==="Creditscore Generated"){
+          mycontroller.controllerFor('creditscore').set(statusForCreditRequest,'Creditscore Generated')
+          }
      
             },
           })

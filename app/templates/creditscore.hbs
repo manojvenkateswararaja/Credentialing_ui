@@ -8,9 +8,14 @@
 <div class="container">
    <br/>
     <div class="row">
-       <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6">
+       <div class="col-xs-5 col-lg-5 col-md-5 col-sm-5">
       Request id:<b style="color:blue">{{record.Key}}</b>
       </div>
+       <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6">
+         Current Status:{{#if isDisplayed}}<b style="color:green">{{GetRecord.statusForCreditRequest}}</b> {{/if}}
+         {{#if isDisplayed}}<b style="color:green">{{ApproveCreditRequest}}</b>{{/if}}
+
+       </div>
 </div>
 <br>
 <br>
@@ -71,18 +76,12 @@
                      <td>Location</td>
                      <td style="color:gray;">{{transactiondetails.location}}</td>
                   </tr>
-                  {{!-- <tr>
-                     <td>Price:</td>
-                     <td style="color:gray;">{{details.price}}</td>
-                  </tr> --}}
+                 
                   <tr>
                      <td>Country:</td>
                      <td style="color:gray;">{{transactiondetails.country}}</td>
                   </tr>
-                  {{!-- <tr>
-                     <td>PaymentPercentage:</td>
-                     <td style="color:gray;">{{details.paymentPercentage}}</td>
-                  </tr> --}}
+               
                   <tr>
                  <td>Credit score:</td>
                  <td style="color:black;">{{creditscore}}</td>
@@ -99,7 +98,7 @@
            <br>
              <div class="row">
                   <div class= "col-xs-6 col-lg-6 col-md-6 col-sm-6 ">  
-           <button type="button" class="btn btn-primary btn-block"{{action "ApproveUpdate" details record.Key creditscore}}>Creditscore Approve</button>
+           <button type="button" class="btn btn-primary btn-block"{{action "ApproveUpdate" transactiondetails record.Key creditscore}}>Creditscore Approve</button>
             {{!-- <button type="button" id="myButton" class="btn btn-primary" {{action "ApproveUpdate" details record.Key creditscore}}>Approve</button> --}}
          
           </div>
