@@ -92,6 +92,7 @@ export default Controller.extend(Validations,{
        console.log("ShowRequest?????",ShowRequest)
         mycontroller.set('usertype',usertype)
           //mycontroller.set('showLogin',false)
+          console.log("usertype in ui",usertype)
           
           this.set('showDialog',true)
            if(usertype =="user"){
@@ -110,7 +111,7 @@ export default Controller.extend(Validations,{
                 
                 this.transitionToRoute('home'); 
             }
-      }else if(usertype =="Bank"){
+      }else if(usertype =="bank"){
         // mycontroller.set('showLogin',false)
         this.set('showDialog',true)
          this.transitionToRoute('bankdashboard');

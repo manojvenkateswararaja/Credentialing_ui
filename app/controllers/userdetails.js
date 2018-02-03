@@ -14,12 +14,9 @@ export default Controller.extend({
                     else{
                       this.set('showDialog',false)
                     }
-              var mycontroller=this;
-              console.log("requestid>>>>>>>>",record.Key)
-              
+             var mycontroller=this;
+             console.log("requestid>>>>>>>>",record.Key)
              var key = record.Key
-            //  var Recordlen = record.length
-            //  console.log("Record length",Recordlen)
              var len = record.Record.transactionlist.length
              var data = lastdetails;
              console.log("updated data",data)
@@ -56,7 +53,9 @@ export default Controller.extend({
                 "date":date,
                 "time":time,
                 "legal":"",
+                "statusForCreditRequest":"Requested For Creditscore"
               }}
+              console.log(data)
               return $.ajax({
               url:'http://192.168.1.28:8082/updatetransaction',//web service for credit score
               type: 'POST',

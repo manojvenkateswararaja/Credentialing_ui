@@ -1,7 +1,70 @@
 
 
+{{partial 'head'}}
+{{#if showLogin}}
+<br>
+<br>
+<br>
+<br>
+<div class='container' style="background-color:lightgrey; text-align:center;margin-top: -2cm;width:25%;">
+  <br>
+  <header><i><b><u>Login</u></b></i></header>
+  <br>
 
-<div class="container-fluid" style="">
+ <label><b>EmailID </b></label>
+ <i class="fa fa-envelope-o fa-fw"></i>{{validated-input type="email" model=this  valuePath='email' placeholder="email" required=true}}
+ <br>
+ <label><b>password</b></label>
+ <i class="fa fa-key fa-fw"></i>{{validated-input  type="password" model=this  valuePath='password' placeholder="password" required=true}}
+
+ <div >
+ <br>  
+ <button type="button" id="myButton" class="btn btn-primary" {{action "login" }}>Login</button>
+
+        {{#if showDialog}}
+  {{#paper-dialog class="flex-77" onClose=(action "closeDialog" "cancel") origin=dialogOrigin clickOutsideToClose=true}}
+    {{#paper-toolbar}}
+      {{#paper-toolbar-tools}}
+      Your sucessfully logged in!!!
+        {{#paper-button iconButton=true onClick=(action "closeDialog" "cancel")}}{{paper-icon icon="close"}}{{/paper-button}}
+      {{/paper-toolbar-tools}}
+    {{/paper-toolbar}}
+
+   
+    {{#paper-dialog-actions class="layout-row"}}
+      {{#paper-button onClick=(action "closeDialog" "cancel")}}Cancel{{/paper-button}}
+      {{#paper-button onClick=(action "okay" "ok")}}OK{{/paper-button}}
+    {{/paper-dialog-actions}}
+  {{/paper-dialog}}
+{{/if}}
+  <div class="link">
+  <br>New User? {{#link-to 'signup'}}<i style="color:#2d8cff "> sign up </i>{{/link-to}}
+  </div>
+  <br>
+
+</div>
+</div>
+<br>
+<br>
+<br>
+<br>
+{{/if}}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{{!-- <div class="container-fluid" style="">
   <br>
   <br>
   
@@ -36,16 +99,14 @@
       }}
     
     </div>
-    {{!-- <button class="btn"{{action "login"}}>Submit</button> --}}
-
-          {{!-- {{#text.subhead}}Large{{/text.subhead}} --}}
+   
         {{/title.text}}
         {{title.media size="lg" src="assets/images/mort.png" alt="Tomster" title="Tomster"}}
       {{/card.title}}
       {{#card.actions}}
       <div  style="background-color:#4285f4;">
         {{#paper-button style="background-color:#4285f4;" onClick=(action "login")}}Submit{{/paper-button}}
-        {{!-- {{#paper-button}}Action 2{{/paper-button}} --}}
+
         </div>
             {{#if showDialog}}
   {{#paper-dialog class="flex-77" onClose=(action "closeDialog" "cancel") origin=dialogOrigin clickOutsideToClose=true}}
@@ -71,4 +132,4 @@
 </div>
 </div>
 
-</div>
+</div> --}}

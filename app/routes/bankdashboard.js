@@ -25,8 +25,10 @@ export default Route.extend({
         var showrecords=response.readAllRequest; 
         console.log("Allrequest",showrecords)
         myroute.controllerFor('bankdashboard').set('showrecords',showrecords)
-        var records=showrecords.length
-        var record=showrecords[recoeds-1]
+        var len=showrecords.length
+        console.log("len show>>>",len);
+        for(let i=0;i<=len-1;i++){
+        var record=showrecords[i]
         myroute.controllerFor('bankdashboard').set('record',record)
         console.log("record",record)
         var length=record.Record.transactionlist.length
@@ -35,6 +37,9 @@ export default Route.extend({
         myroute.controllerFor('bankdashboard').set('details',details)
         console.log("details",details)
         console.log('DEBUG: GET Enquiries OK');
+        }
+     
+      
         var creditscore=details.creditscore
         mycontrol.controllerFor('bankdashboard').set('creditscore',creditscore)
         console.log(creditscore,"creditscore>>")
