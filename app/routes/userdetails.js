@@ -10,10 +10,10 @@ export default Route.extend({
         this.controllerFor('userdetails').set('lastdetails',lastdetails);
         console.log("updates",lastdetails)
         console.log("userdetails page00",loanID)
-        var date=lastdetails.date
-        var time=lastdetails.time
-        this.controllerFor('userdetails').set('date',date);
-        this.controllerFor('userdetails').set('time',time);
+        // var date=lastdetails.date
+        // var time=lastdetails.time
+        // this.controllerFor('userdetails').set('date',date);
+        // this.controllerFor('userdetails').set('time',time);
         //getting generated cresitscore  
         var GetBankCredit = this.controllerFor('creditscore')
         var creditscore= GetBankCredit.get('creditscore');

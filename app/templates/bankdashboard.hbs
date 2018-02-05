@@ -45,12 +45,12 @@
          <div class="row">
                   <div class="col-xs-3 col-lg-3 col-sm-3">Get Total Timestamp<a href="" {{action 'timestamp' }}><b style="color:blue">{{item.Key}}</b></a></div>
                   <div class="col-xs-9 col-lg-9 col-sm-9">
-                  
+                  {{isStatus}}
                         <div >Status:<i style="color:DeepSkyBlue;">{{#if precloselink}}{{#link-to 'requestpreclose' disabled=""}}{{details.statuspreclose}}{{/link-to}}{{/if}}</i>
-                           <i style="color:DeepSkyBlue;">{{#if isBankpreclose}} {{bankpreclose}}{{/if}}</i>
-                           <i style="color:DeepSkyBlue;"> {{#if isLoanReject}} {{loanReject}}{{/if}}</i>
-                            <i style="color:DeepSkyBlue;"> {{#if isStatus}} {{status}}{{/if}}</i>
-                           <i style="color:DeepSkyBlue;">{{#if isCreditscorestatus}} {{creditscorestatus}}{{/if}}</i>
+                           <i style="color:DeepSkyBlue;">{{#if isBankpreclose}}{{bankpreclose}}{{/if}}</i>
+                           <i style="color:DeepSkyBlue;"> {{#if isLoanReject}}{{loanReject}}{{/if}}</i>
+                            <i style="color:DeepSkyBlue;"> {{#if isStatus}}{{status}}{{/if}}</i>
+                           <i style="color:green;">{{#if IsCreditStatus}}{{item.Record.statusForCreditRequest}}{{/if}}</i>
                            <i style="color:DeepSkyBlue;">{{#if islegalstatus}} {{legalstatus}}{{/if}}</i>
 
                           <i style="color:DeepSkyBlue;"> {{#if isDefaultStatus}}{{DefaultStatus}}{{/if}}</i>

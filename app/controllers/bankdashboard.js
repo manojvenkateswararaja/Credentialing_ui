@@ -8,9 +8,9 @@ export default Controller.extend({
   actions: {
    
     userdetails: function(showrecords) {
-      this.set('record', showrecords);
-
-      var score=this.get('creditscore')
+    this.get('record',showrecords)
+console.log("get credit score",showrecords)
+      var score=showrecords.Record.creditscore
       this.set('score',score)
       console.log("i got creditscore in bank",score)
        if(score == null){
