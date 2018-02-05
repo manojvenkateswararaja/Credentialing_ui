@@ -35,9 +35,9 @@
       <div class="container" style="background-color:grey"><b>ALL Request</b></div>
       <br>
       <div class ="container">
-         {{#each details   as |item|}}
+         {{!-- {{#each details   as |item|}} --}}
          <div class="row">
-            <div class="col-xs-3 col-lg-3 col-sm-3">Requestid<a href="" {{action 'userdetails'  item }}><b style="color:blue">{{item.Key}}</b></a></div>
+            <div class="col-xs-3 col-lg-3 col-sm-3">Requestid<a href="" {{action 'userdetails'  details }}><b style="color:blue">{{details.Key}}</b></a></div>
             
                   <div class="row">
             {{!-- {{#each item.Record  as |item1|}} --}}
@@ -57,26 +57,20 @@
             </div>
             </div>
          <div class="row">
-                  <div class="col-xs-3 col-lg-3 col-sm-3">Get Total Timestamp<a href="" {{action 'timestamp' }}><b style="color:blue">{{item.Key}}</b></a></div>
+                  {{!-- <div class="col-xs-3 col-lg-3 col-sm-3">Get Total Timestamp<a href="" {{action 'timestamp' }}><b style="color:blue">{{details.Key}}</b></a></div> --}}
                   <div class="col-xs-9 col-lg-9 col-sm-9">
                      {{!-- 
                      <div class="" style="margin-left: 8cm">
-                        --}}
-                        <div >Status:<i style="color:DeepSkyBlue;">{{#if precloselink}}{{#link-to 'requestpreclose' disabled=""}}{{details.statuspreclose}}{{/link-to}}{{/if}}</i>
-                           <i style="color:DeepSkyBlue;">{{#if isBankpreclose}} {{bankpreclose}}{{/if}}</i>
-                           <i style="color:DeepSkyBlue;"> {{#if isLoanReject}} {{loanReject}}{{/if}}</i>
-                            <i style="color:DeepSkyBlue;"> {{#if isStatus}} {{status}}{{/if}}</i>
-                           <i style="color:DeepSkyBlue;">{{#if isCreditscorestatus}} {{creditscorestatus}}{{/if}}</i>
-                           <i style="color:DeepSkyBlue;">{{#if islegalstatus}} {{legalstatus}}{{/if}}</i>
-
-                          <i style="color:DeepSkyBlue;"> {{#if isDefaultStatus}}{{DefaultStatus}}{{/if}}</i>
+                        --}}{{IsStatusForCreditRequest}}
+                        <div >Status:<i style="color:green;">{{#if IsStatusForCreditRequest}}{{statusForCreditRequest}}{{/if}}</i>
+                          <i style="color:green;">{{#if IsStatusForGenerated}}{{statusForGenerated}}{{/if}}</i>
                         </div>
                      </div>
                   </div>
             
          <br>
         
-         {{/each}}
+         {{!-- {{/each}} --}}
       </div>
    </div>
 </div>

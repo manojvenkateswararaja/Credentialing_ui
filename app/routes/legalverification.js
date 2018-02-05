@@ -1,9 +1,9 @@
 import Route from '@ember/routing/route';
-
 export default Route.extend({
-    LegalVerifierParticipant:true,
+    isDisplayed:false,
+    isDisplayedApproval:false,
     model(){
-        var loanID = this.controllerFor('legalverification').get('record');
+        var loanID = this.controllerFor('legalverification2').get('record');
         this.controllerFor('legalverification').set('record',loanID);
         console.log("record",loanID)
         var lastdetails= loanID.Record
@@ -24,4 +24,4 @@ export default Route.extend({
         
         
    }
-});
+})

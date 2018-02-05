@@ -8,7 +8,7 @@ export default Controller.extend({
         signout:function(){
             this.transitionToRoute('login1');
         },
-        reject:function (showrecords,records) {
+        reject:function (lastdetails,records,creditscore) {
             var modalvalue = this.get('showDialog')
             
                       if(modalvalue!=true){
@@ -18,34 +18,34 @@ export default Controller.extend({
                         this.set('showDialog',false)
                       }
                 var mycontroller=this;
-                console.log("requestid>>>>>>>>",showrecords)
+                console.log("requestid>>>>>>>>",records)
                 var date=new Date().toLocaleDateString();
                 var time=new Date().toTimeString();
                var transactionstring={"id":records,"transactionstring":{
-                  "loan":showrecords.loan,
-                  "amount":showrecords.amount,
-                  "propertyType":showrecords.propertyType,
-                  "income":showrecords.income,
-                  "location":showrecords.location,
-                  "year":showrecords.year,
-                  "size":showrecords.size,
-                  "income":showrecords.income,
-                  "fname":showrecords.fname,
-                  "lname":showrecords.lname,
-                  "estimated":showrecords.estimated,
-                  "age":showrecords.age,
-                  "phone":showrecords.phone,
-                  "email":showrecords.email,
-                  "address":showrecords.address,
-                  "country":showrecords.country,
-                  "occupation":showrecords.occupation,
-                  "genderType":showrecords.genderType,
-                  "nationalityType":showrecords.nationalityType,
-                  "Company":showrecords.Company,
-                  "joiningdate":showrecords.joiningdate,
-                  "salary":showrecords.salary,
-                  "address":showrecords.address,
-                  "creditscore":showrecords.creditscore,
+                  "loan":lastdetails.loan,
+                  "amount":lastdetails.amount,
+                  "propertyType":lastdetails.propertyType,
+                  "income":lastdetails.income,
+                  "location":lastdetails.location,
+                  "year":lastdetails.year,
+                  "size":lastdetails.size,
+                  "income":lastdetails.income,
+                  "fname":lastdetails.fname,
+                  "lname":lastdetails.lname,
+                  "estimated":lastdetails.estimated,
+                  "age":lastdetails.age,
+                  "phone":lastdetails.phone,
+                  "email":lastdetails.email,
+                  "address":lastdetails.address,
+                  "country":lastdetails.country,
+                  "occupation":lastdetails.occupation,
+                  "genderType":lastdetails.genderType,
+                  "nationalityType":lastdetails.nationalityType,
+                  "Company":lastdetails.Company,
+                  "joiningdate":lastdetails.joiningdate,
+                  "salary":lastdetails.salary,
+                  "address":lastdetails.address,
+                  "creditscore":lastdetails.creditscore,
                   "statusForCreditRequest":" Legalverifier rejected",
                   "date":date,
                   "time":time
@@ -73,7 +73,7 @@ export default Controller.extend({
               this.set('isLegalverified',true)
               this.set('showDialog',false)
             },
-            approved:function (showrecords,records) {
+            approved:function (lastdetails,records,creditscore) {
                 var modalvalue = this.get('showDialog')
                 
                           if(modalvalue!=true){
@@ -83,36 +83,36 @@ export default Controller.extend({
                             this.set('showDialog',false)
                           }
                     var mycontroller=this;
-                    console.log("requestid>>>>>>>>",showrecords)
+                    console.log("requestid>>>>>>>>",records)
                     var date=new Date().toLocaleDateString();
                     var time=new Date().toTimeString();
                     this.set('date',date)
                     this.set('time',time)
                    var transactionstring={"id":records,"transactionstring":{
-                      "loan":showrecords.loan,
-                      "amount":showrecords.amount,
-                      "propertyType":showrecords.propertyType,
-                      "income":showrecords.income,
-                      "location":showrecords.location,
-                      "year":showrecords.year,
-                      "size":showrecords.size,
-                      "income":showrecords.income,
-                      "fname":showrecords.fname,
-                      "lname":showrecords.lname,
-                      "estimated":showrecords.estimated,
-                      "age":showrecords.age,
-                      "phone":showrecords.phone,
-                      "email":showrecords.email,
-                      "address":showrecords.address,
-                      "country":showrecords.country,
-                      "occupation":showrecords.occupation,
-                      "genderType":showrecords.genderType,
-                      "nationalityType":showrecords.nationalityType,
-                      "Company":showrecords.Company,
-                      "joiningdate":showrecords.joiningdate,
-                      "salary":showrecords.salary,
-                      "address":showrecords.address,
-                      "creditscore":showrecords.creditscore,
+                      "loan":lastdetails.loan,
+                      "amount":lastdetails.amount,
+                      "propertyType":lastdetails.propertyType,
+                      "income":lastdetails.income,
+                      "location":lastdetails.location,
+                      "year":lastdetails.year,
+                      "size":lastdetails.size,
+                      "income":lastdetails.income,
+                      "fname":lastdetails.fname,
+                      "lname":lastdetails.lname,
+                      "estimated":lastdetails.estimated,
+                      "age":lastdetails.age,
+                      "phone":lastdetails.phone,
+                      "email":lastdetails.email,
+                      "address":lastdetails.address,
+                      "country":lastdetails.country,
+                      "occupation":lastdetails.occupation,
+                      "genderType":lastdetails.genderType,
+                      "nationalityType":lastdetails.nationalityType,
+                      "Company":lastdetails.Company,
+                      "joiningdate":lastdetails.joiningdate,
+                      "salary":lastdetails.salary,
+                      "address":lastdetails.address,
+                      "creditscore":lastdetails.creditscore,
                       "legal":"approved",
                       "statusForCreditRequest":"Legalverifier approved",
                       "date":date,

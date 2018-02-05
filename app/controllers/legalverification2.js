@@ -3,6 +3,13 @@ import Controller from '@ember/controller';
 export default Controller.extend({
     showCreditscore:true,
     actions:{
+        userdetails: function(showrecords) {
+            this.set('record', showrecords);
+      
+      
+                 this.transitionToRoute('legalverification')
+             
+             },
         reject:function(){
             var reject="Your property details has been failed for verification"
             alert("Your property details has been failed for verification");
