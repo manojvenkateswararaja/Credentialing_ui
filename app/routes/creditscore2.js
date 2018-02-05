@@ -22,36 +22,24 @@ export default Route.extend({
         type: 'GET',
         contentType: 'application/json',
         success: function(response){
-        var showrecords=response.message;
-        myroute.controllerFor('creditscore2').set('details',details)
+        var showrecords=response.message; 
         var len=showrecords.length
+        console.log("len show>>>",len);
         for(let i=0;i<=len-1;i++){
-        var statusForCreditRequest=showrecords[i].Record.statusForCreditRequest
+            var statusForCreditRequest=showrecords[i].Record.statusForCreditRequest
+    console.log(statusForCreditRequest)
+            if(statusForCreditRequest=="Requested For Creditscore"){
+                var details=showrecords
+                myroute.controllerFor('creditscore2').set('details',details)
+                  console.log("details........",details)
 
-        if(statusForCreditRequest=="Requested For Creditscore"){
-            var details=showrecords[i]
-            
-              console.log("details........",details)
-              
-            
+                  
+                
+            }
+           
         }
-    }
-        // console.log("Allrequest",showrecords)
-        // myroute.controllerFor('creditscore2').set('showrecords',showrecords)
-        // var len=showrecords.length
-        // console.log("len show>>>",len);
-        // for(let i=0;i<=len-1;i++){
-        // var record=showrecords[i]
-      
-        // console.log("record",record)
-        
-        // myroute.controllerFor('creditscore2').set('record',record)
+       
      
-        // var details=record.Record
-        // myroute.controllerFor('creditscore2').set('details',details)
-        // console.log("details",details)
-        console.log('DEBUG: GET Enquiries OK');
-        
      
       
 //         var creditscore=details.creditscore

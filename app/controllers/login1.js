@@ -120,7 +120,7 @@ export default Controller.extend(Validations,{
           this.transitionToRoute('creditscore2');
       }else if(usertype=="legalactor"){
         this.set('showDialog',true)
-        this.transitionToRoute('legalverification');
+        this.transitionToRoute('legalverification2');
       }   
       this.set('showDialog',false)   
       }, 

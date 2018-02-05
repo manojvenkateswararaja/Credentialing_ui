@@ -1,76 +1,100 @@
-{{partial "head"}}
-{{#if showCreditscore}}
-<div class="container-fluid">
+{{partial 'head'}}
+{{#if showDashboard }}
+<script>
+   $(document).ready(function() {
+       // Show or hide the sticky footer button
+       $(window).scroll(function() {
+           if ($(this).scrollTop() > 200) {
+               $('.go-top').fadeIn(200);
+           } else {
+               $('.go-top').fadeOut(200);
+           }
+       });
+       // Animate the scroll to top
+       $('.go-top').click(function(event) {
+           event.preventDefault();
+           $('html, body').animate({
+               scrollTop: 0
+           }, 300);
+       }); 
+   });
+</script>
+<div id="mySidenav" class="sidenav">
+   <a href="javascript:void(0)" class="closebtn" {{action "closeNav"}}>&times;</a>
+   <a >Home</a>
+   <a {{action "goTonewrequest"}}>User</a>
+   <a {{action "goToloan"}}>Bank</a>
+   <a {{action "goToproperty"}}>Creditscoregenerator</a>
+   <a {{action "goToemployment"}}>LegalPerson</a>
+</div>
+<div class="container-fluid" style="background-color:lightgrey">
+   <h1><b style="    margin-left: -30cm;">CreditScore Generator</b></h1>
+   <br>
+   <div class="jumbotron" style="margin-top:-3cm">
+      <p style="text-align:center;color:black"><b>TOTAL REQUEST</b></p>
+      <div class="container" style="background-color:grey"><b>ALL Request</b></div>
       <br>
+      <div class ="container">
+         {{#each details   as |item|}}
+         <div class="row">
+            <div class="col-xs-3 col-lg-3 col-sm-3">Requestid<a href="" {{action 'userdetails'  item }}><b style="color:blue">{{item.Key}}</b></a></div>
+            
+                  <div class="row">
+            {{!-- {{#each item.Record  as |item1|}} --}}
+               {{!-- {{#each  showrecords as |item1|}}
+                  <div class="col-xs-3 col-lg-3 col-sm-3">
+                     <div class="vl5">Name:{{item1.Records.transactiondetails.firstname}}</div>
+                  </div>
+                  <div class="col-sm-3">
+                     <div class="vl5">Property-type:{{item1.Records.transactiondetails.propertyType}}</div>
+                  </div>
+                  <div class="col-sm-3">
+                     <div class="vl5">Companyname:{{item1.Records.transactiondetails.CompanyName}}</div>
+                  </div>
+               
+            
+            {{/each}} --}}
+            </div>
+            </div>
+         <div class="row">
+                  <div class="col-xs-3 col-lg-3 col-sm-3">Get Total Timestamp<a href="" {{action 'timestamp' }}><b style="color:blue">{{item.Key}}</b></a></div>
+                  <div class="col-xs-9 col-lg-9 col-sm-9">
+                     {{!-- 
+                     <div class="" style="margin-left: 8cm">
+                        --}}
+                        <div >Status:<i style="color:DeepSkyBlue;">{{#if precloselink}}{{#link-to 'requestpreclose' disabled=""}}{{details.statuspreclose}}{{/link-to}}{{/if}}</i>
+                           <i style="color:DeepSkyBlue;">{{#if isBankpreclose}} {{bankpreclose}}{{/if}}</i>
+                           <i style="color:DeepSkyBlue;"> {{#if isLoanReject}} {{loanReject}}{{/if}}</i>
+                            <i style="color:DeepSkyBlue;"> {{#if isStatus}} {{status}}{{/if}}</i>
+                           <i style="color:DeepSkyBlue;">{{#if isCreditscorestatus}} {{creditscorestatus}}{{/if}}</i>
+                           <i style="color:DeepSkyBlue;">{{#if islegalstatus}} {{legalstatus}}{{/if}}</i>
+
+                          <i style="color:DeepSkyBlue;"> {{#if isDefaultStatus}}{{DefaultStatus}}{{/if}}</i>
+                        </div>
+                     </div>
+                  </div>
+            
+         <br>
+        
+         {{/each}}
+      </div>
+   </div>
+</div>
+ <div>
+   <div style="background-color:lightgrey;">
+      <h3>Time Stamp</h3>
       <div class="row">
-              <div class="col-xs-2 col-lg-2 col-sm-2" >
-      <b>Legal verification</b>
+         <b> User Requested Time</b>
       </div>
+      <div class="row">
+         <div class="col-xs-6 col-lg-6 col-sm-6">
+            Date:{{date}}
+         </div>
+         <div class="col-xs-6 col-lg-6 col-sm-6">
+            Time{{time}}
+         </div>
       </div>
-      <br>
-      
-<div class="container">
-      <br>
-      <div class="container" style="margin-left:-14px;">
-       <div class="row" style="background-color:lightcyan">
-        {{!-- style="height:2em;border:1px solid #000;width: 102%;margin-left:-15px;"> --}}   
-            <div class="col-xs-3 col-lg-3 col-sm-3" >
-             Request Id:{{loanID.Key}}</div>
-            <div class="col-xs-3 col-lg-3 col-sm-3" >
-               <div class="vl5"><div style="margin-left:8%">{{loanID.Record.transactiondetails.location}}</div></div>
-            </div>
-            <div class="col-xs-3 col-lg-3 col-sm-3" >
-               <div class="vl5"><div style="margin-left:8%">{{loanID.Record.transactiondetails.propertyvalue}}</div></div>
-            </div>
-            <div class="col-xs-3 col-lg-3 col-sm-3" >
-               <div class="vl5"><div style="margin-left:8%">{{loanID.Record.transactiondetails.location}}</div></div>
-            </div>
-      </div>
-      </div>
-       <br>
-      <b style="margin-left:387px">Property Information</b><br>
-  <div class="row">
-               <div class="col-xs-6 col-lg-6 col-sm-6" >
-               PropertyType:{{loanID.transactionstring.propertyType}}
-            </div>
-            </div><br>
-              <div class="row">
-             <div class="col-xs-6 col-lg-6 col-sm-6" >
-               Address:{{loanID.transactionstring.address}}
-            </div>
-            </div><br>
-              <div class="row">
-             <div class="col-xs-6 col-lg-6 col-sm-6">
-               Propertyvalue:{{loanID.transactionstring.propertyvalue}}
-            </div>
-            </div><br>
-              <div class="row">
-             <div class="col-xs-6 col-lg-6 col-sm-6">
-              Ownership Name:{{loanID.transactionstring.firstname}}
-             </div>
-             </div><br>
-               <div class="row">
-              <div class="col-xs-6 col-lg-6 col-sm-6">
-             property Document:{{loanID.transactionstring.file_upload1}}
-                   </div>
-                   </div><br>
-                  
-                   <br>
-                   <div class="row">
-              <div class="col-xs-6 col-lg-6 col-sm-6">
-                    <button type="button"  style="width:40%;" id="myButton" class="btn btn-primary" {{action "approval"}}>Approve</button>
-               </div>
-                <div class="col-xs-6 col-lg-6 col-sm-6">
-               <button type="button"  style="width:40%;"  id="myButton" class="btn btn-primary" {{action "reject"}}>Rejected</button>
-              </div>
-              </div>
-              {{!-- <button  id="user-btn2" {{action "approval"}}>Approve</button>
-              <button  id="user-btn2" {{action "reject"}}>Rejected</button>
-              --}}
-             <br>
-             <br>
-              
-             </div>
-  
-    </div>
-    {{/if}}
+   </div>
+</div>
+<a href="#" class="go-top">Scroll to Top</a>
+{{/if}}
