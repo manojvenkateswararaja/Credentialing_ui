@@ -13,7 +13,7 @@ export default Route.extend({
 
 
 
-file.upload('http://localhost:8082/UploadDocs?requestid='+requestid).then(function (response) {
+file.upload('http://192.168.1.28:8082/UploadDocs?requestid='+requestid).then(function (response) {
     console.log(JSON.stringify(response));
     var url =response.body.url;
     console.log("url ::",JSON.stringify(url));

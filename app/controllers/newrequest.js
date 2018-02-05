@@ -123,8 +123,7 @@ export default Controller.extend({
         "salary":salary,
         "date":date,
         "time":time,
-        "bank":"",
-        "legal":""
+        "status":"processing"
       }
     };
     console.log("datastring"+JSON.stringify(transactionstring));
