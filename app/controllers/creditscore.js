@@ -98,7 +98,7 @@ export default Controller.extend({
           console.log("service creditscore")   
           var creditscore=response.creditscore
           mycontroller.set('creditscore',creditscore)
-          // myroute.controllerFor('creditscore').set('creditscore',creditscore)
+          //myroute.controllerFor('bankdashboard').set('creditscore',creditscore)
           console.log(creditscore);
             }
             })

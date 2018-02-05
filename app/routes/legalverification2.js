@@ -30,7 +30,7 @@ export default Route.extend({
     console.log(statusForCreditRequest)
             if(statusForCreditRequest=="Requested for legalverifier"){
                 var details=showrecords
-                myroute.controllerFor('creditscore2').set('details',details)
+                myroute.controllerFor('legalverification2').set('details',details)
                   console.log("details........",details)
 
                   

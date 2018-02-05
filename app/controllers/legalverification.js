@@ -45,9 +45,8 @@ export default Controller.extend({
                   "joiningdate":showrecords.joiningdate,
                   "salary":showrecords.salary,
                   "address":showrecords.address,
-                  "bank":"applied",
                   "creditscore":showrecords.creditscore,
-                  "legal":"rejected",
+                  "statusForCreditRequest":" Legalverifier rejected",
                   "date":date,
                   "time":time
                 }}
@@ -113,10 +112,9 @@ export default Controller.extend({
                       "joiningdate":showrecords.joiningdate,
                       "salary":showrecords.salary,
                       "address":showrecords.address,
-                      "bank":"applied",
                       "creditscore":showrecords.creditscore,
                       "legal":"approved",
-                      "legalstatus":"legalverification has been validated successfully",
+                      "statusForCreditRequest":"Legalverifier approved",
                       "date":date,
                       "time":time
                     }}

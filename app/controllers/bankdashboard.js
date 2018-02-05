@@ -11,6 +11,7 @@ export default Controller.extend({
       this.set('record', showrecords);
 
       var score=this.get('creditscore')
+      console.log(score)
       this.set('score',score)
       console.log("i got creditscore in bank",score)
        if(score == null){
