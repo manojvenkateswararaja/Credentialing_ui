@@ -5,9 +5,8 @@ export default Route.extend({
         var loanID = this.controllerFor('bankdashboard').get('record');
         this.controllerFor('userdetails').set('record',loanID);
         console.log("record",loanID)
-        var length= loanID.Record.transactionlist.length
+        var lastdetails= loanID.Record
         console.log(length)
-        var lastdetails=loanID.Record.transactionlist[length-1].transactiondetails
         this.controllerFor('userdetails').set('lastdetails',lastdetails);
         console.log("updates",lastdetails)
         console.log("userdetails page00",loanID)

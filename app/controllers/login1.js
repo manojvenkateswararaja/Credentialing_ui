@@ -59,7 +59,7 @@ export default Controller.extend(Validations,{
             console.log(email);
             console.log(password);
             return $.ajax({
-            url:'http://192.168.1.28:8082/login',
+            url:'http://localhost:8082/login',
             type: 'POST',
             contentType: 'application/json',
             data: JSON.stringify(dataString),
@@ -117,7 +117,7 @@ export default Controller.extend(Validations,{
          this.transitionToRoute('bankdashboard');
       }else if(usertype=="creditscoregenerator"){
           this.set('showDialog',true)
-          this.transitionToRoute('creditscore');
+          this.transitionToRoute('creditscore2');
       }else if(usertype=="legalactor"){
         this.set('showDialog',true)
         this.transitionToRoute('legalverification');

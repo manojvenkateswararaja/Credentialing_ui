@@ -18,26 +18,27 @@ export default Route.extend({
       
         var myroute=this
         return $.ajax({
-        url:'http://192.168.1.28:8082/getloandetails',
+        url:'http://localhost:8082/getloandetails',
         type: 'GET',
         contentType: 'application/json',
         success: function(response){
-        var showrecords=response.readAllRequest; 
+        var showrecords=response.message; 
         console.log("Allrequest",showrecords)
         myroute.controllerFor('bankdashboard').set('showrecords',showrecords)
         var len=showrecords.length
         console.log("len show>>>",len);
         for(let i=0;i<=len-1;i++){
         var record=showrecords[i]
-        myroute.controllerFor('bankdashboard').set('record',record)
+      
         console.log("record",record)
-        var length=record.Record.transactionlist.length
-        console.log("length",length)
-        var details=record.Record.transactionlist[length-1].transactiondetails
+        
+        myroute.controllerFor('bankdashboard').set('record',record)
+       
+        var details=record.Record
         myroute.controllerFor('bankdashboard').set('details',details)
         console.log("details",details)
         console.log('DEBUG: GET Enquiries OK');
-        }
+        
      
       
         var creditscore=details.creditscore
@@ -162,8 +163,9 @@ myroute.controllerFor('bankdashboard').set('precloselink',false)
          myroute.controllerFor('bankdashboard').set('date',date)
          console.log(date)
          myroute.controllerFor('bankdashboard').set('time',time)
-
-        },
+        }
+        
+    }
 
     });  
   

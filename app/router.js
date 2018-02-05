@@ -37,6 +37,7 @@ Router.map(function() {
   this.route('creditscreen');
   this.route('requestpreclose');
   this.route('timestamp');
+  this.route('creditscore2');
 });
 
 export default Router;

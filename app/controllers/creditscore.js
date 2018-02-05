@@ -7,7 +7,7 @@ export default Controller.extend({
   isCreditGen:false,
   actions: {
     // ApproveUpdate:function (showrecords,records,creditscore)
-    ApproveUpdate:function (transactiondetails,records,creditscore) {
+    ApproveUpdate:function (lastdetails,records,creditscore) {
       var modalvalue = this.get('showDialog')
       
                 if(modalvalue!=true){
@@ -17,39 +17,39 @@ export default Controller.extend({
                   this.set('showDialog',false)
                 }
           var mycontroller=this;
-          console.log("record>>>>>>>>loan",transactiondetails)
+          console.log("record>>>>>>>>loan",lastdetails)
           console.log("creditscore>>>>>>",creditscore)
           console.log("key>>>>>>",records)
           var date=new Date().toLocaleDateString();
           var time=new Date().toTimeString();
          var transactionstring={
            "id":records,"transactionstring":{
-            "loan":transactiondetails.loan,
-            "amount":transactiondetails.amount,
-            "propertyType":transactiondetails.propertyType,
-            "income":transactiondetails.income,
-            "location":transactiondetails.location,
-            "year":transactiondetails.year,
-            "size":transactiondetails.size,
-            "income":transactiondetails.income,
-            "fname":transactiondetails.fname,
-            "lname":transactiondetails.lname,
-            "estimated":transactiondetails.estimated,
-            "age":transactiondetails.age,
-            "phone":transactiondetails.phone,
-            "email":transactiondetails.email,
-            "address":transactiondetails.address,
-            "country":transactiondetails.country,
-            "occupation":transactiondetails.occupation,
-            "genderType":transactiondetails.genderType,
-            "nationalityType":transactiondetails.nationalityType,
-            "Company":transactiondetails.Company,
-            "joiningdate":transactiondetails.joiningdate,
-            "salary":transactiondetails.salary,
-            "address":transactiondetails.address,
+            "loan":lastdetails.loan,
+            "amount":lastdetails.amount,
+            "propertyType":lastdetails.propertyType,
+            "income":lastdetails.income,
+            "location":lastdetails.location,
+            "year":lastdetails.year,
+            "size":lastdetails.size,
+            "income":lastdetails.income,
+            "fname":lastdetails.fname,
+            "lname":lastdetails.lname,
+            "estimated":lastdetails.estimated,
+            "age":lastdetails.age,
+            "phone":lastdetails.phone,
+            "email":lastdetails.email,
+            "address":lastdetails.address,
+            "country":lastdetails.country,
+            "occupation":lastdetails.occupation,
+            "genderType":lastdetails.genderType,
+            "nationalityType":lastdetails.nationalityType,
+            "Company":lastdetails.Company,
+            "joiningdate":lastdetails.joiningdate,
+            "salary":lastdetails.salary,
+            "address":lastdetails.address,
             "bank":"applied",
             "creditscore":creditscore,
-            "creditscorestatus":"creditscore has been generated successfully ",
+            // "creditscorestatus":"creditscore has been generated successfully ",
             "statusForCreditRequest":" Creditscore Generated",
             "legal":"",
             "date":date,
@@ -57,7 +57,7 @@ export default Controller.extend({
           }}
         console.log("transactionstring-update Approve----->",transactionstring);
           return $.ajax({
-          url:'http://192.168.1.28:8082/updatetransaction',//web service for credit score
+          url:'http://localhost:8082/updatetransaction',//web service for credit score
           type: 'POST',
           contentType:'application/json',
           data:JSON.stringify(transactionstring),
@@ -66,7 +66,7 @@ export default Controller.extend({
           mycontroller.set('showCredit',true)
           var record=response
           console.log("my updated data with creditscore>>>>>>>>>>>>.",record);
-          var statusForCreditRequest=transactiondetails.statusForCreditRequest
+          var statusForCreditRequest=statusForCreditRequest
           console.log("?????",statusForCreditRequest)
           if(statusForCreditRequest==="Creditscore Generated"){
           mycontroller.controllerFor('creditscore').set(statusForCreditRequest,'Creditscore Generated')
@@ -90,7 +90,7 @@ export default Controller.extend({
         console.log("creditscore---request id--->",requestid);
         var mycontroller=this
           return $.ajax({
-          url:'http://192.168.1.28:8082/creditscore',//web service for credit score
+          url:'http://localhost:8082/creditscore',//web service for credit score
           type: 'POST',
           contentType:'application/json',
           data:JSON.stringify(requestid),

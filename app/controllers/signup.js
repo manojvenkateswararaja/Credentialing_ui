@@ -98,7 +98,7 @@ export default Controller.extend({
             var mycontroller=this
             console.log(email);
             return $.ajax({
-            url:'http://192.168.0.20:8082/registerUser',
+            url:'http://localhost:8082/registerUser',
             type: 'POST',
             contentType: 'application/json',
             data: JSON.stringify(datastring),
