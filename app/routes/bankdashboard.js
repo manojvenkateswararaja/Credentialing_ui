@@ -1,17 +1,17 @@
 import Route from '@ember/routing/route';
 export default Route.extend({
-    isStatus:true,
+
     precloselink: false,
     isDefaultStatus: false,
     IsCreditStatus:false,
-    isStatus: false,
+    isStatus: true,
     isLoanReject: false,
     isBankpreclose: false,
     model() {
 
         var myroute = this
         return $.ajax({
-            url: 'http://localhost:8082/getloandetails',
+            url: 'http://192.168.1.28:8082/getloandetails',
             type: 'GET',
             contentType: 'application/json',
             success: function(response) {
@@ -32,29 +32,27 @@ export default Route.extend({
                     console.log('DEBUG: GET Enquiries OK');
                     
                     if(statusForCreditRequest==="Legalverifier approved"){ 
-                        
                          myroute.controllerFor('bankdashboard').set('statusForCreditRequest',statusForCreditRequest)
                          console.log(statusForCreditRequest)
                          myroute.controllerFor('bankdashboard').set('isStatus',false)
                          myroute.controllerFor('bankdashboard').set('Islegalstatus',true)
+
                      }
                 else if(statusForCreditRequest==="Creditscore Generated"){ 
                 //default
                 myroute.controllerFor('bankdashboard').set('IsCreditStatus',true)
                 myroute.controllerFor('bankdashboard').set('statusForCreditRequest',statusForCreditRequest)
-                myroute.controllerFor('bankdashboard').set('isStatus',false)
+                myroute.controllerFor('bankdashboard').set('isStatus',true)
                 //default status
                 }else if(statusForCreditRequest=null){
+                    console.log("hiiii >>> this is true")
                     myroute.controllerFor('bankdashboard').set('IsCreditStatus',false)
                     myroute.controllerFor('bankdashboard').set('isStatus',true)
-                    var status=myroute.controllerFor('login1').get('status')
                     console.log("DefaultStatus",status)
-                     myroute.controllerFor('bankdashboard').set('status',status)
+                    myroute.controllerFor('bankdashboard').set('status',status)
                    
                   
                 } 
-                 
-                    //default status
 
             }
             }

@@ -6,11 +6,12 @@ export default Route.extend({
         
        var myroute=this
         return $.ajax({
-        url:'http://localhost:8082/getloandetails',
+        url:'http://192.168.1.28:8082/getloandetails',
         type: 'GET',
         contentType: 'application/json',
         success: function(response){
         var showrecords=response.message;
+        myroute.controllerFor('creditscore2').set('showrecords',showrecords) 
         var len=showrecords.length
         console.log("len show>>>",len);
         for(let i=0;i<=len-1;i++){

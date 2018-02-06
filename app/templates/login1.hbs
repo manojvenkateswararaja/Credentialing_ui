@@ -12,15 +12,18 @@
   <br>
 
  <label><b>EmailID </b></label>
- <i class="fa fa-envelope-o fa-fw"></i>{{validated-input type="email" model=this  valuePath='email' placeholder="email" required=true}}
+ <i class="fa fa-envelope-o fa-fw"></i>
+ {{validated-input type="email"  model=this  valuePath='email' placeholder="email" required=true}}
+ 
  <br>
  <label><b>password</b></label>
- <i class="fa fa-key fa-fw"></i>{{validated-input  type="password" model=this  valuePath='password' placeholder="password" required=true}}
+ <i class="fa fa-key fa-fw"></i>
+ {{validated-input  type="password"  model=this  valuePath='password' placeholder="password" required=true}}
 
  <div >
  <br>  
- <button type="button" id="myButton" class="btn btn-primary" {{action "login" }}>Login</button>
-
+ 
+ <button type="button" class="btn btn-primary btn-block"  {{action "login"}}>Login</button>
         {{#if showDialog}}
   {{#paper-dialog class="flex-77" onClose=(action "closeDialog" "cancel") origin=dialogOrigin clickOutsideToClose=true}}
     {{#paper-toolbar}}

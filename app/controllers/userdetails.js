@@ -57,7 +57,7 @@ export default Controller.extend({
               }}
               console.log(data)
               return $.ajax({
-              url:'http://localhost:8082/updatetransaction',//web service for credit score
+              url:'http://192.168.1.28:8082/updatetransaction',//web service for credit score
               type: 'POST',
               contentType:'application/json',
               data:JSON.stringify(data),
@@ -74,7 +74,9 @@ export default Controller.extend({
           this.set('showDialog',false)
           },
           okay:function(){
-            this.set('isCreditRequested',true)
+          var isCreditRequested=this.get('isCreditRequested')
+          console.log("this.set('isCreditRequested',true)",isCreditRequested)
+          this.set('isCreditRequested',true)
           this.set('showDialog',false)
           },
           signout:function(){

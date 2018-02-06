@@ -78,7 +78,7 @@ export default Controller.extend({
         console.log(JSON.stringify(transactionstring))
         var mycontroller=this;
         return $.ajax({
-            url:'http://localhost:8082/updatetransaction',
+            url:'http://192.168.1.28:8082/updatetransaction',
             type: 'POST',
             contentType: 'application/json',
             data: JSON.stringify(transactionstring),
