@@ -13,11 +13,14 @@ export default Route.extend({
         var showrecords=response.message;
         var len=showrecords.length
         console.log("len show>>>",len);
-        for(let i=0;i<=len;i++){
-            // var showrecords=showrecords[i]
-            // console.log(">>>>>>>",showrecords)
+        for(let i=0;i<=len-1;i++){
+            
+        // var records=showrecords[i]
+        // myroute.controllerFor('creditscore2').set('records', records)
+        //     console.log(">>>>>>>",showrecords)
             var statusForCreditRequest=showrecords[i].Record.statusForCreditRequest
             console.log("statusForCreditRequest>>>>>>>",statusForCreditRequest)
+        
         if(statusForCreditRequest==="Requested For Creditscore"){
               var details=showrecords[i]
               myroute.controllerFor('creditscore2').set('IsStatusForCreditRequest',true) 

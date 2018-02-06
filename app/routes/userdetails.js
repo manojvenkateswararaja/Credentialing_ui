@@ -6,7 +6,7 @@ export default Route.extend({
         this.controllerFor('userdetails').set('record',loanID);
         console.log("record",loanID)
         var lastdetails= loanID.Record
-        console.log(length)
+        console.log("hi.....",lastdetails)
         this.controllerFor('userdetails').set('lastdetails',lastdetails);
         console.log("updates",lastdetails)
         console.log("userdetails page00",loanID)

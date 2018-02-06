@@ -14,8 +14,8 @@ export default Route.extend({
         var len=showrecords.length
         console.log("len show>>>",len);
         for(let i=0;i<=len;i++){
-            // var showrecords=showrecords[i]
-            // console.log(">>>>>>>",showrecords)
+        //     var showrecords=showrecords
+        //    console.log(">>>>>>>",showrecords)
             var statusForCreditRequest=showrecords[i].Record.statusForCreditRequest
             console.log("statusForCreditRequest>>>>>>>",statusForCreditRequest)
         if(statusForCreditRequest==="Requested for Legalverifier"){

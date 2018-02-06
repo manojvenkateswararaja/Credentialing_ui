@@ -6,7 +6,7 @@ export default Controller.extend({
   isLegalRequested:false,
  
     actions:{
-      LegalValidater:function(records,showrecords){
+      LegalValidater:function(records,details){
             var modalvalue = this.get('showDialog')
             
                       if(modalvalue!=true){
@@ -18,7 +18,7 @@ export default Controller.extend({
                 var mycontroller=this;
                 console.log("requestid>>>>>>>>",records.Key)
                 console.log("records>>>>userdec",records)
-                var data=showrecords
+                var data=records.Record
                 console.log("data>>>>",data)
                 var date=new Date().toLocaleDateString();
                 this.set('date',date)
@@ -52,7 +52,8 @@ export default Controller.extend({
                   "bank":"applied",
                   "creditscore":data.creditscore,
                   "date":date,
-                  "time":time
+                  "time":time,
+                  "statusForCreditRequest":"Requested for Legalverifier"
                   
                 }}
               console.log("creditscore------>",data);
@@ -85,6 +86,7 @@ export default Controller.extend({
           
           LoanApprove:function(record,details){
               var modalvalue = this.get('showDialogApprove')
+              
               console.log("modalvalue",modalvalue)
               
                         if(modalvalue!=true){
@@ -154,7 +156,7 @@ export default Controller.extend({
                           "creditscore":data.creditscore,
                           "date":date,
                           "time":time,
-                          "loanReject":"loan has been rejected"
+                          "statusForCreditRequest":"Loan Rejected"
                           
                         }}
                       console.log("final data with loan rejected------>",data);

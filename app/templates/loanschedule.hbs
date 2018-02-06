@@ -19,10 +19,10 @@
          {{record.Key}}
       </div>
    </div>
-   
+   <h2>Enter loan information</h2>
      <div class="row" style="">
    <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6">
-         <label for="pwd">Loan amount in Rs:</label>
+         <label for="pwd">Amount of the loan:</label>
                </div>
                 <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6">
          {{validated-input  type="text"  class="form-group" model=this  valuePath='loanamount' placeholder="loanamount" required=""}}
@@ -30,7 +30,7 @@
    </div>
     <div class="row" style="">
    <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6">
-         <label>Loan terms:</label>
+         <label>Repayment period in years</label>
             </div>
              <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6">
          {{validated-input  type="text"  class="form-group"  model=this  valuePath='loanterms' placeholder="loanterms" required=""}}
@@ -39,17 +39,24 @@
       <div class="row" style="">
    <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6">
       
-         <label>Annual interest rate </label>
+         <label>Annual percentage rate of interest</label>
          </div>
           <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6">
             {{select-component class="form-group" listitem=InterestRate   selecteditemlist=amountinterestrate}}
          </div>
       
    </div>
+    <div class="row">
+                  
+           <button type="button" class="btn btn-primary btn-block"{{action "compute" }}>Compute</button>
+            {{!-- <button type="button" id="myButton" class="btn btn-primary" {{action "ApproveUpdate" details record.Key creditscore}}>Approve</button> --}}
+         
+          </div>
+          <h2>Payment information</h2>
     <div class="row" style="">
    <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6">
       
-         <label >Payment per year:</label>
+         <label >Monthly payment :</label>
          </div>
           <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6">
          {{validated-input  type="text"  class="form-group" model=this  valuePath='paymentperyear' placeholder="paymentperyear" required=""}}
@@ -58,12 +65,17 @@
       <div class="row" style="">
    <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6">
       
-         <label >Installment per month:</label>
+         <label >Total payment:</label>
          </div>
           <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6">
          {{validated-input  type="text"  class="form-group" model=this  valuePath='installmentpermonth' placeholder="installmentpermonth" required=""}}
       </div>
-   </div>
+       <label >Total interest payment:</label>
+         </div>
+          <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6">
+         {{validated-input  type="text"  class="form-group" model=this  valuePath='installmentperyears' placeholder="installmentpermonth" required=""}}
+      </div>
+  
    <br>
    <br>
     <div class="row">
