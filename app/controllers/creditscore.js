@@ -57,7 +57,7 @@ export default Controller.extend({
           }}
         console.log("transactionstring-update Approve----->",transactionstring);
           return $.ajax({
-          url:'http://localhost:8082/updatetransaction',//web service for credit score
+          url:'http://192.168.1.28:8082/updatetransaction',//web service for credit score
           type: 'POST',
           contentType:'application/json',
           data:JSON.stringify(transactionstring),
@@ -90,7 +90,7 @@ export default Controller.extend({
         console.log("creditscore---request id--->",requestid);
         var mycontroller=this
           return $.ajax({
-          url:'http://localhost:8082/creditscore',//web service for credit score
+          url:'http://192.168.1.28:8082/creditscore',//web service for credit score
           type: 'POST',
           contentType:'application/json',
           data:JSON.stringify(requestid),

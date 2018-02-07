@@ -129,7 +129,7 @@ export default Controller.extend({
     console.log("datastring"+JSON.stringify(transactionstring));
     var mycontroller=this
     return $.ajax({   
-    url:'http://localhost:8082/loandetails',
+    url:'http://192.168.1.28:8082/loandetails',
     type: 'POST',
     contentType: 'application/json',
     data: JSON.stringify(transactionstring),
@@ -146,7 +146,6 @@ export default Controller.extend({
   
     }
   })
-    // this.transitionToRoute('page2');
    
     },
     closeDialog:function(){

@@ -28,11 +28,16 @@
    <a {{action "goToemployment"}}>LegalPerson</a>
 </div>
 <div class="container-fluid" style="background-color:lightgrey">
-   <h1><b style="margin-left:-40cm">Bank Dashboard</b></h1>
-   <br>
-   <div class="jumbotron" style="margin-top:-3cm">
+<h1><b style="margin-left:-32cm">Bank Dashboard</b></h1>
+
+   {{!-- <div style="background-color:grey" >
+  <b class="font-weight-bold">Bank Dashboard</b>
+   </div> --}}
+
+   <div class="jumbotron">
+        
       <p style="text-align:center;color:black"><b>TOTAL REQUEST</b></p>
-      <div class="container" style="background-color:grey"><b>ALL Request</b></div>
+      <div class="row" style="background-color:grey"><b>ALL Request</b></div>
       <br>
       <div class ="container">
          {{#each showrecords   as |item|}}
@@ -43,30 +48,22 @@
             </div>
             </div>
          <div class="row">
-                  <div class="col-xs-3 col-lg-3 col-sm-3">Get Total Timestamp<a href="" {{action 'timestamp' }}><b style="color:blue">{{item.Key}}</b></a></div>
+                  <div class="col-xs-3 col-lg-3 col-sm-3"><a href="" {{action 'timestamp' }}><b style="color:#db5945">Track Timestamp</b></a></div>
                   <div class="col-xs-9 col-lg-9 col-sm-9">
-                  {{isStatus}}
-                        <div >Status:<i style="color:DeepSkyBlue;">{{#if precloselink}}{{#link-to 'requestpreclose' disabled=""}}{{details.statuspreclose}}{{/link-to}}{{/if}}</i>
+                        Status:<i style="color:DeepSkyBlue;">{{#if precloselink}}{{#link-to 'requestpreclose' disabled=""}}{{details.statuspreclose}}{{/link-to}}{{/if}}</i>
                            <i style="color:DeepSkyBlue;">{{#if isBankpreclose}}{{bankpreclose}}{{/if}}</i>
-                           <i style="color:DeepSkyBlue;"> {{#if isLoanReject}}{{loanReject}}{{/if}}</i>
-                            <i style="color:DeepSkyBlue;"> {{#if isStatus}}{{status}}{{/if}}</i>
+                           <i style="color:DeepSkyBlue;">{{#if isLoanReject}}{{loanReject}}{{/if}}</i>
+                           <i style="color:green;"> {{#if isStatus}}{{item.Record.status}}{{/if}}</i>
                            <i style="color:green;">{{#if IsCreditStatus}}{{item.Record.statusForCreditRequest}}{{/if}}</i>
-                           <i style="color:DeepSkyBlue;">{{#if Islegalstatus}} {{item.Record.statusForCreditRequest}}{{/if}}</i>
-
-                          <i style="color:DeepSkyBlue;"> {{#if isDefaultStatus}}{{DefaultStatus}}{{/if}}</i>
-                        </div>
+                           <i style="color:DeepSkyBlue;">{{#if isDefaultStatus}}{{DefaultStatus}}{{/if}}</i>
+                        
                      </div>
                   </div>
-            
          <br>
-        
          {{/each}}
       </div>
-   </div>
-</div>
- <div>
-   <div style="background-color:lightgrey;">
-      <h3>Time Stamp</h3>
+   <div style="text-shadow: 3px 3px 2px #FBC6CC">
+      <h3><b>Data Published Time</b></h3>
       <div class="row">
          <b> User Requested Time</b>
       </div>
@@ -78,7 +75,8 @@
             Time{{time}}
          </div>
       </div>
-   </div>
+         </div>
+      </div>
 </div>
 <a href="#" class="go-top">Scroll to Top</a>
 {{/if}}

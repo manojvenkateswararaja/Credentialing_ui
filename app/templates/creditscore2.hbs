@@ -35,9 +35,9 @@
       <div class="container" style="background-color:grey"><b>ALL Request</b></div>
       <br>
       <div class ="container">
-         {{!-- {{#each details   as |item|}} --}}
+         {{#each showrecords   as |item|}}
          <div class="row">
-            <div class="col-xs-3 col-lg-3 col-sm-3">Requestid<a href="" {{action 'userdetails'  details }}><b style="color:blue">{{details.Key}}</b></a></div>
+            <div class="col-xs-3 col-lg-3 col-sm-3">Requestid<a href="" {{action 'userdetails'  item }}><b style="color:blue">{{item.Key}}</b></a></div>
             
                   <div class="row">
             {{!-- {{#each item.Record  as |item1|}} --}}
@@ -57,26 +57,24 @@
             </div>
             </div>
          <div class="row">
-                  {{!-- <div class="col-xs-3 col-lg-3 col-sm-3">Get Total Timestamp<a href="" {{action 'timestamp' }}><b style="color:blue">{{details.Key}}</b></a></div> --}}
+
                   <div class="col-xs-9 col-lg-9 col-sm-9">
-                     {{!-- 
-                     <div class="" style="margin-left: 8cm">
-                        --}}{{IsStatusForCreditRequest}}
-                        <div >Status:<i style="color:green;">{{#if IsStatusForCreditRequest}}{{statusForCreditRequest}}{{/if}}</i>
-                          <i style="color:green;">{{#if IsStatusForGenerated}}{{statusForGenerated}}{{/if}}</i>
+                   
+                        <div >Status:<i style="color:green;">{{#if IsStatusForCreditRequest}}{{item.Record.statusForCreditRequest}}{{/if}}</i>
+                         
                         </div>
                      </div>
                   </div>
             
          <br>
         
-         {{!-- {{/each}} --}}
+         {{/each}}
       </div>
    </div>
 </div>
  <div>
    <div style="background-color:lightgrey;">
-      <h3>Time Stamp</h3>
+      <h3>Data Published Time</h3>
       <div class="row">
          <b> User Requested Time</b>
       </div>

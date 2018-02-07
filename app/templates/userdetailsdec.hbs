@@ -2,7 +2,7 @@
 {{#if showDashboard}}
 {{/if}}
 <div class="container-fluid">
- 
+ <br>
    <script>
       $(document).ready(function() {
           // Show or hide the sticky footer button
@@ -23,6 +23,19 @@
          
       });
    </script>
+   {{#if IsUserDetails}}
+   <div class="alert alert-success">
+  <strong>Successfully creditscore generated!</strong><br>
+   Please Also Get Verified By Legal Validator
+</div>
+{{/if}}
+ {{#if IsUserDetailsApproves}}
+   <div class="alert alert-success">
+  <strong>Legal Verification Successfully Done !</strong><br>
+  Proceed Further For Approve Or Reject
+</div>
+   
+{{/if}}
    <div class="container" >
       <h2 style="margin-left:12cm;"><b>USER REQUESTID</b></h2>
       
@@ -31,18 +44,18 @@
    <div class="col-xs-3 col-lg-3 col-sm-3" style="background-color:lightcyan;"><i style="margin-left:5%">Request Id:</i><i id="req">{{record.Key}}</i></div>
    <div class="col-xs-3 col-lg-3 col-md-3 col-sm-3" style="background-color:lightcyan;">
       <div class="vl5">
-         <div style="margin-left:8%"><i style="margin-left:5%">fname:</i>{{record.Record.fname}}
+         <div style="margin-left:8%"><i style="margin-left:5%">FirstName:</i>{{record.Record.fname}}
          </div>
       </div>
    </div>
    <div class="col-xs-3 col-lg-3 col-md-3 col-sm-3" style="background-color:lightcyan;">
       <div class="vl5">
-         <div style="margin-left:8%"><i style="margin-left:5%">propertytype:</i>{{record.Record.propertyType}}</div>
+         <div style="margin-left:8%"><i style="margin-left:5%">PropertyType:</i>{{record.Record.propertyType}}</div>
       </div>
    </div>
    <div class="col-xs-3 col-lg-3 col-md-3 col-sm-3" style="background-color:lightcyan;">
       <div class="vl5">
-         <div style="margin-left:8%"><i style="margin-left:5%">company:</i>{{record.Record.Company}}</div>
+         <div style="margin-left:8%"><i style="margin-left:5%">Company:</i>{{record.Record.Company}}</div>
       </div>
    </div>
   
@@ -63,7 +76,7 @@
             <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6">
                <table>
                   <tr>
-                     <td>First name:</td>
+                     <td>First Name:</td>
                      <td style="color:gray;">{{record.Record.fname}}</td>
                   </tr>
                   <tr>
@@ -91,35 +104,29 @@
             <div class= "col-xs-6 col-lg-6 col-md-6 col-sm-6 ">
                <table>
                   <tr>
-                     <td>Mortgage type</td>
+                     <td>Mortgage Type</td>
                      <td style="color:gray;">{{record.Record.propertyType}}</td>
                   </tr>
                   <tr>
-                     <td>Need amount:</td>
+                     <td>Need Amount:</td>
                      <td style="color:gray;">{{record.Record.amount}}</td>
                   </tr>
                   <tr>
                      <td>Location</td>
                      <td style="color:gray;">{{record.Record.location}}</td>
                   </tr>
-                  {{!-- <tr>
-                     <td>Price:</td>
-                     <td style="color:gray;">{{details.price}}</td>
-                  </tr> --}}
+                 
                   <tr>
                      <td>Country:</td>
                      <td style="color:gray;">{{record.Record.country}}</td>
                   </tr>
-                  {{!-- <tr>
-                     <td>paymentPercentage:</td>
-                     <td style="color:gray;">{{details.paymentPercentage}}</td>
-                  </tr> --}}
+                 
                    <tr>
-                     <td>creditscore:</td>
+                     <td>Creditscore:</td>
                      <td style="color:blue;">{{record.Record.creditscore}}</td>
                   </tr>
                    <tr>
-                     <td>Legal Property verified:</td>
+                     <td>Legal Property Verified:</td>
                      <td style="color:blue;">{{record.Record.legal}}</td> 
                   </tr>
                </table>
@@ -132,7 +139,7 @@
          </div> 
          
       <div style=" margin-top:1cm;">
-      <button type="button" class="btn btn-primary btn-block" disabled={{isApprove}} {{action "LegalValidater" record details}}>Get verify from legal validator</button>
+      <button type="button" class="btn btn-primary btn-block"  {{action "LegalValidater" record details}}>Get verify from legal validator</button>
          {{!-- <button  id="user-btn3" {{action "credit" records showrecords}}>Get verify from legal validator</button> --}}
 
 {{#if showDialog}}

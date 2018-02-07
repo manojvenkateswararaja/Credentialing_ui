@@ -3,6 +3,7 @@
  {{!-- {{notification-container position="top-right"}} --}}
 {{/if}}
 <div class="container-fluid">
+  
 <br>
 <small style="margin-left:-9cm">Remember:<u>click on requestid to check response</u></small>
       <br>
@@ -10,9 +11,7 @@
   <button type="button" id="myButton" class="btn btn-primary"  style="text-align:right;  margin-top:-4cm;  margin-left:27cm;" {{action "gotoPreclose"}}>Pre-closure</button>
       
 <header class="w3-container  w3-center" style="padding:128px 16px">
-       {{!-- margin-left:953px;margin-top: -210px;  --}}
-        
-     {{!-- my account --}}
+    
      {{#if ShowRequest}}
       <div class="row" style="">
    <div class="col-xs-2 col-lg-2 col-md-2 col-sm-2" style="background-color:">Request Id:<i style="color:blue">{{#link-to 'userloanschedule'}}{{record.Key}}{{/link-to}}</i></div>
