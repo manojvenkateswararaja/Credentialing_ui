@@ -93,12 +93,13 @@ export default Controller.extend({
             "lastname":lastname,
             "phonenumber":phonenumber,
             "dateofbirth":Dateofbirth,
+            "usertype":"user"
         };
         console.log("hi iam manoj",JSON.stringify(datastring));
             var mycontroller=this
             console.log(email);
             return $.ajax({
-            url:'http://192.168.1.28:8082/registerUser',
+            url:'http://localhost:8082/registerUser',
             type: 'POST',
             contentType: 'application/json',
             data: JSON.stringify(datastring),
@@ -106,7 +107,7 @@ export default Controller.extend({
                 console.log(JSON.stringify(response));
                 var message = response.message;
             console.log("message" + message);
-            mycontroller.transitionToRoute('login') 
+            mycontroller.transitionToRoute('login1') 
             
             },      
             
@@ -130,6 +131,13 @@ export default Controller.extend({
         //  }
 
     }
+    
+},
+closeDialog:function(){
+    this.set('showDialog',false)
+},
+okay:function(){
+    this.transitionToRoute('login1')
 }
 }
 });
