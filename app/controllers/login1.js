@@ -66,6 +66,8 @@ export default Controller.extend(Validations,{
             success: function(response) {
             console.log(JSON.stringify(response));
             var message = response.message;
+            var token=response.token
+            console.log("token",token)
             console.log("message" + message);
             var usertype=response.usertype;
             var status=response.status

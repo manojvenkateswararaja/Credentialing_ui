@@ -58,7 +58,7 @@ export default Controller.extend({
                 }}
               console.log("creditscore------>",data);
                 return $.ajax({
-                url:'http://192.168.1.28:8082/updatetransaction',//update legal verifier data
+                url:'http://localhost:8082/updatetransaction',//update legal verifier data
                 type: 'POST',
                 contentType:'application/json',
                 data:JSON.stringify(Updateddata),
@@ -161,7 +161,7 @@ export default Controller.extend({
                         }}
                       console.log("final data with loan rejected------>",data);
                         return $.ajax({
-                        url:'http://192.168.1.28:8082/updatetransaction',//update legal verifier data
+                        url:'http://localhost:8082/updatetransaction',//update legal verifier data
                         type: 'POST',
                         contentType:'application/json',
                         data:JSON.stringify(Updateddata),
