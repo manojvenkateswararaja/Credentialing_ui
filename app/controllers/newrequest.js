@@ -17,6 +17,7 @@ export default Controller.extend({
     CompanytList:["Company One","Company Two"],
     genderlist:["male","female"],
     nationalitylist:["indian","other"],
+    occupationlist:["salaried","non-salaried"],
  
   actions:{
     
