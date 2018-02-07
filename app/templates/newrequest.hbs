@@ -101,7 +101,7 @@
       {{/paper-button}}
       {{/step.actions}}
       {{/stepper.step}}
-      {{#stepper.step label="Property Details" as |step|}}
+      {{#stepper.step label="Properties" as |step|}}
       <div class="container" style="margin-left:442px; margin-top:-1cm; background-color:lightgrey">
          {{#step.body}}
          {{#paper-grid-list
@@ -120,42 +120,7 @@
             <br>
             {{!-- {{#paper-button raised=true warn=true onClick=(action "targetButton")}}Submit{{/paper-button}} --}}
          </p>
-         {{/paper-grid-list}}
-         <br>
-         <br>
-         <br>
-         {{/step.body}}
-      </div>
-      {{#step.actions as |nextStep previousStep|}}
-      {{#paper-button primary=true raised=true onClick=(action nextStep)}}
-      next
-      {{/paper-button}}
-      {{#paper-button onClick=(action previousStep)}}
-      Back
-      {{/paper-button}}
-      {{/step.actions}}
-      {{/stepper.step}}
-      {{!-- page4 --}}
-      {{#stepper.step label="Employement Details" as |step|}}
-      <div class="container" style="margin-left:442px;margin-top:-2cm; background-color:lightgrey">
-         {{#step.body}} 
-         {{#paper-grid-list
-         cols="1 md-2 gt-md-6"
-         rowHeight="gt-md-1:1 2:2"
-         gutter="12px gt-sm-8px" as |grid|}}  
-         <h2 style="margin-top:30px !important;;padding-top: 0px;margin-left:0">Tell us about your Employment details</h2>
-         <p style="background-color:;margin-top:-20px">
-            <br>
-            <br>
-            <br>
-            {{paper-input label="Income" value=rupees type="number" onChange=(action (mut rupees)) icon="attach money" }}
-            {{paper-input label="Company name" value=company  onChange=(action (mut company)) icon="work"}}
-            <br>
-            {{paper-input label="Joining date" type="date" value=joining onChange=(action (mut joining)) icon="work"}}
-            {{paper-input label="Gross fixed salary" type="number" value=salary onChange=(action (mut salary)) icon="work" }}
-            <br>
-            {{#paper-button raised=true warn=true onClick=(action "targetButton")}}Submit{{/paper-button}}
-         </p>
+          {{#paper-button raised=true warn=true onClick=(action "targetButton")}}Submit{{/paper-button}}
          {{#if showDialog}}
          {{#paper-dialog class="flex-77" onClose=(action "closeDialog" "cancel") origin=dialogOrigin clickOutsideToClose=true}}
          {{#paper-toolbar}}
@@ -177,7 +142,60 @@
          <br>
          {{/step.body}}
       </div>
+    
+       
+      {{!-- {{#paper-button primary=true raised=true onClick=(action nextStep)}}
+      next
+      {{/paper-button}} --}}
+        {{#step.actions as |nextStep previousStep|}}
+      {{#paper-button onClick=(action previousStep)}}
+      Back
+      {{/paper-button}}
+      {{/step.actions}}
       {{/stepper.step}}
+      {{!-- page4 --}}
+      {{!-- {{#stepper.step label="Employement Details" as |step|}}
+      <div class="container" style="margin-left:442px;margin-top:-2cm; background-color:lightgrey">
+         {{#step.body}} 
+         {{#paper-grid-list
+         cols="1 md-2 gt-md-6"
+         rowHeight="gt-md-1:1 2:2"
+         gutter="12px gt-sm-8px" as |grid|}}  
+         <h2 style="margin-top:30px !important;;padding-top: 0px;margin-left:0">Tell us about your Employment details</h2>
+         <p style="background-color:;margin-top:-20px">
+            <br>
+            <br>
+            <br>
+            {{paper-input label="Income" value=rupees type="number" onChange=(action (mut rupees)) icon="attach money" }}
+            {{paper-input label="Company name" value=company  onChange=(action (mut company)) icon="work"}}
+            <br>
+            {{paper-input label="Joining date" type="date" value=joining onChange=(action (mut joining)) icon="work"}}
+            {{paper-input label="Gross fixed salary" type="number" value=salary onChange=(action (mut salary)) icon="work" }}
+            <br>
+            {{#paper-button raised=true warn=true onClick=(action "targetButton")}}Submit{{/paper-button}}
+         </p> --}}
+         {{!-- {{#if showDialog}}
+         {{#paper-dialog class="flex-77" onClose=(action "closeDialog" "cancel") origin=dialogOrigin clickOutsideToClose=true}}
+         {{#paper-toolbar}}
+         {{#paper-toolbar-tools}}
+         {{message}}
+         your request id:{{reqid}}
+         {{#paper-button iconButton=true onClick=(action "closeDialog" "cancel")}}{{paper-icon icon="close"}}{{/paper-button}}
+         {{/paper-toolbar-tools}}
+         {{/paper-toolbar}}
+         {{#paper-dialog-actions class="layout-row"}}
+         {{#paper-button onClick=(action "closeDialog" "cancel")}}Cancel{{/paper-button}}
+         {{#paper-button onClick=(action "okay" "ok")}}OK{{/paper-button}}
+         {{/paper-dialog-actions}}
+         {{/paper-dialog}}
+         {{/if}} --}}
+         {{!-- {{/paper-grid-list}} --}}
+         <br>
+         <br>
+         <br>
+         {{!-- {{/step.body}} --}}
+      {{!-- </div> --}}
+      {{!-- {{/stepper.step}} --}}
       {{/paper-stepper}}
    </div>
 </div>

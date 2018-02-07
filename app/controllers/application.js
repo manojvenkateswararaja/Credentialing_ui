@@ -4,23 +4,14 @@ export default Controller.extend({
 showLogin:true,
 isShowHome:false,
    actions:{
-  
     gotologin:function(){
-        // 
-           this.transitionToRoute('login');       
+        this.transitionToRoute('login');       
        },
        gotosignup:function(){
-           this.transitionToRoute('signup');
+        this.transitionToRoute('signup');
        },
        gotohome:function(){
-         this.transitionToRoute('home');
+        this.transitionToRoute('home');
      },
-    //    gotobank:function(){
-    //     this.transitionToRoute('bankdashboard');
-    // },
-
-        //  gotoApply:function(){
-        //     this.transitionToRoute('newrequest');
-        // }
    }
 });

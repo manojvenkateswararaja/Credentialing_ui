@@ -5,7 +5,7 @@ export default Route.extend({
     model(){
         var myroute = this
         return $.ajax({
-            url: 'http://192.168.1.28:8082/getloandetails',
+            url: 'http://localhost:8082/getloandetails',
             type: 'GET',
             contentType: 'application/json',
             success: function(response) {
@@ -18,16 +18,15 @@ export default Route.extend({
                 for(var i=0;i<=len-1;i++){
                   var record=showrecords[i]
                   var statusForCreditRequest=record.Record.statusForCreditRequest
-                  
+                  myroute.controllerFor('home').set('record', record)
                   console.log("home page statusForCreditRequest",statusForCreditRequest)
                   console.log("home page record",record)
                   myroute.controllerFor('bankdashboard').set('record', record)
-                    if(showrecords[i].Key!=null){
+                    if(statusForCreditRequest==="Request sent successfully"){ //show status
                         myroute.controllerFor('home').set('ShowRequest',true)
-                        myroute.controllerFor('home').set('showrecords', showrecords)
-                      
-                    }else if(statusForCreditRequest==="successfully Applied For loan"){isBankPreclose
                         myroute.controllerFor('home').set('isBankPreclose',false) 
+                        myroute.controllerFor('home').set('showrecords', showrecords)
+                        
                         
                     }
                 }

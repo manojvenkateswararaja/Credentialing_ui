@@ -57,30 +57,6 @@ export default Controller.extend({
         var phonenumber = this.get('mobilenumber');
         console.log(phonenumber);
         console.log("ji------",phonenumber);
-
-    
-        // if (email === null || email === undefined || email === "" || password === null || password === undefined || password === "") {
-        // let {
-        //     email,
-        //     password,
-        //     firstname,
-        //     lastname,
-        //     Dateofbirth,
-        //     // gender,
-        //     retypepassword,
-        //     phonenumber
-            
-        // } = this.getProperties('email','password','firstname','lastname','Dateofbirth','retypepassword');
-        //    console.log(email);
-        //    console.log(password);
-        //    console.log(firstname);
-        //    console.log(lastname);
-        //    console.log(Dateofbirth);
-        // //    console.log(gender);
-        //    console.log(retypepassword);
-        //    console.log(phonenumber);
-        //    console.log("hi-----------------");
-           
         if (email === null || email === undefined || email === "" || password === null || password === undefined || password === "") {
             alert("please fill details for signup");
         } else {
