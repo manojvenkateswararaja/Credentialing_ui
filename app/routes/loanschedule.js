@@ -8,6 +8,7 @@ export default Route.extend({
         this.controllerFor('loanschedule').set('details',details) 
         console.log("loan schedule details",details)
         console.log("loan schedule records>>",loanID)
+        
         // this.controllerFor('loanschedule').set('reqid',reqid) 
         // console.log("this is request requestid",reqid) 
         // // for(var i=0;i<reqid.length;i++){

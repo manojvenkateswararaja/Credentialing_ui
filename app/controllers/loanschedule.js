@@ -21,15 +21,21 @@ export default Controller.extend({
         var loanterms=this.get('loanterms')
         this.set('loanterms',loanterms)
         console.log("loanterms>>",loanterms)
-        var amountinterestrate=this.get('amountinterestrate')
+        var amountinterestrate=this.get('interestrate')
         this.set('amountinterestrate',amountinterestrate)
         console.log("amountinterestrate>>",amountinterestrate)
-        var paymentperyear=this.get('paymentperyear')
-        this.set('paymentperyear',paymentperyear)
-        console.log("paymentperyear>>",paymentperyear)
-        var installmentpermonth=this.get('installmentpermonth')
-        this.set('installmentpermonth',installmentpermonth)
-        console.log("installmentpermonth>>",installmentpermonth)
+        var emi=this.get('emi')
+        console.log(emi)
+        var total=this.get('total')
+        console.log(total)
+        var tot=this.get('tot')
+        console.log(tot)
+        // var paymentperyear=this.get('paymentperyear')
+        // this.set('paymentperyear',paymentperyear)
+        // console.log("paymentperyear>>",paymentperyear)
+        // var installmentpermonth=this.get('installmentpermonth')
+        // this.set('installmentpermonth',installmentpermonth)
+        // console.log("installmentpermonth>>",installmentpermonth)
         var date=new Date().toLocaleDateString();
         var details=record.Record
       
@@ -67,8 +73,9 @@ export default Controller.extend({
           "loanamount": loanamount,
           "loanterms": loanterms,
           "amountinterestrate":amountinterestrate,
-          "paymentperyear": paymentperyear,
-          "installmentpermonth": installmentpermonth,
+          "emi":emi,
+          "total":total,
+          "tot":tot,
           "statusForCreditRequest":"Loan Scheduled",
           "date":date,
           "time":time,
@@ -103,41 +110,26 @@ export default Controller.extend({
         this.transitionToRoute('login1');
         },
         compute:function(){
-          var principal = this.get('loanamount')
-          console.log("loanamount",principal)
-          var payments=this.get('loanterms')
-          var payment=(payments*100)/12;
-           console.log("totalpayments",payments)
-          console.log("totalpayments",payment)
-          var interests =  this.get('loanamount');
-          var interest=interests* 12
-          console.log("interests",interests)
-          console.log("interest",interest)
-
-      
-      
-         var x = Math.pow(1 + interest, payment);
-          var monthly = (principal*x*interest)/(x-1);
-          console.log("x......",x);
-          console.log("monthly.....",monthly);
-       
-          }
-          
-      
-  //         if (!isNaN(monthly) &&
-  //         (monthly != Number.POSITIVE_INFINITY) &&
-  //         (monthly != Number.NEGATIVE_INFINITY)) {
-  
-  //        document.loandata.payment.value = round(monthly);
-  //         document.loandata.total.value = round(monthly * payments)
-  //         document.loandata.totalinterest.value =
-  //             round((monthly * payments) - principal);
-  //     }
-  //     else {
-  //         document.loandata.payment.value = "";
-  //         document.loandata.total.value = "";
-  //         document.loandata.totalinterest.value = "";
-  //     }
+          var mycontroller=this;
+       var amount=this.get('loanamount')
+       console.log("loanamount",amount)
+       var months=this.get('loanterms')
+       console.log("loanterms",months)
+       var interest=this.get('interestrate')
+       console.log("interest",interest)
+       var intersts=interest/1200;
+       console.log("intersts",intersts)
+       var emi = (amount * intersts  / (1 - (Math.pow(1/(1 + intersts), months)))).toFixed(2);
+       console.log(emi)
+       mycontroller.set('emi',emi)
+       var total=emi*months
+       console.log(total)
+       mycontroller.set('total',total)
+       var tot=(total-amount).toFixed(2);
+       console.log(tot)
+       mycontroller.set('tot',tot)
+   
+    }
         
   
       
