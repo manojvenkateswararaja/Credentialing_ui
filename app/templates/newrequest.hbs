@@ -13,7 +13,7 @@
       {{#paper-stepper   currentStep=currentStep onStepChange=(action (mut currentStep))
       onStepperCompleted=(action "saveModel") as |stepper|}}
       {{#stepper.step label="Personal Details" as |step|}}
-      <div class="container" style="margin-left:442px; background-color:lightgrey">
+      <div class="container" style="margin-left:442px; background-color:lightgrey">+
          {{#step.body}}
          {{#paper-grid-list
          cols="1 md-2 gt-md-6"

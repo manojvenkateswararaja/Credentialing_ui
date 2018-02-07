@@ -11,37 +11,40 @@
   <button type="button" id="myButton" class="btn btn-primary"  style="text-align:right;  margin-top:-4cm;  margin-left:27cm;" {{action "gotoPreclose"}}>Pre-closure</button>
       
 <header class="w3-container  w3-center" style="padding:128px 16px">
-    
+     {{!-- {{ShowRequest}}
      {{#if ShowRequest}}
+     {{showrecords}} --}}
+      {{#each showrecords   as |item|}}
       <div class="row" style="">
-   <div class="col-xs-2 col-lg-2 col-md-2 col-sm-2" style="background-color:">Request Id:<i style="color:blue">{{#link-to 'userloanschedule'}}{{record.Key}}{{/link-to}}</i></div>
+   <div class="col-xs-2 col-lg-2 col-md-2 col-sm-2" style="background-color:">Request Id:<i style="color:blue">{{#link-to 'userloanschedule'}}{{item.Key}}{{/link-to}}</i></div>
    <div class="col-xs-2 col-lg-2 col-md-2 col-sm-2" style="background-color:">
       <div class="vl5">
-         <div style="margin-left:8%">{{details.fname}}
+         <div style="margin-left:8%">Name:{{item.Record.fname}}
          </div>
       </div>
    </div>
    <div class="col-xs-2 col-lg-2 col-md-2 col-sm-2" style="background-color:">
       <div class="vl5">
-         <div style="margin-left:8%">{{details.propertyType}}</div>
+         <div style="margin-left:">Property:{{item.Record.propertyType}}</div>
       </div>
    </div>
    <div class="col-xs-2 col-lg-2 col-md-2 col-sm-2" style="background-color:">
       <div class="vl5">
-         <div style="margin-left:8%">{{details.Company}}</div>
+         <div style="margin-left:8%">Amount:{{item.Record.amount}}</div>
       </div>
    </div>
    <div class="col-xs-4 col-lg-4 col-md-4 col-sm-4" style="background-color:">
       <div class="vl5">
-         <div style="margin-left:1%">status:<i style="color:DeepSkyBlue">{{#if isBankPreclose}}{{status}}{{/if}}</i>
-        {{!-- <i style="color:DeepSkyBlue">{{#if isBankPreclose}}{{bankpreclose}}{{/if}}</i> --}}
-         <i style="color:DeepSkyBlue">{{#if isUserstatus}}{{userpreclosestatus}}{{/if}}</i>
+         <div style="margin-left:1%">status:<i style="color:green">{{#if isBankPreclose}}{{status}}{{/if}}</i>
+         <i style="color:green">{{item.Record.statusForCreditRequest}}</i>
          </div>
          
       </div>
    </div>
-   </div>
-   {{/if}}
+   </div><br>
+     {{/each}}
+   {{!-- {{/if}}
+  --}}
      {{!-- end --}}
          <h1 class="w3-margin w3-jumbo">Welcome To Mortgage Loan</h1>
          <p class="w3-xlarge">Mortgage process</p>

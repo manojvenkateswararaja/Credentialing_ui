@@ -123,7 +123,8 @@ export default Controller.extend({
         "salary":salary,
         "date":date,
         "time":time,
-        "status":"processing"
+        "status":"processing",
+        "statusForCreditRequest":"Request sent successfully"
       }
     };
     console.log("datastring"+JSON.stringify(transactionstring));
@@ -145,7 +146,9 @@ export default Controller.extend({
     console.log("message" + message); 
   
     }
+
   })
+  this.transitionToRoute('home')
    
     },
     closeDialog:function(){

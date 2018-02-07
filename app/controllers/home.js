@@ -1,6 +1,6 @@
 import Controller from '@ember/controller';
 export default Controller.extend({
-    
+    isShowHome:true,
     actions:{
       
     gotoApply:function(){
