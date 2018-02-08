@@ -13,7 +13,8 @@
       {{#paper-stepper   currentStep=currentStep onStepChange=(action (mut currentStep))
       onStepperCompleted=(action "saveModel") as |stepper|}}
       {{#stepper.step label="Personal Details" as |step|}}
-      <div class="container" style="margin-left:442px; background-color:lightgrey">+
+      <div class="container" style="margin-left:442px; background-color:lightgrey">
+         +
          {{#step.body}}
          {{#paper-grid-list
          cols="1 md-2 gt-md-6"
@@ -32,55 +33,54 @@
             value=phone onChange=(action (mut phone)) icon="phone" maxlength="10"}}
             {{paper-input label="E-mail" type="email" value=email onChange=(action (mut email))  required=true
             icon="email"  customValidations=emailValidation}}
-           
-            
             {{paper-input label="Address"  value=address icon="streetview" onChange=(action (mut address))  }}
             {{paper-input label="Country"  value=country icon="add location" onChange=(action (mut country))  }}
             <br>
             Occupation
-           <div class="drop3" style="margin-left:300px; margin-top:-28px">
+         <div class="drop3" style="margin-left:300px; margin-top:-28px">
             {{!-- {{select-component listitem=occupationlist selecteditemlist=occupationType}} --}}
-  <input type="radio" id="showform" value="salaried" name="showform" onchange="showhideForm(this.value);"/>Salaried
-  <input type="radio" id="showform" value="non-salaried" name="showform" onchange="showhideForm(this.value);"/>Business
+            <input type="radio" id="showform" value="salaried" name="showform" onchange="showhideForm(this.value);"/>salaried
+            <input type="radio" id="showform" value="non-salaried" name="showform" onchange="showhideForm(this.value);"/>Non-salaried
             <script type="text/javascript">
-function showhideForm(showform) {
-    if (showform == "salaried") {
-        document.getElementById("div1").style.display = 'block';
-        document.getElementById("div2").style.display = 'none';
-    } 
-    if (showform == "non-salaried") {
-        document.getElementById("div2").style.display = 'block';
-        document.getElementById("div1").style.display = 'none';
-    }
-}
-</script>
+               function showhideForm(showform) {
+                   if (showform == "salaried") {
+                       document.getElementById("div1").style.display = 'block';
+                       document.getElementById("div2").style.display = 'none';
+                   } 
+                   if (showform == "non-salaried") {
+                       document.getElementById("div2").style.display = 'block';
+                       document.getElementById("div1").style.display = 'none';
+                   }
+               }
+            </script>
+            <div id="div1" style="display:none">
+              
+{{paper-input label="Employer name" value=Employename onChange=(action (mut Employename)) icon="person"}}
+               <br>
 
-<div id="div1" style="display:none">
-<label>Employer Name</label>
-<input type="text" id='empname' >
-  <br>
-<label>Total Work experience</label>
-<input type="text" id='experience' >
-  <br>
-<label>Monthly take home salary</label>
-<input type="number" id='salary'>
-</div>
-<div id="div2" style="display:none">
-<label>Start  date of current business</label>
-<input type="date" id='startdate'>
-<br>
-<label>Companytype</label>
-  {{select-component listitem=companylist selecteditemlist=companyType}}
-  <br>
-<label>Last year's Business PAT as per ITR</label>
-<input type="number" id='Pat' >
-<br>
-<label>Latest year's Depreciation</label>
-<input type="number" id='depreciation' >
-</div>
+             {{paper-input label="Total work experience" value=experience onChange=(action (mut experience)) icon="work"}}
+               <br>
+             
+              {{paper-input label="Monthly take home salary" value=salary onChange=(action (mut salary)) icon="work"}}
             </div>
-            <br>
-            Gender
+            <div id="div2" style="display:none">
+          {{paper-input label="Start date of current business" value=startdate type="date" onChange=(action (mut startdate)) icon="work"}}
+
+               <br>
+               <label>Companytype</label>
+                {{select-component listitem=companylist selecteditemlist=companyType}}
+                <br>
+            
+         {{paper-input label="Last Year's business PAT as per ITR" value=pat onChange=(action (mut pat)) icon="work"}}
+
+               <br>
+                <label>Last Year's depreciation</label>
+        {{paper-input label="Last Year's depreciation" value=depreciation onChange=(action (mut depreciation)) icon="work"}}
+
+            </div>
+         </div>
+         <br>
+         Gender
          <div class="drop1" style="margin-left:300px; margin-top:-28px">
             {{select-component listitem=genderlist selecteditemlist=genderType}}
          </div>
@@ -120,7 +120,7 @@ function showhideForm(showform) {
             {{paper-input label="Purpose of loan" value=loan onChange=(action (mut loan)) icon="account balance" }}
             {{paper-input label="Required amount" value=amount onChange=(action (mut amount)) icon="attach money" }}
             <br>
-           Asset type
+            Asset type
             <div class="drop2" style="margin-left:299px; margin-top:-28px"> 
                {{select-component listitem=mylist selecteditemlist=propertyType}}
             </div>
@@ -143,9 +143,14 @@ function showhideForm(showform) {
       {{/paper-button}}
       {{/step.actions}}
       {{/stepper.step}}
-      {{#stepper.step label="Property Details" as |step|}}
+      {{#stepper.step label="Properties" as |step|}}
       <div class="container" style="margin-left:442px; margin-top:-1cm; background-color:lightgrey">
          {{#step.body}}
+         {{#if IsSuccess}}
+         <div class="alert alert-success">
+            <strong>Success!</strong> You made request for loan successfully.
+         </div>
+         {{/if}}
          {{#paper-grid-list
          cols="1 md-2 gt-md-6"
          rowHeight="gt-md-1:1 2:2"
@@ -162,16 +167,33 @@ function showhideForm(showform) {
             <br>
             {{!-- {{#paper-button raised=true warn=true onClick=(action "targetButton")}}Submit{{/paper-button}} --}}
          </p>
+         {{#paper-button raised=true warn=true onClick=(action "targetButton")}}Submit{{/paper-button}}
+         {{#if showDialog}}
+         {{#paper-dialog class="flex-77" onClose=(action "closeDialog" "cancel") origin=dialogOrigin clickOutsideToClose=true}}
+         {{#paper-toolbar}}
+         {{#paper-toolbar-tools}}
+         {{message}}
+         {{IsSuccess}}
+         your request id:{{reqid}}
+         {{#paper-button iconButton=true onClick=(action "closeDialog" "cancel")}}{{paper-icon icon="close"}}{{/paper-button}}
+         {{/paper-toolbar-tools}}
+         {{/paper-toolbar}}
+         {{#paper-dialog-actions class="layout-row"}}
+         {{#paper-button onClick=(action "closeDialog" "cancel")}}Cancel{{/paper-button}}
+         {{#paper-button onClick=(action "okay" "ok")}}OK{{/paper-button}}
+         {{/paper-dialog-actions}}
+         {{/paper-dialog}}
+         {{/if}}
          {{/paper-grid-list}}
          <br>
          <br>
          <br>
          {{/step.body}}
       </div>
-      {{#step.actions as |nextStep previousStep|}}
-      {{#paper-button primary=true raised=true onClick=(action nextStep)}}
+      {{!-- {{#paper-button primary=true raised=true onClick=(action nextStep)}}
       next
-      {{/paper-button}}
+      {{/paper-button}} --}}
+      {{#step.actions as |nextStep previousStep|}}
       {{#paper-button onClick=(action previousStep)}}
       Back
       {{/paper-button}}
@@ -197,8 +219,9 @@ function showhideForm(showform) {
             {{paper-input label="Gross fixed salary" type="number" value=salary onChange=(action (mut salary)) icon="work" }}
             <br>
             {{#paper-button raised=true warn=true onClick=(action "targetButton")}}Submit{{/paper-button}}
-         </p> --}}
-         {{#if showDialog}}
+         </p>
+         --}}
+         {{!-- {{#if showDialog}}
          {{#paper-dialog class="flex-77" onClose=(action "closeDialog" "cancel") origin=dialogOrigin clickOutsideToClose=true}}
          {{#paper-toolbar}}
          {{#paper-toolbar-tools}}
@@ -212,16 +235,17 @@ function showhideForm(showform) {
          {{#paper-button onClick=(action "okay" "ok")}}OK{{/paper-button}}
          {{/paper-dialog-actions}}
          {{/paper-dialog}}
-         {{/if}}
+         {{/if}} --}}
          {{!-- {{/paper-grid-list}} --}}
          <br>
          <br>
          <br>
          {{!-- {{/step.body}} --}}
-      {{!-- </div> --}}
+         {{!-- 
+      </div>
+      --}}
       {{!-- {{/stepper.step}} --}}
       {{/paper-stepper}}
    </div>
 </div>
-
 {{/if}}

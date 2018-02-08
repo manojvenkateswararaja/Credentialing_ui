@@ -1,5 +1,6 @@
 import Route from '@ember/routing/route';
 export default Route.extend({
+    showUserDetails:true,
     IsStatusForCreditRequest:false,
     IsStatusForGenerated:false,
     model(){
@@ -18,7 +19,7 @@ export default Route.extend({
         //    console.log(">>>>>>>",showrecords)
             var statusForCreditRequest=showrecords[i].Record.statusForCreditRequest
             console.log("statusForCreditRequest>>>>>>>",statusForCreditRequest)
-        if(statusForCreditRequest==="Requested for Legalverifier"){
+        if(statusForCreditRequest==="Requested for Legalverifier" || statusForCreditRequest==="Legalverifier approved" || statusForCreditRequest==="Legalverifier rejected"){
               var details=showrecords[i]
               myroute.controllerFor('legalverification2').set('IsStatusForCreditRequest',true) 
               myroute.controllerFor('legalverification2').set('details',details)

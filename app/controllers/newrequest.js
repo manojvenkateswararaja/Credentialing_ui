@@ -1,6 +1,7 @@
 import Controller from '@ember/controller';
 
 export default Controller.extend({
+  IsSuccess:false,
   showRequest:true,
   emailValidation: [{
     message: 'Please provide email in a valid format',
@@ -51,9 +52,9 @@ export default Controller.extend({
         var size=this.get('size');
         this.set("size",size);
         console.log("size",size);
-        var income=this.get('income');
-        this.set("income",income);
-        console.log("income",income);
+        // var income=this.get('income');
+        // this.set("income",income);
+        // console.log("income",income);
         var fname=this.get('fname');
         this.set("fname",fname);
         console.log("firstname",fname);
@@ -89,16 +90,26 @@ export default Controller.extend({
         var Company=this.get('company')
         this.set("Company",Company);
         console.log(Company);
-        var joiningdate=this.get('joining');
+        var joiningdate=this.get('startdate');
         this.set("joiningdate",joiningdate);
-        console.log(joiningdate);
+        console.log("joiningdate");
         var salary=this.get('salary');
         this.set("salary",salary);
         console.log(salary);
-        var income=this.get('rupees');
-        this.set("income",income);
-        var salaried=this.get('salaried')
-        console.log("salaried",salaried)
+        var pat=this.get('pat')
+        this.set("pat",pat);
+        console.log(pat);
+        var depreciation=this.get('depreciation')
+        this.set("depreciation",depreciation);
+        console.log(depreciation);
+        var empname=this.get('Employename');
+        this.set("empname",empname);
+        console.log(empname);
+        var experience=this.get('experience')
+        this.set("experience",experience);
+        console.log('experience',experience)
+        // var salaried=this.get('salaried')
+        // console.log("salaried",salaried)
         var date=new Date().toLocaleDateString();
         var time=new Date().toTimeString();
         var transactionstring={
@@ -106,13 +117,16 @@ export default Controller.extend({
         "loan":loan,
         "amount":amount,
         "propertyType":propertyType,
-        "income":income,
         "location":location,
         "year":year,
         "size":size,
         "fname":fname,
         "lname":lname,
+        "pat":pat,
+        "depreciation":depreciation,
+        "empname":empname,
         "estimated":estimated,
+        "experience":experience,
         "age":age,
         "phone":phone,
         "email":email,
@@ -127,7 +141,7 @@ export default Controller.extend({
         "date":date,
         "time":time,
         "status":"processing",
-        "statusForCreditRequest":"Request sent successfully"
+        "statusForUser":"Request sent successfully"
       }
     };
     console.log("datastring"+JSON.stringify(transactionstring));
@@ -145,7 +159,7 @@ export default Controller.extend({
     mycontroller.set('message',message)
     sessionStorage.setItem('message', message);
     console.log("message>>>>>>>>>>" + message);  
-    alert("your details has been uploaded successfully")
+    // alert("your details has been uploaded successfully")
     console.log("message" + message); 
   
     }
@@ -158,6 +172,7 @@ export default Controller.extend({
       this.set('showDialog',false)
   },
   okay:function(){
+    this.set('IsSuccess',true);
       this.transitionToRoute('uploaddoc');
   },
     openNav:function(){

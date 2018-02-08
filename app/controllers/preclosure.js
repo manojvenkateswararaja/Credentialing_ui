@@ -5,7 +5,7 @@ export default Controller.extend({
     isPreclosed:false,
     PaymentMode:["offline","online"],
     actions:{
-            preclose:function(details,record){
+            preclose:function(record){
               var modalvalue = this.get('showDialog')     
                         if(modalvalue!=true){
                           this.set('showDialog',true)
@@ -14,7 +14,7 @@ export default Controller.extend({
                           this.set('showDialog',false)
                         }
               
-              console.log("details>>>>preclose",details)
+              // console.log("details>>>>preclose",details)
               console.log("record>>> preclose",record)
               var EMI=this.get('EMI')
               this.set('EMI',EMI)
@@ -32,38 +32,38 @@ export default Controller.extend({
              
               var transactionstring={
                 "id":record,"transactionstring":{
-                "loan":details.loan,
-                "amount":details.amount,
-                "propertyType":details.propertyType,
-                "income":details.income,
-                "location":details.location,
-                "year":details.year,
-                "size":details.size,
-                "income":details.income,
-                "fname":details.fname,
-                "lname":details.lname,
-                "estimated":details.estimated,
-                "age":details.age,
-                "phone":details.phone,
-                "email":details.email,
-                "address":details.address,
-                "country":details.country,
-                "occupation":details.occupation,
-                "genderType":details.genderType,
-                "nationalityType":details.nationalityType,
-                "Company":details.Company,
-                "joiningdate":details.joiningdate,
-                "salary":details.salary,
-                "address":details.address,
-                "legal":details.legal,
+                "loan":record.loan,
+                "amount":record.amount,
+                "propertyType":record.propertyType,
+                "income":record.income,
+                "location":record.location,
+                "year":record.year,
+                "size":record.size,
+                "income":record.income,
+                "fname":record.fname,
+                "lname":record.lname,
+                "estimated":record.estimated,
+                "age":record.age,
+                "phone":record.phone,
+                "email":record.email,
+                "address":record.address,
+                "country":record.country,
+                "occupation":record.occupation,
+                "genderType":record.genderType,
+                "nationalityType":record.nationalityType,
+                "Company":record.Company,
+                "joiningdate":record.joiningdate,
+                "salary":record.salary,
+                "address":record.address,
+                "legal":record.legal,
                 "bank":"applied",
-                "creditscore":details.creditscore,
-                "loanamount":details.loanamount,
-                "loanterms":details.loanterms,
+                "creditscore":record.creditscore,
+                "loanamount":record.loanamount,
+                "loanterms":record.loanterms,
                 // "status":details.status,
-                "amountinterestrate":details.amountinterestrate,
-                "paymentperyear":details.paymentperyear,
-                "installmentpermonth": details.installmentpermonth,
+                "amountinterestrate":record.amountinterestrate,
+                "paymentperyear":record.paymentperyear,
+                "installmentpermonth": record.installmentpermonth,
                 "date":date,
                 "time":time,
                 "installment":installment,

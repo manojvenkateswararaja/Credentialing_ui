@@ -17,19 +17,24 @@ export default Route.extend({
                 console.log("len show>>>", len);
                 for(var i=0;i<=len-1;i++){
                   var record=showrecords[i]
+                  var statusForUser=record.Record.statusForUser
                   var statusForCreditRequest=record.Record.statusForCreditRequest
-                  
-                  console.log("home page statusForCreditRequest",statusForCreditRequest)
+                  myroute.controllerFor('home').set('record', record)
+                  console.log("home page statusForUser",statusForUser)
                   console.log("home page record",record)
-                  myroute.controllerFor('bankdashboard').set('record', record)
-                    if(showrecords[i].Key!=null){
+                  myroute.controllerFor('home').set('record', record)
+                    if(statusForUser==="Request sent successfully" || record.Record.statusForBankLegal==="Loan successfully accepted by user"){ //show status
                         myroute.controllerFor('home').set('ShowRequest',true)
-                        myroute.controllerFor('home').set('showrecords', showrecords)
-                      
-                    }else if(statusForCreditRequest==="successfully Applied For loan"){isBankPreclose
                         myroute.controllerFor('home').set('isBankPreclose',false) 
-                        
+                        myroute.controllerFor('home').set('showrecords', showrecords) 
+                    }else if(statusForCreditRequest==="Loan Scheduled"){
+                        myroute.controllerFor('home').set('ShowRequest',true)
+                        myroute.controllerFor('home').set('isBankPreclose',false) 
+                        myroute.controllerFor('home').set('isBankPreclose',false) 
+                       
                     }
+                    myroute.controllerFor('home').set('showrecords', showrecords)
+                    
                 }
             }
             })

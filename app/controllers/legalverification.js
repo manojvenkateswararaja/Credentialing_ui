@@ -46,7 +46,7 @@ export default Controller.extend({
                   "salary":lastdetails.salary,
                   "address":lastdetails.address,
                   "creditscore":lastdetails.creditscore,
-                  "statusForCreditRequest":" Legalverifier rejected",
+                  "statusForCreditRequest":"Legalverifier rejected",
                   "date":date,
                   "time":time
                 }}

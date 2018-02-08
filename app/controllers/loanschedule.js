@@ -30,15 +30,8 @@ export default Controller.extend({
         console.log(total)
         var tot=this.get('tot')
         console.log(tot)
-        // var paymentperyear=this.get('paymentperyear')
-        // this.set('paymentperyear',paymentperyear)
-        // console.log("paymentperyear>>",paymentperyear)
-        // var installmentpermonth=this.get('installmentpermonth')
-        // this.set('installmentpermonth',installmentpermonth)
-        // console.log("installmentpermonth>>",installmentpermonth)
         var date=new Date().toLocaleDateString();
         var details=record.Record
-      
         var time=new Date().toTimeString();
         this.set('date',date)
         this.set('time',time)

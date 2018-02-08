@@ -1,304 +1,339 @@
-
 {{#if showPreclosure}}
- <nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="home">mortgage</a>
-    </div>
-    <ul class="nav navbar-nav">
-      <li class="active"><a href="#">Home</a></li>
-      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
-        <ul class="dropdown-menu">
-          <li><a href="#"></a></li>
-          <li><a href="#"></a></li>
-          <li><a href="#"></a></li>
-        </ul>
-      </li>
-      <li><a href="#"></a></li>
-    </ul>
-    <ul class="nav navbar-nav navbar-right">
-      {{!-- <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li> --}}
-      <li><a href="login"><span class="glyphicon glyphicon-log-in"></span> Log out</a></li>
-    </ul>
-  </div>
+<nav class="navbar navbar-inverse">
+   <div class="container-fluid">
+      <div class="navbar-header">
+         <a class="navbar-brand" href="home">mortgage</a>
+      </div>
+      <ul class="nav navbar-nav">
+         <li class="active"><a href="#">Home</a></li>
+         <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
+            <ul class="dropdown-menu">
+               <li><a href="#"></a></li>
+               <li><a href="#"></a></li>
+               <li><a href="#"></a></li>
+            </ul>
+         </li>
+         <li><a href="#"></a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+         {{!-- 
+         <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+         --}}
+         <li><a href="login"><span class="glyphicon glyphicon-log-in"></span> Log out</a></li>
+      </ul>
+   </div>
 </nav>
 {{/if}}
 {{#if showLogin}}
 <nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      {{!-- <i class="fa fa-home fa-3" aria-hidden="true" style="color:white;"></i> --}}
-    <a class="navbar-brand" href="home">Mortgage</a>
-    </div>
-    <ul class="nav navbar-nav">
-      {{!-- <li class="active"><a href="#">Home</a></li> --}}
-      {{!-- <li class="dropdown">
-        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1 <span class="caret"></span></a>
-        <ul class="dropdown-menu">
-          <li><a href="#"></a></li>
-          <li><a href="#"></a></li>
-          <li><a href="#"></a></li>
-        </ul>
-      </li>
-      <li><a href="#"></a></li> --}}
-    </ul>
-    <ul class="nav navbar-nav navbar-right">
-      <li>{{#link-to 'signup'}}<span class="glyphicon glyphicon-user"> Sign Up</span>{{/link-to}}</li>
-      <li><a href="login1"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-    </ul>
-  </div>
-</nav> 
-{{!-- <div class="container">
-  <h3>Right Aligned Navbar</h3>
-  <p>The .navbar-right class is used to right-align navigation bar buttons.</p>
-</div> --}}
-
-    {{/if}}
-     {{#if isShowHome}}
-  <nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-     
-      <a class="navbar-brand" href="home">mortgage</a>
-    </div>
-    <ul class="nav navbar-nav">
-      <li class="active"><a href="#">Home</a></li>
-      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
-        <ul class="dropdown-menu">
-          <li><a href="#"></a></li>
-          <li><a href="#"></a></li>
-          <li><a href="#"></a></li>
-        </ul>
-      </li>
-      <li><a href="#"></a></li>
-    </ul>
-    <ul class="nav navbar-nav navbar-right">
-      {{!-- <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li> --}}
-      <li><a href="login"><span class="glyphicon glyphicon-log-in"></span>  {{#link-to 'login1'}}Log out{{/link-to}}</a></li>
-    </ul>
-  </div>
+   <div class="container-fluid">
+      <div class="navbar-header">
+         {{!-- <i class="fa fa-home fa-3" aria-hidden="true" style="color:white;"></i> --}}
+         <a class="navbar-brand" href="home">Mortgage</a>
+      </div>
+      <ul class="nav navbar-nav">
+         {{!-- 
+         <li class="active"><a href="#">Home</a></li>
+         --}}
+         {{!-- 
+         <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1 <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+               <li><a href="#"></a></li>
+               <li><a href="#"></a></li>
+               <li><a href="#"></a></li>
+            </ul>
+         </li>
+         <li><a href="#"></a></li>
+         --}}
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+         <li>{{#link-to 'signup'}}<span class="glyphicon glyphicon-user"> Sign Up</span>{{/link-to}}</li>
+         <li><a href="login1"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      </ul>
+   </div>
+</nav>
+{{!-- 
+<div class="container">
+   <h3>Right Aligned Navbar</h3>
+   <p>The .navbar-right class is used to right-align navigation bar buttons.</p>
+</div>
+--}}
+{{/if}}
+{{#if isShowHome}}
+<nav class="navbar navbar-inverse">
+   <div class="container-fluid">
+      <div class="navbar-header">
+         <a class="navbar-brand" href="home">mortgage</a>
+      </div>
+      <ul class="nav navbar-nav">
+         <li class="active"><a href="#">Home</a></li>
+         <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
+            <ul class="dropdown-menu">
+               <li><a href="#"></a></li>
+               <li><a href="#"></a></li>
+               <li><a href="#"></a></li>
+            </ul>
+         </li>
+         <li><a href="#"></a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+         {{!-- 
+         <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+         --}}
+         <li><a href="login"><span class="glyphicon glyphicon-log-in"></span>  {{#link-to 'login1'}}Log out{{/link-to}}</a></li>
+      </ul>
+   </div>
 </nav>
 {{/if}}
 {{#if showCreditscore}}
 <nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="login1">mortgage</a>
-    </div>
-    <ul class="nav navbar-nav">
-      <li class="active"><a href="#">Home</a></li>
-      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
-        <ul class="dropdown-menu">
-          <li><a href="#"></a></li>
-          <li><a href="#"></a></li>
-          <li><a href="#"></a></li>
-        </ul>
-      </li>
-      <li><a href="#"></a></li>
-    </ul>
-    <ul class="nav navbar-nav navbar-right">
-      {{!-- <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li> --}}
-      <li><a href=""><span class="glyphicon glyphicon-log-in"></span>   {{#link-to 'login1'}}Log out{{/link-to}}</a></li>
-    </ul>
-  </div>
+   <div class="container-fluid">
+      <div class="navbar-header">
+         <a class="navbar-brand" href="login1">mortgage</a>
+      </div>
+      <ul class="nav navbar-nav">
+         <li class="active"><a href="#">Home</a></li>
+         <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
+            <ul class="dropdown-menu">
+               <li><a href="#"></a></li>
+               <li><a href="#"></a></li>
+               <li><a href="#"></a></li>
+            </ul>
+         </li>
+         <li><a href="#"></a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+         {{!-- 
+         <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+         --}}
+         <li><a href=""><span class="glyphicon glyphicon-log-in"></span>   {{#link-to 'login1'}}Log out{{/link-to}}</a></li>
+      </ul>
+   </div>
 </nav>
 {{/if}}
 {{#if ShowTimestamp}}
- <nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="home">mortgage</a>
-    </div>
-    <ul class="nav navbar-nav">
-      <li class="active"><a href="bankdashboard">Home</a></li>
-      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
-        <ul class="dropdown-menu">
-          <li><a href="#"></a></li>
-          <li><a href="#"></a></li>
-          <li><a href="#"></a></li>
-        </ul>
-      </li>
-      <li><a href="#"></a></li>
-    </ul>
-    <ul class="nav navbar-nav navbar-right">
-      {{!-- <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li> --}}
-      <li><a href=""><span class="glyphicon glyphicon-log-in"></span> {{#link-to 'login1'}}Log out{{/link-to}}</a></li>
-    </ul>
-  </div>
+<nav class="navbar navbar-inverse">
+   <div class="container-fluid">
+      <div class="navbar-header">
+         <a class="navbar-brand" href="home">mortgage</a>
+      </div>
+      <ul class="nav navbar-nav">
+         <li class="active"><a href="bankdashboard">Home</a></li>
+         <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
+            <ul class="dropdown-menu">
+               <li><a href="#"></a></li>
+               <li><a href="#"></a></li>
+               <li><a href="#"></a></li>
+            </ul>
+         </li>
+         <li><a href="#"></a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+         {{!-- 
+         <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+         --}}
+         <li><a href=""><span class="glyphicon glyphicon-log-in"></span> {{#link-to 'login1'}}Log out{{/link-to}}</a></li>
+      </ul>
+   </div>
 </nav>
 {{/if}}
 {{#if isPreclose }}
- <nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="home">mortgage</a>
-    </div>
-    <ul class="nav navbar-nav">
-      <li class="active"><a href="bankdashboard">Home</a></li>
-      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
-        <ul class="dropdown-menu">
-          <li><a href="#"></a></li>
-          <li><a href="#"></a></li>
-          <li><a href="#"></a></li>
-        </ul>
-      </li>
-      <li><a href="#"></a></li>
-    </ul>
-    <ul class="nav navbar-nav navbar-right">
-      {{!-- <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li> --}}
-      <li><a href=""><span class="glyphicon glyphicon-log-in"></span> {{#link-to 'login1'}}Log out{{/link-to}}</a></li>
-    </ul>
-  </div>
+<nav class="navbar navbar-inverse">
+   <div class="container-fluid">
+      <div class="navbar-header">
+         <a class="navbar-brand" href="home">mortgage</a>
+      </div>
+      <ul class="nav navbar-nav">
+         <li class="active"><a href="bankdashboard">Home</a></li>
+         <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
+            <ul class="dropdown-menu">
+               <li><a href="#"></a></li>
+               <li><a href="#"></a></li>
+               <li><a href="#"></a></li>
+            </ul>
+         </li>
+         <li><a href="#"></a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+         {{!-- 
+         <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+         --}}
+         <li><a href=""><span class="glyphicon glyphicon-log-in"></span> {{#link-to 'login1'}}Log out{{/link-to}}</a></li>
+      </ul>
+   </div>
 </nav>
 {{/if}}
 {{#if showUserLoanQuote}}
 <nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="home">mortgage</a>
-    </div>
-    <ul class="nav navbar-nav">
-      <li class="active"><a href="#">Home</a></li>
-      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
-        <ul class="dropdown-menu">
-          <li><a href="#"></a></li>
-          <li><a href="#"></a></li>
-          <li><a href="#"></a></li>
-        </ul>
-      </li>
-      <li><a href="#"></a></li>
-    </ul>
-    <ul class="nav navbar-nav navbar-right">
-      {{!-- <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li> --}}
-      <li><a href=""><span class="glyphicon glyphicon-log-in"></span> {{#link-to 'login1'}}Log out{{/link-to}}</a></li>
-    </ul>
-  </div>
+   <div class="container-fluid">
+      <div class="navbar-header">
+         <a class="navbar-brand" href="home">mortgage</a>
+      </div>
+      <ul class="nav navbar-nav">
+         <li class="active"><a href="#">Home</a></li>
+         <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
+            <ul class="dropdown-menu">
+               <li><a href="#"></a></li>
+               <li><a href="#"></a></li>
+               <li><a href="#"></a></li>
+            </ul>
+         </li>
+         <li><a href="#"></a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+         {{!-- 
+         <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+         --}}
+         <li><a href=""><span class="glyphicon glyphicon-log-in"></span> {{#link-to 'login1'}}Log out{{/link-to}}</a></li>
+      </ul>
+   </div>
 </nav>
 {{/if}}
 {{#if showRequest}}
 <nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      
-       <a class="navbar-brand" href="#" style="font-size:25px;cursor:pointer;color:whitesmoke;" {{action "openNav"}}>&#9776; </a>
-      <a class="navbar-brand" href="home">Mortgage</a>
-    </div>
-    <ul class="nav navbar-nav">
-     
-    </ul>
-    <ul class="nav navbar-nav navbar-right">
-      {{!-- <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li> --}}
-      <li><a href=""><span class="glyphicon glyphicon-log-in"></span>{{#link-to 'login1'}}Log out{{/link-to}}</a></li>
-    </ul>
-  </div>
+   <div class="container-fluid">
+      <div class="navbar-header">
+         <a class="navbar-brand" href="#" style="font-size:25px;cursor:pointer;color:whitesmoke;" {{action "openNav"}}>&#9776; </a>
+         <a class="navbar-brand" href="home">Mortgage</a>
+      </div>
+      <ul class="nav navbar-nav">
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+         {{!-- 
+         <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+         --}}
+         <li><a href=""><span class="glyphicon glyphicon-log-in"></span>{{#link-to 'login1'}}Log out{{/link-to}}</a></li>
+      </ul>
+   </div>
 </nav>
 {{!-- bfhbd --}}
-
 {{/if}}
- {{#if showDashboard}}
-  <nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="home">mortgage</a>
-    </div>
-    <ul class="nav navbar-nav">
-      <li class="active"><a href="bankdashboard">Home</a></li>
-      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
-        <ul class="dropdown-menu">
-          <li><a href="#"></a></li>
-          <li><a href="#"></a></li>
-          <li><a href="#"></a></li>
-        </ul>
-      </li>
-      <li><a href="#"></a></li>
-    </ul>
-    <ul class="nav navbar-nav navbar-right">
-      {{!-- <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li> --}}
-      <li><a href=""><span class="glyphicon glyphicon-log-in"></span> {{#link-to 'login1'}}Log out{{/link-to}}</a></li>
-    </ul>
-  </div>
-</nav>
-{{!-- <nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <ul class="nav navbar-nav" style="margin-left: 795px;">
-      <li ><a style="margin-left:0px;" {{action "signout"}}>sign out</a></li>
-      <li><span style="font-size:25px;cursor:pointer;margin-left: -910px;color: whitesmoke;" {{action "openNav"}}>&#9776; status</span></li>
-    </ul>
-    </div>
-    </nav> --}}
-    {{/if}}
-    {{#if showUserDetails}}
+{{#if showDashboard}}
 <nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="bankdashboard">mortgage</a>
-    </div>
-    <ul class="nav navbar-nav">
-      <li class="active"><a href="#">Home</a></li>
-      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
-        <ul class="dropdown-menu">
-          <li><a href="#"></a></li>
-          <li><a href="#"></a></li>
-          <li><a href="#"></a></li>
-        </ul>
-      </li>
-      <li><a href="#"></a></li>
-    </ul>
-    <ul class="nav navbar-nav navbar-right">
-      {{!-- <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li> --}}
-      <li><a href=""><span class="glyphicon glyphicon-log-in"></span> 
-      {{#link-to 'login1'}}Log out{{/link-to}}</a></li>
-    </ul>
-  </div>
+   <div class="container-fluid">
+      <div class="navbar-header">
+         <a class="navbar-brand" href="home">mortgage</a>
+      </div>
+      <ul class="nav navbar-nav">
+         <li class="active"><a href="bankdashboard">Home</a></li>
+         <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
+            <ul class="dropdown-menu">
+               <li><a href="#"></a></li>
+               <li><a href="#"></a></li>
+               <li><a href="#"></a></li>
+            </ul>
+         </li>
+         <li><a href="#"></a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+         {{!-- 
+         <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+         --}}
+         <li><a href=""><span class="glyphicon glyphicon-log-in"></span> {{#link-to 'login1'}}Log out{{/link-to}}</a></li>
+      </ul>
+   </div>
 </nav>
-    {{/if}}
-     {{#if LegalVerifierParticipant}}
+{{!-- 
 <nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="login1">mortgage</a>
-    </div>
-    <ul class="nav navbar-nav">
-      <li class="active"><a href="#">Home</a></li>
-      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
-        <ul class="dropdown-menu">
-          <li><a href="#"></a></li>
-          <li><a href="#"></a></li>
-          <li><a href="#"></a></li>
-        </ul>
-      </li>
-      <li><a href="#"></a></li>
-    </ul>
-    <ul class="nav navbar-nav navbar-right">
-      {{!-- <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li> --}}
-      <li><a href=""><span class="glyphicon glyphicon-log-in"></span> 
-      {{#link-to 'login1'}}Log out{{/link-to}}</a></li>
-    </ul>
-  </div>
+   <div class="container-fluid">
+      <ul class="nav navbar-nav" style="margin-left: 795px;">
+         <li ><a style="margin-left:0px;" {{action "signout"}}>sign out</a></li>
+         <li><span style="font-size:25px;cursor:pointer;margin-left: -910px;color: whitesmoke;" {{action "openNav"}}>&#9776; status</span></li>
+      </ul>
+   </div>
 </nav>
-    {{/if}}
-      {{#if showUserSchedule}}
+--}}
+{{/if}}
+{{#if showUserDetails}}
 <nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="home">mortgage</a>
-    </div>
-    <ul class="nav navbar-nav">
-      <li class="active"><a href="#">Home</a></li>
-      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
-        <ul class="dropdown-menu">
-          <li><a href="#"></a></li>
-          <li><a href="#"></a></li>
-          <li><a href="#"></a></li>
-        </ul>
-      </li>
-      <li><a href="#"></a></li>
-    </ul>
-    <ul class="nav navbar-nav navbar-right">
-      {{!-- <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li> --}}
-      <li><a href=""><span class="glyphicon glyphicon-log-in"></span>  {{#link-to 'login1'}}Log out{{/link-to}}</a></li>
-    </ul>
-  </div>
+   <div class="container-fluid">
+      <div class="navbar-header">
+         <a class="navbar-brand" href="bankdashboard">mortgage</a>
+      </div>
+      <ul class="nav navbar-nav">
+         <li class="active"><a href="#">Home</a></li>
+         <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
+            <ul class="dropdown-menu">
+               <li><a href="#"></a></li>
+               <li><a href="#"></a></li>
+               <li><a href="#"></a></li>
+            </ul>
+         </li>
+         <li><a href="#"></a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+         {{!-- 
+         <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+         --}}
+         <li><a href=""><span class="glyphicon glyphicon-log-in"></span> 
+            {{#link-to 'login1'}}Log out{{/link-to}}</a>
+         </li>
+      </ul>
+   </div>
 </nav>
-    {{/if}}
- 
+{{/if}}
+{{#if LegalVerifierParticipant}}
+<nav class="navbar navbar-inverse">
+   <div class="container-fluid">
+      <div class="navbar-header">
+         <a class="navbar-brand" href="login1">mortgage</a>
+      </div>
+      <ul class="nav navbar-nav">
+         <li class="active"><a href="#">Home</a></li>
+         <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
+            <ul class="dropdown-menu">
+               <li><a href="#"></a></li>
+               <li><a href="#"></a></li>
+               <li><a href="#"></a></li>
+            </ul>
+         </li>
+         <li><a href="#"></a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+         {{!-- 
+         <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+         --}}
+         <li><a href=""><span class="glyphicon glyphicon-log-in"></span> 
+            {{#link-to 'login1'}}Log out{{/link-to}}</a>
+         </li>
+      </ul>
+   </div>
+</nav>
+{{/if}}
+{{#if showUserSchedule}}
+<nav class="navbar navbar-inverse">
+   <div class="container-fluid">
+      <div class="navbar-header">
+         <a class="navbar-brand" href="home">mortgage</a>
+      </div>
+      <ul class="nav navbar-nav">
+         <li class="active"><a href="#">Home</a></li>
+         <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
+            <ul class="dropdown-menu">
+               <li><a href="#"></a></li>
+               <li><a href="#"></a></li>
+               <li><a href="#"></a></li>
+            </ul>
+         </li>
+         <li><a href="#"></a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+         {{!-- 
+         <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+         --}}
+         <li><a href=""><span class="glyphicon glyphicon-log-in"></span>  {{#link-to 'login1'}}Log out{{/link-to}}</a></li>
+      </ul>
+   </div>
+</nav>
+{{/if}}
