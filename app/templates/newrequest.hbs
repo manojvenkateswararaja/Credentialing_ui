@@ -40,8 +40,8 @@
             Occupation
            <div class="drop3" style="margin-left:300px; margin-top:-28px">
             {{!-- {{select-component listitem=occupationlist selecteditemlist=occupationType}} --}}
-  <input type="radio" id="showform" value="salaried" name="showform" onchange="showhideForm(this.value);"/>salaried
-  <input type="radio" id="showform" value="non-salaried" name="showform" onchange="showhideForm(this.value);"/>Non-salaried
+  <input type="radio" id="showform" value="salaried" name="showform" onchange="showhideForm(this.value);"/>Salaried
+  <input type="radio" id="showform" value="non-salaried" name="showform" onchange="showhideForm(this.value);"/>Business
             <script type="text/javascript">
 function showhideForm(showform) {
     if (showform == "salaried") {
@@ -56,16 +56,27 @@ function showhideForm(showform) {
 </script>
 
 <div id="div1" style="display:none">
-<label>work</label>
-<input type="text" id='work' >
-<label>company</label>
-<input type="text" id='company' >
+<label>Employer Name</label>
+<input type="text" id='empname' >
+  <br>
+<label>Total Work experience</label>
+<input type="text" id='experience' >
+  <br>
+<label>Monthly take home salary</label>
+<input type="number" id='salary'>
 </div>
 <div id="div2" style="display:none">
-<label>partnership</label>
-<input type="text" id='partner'>
-<label>revenue</label>
-<input type="number" id='revenue' >
+<label>Start  date of current business</label>
+<input type="date" id='startdate'>
+<br>
+<label>Companytype</label>
+  {{select-component listitem=companylist selecteditemlist=companyType}}
+  <br>
+<label>Last year's Business PAT as per ITR</label>
+<input type="number" id='Pat' >
+<br>
+<label>Latest year's Depreciation</label>
+<input type="number" id='depreciation' >
 </div>
             </div>
             <br>
@@ -167,7 +178,7 @@ function showhideForm(showform) {
       {{/step.actions}}
       {{/stepper.step}}
       {{!-- page4 --}}
-      {{#stepper.step label="Employement Details" as |step|}}
+      {{!-- {{#stepper.step label="Employement Details" as |step|}}
       <div class="container" style="margin-left:442px;margin-top:-2cm; background-color:lightgrey">
          {{#step.body}} 
          {{#paper-grid-list
@@ -186,7 +197,7 @@ function showhideForm(showform) {
             {{paper-input label="Gross fixed salary" type="number" value=salary onChange=(action (mut salary)) icon="work" }}
             <br>
             {{#paper-button raised=true warn=true onClick=(action "targetButton")}}Submit{{/paper-button}}
-         </p>
+         </p> --}}
          {{#if showDialog}}
          {{#paper-dialog class="flex-77" onClose=(action "closeDialog" "cancel") origin=dialogOrigin clickOutsideToClose=true}}
          {{#paper-toolbar}}
@@ -202,13 +213,13 @@ function showhideForm(showform) {
          {{/paper-dialog-actions}}
          {{/paper-dialog}}
          {{/if}}
-         {{/paper-grid-list}}
+         {{!-- {{/paper-grid-list}} --}}
          <br>
          <br>
          <br>
-         {{/step.body}}
-      </div>
-      {{/stepper.step}}
+         {{!-- {{/step.body}} --}}
+      {{!-- </div> --}}
+      {{!-- {{/stepper.step}} --}}
       {{/paper-stepper}}
    </div>
 </div>

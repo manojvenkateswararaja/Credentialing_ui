@@ -18,6 +18,7 @@ export default Controller.extend({
     genderlist:["male","female"],
     nationalitylist:["indian","other"],
     occupationlist:["salaried","non-salaried"],
+    companylist:["Partnership","Prioprietorship","Pvt Ltd company"],
  
   actions:{
     
@@ -96,7 +97,8 @@ export default Controller.extend({
         console.log(salary);
         var income=this.get('rupees');
         this.set("income",income);
-        console.log(income);
+        var salaried=this.get('salaried')
+        console.log("salaried",salaried)
         var date=new Date().toLocaleDateString();
         var time=new Date().toTimeString();
         var transactionstring={
