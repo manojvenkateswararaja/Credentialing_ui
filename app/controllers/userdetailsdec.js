@@ -99,7 +99,7 @@ export default Controller.extend({
               
             
             },
-            closeDialog:function(){
+            closeDialog2:function(){
               this.set('showDialogApprove',false)
           },
           okay2:function(){

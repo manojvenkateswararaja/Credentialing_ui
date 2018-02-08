@@ -25,10 +25,16 @@ export default Route.extend({
                     if(statusForCreditRequest==="Request sent successfully"){ //show status
                         myroute.controllerFor('home').set('ShowRequest',true)
                         myroute.controllerFor('home').set('isBankPreclose',false) 
-                        myroute.controllerFor('home').set('showrecords', showrecords)
+                        // myroute.controllerFor('home').set('showrecords', showrecords)
                         
                         
+                    }else if(statusForCreditRequest==="Loan Scheduled"){
+                        myroute.controllerFor('home').set('ShowRequest',true)
+                        myroute.controllerFor('home').set('isBankPreclose',false) 
+                       
                     }
+                    myroute.controllerFor('home').set('showrecords', showrecords)
+                    
                 }
             }
             })

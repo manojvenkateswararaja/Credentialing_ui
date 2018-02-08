@@ -29,7 +29,19 @@ export default Route.extend({
                     //creditscore status change
                     console.log('DEBUG: GET Enquiries OK');
                     myroute.controllerFor('bankdashboard').set('isStatus',true)
-                if(statusForCreditRequest==="Legalverifier approved"){ 
+                    if(statusForCreditRequest==="Request sent successfully"){ 
+                        myroute.controllerFor('bankdashboard').set('isStatus',true)
+                        myroute.controllerFor('bankdashboard').set('IsCreditStatus',false)
+                        console.log(statusForCreditRequest)
+                        myroute.controllerFor('bankdashboard').set('Islegalstatus',false)
+
+                    }else if(statusForCreditRequest==="Request sent successfully"){ 
+                        myroute.controllerFor('bankdashboard').set('isStatus',true)
+                        myroute.controllerFor('bankdashboard').set('IsCreditStatus',false)
+                        console.log(statusForCreditRequest)
+                        myroute.controllerFor('bankdashboard').set('Islegalstatus',false)
+
+                    }else if(statusForCreditRequest==="Legalverifier approved"){ 
                          myroute.controllerFor('bankdashboard').set('isStatus',false)
                          myroute.controllerFor('bankdashboard').set('statusForCreditRequest',statusForCreditRequest)
                          console.log(statusForCreditRequest)

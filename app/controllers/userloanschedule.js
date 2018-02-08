@@ -5,7 +5,7 @@ export default Controller.extend({
     isLoanSchedule:false,
     actions:{
         
-        userschedule:function(key,details){
+        userschedule:function(details){
             var modalvalue = this.get('showDialog')
             
                       if(modalvalue!=true){
@@ -19,7 +19,7 @@ export default Controller.extend({
                       this.set('date',date)
                         this.set('time',time)
             var transactionstring={
-                "id":key,"transactionstring":{
+                "id":details.Key,"transactionstring":{
                 "loan":details.loan,
                 "amount":details.amount,
                 "propertyType":details.propertyType,
@@ -51,7 +51,7 @@ export default Controller.extend({
                 "amountinterestrate":details.amountinterestrate,
                 "paymentperyear": details.paymentperyear,
                 "installmentpermonth": details.installmentpermonth,
-                "status":" Loan successfully accepted by user ",
+                "statusForCreditRequest":" Loan successfully accepted by user ",
                 "time":time,
                 "date":date
                 

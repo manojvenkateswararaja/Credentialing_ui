@@ -1,6 +1,7 @@
 import Controller from '@ember/controller';
 
 export default Controller.extend({
+  IsSuccess:false,
   showRequest:true,
   emailValidation: [{
     message: 'Please provide email in a valid format',
@@ -143,7 +144,7 @@ export default Controller.extend({
     mycontroller.set('message',message)
     sessionStorage.setItem('message', message);
     console.log("message>>>>>>>>>>" + message);  
-    alert("your details has been uploaded successfully")
+    // alert("your details has been uploaded successfully")
     console.log("message" + message); 
   
     }
@@ -156,6 +157,7 @@ export default Controller.extend({
       this.set('showDialog',false)
   },
   okay:function(){
+    this.set('IsSuccess',true);
       this.transitionToRoute('uploaddoc');
   },
     openNav:function(){
