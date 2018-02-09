@@ -35,12 +35,23 @@
                      <div class="row">
                    <div class="col-xs-6 col-lg-6 col-sm-6">Document required for closing</div>
                      <div class="col-xs-6 col-lg-6 col-sm-6">
+    {{#if Notshow_fileupload}}
+    <div id="NR-reactangle">
       {{#pl-uploader  for="upload_file6" runtimes="html5 flash silverlight" onfileadd="uploadDoc" as |queue|}}
             <a id="upload_file6" style="font-size:18px">
                <p style="margin-top:3mm"> <img src="assets/images/upload.svg" alt="Smiley face" width="20" height="20" style="margin-bottom:3mm">&nbsp; Choose File to Upload</p>
             </a>
             {{/pl-uploader}}  
-              {{#if showDialogUpload}}
+             </div>
+     {{/if}}
+      {{#if isShow_fileupload}}
+        <div id="NR-reactangle-ok">
+       <p style="color:#68DC83,margin-top:3mm"><b> File Uploaded Sucessfully !!!</b></p>
+         </div>
+       {{/if}}
+
+
+  {{!-- {{#if showDialogUpload}}
   {{#paper-dialog class="flex-77" onClose=(action "closeDialog" "cancel") origin=dialogOrigin clickOutsideToClose=true}}
     {{#paper-toolbar}}
       {{#paper-toolbar-tools}}
@@ -55,7 +66,7 @@
       {{#paper-button onClick=(action "okay" "ok")}}OK{{/paper-button}}
     {{/paper-dialog-actions}}
   {{/paper-dialog}}
-{{/if}} 
+{{/if}}  --}}
                    </div>
                    </div>
                    <br>

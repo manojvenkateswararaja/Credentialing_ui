@@ -18,7 +18,10 @@ file.upload('http://localhost:8082/UploadDocs?requestid='+requestid).then(functi
     var url =response.body.url;
     console.log("url ::",JSON.stringify(url));
  
-    mycontroller.controllerFor('preclosure').set('showDialogUpload',true);
+    // mycontroller.controllerFor('preclosure').set('showDialogUpload',true);
+    mycontroller.controllerFor('preclosure').set('url',url);
+    mycontroller.controllerFor('preclosure').set("isShow_fileupload",true);
+      mycontroller.controllerFor('preclosure').set("Notshow_fileupload",false);
  
     console.log("saviing file...");
     console.log("file upload sucessfully. 1..");
@@ -34,6 +37,12 @@ file.upload('http://localhost:8082/UploadDocs?requestid='+requestid).then(functi
 
     
     model(){
+
+        this.controllerFor('preclosure').set('Notshow_fileupload', true); 
+        if(this.controllerFor('preclosure').set('Notshow_fileupload', true)){
+         this.controllerFor('preclosure').set(' isShow_fileupload', false); 
+        }  
+
 
         var PreClosingController=this.controllerFor('home').get('record')
         this.controllerFor('preclosure').set('record',PreClosingController)
