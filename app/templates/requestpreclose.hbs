@@ -10,7 +10,7 @@
    <br>
    <div class="container">
        
-        {{#if isGenerated}}
+        
         <div class="row">
       
      <i style="color:black"> {{notify}}</i>
@@ -49,28 +49,28 @@
                 
                     <tr>
                      <td>EMI Remaining:</td>
-                     <td style="color:gray;">{{details.EMI}}</td>
+                     <td style="color:gray;">{{record.Record.EMI}}</td>
                   </tr>
                   <br>
                    <tr>
                      <td>Installment Per month:</td>
-                     <td style="color:gray;">{{details.installment}}</td>
+                     <td style="color:gray;">{{record.Record.installment}}</td>
                   </tr>
                   <br>
                  <tr>
                      <td>Document Required for Closing:</td>
-                     <td style="color:gray;">{{details}}</td>
+                     <td style="color:gray;">{{record.Record}}</td>
                   </tr>
                   <br>
                    <tr>
                      <td>Payment Mode:</td>
-                     <td style="color:gray;">{{details.Payment}}</td>
+                     <td style="color:gray;">{{record.Record.Payment}}</td>
                   </tr>
                  
     </table>
     <br>
        <div style="margin-top:0cm;">
-      <button type="button" class="btn btn-primary btn-block"{{action "finalPreclose" record details}}> agree & close the loan</button>   
+      <button type="button" class="btn btn-primary btn-block"{{action "finalPreclose" record }}> agree & close the loan</button>   
    <div style="background-color:lightgrey;">
           
              <h3>Time Stamp</h3>
@@ -108,9 +108,6 @@
   {{/paper-dialog}}
 {{/if}}
 </div>
-{{/if}}
-    {{!-- </div> --}}
-    {{!-- </div> --}}
     </div>
     </div>
   

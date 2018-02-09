@@ -7,14 +7,16 @@
    <small style="margin-left:-9cm">Remember:<u>click on requestid to check response</u></small>
    <br>
    <i style="color:LightSlateGrey; margin-left: 26cm;">click here to preclose</i>
-   <button type="button" id="myButton" class="btn btn-primary"  style="text-align:right;  margin-top:-4cm;  margin-left:27cm;" {{action "gotoPreclose"}}>Pre-closure</button>
    <header class="w3-container  w3-center" style="padding:128px 16px">
-       {{!-- {{ShowRequest}} --}}
       {{#if ShowRequest}}
-      {{!-- {{showrecords}} --}}
       {{#each showrecords   as |item|}}
       <div class="row" style="background-color:lightgrey">
-         <div class="col-xs-2 col-lg-2 col-md-2 col-sm-2" style="background-color:">Request Id:<i style="color:blue">{{#link-to 'userloanschedule'}}{{item.Key}}{{/link-to}}</i></div>
+            <div class="col-xs-3 col-lg-3 col-sm-3">Requestid<a href="" {{action 'userloan'  item }}><b style="color:blue">{{item.Key}}   
+        
+                <button type="button" id="myButton" class="btn btn-primary"  style="text-align:right;margin-top: -38px;margin-left:27cm;" disabled={{DisablePrecoleButton}} {{action "gotoPreclose" item}}>Pre-closure</button>
+                   
+                    </b>
+                    </a></div>
          <div class="col-xs-2 col-lg-2 col-md-2 col-sm-2" style="background-color:">
             <div class="vl5">
                <div>Name:{{item.Record.fname}}
@@ -34,7 +36,10 @@
          <div class="col-xs-4 col-lg-4 col-md-4 col-sm-4" style="background-color:">
             <div class="vl5">
                <div style="">status:<b style="color:green">{{#if isBankPreclose}}{{status}}{{/if}}</b>
-                  <b style="color:green">{{item.Record.statusForCreditRequest}}</b>
+                  <b style="color:green">{{item.Record.statusForUser}}{{item.Record.statusForCreditRequest}}
+                      {{item.Record.statuspreclose}}
+                      {{item.Record.userpreclosestatus}}
+                  </b>
                </div>
             </div>
          </div>

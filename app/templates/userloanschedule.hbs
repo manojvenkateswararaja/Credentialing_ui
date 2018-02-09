@@ -1,12 +1,17 @@
 {{partial 'head'}}
 {{#if showUserSchedule}}
 {{/if}}
-<div class="container-fluid">
-   <br>
-    <div style="margin-left:14cm;"><b>Loan Quotation</b></div>
-   <br>
+<div class="jumbotron">
+ 
+    
    <div class="container" style="background-color:Lavender ">
+     <h2 style="text-align:left;"><b>Loan Quotation</b></h2>
      <br>
+{{#if IsAlreadyDone}}
+<div class="alert alert-info">
+  <strong>Info!</strong>Already made decision.
+</div>
+{{/if}}
      <br>
      <div class="row" style="">
         <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6" style="">
@@ -66,10 +71,8 @@
       <br>
        
         <div style="margin-top:0cm;">
-      <button type="button" class="btn btn-primary btn-block"{{action "userschedule" record}}> agree & next</button>   
-{{!-- <button type="button" id="myButton" class="btn btn-primary" {{action "userschedule" record.Key details}}>
-         agree & next
-         </button> --}}
+      <button type="button" class="btn btn-primary btn-block" disabled={{IsAlreadyDone}} {{action "userschedule" record}}> agree & next</button>   
+
           {{#if showDialog}}
   {{#paper-dialog class="flex-77" onClose=(action "closeDialog" "cancel") origin=dialogOrigin clickOutsideToClose=true}}
     {{#paper-toolbar}}

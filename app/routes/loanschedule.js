@@ -4,7 +4,9 @@ export default Route.extend({
     model(){
         var loanID = this.controllerFor('userdetailsdec').get('record')
         this.controllerFor('loanschedule').set('record',loanID);
-        var details = this.controllerFor('userdetailsdec').get('details');
+        // var details = this.controllerFor('userdetailsdec').get('details');
+        // 
+        var details=loanID.Record
         this.controllerFor('loanschedule').set('details',details) 
         console.log("loan schedule details",details)
         console.log("loan schedule records>>",loanID)

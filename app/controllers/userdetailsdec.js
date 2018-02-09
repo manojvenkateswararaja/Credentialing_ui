@@ -66,7 +66,7 @@ export default Controller.extend({
                 console.log("service")
                 mycontroller.set('showCredit',true)
                 var creditscore=response
-                console.log(creditscore)
+                console.log("response from backend userdetails",creditscore)
                
            
                   }

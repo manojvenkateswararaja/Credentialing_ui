@@ -6,10 +6,16 @@ export default Controller.extend({
   showDashboard:true,
     
   actions: {
+    postPrecoseRequest:function(record){
+      //     console.log("hi manoj",showrecords);
+          this.set('record',record)
+          this.transitionToRoute('requestpreclose')
+
+       },
    
     userdetails: function(showrecords) {
-    this.set('record',showrecords)
-console.log("get credit score",showrecords)
+     this.set('record',showrecords)
+     console.log("get credit score",showrecords)
       var score=showrecords.Record.creditscore
       this.set('score',score)
       console.log("i got creditscore in bank",score)

@@ -18,19 +18,14 @@ export default Route.extend({
                 for (let i = 0; i <= len - 1; i++) {
                     var statusForCreditRequest = showrecords[i].Record.statusForCreditRequest
                     console.log("statusForCreditRequest>>>>>>>", statusForCreditRequest)
-                    if (statusForCreditRequest === "Request sent successfully") {
-                        // myroute.controllerFor('bankdashboard').set('isStatus',true)
-                        myroute.controllerFor('creditscore2').set('IsStatusForCreditRequest', false)
-                        var status = "No Request made"
-                        myroute.controllerFor('creditscore2').set('status', status)
-                        myroute.controllerFor('creditscore2').set('IsDefaultStatus', true)
-                        console.log(statusForCreditRequest)
-                    } else if (statusForCreditRequest === "Requested For Creditscore") {
+                 
+                    if (statusForCreditRequest === "Requested For Creditscore") {
                         var details = showrecords[i]
+                        myroute.controllerFor('creditscore2').set('details', details)
                         myroute.controllerFor('creditscore2').set('IsDefaultStatus', false)
                         //   myroute.controllerFor('creditscore2').set('IsStatusForCreditRequest',false)
                         myroute.controllerFor('creditscore2').set('IsStatusForCreditRequest', true)
-                        myroute.controllerFor('creditscore2').set('details', details)
+                       
                         console.log("details.....loop1...", details)
                         myroute.controllerFor('creditscore2').set('statusForCreditRequest', statusForCreditRequest)
 

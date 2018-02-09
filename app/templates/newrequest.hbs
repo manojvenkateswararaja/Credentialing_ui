@@ -54,16 +54,29 @@
                }
             </script>
             <div id="div1" style="display:none">
-               <label>work</label>
-               <input type="text" id='work' >
-               <label>company</label>
-               <input type="text" id='company' >
+              
+{{paper-input label="Employer name" value=Employename onChange=(action (mut Employename)) icon="person"}}
+               <br>
+
+             {{paper-input label="Total work experience" value=experience onChange=(action (mut experience)) icon="work"}}
+               <br>
+             
+              {{paper-input label="Monthly take home salary" value=salary onChange=(action (mut salary)) icon="work"}}
             </div>
             <div id="div2" style="display:none">
-               <label>partnership</label>
-               <input type="text" id='partner'>
-               <label>revenue</label>
-               <input type="number" id='revenue' >
+          {{paper-input label="Start date of current business" value=startdate type="date" onChange=(action (mut startdate)) icon="work"}}
+
+               <br>
+               <label>Companytype</label>
+                {{select-component listitem=companylist selecteditemlist=companyType}}
+                <br>
+            
+         {{paper-input label="Last Year's business PAT as per ITR" value=pat onChange=(action (mut pat)) icon="work"}}
+
+               <br>
+                <label>Last Year's depreciation</label>
+        {{paper-input label="Last Year's depreciation" value=depreciation onChange=(action (mut depreciation)) icon="work"}}
+
             </div>
          </div>
          <br>

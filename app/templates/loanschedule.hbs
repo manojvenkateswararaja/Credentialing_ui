@@ -82,14 +82,7 @@
          {{tot}}
       </div>
       </div>
-    
-       </div>
-      
-  
- 
-   <br>
-   <br>
-    <div class="row">
+       <div class="row">
                   
            <button type="button" class="btn btn-primary btn-block"{{action "loanschedule" details record}}>Schedule</button>
             {{!-- <button type="button" id="myButton" class="btn btn-primary" {{action "ApproveUpdate" details record.Key creditscore}}>Approve</button> --}}
@@ -97,6 +90,10 @@
           </div>
    
    <br>
+</div>
+   <br>
+   <br>
+ 
 
 {{#if showDialog}}
 {{#paper-dialog class="flex-77" onClose=(action "closeDialog" "cancel") origin=dialogOrigin clickOutsideToClose=true}}

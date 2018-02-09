@@ -7,8 +7,17 @@
       
          <div style="text-align:center;"><b>PRE-CLOSURE</b></div>
          <br>
-        
+         <div class="row" style="">
+        <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6" style="">
+      <label>Request iD:</label>
+      </div>
+        {{!-- <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6" style=""> --}}
+        <i style="color:blue; margin-left:-11cm;"> {{record.Key}}</i>
+         {{!-- </div> --}}
+         </div>
          <div class="row" >
+          
+           <br>
         <div class="col-xs-6 col-lg-6 col-sm-6" >EMI remaining</div>
         <div class="col-xs-6 col-lg-6 col-sm-6">
             {{validated-input  type="number"   class="form-group"  model=this  valuePath='EMI' placeholder="number of emi" required=""}}
@@ -57,7 +66,7 @@
                     <br>
                     
                 <div class="row"> 
-         <button type="button" type="button" class="btn btn-primary btn-block" {{action "preclose" details record.Key}}>Apply</button>
+         <button type="button" type="button" class="btn btn-primary btn-block" {{action "preclose"  record}}>Apply</button>
           {{#if showDialog}}
       {{#paper-dialog class="flex-77" onClose=(action "closeDialog" "cancel") origin=dialogOrigin clickOutsideToClose=true}}
       {{#paper-toolbar}}

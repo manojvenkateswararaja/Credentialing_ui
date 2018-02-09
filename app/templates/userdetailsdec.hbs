@@ -34,7 +34,11 @@
   <strong>Legal Verification Successfully Done !</strong><br>
   Proceed Further For Approve Or Reject
 </div>
-   
+{{/if}}
+{{#if IsAlreadyDone}}
+<div class="alert alert-info">
+  <strong>Info!</strong>Already made decision.
+</div>
 {{/if}}
    <div class="container" >
       <h2 style="margin-left:12cm;"><b>USER REQUESTID</b></h2>
@@ -139,14 +143,14 @@
          </div> 
          
       <div style=" margin-top:1cm;">
-      <button type="button" class="btn btn-primary btn-block"  {{action "LegalValidater" record details}}>Get verify from legal validator</button>
+      <button type="button" class="btn btn-primary btn-block" disabled={{isLegalDisableButton}} {{action "LegalValidater" record details}}>Get verify from legal validator</button>
          {{!-- <button  id="user-btn3" {{action "credit" records showrecords}}>Get verify from legal validator</button> --}}
 
 {{#if showDialog}}
   {{#paper-dialog class="flex-77" onClose=(action "closeDialog" "cancel") origin=dialogOrigin clickOutsideToClose=true}}
     {{#paper-toolbar}}
       {{#paper-toolbar-tools}}
-         Your response has been successfully sent to legal validator...!!{{isLegalRequested}}
+         Your response has been successfully sent to legal validator...!!
         {{#paper-button iconButton=true onClick=(action "closeDialog" "cancel")}}{{paper-icon icon="close"}}{{/paper-button}}
       {{/paper-toolbar-tools}}
     {{/paper-toolbar}}
@@ -168,7 +172,7 @@
   {{#paper-dialog class="flex-77" onClose=(action "closeDialog" "cancel") origin=dialogOrigin clickOutsideToClose=true}}
     {{#paper-toolbar}}
       {{#paper-toolbar-tools}}
-        Your response has been successfully Approve...!!{{showDialogApprove}}
+        Your response has been successfully Approve...!!
         {{#paper-button iconButton=true onClick=(action "closeDialog2" "cancel")}}{{paper-icon icon="close"}}{{/paper-button}}
       {{/paper-toolbar-tools}}
     {{/paper-toolbar}}

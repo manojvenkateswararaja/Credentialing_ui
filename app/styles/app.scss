@@ -16,7 +16,14 @@
   .wrapper {
   text-align: center;
 }
-
+.alert{
+  padding: 18px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  border-radius: -2px;
+  width: 94%;
+  margin-left:1cm;
+}
 .button {
   position: absolute;
   top: 50%;
@@ -29,6 +36,7 @@ margin: -41px -9px;
 margin-top: -2cm !important;
 padding: 14px;
 }
+
 // stepper
 .row {
 margin-left: 3px;
@@ -234,23 +242,7 @@ height: 80%;
 margin-top: 25px !important;
 background: #69f;
 }
-.table3-block{
-margin-bottom: 1000px;
-margin-left: 595px;
-margin-top: -965px !important;
-text-align: left;
-width: 30%;
-font-size: 1.5;
-}
-.table2-block{
-  
-margin-bottom: 1000px;
-margin-left: 595px;
-margin-top: -965px !important;
-text-align: left;
-width: 30%;
-font-size: 1.5;
-}
+
 #data{
 font-family: "Montserrat", sans-serif;
 background: tomato;

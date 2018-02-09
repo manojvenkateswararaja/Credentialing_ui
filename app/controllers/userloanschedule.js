@@ -5,7 +5,7 @@ export default Controller.extend({
     isLoanSchedule:false,
     actions:{
         
-        userschedule:function(details){
+        userschedule:function(details,record){
             var modalvalue = this.get('showDialog')
             
                       if(modalvalue!=true){
@@ -14,51 +14,53 @@ export default Controller.extend({
                       else{
                         this.set('showDialog',false)
                       }
+                      console.log('records',record)
+                      console.log('details',details)
                       var date=new Date().toLocaleDateString();
                       var time=new Date().toTimeString();
                       this.set('date',date)
                         this.set('time',time)
             var transactionstring={
                 "id":details.Key,"transactionstring":{
-                "loan":details.loan,
-                "amount":details.amount,
-                "propertyType":details.propertyType,
-                "income":details.income,
-                "location":details.location,
-                "year":details.year,
-                "size":details.size,
-                "income":details.income,
-                "fname":details.fname,
-                "lname":details.lname,
-                "estimated":details.estimated,
-                "age":details.age,
-                "phone":details.phone,
-                "email":details.email,
-                "address":details.address,
-                "country":details.country,
-                "occupation":details.occupation,
-                "genderType":details.genderType,
-                "nationalityType":details.nationalityType,
-                "Company":details.Company,
-                "joiningdate":details.joiningdate,
-                "salary":details.salary,
-                "address":details.address,
-                "legal":details.legal,
+                "loan":details.Record.loan,
+                "amount":details.Record.amount,
+                "propertyType":details.Record.propertyType,
+                "income":details.Record.income,
+                "location":details.Record.location,
+                "year":details.Record.year,
+                "size":details.Record.size,
+                "income":details.Record.income,
+                "fname":details.Record.fname,
+                "lname":details.Record.lname,
+                "estimated":details.Record.estimated,
+                "age":details.Record.age,
+                "phone":details.Record.phone,
+                "email":details.Record.email,
+                "address":details.Record.address,
+                "country":details.Record.country,
+                "occupation":details.Record.occupation,
+                "genderType":details.Record.genderType,
+                "nationalityType":details.Record.nationalityType,
+                "Company":details.Record.Company,
+                "joiningdate":details.Record.joiningdate,
+                "salary":details.Record.salary,
+                "address":details.Record.address,
+                "legal":details.Record.legal,
                 "bank":"applied",
-                "creditscore":details.creditscore,
-                "loanamount": details.loanamount,
-                "loanterms":details.loanterms,
-                "amountinterestrate":details.amountinterestrate,
-                "paymentperyear": details.paymentperyear,
-                "installmentpermonth": details.installmentpermonth,
-                "statusForCreditRequest":" Loan successfully accepted by user ",
+                "creditscore":details.Record.creditscore,
+                "loanamount": details.Record.loanamount,
+                "loanterms":details.Record.loanterms,
+                "amountinterestrate":details.Record.amountinterestrate,
+                "paymentperyear": details.Record.paymentperyear,
+                "installmentpermonth": details.Record.installmentpermonth,
+                "statusForBankLegal":"Loan successfully accepted by user",
                 "time":time,
                 "date":date
                 
               }
           }
 
-          console.log(JSON.stringify(transactionstring))
+          console.log("userloan schedule",JSON.stringify(transactionstring))
           var mycontroller=this;
           return $.ajax({
               url:'http://localhost:8082/updatetransaction',

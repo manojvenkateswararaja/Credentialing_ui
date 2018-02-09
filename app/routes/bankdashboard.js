@@ -1,7 +1,7 @@
 import Route from '@ember/routing/route';
 export default Route.extend({
 
-   
+    IsLegalValidated:false,
     isDefaultStatus: false,
     IsCreditStatus:false,
     isStatus: true,
@@ -26,29 +26,24 @@ export default Route.extend({
                     console.log("hi manoj",record)
                     var statusForCreditRequest = showrecords[i].Record.statusForCreditRequest
                     console.log("statusForCreditRequest",statusForCreditRequest)
+                    var statuspreclose=record.Record.statuspreclose
+                    console.log("statuspreclose",statuspreclose)
+                    // statusfor preclosing request
+                    var bankpreclose=record.Record.bankpreclose
+                    console.log("bankpreclose?????",bankpreclose)
                     //creditscore status change
                     console.log('DEBUG: GET Enquiries OK');
+                    // var statusForUser = record.Record.statusForUser
+                    // console.log("statusForUser>>uper >> console",statusForUser)
                     myroute.controllerFor('bankdashboard').set('isStatus',true)
-                    if(statusForCreditRequest==="Request sent successfully"){ 
-                        myroute.controllerFor('bankdashboard').set('isStatus',true)
-                        myroute.controllerFor('bankdashboard').set('IsCreditStatus',false)
-                        console.log(statusForCreditRequest)
-                        myroute.controllerFor('bankdashboard').set('Islegalstatus',false)
-
-                    }else if(statusForCreditRequest==="Request sent successfully"){ 
-                        myroute.controllerFor('bankdashboard').set('isStatus',true)
-                        myroute.controllerFor('bankdashboard').set('IsCreditStatus',false)
-                        console.log(statusForCreditRequest)
-                        myroute.controllerFor('bankdashboard').set('Islegalstatus',false)
-
-                    }else if(statusForCreditRequest==="Legalverifier approved"){ 
+                    
+                    if(statusForCreditRequest==="Legalverifier approved" || statusForCreditRequest==="Requested for Legalverifier" || record.Record.statusForBankLegal==="Loan successfully accepted by user" ||statuspreclose==="User Requested For Preclose" ||bankpreclose==="Loan Closed"){ 
                          myroute.controllerFor('bankdashboard').set('isStatus',false)
                          myroute.controllerFor('bankdashboard').set('statusForCreditRequest',statusForCreditRequest)
                          console.log(statusForCreditRequest)
-                         myroute.controllerFor('bankdashboard').set('Islegalstatus',true)
-
-                     }
-                else if(statusForCreditRequest==="Creditscore Generated"){ 
+                         myroute.controllerFor('bankdashboard').set('IsCreditStatus',true)
+                         myroute.controllerFor('bankdashboard').set('IsLegalValidated',true)
+                     }else if(statusForCreditRequest==="Creditscore Generated"){ 
                 myroute.controllerFor('bankdashboard').set('isStatus',false)
                 //default
                 myroute.controllerFor('bankdashboard').set('IsCreditStatus',true)

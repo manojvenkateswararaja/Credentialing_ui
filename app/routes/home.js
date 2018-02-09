@@ -2,6 +2,7 @@ import Route from '@ember/routing/route';
 export default Route.extend({
     isBankPreclose:false,
     isUserstatus:false,
+    DisablePrecoleButton:false,
     model(){
         var myroute = this
         return $.ajax({
@@ -15,26 +16,37 @@ export default Route.extend({
                
                 var len = showrecords.length
                 console.log("len show>>>", len);
-                for(var i=0;i<=len-1;i++){
+                for(var i=0;i<=len-1;i++){ 
                   var record=showrecords[i]
+                  var statusForUser=record.Record.statusForUser
+                  console.log("home page statusForUser",statusForUser)
                   var statusForCreditRequest=record.Record.statusForCreditRequest
-                  myroute.controllerFor('home').set('record', record)
                   console.log("home page statusForCreditRequest",statusForCreditRequest)
+                  var statuspreclose=record.Record.statuspreclose
+                  console.log("home page statusForUser",statuspreclose)
+                //  -if(showrecords[i].Record.statusForCreditRequest==="Loan Scheduled"){
+                //  console.log("home page showrecords[i].Record.statusForCreditRequest??",showrecords[i].Record.statusForCreditRequest)
+                //  myroute.controllerFor('home').set('showrecords', showrecords)
+                // }
+                  //After accepting request from bank
+                 var userpreclosestatus=record.Record.userpreclosestatus;
+                  console.log("userpreclosestatus",userpreclosestatus)
+                  myroute.controllerFor('home').set('record', record)
+                  console.log("home page statusForUser",statusForUser)
                   console.log("home page record",record)
-                  myroute.controllerFor('bankdashboard').set('record', record)
-                    if(statusForCreditRequest==="Request sent successfully"){ //show status
+                  myroute.controllerFor('home').set('record', record)
+                    if(statusForUser==="Request sent successfully" || record.Record.statusForBankLegal==="Loan successfully accepted by user"||statuspreclose==="Requested For Preclose"||userpreclosestatus==="preclosure accepted"){ //show status
                         myroute.controllerFor('home').set('ShowRequest',true)
                         myroute.controllerFor('home').set('isBankPreclose',false) 
-                        // myroute.controllerFor('home').set('showrecords', showrecords)
-                        
-                        
+                        myroute.controllerFor('home').set('DisablePrecoleButton',true)
+                        myroute.controllerFor('home').set('showrecords', showrecords)  
                     }else if(statusForCreditRequest==="Loan Scheduled"){
                         myroute.controllerFor('home').set('ShowRequest',true)
                         myroute.controllerFor('home').set('isBankPreclose',false) 
-                       
-                    }
-                    myroute.controllerFor('home').set('showrecords', showrecords)
-                    
+                        myroute.controllerFor('home').set('DisablePrecoleButton',false)
+                        myroute.controllerFor('home').set('showrecords', showrecords)
+                          
+                    } 
                 }
             }
             })

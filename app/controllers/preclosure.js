@@ -5,7 +5,7 @@ export default Controller.extend({
     isPreclosed:false,
     PaymentMode:["offline","online"],
     actions:{
-            preclose:function(details,record){
+            preclose:function(record){
               var modalvalue = this.get('showDialog')     
                         if(modalvalue!=true){
                           this.set('showDialog',true)
@@ -14,7 +14,7 @@ export default Controller.extend({
                           this.set('showDialog',false)
                         }
               
-              console.log("details>>>>preclose",details)
+              // console.log("details>>>>preclose",details)
               console.log("record>>> preclose",record)
               var EMI=this.get('EMI')
               this.set('EMI',EMI)
@@ -31,44 +31,44 @@ export default Controller.extend({
               this.set('time',time)
              
               var transactionstring={
-                "id":record,"transactionstring":{
-                "loan":details.loan,
-                "amount":details.amount,
-                "propertyType":details.propertyType,
-                "income":details.income,
-                "location":details.location,
-                "year":details.year,
-                "size":details.size,
-                "income":details.income,
-                "fname":details.fname,
-                "lname":details.lname,
-                "estimated":details.estimated,
-                "age":details.age,
-                "phone":details.phone,
-                "email":details.email,
-                "address":details.address,
-                "country":details.country,
-                "occupation":details.occupation,
-                "genderType":details.genderType,
-                "nationalityType":details.nationalityType,
-                "Company":details.Company,
-                "joiningdate":details.joiningdate,
-                "salary":details.salary,
-                "address":details.address,
-                "legal":details.legal,
+                "id":record.Key,"transactionstring":{
+                "loan":record.Record.loan,
+                "amount":record.Record.amount,
+                "propertyType":record.Record.propertyType,
+                "income":record.Record.income,
+                "location":record.Record.location,
+                "year":record.Record.year,
+                "size":record.Record.size,
+                "income":record.Record.income,
+                "fname":record.Record.fname,
+                "lname":record.Record.lname,
+                "estimated":record.Record.estimated,
+                "age":record.Record.age,
+                "phone":record.Record.phone,
+                "email":record.Record.email,
+                "address":record.Record.address,
+                "country":record.Record.country,
+                "occupation":record.Record.occupation,
+                "genderType":record.Record.genderType,
+                "nationalityType":record.Record.nationalityType,
+                "Company":record.Record.Company,
+                "joiningdate":record.Record.joiningdate,
+                "salary":record.Record.salary,
+                "address":record.Record.address,
+                "legal":record.Record.legal,
                 "bank":"applied",
-                "creditscore":details.creditscore,
-                "loanamount":details.loanamount,
-                "loanterms":details.loanterms,
+                "creditscore":record.Record.creditscore,
+                "loanamount":record.Record.loanamount,
+                "loanterms":record.Record.loanterms,
                 // "status":details.status,
-                "amountinterestrate":details.amountinterestrate,
-                "paymentperyear":details.paymentperyear,
-                "installmentpermonth": details.installmentpermonth,
+                "amountinterestrate":record.Record.amountinterestrate,
+                "paymentperyear":record.Record.paymentperyear,
+                "installmentpermonth": record.Record.installmentpermonth,
                 "date":date,
                 "time":time,
                 "installment":installment,
                 "EMI":EMI,
-                "statuspreclose":"User Requested For Preclose",
+                "statuspreclose":"Requested For Preclose",
                 "Payment":Payment,
                 "date":date,
                 "time":time

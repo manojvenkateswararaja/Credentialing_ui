@@ -2,18 +2,15 @@ import Route from '@ember/routing/route';
 
 export default Route.extend({
     actions:{
-
-
-        
-        uploadDoc:function (file) {
+    uploadDoc:function (file) {
             // var mycontroller = this;
     console.log("entering upload FIR 3");
     var mycontroller = this;
     console.log(file)
-   var requestid=this.controllerFor('newrequest').get('reqid');
-   this.controllerFor('uploaddoc').set('requestid',requestid);
-   console.log(requestid);
-file.upload('http://localhost:8082/UploadDocs?requestid='+requestid).then(function (response) {
+    var requestid=this.controllerFor('newrequest').get('reqid');
+    this.controllerFor('uploaddoc').set('requestid',requestid);
+    console.log(requestid);
+    file.upload('http://localhost:8082/UploadDocs?requestid='+requestid).then(function (response) {
     console.log(JSON.stringify(response));
     var url =response.body.url;
     console.log("url ::",JSON.stringify(url));
@@ -22,7 +19,6 @@ file.upload('http://localhost:8082/UploadDocs?requestid='+requestid).then(functi
     var f2=document.getElementById('upload_file2')
     console.log("f2??????",f2)
     console.log("f1",f1)
-   
     if(f1===document.getElementById('upload_file')){
     mycontroller.controllerFor('uploaddoc').set('isShow_fileupload',true);
         }else if(f2===document.getElementById('upload_file2')){
@@ -34,14 +30,8 @@ file.upload('http://localhost:8082/UploadDocs?requestid='+requestid).then(functi
     console.log("saviing file...");
     console.log("file upload sucessfully. 1..");
     //return image.save();
- 
-   
-   
-    
  }, function () {
-   
     console.log("file upload sucessfully...");
- 
   });
 },
     },
