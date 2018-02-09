@@ -4,10 +4,17 @@ export default Route.extend({
     isUserstatus:false,
     model(){
         var myroute = this
+        var token = sessionStorage.getItem('token');
+        console.log("manoj",token);
         return $.ajax({
             url: 'http://localhost:8082/getloandetails',
             type: 'GET',
             contentType: 'application/json',
+            headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json',
+      'x-access-token': token
+  },
             success: function(response) {
                 var showrecords = response.message;
               

@@ -51,10 +51,17 @@ export default Controller.extend({
                   "time":time
                 }}
               console.log("creditscore------>",transactionstring);
+              var token = sessionStorage.getItem('token');
+              console.log("manoj",token);
                 return $.ajax({
                 url:'http://localhost:8082/updatetransaction',//web service for credit score
                 type: 'POST',
                 contentType:'application/json',
+                headers: {
+                  'Accept': 'application/json',
+                  'Content-Type': 'application/json',
+                  'x-access-token': token
+              },
                 data:JSON.stringify(transactionstring),
                 success: function(response) {
                 console.log("service")
@@ -119,10 +126,17 @@ export default Controller.extend({
                       "time":time
                     }}
                   console.log("creditscore------>",transactionstring);
+                  var token = sessionStorage.getItem('token');
+                  console.log("manoj",token);
                     return $.ajax({
                     url:'http://localhost:8082/updatetransaction',//web service for credit score
                     type: 'POST',
                     contentType:'application/json',
+                    headers: {
+                      'Accept': 'application/json',
+                      'Content-Type': 'application/json',
+                      'x-access-token': token
+                  },
                     data:JSON.stringify(transactionstring),
                     success: function(response) {
                     console.log("service")

@@ -7,6 +7,10 @@ export default Route.extend({
          var status="Processing"
          this.controllerFor('login1').set('status',status)
          console.log("status>>>>>>property",status)
+        //   var loanID = this.controllerFor('login1').get('token');
+        //   this.controllerFor('login1').set('token',loanID);
+        //   console.log("loanID",loanID)
+         
      
      
     }

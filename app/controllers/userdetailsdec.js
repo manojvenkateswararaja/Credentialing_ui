@@ -57,10 +57,17 @@ export default Controller.extend({
                   
                 }}
               console.log("creditscore------>",data);
+              var token = sessionStorage.getItem('token');
+              console.log("manoj",token)
                 return $.ajax({
                 url:'http://localhost:8082/updatetransaction',//update legal verifier data
                 type: 'POST',
                 contentType:'application/json',
+                headers: {
+                  'Accept': 'application/json',
+                  'Content-Type': 'application/json',
+                  'x-access-token': token
+              },
                 data:JSON.stringify(Updateddata),
                 success: function(response) {
                 console.log("service")

@@ -68,12 +68,13 @@ export default Controller.extend(Validations,{
             var message = response.message;
             var token=response.token
             console.log("token",token)
-            console.log("message" + message);
             var usertype=response.usertype;
             var status=response.status
              mycontroller.set('usertype',usertype)
             console.log(usertype)
             sessionStorage.setItem('usertype', usertype);
+            sessionStorage.setItem('token', token);
+            
             mycontroller.set('showDialog',true)
             }    
             });

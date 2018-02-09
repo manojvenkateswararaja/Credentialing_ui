@@ -1,5 +1,6 @@
 import Controller from '@ember/controller';
 
+
 export default Controller.extend({
   IsSuccess:false,
   showRequest:true,
@@ -33,7 +34,7 @@ export default Controller.extend({
                   this.set('showDialog',false)
                 }
 
-    
+   
         var loan=this.get('loan');
         this.set("loan",loan);  
         console.log(loan);
@@ -146,9 +147,17 @@ export default Controller.extend({
     };
     console.log("datastring"+JSON.stringify(transactionstring));
     var mycontroller=this
+   
+    var token = sessionStorage.getItem('token');
+    console.log("manoj",token);
     return $.ajax({   
     url:'http://localhost:8082/loandetails',
     type: 'POST',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json',
+      'x-access-token': token
+  },
     contentType: 'application/json',
     data: JSON.stringify(transactionstring),
     success: function(response) {

@@ -76,11 +76,19 @@ export default Controller.extend({
         }
     }
         console.log(JSON.stringify(transactionstring))
+
         var mycontroller=this;
+        var token = sessionStorage.getItem('token');
+        console.log("manoj",token);
         return $.ajax({
             url:'http://localhost:8082/updatetransaction',
             type: 'POST',
             contentType: 'application/json',
+            headers: {
+              'Accept': 'application/json',
+              'Content-Type': 'application/json',
+              'x-access-token': token
+          },
             data: JSON.stringify(transactionstring),
             success: function(response) {
             console.log(JSON.stringify(response));
