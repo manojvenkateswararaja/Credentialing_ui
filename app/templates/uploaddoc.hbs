@@ -52,14 +52,13 @@ a:active {
                     {{#link-to 'home'}}<b id="link">Go Back To Main Menu</b>{{/link-to}}
                   </div>
                   </div>
-                <br>
-                
+                <br>  
                 <div class="row">
                    <div class="col-xs-4 col-lg-4col-md-4 col-sm-4">
                      <label >Id proof Document</label>
                   </div>
-                    <div class="col-xs-3 col-lg-3 col-md-3 col-sm-3">
-                
+                    <div class="col-xs-3 col-lg-3 col-md-3 col-sm-3">       
+     {{#if Notshow_fileupload}}
     <div id="NR-reactangle">
       
       {{#pl-uploader  for="upload_file" runtimes="html5 flash silverlight" onfileadd="uploadDoc" as |queue|}}
@@ -67,15 +66,15 @@ a:active {
          {{/pl-uploader}}
       
    </div>
-     
-     </div>
-       </div>
+   {{/if}}
       {{isShow_fileupload}}
        {{#if isShow_fileupload}}
         <div id="NR-reactangle-ok">
        <p style="color:#68DC83,margin-top:3mm"><b> File Uploaded Sucessfully !!!</b></p>
          </div>
-       {{/if}}
+       {{/if}}</div>
+       </div>
+     
        
                 {{!-- <div class="row">
                    <div class="col-xs-4 col-lg-4col-md-4 col-sm-4">

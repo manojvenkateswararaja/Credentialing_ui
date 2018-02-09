@@ -29,6 +29,8 @@ export default Controller.extend({
               this.set('date',date)
               var time=new Date().toTimeString();
               this.set('time',time)
+              var url=this.get('url')
+              this.set('url',url)
              
               var transactionstring={
                 "id":record.Key,"transactionstring":{
@@ -67,6 +69,7 @@ export default Controller.extend({
                 "date":date,
                 "time":time,
                 "installment":installment,
+                "url":url,
                 "EMI":EMI,
                 "statuspreclose":"Requested For Preclose",
                 "Payment":Payment,

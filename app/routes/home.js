@@ -46,7 +46,7 @@ export default Route.extend({
                     if(statusForUser==="Request sent successfully" ||statuspreclose==="Requested For Preclose"||userpreclosestatus==="preclosure accepted"){ //show status
                         myroute.controllerFor('home').set('ShowRequest',true)
                         myroute.controllerFor('home').set('isBankPreclose',false) 
-                        myroute.controllerFor('home').set('DisablePrecoleButton',true)
+                        // myroute.controllerFor('home').set('DisablePrecoleButton',true)
                         myroute.controllerFor('home').set('showrecords', showrecords)  
                     }else if(statusForCreditRequest==="Loan Scheduled"){
                         myroute.controllerFor('home').set('ShowRequest',true)
@@ -58,6 +58,7 @@ export default Route.extend({
                         myroute.controllerFor('home').set('ShowRequest',true)
                         myroute.controllerFor('home').set('isBankPreclose',false) 
                         myroute.controllerFor('home').set('DisablePrecoleButton',false)
+                        // myroute.controllerFor('home').set('DisablePrecoleButton',false)
                         myroute.controllerFor('home').set('showrecords', showrecords)
                           
                     } 
