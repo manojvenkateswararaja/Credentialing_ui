@@ -15,13 +15,16 @@ export default Route.extend({
 
 
 
-file.upload('http://192.168.1.28:8082/UploadDocs?requestid='+requestid).then(function (response) {
+file.upload('http://localhost:8082/UploadDocs?requestid='+requestid).then(function (response) {
     console.log(JSON.stringify(response));
     var url =response.body.url;
     console.log("url ::",JSON.stringify(url));
- 
-    mycontroller.controllerFor('uploaddoc').set("showDialog",true);
- 
+    mycontroller.controllerFor('uploaddoc').set('url',url);
+    // mycontroller.controllerFor('uploaddoc').set("showDialog",true);
+    mycontroller.controllerFor('uploaddoc').set("isShow_fileupload",true);
+    mycontroller.controllerFor('uploaddoc').set("Notshow_fileupload",false);
+    mycontroller.controllerFor('uploaddoc').set("isShow_fileupload1",true);
+    mycontroller.controllerFor('uploaddoc').set("Notshow_fileupload1",false);
     console.log("saviing file...");
     console.log("file upload sucessfully. 1..");
    
@@ -34,6 +37,14 @@ file.upload('http://192.168.1.28:8082/UploadDocs?requestid='+requestid).then(fun
 },
     },
 model(){
+    this.controllerFor('uploaddoc').set('Notshow_fileupload', true); 
+    if(this.controllerFor('uploaddoc').set('Notshow_fileupload', true)){
+     this.controllerFor('uploaddoc').set(' isShow_fileupload', false); 
+    }  
+    this.controllerFor('uploaddoc').set('Notshow_fileupload1', true); 
+    if(this.controllerFor('uploaddoc').set('Notshow_fileupload1', true)){
+     this.controllerFor('uploaddoc').set(' isShow_fileupload1', false); 
+    }  
     var requestid =this.controllerFor('newrequest').get('reqid');
     this.controllerFor('uploaddoc').set('requestid',requestid);
    console.log("reqid--",requestid);
