@@ -1,17 +1,26 @@
 {{partial 'head'}}
 {{#if showLogin}}
+{{/if}}
 <br>
 <style>
    form {
    border: 3px solid #f1f1f1;
    }
-   input[type=text], input[type=password] {
+   input[type=email], input[type=password] {
    width: 100%;
    padding: 15px 20px;
    display: inline-block;
    border: 1px solid #ccc;
    box-sizing: border-box;
    }
+   input[type=email]:focus {
+  background-color: #3CBC8D;
+    color: white;
+}
+input[typ  e=password]:focus {
+    background-color: #3CBC8D;
+    color: white;;
+}
    button {
    background-color: #4CAF50;
    color: white;
@@ -100,61 +109,4 @@ Your sucessfully logged in!!!
 <br>
 <br>
 <br>
-{{/if}}
-{{!-- 
-<div class="container-fluid" style="">
-   <br>
-   <br>
-   <div class="layout-row layout-xs-column" >
-      <div class="layout-column flex-xs flex-gt-xs-50">
-         {{#paper-card as |card|}}
-         {{#card.title as |title|}}
-         {{#title.text as |text|}}
-         {{#text.headline}}<b>Login</b>{{/text.headline}}
-         <br>
-         <div class="layout layout-sm-row">
-            {{paper-input
-            class="flex-50"
-            label="Email Address"
-            value=email
-            onChange=(action (mut email))
-            errors=model.validations.attrs.username.messages
-            }}
-         </div>
-         <div class="layout layout-sm-row">
-            {{paper-input
-            label="Password"
-            class="flex-34"
-            type="password"
-            value=password
-            onChange=(action (mut password))
-            errors=model.validations.attrs.password.messages
-            }}
-         </div>
-         {{/title.text}}
-         {{title.media size="lg" src="assets/images/mort.png" alt="Tomster" title="Tomster"}}
-         {{/card.title}}
-         {{#card.actions}}
-         <div  style="background-color:#4285f4;">
-            {{#paper-button style="background-color:#4285f4;" onClick=(action "login")}}Submit{{/paper-button}}
-         </div>
-         {{#if showDialog}}
-         {{#paper-dialog class="flex-77" onClose=(action "closeDialog" "cancel") origin=dialogOrigin clickOutsideToClose=true}}
-         {{#paper-toolbar}}
-         {{#paper-toolbar-tools}}
-         Your sucessfully logged in!!!
-         {{#paper-button iconButton=true onClick=(action "closeDialog" "cancel")}}{{paper-icon icon="close"}}{{/paper-button}}
-         {{/paper-toolbar-tools}}
-         {{/paper-toolbar}}
-         {{#paper-dialog-actions class="layout-row"}}
-         {{#paper-button onClick=(action "closeDialog" "cancel")}}Cancel{{/paper-button}}
-         {{#paper-button onClick=(action "okay" "ok")}}OK{{/paper-button}}
-         {{/paper-dialog-actions}}
-         {{/paper-dialog}}
-         {{/if}}
-         {{/card.actions}}
-         {{/paper-card}}
-      </div>
-   </div>
-</div>
---}}
+

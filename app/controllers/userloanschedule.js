@@ -95,6 +95,10 @@ okay:function(){
 signout:function() {
     this.transitionToRoute('login1');
 },
+gotoPreclose:function(record){
+    this.set('record',record)
+    this.transitionToRoute('preclosure');    
+},
 
     }
     

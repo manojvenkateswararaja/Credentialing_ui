@@ -73,11 +73,11 @@ export default Controller.extend({
           mycontroller.set('showCredit',true)
           var record=response
           console.log("my updated data with creditscore>>>>>>>>>>>>.",record);
-          var statusForCreditRequest=statusForCreditRequest
-          console.log("?????",statusForCreditRequest)
-          if(statusForCreditRequest==="Creditscore Generated"){
-          mycontroller.controllerFor('creditscore').set(statusForCreditRequest,'Creditscore Generated')
-          }
+          // var statusForCreditRequest=statusForCreditRequest
+          // console.log("?????",statusForCreditRequest)
+          // if(statusForCreditRequest==="Creditscore Generated"){
+          // mycontroller.controllerFor('creditscore').set(statusForCreditRequest,'Creditscore Generated')
+          // }
      
             },
           })

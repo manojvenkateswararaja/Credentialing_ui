@@ -12,10 +12,7 @@ export default Controller.extend({
              this.transitionToRoute('newrequest');
              //this.transitionToRoute('ember-paper-stepper');
         },
-        gotoPreclose:function(record){
-            this.set('record',record)
-            this.transitionToRoute('preclosure');    
-        },
+      
       
     }
    

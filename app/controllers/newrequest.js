@@ -53,9 +53,6 @@ export default Controller.extend({
         var size=this.get('size');
         this.set("size",size);
         console.log("size",size);
-        // var income=this.get('income');
-        // this.set("income",income);
-        // console.log("income",income);
         var fname=this.get('fname');
         this.set("fname",fname);
         console.log("firstname",fname);
@@ -212,7 +209,8 @@ signout:function(){
 saveModel:function(){
   
       }
+     
     }
   
-  
+   
 })

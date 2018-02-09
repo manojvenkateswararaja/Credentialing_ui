@@ -6,6 +6,8 @@ export default Route.extend({
             // var mycontroller = this;
     console.log("entering upload FIR 3");
     var mycontroller = this;
+    
+
     console.log(file)
    var requestid=this.controllerFor('newrequest').get('reqid');
    this.controllerFor('uploaddoc').set('requestid',requestid);

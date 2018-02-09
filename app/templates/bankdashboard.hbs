@@ -56,7 +56,9 @@
                            {{!-- <i style="color:DeepSkyBlue;">{{#if isLoanReject}}{{loanReject}}{{/if}}</i> --}}
                            <b style="color:green;"> {{#if isStatus}}{{item.Record.status}}{{/if}}</b>
                            <b style="color:green;">{{#if IsCreditStatus}}{{item.Record.statusForCreditRequest}}{{/if}}
-                               {{#if IsLegalValidated}}{{item.Record.statusForBankLegal}}{{/if}}</b> 
+                               {{#if IsLegalValidated}}{{item.Record.statusForBankLegal}}{{/if}}
+                               {{item.Record.bankpreclose}}</b>
+                             <b style="color:skyblue;"><a href="" {{action 'postPrecoseRequest'  item }}>{{item.Record.statuspreclose}}</a></b> 
                      </div>
                   </div>
          <br>
