@@ -99,7 +99,7 @@
       {{#paper-button primary=true raised=true onClick=(action nextStep)}}
       next
       {{/paper-button}}
-      {{#paper-button onClick=(action previousStep)}}
+      {{#paper-button primary=true raised=true onClick=(action previousStep)}}
       Back
       {{/paper-button}}
       {{/step.actions}}
@@ -138,7 +138,7 @@
       {{#paper-button primary=true raised=true onClick=(action nextStep)}}
       next
       {{/paper-button}}
-      {{#paper-button onClick=(action previousStep)}}
+      {{#paper-button primary=true raised=true onClick=(action previousStep)}}
       Back
       {{/paper-button}}
       {{/step.actions}}
@@ -194,7 +194,7 @@
       next
       {{/paper-button}} --}}
       {{#step.actions as |nextStep previousStep|}}
-      {{#paper-button onClick=(action previousStep)}}
+      {{#paper-button primary=true raised=true onClick=(action previousStep)}}
       Back
       {{/paper-button}}
       {{/step.actions}}
