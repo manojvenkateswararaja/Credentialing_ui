@@ -47,7 +47,7 @@ export default Route.extend({
                     // console.log("statusForUser>>uper >> console",statusForUser)
                     myroute.controllerFor('bankdashboard').set('isStatus',true)
                     
-                    if(statusForCreditRequest==="Legalverifier approved" || statusForCreditRequest==="Requested for Legalverifier" || record.Record.statusForBankLegal==="Loan successfully accepted by user" ||statuspreclose==="User Requested For Preclose" ||bankpreclose==="Loan Closed"){ 
+                    if(statusForCreditRequest==="Legalverifier approved" || statusForCreditRequest==="Requested for Legalverifier" || record.Record.statusForBankLegal==="Loan successfully accepted by user" ||statuspreclose==="User Requested For Preclose" ||bankpreclose==="Loan Closed"|| statusForCreditRequest==="Loan Rejected"){ 
                          myroute.controllerFor('bankdashboard').set('isStatus',false)
                          myroute.controllerFor('bankdashboard').set('statusForCreditRequest',statusForCreditRequest)
                          console.log(statusForCreditRequest)
@@ -65,7 +65,7 @@ export default Route.extend({
                     myroute.controllerFor('bankdashboard').set('isStatus',true)
                     console.log("DefaultStatus",status)
                     myroute.controllerFor('bankdashboard').set('status',status) 
-                } 
+                }
             }
             }
         });

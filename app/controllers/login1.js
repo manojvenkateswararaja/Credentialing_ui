@@ -52,6 +52,7 @@ export default Controller.extend(Validations,{
            var dataString = {
            "email": email,
            "password": password,
+          
         //    "usertype": usertype,
         };
             console.log(JSON.stringify(dataString));
