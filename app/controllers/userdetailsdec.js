@@ -117,7 +117,7 @@ export default Controller.extend({
           },
       
          
-          LegalValidaterRejected:function(records,showrecords){
+          LegalValidaterRejected:function(record,details){
                     // rejected boss
                     var modalvalue = this.get('showDialogForReject')
                     
@@ -128,13 +128,13 @@ export default Controller.extend({
                                 this.set('showDialogForReject',false)
                               }
                         var mycontroller=this;
-                        console.log("requestid>>>>>>>>",records.Key)
-                        console.log("records>>>>userdec",records)
-                        var data=showrecords
+                        console.log("requestid>>>>>>>>",record.Key)
+                        console.log("records>>>>userdec",record)
+                        var data=record.Record
                         console.log("data>>>>",data)
                         var date=new Date().toLocaleDateString();
                         var time=new Date().toTimeString();
-                        var Updateddata = { "id":records.Key,
+                        var Updateddata = { "id":record.Key,
                          "transactionstring":{
                           "loan":data.loan,
                           "amount":data.amount,
@@ -166,11 +166,18 @@ export default Controller.extend({
                           "statusForCreditRequest":"Loan Rejected"
                           
                         }}
-                      console.log("final data with loan rejected------>",data);
+                      console.log("final data with loan rejected------>",Updateddata);
+                      var token = sessionStorage.getItem('token');
+                      console.log("manoj",token)
                         return $.ajax({
                         url:'http://localhost:8082/updatetransaction',//update legal verifier data
                         type: 'POST',
                         contentType:'application/json',
+                        headers: {
+                          'Accept': 'application/json',
+                          'Content-Type': 'application/json',
+                          'x-access-token': token
+                      },
                         data:JSON.stringify(Updateddata),
                         success: function(response) {
                         console.log("service")

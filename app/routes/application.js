@@ -16,7 +16,7 @@ export default Route.extend({
        // this.transitionTo('legalverification2')
         // this.transitionTo('creditscore')
         // this.transitionTo('FillCreditScore')
-        // this.transitionTo('uploaddoc')
+    // this.transitionTo('uploaddoc')
         // this.transitionTo('creditscore')
         // this.transitionTo('userloanschedule')
         this.transitionTo('login1')

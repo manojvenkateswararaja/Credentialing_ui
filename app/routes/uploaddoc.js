@@ -23,8 +23,8 @@ file.upload('http://localhost:8082/UploadDocs?requestid='+requestid).then(functi
     // mycontroller.controllerFor('uploaddoc').set("showDialog",true);
     mycontroller.controllerFor('uploaddoc').set("isShow_fileupload",true);
     mycontroller.controllerFor('uploaddoc').set("Notshow_fileupload",false);
-    mycontroller.controllerFor('uploaddoc').set("isShow_fileupload1",true);
-    mycontroller.controllerFor('uploaddoc').set("Notshow_fileupload1",false);
+    // mycontroller.controllerFor('uploaddoc').set("isfileupload",true);
+    // mycontroller.controllerFor('uploaddoc').set("Notfileupload",false);
     console.log("saviing file...");
     console.log("file upload sucessfully. 1..");
    
@@ -34,21 +34,25 @@ file.upload('http://localhost:8082/UploadDocs?requestid='+requestid).then(functi
     console.log("file upload sucessfully...");
  
   });
-},
-    },
-model(){
-    this.controllerFor('uploaddoc').set('Notshow_fileupload', true); 
-    if(this.controllerFor('uploaddoc').set('Notshow_fileupload', true)){
-     this.controllerFor('uploaddoc').set(' isShow_fileupload', false); 
-    }  
-    this.controllerFor('uploaddoc').set('Notshow_fileupload1', true); 
-    if(this.controllerFor('uploaddoc').set('Notshow_fileupload1', true)){
-     this.controllerFor('uploaddoc').set(' isShow_fileupload1', false); 
-    }  
-    var requestid =this.controllerFor('newrequest').get('reqid');
-    this.controllerFor('uploaddoc').set('requestid',requestid);
-   console.log("reqid--",requestid);
 }
+},
+
+model(){
+this.controllerFor('uploaddoc').set('Notshow_fileupload', true); 
+if(this.controllerFor('uploaddoc').set('Notshow_fileupload', true)){
+this.controllerFor('uploaddoc').set(' isShow_fileupload', false); 
+ } 
+//this.controllerFor('uploaddoc').set('Notfileupload', true); 
+//  if(this.controllerFor('uploaddoc').set('Notfileupload', true)){
+// this.controllerFor('uploaddoc').set(' isfileupload', false); 
+// }   
+
+
+var requestid =this.controllerFor('newrequest').get('reqid');
+this.controllerFor('uploaddoc').set('requestid',requestid);
+console.log("reqid--",requestid);
+}
+    
    
 });
 // var requestid=mycontroller.controllerFor('page4').get('reqid');
