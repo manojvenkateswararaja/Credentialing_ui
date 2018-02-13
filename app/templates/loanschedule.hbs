@@ -1,100 +1,80 @@
 {{partial 'head'}}
 {{#if showUserSchedule}}
 {{/if}}
-{{!-- <div class="container-fluid">? --}}
-      
-      <div class="jumbotron" style="background-color:lightgrey;text-align:center; ">
+<div class="jumbotron" style="background-color:lightgrey;text-align:center; ">
    <b style="">LOAN SCHEDULE</b>
-   </div>
-
+</div>
 <div class="container" style="background-color:">
-   
-   
    <div class="row" style="">
       <div class="col-xs-2 col-lg-2 col-md-2 col-sm-2">
          <label>Request iD:</label>
       </div>
       <div class="col-xs-10 col-lg-10 col-md-10 col-sm-10" style="color:blue">
-          {{!-- {{validated-input  type="text" class="form-group" model=this  valuePath='requestid' placeholder="Request Id" required=""}} --}}
+         {{!-- {{validated-input  type="text" class="form-group" model=this  valuePath='requestid' placeholder="Request Id" required=""}} --}}
          {{record.Key}}
       </div>
    </div>
    <h2>Enter loan information</h2>
-     <div class="row" style="">
-   <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6">
+   <div class="row" style="">
+      <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6">
          <label for="pwd">Amount of the loan:</label>
-               </div>
-                <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6">
+      </div>
+      <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6">
          {{validated-input  type="text"  class="form-group" model=this  valuePath='loanamount' placeholder="loanamount" required=""}}
-</div>
+      </div>
    </div>
-    <div class="row" style="">
-   <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6">
+   <div class="row" style="">
+      <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6">
          <label>Repayment period in months</label>
-            </div>
-             <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6">
+      </div>
+      <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6">
          {{validated-input  type="text"  class="form-group"  model=this  valuePath='loanterms' placeholder="loanterms" required=""}}
+      </div>
    </div>
-   </div>
-      <div class="row" style="">
-   <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6">
-      
+   <div class="row" style="">
+      <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6">
          <label>Annual rate of interest</label>
-         </div>
-          <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6">
-           {{validated-input  type="number"  class="form-group"  model=this  valuePath='interestrate' placeholder="interestrate" required=""}}
-         </div>
-      
+      </div>
+      <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6">
+         {{validated-input  type="number"  class="form-group"  model=this  valuePath='interestrate' placeholder="interestrate" required=""}}
+      </div>
    </div>
-    <div class="row">
-                  
-           <button type="button" class="btn btn-primary btn-block"{{action "compute" }}>Compute</button>
-            {{!-- <button type="button" id="myButton" class="btn btn-primary" {{action "ApproveUpdate" details record.Key creditscore}}>Approve</button> --}}
-         
-          </div>
-          <h2>Payment information</h2>
-    <div class="row" style="">
-   <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6">
-      
+   <div class="row">
+      <button type="button" class="btn btn-primary btn-block"{{action "compute" }}>Compute</button>
+      {{!-- <button type="button" id="myButton" class="btn btn-primary" {{action "ApproveUpdate" details record.Key creditscore}}>Approve</button> --}}
+   </div>
+   <h2>Payment information</h2>
+   <div class="row" style="">
+      <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6">
          <label >Monthly(EMI) payment :</label>
-         </div>
-          <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6">
-
+      </div>
+      <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6">
          {{emi}}
       </div>
    </div>
-      <div class="row" style="">
-   <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6">
-      
+   <div class="row" style="">
+      <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6">
          <label >Total payment:</label>
-         </div>
-          <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6">
+      </div>
+      <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6">
          {{total}}
       </div>
-    
-       </div>
-             <div class="row" style="">
-   <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6">
-      
+   </div>
+   <div class="row" style="">
+      <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6">
          <label >Total interest payment:</label>
-         </div>
-          <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6">
+      </div>
+      <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6">
          {{tot}}
       </div>
-      </div>
-       <div class="row">
-                  
-           <button type="button" class="btn btn-primary btn-block"{{action "loanschedule" details record}}>Schedule</button>
-            {{!-- <button type="button" id="myButton" class="btn btn-primary" {{action "ApproveUpdate" details record.Key creditscore}}>Approve</button> --}}
-         
-          </div>
-   
+   </div>
+   <div class="row">
+      <button type="button" class="btn btn-primary btn-block"{{action "loanschedule" details record}}>Schedule</button>
+   </div>
    <br>
 </div>
-   <br>
-   <br>
- 
-
+<br>
+<br>
 {{#if showDialog}}
 {{#paper-dialog class="flex-77" onClose=(action "closeDialog" "cancel") origin=dialogOrigin clickOutsideToClose=true}}
 {{#paper-toolbar}}
@@ -108,26 +88,22 @@ Loan has been scheduled for requested user   ...!!
 {{#paper-button onClick=(action "okay" "ok")}}OK{{/paper-button}}
 {{/paper-dialog-actions}}
 {{/paper-dialog}}
-
 {{/if}}
-     <div class="jumbotron" style="background-color:lightgrey;">
-             <h3>Time Stamp</h3>
-         {{#if isBnkLoanSchedule}}
-             <div class="row">
-           <b>  Loan scheduled time</b>
-            </div>
-          <div class="row">
-            <div class="col-xs-6 col-lg-6 col-sm-6">
-            Date:{{date}}
-            </div>
-             <div class="col-xs-6 col-lg-6 col-sm-6">
-            Time{{time}}
-            </div>
-        
-        
-       </div>
-       <br>
-       <br>
-       {{/if}}
+<div class="jumbotron" style="background-color:lightgrey;">
+   <h3>Time Stamp</h3>
+   {{#if isBnkLoanSchedule}}
+   <div class="row">
+      <b>  Loan scheduled time</b>
+   </div>
+   <div class="row">
+      <div class="col-xs-6 col-lg-6 col-sm-6">
+         Date:{{date}}
+      </div>
+      <div class="col-xs-6 col-lg-6 col-sm-6">
+         Time{{time}}
+      </div>
+   </div>
+   <br>
+   <br>
+   {{/if}}
 </div>
-{{!-- </div> --}}

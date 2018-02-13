@@ -1,6 +1,5 @@
 import Controller from '@ember/controller';
 export default Controller.extend({
-    isShowHome:true,
     actions: {
         userloan:function(record){
             //     console.log("hi manoj",showrecords);
@@ -13,7 +12,11 @@ export default Controller.extend({
              //this.transitionToRoute('ember-paper-stepper');
         },
       
-      
+        logout:function(){
+            console.log("in logout");
+            window.location.reload(true);
+        },
     }
+
    
 });

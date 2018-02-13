@@ -1,6 +1,7 @@
 {{partial 'head'}}
 {{#if showRequest}}
-<div class="container-fluid" style="">
+{{/if}}
+<div class="container-fluid" >
    <div id="mySidenav" class="sidenav" >
       <a href="javascript:void(0)" class="closebtn" {{action "closeNav"}}>&times;</a>
       <a >Home</a>
@@ -54,29 +55,21 @@
                }
             </script>
             <div id="div1" style="display:none">
-              
-{{paper-input label="Employer name" value=Employename onChange=(action (mut Employename)) icon="person"}}
+               {{paper-input label="Employer name" value=Employename onChange=(action (mut Employename)) icon="person"}}
                <br>
-
-             {{paper-input label="Total work experience" value=experience onChange=(action (mut experience)) icon="work"}}
+               {{paper-input label="Total work experience" value=experience onChange=(action (mut experience)) icon="work"}}
                <br>
-             
-              {{paper-input label="Monthly take home salary" value=salary onChange=(action (mut salary)) icon="work"}}
+               {{paper-input label="Monthly take home salary" value=salary onChange=(action (mut salary)) icon="work"}}
             </div>
             <div id="div2" style="display:none">
-          {{paper-input label="Start date of current business" value=startdate type="date" onChange=(action (mut startdate)) icon="work"}}
-
+               {{paper-input label="Start date of current business" value=startdate type="date" onChange=(action (mut startdate)) icon="work"}}
                <br>
                <label>Companytype</label>
-                {{select-component listitem=companylist selecteditemlist=companyType}}
-                <br>
-            
-         {{paper-input label="Last Year's business PAT as per ITR" value=pat onChange=(action (mut pat)) icon="work"}}
-
+               {{select-component listitem=companylist selecteditemlist=companyType}}
                <br>
-               
-        {{paper-input label="Last Year's depreciation" value=depreciation onChange=(action (mut depreciation)) icon="work"}}
-
+               {{paper-input label="Last Year's business PAT as per ITR" value=pat onChange=(action (mut pat)) icon="work"}}
+               <br>
+               {{paper-input label="Last Year's depreciation" value=depreciation onChange=(action (mut depreciation)) icon="work"}}
             </div>
          </div>
          <br>
@@ -125,7 +118,7 @@
                {{select-component listitem=mylist selecteditemlist=propertyType}}
             </div>
             <br>
-            {{!-- {{#paper-button raised=true warn=true onClick=(action "targetButton")}}Submit{{/paper-button}} --}}
+         
          </div>
          {{/paper-grid-list}}
          <br>
@@ -146,11 +139,7 @@
       {{#stepper.step label="Properties" as |step|}}
       <div class="container" style="margin-left:442px; margin-top:-1cm; background-color:lightgrey">
          {{#step.body}}
-         {{!-- {{#if IsSuccess}}
-         <div class="alert alert-success">
-            <strong>Success!</strong> You made request for loan successfully.
-         </div>
-         {{/if}} --}}
+     
          {{#paper-grid-list
          cols="1 md-2 gt-md-6"
          rowHeight="gt-md-1:1 2:2"
@@ -190,62 +179,18 @@
          <br>
          {{/step.body}}
       </div>
-      {{!-- {{#paper-button primary=true raised=true onClick=(action nextStep)}}
-      next
-      {{/paper-button}} --}}
+     
       {{#step.actions as |nextStep previousStep|}}
       {{#paper-button primary=true raised=true onClick=(action previousStep)}}
       Back
       {{/paper-button}}
       {{/step.actions}}
       {{/stepper.step}}
-      {{!-- page4 --}}
-      {{!-- {{#stepper.step label="Employement Details" as |step|}}
-      <div class="container" style="margin-left:442px;margin-top:-2cm; background-color:lightgrey">
-         {{#step.body}} 
-         {{#paper-grid-list
-         cols="1 md-2 gt-md-6"
-         rowHeight="gt-md-1:1 2:2"
-         gutter="12px gt-sm-8px" as |grid|}}  
-         <h2 style="margin-top:30px !important;;padding-top: 0px;margin-left:0">Tell us about your Employment details</h2>
-         <p style="background-color:;margin-top:-20px">
-            <br>
-            <br>
-            <br>
-            {{paper-input label="Income" value=rupees type="number" onChange=(action (mut rupees)) icon="attach money" }}
-            {{paper-input label="Company name" value=company  onChange=(action (mut company)) icon="work"}}
-            <br>
-            {{paper-input label="Joining date" type="date" value=joining onChange=(action (mut joining)) icon="work"}}
-            {{paper-input label="Gross fixed salary" type="number" value=salary onChange=(action (mut salary)) icon="work" }}
-            <br>
-            {{#paper-button raised=true warn=true onClick=(action "targetButton")}}Submit{{/paper-button}}
-         </p>
-         --}}
-         {{!-- {{#if showDialog}}
-         {{#paper-dialog class="flex-77" onClose=(action "closeDialog" "cancel") origin=dialogOrigin clickOutsideToClose=true}}
-         {{#paper-toolbar}}
-         {{#paper-toolbar-tools}}
-         {{message}}
-         your request id:{{reqid}}
-         {{#paper-button iconButton=true onClick=(action "closeDialog" "cancel")}}{{paper-icon icon="close"}}{{/paper-button}}
-         {{/paper-toolbar-tools}}
-         {{/paper-toolbar}}
-         {{#paper-dialog-actions class="layout-row"}}
-         {{#paper-button onClick=(action "closeDialog" "cancel")}}Cancel{{/paper-button}}
-         {{#paper-button onClick=(action "okay" "ok")}}OK{{/paper-button}}
-         {{/paper-dialog-actions}}
-         {{/paper-dialog}}
-         {{/if}} --}}
-         {{!-- {{/paper-grid-list}} --}}
+      
          <br>
          <br>
          <br>
-         {{!-- {{/step.body}} --}}
-         {{!-- 
-      </div>
-      --}}
-      {{!-- {{/stepper.step}} --}}
+        
       {{/paper-stepper}}
    </div>
 </div>
-{{/if}}

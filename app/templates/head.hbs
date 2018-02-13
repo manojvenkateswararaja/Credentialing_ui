@@ -17,52 +17,106 @@
          <li><a href="#"></a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-         {{!-- 
-         <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-         --}}
+        
          <li><a href="login"><span class="glyphicon glyphicon-log-in"></span> Log out</a></li>
       </ul>
    </div>
 </nav>
 {{/if}}
 {{#if showLogin}}
-<nav class="navbar navbar-inverse">
+<nav class="navbar  navbar-fixed-top" style="background-color:#499EF6">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#" ><img src="assets/images/logo.jpg" alt="Smiley face"  id="check-image-2"  height="70" width="90"></a>
+    </div>
+    {{#if showUser}}
+    <ul class="nav navbar-nav navbar-left">
+      <li class="mynavbar-right"{{action 'gotodashboard'}}><font size="4">Home</font></li>
+      
+     &nbsp; &nbsp;
+      <li  class="mynavbar-right" {{action 'gotorequests'}}><font size="4">Requests</font></li>
+
+   
+    </ul>
+    {{/if}}
+  
+    {{#if showUser}}
+   <ul class="nav navbar-nav navbar-right">
+           <li class="mynavbar-right"><font size="4">{{usertype}}</font> </li>
+          <li class="mynavbar-right" {{action 'logout'}}><font size="4">Log out</font></li>
+   </ul>
+      
+    <!---<li  class="mynavbar-right"{{action 'logout'}}>Log Out</li>-->
+    {{else}}
+     <ul class="nav navbar-nav navbar-right">
+      
+     <li class="mynavbar-right" ><font size="4">About Us</font></li>
+      
+     &nbsp; &nbsp;
+      <li  class="mynavbar-right"><font size="4">Contact Us</font></li>
+    
+     <li  class="mynavbar-right"><font size="4">{{#link-to 'signup'}}Sign Up{{/link-to}}</font></li></ul>
+    {{/if}}  
+   
+ </div>
+</nav>
+{{!-- <nav class="navbar navbar-inverse">
    <div class="container-fluid">
       <div class="navbar-header">
-         {{!-- <i class="fa fa-home fa-3" aria-hidden="true" style="color:white;"></i> --}}
+      <a class="navbar-brand" href="#" ><img src="assets/images/logo.jpg" alt="Smiley face"  id="check-image-2"  height="30" width="90"></a>
+    
+       
          <a class="navbar-brand" href="home">Mortgage</a>
       </div>
       <ul class="nav navbar-nav">
-         {{!-- 
-         <li class="active"><a href="#">Home</a></li>
-         --}}
-         {{!-- 
-         <li class="dropdown">
-            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1 <span class="caret"></span></a>
-            <ul class="dropdown-menu">
-               <li><a href="#"></a></li>
-               <li><a href="#"></a></li>
-               <li><a href="#"></a></li>
-            </ul>
-         </li>
-         <li><a href="#"></a></li>
-         --}}
+         {
       </ul>
       <ul class="nav navbar-nav navbar-right">
          <li>{{#link-to 'signup'}}<span class="glyphicon glyphicon-user"> Sign Up</span>{{/link-to}}</li>
          <li><a href="login1"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
       </ul>
    </div>
-</nav>
-{{!-- 
-<div class="container">
-   <h3>Right Aligned Navbar</h3>
-   <p>The .navbar-right class is used to right-align navigation bar buttons.</p>
-</div>
---}}
+</nav> --}}
+
 {{/if}}
 {{#if isShowHome}}
-<nav class="navbar navbar-inverse">
+<nav class="navbar  navbar-fixed-top" >
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#" ><img src="assets/images/logo.jpg" alt="Smiley face"  id="check-image-2"  height="70" width="90"></a>
+    </div>
+    {{#if showUser}}
+    <ul class="nav navbar-nav navbar-left">
+      <li class="mynavbar-right"{{action 'gotodashboard'}}> Dashboard</li>
+      
+     &nbsp; &nbsp;
+      <li  class="mynavbar-right" {{action 'gotorequests'}}>Requests</li>
+
+   
+    </ul>
+    {{/if}}
+  
+    {{#if showUser}}
+   <ul class="nav navbar-nav navbar-right">
+           <li class="mynavbar-right"> {{usertype}}</li>
+          <li class="mynavbar-right" {{action 'logout'}}></li>
+   </ul>
+      
+    <!---<li  class="mynavbar-right"{{action 'logout'}}>Log Out</li>-->
+    {{else}}
+     <ul class="nav navbar-nav navbar-right">
+      
+     <li class="mynavbar-right" ><font size="4">About Us</font></li>
+      
+     &nbsp; &nbsp;
+      <li  class="mynavbar-right"><font size="4">Contact Us</font></li>
+    
+     <li  class="mynavbar-right"><font size="4">{{#link-to 'signup'}}Sign Up{{/link-to}}</font></li></ul>
+    {{/if}}  
+   
+ </div>
+</nav>
+{{!-- <nav class="navbar navbar-inverse">
    <div class="container-fluid">
       <div class="navbar-header">
          <a class="navbar-brand" href="home">mortgage</a>
@@ -80,13 +134,11 @@
          <li><a href="#"></a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-         {{!-- 
-         <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-         --}}
+        
          <li><a href="login"><span class="glyphicon glyphicon-log-in"></span>  {{#link-to 'login1'}}Log out{{/link-to}}</a></li>
       </ul>
    </div>
-</nav>
+</nav> --}}
 {{/if}}
 {{#if showCreditscore}}
 <nav class="navbar navbar-inverse">
@@ -107,9 +159,7 @@
          <li><a href="#"></a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-         {{!-- 
-         <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-         --}}
+         
          <li><a href=""><span class="glyphicon glyphicon-log-in"></span>   {{#link-to 'login1'}}Log out{{/link-to}}</a></li>
       </ul>
    </div>
@@ -134,9 +184,7 @@
          <li><a href="#"></a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-         {{!-- 
-         <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-         --}}
+       
          <li><a href=""><span class="glyphicon glyphicon-log-in"></span> {{#link-to 'login1'}}Log out{{/link-to}}</a></li>
       </ul>
    </div>
@@ -161,9 +209,7 @@
          <li><a href="#"></a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-         {{!-- 
-         <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-         --}}
+        
          <li><a href=""><span class="glyphicon glyphicon-log-in"></span> {{#link-to 'login1'}}Log out{{/link-to}}</a></li>
       </ul>
    </div>
@@ -188,9 +234,7 @@
          <li><a href="#"></a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-         {{!-- 
-         <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-         --}}
+        
          <li><a href=""><span class="glyphicon glyphicon-log-in"></span> {{#link-to 'login1'}}Log out{{/link-to}}</a></li>
       </ul>
    </div>
@@ -198,7 +242,7 @@
 {{/if}}
 {{#if showRequest}}
 <nav class="navbar navbar-inverse">
-   <div class="container-fluid">
+   <div class="container-fluid" >
       <div class="navbar-header">
          <a class="navbar-brand" href="#" style="font-size:25px;cursor:pointer;color:whitesmoke;" {{action "openNav"}}>&#9776; </a>
          <a class="navbar-brand" href="home">Mortgage</a>
@@ -206,14 +250,12 @@
       <ul class="nav navbar-nav">
       </ul>
       <ul class="nav navbar-nav navbar-right">
-         {{!-- 
-         <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-         --}}
+        
          <li><a href=""><span class="glyphicon glyphicon-log-in"></span>{{#link-to 'login1'}}Log out{{/link-to}}</a></li>
       </ul>
    </div>
 </nav>
-{{!-- bfhbd --}}
+
 {{/if}}
 {{#if showDashboard}}
 <nav class="navbar navbar-inverse">
@@ -234,27 +276,16 @@
          <li><a href="#"></a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-         {{!-- 
-         <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-         --}}
+        
          <li><a href=""><span class="glyphicon glyphicon-log-in"></span> {{#link-to 'login1'}}Log out{{/link-to}}</a></li>
       </ul>
    </div>
 </nav>
-{{!-- 
-<nav class="navbar navbar-inverse">
-   <div class="container-fluid">
-      <ul class="nav navbar-nav" style="margin-left: 795px;">
-         <li ><a style="margin-left:0px;" {{action "signout"}}>sign out</a></li>
-         <li><span style="font-size:25px;cursor:pointer;margin-left: -910px;color: whitesmoke;" {{action "openNav"}}>&#9776; status</span></li>
-      </ul>
-   </div>
-</nav>
---}}
+
 {{/if}}
 {{#if showUserDetails}}
-<nav class="navbar navbar-inverse">
-   <div class="container-fluid">
+<nav class="navbar  navbar-fixed-top" >
+  <div class="container-fluid"  style="background-color:#499EF6">
       <div class="navbar-header">
          <a class="navbar-brand" href="bankdashboard">mortgage</a>
       </div>
@@ -271,9 +302,7 @@
          <li><a href="#"></a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-         {{!-- 
-         <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-         --}}
+        
          <li><a href=""><span class="glyphicon glyphicon-log-in"></span> 
             {{#link-to 'login1'}}Log out{{/link-to}}</a>
          </li>
@@ -300,9 +329,7 @@
          <li><a href="#"></a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-         {{!-- 
-         <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-         --}}
+      
          <li><a href=""><span class="glyphicon glyphicon-log-in"></span> 
             {{#link-to 'login1'}}Log out{{/link-to}}</a>
          </li>
@@ -329,9 +356,7 @@
          <li><a href="#"></a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-         {{!-- 
-         <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-         --}}
+         
          <li><a href=""><span class="glyphicon glyphicon-log-in"></span>  {{#link-to 'login1'}}Log out{{/link-to}}</a></li>
       </ul>
    </div>

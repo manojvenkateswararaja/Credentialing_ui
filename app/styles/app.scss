@@ -9,6 +9,23 @@
 @import "ember-bootstrap/bootstrap/scaffolding.scss";
 @import "ember-bootstrap/bootstrap/type.scss";
 @import "ember-bootstrap/bootstrap/buttons.scss";
+.navbar-nav {
+    /* float: left; */
+    margin:-32px -34px 20px 18px;
+}
+.mynavbar-right{
+	padding-top:6mm;
+	margin-right:5mm;
+	color:white;
+	font-family: Avenir-Black;
+
+}
+.user-up-container{
+	box-shadow: 0 7px 16px 0 rgba(132,152,172,0.1);
+	background-color: white;
+	width: 100%;
+	height: 2cm;
+	}
 .NR-reactangle-sucess{
 	width: 390px;
 	height: 50px;

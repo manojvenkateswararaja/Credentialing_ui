@@ -2,115 +2,105 @@
 {{#if showUserSchedule}}
 {{/if}}
 <div class="jumbotron">
- 
-    
    <div class="container" style="background-color:Lavender ">
-     <h2 style="text-align:left;"><b>Loan Quotation</b></h2>
-     <br>
-{{#if IsAlreadyDone}}
-<div class="alert alert-info">
-  <strong>Info!</strong>Already made decision.
-</div>
-{{/if}}
-     <br>
-     <div class="row" style="">
-        <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6" style="">
-      <label>Request iD:</label>
+      <h2 style="text-align:left;"><b>Loan Quotation</b></h2>
+      <br>
+      {{#if IsAlreadyDone}}
+      <div class="alert alert-info">
+         <strong>Info!</strong>Already made decision.
       </div>
-        {{!-- <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6" style=""> --}}
-        <i style="color:blue; margin-left:-11cm;"> {{record.Key}}</i>
-         {{!-- </div> --}}
+      {{/if}}
+      <br>
+      <div class="row" style="">
+         <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6" style="">
+            <label>Request iD:</label>
          </div>
-         <br>
-          <div class="row" style="">
-        <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6" style="">
-         <label>Amount of the loan:</label>
+            <i style="color:blue; margin-left:-11cm;"> {{record.Key}}</i>
+      </div>
+      <br>
+      <div class="row" style="">
+         <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6" style="">
+            <label>Amount of the loan:</label>
          </div>
          <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6" style="">
-         {{record.Record.loanamount}}Rs
+            {{record.Record.loanamount}}Rs
          </div>
-         </div>
-         <br>
-          <div class="row" style="">
-        <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6" style="">
-         <label>Repayment period in months :</label>
-         </div>
-          <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6" style="">
-           {{record.Record.loanterms}} months
-           </div>
-           </div>
-         <br>
-         <div class="row" style="">
-        <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6" style="">
-         <label>Annual rate of interest</label>
+      </div>
+      <br>
+      <div class="row" style="">
+         <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6" style="">
+            <label>Repayment period in months :</label>
          </div>
          <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6" style="">
-         {{record.Record.amountinterestrate}} %
+            {{record.Record.loanterms}} months
          </div>
+      </div>
+      <br>
+      <div class="row" style="">
+         <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6" style="">
+            <label>Annual rate of interest</label>
          </div>
-         <br>
-           <div class="row" style="">
-        <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6" style="">
-         <label>Monthly(EMI) payment :</label>
+         <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6" style="">
+            {{record.Record.amountinterestrate}} %
          </div>
-          <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6" style="">
-           {{record.Record.emi}} Rs
-           </div>
-           </div>
-         <br>
-            <div class="row" style="">
-        <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6" style="">
-         <label>Total payment:</label>
+      </div>
+      <br>
+      <div class="row" style="">
+         <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6" style="">
+            <label>Monthly(EMI) payment :</label>
          </div>
-          <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6" style="">
-         {{record.Record.tot}} Rs
-         </div> 
+         <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6" style="">
+            {{record.Record.emi}} Rs
          </div>
-         <br>
+      </div>
+      <br>
+      <div class="row" style="">
+         <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6" style="">
+            <label>Total payment:</label>
+         </div>
+         <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6" style="">
+            {{record.Record.tot}} Rs
+         </div>
+      </div>
       <br>
       <br>
-       
-        <div style="margin-top:0cm;">
-      <button type="button" class="btn btn-primary btn-block" disabled={{IsAlreadyDone}} {{action "userschedule" record}}> agree & next</button>   
-<br>
-     <button type="button" id="myButton" class="btn btn-primary btn-block" disabled={{DisablePrecoleButton}} {{action "gotoPreclose" item}}>Pre-closure</button>
-          {{#if showDialog}}
-  {{#paper-dialog class="flex-77" onClose=(action "closeDialog" "cancel") origin=dialogOrigin clickOutsideToClose=true}}
-    {{#paper-toolbar}}
-      {{#paper-toolbar-tools}}
-        Loan has been successfully accepted ...!! 
-        {{#paper-button iconButton=true onClick=(action "closeDialog" "cancel")}}{{paper-icon icon="close"}}{{/paper-button}}
-      {{/paper-toolbar-tools}}
-    {{/paper-toolbar}}
-
-   
-    {{#paper-dialog-actions class="layout-row"}}
-      {{#paper-button onClick=(action "closeDialog" "cancel")}}Cancel{{/paper-button}}
-      {{#paper-button onClick=(action "okay" "ok")}}OK{{/paper-button}}
-    {{/paper-dialog-actions}}
-  {{/paper-dialog}}
-{{/if}}
-</div>
-      
-       <div style="background-color:lightgrey;">
-             <h3>Time Stamp</h3>
+      <br>
+      <div style="margin-top:0cm;">
+         <button type="button" class="btn btn-primary btn-block" disabled={{IsAlreadyDone}} {{action "userschedule" record}}> agree & next</button>   
+         <br>
+         <button type="button" id="myButton" class="btn btn-primary btn-block" disabled={{DisablePrecoleButton}} {{action "gotoPreclose" item}}>Pre-closure</button>
+         {{#if showDialog}}
+         {{#paper-dialog class="flex-77" onClose=(action "closeDialog" "cancel") origin=dialogOrigin clickOutsideToClose=true}}
+         {{#paper-toolbar}}
+         {{#paper-toolbar-tools}}
+         Loan has been successfully accepted ...!! 
+         {{#paper-button iconButton=true onClick=(action "closeDialog" "cancel")}}{{paper-icon icon="close"}}{{/paper-button}}
+         {{/paper-toolbar-tools}}
+         {{/paper-toolbar}}
+         {{#paper-dialog-actions class="layout-row"}}
+         {{#paper-button onClick=(action "closeDialog" "cancel")}}Cancel{{/paper-button}}
+         {{#paper-button onClick=(action "okay" "ok")}}OK{{/paper-button}}
+         {{/paper-dialog-actions}}
+         {{/paper-dialog}}
+         {{/if}}
+      </div>
+      <div style="background-color:lightgrey;">
+         <h3>Time Stamp</h3>
          {{#if isLoanSchedule}}
-             <div class="row">
-           <b>  Legal Veification Requested Time</b>
-            </div>
-          <div class="row">
+         <div class="row">
+            <b>  Legal Veification Requested Time</b>
+         </div>
+         <div class="row">
             <div class="col-xs-6 col-lg-6 col-sm-6">
-            Date:{{date}}
+               Date:{{date}}
             </div>
-             <div class="col-xs-6 col-lg-6 col-sm-6">
-            Time{{time}}
+            <div class="col-xs-6 col-lg-6 col-sm-6">
+               Time{{time}}
             </div>
-        
-        
-       </div>
-       <br>
-       <br>
-       {{/if}}
-       </div>
+         </div>
+         <br>
+         <br>
+         {{/if}}
+      </div>
    </div>
 </div>

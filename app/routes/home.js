@@ -1,9 +1,16 @@
 import Route from '@ember/routing/route';
 export default Route.extend({
+    
+    showUser:false,
     isBankPreclose:false,
     isUserstatus:false,
     DisablePrecoleButton:false,
     model(){
+        this.controllerFor('home').set('showLogin',true);
+        this.controllerFor('home').set('showUser',true);
+        var usertype=this.controllerFor('login1').get('usertype');
+        console.log(">>>user",usertype)
+        this.controllerFor('home').set('usertype',usertype);
         var myroute = this
         var token = sessionStorage.getItem('token');
         console.log("manoj",token);
@@ -36,6 +43,7 @@ export default Route.extend({
                 //  myroute.controllerFor('home').set('showrecords', showrecords)
                 // }
                   //After accepting request from bank
+                 
                  var userpreclosestatus=record.Record.userpreclosestatus;
                   console.log("userpreclosestatus",userpreclosestatus)
                   myroute.controllerFor('home').set('record', record)

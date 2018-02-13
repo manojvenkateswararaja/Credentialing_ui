@@ -71,7 +71,7 @@ export default Controller.extend(Validations,{
             console.log("token",token)
             var usertype=response.usertype;
             var status=response.status
-             mycontroller.set('usertype',usertype)
+            mycontroller.set('usertype',usertype)
             console.log(usertype)
             sessionStorage.setItem('usertype', usertype);
             sessionStorage.setItem('token', token);
@@ -112,19 +112,23 @@ export default Controller.extend(Validations,{
             }else if(RequestidOfuser!=null){
               
                 this.set('ShowRequest',true)
+                this.controllerFor('login1').set('showUser',true);
                 
                 this.transitionToRoute('home'); 
             }
       }else if(usertype =="bank"){
         // mycontroller.set('showLogin',false)
         this.set('showDialog',true)
+        this.controllerFor('login1').set('showUser',true);
          this.transitionToRoute('bankdashboard');
       }else if(usertype=="creditscoregenerator"){
           this.set('showDialog',true)
           this.transitionToRoute('creditscore2');
+          this.controllerFor('login1').set('showUser',true);
       }else if(usertype=="legalactor"){
         this.set('showDialog',true)
         this.transitionToRoute('legalverification2');
+        this.controllerFor('login1').set('showUser',true);
       }   
       this.set('showDialog',false)   
       }, 
