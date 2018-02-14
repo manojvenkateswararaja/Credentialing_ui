@@ -1,5 +1,5 @@
 {{partial 'head'}}
-{{#if showRequest}}
+{{#if showLogin}}
 {{/if}}
 <div class="container-fluid" >
    <div id="mySidenav" class="sidenav" >
@@ -10,7 +10,7 @@
       <a {{action "goToproperty"}}>Property details</a>
       <a {{action "goToemployment"}}>Employment details</a>
    </div>
-   <div class="container">
+   <div class="container" style="margin-top:2cm;">
       {{#paper-stepper   currentStep=currentStep onStepChange=(action (mut currentStep))
       onStepperCompleted=(action "saveModel") as |stepper|}}
       {{#stepper.step label="Personal Details" as |step|}}

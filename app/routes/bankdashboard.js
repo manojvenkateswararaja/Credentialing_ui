@@ -8,6 +8,11 @@ export default Route.extend({
     isLoanReject: false,
     isBankpreclose: false,
     model() {
+        this.controllerFor('bankdashboard').set('showLogin',true);
+        this.controllerFor('bankdashboard').set('showUser',true);
+        var usertype=this.controllerFor('login1').get('usertype');
+        console.log(">>>user",usertype)
+        this.controllerFor('home').set('usertype',usertype);
         var myroute = this
         var token = sessionStorage.getItem('token');
         console.log("manoj",token);

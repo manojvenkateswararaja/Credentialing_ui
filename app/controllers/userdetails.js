@@ -86,8 +86,9 @@ export default Controller.extend({
           this.set('isCreditRequested',true)
           this.set('showDialog',false)
           },
-          signout:function(){
-            this.transitionToRoute('login1');
-          },          
+          logout:function(){
+            console.log("in logout");
+            window.location.reload(true);
+        },        
                         }      
 });

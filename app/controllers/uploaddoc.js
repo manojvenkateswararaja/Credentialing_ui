@@ -35,6 +35,10 @@ export default Controller.extend({
 			this.set('IsSuccess', true)
 			//this.transitionToRoute('home');
 		},
+		logout:function(){
+            console.log("in logout");
+            window.location.reload(true);
+        },
 
 	}
 

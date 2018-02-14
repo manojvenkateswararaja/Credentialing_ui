@@ -1,5 +1,6 @@
 import Controller from '@ember/controller';
 export default Controller.extend({
+    
     actions: {
         userloan:function(record){
             //     console.log("hi manoj",showrecords);

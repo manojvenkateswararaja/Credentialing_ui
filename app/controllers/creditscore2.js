@@ -30,8 +30,11 @@ closeNav: function() {
 },
 timestamp:function(){
   this.transitionToRoute('timestamp')
-}
-  
+},
+logout:function(){
+  console.log("in logout");
+  window.location.reload(true);
+},
    
 });
 

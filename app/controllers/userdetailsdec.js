@@ -198,7 +198,10 @@ export default Controller.extend({
                       this.transitionToRoute('bankdashboard')
                       this.set('showDialogForReject',false)
                     },
-                   
+                    logout:function(){
+                      console.log("in logout");
+                      window.location.reload(true);
+                  },
                  
                 
                 

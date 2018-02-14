@@ -147,6 +147,10 @@ export default Controller.extend({
                       },
                     })
                 },
+                logout:function(){
+                  console.log("in logout");
+                  window.location.reload(true);
+              },
             
         }
     

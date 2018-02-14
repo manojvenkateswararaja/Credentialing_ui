@@ -119,6 +119,10 @@ export default Controller.extend({
                 okay:function(){
                 this.set('showDialogUpload',false)
                 }, 
+                logout:function(){
+                  console.log("in logout");
+                  window.location.reload(true);
+              },
                 
   
 
