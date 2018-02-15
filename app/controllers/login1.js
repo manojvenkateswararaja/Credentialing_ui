@@ -73,7 +73,12 @@ export default Controller.extend(Validations,{
             var status=response.status
              mycontroller.set('usertype',usertype)
             console.log(usertype)
+            var userid=response.userId
+            console.log(userid)
+            mycontroller.set('userid',userid)
+            //  sessionstorage.setItem('userid',userid);
             sessionStorage.setItem('usertype', usertype);
+            // sessionStorage.setItem('userid', userid);
             sessionStorage.setItem('token', token);
             
             mycontroller.set('showDialog',true)
@@ -100,7 +105,7 @@ export default Controller.extend(Validations,{
           
           this.set('showDialog',true)
            if(usertype =="user"){
-            var RequestidOfuser=mycontroller.get('record.Key') 
+            var RequestidOfuser=mycontroller.get('finaldata.Key') 
            
             console.log("RequestidOfuser>>>>>",RequestidOfuser)
             mycontroller.set('RequestidOfuser',RequestidOfuser)
@@ -110,7 +115,6 @@ export default Controller.extend(Validations,{
                 this.transitionToRoute('home');
 
             }else if(RequestidOfuser!=null){
-              
                 this.set('ShowRequest',true)
                 this.set('showUser',true);
                 

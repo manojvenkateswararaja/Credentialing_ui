@@ -16,15 +16,18 @@ export default Controller.extend({
                     }
              var mycontroller=this;
              console.log("requestid>>>>>>>>",record.Key)
-             var key = record.Key
-             var len = record.Record.length
+             var userid=this.get('userid')
+             this.set('userid',userid)
+             console.log("userid",userid)
+            //  var key = record.Key
+            //  var len = record.Record.length
              var data = lastdetails;
              console.log("updated data",data)
              var date=new Date().toLocaleDateString();
              var time=new Date().toTimeString();
 
               var data = { 
-               "id":key,
+               "id":userid,
                "transactionstring":{
                 "loan":data.loan,
                 "amount":data.amount,
@@ -36,6 +39,7 @@ export default Controller.extend({
                 "income":data.income,
                 "fname":data.fname,
                 "lname":data.lname,
+                "requestid":data.requestid,
                 "estimated":data.estimated,
                 "age":data.age,
                 "phone":data.phone,

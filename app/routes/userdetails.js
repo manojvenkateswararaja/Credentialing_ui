@@ -2,13 +2,16 @@ import Route from '@ember/routing/route';
 export default Route.extend({
    
     model(){
+        var userid= this.controllerFor('bankdashboard2').get('userid');
+        console.log("route userid",userid)
+        this.controllerFor('userdetails').set("userid",userid);
         var loanID = this.controllerFor('bankdashboard2').get('record');
         this.controllerFor('userdetails').set('record',loanID);
         console.log("record",loanID)
-        // var lastdetails= loanID.Record
-        // console.log("hi.....",lastdetails)
-        // this.controllerFor('userdetails').set('lastdetails',lastdetails);
-        // console.log("updates",lastdetails)
+        var lastdetails= loanID.Records
+         console.log("hi.....",lastdetails)
+        this.controllerFor('userdetails').set('lastdetails',lastdetails);
+         console.log("updates",lastdetails)
         // console.log("userdetails page00",loanID)
         // var date=lastdetails.date
         // var time=lastdetails.time
