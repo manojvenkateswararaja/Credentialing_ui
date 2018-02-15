@@ -74,9 +74,6 @@ export default Controller.extend({
         var country=this.get('country');
         this.set("country",country);
         console.log("country",country);
-        var occupation=this.get('occupation');
-        this.set("occupation",occupation);
-        console.log("occupation",occupation);
         var estimated=this.get('price');
         this.set("estimated",estimated);
         var genderType=this.get('genderType');
@@ -91,9 +88,9 @@ export default Controller.extend({
         var joiningdate=this.get('startdate');
         this.set("joiningdate",joiningdate);
         console.log("joiningdate");
-        var salary=this.get('salary');
-        this.set("salary",salary);
-        console.log(salary);
+        var income=this.get('salary');
+        this.set("salary",income);
+        console.log(income);
         var pat=this.get('pat')
         this.set("pat",pat);
         console.log(pat);
@@ -103,19 +100,30 @@ export default Controller.extend({
         var empname=this.get('Employename');
         this.set("empname",empname);
         console.log(empname);
+        var occupation=this.get('occupation')
+        this.set('occupation',occupation);
+        console.log('occupation',occupation)
         var experience=this.get('experience')
         this.set("experience",experience);
         console.log('experience',experience)
         // var salaried=this.get('salaried')
         // console.log("salaried",salaried)
+        var userId=this.get('userid')
+        this.set("userId",userId)
+        console.log("userid",userId)
         var date=new Date().toLocaleDateString();
         var time=new Date().toTimeString();
+       
+        var requestid = Math.floor(100 + Math.random() * 900);
+        console.log("requestid" + requestid)
         var transactionstring={
+          "userId":userId,
         transactionstring:{
         "loan":loan,
         "amount":amount,
         "propertyType":propertyType,
         "location":location,
+        "requestid":requestid,
         "year":year,
         "size":size,
         "fname":fname,
@@ -135,7 +143,7 @@ export default Controller.extend({
         "nationalityType":nationalityType,
         "Company":Company,
         "joiningdate":joiningdate,
-        "salary":salary,
+        // "salary":salary,
         "date":date,
         "time":time,
         "status":"processing",
