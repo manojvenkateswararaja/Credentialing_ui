@@ -3,6 +3,11 @@ export default Route.extend({
     isDisplayed:false,
     isDisplayedApproval:false,
     model(){
+        this.controllerFor('legalverification').set('showLogin',true);
+        this.controllerFor('legalverification').set('showUser',true);
+        var usertype=this.controllerFor('login1').get('usertype');
+        console.log(">>>user",usertype)
+        this.controllerFor('legalverification').set('usertype',usertype);
         var userid= this.controllerFor('legalverification2').get('record.Key');
         console.log("route userid",userid)
         this.controllerFor('legalverification').set("userid",userid);

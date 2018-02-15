@@ -4,6 +4,11 @@ export default Route.extend({
     IsStatusForCreditRequest:false,
     IsStatusForGenerated:false,
     model(){
+        this.controllerFor('legalverification2').set('showLogin',true);
+        this.controllerFor('legalverification2').set('showUser',true);
+        var usertype=this.controllerFor('login1').get('usertype');
+        console.log(">>>user",usertype)
+        this.controllerFor('legalverification2').set('usertype',usertype);
         
        var myroute=this
        var token = sessionStorage.getItem('token');

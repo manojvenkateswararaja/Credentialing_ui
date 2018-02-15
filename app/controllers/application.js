@@ -13,5 +13,9 @@ isShowHome:false,
        gotohome:function(){
         this.transitionToRoute('home');
      },
+     logout:function(){
+      console.log("in logout");
+      window.location.reload(true);
+  },   
    }
 });
