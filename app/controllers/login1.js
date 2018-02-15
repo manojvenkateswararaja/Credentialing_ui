@@ -126,7 +126,6 @@ export default Controller.extend(Validations,{
             }else if(RequestidOfuser!=null){
                 this.set('ShowRequest',true)
                 this.set('showUser',true);
-                
                 this.transitionToRoute('home'); 
             }
       }else if(usertype =="bank"){

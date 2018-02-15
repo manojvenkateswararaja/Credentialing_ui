@@ -2,6 +2,11 @@ import Route from '@ember/routing/route';
 
 export default Route.extend({
     model() {
+        this.controllerFor('bankdashboard2').set('showLogin',true);
+        this.controllerFor('bankdashboard2').set('showUser',true);
+        var usertype=this.controllerFor('bankdashboard').get('usertype');
+        console.log(">>>user",usertype)
+        this.controllerFor('bankdashboard2').set('usertype',usertype);
         var myroute = this
         var token = sessionStorage.getItem('token');
         console.log("token",token);

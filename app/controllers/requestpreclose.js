@@ -58,7 +58,7 @@ isBankPreclosed:false,
     "installment": record.Record.installment,
     "EMI": record.Record.EMI,
     "changestatus":"change",
-    "userpreclosestatus":"preclosure accepted",
+    "userpreclosestatus":"preclosure accepted, you will get notified soon",
     "bankpreclose":"Loan Closed",
     "Payment":record.Record.Payment,
    

@@ -36,7 +36,8 @@ export default Controller.extend({
               this.set('url',url)
              
               var transactionstring={
-                "id":userid,"transactionstring":{
+                "id":userid,
+                "transactionstring":{
                 "loan":record.Records.loan,
                 "amount":record.Records.amount,
                 "propertyType":record.Records.propertyType,

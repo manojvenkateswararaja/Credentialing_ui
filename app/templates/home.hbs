@@ -2,45 +2,36 @@
 {{#if showLogin}}
 
 {{/if}}
-<div class="container-fluid">
+<style id="link">
+               /* unvisited link */
+               a:link {
+               color: red;
+               }
+               /* visited link */
+               a:visited {
+               color: green;
+               }
+               /* mouse over link */
+               a:hover {
+               color: hotpink;
+               }
+               /* selected link */
+               a:active {
+               color: blue;
+               }
+            </style>
+            <div class="jumbotron">
+<div class="container">
    <br>
-   <small style="margin-left:-9cm">Remember:<u>click on requestid to check response</u></small>
-   <header class="w3-container  w3-center" style="padding:70px 16px"></header>
-        <div class="jumbotron">
-      <p style="text-align:center;color:black"><b>TOTAL REQUEST</b></p>
-      <div class="container" style="background-color:grey"><b>ALL Request</b></div>
+   {{!-- <small style="margin-left:-9cm">Remember:<u>click on requestid to check response</u></small> --}}
+   {{!-- <header class="w3-container  w3-center" style="padding:70px 16px">njknjknk</header> --}}
       <br>
-      <div class ="container">
-         {{#each showrecords   as |item|}}
-         <div class="row">
-            <div class="col-xs-3 col-lg-3 col-sm-3">Requestid<a href="" {{action 'userloanschedule'  item }}><b style="color:blue">{{item.Records.requestid}}</b></a></div>
-            <div class="row">
-               <div class="col-xs-3 col-lg-3 col-sm-3"><b>Data Published Time</b></div>
-               <div class="col-xs-3 col-lg-3 col-sm-3"> Date:<small  class="text-muted">{{item.Records.date}}</small></div>
-               <div class="col-xs-3 col-lg-3 col-sm-3">Time:<small  class="text-muted">{{item.Records.time}}</small></div>
-            </div>
-          <div class="row">
-                  {{!-- <div class="col-xs-3 col-lg-3 col-sm-3"><a href="" {{action 'timestamp' }}><b style="color:#db5945">Track Timestamp</b></a></div> --}}
-                  <div class="col-xs-9 col-lg-9 col-sm-9">
-                        Status:<i style="color:DeepSkyBlue;">{{#if precloselink}}{{#link-to 'requestpreclose' disabled=""}}{{details.statuspreclose}}{{/link-to}}{{/if}}</i>
-                           <i style="color:DeepSkyBlue;">{{#if isBankpreclose}}{{bankpreclose}}{{/if}}</i> 
-                           <i style="color:DeepSkyBlue;">{{#if isLoanReject}}{{loanReject}}{{/if}}</i>
-                        <b style="color:green;"> {{#if isStatus}}{{item.Records.status}}{{/if}}</b>
-                           <b style="color:green;">{{#if IsCreditStatus}}{{item.Records.statusForCreditRequest}}{{/if}}
-                               {{#if IsLegalValidated}}{{item.Records.statusForBankLegal}}{{/if}}
-                               {{item.Records.bankpreclose}}</b>
-                             <b style="color:skyblue;"><a href="" {{action 'postPrecoseRequest'  item }}>{{item.Records.statuspreclose}}</a></b> 
-                     </div>
-                  </div> 
-                  </div>
-         <br>
-         {{/each}}
-     </div>
-     </div>
+      <br>
+     {{#link-to 'home2'}}<b id="link" style="margin-left:0cm">Go To Your Account</b>{{/link-to}}
       {{!-- end --}}
       <h1 class="w3-margin w3-jumbo">Welcome To Mortgage Loan</h1>
-      <p class="w3-xlarge">Mortgage process</p>
-      <button type="button" id="myButton"  class="btn btn-primary" {{action "gotoApply"}}>Apply New Request</button>
+      <p class="w3-xlarge"  style="margin-left:470px">Mortgage process</p>
+      <button type="button" id="myButton"  class="btn btn-primary" style="margin-left:13cm" {{action "gotoApply"}}>Apply New Request</button>
    
    <!-- First Grid -->
   
@@ -58,4 +49,5 @@
       </div>
       <p>Powered by <a href="" target="_blank">RapidQube</a></p>
    </footer>
+</div>
 </div>

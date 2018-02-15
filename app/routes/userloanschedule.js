@@ -6,7 +6,7 @@ export default Route.extend({
         var userid= this.controllerFor('home').get('userid');
         console.log("route userid",userid)
         this.controllerFor('userloanschedule').set("userid",userid);
-    var LoanController=this.controllerFor('home').get('record')
+    var LoanController=this.controllerFor('home2').get('record')
     this.controllerFor('userloanschedule').set('record',LoanController)
     console.log("userloanschedule>>>>",LoanController)
     // console.log("userloanschedule>>>>details",Loandetails)

@@ -1,6 +1,8 @@
 {{partial 'head'}}
 {{#if showUserSchedule}}
 {{/if}}
+<br>
+<br>
 <div class="jumbotron">
    <div class="container" style="background-color:Lavender ">
       <h2 style="text-align:left;"><b>Loan Quotation</b></h2>
@@ -15,7 +17,7 @@
          <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6" style="">
             <label>Request iD:</label>
          </div>
-            <i style="color:blue; margin-left:-11cm;"> {{record.Key}}</i>
+            <i style="color:blue; margin-left:-11cm;"> {{record.Records.requestid}}</i>
       </div>
       <br>
       <div class="row" style="">

@@ -24,7 +24,8 @@ export default Controller.extend({
                       this.set('date',date)
                         this.set('time',time)
             var transactionstring={
-                "id":userid,"transactionstring":{
+                "id":userid,
+                "transactionstring":{
                 "loan":details.Records.loan,
                 "amount":details.Records.amount,
                 "propertyType":details.Records.propertyType,

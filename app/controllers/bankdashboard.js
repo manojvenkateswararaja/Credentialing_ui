@@ -6,12 +6,7 @@ export default Controller.extend({
   showDashboard:true,
     
   actions: {
-    postPrecoseRequest:function(record){
-      //     console.log("hi manoj",showrecords);
-          this.set('record',record)
-          this.transitionToRoute('requestpreclose')
-
-       },
+  
    
     userdetails: function(showrecords) {
      this.set('record',showrecords)
