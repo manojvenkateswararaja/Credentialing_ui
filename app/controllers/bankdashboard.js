@@ -24,9 +24,9 @@ export default Controller.extend({
        if(score == null){
            this.transitionToRoute('bankdashboard2')
        }
-      //else if(score != null){
-      //      this.transitionToRoute('userdetailsdec')   
-      //  }
+      else if(score != null){
+           this.transitionToRoute('bankdashboard2')   
+       }
      
       // this.transitionToRoute('userdetails');
     },

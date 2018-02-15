@@ -8,7 +8,9 @@ export default Route.extend({
         var userid= this.controllerFor('bankdashboard').get('userId');
         console.log("route userid",userid)
         this.controllerFor('bankdashboard2').set("userid",userid);
-    
+        var creditscore=this.controllerFor('bankdashboard').get('creditscore');
+        console.log("creditscore",creditscore)
+       
         return $.ajax({
            
             url: 'http://localhost:8082/getHistory',

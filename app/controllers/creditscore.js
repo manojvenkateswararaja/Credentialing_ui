@@ -19,11 +19,14 @@ export default Controller.extend({
           var mycontroller=this;
           console.log("record>>>>>>>>loan",lastdetails)
           console.log("creditscore>>>>>>",creditscore)
-          console.log("key>>>>>>",records)
+          // console.log("key>>>>>>",records)
           var date=new Date().toLocaleDateString();
           var time=new Date().toTimeString();
+          var userid=this.get('userid')
+          this.set('userid',userid)
+          console.log("userid",userid)
          var transactionstring={
-           "id":records,"transactionstring":{
+           "id":userid,"transactionstring":{
             "loan":lastdetails.loan,
             "amount":lastdetails.amount,
             "propertyType":lastdetails.propertyType,
