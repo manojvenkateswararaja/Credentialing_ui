@@ -8,7 +8,9 @@ export default Route.extend({
     isLegalDisableButton:false,
     IsAlreadyDone:false,
     model(){
-     
+        var userid= this.controllerFor('bankdashboard2').get('userid');
+        console.log("route userid",userid)
+        this.controllerFor('userdetailsdec').set("userid",userid);
         var loanID = this.controllerFor('bankdashboard').get('record');
         var statusForCreditRequest=loanID.Record.statusForCreditRequest
         console.log("statusForCreditRequest>>>>",statusForCreditRequest)

@@ -35,6 +35,9 @@ export default Controller.extend({
         var time=new Date().toTimeString();
         this.set('date',date)
         this.set('time',time)
+        var userid=this.get('userid')
+        this.set('userid',userid)
+        console.log("userid",userid)
         var transactionstring={
           "id":record.Key,"transactionstring":{
           "loan":details.loan,
@@ -45,6 +48,7 @@ export default Controller.extend({
           "year":details.year,
           "size":details.size,
           "income":details.income,
+          "requestid":details.requestid,
           "fname":details.fname,
           "lname":details.lname,
           "estimated":details.estimated,

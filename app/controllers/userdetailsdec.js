@@ -16,6 +16,9 @@ export default Controller.extend({
                         this.set('showDialog',false)
                       }
                 var mycontroller=this;
+                var userid=this.get('userid')
+                this.set('userid',userid)
+                console.log("userid",userid)
                 console.log("requestid>>>>>>>>",records.Key)
                 console.log("records>>>>userdec",records)
                 var data=records.Record
@@ -24,13 +27,17 @@ export default Controller.extend({
                 this.set('date',date)
                 var time=new Date().toTimeString();
                 this.set('time',time)
-                var Updateddata = { "id":records.Key,
+                var userid=this.get('userid')
+                this.set('userid',userid)
+                console.log("userid",userid)
+                var Updateddata = { "id":userid,
                  "transactionstring":{
                   "loan":data.loan,
                   "amount":data.amount,
                   "propertyType":data.propertyType,
                   "income":data.income,
                   "location":data.location,
+                  "requestid":data.requestid,
                   "year":data.year,
                   "size":data.size,
                   "income":data.income,
