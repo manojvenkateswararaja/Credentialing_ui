@@ -67,23 +67,32 @@ export default Controller.extend(Validations,{
             success: function(response) {
             console.log(JSON.stringify(response));
             var message = response.message;
-            var token=response.token
-            console.log("token",token)
-            var usertype=response.usertype;
-            var status=response.status
-             mycontroller.set('usertype',usertype)
-            console.log(usertype)
-            var userid=response.userId
-            console.log(userid)
-            mycontroller.set('userid',userid)
-            //  sessionstorage.setItem('userid',userid);
-            sessionStorage.setItem('usertype', usertype);
-            // sessionStorage.setItem('userid', userid);
-            sessionStorage.setItem('token', token);
+          console.log("message",message)
+          if (message==="Login Successful"){
+          mycontroller.set('message',message)
+                var token=response.token
+                console.log("token",token)
+                var usertype=response.usertype;
+                var status=response.status
+                 mycontroller.set('usertype',usertype)
+                console.log(usertype)
+                var userid=response.userId
+                console.log(userid)
+                mycontroller.set('userid',userid)
+                //  sessionstorage.setItem('userid',userid);
+                sessionStorage.setItem('usertype', usertype);
+                // sessionStorage.setItem('userid', userid);
+                sessionStorage.setItem('token', token);
+                
+                mycontroller.set('showDialog',true)
+               // console.log("rahul")
+            }else{
+             console.log("else")
+        }
             
-            mycontroller.set('showDialog',true)
-            }    
-            });
+    }    
+    })
+
            
            
             }
