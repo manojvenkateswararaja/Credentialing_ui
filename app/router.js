@@ -38,6 +38,7 @@ Router.map(function() {
   this.route('requestpreclose');
   this.route('timestamp');
   this.route('creditscore2');
+  this.route('bankdashboard2');
 });
 
 export default Router;

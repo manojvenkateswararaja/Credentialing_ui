@@ -18,12 +18,15 @@ export default Controller.extend({
      console.log("get credit score",showrecords)
       var score=showrecords.Record.creditscore
       this.set('score',score)
+      var userId=showrecords.Key
+      this.set('userId',userId)
       console.log("i got creditscore in bank",score)
        if(score == null){
-           this.transitionToRoute('userdetails')
-       }else if(score != null){
-           this.transitionToRoute('userdetailsdec')   
+           this.transitionToRoute('bankdashboard2')
        }
+      //else if(score != null){
+      //      this.transitionToRoute('userdetailsdec')   
+      //  }
      
       // this.transitionToRoute('userdetails');
     },

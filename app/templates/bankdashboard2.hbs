@@ -1,0 +1,42 @@
+{{partial 'head'}}
+{{#if showDashboard }}
+{{/if}}
+
+    <header class="w3-container  w3-center" style="padding:70px 16px"></header>
+      
+      {{#each showrecords   as |item|}}
+      <div class="row" style="background-color:lightgrey">
+            <div class="col-xs-3 col-lg-3 col-sm-3">Requestid<a href="" {{action 'userdetails'  item }}><b style="color:blue">{{item.Records.requestid}}    
+                    </b>
+                    </a></div>
+         <div class="col-xs-2 col-lg-2 col-md-2 col-sm-2" style="background-color:">
+            <div class="vl5">
+               <div>Name:{{item.Records.fname}}
+               </div>
+            </div>
+         </div>
+         <div class="col-xs-2 col-lg-2 col-md-2 col-sm-2" style="background-color:">
+            <div class="vl5">
+               <div style="">Property:{{item.Records.propertyType}}</div>
+            </div>
+         </div>
+         <div class="col-xs-2 col-lg-2 col-md-2 col-sm-2" style="background-color:">
+            <div class="vl5">
+               <div style="">Amount:{{item.Records.amount}}</div>
+            </div>
+         </div>
+         <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6" style="background-color:">
+            <div class="vl5">
+               <div style="">status:<b style="color:green">{{#if isBankPreclose}}{{status}}{{/if}}</b>
+                  <b style="color:green">{{item.Records.statusForUser}}{{item.Records.statusForBankLegal}}{{item.Records.statusForCreditRequest}}
+                      {{item.Records.statuspreclose}}
+                      {{item.Records.userpreclosestatus}}
+                 
+                  </b>
+               </div>
+            </div>
+         </div>
+      </div>
+      <br>
+      {{/each}}
+      

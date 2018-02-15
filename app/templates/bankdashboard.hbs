@@ -37,28 +37,44 @@
       <div class ="container">
          {{#each showrecords   as |item|}}
          <div class="row">
-            <div class="col-xs-3 col-lg-3 col-sm-3">Requestid<a href="" {{action 'userdetails'  item }}><b style="color:blue">{{item.Key}}</b></a></div>
+            <div class="col-xs-3 col-lg-3 col-sm-3">Userid<a href="" {{action 'userdetails'  item }}><b style="color:blue">{{item.Key}}</b></a></div>
             <div class="row">
                <div class="col-xs-3 col-lg-3 col-sm-3"><b>Data Published Time</b></div>
                <div class="col-xs-3 col-lg-3 col-sm-3"> Date:<small  class="text-muted">{{item.Record.date}}</small></div>
                <div class="col-xs-3 col-lg-3 col-sm-3">Time:<small  class="text-muted">{{item.Record.time}}</small></div>
             </div>
-         </div>
-         <div class="row">
-            <div class="col-xs-3 col-lg-3 col-sm-3"><a href="" {{action 'timestamp' }}><b style="color:#db5945">Track Timestamp</b></a></div>
-            <div class="col-xs-9 col-lg-9 col-sm-9">
-               Status:<i style="color:DeepSkyBlue;">{{#if precloselink}}{{#link-to 'requestpreclose' disabled=""}}{{details.statuspreclose}}{{/link-to}}{{/if}}</i>
-               <b style="color:green;"> {{#if isStatus}}{{item.Record.status}}{{/if}}</b>
-               <b style="color:green;">{{#if IsCreditStatus}}{{item.Record.statusForCreditRequest}}{{/if}}
-               {{#if IsLegalValidated}}{{item.Record.statusForBankLegal}}{{/if}}
-               {{item.Record.bankpreclose}}</b>
-               <b style="color:skyblue;"><a href="" {{action 'postPrecoseRequest'  item }}>{{item.Record.statuspreclose}}</a></b> 
-            </div>
-         </div>
+          <div class="row">
+                  <div class="col-xs-3 col-lg-3 col-sm-3"><a href="" {{action 'timestamp' }}><b style="color:#db5945">Track Timestamp</b></a></div>
+                  <div class="col-xs-9 col-lg-9 col-sm-9">
+                        Status:<i style="color:DeepSkyBlue;">{{#if precloselink}}{{#link-to 'requestpreclose' disabled=""}}{{details.statuspreclose}}{{/link-to}}{{/if}}</i>
+                           <i style="color:DeepSkyBlue;">{{#if isBankpreclose}}{{bankpreclose}}{{/if}}</i> --}}
+                           <i style="color:DeepSkyBlue;">{{#if isLoanReject}}{{loanReject}}{{/if}}</i>
+                        <b style="color:green;"> {{#if isStatus}}{{item.Record.status}}{{/if}}</b>
+                           <b style="color:green;">{{#if IsCreditStatus}}{{item.Record.statusForCreditRequest}}{{/if}}
+                               {{#if IsLegalValidated}}{{item.Record.statusForBankLegal}}{{/if}}
+                               {{item.Record.bankpreclose}}</b>
+                             <b style="color:skyblue;"><a href="" {{action 'postPrecoseRequest'  item }}>{{item.Record.statuspreclose}}</a></b> 
+                     </div>
+                  </div> 
+                  </div>
          <br>
          {{/each}}
       </div>
-   </div>
+    <div style="text-shadow: 3px 3px 2px #FBC6CC">
+      <h3><b>Data Published Time</b></h3>
+      <div class="row">
+         <b> User Requested Time</b>
+      </div>
+      <div class="row">
+         <div class="col-xs-6 col-lg-6 col-sm-6">
+            Date:{{date}}
+         </div>
+         <div class="col-xs-6 col-lg-6 col-sm-6">
+            Time{{time}}
+         </div>
+      </div>
+         </div> 
+      </div>
 </div>
 <a href="#" class="go-top">Scroll to Top</a>
 {{/if}}
