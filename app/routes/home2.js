@@ -3,7 +3,14 @@ import Route from '@ember/routing/route';
 export default Route.extend({
     isStatus:true,
     model(){
+
+        this.controllerFor('home2').set('showLogin',true);
+        this.controllerFor('home2').set('showUser',true);
+        var usertype=this.controllerFor('login1').get('usertype');
+        console.log(">>>user",usertype)
+        this.controllerFor('home2').set('usertype',usertype);
     this.controllerFor('home2').set('ShowRequest',true);
+    // usertype
     var showrecords=this.controllerFor('home').get('showrecords');
     this.controllerFor('home2').set('showrecords',showrecords);
     var myroute = this

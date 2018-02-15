@@ -2,6 +2,11 @@ import Route from '@ember/routing/route';
 export default Route.extend({
    
     model(){
+        this.controllerFor('userdetails').set('showLogin',true);
+        this.controllerFor('userdetails').set('showUser',true);
+        var usertype=this.controllerFor('login1').get('usertype');
+        console.log(">>>user",usertype)
+        this.controllerFor('userdetails').set('usertype',usertype);
         var userid= this.controllerFor('bankdashboard2').get('userid');
         console.log("route userid",userid)
         this.controllerFor('userdetails').set("userid",userid);
