@@ -18,6 +18,9 @@ export default Controller.extend({
               console.log("record>>> preclose",record)
               var EMI=this.get('EMI')
               this.set('EMI',EMI)
+              var userid=this.get('userid')
+              this.set('userid',userid)
+              console.log("userid",userid)
               console.log("EMI is>>>>>>",EMI);
               var installment=this.get('installment')
               this.set('installment',installment)
@@ -33,39 +36,41 @@ export default Controller.extend({
               this.set('url',url)
              
               var transactionstring={
-                "id":record.Key,"transactionstring":{
-                "loan":record.Record.loan,
-                "amount":record.Record.amount,
-                "propertyType":record.Record.propertyType,
-                "income":record.Record.income,
-                "location":record.Record.location,
-                "year":record.Record.year,
-                "size":record.Record.size,
-                "income":record.Record.income,
-                "fname":record.Record.fname,
-                "lname":record.Record.lname,
-                "estimated":record.Record.estimated,
-                "age":record.Record.age,
-                "phone":record.Record.phone,
-                "email":record.Record.email,
-                "address":record.Record.address,
-                "country":record.Record.country,
-                "occupation":record.Record.occupation,
-                "genderType":record.Record.genderType,
-                "nationalityType":record.Record.nationalityType,
-                "Company":record.Record.Company,
-                "joiningdate":record.Record.joiningdate,
-                "salary":record.Record.salary,
-                "address":record.Record.address,
-                "legal":record.Record.legal,
+                "id":userid,
+                "transactionstring":{
+                "loan":record.Records.loan,
+                "amount":record.Records.amount,
+                "propertyType":record.Records.propertyType,
+                "income":record.Records.income,
+                "location":record.Records.location,
+                "requestid":record.Records.requestid,
+                "year":record.Records.year,
+                "size":record.Records.size,
+                "income":record.Records.income,
+                "fname":record.Records.fname,
+                "lname":record.Records.lname,
+                "estimated":record.Records.estimated,
+                "age":record.Records.age,
+                "phone":record.Records.phone,
+                "email":record.Records.email,
+                "address":record.Records.address,
+                "country":record.Records.country,
+                "occupation":record.Records.occupation,
+                "genderType":record.Records.genderType,
+                "nationalityType":record.Records.nationalityType,
+                "Company":record.Records.Company,
+                "joiningdate":record.Records.joiningdate,
+                "salary":record.Records.salary,
+                "address":record.Records.address,
+                "legal":record.Records.legal,
                 "bank":"applied",
-                "creditscore":record.Record.creditscore,
-                "loanamount":record.Record.loanamount,
-                "loanterms":record.Record.loanterms,
+                "creditscore":record.Records.creditscore,
+                "loanamount":record.Records.loanamount,
+                "loanterms":record.Records.loanterms,
                 // "status":details.status,
-                "amountinterestrate":record.Record.amountinterestrate,
-                "paymentperyear":record.Record.paymentperyear,
-                "installmentpermonth": record.Record.installmentpermonth,
+                "amountinterestrate":record.Records.amountinterestrate,
+                "paymentperyear":record.Records.paymentperyear,
+                "installmentpermonth": record.Records.installmentpermonth,
                 "date":date,
                 "time":time,
                 "installment":installment,
