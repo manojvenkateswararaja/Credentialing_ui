@@ -105,7 +105,7 @@ export default Controller.extend(Validations,{
           
           this.set('showDialog',true)
            if(usertype =="user"){
-            var RequestidOfuser=mycontroller.get('finaldata.Key') 
+            var RequestidOfuser=mycontroller.get('userid') 
            
             console.log("RequestidOfuser>>>>>",RequestidOfuser)
             mycontroller.set('RequestidOfuser',RequestidOfuser)

@@ -10,20 +10,7 @@ export default Route.extend({
         var userid= this.controllerFor('login1').get('userid');
         console.log("route userid",userid)
         this.controllerFor('home').set("userid",userid);
-//         var myroute = this
-//         var token = sessionStorage.getItem('token');
-//         console.log("manoj",token);
-//         return $.ajax({
-//             url: 'http://localhost:8082/getloandetails',
-//             type: 'GET',
-//             contentType: 'application/json',
-//             headers: {
-//       'Accept': 'application/json',
-//       'Content-Type': 'application/json',
-//       'x-access-token': token
-//   },
-//             success: function(response) {
-//                 var showrecords = response.message;
+        this.controllerFor('home').set('ShowRequest',true);
         this.controllerFor('home').set('showLogin',true);
         this.controllerFor('home').set('showUser',true);
         var usertype=this.controllerFor('login1').get('usertype');
@@ -42,9 +29,9 @@ export default Route.extend({
                 'Authorization': userid
             },
             success: function(response) {
-                var showrecords = response.message;
-              
-//                 console.log("Allrequest", showrecords)
+                var showrecords = response.result;
+                myroute.controllerFor('home').set('showrecords', showrecords)
+                console.log("Allrequest", showrecords)
                
 //                 var len = showrecords.length
 //                 console.log("len show>>>", len);
@@ -78,35 +65,45 @@ export default Route.extend({
 //                         myroute.controllerFor('home').set('isBankPreclose',false) 
 //                         myroute.controllerFor('home').set('DisablePrecoleButton',true)
 //                         myroute.controllerFor('home').set('showrecords', showrecords)
-                var len = showrecords.length
-                console.log("len show>>>", len);
-                for(var i=0;i<=len-1;i++){ 
-                  var record=showrecords[i]
-                  var statusForUser=record.Record.statusForUser
-                  console.log("home page statusForUser",statusForUser)
-                  var statusForCreditRequest=record.Record.statusForCreditRequest
-                  console.log("home page statusForCreditRequest",statusForCreditRequest)
-                  var statuspreclose=record.Record.statuspreclose
-                  console.log("home page statusForUser",statuspreclose)
+
+
+
+
+
+                // var len = showrecords.length
+                // console.log("len show>>>", len);
+                // for(var i=0;i<=len-1;i++){ 
+                //   var record=showrecords[i]
+                //   var statusForUser=record.Record.statusForUser
+                //   console.log("home page statusForUser",statusForUser)
+                //   var statusForCreditRequest=record.Record.statusForCreditRequest
+                //   console.log("home page statusForCreditRequest",statusForCreditRequest)
+                //   var statuspreclose=record.Record.statuspreclose
+                //   console.log("home page statusForUser",statuspreclose)
                 
-                 var userpreclosestatus=record.Record.userpreclosestatus;
-                  console.log("userpreclosestatus",userpreclosestatus)
-                  myroute.controllerFor('home').set('record', record)
-                  console.log("home page statusForUser",statusForUser)
-                  console.log("home page record",record)
-                  myroute.controllerFor('home').set('record', record)
-                }
-                    if(statusForUser==="Request sent successfully" ||statuspreclose==="Requested For Preclose"||userpreclosestatus==="preclosure accepted"){ //show status
-                        myroute.controllerFor('home').set('ShowRequest',true)
-                        myroute.controllerFor('home').set('isBankPreclose',false) 
-                        // myroute.controllerFor('home').set('DisablePrecoleButton',true)
-                        myroute.controllerFor('home').set('showrecords', showrecords)  
-                    }else if(statusForCreditRequest==="Loan Scheduled"){
-                        myroute.controllerFor('home').set('ShowRequest',true)
-                        myroute.controllerFor('home').set('isBankPreclose',false) 
-                        myroute.controllerFor('home').set('DisablePrecoleButton',true)
-                        myroute.controllerFor('home').set('showrecords', showrecords)
+                //  var userpreclosestatus=record.Record.userpreclosestatus;
+                //   console.log("userpreclosestatus",userpreclosestatus)
+                //   myroute.controllerFor('home').set('record', record)
+                //   console.log("home page statusForUser",statusForUser)
+                //   console.log("home page record",record)
+                //   myroute.controllerFor('home').set('record', record)
+                // }
+                //     if(statusForUser==="Request sent successfully" ||statuspreclose==="Requested For Preclose"||userpreclosestatus==="preclosure accepted"){ //show status
+                //         myroute.controllerFor('home').set('ShowRequest',true)
+                //         myroute.controllerFor('home').set('isBankPreclose',false) 
+                //         // myroute.controllerFor('home').set('DisablePrecoleButton',true)
+                //         myroute.controllerFor('home').set('showrecords', showrecords)  
+                //     }else if(statusForCreditRequest==="Loan Scheduled"){
+                //         myroute.controllerFor('home').set('ShowRequest',true)
+                //         myroute.controllerFor('home').set('isBankPreclose',false) 
+                //         myroute.controllerFor('home').set('DisablePrecoleButton',true)
+                //         myroute.controllerFor('home').set('showrecords', showrecords)
                           
+
+
+
+
+
 //                     } else if(record.Record.statusForBankLegal==="Loan successfully accepted by user"){
 //                         myroute.controllerFor('home').set('ShowRequest',true)
 //                         myroute.controllerFor('home').set('isBankPreclose',false) 
@@ -115,7 +112,7 @@ export default Route.extend({
 //                         myroute.controllerFor('home').set('showrecords', showrecords)
                           
 //                     } 
-                    }
+                    // }
                 }
            })
             

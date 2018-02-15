@@ -39,6 +39,7 @@ Router.map(function() {
   this.route('timestamp');
   this.route('creditscore2');
   this.route('bankdashboard2');
+  this.route('home2');
 });
 
 export default Router;
