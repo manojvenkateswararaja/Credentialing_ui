@@ -6,7 +6,7 @@ export default Controller.extend({
         userdetails: function(showrecords) {
             this.set('record',showrecords)
             console.log("get credit score",showrecords)
-             var score=showrecords.creditscore
+             var score=showrecords.Records.creditscore
              this.set('score',score)
              var userId=showrecords.Key
              this.set('userId',userId)
@@ -15,7 +15,7 @@ export default Controller.extend({
                   this.transitionToRoute('userdetails')
               }
                   else if(score!=null){
-                    this.transitionToRoute('userdetails')
+                    this.transitionToRoute('userdetailsdec')
                   }
               }
             }

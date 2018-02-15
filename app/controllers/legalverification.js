@@ -19,9 +19,12 @@ export default Controller.extend({
                       }
                 var mycontroller=this;
                 console.log("requestid>>>>>>>>",records)
+                var userid=this.get('userid')
+                this.set('userid',userid)
+                console.log("userid",userid)
                 var date=new Date().toLocaleDateString();
                 var time=new Date().toTimeString();
-               var transactionstring={"id":records,"transactionstring":{
+               var transactionstring={"id":userid,"transactionstring":{
                   "loan":lastdetails.loan,
                   "amount":lastdetails.amount,
                   "propertyType":lastdetails.propertyType,
@@ -36,6 +39,7 @@ export default Controller.extend({
                   "age":lastdetails.age,
                   "phone":lastdetails.phone,
                   "email":lastdetails.email,
+                  "requestid":lastdetails.requestid,
                   "address":lastdetails.address,
                   "country":lastdetails.country,
                   "occupation":lastdetails.occupation,
@@ -90,16 +94,20 @@ export default Controller.extend({
                             this.set('showDialog',false)
                           }
                     var mycontroller=this;
+                    var userid=this.get('userid')
+                    this.set('userid',userid)
+                    console.log("userid",userid)
                     console.log("requestid>>>>>>>>",records)
                     var date=new Date().toLocaleDateString();
                     var time=new Date().toTimeString();
                     this.set('date',date)
                     this.set('time',time)
-                   var transactionstring={"id":records,"transactionstring":{
+                   var transactionstring={"id":userid,"transactionstring":{
                       "loan":lastdetails.loan,
                       "amount":lastdetails.amount,
                       "propertyType":lastdetails.propertyType,
                       "income":lastdetails.income,
+                      "requestid":lastdetails.requestid,
                       "location":lastdetails.location,
                       "year":lastdetails.year,
                       "size":lastdetails.size,

@@ -3,6 +3,9 @@ export default Route.extend({
     isDisplayed:false,
     isDisplayedApproval:false,
     model(){
+        var userid= this.controllerFor('creditscore2').get('record.Key');
+        console.log("route userid",userid)
+        this.controllerFor('creditscore').set("userid",userid);
         var loanID = this.controllerFor('legalverification2').get('record');
         this.controllerFor('legalverification').set('record',loanID);
         console.log("record",loanID)
