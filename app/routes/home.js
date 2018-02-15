@@ -15,14 +15,16 @@ export default Route.extend({
         var token = sessionStorage.getItem('token');
         console.log("manoj",token);
         return $.ajax({
-            url: 'http://localhost:8082/getloandetails',
-            type: 'GET',
-            contentType: 'application/json',
-            headers: {
-      'Accept': 'application/json',
-      'Content-Type': 'application/json',
-      'x-access-token': token
-  },
+            
+             url: 'http://localhost:8082/getHistory',
+             type: 'GET',
+             contentType: 'application/json',
+             headers: {
+                 'Accept': 'application/json',
+                 'Content-Type': 'application/json',
+                 'Authorization': userid
+             },
+           
             success: function(response) {
                 var showrecords = response.message;
               
@@ -38,12 +40,7 @@ export default Route.extend({
                   console.log("home page statusForCreditRequest",statusForCreditRequest)
                   var statuspreclose=record.Record.statuspreclose
                   console.log("home page statusForUser",statuspreclose)
-                //  -if(showrecords[i].Record.statusForCreditRequest==="Loan Scheduled"){
-                //  console.log("home page showrecords[i].Record.statusForCreditRequest??",showrecords[i].Record.statusForCreditRequest)
-                //  myroute.controllerFor('home').set('showrecords', showrecords)
-                // }
-                  //After accepting request from bank
-                 
+                
                  var userpreclosestatus=record.Record.userpreclosestatus;
                   console.log("userpreclosestatus",userpreclosestatus)
                   myroute.controllerFor('home').set('record', record)
