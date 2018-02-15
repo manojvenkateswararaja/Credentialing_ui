@@ -10,7 +10,7 @@ export default Route.extend({
         var userid= this.controllerFor('login1').get('userid');
         console.log("route userid",userid)
         this.controllerFor('home').set("userid",userid);
-        this.controllerFor('home').set('ShowRequest',true);
+       
         this.controllerFor('home').set('showLogin',true);
         this.controllerFor('home').set('showUser',true);
         var usertype=this.controllerFor('login1').get('usertype');

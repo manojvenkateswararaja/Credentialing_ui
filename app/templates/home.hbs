@@ -2,48 +2,31 @@
 {{#if showLogin}}
 
 {{/if}}
-<div class="container-fluid">
+<style id="link">
+               /* unvisited link */
+               a:link {
+               color: red;
+               }
+               /* visited link */
+               a:visited {
+               color: green;
+               }
+               /* mouse over link */
+               a:hover {
+               color: hotpink;
+               }
+               /* selected link */
+               a:active {
+               color: blue;
+               }
+            </style>
+            <div class="jumbotron">
+<div class="container">
    <br>
-   <small style="margin-left:-9cm">Remember:<u>click on requestid to check response</u></small>
+   {{!-- <small style="margin-left:-9cm">Remember:<u>click on requestid to check response</u></small> --}}
    <header class="w3-container  w3-center" style="padding:70px 16px">
       
-      {{#if ShowRequest}}
-      {{#each showrecords   as |item|}}
-      <div class="row" style="background-color:lightgrey">
-         <div class="col-xs-3 col-lg-3 col-sm-3">Requestid<a href="" {{action 'userloan'  item }}><b style="color:blue">{{item.Records.requestid}}   
-            </b>
-            </a>
-         </div>
-         <div class="col-xs-2 col-lg-2 col-md-2 col-sm-2" style="background-color:">
-            <div class="vl5">
-               <div>Name:{{item.Record.fname}}
-               </div>
-            </div>
-         </div>
-         <div class="col-xs-2 col-lg-2 col-md-2 col-sm-2" style="background-color:">
-            <div class="vl5">
-               <div style="">Property:{{item.Record.propertyType}}</div>
-            </div>
-         </div>
-         <div class="col-xs-2 col-lg-2 col-md-2 col-sm-2" style="background-color:">
-            <div class="vl5">
-               <div style="">Amount:{{item.Record.amount}}</div>
-            </div>
-         </div>
-         <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6" style="background-color:">
-            <div class="vl5">
-               <div style="">status:<b style="color:green">{{#if isBankPreclose}}{{status}}{{/if}}</b>
-                  <b style="color:green">{{item.Record.statusForUser}}{{item.Record.statusForBankLegal}}{{item.Record.statusForCreditRequest}}
-                  {{item.Record.statuspreclose}}
-                  {{item.Record.userpreclosestatus}}
-                  </b>
-               </div>
-            </div>
-         </div>
-      </div>
-      <br>
-      {{/each}}
-      {{/if}}
+     {{#link-to 'home2'}}<b id="link" style="margin-left:-24cm">Go To Your Account</b>{{/link-to}}
       {{!-- end --}}
       <h1 class="w3-margin w3-jumbo">Welcome To Mortgage Loan</h1>
       <p class="w3-xlarge">Mortgage process</p>
@@ -65,4 +48,5 @@
       </div>
       <p>Powered by <a href="" target="_blank">RapidQube</a></p>
    </footer>
+</div>
 </div>

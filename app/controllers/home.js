@@ -2,6 +2,9 @@ import Controller from '@ember/controller';
 export default Controller.extend({
     
     actions: {
+        home2:function(){
+            this.transitionToRoute('home2')
+        },
         userloan:function(record){
             //     console.log("hi manoj",showrecords);
             this.set('record',record)
