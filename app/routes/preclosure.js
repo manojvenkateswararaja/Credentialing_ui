@@ -37,7 +37,9 @@ file.upload('http://localhost:8082/UploadDocs?requestid='+requestid).then(functi
 
     
     model(){
-
+        var userid= this.controllerFor('userloanschedule').get('userid');
+        console.log("route userid",userid)
+        this.controllerFor('preclosure').set("userid",userid);
         this.controllerFor('preclosure').set('Notshow_fileupload', true); 
         if(this.controllerFor('preclosure').set('Notshow_fileupload', true)){
          this.controllerFor('preclosure').set(' isShow_fileupload', false); 

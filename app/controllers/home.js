@@ -2,8 +2,8 @@ import Controller from '@ember/controller';
 export default Controller.extend({
     
     actions: {
-        userloan:function(record){
-            //     console.log("hi manoj",showrecords);
+        userloanschedule:function(record){
+                console.log("hi manoj",record);
             this.set('record',record)
                 this.transitionToRoute('userloanschedule')
     

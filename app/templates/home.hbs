@@ -5,50 +5,43 @@
 <div class="container-fluid">
    <br>
    <small style="margin-left:-9cm">Remember:<u>click on requestid to check response</u></small>
-   <header class="w3-container  w3-center" style="padding:70px 16px">
-      
-      {{#if ShowRequest}}
-      {{#each showrecords   as |item|}}
-      <div class="row" style="background-color:lightgrey">
-         <div class="col-xs-3 col-lg-3 col-sm-3">Requestid<a href="" {{action 'userloan'  item }}><b style="color:blue">{{item.Records.requestid}}   
-            </b>
-            </a>
-         </div>
-         <div class="col-xs-2 col-lg-2 col-md-2 col-sm-2" style="background-color:">
-            <div class="vl5">
-               <div>Name:{{item.Record.fname}}
-               </div>
-            </div>
-         </div>
-         <div class="col-xs-2 col-lg-2 col-md-2 col-sm-2" style="background-color:">
-            <div class="vl5">
-               <div style="">Property:{{item.Record.propertyType}}</div>
-            </div>
-         </div>
-         <div class="col-xs-2 col-lg-2 col-md-2 col-sm-2" style="background-color:">
-            <div class="vl5">
-               <div style="">Amount:{{item.Record.amount}}</div>
-            </div>
-         </div>
-         <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6" style="background-color:">
-            <div class="vl5">
-               <div style="">status:<b style="color:green">{{#if isBankPreclose}}{{status}}{{/if}}</b>
-                  <b style="color:green">{{item.Record.statusForUser}}{{item.Record.statusForBankLegal}}{{item.Record.statusForCreditRequest}}
-                  {{item.Record.statuspreclose}}
-                  {{item.Record.userpreclosestatus}}
-                  </b>
-               </div>
-            </div>
-         </div>
-      </div>
+   <header class="w3-container  w3-center" style="padding:70px 16px"></header>
+        <div class="jumbotron">
+      <p style="text-align:center;color:black"><b>TOTAL REQUEST</b></p>
+      <div class="container" style="background-color:grey"><b>ALL Request</b></div>
       <br>
-      {{/each}}
-      {{/if}}
+      <div class ="container">
+         {{#each showrecords   as |item|}}
+         <div class="row">
+            <div class="col-xs-3 col-lg-3 col-sm-3">Requestid<a href="" {{action 'userloanschedule'  item }}><b style="color:blue">{{item.Records.requestid}}</b></a></div>
+            <div class="row">
+               <div class="col-xs-3 col-lg-3 col-sm-3"><b>Data Published Time</b></div>
+               <div class="col-xs-3 col-lg-3 col-sm-3"> Date:<small  class="text-muted">{{item.Records.date}}</small></div>
+               <div class="col-xs-3 col-lg-3 col-sm-3">Time:<small  class="text-muted">{{item.Records.time}}</small></div>
+            </div>
+          <div class="row">
+                  {{!-- <div class="col-xs-3 col-lg-3 col-sm-3"><a href="" {{action 'timestamp' }}><b style="color:#db5945">Track Timestamp</b></a></div> --}}
+                  <div class="col-xs-9 col-lg-9 col-sm-9">
+                        Status:<i style="color:DeepSkyBlue;">{{#if precloselink}}{{#link-to 'requestpreclose' disabled=""}}{{details.statuspreclose}}{{/link-to}}{{/if}}</i>
+                           <i style="color:DeepSkyBlue;">{{#if isBankpreclose}}{{bankpreclose}}{{/if}}</i> 
+                           <i style="color:DeepSkyBlue;">{{#if isLoanReject}}{{loanReject}}{{/if}}</i>
+                        <b style="color:green;"> {{#if isStatus}}{{item.Records.status}}{{/if}}</b>
+                           <b style="color:green;">{{#if IsCreditStatus}}{{item.Records.statusForCreditRequest}}{{/if}}
+                               {{#if IsLegalValidated}}{{item.Records.statusForBankLegal}}{{/if}}
+                               {{item.Records.bankpreclose}}</b>
+                             <b style="color:skyblue;"><a href="" {{action 'postPrecoseRequest'  item }}>{{item.Records.statuspreclose}}</a></b> 
+                     </div>
+                  </div> 
+                  </div>
+         <br>
+         {{/each}}
+     </div>
+     </div>
       {{!-- end --}}
       <h1 class="w3-margin w3-jumbo">Welcome To Mortgage Loan</h1>
       <p class="w3-xlarge">Mortgage process</p>
       <button type="button" id="myButton"  class="btn btn-primary" {{action "gotoApply"}}>Apply New Request</button>
-   </header>
+   
    <!-- First Grid -->
   
    <!-- Second Grid -->
