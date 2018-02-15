@@ -46,8 +46,8 @@ file.upload('http://localhost:8082/UploadDocs?requestid='+requestid).then(functi
         }  
 
 
-        // var PreClosingController=this.controllerFor('home').get('record')
-        // this.controllerFor('preclosure').set('record',PreClosingController)
+        var PreClosingController=this.controllerFor('home2').get('record')
+        this.controllerFor('preclosure').set('record',PreClosingController)
         // var PreClosingDetails=this.controllerFor('home').get('details')
         // this.controllerFor('preclosure').set('details',PreClosingDetails)
         // console.log("PreClosingController>>>>",PreClosingController)

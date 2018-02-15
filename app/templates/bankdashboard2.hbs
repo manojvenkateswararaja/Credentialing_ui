@@ -1,5 +1,5 @@
 {{partial 'head'}}
-{{#if showDashboard }}
+{{#if showLogin}}
 {{/if}}
 
     <header class="w3-container  w3-center" style="padding:70px 16px"></header>
@@ -17,7 +17,8 @@
                <div style="">status:<b style="color:green">{{#if isBankPreclose}}{{status}}{{/if}}</b>
                   <b style="color:green">{{item.Records.statusForUser}}{{item.Records.statusForBankLegal}}{{item.Records.statusForCreditRequest}}
                       {{item.Records.statuspreclose}}
-                      {{item.Records.userpreclosestatus}}
+                      {{item.Records.bankpreclose}}
+                       <b style="color:tomato;"><a href="" {{action 'postPrecoseRequest'  item }}>{{item.Record.statuspreclose}}<small>Kindly click here to check preclosing details of user here</small></a></b>
                  
                   </b>
                </div>
