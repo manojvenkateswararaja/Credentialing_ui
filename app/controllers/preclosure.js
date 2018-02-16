@@ -113,7 +113,7 @@ export default Controller.extend({
               okay1:function(){
               this.set('isPreclosed',true)
               this.set('showDialog',false)
-              this.transitionToRoute('home');
+              this.transitionToRoute('home2');
               }, 
               signout:function() {
               this.transitionToRoute('login1');

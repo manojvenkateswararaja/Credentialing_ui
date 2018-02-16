@@ -95,6 +95,7 @@ closeDialog:function(){
 okay:function(){
     this.set('isLoanSchedule',true)
     this.set('showDialog',false)
+    this.transitionToRoute('home2'); 
 },
 logout:function(){
     console.log("in logout");

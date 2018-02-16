@@ -67,9 +67,12 @@
       <br>
       <br>
       <br>
+      
       <div style="margin-top:0cm;">
          <button type="button" class="btn btn-primary btn-block" disabled={{IsAlreadyDone}} {{action "userschedule" record}}> agree & next</button>   
          <br>
+         <br>
+         <small>Click here for applying Preclosure Request</small>
          <button type="button" id="myButton" class="btn btn-primary btn-block" disabled={{DisablePrecoleButton}} {{action "gotoPreclose" item}}>Pre-closure</button>
          {{#if showDialog}}
          {{#paper-dialog class="flex-77" onClose=(action "closeDialog" "cancel") origin=dialogOrigin clickOutsideToClose=true}}
@@ -86,23 +89,8 @@
          {{/paper-dialog}}
          {{/if}}
       </div>
-      <div style="background-color:lightgrey;">
-         <h3>Time Stamp</h3>
-         {{#if isLoanSchedule}}
-         <div class="row">
-            <b>  Legal Veification Requested Time</b>
-         </div>
-         <div class="row">
-            <div class="col-xs-6 col-lg-6 col-sm-6">
-               Date:{{date}}
-            </div>
-            <div class="col-xs-6 col-lg-6 col-sm-6">
-               Time{{time}}
-            </div>
-         </div>
-         <br>
-         <br>
-         {{/if}}
-      </div>
+     <br>
+     <br>
    </div>
+   
 </div>

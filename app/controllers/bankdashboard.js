@@ -27,22 +27,22 @@ export default Controller.extend({
     },
     signout:function() {
       this.transitionToRoute('login1');
-  },
+    },
   openNav:function(){
     document.getElementById("mySidenav").style.width = "250px";
     document.getElementById("main").style.marginLeft = "250px";
-},
-closeNav: function() {
+    },
+  closeNav: function() {
     document.getElementById("mySidenav").style.width = "0";
     document.getElementById("main").style.marginLeft= "0";
-},
-timestamp:function(){
+    },
+  timestamp:function(){
   this.transitionToRoute('timestamp')
-},
-logout:function(){
+  },
+  logout:function(){
   console.log("in logout");
   window.location.reload(true);
-},
+  },
   }  
 });
 

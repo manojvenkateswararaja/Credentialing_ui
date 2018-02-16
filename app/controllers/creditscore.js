@@ -58,7 +58,9 @@ export default Controller.extend({
             "legal":"",
             "date":date,
             "time":time
-          }}
+          }
+        }
+        
         console.log("transactionstring-update Approve----->",transactionstring);
         var token = sessionStorage.getItem('token');
         console.log("manoj",token);
@@ -77,15 +79,11 @@ export default Controller.extend({
           mycontroller.set('showCredit',true)
           var record=response
           console.log("my updated data with creditscore>>>>>>>>>>>>.",record);
-          // var statusForCreditRequest=statusForCreditRequest
-          // console.log("?????",statusForCreditRequest)
-          // if(statusForCreditRequest==="Creditscore Generated"){
-          // mycontroller.controllerFor('creditscore').set(statusForCreditRequest,'Creditscore Generated')
-          // }
-     
+       
             },
           })
         },
+    
         closeDialog:function(){
           this.set('showDialog',false)
       },
@@ -113,7 +111,7 @@ export default Controller.extend({
           console.log(creditscore);
             }
             })
-      },
+      
     },
     signout:function() {
       this.transitionToRoute('login1');
@@ -130,7 +128,7 @@ logout:function(){
   console.log("in logout");
   window.location.reload(true);
 },  
-  
+}
 })
   
   

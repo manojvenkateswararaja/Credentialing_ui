@@ -78,9 +78,9 @@ export default Controller.extend({
           "time":time,
           
         }
-    }
+      }
+    
         console.log(JSON.stringify(transactionstring))
-
         var mycontroller=this;
         var token = sessionStorage.getItem('token');
         console.log("manoj",token);
@@ -115,7 +115,7 @@ export default Controller.extend({
         this.transitionToRoute('login1');
         },
         compute:function(){
-          var mycontroller=this;
+        var mycontroller=this;
        var amount=this.get('loanamount')
        console.log("loanamount",amount)
        var months=this.get('loanterms')
@@ -134,11 +134,14 @@ export default Controller.extend({
        console.log(tot)
        mycontroller.set('tot',tot)
    
-    }
+    },
         
-  
+    logout:function(){
+      console.log("in logout");
+      window.location.reload(true);
+  },
       
-        
+  
        
     }
 });

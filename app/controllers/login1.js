@@ -102,6 +102,8 @@ export default Controller.extend(Validations,{
     closeDialog:function(){
         this.set('showDialog',false)
     },
+
+
     okay:function(){
         var mycontroller=this
         var usertype=mycontroller.get('usertype')

@@ -1,50 +1,63 @@
 import Route from '@ember/routing/route';
-
 export default Route.extend({
-    isStatus:true,
-    model(){
+isStatus:true,
+model(){
+var userid= this.controllerFor('login1').get('userid');
+console.log("route userid",userid)
+this.controllerFor('home2').set("userid",userid);
+this.controllerFor('home2').set('showLogin',true);
+this.controllerFor('home2').set('showUser',true);
+var usertype=this.controllerFor('login1').get('usertype');
+console.log(">>>user",usertype)
+var myroute = this
+this.controllerFor('home2').set('usertype',usertype);
+this.controllerFor('home2').set('ShowRequest',true);
+// usertype
+return $.ajax({
+url: 'http://localhost:8082/getHistory',
+type: 'GET',
+contentType: 'application/json',
+headers: {
+'Accept': 'application/json',
+'Content-Type': 'application/json',
+'Authorization': userid
+},
+success: function(response) {
 
-        this.controllerFor('home2').set('showLogin',true);
-        this.controllerFor('home2').set('showUser',true);
-        var usertype=this.controllerFor('login1').get('usertype');
-        console.log(">>>user",usertype)
-        this.controllerFor('home2').set('usertype',usertype);
-    this.controllerFor('home2').set('ShowRequest',true);
-    // usertype
-    var showrecords=this.controllerFor('home').get('showrecords');
-    this.controllerFor('home2').set('showrecords',showrecords);
-    var myroute = this
-    var len = showrecords.length
-    console.log("len show>>>", len);
+var showrecords = response.result;
+myroute.controllerFor('home2').set('showrecords', showrecords)
+console.log("Allrequest", showrecords)
+}
+})
+var showrecords=this.controllerFor('home').get('showrecords');
+this.controllerFor('home2').set('showrecords',showrecords);
 
-      var record=showrecords[0]
-      var statusForUser=record.Records.statusForUser
-      console.log("home page statusForUser???>>",statusForUser)
-      var statusForCreditRequest=record.Records.statusForCreditRequest
-      console.log("home page statusForCreditRequest",statusForCreditRequest)
-      var statuspreclose=record.Records.statuspreclose
-      console.log("home page statusForUser",statuspreclose)
-      
-    var userpreclosestatus=record.Records.userpreclosestatus;
-    console.log("userpreclosestatus",userpreclosestatus)
-    console.log("home page statusForUser",statusForUser)
-    console.log("home page record",record)
-      if(statusForUser==="Request sent successfully" ||statuspreclose==="Requested For Preclose"||userpreclosestatus==="preclosure accepted"){ //show status
-         console.log("if loop 1")
-        myroute.controllerFor('home2').set('ShowRequest',true)
-          myroute.controllerFor('home2').set('isStatus',false) 
-          myroute.controllerFor('home2').set('isBankPreclose',false) 
-          myroute.controllerFor('home2').set('showrecords', showrecords)  
-      }else if(statusForCreditRequest==="Loan Scheduled"){
-        console.log("if loop 2")
-          myroute.controllerFor('home2').set('IsCreditStatus',false)
-          myroute.controllerFor('home2').set('ShowRequest',true)
-          myroute.controllerFor('home2').set('isBankPreclose',false) 
-          myroute.controllerFor('home2').set('DisablePrecoleButton',true)
-          myroute.controllerFor('home2').set('showrecords', showrecords)
+// var len = showrecords[0]
+// console.log("len show>>>", len);
+var statusForUser=showrecords.Records.statusForUser
+// console.log("home page statusForUser???>>",statusForUser)
+var statusForCreditRequest=showrecords.Records.statusForCreditRequest
+// console.log("home page statusForCreditRequest",statusForCreditRequest)
+var statuspreclose=showrecords.Records.statuspreclose
+// console.log("home page statusForUser",statuspreclose)
+var userpreclosestatus=showrecords.Records.userpreclosestatus;
+console.log("userpreclosestatus",userpreclosestatus)
+console.log("home page statusForUser",statusForUser)
+console.log("home page record",showrecords)
 
-      }
-    }
-
- 
+ if(statusForUser==="Request sent successfully" ||statuspreclose==="Requested For Preclose"||userpreclosestatus==="preclosure accepted"){ //show status
+console.log("if loop 1")
+myroute.controllerFor('home2').set('ShowRequest',true)
+myroute.controllerFor('home2').set('isStatus',false) 
+myroute.controllerFor('home2').set('isBankPreclose',false) 
+myroute.controllerFor('home2').set('showrecords', showrecords)  
+}else if(statusForCreditRequest==="Loan Scheduled"){
+console.log("if loop 2")
+myroute.controllerFor('home2').set('IsCreditStatus',false)
+myroute.controllerFor('home2').set('ShowRequest',true)
+myroute.controllerFor('home2').set('isBankPreclose',false) 
+myroute.controllerFor('home2').set('DisablePrecoleButton',true)
+myroute.controllerFor('home2').set('showrecords', showrecords)
+}
+}
 });

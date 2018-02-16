@@ -9,7 +9,31 @@
 @import "ember-bootstrap/bootstrap/scaffolding.scss";
 @import "ember-bootstrap/bootstrap/type.scss";
 @import "ember-bootstrap/bootstrap/buttons.scss";
-
+@-webkit-keyframes fadeOut {
+	from {
+	  opacity: 1;
+	}
+  
+	to {
+	  opacity: 0;
+	}
+  }
+  
+  @keyframes fadeOut {
+	from {
+	  opacity: 1;
+	}
+  
+	to {
+	  opacity: 0;
+	}
+  }
+  
+  .fadeOut {
+	-webkit-animation-name: fadeOut;
+	animation-name: fadeOut;
+  }
+  
 
 .navbar-nav {
     /* float: left; */

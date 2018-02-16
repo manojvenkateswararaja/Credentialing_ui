@@ -57,6 +57,10 @@ export default Controller.extend({
                 this.transitionToRoute('page4');  
                 
             },
+            logout:function(){
+                console.log("in logout");
+                window.location.reload(true);
+            },
         }
 
     

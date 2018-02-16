@@ -99,12 +99,12 @@ isBankPreclosed:false,
   }, 
   
 
-        },
+   
         logout:function(){
           console.log("in logout");
           window.location.reload(true);
       },
     
-    
+    },
 
 });
