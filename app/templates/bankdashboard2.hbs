@@ -2,8 +2,9 @@
 {{#if showLogin}}
 {{/if}}
 
-    <header class="w3-container  w3-center" style="padding:70px 16px"></header>
-      
+<div class="jumbotron">
+    <header class="w3-container  w3-center" style="padding:70px 16px"><b class="fadeOut">User Request ID with Data Published Date & Time</b></header>
+ 
       {{#each showrecords   as |item|}}
       <div class="row" style="background-color:lightgrey">
             <div class="col-xs-3 col-lg-3 col-sm-3">Requestid<a href="" {{action 'userdetails'  item }}><b style="color:blue">{{item.Records.requestid}}    
@@ -27,4 +28,5 @@
       </div>
       <br>
       {{/each}}
+      </div>
       

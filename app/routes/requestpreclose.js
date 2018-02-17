@@ -3,6 +3,11 @@ import Route from '@ember/routing/route';
 export default Route.extend({
     isGenerated:false,
     model(){
+        this.controllerFor('requestpreclose').set('showLogin',true);
+        this.controllerFor('requestpreclose').set('showUser',true);
+        var usertype=this.controllerFor('login1').get('usertype');
+        console.log(">>>user",usertype)
+        this.controllerFor('requestpreclose').set('usertype',usertype);
         var record = this.controllerFor('bankdashboard').get('record');
         this.controllerFor('requestpreclose').set('record',record);
         console.log("record",record)

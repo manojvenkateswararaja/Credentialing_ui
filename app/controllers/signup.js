@@ -114,6 +114,10 @@ closeDialog:function(){
 },
 okay:function(){
     this.transitionToRoute('login1')
-}
+},
+logout:function(){
+    console.log("in logout");
+    window.location.reload(true);
+}, 
 }
 });

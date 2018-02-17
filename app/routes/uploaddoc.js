@@ -3,6 +3,7 @@ import Route from '@ember/routing/route';
 export default Route.extend({
     showRequest:true,
 	actions: {
+		
 		uploadDoc: function (file, queue) {
 			// var mycontroller = this;
 			console.log("entering upload FIR 3");
@@ -43,6 +44,11 @@ export default Route.extend({
 		// }
 	},
 	model() {
+		this.controllerFor('uploaddoc').set('showLogin',true);
+        this.controllerFor('uploaddoc').set('showUser',true);
+        var usertype=this.controllerFor('login1').get('usertype');
+        console.log(">>>user",usertype)
+        this.controllerFor('uploaddoc').set('usertype',usertype);
 		this.controllerFor('uploaddoc').set('Notshow_fileupload', true);
 		if (this.controllerFor('uploaddoc').set('Notshow_fileupload', true)) {
 			this.controllerFor('uploaddoc').set(' isShow_fileupload', false);

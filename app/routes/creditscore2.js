@@ -4,6 +4,11 @@ export default Route.extend({
     IsStatusForGenerated: false,
     IsDefaultStatus: true,
     model() {
+        this.controllerFor('creditscore2').set('showLogin',true);
+        this.controllerFor('creditscore2').set('showUser',true);
+        var usertype=this.controllerFor('login1').get('usertype');
+        console.log(">>>user",usertype)
+        this.controllerFor('creditscore2').set('usertype',usertype);
 
         var myroute = this
         var token = sessionStorage.getItem('token');

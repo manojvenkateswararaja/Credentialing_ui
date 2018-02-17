@@ -116,6 +116,7 @@ export default Controller.extend({
        
         var requestid = Math.floor(100 + Math.random() * 900);
         console.log("requestid" + requestid)
+       
         var transactionstring={
           "userId":userId,
         transactionstring:{
@@ -168,14 +169,10 @@ export default Controller.extend({
     success: function(response) {
     console.log(JSON.stringify(response));
     var message = response.message;
-    var reqid=response.requestid;
-    mycontroller.set('reqid',reqid)
+    mycontroller.set('requestid',requestid)
     mycontroller.set('message',message)
     sessionStorage.setItem('message', message);
     console.log("message>>>>>>>>>>" + message);  
-    // alert("your details has been uploaded successfully")
-    console.log("message" + message); 
-  
     }
 
   })
@@ -186,7 +183,8 @@ export default Controller.extend({
       this.set('showDialog',false)
   },
   okay:function(){
-    this.set('IsSuccess',true);
+      this.set('IsSuccess',true);
+      swal("Good job!", "your details has been uploaded successfully! Move Forward to upload documents", "success");
       this.transitionToRoute('uploaddoc');
   },
     openNav:function(){
@@ -216,7 +214,7 @@ signout:function(){
 },
 saveModel:function(){
   
-      }
+      
      
     },
     logout:function(){
@@ -224,5 +222,5 @@ saveModel:function(){
       window.location.reload(true);
   },
   
-   
+} 
 })

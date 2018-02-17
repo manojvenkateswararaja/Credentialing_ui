@@ -3,7 +3,12 @@ export default Route.extend({
     isDisplayed:false,
     isDisplayedApproval:false,
     model(){
-       
+        this.controllerFor('creditscore').set('showLogin',true);
+        this.controllerFor('creditscore').set('showUser',true);
+        var usertype=this.controllerFor('login1').get('usertype');
+        console.log(">>>user",usertype)
+        this.controllerFor('creditscore').set('usertype',usertype);
+        // usertype
         var userid= this.controllerFor('creditscore2').get('record.Key');
         console.log("route userid",userid)
         this.controllerFor('creditscore').set("userid",userid);

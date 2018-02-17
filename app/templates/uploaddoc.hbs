@@ -9,7 +9,10 @@
    <a {{action "goToproperty"}}>Property details</a>
    <a {{action "goToemployment"}}>Employment details</a>
 </div>
-<div class="container-fluid">
+<div class="container-fluid" style="background-color:">
+    <br>
+    <br>
+    <br>
    <h3><b style="text-align:center;">Upload Document</b></h3>
    <div class="container" style="magint-top:52px;">
       <div class="row">
@@ -35,7 +38,8 @@
                color: blue;
                }
             </style>
-            {{#link-to 'home'}}<b id="link">Go Back To Main Menu</b>{{/link-to}}
+            <button type="button" class="btn btn-default btn-number qtyplus" data-type="plus" field='quantity'{{action "home"}} id="btnIncrease"><span class="glyphicon glyphicon-plus">Go Back To Main Menu</span></button>
+           {{!-- <b id="link"> <button {{action "home"}}>Go Back To Main Menu</button></b> --}}
          </div>
       </div>
       <br>  
@@ -159,7 +163,7 @@
    </div>
    <br>
    {{#paper-button raised=true warn=true onClick=(action "targetButton")}}Submit{{/paper-button}}
-   {{#if showDialog}}
+   {{!-- {{#if showDialog}}
    {{#paper-dialog class="flex-77" onClose=(action "closeDialog" "cancel") origin=dialogOrigin clickOutsideToClose=true}}
    {{#paper-toolbar}}
    {{#paper-toolbar-tools}}
@@ -172,6 +176,6 @@
    {{#paper-button onClick=(action "okay" "ok")}}OK{{/paper-button}}
    {{/paper-dialog-actions}}
    {{/paper-dialog}}
-   {{/if}}
+   {{/if}} --}}
 </div>
 </div>

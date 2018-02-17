@@ -1,5 +1,7 @@
 import Route from '@ember/routing/route';
 
+
+
 export default Route.extend({
     model(){
         // this.transitionTo('userloanschedule')
@@ -11,12 +13,12 @@ export default Route.extend({
         //this.transitionTo('loanquotation')
         // this.transitionTo('newrequest')
         // this.transitionTo('bankdashboard')
-        //this.transitionTo('bankdashboard')
+        // this.transitionTo('bankdashboard')
         // this.transitionTo('legalverification')
        // this.transitionTo('legalverification2')
         // this.transitionTo('creditscore')
         // this.transitionTo('FillCreditScore')
-    // this.transitionTo('uploaddoc')
+       // this.transitionTo('uploaddoc')
         // this.transitionTo('creditscore')
         // this.transitionTo('userloanschedule')
         this.transitionTo('login1')

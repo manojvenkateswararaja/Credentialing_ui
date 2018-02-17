@@ -110,8 +110,6 @@ export default Controller.extend({
                           this.set('showDialogApprove',false)
               
                         }
-              
-            
             },
             closeDialog2:function(){
               this.set('showDialogApprove',false)
@@ -135,14 +133,18 @@ export default Controller.extend({
                                 this.set('showDialogForReject',false)
                               }
                         var mycontroller=this;
+                        var userid=mycontroller.get('userid')
+                        mycontroller.set('userid',userid)
+                        console.log("userid",userid)
                         console.log("requestid>>>>>>>>",record.Key)
                         console.log("records>>>>userdec",record)
                         var data=record.Record
                         console.log("data>>>>",data)
                         var date=new Date().toLocaleDateString();
                         var time=new Date().toTimeString();
-                        var Updateddata = { "id":record.Key,
+                        var Updateddata = { "id":userid,
                          "transactionstring":{
+                           "requestid":data.requestid,
                           "loan":data.loan,
                           "amount":data.amount,
                           "propertyType":data.propertyType,

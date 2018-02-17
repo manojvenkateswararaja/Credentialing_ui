@@ -13,5 +13,6 @@ isShowHome:false,
        gotohome:function(){
         this.transitionToRoute('home');
      },
+  
    }
 });

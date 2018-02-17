@@ -4,15 +4,16 @@
    <br>
    <br>
    <div class="container">
-      
-         <div style="text-align:center;"><b>PRE-CLOSURE</b></div>
+     <br>
+       <h4 style="text-align:center;">PRE-CLOSURE</h4>
+         {{!-- <div style="text-align:center;"><b>PRE-CLOSURE</b></div> --}}
          <br>
          <div class="row" style="">
         <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6" style="">
       <label>Request iD:</label>
       </div>
         {{!-- <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6" style=""> --}}
-        <i style="color:blue; margin-left:-11cm;"> {{record.Key}}</i>
+        <i style="color:blue; margin-left:-11cm;"> {{record.Records.requestid}}</i>
          {{!-- </div> --}}
          </div>
          <div class="row" >
@@ -49,25 +50,7 @@
        <p style="color:#68DC83,margin-top:3mm"><b> File Uploaded Sucessfully !!!</b></p>
          </div>
        {{/if}}
-
-
-  {{!-- {{#if showDialogUpload}}
-  {{#paper-dialog class="flex-77" onClose=(action "closeDialog" "cancel") origin=dialogOrigin clickOutsideToClose=true}}
-    {{#paper-toolbar}}
-      {{#paper-toolbar-tools}}
-       Your file uploaded successfully!!!
-        {{#paper-button iconButton=true onClick=(action "closeDialog" "cancel")}}{{paper-icon icon="close"}}{{/paper-button}}
-      {{/paper-toolbar-tools}}
-    {{/paper-toolbar}}
-
-   
-    {{#paper-dialog-actions class="layout-row"}}
-      {{#paper-button onClick=(action "closeDialog" "cancel")}}Cancel{{/paper-button}}
-      {{#paper-button onClick=(action "okay" "ok")}}OK{{/paper-button}}
-    {{/paper-dialog-actions}}
-  {{/paper-dialog}}
-{{/if}}  --}}
-                   </div>
+   </div>
                    </div>
                    <br>
                     <div class="row">
