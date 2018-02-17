@@ -9,6 +9,12 @@
 @import "ember-bootstrap/bootstrap/scaffolding.scss";
 @import "ember-bootstrap/bootstrap/type.scss";
 @import "ember-bootstrap/bootstrap/buttons.scss";
+// .md-button.md-default-theme.md-warn.md-raised, .md-button.md-default-theme.md-warn.md-fab, .md-button.md-warn.md-raised, .md-button.md-warn.md-fab {
+//     color: white;
+//     background-color: #f44336;
+//     margin-left: 33px;
+//     width: 39%;
+// }
 @-webkit-keyframes fadeOut {
 	from {
 	  opacity: 1;

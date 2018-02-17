@@ -12,12 +12,19 @@ export default Controller.extend({
              this.set('userId',userId)
              console.log("i got creditscore in bank",score)
              var bankpreclose=showrecords.Records.bankpreclose
+             var statuspreclose=showrecords.Records.statuspreclose
+             var statusForCreditRequest=showrecords.Records.statusForCreditRequest
+             var bankpreclose=showrecords.Records.bankpreclose
+            
+            //  if(statuspreclose!==null||statusForCreditRequest!==null || statusForCreditRequest!==null || record.Records.statusForBankLegal!==null ||bankpreclose!==null|| statusForCreditRequest!==null){
+            //     swal("sorry!", "Already made desicion!", "info");
+            //  }
              if(bankpreclose=="Loan Closed"){
                 
                 $(document).ready(function() {
-  swal({ 
-    title: "Sorry",
-     text: "Loan Alredy schedule!",
+        swal({ 
+      title: "Sorry",
+       text: "Loan Alredy schedule!",
       type: "info" 
     },
     function(){
@@ -33,9 +40,13 @@ export default Controller.extend({
               }else if(score!=null){
                     this.transitionToRoute('userdetailsdec')
                   }
-            },
+                },
+            
+
             postPrecoseRequest:function(record){
                    //console.log("hi manoj",showrecords);
+                    swal("Way to Preclosure Request!", "", "success");
+                    console.log("recordrecord",record)
                     this.set('record',record)
                     this.transitionToRoute('requestpreclose')
                  },

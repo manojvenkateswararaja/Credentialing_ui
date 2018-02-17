@@ -61,24 +61,8 @@
       <br>
       <div style="margin-top:0cm;">
          <button type="button" class="btn btn-primary btn-block"{{action "finalPreclose" record }}> agree & close the loan</button>   
-         <div style="background-color:lightgrey;">
-            <h3>Time Stamp</h3>
-            {{#if isBankPreclosed}}
-            <div class="row">
-               <b> Requested For Creditscore Time</b>
-            </div>
-            <div class="row">
-               <div class="col-xs-6 col-lg-6 col-sm-6">
-                  Date:{{date}}
-               </div>
-               <div class="col-xs-6 col-lg-6 col-sm-6">
-                  Time{{time}}
-               </div>
-               <br>
-               <br>
-            </div>
-            {{/if}}
-         </div>
+        
+        
          {{#if showDialog}}
          {{#paper-dialog class="flex-77" onClose=(action "closeDialog" "cancel") origin=dialogOrigin clickOutsideToClose=true}}
          {{#paper-toolbar}}

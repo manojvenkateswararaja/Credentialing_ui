@@ -41,7 +41,7 @@ export default Controller.extend(Validations,{
       
     // end
         if (email === null || email === undefined || email === "" || password === null || password === undefined || password === "") {
-                swal("please fill details for login");
+                // swal("please fill details for login");
                 swal("Something Went Wrong", "please fill details for login!", "error");
             } else {
                 let {
@@ -57,7 +57,6 @@ export default Controller.extend(Validations,{
         //    "usertype": usertype,
         };
             console.log(JSON.stringify(dataString));
-          
             console.log(email);
             console.log(password);
             return $.ajax({

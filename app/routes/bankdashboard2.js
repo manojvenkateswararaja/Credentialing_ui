@@ -1,6 +1,7 @@
 import Route from '@ember/routing/route';
 
 export default Route.extend({
+    didThisDone:false,
     model() {
         this.controllerFor('bankdashboard2').set('showLogin',true);
         this.controllerFor('bankdashboard2').set('showUser',true);
@@ -37,23 +38,20 @@ export default Route.extend({
                 console.log("len show>>>", len);
                 for(let i = 0; i <= len-1; i++){
                     var record=showrecords[i]
-                    
+                 
                     myroute.controllerFor('bankdashboard2').set('record', record)
                     console.log("hi manoj",record)
-                    var statusForCreditRequest = showrecords[i].Record.statusForCreditRequest
+                    var statusForCreditRequest = showrecords[i].Records.statusForCreditRequest
                     console.log("statusForCreditRequest",statusForCreditRequest)
-                    var statuspreclose=record.Record.statuspreclose
+                    var statuspreclose=record.Records.statuspreclose
                     console.log("statuspreclose",statuspreclose)
-                    // statusfor preclosing request
-                    var bankpreclose=record.Record.bankpreclose
+                    var bankpreclose=record.Records.bankpreclose
                     console.log("bankpreclose?????",bankpreclose)
-                    //creditscore status change
                     console.log('DEBUG: GET Enquiries OK');
-                    // var statusForUser = record.Record.statusForUser
-                    // console.log("statusForUser>>uper >> console",statusForUser)
                     myroute.controllerFor('bankdashboard2').set('isStatus',true)
-                    
-                    if(statusForCreditRequest==="Legalverifier approved" || statusForCreditRequest==="Requested for Legalverifier" || record.Record.statusForBankLegal==="Loan successfully accepted by user" ||statuspreclose==="User Requested For Preclose" ||bankpreclose==="Loan Closed"|| statusForCreditRequest==="Loan Rejected"){ 
+                     if(statuspreclose==="Requested For Preclose"||statusForCreditRequest==="Legalverifier approved" || statusForCreditRequest==="Requested for Legalverifier" || record.Records.statusForBankLegal==="Loan successfully accepted by user" ||bankpreclose==="Loan Closed"|| statusForCreditRequest==="Loan Rejected"){ 
+                        // swal(">>>>>>>>>>>")
+                         myroute.controllerFor('bankdashboard2').set('didThisDone',true) 
                          myroute.controllerFor('bankdashboard2').set('isStatus',false)
                          myroute.controllerFor('bankdashboard2').set('statusForCreditRequest',statusForCreditRequest)
                          console.log(statusForCreditRequest)

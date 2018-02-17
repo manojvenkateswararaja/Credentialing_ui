@@ -64,7 +64,8 @@
    }
    }
 </style>
-
+ <br>
+ <br>
    <div class="container">
       <b class="text-center">Sign Up </b>
       <p>Please fill in this form to create an account.</p>
@@ -81,54 +82,22 @@
         <label for="number"><b>Mobile number</b></label> <br>
        {{validated-input type="number"  model=this  valuePath='number' placeholder="mobile number" required=true}}
       <br>
-       <label for="dob"><b>D.O.B</b></label> <br>
-       {{validated-input type="date"  model=this  valuePath='dateofbirth' placeholder="d.o.b" required=true}}
-      <br>
-    
+       
             <label for="Paw"><b>Password</b></label> <br>
       {{validated-input type="password"  model=this  valuePath='password' placeholder="password" required=true}}
       <br>
     <label for="re-Paw"><b>Retype Password</b></label> <br>
       {{validated-input type="password"  model=this  valuePath='re-password' placeholder="re-password" required=true}}
-    
-     
-      {{!-- 
-      <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
-      --}}
       <div class="clearfix">
          <button type="button" class="cancelbtn">Cancel</button>
          <button type="submit" class="signupbtn" {{action "signup"}}>Sign Up</button>
-      </div>
-   </div>
+      
  
-{{!-- 
-<div class="container" style="background-color:lightgrey; text-align:center; width:25%;">
-   <b><i>Sign up</i></b>
-   <br>
-   First Name
-   {{validated-input  type="text" model=this  valuePath='firstname' placeholder="firstname" required=""}}
-   Last Name
-   {{validated-input  type="text" model=this  valuePath='lastname' placeholder="lastname" required=""}}
-   Mobile Number
-   {{validated-input  type="number" model=this  valuePath='mobilenumber' placeholder="number" required=""}}  
-   D.O.B
-   <br>
-   {{bootstrap-datepicker  id="date" value=DateOfBirth format="dd.mm.yy" placeholder="DOB"}}
-   <br>
-   Email id 
-   {{validated-input  type="email" model=this  valuePath='email' placeholder="E-mail" required="true"}}
-   Password
-   {{validated-input  type="password" model=this  valuePath='password' placeholder="password" required=""}}
-   Re-type password
-   {{validated-input  type="password" model=this  valuePath='password2' placeholder="Retype password" required=""}}
-   <br>
-   <button type="button" id="myButton" class="btn btn-primary" {{action "signup"}}>sign up</button>
-   <br> --}}
    {{#if showDialog}}
    {{#paper-dialog class="flex-77" onClose=(action "closeDialog" "cancel") origin=dialogOrigin clickOutsideToClose=true}}
    {{#paper-toolbar}}
    {{#paper-toolbar-tools}}
-   Your sucessfully logged in!!!
+   Your sucessfully sign up !!
    {{#paper-button iconButton=true onClick=(action "closeDialog" "cancel")}}{{paper-icon icon="close"}}{{/paper-button}}
    {{/paper-toolbar-tools}}
    {{/paper-toolbar}}
@@ -138,10 +107,9 @@
    {{/paper-dialog-actions}}
    {{/paper-dialog}}
    {{/if}}
+   </div>
+   </div>
    <br>
-   {{!-- 
-</div>
---}}
-<br>
-<br>
+   <br>
+   <br>
 {{/if}}

@@ -96,10 +96,9 @@ isBankPreclosed:false,
   okay:function(){
   this.set('isBankPreclosed',true)
   this.set('showDialog',false)
-  }, 
+  this.transitionToRoute('bankdashboard2');
   
-
-   
+  },
         logout:function(){
           console.log("in logout");
           window.location.reload(true);
