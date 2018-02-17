@@ -34,12 +34,10 @@ export default Controller.extend({
                     this.transitionToRoute('userdetailsdec')
                   }
             },
-            
             postPrecoseRequest:function(record){
-                //     console.log("hi manoj",showrecords);
+                   //console.log("hi manoj",showrecords);
                     this.set('record',record)
                     this.transitionToRoute('requestpreclose')
-          
                  },
                  logout:function(){
                     console.log("in logout");

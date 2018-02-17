@@ -41,7 +41,8 @@ export default Controller.extend(Validations,{
       
     // end
         if (email === null || email === undefined || email === "" || password === null || password === undefined || password === "") {
-                alert("please fill details for login");
+                swal("please fill details for login");
+                swal("Something Went Wrong", "please fill details for login!", "error");
             } else {
                 let {
             email,
@@ -67,9 +68,9 @@ export default Controller.extend(Validations,{
             success: function(response) {
             console.log((response));
             var message = response.message
-          console.log("message",message)
+            console.log("message",message)
           if (message==="Login Successful"){
-          mycontroller.set('message',message)
+                mycontroller.set('message',message)
                 var token=response.token
                 console.log("token",token)
                 var usertype=response.usertype;
@@ -83,7 +84,6 @@ export default Controller.extend(Validations,{
                 sessionStorage.setItem('usertype', usertype);
                 // sessionStorage.setItem('userid', userid);
                 sessionStorage.setItem('token', token);
-                
                 mycontroller.set('showDialog',true)
                // console.log("rahul")
             }else{
