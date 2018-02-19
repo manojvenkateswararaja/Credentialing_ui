@@ -22,7 +22,7 @@ export default Controller.extend({
                       this.set('userid',userid)
                       console.log("userid",userid)
                       this.set('date',date)
-                        this.set('time',time)
+                      this.set('time',time)
             var transactionstring={
                 "id":userid,
                 "transactionstring":{

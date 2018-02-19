@@ -23,7 +23,7 @@ export default Route.extend({
         this.controllerFor('userloanschedule').set('IsAlreadyDone',true)
         this.controllerFor('userloanschedule').set('DisablePrecoleButton',false)
     }else{
-        this.controllerFor('userloanschedule').set('IsAlreadyDone',true)
+        this.controllerFor('userloanschedule').set('IsAlreadyDone',false)
         this.controllerFor('userloanschedule').set('DisablePrecoleButton',true)
 
     }

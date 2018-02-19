@@ -65,8 +65,9 @@ export default Controller.extend({
         console.log("ji------",phonenumber);
         if (email === null || email === undefined || email === "" || password === null || password === undefined || password === "") {
             swal("please fill details for signup");
+            this.set('showDialog',false)
         } else {
-
+            
            var datastring = {
             "email": email,
             "password": password,
@@ -93,6 +94,7 @@ export default Controller.extend({
        
             });
     }
+   
     
 },
 closeDialog:function(){
@@ -101,7 +103,7 @@ closeDialog:function(){
 okay:function(){
     this.set('showDialog',false)
     this.transitionToRoute('login1')
-
+   
 },
 logout:function(){
     console.log("in logout");

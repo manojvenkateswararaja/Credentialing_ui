@@ -14,14 +14,38 @@
    border: none;
    background: #f1f1f1;
    }
-   input[type=text]:focus, input[type=password]:focus {
+    input[type=email], input[type=email] {
+   width: 90%;
+   padding: 15px;
+   margin: 5px 0 22px 0;
+   display: inline-block;
+   border: none;
+   background: #f1f1f1;
+   }
+    input[type=number], input[type=number] {
+   width: 90%;
+   padding: 15px;
+   margin: 5px 0 22px 0;
+   display: inline-block;
+   border: none;
+   background: #f1f1f1;
+   }
+     input[type=number]:focus, input[type=number]:focus { 
    background-color: #ddd;
    outline: none;
-   }
+   } 
+     input[type=email]:focus, input[type=email]:focus { 
+   background-color: #ddd;
+   outline: none;
+   } 
+    input[type=text]:focus, input[type=password]:focus { 
+   background-color: #ddd;
+   outline: none;
+   } 
    hr {
    border: 1px solid #f1f1f1;
    margin-bottom: 25px;
-   }
+   } 
    /* Set a style for all buttons */
    button {
    background-color: #4CAF50;
@@ -67,8 +91,9 @@
  <br>
  <br>
    <div class="container">
-      <b class="text-center">Sign Up </b>
-      <p>Please fill in this form to create an account.</p>
+      <h4 class="text-left"><em>Sign Up</em></h4>
+      <br>
+      <b><em>Please fill in this form to create an account.</em></b>
       <hr>
       <label for="fname"><b>First Name</b></label> <br>
       {{validated-input type="text"  model=this  valuePath='fname' placeholder="fname" required=true}}
@@ -83,7 +108,7 @@
        {{validated-input type="number"  model=this  valuePath='number' placeholder="mobile number" required=true}}
       <br>
        
-            <label for="Paw"><b>Password</b></label> <br>
+       <label for="Paw"><b>Password</b></label> <br>
       {{validated-input type="password"  model=this  valuePath='password' placeholder="password" required=true}}
       <br>
     <label for="re-Paw"><b>Retype Password</b></label> <br>

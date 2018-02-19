@@ -29,8 +29,9 @@
             icon="email"  customValidations=emailValidation}}
             {{paper-input label="Address"  value=address icon="streetview" onChange=(action (mut address))  }}
             {{paper-input label="Country"  value=country icon="add location" onChange=(action (mut country))  }}
+              {{paper-input label="Occupation"  value=occupation icon="work" onChange=(action (mut occupation))  }}
             <br>
-            Occupation
+            Occupation Type 
          <div class="drop3" style="margin-left:300px; margin-top:-28px">
             {{!-- {{select-component listitem=occupationlist selecteditemlist=occupationType}} --}}
             <input type="radio" id="showform" value="salaried" name="showform" onchange="showhideForm(this.value);"/>salaried

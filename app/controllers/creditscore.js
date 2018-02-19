@@ -84,7 +84,7 @@ export default Controller.extend({
           })
         },
     
-        closeDialog:function(){
+      closeDialog:function(){
           this.set('showDialog',false)
       },
       okay:function(){

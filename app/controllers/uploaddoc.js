@@ -4,6 +4,7 @@ export default Controller.extend({
 	actions: {
 		home:function(){
 			console.log("in home");
+			swal("Back To home Page !", "User Account!", "success");
 			this.transitionToRoute('home')
 		},
 		okay1: function () {
@@ -35,7 +36,7 @@ export default Controller.extend({
 
 
 		targetButton: function () {
-			swal("Good job!", "Socument uploaded!", "success");
+			swal("Document uploaded!", "well done", "success");
 			// this.set('IsSuccess', true)
 			//this.transitionToRoute('home');
 		},
