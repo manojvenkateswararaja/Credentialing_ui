@@ -17,6 +17,11 @@ export default Route.extend({
          console.log("hi.....",lastdetails)
         this.controllerFor('userdetails').set('lastdetails',lastdetails);
          console.log("updates",lastdetails)
+         if(lastdetails.creditscore == null){
+            this.controllerFor('userdetails').set('isDetailsDisableButton',false)
+        }else if(lastdetails.creditscore!=null){
+            this.controllerFor('userdetails').set('isDetailsDisableButton',true)
+            }
         // console.log("userdetails page00",loanID)
         // var date=lastdetails.date
         // var time=lastdetails.time

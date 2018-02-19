@@ -15,6 +15,20 @@ export default Controller.extend({
              var statuspreclose=showrecords.Records.statuspreclose
              var statusForCreditRequest=showrecords.Records.statusForCreditRequest
              var bankpreclose=showrecords.Records.bankpreclose
+             if(showrecords.Records.statusForUser==="Request sent successfully"){
+                swal("User Applied for loan sucessfully!!", "status", "info");
+            }else if(showrecords.Records.statusForCreditRequest=="Requested For Creditscore"){
+                swal("User have Requested For Creditscore!! ", "status", "info");
+            }else if(showrecords.Records.statusForCreditRequest=="Creditscore Generated"){
+                swal(" Creditscore Generated!! ", "status", "info");
+            }else if(showrecords.Records.statusForCreditRequest=="Requested for Legalverifier"){
+                swal(" Requested for Legalverifier!! Navigating to LoanQuotation>>", "status", "info");
+            }else if(showrecords.Records.statusForCreditRequest=="Legalverifier approved"){
+                swal("User's Legalverification approved!!", "status", "info");
+            }else if(showrecords.Records.statusForCreditRequest==="Loan Scheduled"){
+            swal("Your Loan Successfully scheduled!! Navigating to LoanQuotation>>", "status", "info");
+            // this.transitionToRoute('userloanschedule')
+            }
             
             //  if(statuspreclose!==null||statusForCreditRequest!==null || statusForCreditRequest!==null || record.Records.statusForBankLegal!==null ||bankpreclose!==null|| statusForCreditRequest!==null){
             //     swal("sorry!", "Already made desicion!", "info");

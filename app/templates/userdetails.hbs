@@ -132,8 +132,8 @@
       </div>
       {{!-- r2 --}}
       {{!-- r3 --}}
-      <div style=" margin-top:1cm;">
-         <button type="button" class="btn btn-primary btn-block"{{action "credit" record lastdetails}}>Get Credit Score</button>
+      <div style=" margin-top:1cm;">{{isDetailsDisableButton}}
+         <button type="button" class="btn btn-primary btn-block" disabled={{isDetailsDisableButton}} {{action "credit" record lastdetails}}>Get Credit Score</button>
          <div style="background-color:lightgrey;">
             <h3>Data Published Date & Time</h3>
             {{#if isCreditRequested}}

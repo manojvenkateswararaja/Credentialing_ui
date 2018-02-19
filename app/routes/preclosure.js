@@ -40,12 +40,17 @@ file.upload('http://localhost:8082/UploadDocs?requestid='+requestid).then(functi
         var userid= this.controllerFor('userloanschedule').get('userid');
         console.log("route userid",userid)
         this.controllerFor('preclosure').set("userid",userid);
+        this.controllerFor('preclosure').set('showLogin',true);
+        this.controllerFor('preclosure').set('showUser',true);
+        var usertype=this.controllerFor('login1').get('usertype');
+        console.log(">>>user",usertype)
+        // var userid= this.controllerFor('userloanschedule').get('userid');
+        // console.log("route userid",userid)
+        // this.controllerFor('preclosure').set("userid",userid);
         this.controllerFor('preclosure').set('Notshow_fileupload', true); 
         if(this.controllerFor('preclosure').set('Notshow_fileupload', true)){
          this.controllerFor('preclosure').set(' isShow_fileupload', false); 
         }  
-
-
         var PreClosingController=this.controllerFor('home2').get('record')
         this.controllerFor('preclosure').set('record',PreClosingController)
         // var PreClosingDetails=this.controllerFor('home').get('details')
