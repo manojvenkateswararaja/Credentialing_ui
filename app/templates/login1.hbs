@@ -73,12 +73,19 @@
    <b class="text-center">Login </b>
    <br>
    <br>
+   <div style="border-bottom: 1px solid #c5c5c5;">
+    <i class="glyphicon glyphicon-user">
+    </i>
+    Account Access
+  </div>
+  <br>
    <label><b>Username</b> <i class="fa fa-envelope-o fa-fw"></i></label>
    {{validated-input type="email"  model=this  valuePath='email' placeholder="email" required=true}}
    <br>
    <label><b>Password</b><i class="fa fa-key fa-fw"></i></label>
    {{validated-input  type="password"  model=this  valuePath='password' placeholder="password" required=true}}
    <br>
+   
    <button type="submit" {{action "login"}}>Login</button>
    <label>
    <input type="checkbox" checked="checked"> Remember me

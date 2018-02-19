@@ -1,6 +1,8 @@
 {{partial 'head'}}
 {{#if showLogin }}
 {{/if}}
+
+
 <script>
    $(document).ready(function() {
        // Show or hide the sticky footer button
@@ -20,25 +22,23 @@
        }); 
    });
 </script>
-<div id="mySidenav" class="sidenav">
-   <a href="javascript:void(0)" class="closebtn" {{action "closeNav"}}>&times;</a>
-   <a >Home</a>
-   <a {{action "goTonewrequest"}}>User</a>
-   <a {{action "goToloan"}}>Bank</a>
-   <a {{action "goToproperty"}}>Creditscoregenerator</a>
-   <a {{action "goToemployment"}}>LegalPerson</a>
-</div>
-<div class="jumbotron" style="background-color:lightgrey">
-   <h1><b style="margin-left:-32cm">Bank Dashboard</b></h1>
-   
-   <div class="jumbotron">
-      <p style="text-align:center;color:black"><b>TOTAL REQUEST</b></p>
-      <div class="container" style="background-color:grey"><b>ALL Request</b></div>
+
+
+
+    <!-- Page Content -->
+    <div class="container">
+
+      <!-- Jumbotron Header -->
+      <header class="jumbotron my-4">
+        <h1 style="margin-left:-18cm;margin-bottom:-1cm;"><em class="glyphicon glyphicon-dashboard">Bank Dashboard</em></h1>
+      </header>
+      <p style="text-align:center;color:black"><b>TOTAL REQUEST FOR MORTGAGE LOAN</b></p>
+      <h2><b>ALL Request</b></h2>
       <br>
-      <div class ="container">
+      <div class ="container" style="margin-left:-14px;">
          {{#each showrecords   as |item|}}
          <div class="row">
-            <div class="col-xs-3 col-lg-3 col-sm-3">Userid<a href="" {{action 'userdetails'  item }}><b style="color:blue">{{item.Key}}</b></a></div>
+            <div class="col-xs-3 col-lg-3 col-sm-3">USERID<a href="" {{action 'userdetails'  item }}><b style="color:blue">{{item.Key}}</b></a></div>
             <div class="row">
                <div class="col-xs-3 col-lg-3 col-sm-3"><b>Data Published Time</b></div>
                <div class="col-xs-3 col-lg-3 col-sm-3"> Date:<small  class="text-muted">{{item.Record.date}}</small></div>
@@ -61,6 +61,39 @@
          <br>
          {{/each}}
       </div>
-  </div>
-  </div>
+    </div>
+    <!-- /.container -->
+
+    <!-- Footer -->
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{{!-- <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< --}}
+  {{!-- <div class="jumbotron"> --}}
+{{!-- <div class="jumbotron" style="background-color:lightgrey"> --}}
+     {{!-- <header class="w3-container " style=""><h2>Bank Dashboard</h2></header> --}}
+   {{!-- <h1><b style="margin-left:-32cm">Bank Dashboard</b></h1> --}}
+   
+  {{!-- </div> --}}
+  {{!-- </div> --}}
 <a href="#" class="go-top">Scroll to Top</a>

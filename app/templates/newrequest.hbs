@@ -2,18 +2,11 @@
 {{#if showLogin}}
 {{/if}}
 <div class="container-fluid" >
-   <div id="mySidenav" class="sidenav" >
-      <a href="javascript:void(0)" class="closebtn" {{action "closeNav"}}>&times;</a>
-      <a >Home</a>
-      <a {{action "goTonewrequest"}}>Personal details</a>
-      <a {{action "goToloan"}}>Loan details</a>
-      <a {{action "goToproperty"}}>Property details</a>
-      <a {{action "goToemployment"}}>Employment details</a>
-   </div>
+   
    <div class="container" style="margin-top:2cm;">
       {{#paper-stepper   currentStep=currentStep onStepChange=(action (mut currentStep))
       onStepperCompleted=(action "saveModel") as |stepper|}}
-      {{#stepper.step label="Personal Details" as |step|}}
+      {{#stepper.step label="Personal Info" as |step|}}
       <div class="container" style="margin-left:442px; background-color:lightgrey">
          +
          {{#step.body}}
@@ -36,8 +29,9 @@
             icon="email"  customValidations=emailValidation}}
             {{paper-input label="Address"  value=address icon="streetview" onChange=(action (mut address))  }}
             {{paper-input label="Country"  value=country icon="add location" onChange=(action (mut country))  }}
+              {{paper-input label="Occupation"  value=occupation icon="work" onChange=(action (mut occupation))  }}
             <br>
-            Occupation
+            Occupation Type 
          <div class="drop3" style="margin-left:300px; margin-top:-28px">
             {{!-- {{select-component listitem=occupationlist selecteditemlist=occupationType}} --}}
             <input type="radio" id="showform" value="salaried" name="showform" onchange="showhideForm(this.value);"/>salaried
@@ -98,7 +92,7 @@
       {{/step.actions}}
       {{/stepper.step}}
       {{!-- add as many steps as necessary --}}
-      {{#stepper.step label="Mortgage Details" as |step|}}
+      {{#stepper.step label="Mortgage info" as |step|}}
       <div class="container" style="margin-left:442px; margin-top:-1cm; background-color:lightgrey">
          {{#step.body}} 
          {{#paper-grid-list
@@ -154,16 +148,16 @@
             {{paper-input label="Loaction/Address"  value=location onChange=(action (mut location)) icon="location on" }}
             {{paper-input label="Property size"  value=size onChange=(action (mut size)) icon="home"}}  
             <br>
-            {{!-- {{#paper-button raised=true warn=true onClick=(action "targetButton")}}Submit{{/paper-button}} --}}
+            {{#paper-button raised=true warn=true onClick=(action "targetButton")}}Submit{{/paper-button}}
          </p>
-         {{#paper-button raised=true warn=true onClick=(action "targetButton")}}Submit{{/paper-button}}
+         {{!-- {{#paper-button raised=true warn=true onClick=(action previousStep)}} --}}
          {{#if showDialog}}
          {{#paper-dialog class="flex-77" onClose=(action "closeDialog" "cancel") origin=dialogOrigin clickOutsideToClose=true}}
          {{#paper-toolbar}}
          {{#paper-toolbar-tools}}
          {{message}}
-         {{IsSuccess}}
-         your request id:{{reqid}}
+         <br>
+         your request id:{{requestid}}
          {{#paper-button iconButton=true onClick=(action "closeDialog" "cancel")}}{{paper-icon icon="close"}}{{/paper-button}}
          {{/paper-toolbar-tools}}
          {{/paper-toolbar}}

@@ -1,4 +1,5 @@
 import Route from '@ember/routing/route';
+
 export default Route.extend({
     showLogin:false,
     showUser:false,
@@ -34,5 +35,6 @@ export default Route.extend({
                 console.log("Allrequest", showrecords)
                  }
            })
+          
     }
 });

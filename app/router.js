@@ -40,6 +40,7 @@ Router.map(function() {
   this.route('creditscore2');
   this.route('bankdashboard2');
   this.route('home2');
+  this.route('notify');
 });
 
 export default Router;

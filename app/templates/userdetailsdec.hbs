@@ -23,7 +23,12 @@
          
       });
    </script>
-   {{#if IsUserDetails}}
+ 
+   <div class="container" >
+       <br>
+       <br>
+         <h4 style="text-align:center;"><em>USER DETAILS VERIFICATION</em></h4>
+       {{#if IsUserDetails}}
    <div class="alert alert-success">
       <strong>Successfully creditscore generated!</strong><br>
       Please Also Get Verified By Legal Validator
@@ -40,8 +45,6 @@
       <strong>Info!</strong>Already made decision.
    </div>
    {{/if}}
-   <div class="container" >
-      <h2 style="margin-left:12cm;"><b>USER REQUESTID</b></h2>
       <div class="row" style="">
          <div class="col-xs-3 col-lg-3 col-sm-3" style="background-color:lightcyan;"><i style="margin-left:5%">Request Id:</i><i id="req">{{record.Record.requestid}}</i></div>
          <div class="col-xs-3 col-lg-3 col-md-3 col-sm-3" style="background-color:lightcyan;">
@@ -124,7 +127,7 @@
                      <td style="color:blue;">{{record.Record.creditscore}}</td>
                   </tr>
                   <tr>
-                     <td>Legal Property Verified:</td>
+                     <td>Status Of Each Verifier:</td>
                      <td style="color:blue;">{{record.Record.statusForCreditRequest}}</td>
                   </tr>
                </table>

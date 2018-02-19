@@ -5,13 +5,17 @@
 <br>
 <br>
  <div class="jumbotron" style="background-color:;">
-     <br>
-     <br>
-     <title><b>My Account</b></title>
+     
     <div class="container" style="background-color:">
-          {{#each showrecords   as |item|}}
-          
+
+          <div class="row">
+               <b><em><span class="glyphicon glyphicon-tasks"></span>My Account</em></b>
+          </div>
+       <br>
+       <br>
+          {{#each showrecords   as |item|}}  
          <div class="row">
+             
             <div class="col-xs-3 col-lg-3 col-sm-3">Requestid<a href="" {{action 'userloanschedule'  item}}><b style="color:blue">{{item.Records.requestid}}</b></a></div>
             <div class="row">
                <div class="col-xs-3 col-lg-3 col-sm-3"><b>Data Published Time</b></div>

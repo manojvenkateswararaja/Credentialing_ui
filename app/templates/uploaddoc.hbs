@@ -9,12 +9,16 @@
    <a {{action "goToproperty"}}>Property details</a>
    <a {{action "goToemployment"}}>Employment details</a>
 </div>
-<div class="container-fluid">
-   <h3><b style="text-align:center;">Upload Document</b></h3>
-   <div class="container">
+<div class="container-fluid" style="background-color:">
+    <br>
+    <br>
+    <br>
+      <h4 style="text-align:center;">Upload Document</h4>
+ 
+   <div class="container" style="magint-top:52px;">
       <div class="row">
          <div class="col-xs-8 col-lg-8 col-md-8 col-sm-8">
-            please fill your documents details?
+           <b><em>please fill your documents details?</em></b>
          </div>
          <div class="col-xs-4 col-lg-4 col-md-4 col-sm-4">
             <style id="link">
@@ -35,7 +39,8 @@
                color: blue;
                }
             </style>
-            {{#link-to 'home'}}<b id="link">Go Back To Main Menu</b>{{/link-to}}
+            <button type="button" class="btn btn-default btn-number qtyplus" data-type="plus" field='quantity'{{action "home"}} ><span class="glyphicon glyphicon-home"></span>Go Back To Main Menu</button>
+           {{!-- <b id="link"> <button {{action "home"}}>Go Back To Main Menu</button></b> --}}
          </div>
       </div>
       <br>  
@@ -66,16 +71,16 @@
             <label> BankStatement Document</label>
          </div>
          <div class="col-xs-4 col-lg-4col-md-4 col-sm-4">
-            {{#if Notshow_fileupload1}}
+            {{#if Notshow_fileupload}}
             <div id="NR-reactangle">
-               {{#pl-uploader  for="upload_file1" runtimes="html5 flash silverlight" multiple=true onfileadd="uploadDoc" as |queue|}}
-               <a id="upload_file1" style="font-size:18px">
+               {{#pl-uploader  for="upload_file" runtimes="html5 flash silverlight" multiple=true onfileadd="uploadDoc" as |queue|}}
+               <a id="upload_file" style="font-size:18px">
                   <p style="margin-top:3mm"> <img src="assets/images/upload.svg" alt="Smiley face" width="20" height="20" style="margin-bottom:3mm">&nbsp; Choose File to Upload</p>
                </a>
                {{/pl-uploader}}
             </div>
             {{/if}}
-            {{#if isShow_fileupload1}}
+            {{#if isShow_fileupload}}
             <div id="NR-reactangle-ok">
                <p style="color:#68DC83,margin-top:3mm"><b>File Uploaded Sucessfully !!! </b></p>
             </div>
@@ -88,16 +93,16 @@
             <label >Address proof Document</label>
          </div>
          <div class="col-xs-4 col-lg-4col-md-4 col-sm-4">
-            {{#if Notshow_fileupload2}}
+            {{#if Notshow_fileupload}}
             <div id="NR-reactangle">
-               {{#pl-uploader  for="upload_file2" runtimes="html5 flash silverlight" multiple=true onfileadd="uploadDoc" as |queue|}}
-               <a id="upload_file2" style="font-size:18px">
+               {{#pl-uploader  for="upload_file" runtimes="html5 flash silverlight" multiple=true onfileadd="uploadDoc" as |queue|}}
+               <a id="upload_file" style="font-size:18px">
                   <p style="margin-top:3mm"> <img src="assets/images/upload.svg" alt="Smiley face" width="20" height="20" style="margin-bottom:3mm">&nbsp; Choose File to Upload</p>
                </a>
                {{/pl-uploader}}
             </div>
             {{/if}}
-            {{#if isShow_fileupload2}}
+            {{#if isShow_fileupload}}
             <div id="NR-reactangle-ok">
                <p style="color:#68DC83,margin-top:3mm"><b>File Uploaded Sucessfully 1111!!!</b></p>
             </div>
@@ -110,16 +115,16 @@
             <label>property Document</label>
          </div>
          <div class="col-xs-4 col-lg-4col-md-4 col-sm-4">
-            {{#if Notshow_fileupload3}}
+            {{#if Notshow_fileupload}}
             <div id="NR-reactangle">
-               {{#pl-uploader  for="upload_file3" runtimes="html5 flash silverlight"  multiple="true" onfileadd="uploadDoc" as |queue|}}
-               <a id="upload_file3" style="font-size:18px">
+               {{#pl-uploader  for="upload_file" runtimes="html5 flash silverlight"  multiple="true" onfileadd="uploadDoc" as |queue|}}
+               <a id="upload_file" style="font-size:18px">
                   <p style="margin-top:3mm"> <img src="assets/images/upload.svg" alt="Smiley face" width="20" height="20" style="margin-bottom:3mm">&nbsp; Choose File to Upload</p>
                </a>
                {{/pl-uploader}}
             </div>
             {{/if}}
-            {{#if isShow_fileupload3}}
+            {{#if isShow_fileupload}}
             <div id="NR-reactangle-ok">
                <p style="color:#68DC83,margin-top:3mm"><b>File Uploaded Sucessfully 1111!!!</b></p>
             </div>
@@ -132,25 +137,17 @@
             <label> Income tax return Document</label>
          </div>
          <div class="col-xs-4 col-lg-4col-md-4 col-sm-4">
-            {{#if Notshow_fileupload4}}
+            {{#if Notshow_fileupload}}
             <div id="NR-reactangle">
-               {{#pl-uploader  for="upload_file4" runtimes="html5 flash silverlight" multiple="true" onfileadd="uploadDoc" as |queue|}}
-               <a id="upload_file4" style="font-size:18px">
+               {{#pl-uploader  for="upload_file" runtimes="html5 flash silverlight" multiple="true" onfileadd="uploadDoc" as |queue|}}
+               <a id="upload_file" style="font-size:18px">
                   <p style="margin-top:3mm"> <img src="assets/images/upload.svg" alt="Smiley face" width="20" height="20" style="margin-bottom:3mm">&nbsp; Choose File to Upload</p>
                </a>
                {{/pl-uploader}}
             </div>
             {{/if}}
-            {{!-- {{#if isShow_fileupload1}}
-            <div id="NR-reactangle-ok">
-               <p style="color:#68DC83,margin-top:3mm"><b>File Uploaded Sucessfully 1111!!!</b></p>
-            </div>
-            {{/if}} --}}
-            {{!-- 
-         </div>
-         --}}
-         {{!-- {{/if}} --}}
-         {{#if isShow_fileupload4}}
+            
+         {{#if isShow_fileupload}}
          <div id="NR-reactangle-ok">
             <p style="color:#68DC83,margin-top:3mm"><b>File Uploaded Sucessfully 1111!!!</b></p>
          </div>
@@ -159,19 +156,6 @@
    </div>
    <br>
    {{#paper-button raised=true warn=true onClick=(action "targetButton")}}Submit{{/paper-button}}
-   {{#if showDialog}}
-   {{#paper-dialog class="flex-77" onClose=(action "closeDialog" "cancel") origin=dialogOrigin clickOutsideToClose=true}}
-   {{#paper-toolbar}}
-   {{#paper-toolbar-tools}}
-   Your file uploaded successfully!!!
-   {{#paper-button iconButton=true onClick=(action "closeDialog" "cancel")}}{{paper-icon icon="close"}}{{/paper-button}}
-   {{/paper-toolbar-tools}}
-   {{/paper-toolbar}}
-   {{#paper-dialog-actions class="layout-row"}}
-   {{#paper-button onClick=(action "closeDialog" "cancel")}}Cancel{{/paper-button}}
-   {{#paper-button onClick=(action "okay" "ok")}}OK{{/paper-button}}
-   {{/paper-dialog-actions}}
-   {{/paper-dialog}}
-   {{/if}}
+
 </div>
 </div>

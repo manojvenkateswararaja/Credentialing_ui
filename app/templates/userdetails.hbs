@@ -25,7 +25,9 @@
    <br>
    <div class="container">
       <br>
-      <b style="margin-left:12cm;">USER DETAILS</b>
+      <br>
+      <br>
+      <b style="margin-left:12cm;"><em>USER DETAILS</em></b>
       <br>
       <br>
       <div class="row" style="">
@@ -86,10 +88,10 @@
                   <td>Occupation:</td>
                   <td style="color:gray;">{{lastdetails.occupation}}</td>
                </tr>
-               <tr>
+               {{!-- <tr>
                   <td>Income:</td>
                   <td style="color:gray;">{{lastdetails.income}}</td>
-               </tr>
+               </tr> --}}
             </table>
             {{!-- {{/each}} --}}
          </div>
@@ -133,7 +135,7 @@
       <div style=" margin-top:1cm;">
          <button type="button" class="btn btn-primary btn-block"{{action "credit" record lastdetails}}>Get Credit Score</button>
          <div style="background-color:lightgrey;">
-            <h3>Time Stamp</h3>
+            <h3>Data Published Date & Time</h3>
             {{#if isCreditRequested}}
             <div class="row">
                <b> Requested For Creditscore Time</b>

@@ -24,7 +24,10 @@ export default Controller.extend({
              var data = lastdetails;
              console.log("updated data",data)
              var date=new Date().toLocaleDateString();
+             this.set('date',date)
+             console.log(date)
              var time=new Date().toTimeString();
+             this.set('time',time)
 
               var data = { 
                "id":userid,
@@ -87,6 +90,7 @@ export default Controller.extend({
           okay:function(){
           var isCreditRequested=this.get('isCreditRequested')
           console.log("this.set('isCreditRequested',true)",isCreditRequested)
+         
           this.set('isCreditRequested',true)
           this.set('showDialog',false)
           },

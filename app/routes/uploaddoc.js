@@ -29,11 +29,7 @@ export default Route.extend({
 					console.log("file upload sucessfully. 1..");
 					var index = queue.length
 					console.log(index)
-					// }else if(document.getElementById('upload_file1')){
-					//  console.log("in loop 2")
-					//  mycontroller.controllerFor('uploaddoc').set("isShow_fileupload1",true);
-					//  mycontroller.controllerFor('uploaddoc').set("Notshow_fileupload1",false);
-					// }
+					
 				},
 
 				function () {
@@ -53,12 +49,6 @@ export default Route.extend({
 		if (this.controllerFor('uploaddoc').set('Notshow_fileupload', true)) {
 			this.controllerFor('uploaddoc').set(' isShow_fileupload', false);
 		}
-		this.controllerFor('uploaddoc').set('Notfileupload1', true);
-		if (this.controllerFor('uploaddoc').set('Notshow_fileupload1', true)) {
-			this.controllerFor('uploaddoc').set(' isShow_fileupload1', false);
-		}
-
-
 		var requestid = this.controllerFor('newrequest').get('reqid');
 		this.controllerFor('uploaddoc').set('requestid', requestid);
 		console.log("reqid--", requestid);

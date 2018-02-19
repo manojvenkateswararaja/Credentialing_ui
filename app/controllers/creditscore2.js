@@ -5,7 +5,7 @@ export default Controller.extend({
   shoUserInfo:false,
   showDashboard:true,
     
-  actions: {
+  actions:{
    
     userdetails: function(showrecords) {
       this.set('record', showrecords);
@@ -13,10 +13,10 @@ export default Controller.extend({
 
            this.transitionToRoute('creditscore')
        
-       }
+       },
      
       // this.transitionToRoute('userdetails');
-    },
+    
     signout:function() {
       this.transitionToRoute('login1');
   },
@@ -34,6 +34,7 @@ timestamp:function(){
 logout:function(){
   console.log("in logout");
   window.location.reload(true);
+}
 },
    
 });

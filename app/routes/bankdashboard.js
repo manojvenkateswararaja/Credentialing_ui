@@ -36,7 +36,6 @@ export default Route.extend({
                 console.log("len show>>>", len);
                 for(let i = 0; i <= len-1; i++){
                     var record=showrecords[i]
-                    
                     myroute.controllerFor('bankdashboard').set('record', record)
                     console.log("hi manoj",record)
                     var statusForCreditRequest = showrecords[i].Record.statusForCreditRequest
@@ -48,30 +47,30 @@ export default Route.extend({
                     console.log("bankpreclose?????",bankpreclose)
                     //creditscore status change
                     console.log('DEBUG: GET Enquiries OK');
-                    // var statusForUser = record.Record.statusForUser
-                    // console.log("statusForUser>>uper >> console",statusForUser)
+                    
                     myroute.controllerFor('bankdashboard').set('isStatus',true)
                     
-                    if(statusForCreditRequest==="Legalverifier approved" || statusForCreditRequest==="Requested for Legalverifier" || record.Record.statusForBankLegal==="Loan successfully accepted by user" ||statuspreclose==="User Requested For Preclose" ||bankpreclose==="Loan Closed"|| statusForCreditRequest==="Loan Rejected"){ 
-                         myroute.controllerFor('bankdashboard').set('isStatus',false)
-                         myroute.controllerFor('bankdashboard').set('statusForCreditRequest',statusForCreditRequest)
-                         console.log(statusForCreditRequest)
-                         myroute.controllerFor('bankdashboard').set('IsCreditStatus',true)
-                         myroute.controllerFor('bankdashboard').set('IsLegalValidated',true)
-                     }else if(statusForCreditRequest==="Creditscore Generated"){ 
-                myroute.controllerFor('bankdashboard').set('isStatus',false)
-                //default
-                myroute.controllerFor('bankdashboard').set('IsCreditStatus',true)
-                myroute.controllerFor('bankdashboard').set('statusForCreditRequest',statusForCreditRequest)
-                //default status
-                }else if(statusForCreditRequest=null){
-                    console.log("hiiii >>> this is true")
-                    myroute.controllerFor('bankdashboard').set('IsCreditStatus',false)
-                    myroute.controllerFor('bankdashboard').set('isStatus',true)
-                    console.log("DefaultStatus",status)
-                    myroute.controllerFor('bankdashboard').set('status',status) 
-                }
-            }
+            //         if(statusForCreditRequest==="Legalverifier approved" || statusForCreditRequest==="Requested for Legalverifier" || record.Record.statusForBankLegal==="Loan successfully accepted by user" ||statuspreclose==="User Requested For Preclose" ||bankpreclose==="Loan Closed"|| statusForCreditRequest==="Loan Rejected"){ 
+            //              myroute.controllerFor('bankdashboard').set('isStatus',false)
+            //              myroute.controllerFor('bankdashboard').set('statusForCreditRequest',statusForCreditRequest)
+            //              console.log(statusForCreditRequest)
+            //              myroute.controllerFor('bankdashboard').set('IsCreditStatus',true)
+            //              myroute.controllerFor('bankdashboard').set('IsLegalValidated',true)
+            //          }else if(statusForCreditRequest==="Creditscore Generated"){ 
+            //     myroute.controllerFor('bankdashboard').set('isStatus',false)
+            //     //default
+            //     myroute.controllerFor('bankdashboard').set('IsCreditStatus',true)
+            //     myroute.controllerFor('bankdashboard').set('statusForCreditRequest',statusForCreditRequest)
+            //     //default status
+            //     }else if(statusForCreditRequest=null){
+            //         console.log("hiiii >>> this is true")
+            //         myroute.controllerFor('bankdashboard').set('IsCreditStatus',false)
+            //         myroute.controllerFor('bankdashboard').set('isStatus',true)
+            //         console.log("DefaultStatus",status)
+            //         myroute.controllerFor('bankdashboard').set('status',status) 
+            //     }
+             }
+                
             }
         });
 

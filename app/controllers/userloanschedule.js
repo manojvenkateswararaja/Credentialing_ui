@@ -22,7 +22,7 @@ export default Controller.extend({
                       this.set('userid',userid)
                       console.log("userid",userid)
                       this.set('date',date)
-                        this.set('time',time)
+                      this.set('time',time)
             var transactionstring={
                 "id":userid,
                 "transactionstring":{
@@ -95,6 +95,7 @@ closeDialog:function(){
 okay:function(){
     this.set('isLoanSchedule',true)
     this.set('showDialog',false)
+    this.transitionToRoute('home2'); 
 },
 logout:function(){
     console.log("in logout");

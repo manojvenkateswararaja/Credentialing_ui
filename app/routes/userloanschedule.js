@@ -1,7 +1,7 @@
 import Route from '@ember/routing/route';
 
 export default Route.extend({
-    IsAlreadyDone:false,
+    
     model(){
         
         this.controllerFor('userloanschedule').set('showLogin',true);
@@ -15,9 +15,16 @@ export default Route.extend({
     var LoanController=this.controllerFor('home2').get('record')
     this.controllerFor('userloanschedule').set('record',LoanController)
     console.log("userloanschedule>>>>",LoanController)
-    // console.log("userloanschedule>>>>details",Loandetails)
-    if(LoanController.Records.EMI!=null){
+    console.log("userloanschedule>>>>details",LoanController.Records.statusForCreditRequest)
+    if(LoanController.Records.statusForCreditRequest=="Loan Scheduled"){
+        this.controllerFor('userloanschedule').set('IsAlreadyDone',false)
+        this.controllerFor('userloanschedule').set('DisablePrecoleButton',true)   
+    }else if(LoanController.Records.statusForBankLegal=="Loan successfully accepted by user"){
         this.controllerFor('userloanschedule').set('IsAlreadyDone',true)
+        this.controllerFor('userloanschedule').set('DisablePrecoleButton',false)
+    }else{
+        this.controllerFor('userloanschedule').set('IsAlreadyDone',false)
+        this.controllerFor('userloanschedule').set('DisablePrecoleButton',true)
 
     }
         }

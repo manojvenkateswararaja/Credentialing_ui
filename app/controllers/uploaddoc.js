@@ -2,6 +2,11 @@ import Controller from '@ember/controller';
 
 export default Controller.extend({
 	actions: {
+		home:function(){
+			console.log("in home");
+			swal("Back To home Page !", "User Account!", "success");
+			this.transitionToRoute('home')
+		},
 		okay1: function () {
 			this.set('showDialog1', false)
 			this.set('IdProof', true)
@@ -31,8 +36,8 @@ export default Controller.extend({
 
 
 		targetButton: function () {
-			window.alert("uploaded")
-			this.set('IsSuccess', true)
+			swal("Document uploaded!", "well done", "success");
+			// this.set('IsSuccess', true)
 			//this.transitionToRoute('home');
 		},
 		logout:function(){

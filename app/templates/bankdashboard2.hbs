@@ -2,8 +2,9 @@
 {{#if showLogin}}
 {{/if}}
 
-    <header class="w3-container  w3-center" style="padding:70px 16px"></header>
-      
+<div class="jumbotron">
+    <header class="w3-container  w3-center" style="padding:70px 16px"><b class="fadeOut">User Request ID with Data Published Date & Time</b></header>
+ 
       {{#each showrecords   as |item|}}
       <div class="row" style="background-color:lightgrey">
             <div class="col-xs-3 col-lg-3 col-sm-3">Requestid<a href="" {{action 'userdetails'  item }}><b style="color:blue">{{item.Records.requestid}}    
@@ -13,13 +14,14 @@
                <div class="col-xs-3 col-lg-3 col-sm-3"> Date:<small  class="text-muted">{{item.Records.date}}</small></div>
                <div class="col-xs-3 col-lg-3 col-sm-3">Time:<small  class="text-muted">{{item.Records.time}}</small></div>
          <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6" style="background-color:">
-            <div class="vl5">
+            <div>
                <div style="">status:<b style="color:green">{{#if isBankPreclose}}{{status}}{{/if}}</b>
                   <b style="color:green">{{item.Records.statusForUser}}{{item.Records.statusForBankLegal}}{{item.Records.statusForCreditRequest}}
-                      {{item.Records.statuspreclose}}
+                      {{!-- {{item.Records.statuspreclose}} --}}
                       {{item.Records.bankpreclose}}
-                       <b style="color:tomato;"><a href="" {{action 'postPrecoseRequest'  item }}>{{item.Record.statuspreclose}}<small>Kindly click here to check preclosing details of user here</small></a></b>
-                 
+                     
+                       <b style="color:tomato;"><a href="" {{action 'postPrecoseRequest'  item }}>{{item.Records.statuspreclose}}</a></b>
+              
                   </b>
                </div>
             </div>
@@ -27,4 +29,5 @@
       </div>
       <br>
       {{/each}}
+      </div>
       
