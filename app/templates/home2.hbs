@@ -9,14 +9,16 @@
     <div class="container" style="background-color:">
 
           <div class="row">
-               <b><em><span class="glyphicon glyphicon-tasks"></span>My Account</em></b>
+               <div class="col-xs-3 col-lg-3 col-sm-3"><b><em><span class="glyphicon glyphicon-tasks"></span>My Account</em></b></div>
+          <div class="col-xs-5 col-lg-5 col-sm-5"></div>
+          <div class="col-xs-4 col-lg-4 col-sm-4"  {{action 'steps'}}><span class="glyphicon glyphicon-hand-right" style=""></span><em class="text-muted"> you can also preclose loan, click here to know steps</em></div>
           </div>
        <br>
        <br>
           {{#each showrecords   as |item|}}  
          <div class="row">
-             
             <div class="col-xs-3 col-lg-3 col-sm-3">Requestid<a href="" {{action 'userloanschedule'  item}}><b style="color:blue">{{item.Records.requestid}}</b></a></div>
+            {{!-- <div class="col-xs-6 col-lg-6 col-sm-6"><span class="glyphicon glyphicon-eye-open"></span>check your response by clicking on requestid</div> --}}
             <div class="row">
                <div class="col-xs-3 col-lg-3 col-sm-3"><b>Data Published Time</b></div>
                <div class="col-xs-3 col-lg-3 col-sm-3"> Date:<small  class="text-muted">{{item.Records.date}}</small></div>
@@ -39,6 +41,9 @@
                         </div>
                   </div> 
                   </div>
+                  <div class="row">
+                         <div class="col-xs-6 col-lg-6 col-sm-6"><span class="glyphicon glyphicon-eye-open"></span> check your response by clicking on requestid</div>
+                        </div>
          <br>
          {{/each}}
      </div>

@@ -2,6 +2,10 @@ import Controller from '@ember/controller';
 
 export default Controller.extend({
     actions: {
+        steps:function(){
+            swal("step1) After Loan schedule>>step2)check response>>step3)you can see button called as preclose >>step4)you can apply by click on it.", "steps", "info");
+
+        },
     userloanschedule:function(record){
         console.log("hi manoj",record);
         this.set('record',record)

@@ -25,6 +25,8 @@ export default Controller.extend({
                 swal(" Requested for Legalverifier!! Navigating to LoanQuotation>>", "status", "info");
             }else if(showrecords.Records.statusForCreditRequest=="Legalverifier approved"){
                 swal("User's Legalverification approved!!", "status", "info");
+            }else if(showrecords.Records.statusForCreditRequest=="Legalverifier rejected"){
+                swal("User's Legalverification Rejected!!", "status", "info");
             }else if(showrecords.Records.statusForCreditRequest==="Loan Scheduled"){
             swal("Your Loan Successfully scheduled!! Navigating to LoanQuotation>>", "status", "info");
             // this.transitionToRoute('userloanschedule')
