@@ -3,7 +3,6 @@
 {{#if showLogin}}
 {{/if}}
 </div>
-<br>
 <style>
    form {
    border: 3px solid #f1f1f1;
@@ -78,13 +77,13 @@
     </i>
     Account Access
   </div>
-  <br>
+  
    <label><b>Username</b> <i class="fa fa-envelope-o fa-fw"></i></label>
    {{validated-input type="email"  model=this  valuePath='email' placeholder="email" required=true}}
-   <br>
+  
    <label><b>Password</b><i class="fa fa-key fa-fw"></i></label>
    {{validated-input  type="password"  model=this  valuePath='password' placeholder="password" required=true}}
-   <br>
+  
    
    <button type="submit" {{action "login"}}>Login</button>
    <label>
@@ -95,10 +94,9 @@
    {{!-- <button type="button" class="cancelbtn">Cancel</button> --}}
    <br>New User? {{#link-to 'signup'}}<i style="color:#2d8cff "> sign up </i>{{/link-to}}
    {{!-- <span class="psw">Forgot <a href="#">password?</a></span> --}}
-   <br>
+  
 </div>
-<br>
-<br>
+
 {{#if showDialog}}
 {{#paper-dialog class="flex-77" onClose=(action "closeDialog" "cancel") origin=dialogOrigin clickOutsideToClose=true}}
 {{#paper-toolbar}}
@@ -113,8 +111,5 @@
 {{/paper-dialog-actions}}
 {{/paper-dialog}}
 {{/if}}
-<br>
-<br>
-<br>
 <br>
 <br>
