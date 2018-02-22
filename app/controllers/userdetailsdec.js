@@ -27,9 +27,6 @@ export default Controller.extend({
                 this.set('date',date)
                 var time=new Date().toTimeString();
                 this.set('time',time)
-                var userid=this.get('userid')
-                this.set('userid',userid)
-                console.log("userid",userid)
                 var Updateddata = { "id":userid,
                  "transactionstring":{
                   "loan":data.loan,

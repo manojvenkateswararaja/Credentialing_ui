@@ -23,7 +23,9 @@ export default Controller.extend({
                 this.set('userid',userid)
                 console.log("userid",userid)
                 var date=new Date().toLocaleDateString();
+                this.set('date',date)
                 var time=new Date().toTimeString();
+                this.set('time',time)
                var transactionstring={"id":userid,"transactionstring":{
                   "loan":lastdetails.loan,
                   "amount":lastdetails.amount,
@@ -70,8 +72,8 @@ export default Controller.extend({
                 success: function(response) {
                 console.log("service")
                mycontroller.set('showCredit',true)
-            var creditscore=response
-            console.log("credit",creditscore);
+               var creditscore=response
+               console.log("credit",creditscore);
               //   mycontroller.set('creditscore',creditscore)
               //   console.log("my credit ccore>>>>>>",creditscore)
                   },
@@ -99,9 +101,11 @@ export default Controller.extend({
                     console.log("userid",userid)
                     console.log("requestid>>>>>>>>",records)
                     var date=new Date().toLocaleDateString();
+                    console.log("approve time>>",date)
                     var time=new Date().toTimeString();
-                    this.set('date',date)
-                    this.set('time',time)
+                    console.log("approve time>>",time)
+                    mycontroller.set('date',date)
+                    mycontroller.set('time',time)
                    var transactionstring={"id":userid,"transactionstring":{
                       "loan":lastdetails.loan,
                       "amount":lastdetails.amount,

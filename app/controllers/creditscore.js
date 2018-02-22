@@ -21,7 +21,9 @@ export default Controller.extend({
           console.log("creditscore>>>>>>",creditscore)
           // console.log("key>>>>>>",records)
           var date=new Date().toLocaleDateString();
+          this.set('date',date)
           var time=new Date().toTimeString();
+          this.set('time',time)
           var userid=this.get('userid')
           this.set('userid',userid)
           console.log("userid",userid)

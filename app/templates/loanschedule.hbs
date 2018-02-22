@@ -12,10 +12,27 @@
       <div class="col-xs-2 col-lg-2 col-md-2 col-sm-2">
          <label>Request iD:</label>
       </div>
-      <div class="col-xs-10 col-lg-10 col-md-10 col-sm-10" style="color:blue">
+      <div class="col-xs-2 col-lg-2 col-md-2 col-sm-2" style="color:blue">
          {{!-- {{validated-input  type="text" class="form-group" model=this  valuePath='requestid' placeholder="Request Id" required=""}} --}}
          {{record.Record.requestid}}
       </div>
+       <div class="col-xs-8 col-lg-8 col-md-8 col-sm-8" style="color:">
+   {{#if isBnkLoanSchedule}}
+   <div class="row">
+      <b>  Loan scheduled data published time</b>
+   </div>
+   <div class="row">
+      <div class="col-xs-6 col-lg-6 col-sm-6">
+         Date:{{date}}
+      </div>
+      <div class="col-xs-6 col-lg-6 col-sm-6">
+         Time{{time}}
+      </div>
+   </div>
+   <br>
+   <br>
+   {{/if}}
+</div>
    </div>
   
    <div class="row" style="">
@@ -94,21 +111,3 @@ Loan has been scheduled for requested user   ...!!
 {{/paper-dialog-actions}}
 {{/paper-dialog}}
 {{/if}}
-<div class="jumbotron" style="background-color:lightgrey;">
-   <h3>Time Stamp</h3>
-   {{#if isBnkLoanSchedule}}
-   <div class="row">
-      <b>  Loan scheduled time</b>
-   </div>
-   <div class="row">
-      <div class="col-xs-6 col-lg-6 col-sm-6">
-         Date:{{date}}
-      </div>
-      <div class="col-xs-6 col-lg-6 col-sm-6">
-         Time{{time}}
-      </div>
-   </div>
-   <br>
-   <br>
-   {{/if}}
-</div>
