@@ -120,7 +120,10 @@ export default Controller.extend({
               },
               closeDialog:function(){
                 this.set('showDialogUpload',false)
-                },
+                },  logout:function(){
+                  console.log("in logout");
+                  window.location.reload(true);
+              },
                 okay:function(){
                 this.set('showDialogUpload',false)
                 }, 
