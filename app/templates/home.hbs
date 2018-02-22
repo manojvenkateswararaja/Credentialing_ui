@@ -21,24 +21,7 @@
                color: blue;
                }
             </style>
-            <script type="text/x-handlebars" data-template-name="application">
-  	<div class="container">
-	  {{#each notification in notifications}}
-        {{alert-message notification=notification notifications=notifications}}
-      {{/each}}
-      
-      
-      <button {{action 'addNotification'}}>Add Notification</button>
-	</div>
-  </script>
 
-	<script type="text/x-handlebars" data-template-name="components/alert-message">
-		<div {{bindAttr class="notification.type"}}>
-		  <i class="icon-remove-sign"></i>
-		  <button type="button" class="close" {{action 'close'}}>×</button>
-		  {{notification.message}}
-		</div>
-	</script>
             <div class="jumbotron">
 <div class="container">
    <br>
