@@ -71,11 +71,10 @@ export default Controller.extend({
                 data:JSON.stringify(transactionstring),
                 success: function(response) {
                 console.log("service")
-               mycontroller.set('showCredit',true)
-               var creditscore=response
-               console.log("credit",creditscore);
-              //   mycontroller.set('creditscore',creditscore)
-              //   console.log("my credit ccore>>>>>>",creditscore)
+                mycontroller.set('showCredit',true)
+                var creditscore=response
+                console.log("credit",creditscore);
+              
                   },
                 })
             },

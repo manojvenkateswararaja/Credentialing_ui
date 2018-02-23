@@ -26,15 +26,14 @@ export default Route.extend({
         var time=lastdetails.time
         this.controllerFor('creditscore').set('date',date);
         this.controllerFor('creditscore').set('time',time);
-        // var creditscore=loanID.Record.creditscore
-        // console.log("creditscore route ",creditscore)
-        // if(creditscore==null){
-
-        //     this.controllerFor('creditscore').set('creditscoreButton',false)
-        // }else if(creditscore!=null){
-        //     swal("Sorry,You already done with this!", "status", "info");
-        //     this.controllerFor('creditscore').set('creditscoreButton',true)
-        // }
+        var creditscore=loanID.Record.creditscore
+        console.log("creditscore route ",creditscore)
+        if(creditscore==null){
+            this.controllerFor('creditscore').set('creditscoreButton',false)
+        }else if(creditscore!=null){
+            swal("Sorry,You already done with this!", "status", "info");
+            this.controllerFor('creditscore').set('creditscoreButton',true)
+        }
         
         
    }
