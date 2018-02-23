@@ -42,9 +42,9 @@
          <label for="pwd">Amount of the loan:</label>
       </div>
       <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6">
-         {{validated-input  type="text"  class="form-group" model=this  valuePath='loanamount' placeholder="loanamount" required=""}}
+      {{loanamount}}
       </div>
-   </div>
+      </div>
    <div class="row" style="">
       <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6">
          <label>Repayment period in months</label>
@@ -55,7 +55,7 @@
    </div>
    <div class="row" style="">
       <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6">
-         <label>Annual rate of interest</label>
+         <label>Annual rate of interest(%)</label>
       </div>
       <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6">
          {{validated-input  type="number"  class="form-group"  model=this  valuePath='interestrate' placeholder="interestrate" required=""}}

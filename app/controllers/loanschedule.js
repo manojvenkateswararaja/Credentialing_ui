@@ -15,7 +15,7 @@ export default Controller.extend({
                   }
         
         
-        var loanamount=this.get('loanamount')
+        var loanamount=record.Record.amount
         this.set('loanamount',loanamount)
         console.log("loanamount is>>>>>>",loanamount);
         var loanterms=this.get('loanterms')
