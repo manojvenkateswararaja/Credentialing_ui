@@ -3,12 +3,13 @@ export default Route.extend({
     isDisplayed:false,
     isDisplayedApproval:false,
     model(){
+        
         this.controllerFor('creditscore').set('showLogin',true);
         this.controllerFor('creditscore').set('showUser',true);
         var usertype=this.controllerFor('login1').get('usertype');
         console.log(">>>user",usertype)
         this.controllerFor('creditscore').set('usertype',usertype);
-        // usertype
+        
         var userid= this.controllerFor('creditscore2').get('record.Key');
         console.log("route userid",userid)
         this.controllerFor('creditscore').set("userid",userid);
@@ -25,12 +26,15 @@ export default Route.extend({
         var time=lastdetails.time
         this.controllerFor('creditscore').set('date',date);
         this.controllerFor('creditscore').set('time',time);
-        //getting generated cresitscore  
-        // var GetBankCredit = this.controllerFor('creditscore')
-        // var creditscore= GetBankCredit.get('creditscore');
-        // this.controllerFor('userdetails').set('creditscore',creditscore);
-        // console.log("creditscore",creditscore)
-        //score
+        // var creditscore=loanID.Record.creditscore
+        // console.log("creditscore route ",creditscore)
+        // if(creditscore==null){
+
+        //     this.controllerFor('creditscore').set('creditscoreButton',false)
+        // }else if(creditscore!=null){
+        //     swal("Sorry,You already done with this!", "status", "info");
+        //     this.controllerFor('creditscore').set('creditscoreButton',true)
+        // }
         
         
    }

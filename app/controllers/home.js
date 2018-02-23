@@ -2,6 +2,7 @@ import Controller from '@ember/controller';
 export default Controller.extend({
     
     actions: {
+       
         home2:function(showrecords)
 {
    

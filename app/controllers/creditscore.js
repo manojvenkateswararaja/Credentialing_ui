@@ -6,6 +6,7 @@ export default Controller.extend({
   showCreditscore:true,
   isCreditGen:false,
   actions: {
+ 
     // ApproveUpdate:function (showrecords,records,creditscore)
     ApproveUpdate:function (lastdetails,records,creditscore) {
       var modalvalue = this.get('showDialog')
@@ -55,7 +56,6 @@ export default Controller.extend({
             "address":lastdetails.address,
             "bank":"applied",
             "creditscore":creditscore,
-            // "creditscorestatus":"creditscore has been generated successfully ",
             "statusForCreditRequest":"Creditscore Generated",
             "legal":"",
             "date":date,
@@ -106,11 +106,13 @@ export default Controller.extend({
           contentType:'application/json',
           data:JSON.stringify(requestid),
           success: function(response) {
-          console.log("service creditscore")   
+          console.log("service creditscore") 
+          // this.controllerFor('creditscore').set('creditscoreButton',true)  
           var creditscore=response.creditscore
           mycontroller.set('creditscore',creditscore)
-          //myroute.controllerFor('bankdashboard').set('creditscore',creditscore)
+          // this.controllerFor('creditscore').set('creditscore',creditscore)
           console.log(creditscore);
+      
             }
             })
       
