@@ -23,7 +23,7 @@ export default Route.extend({
             this.controllerFor('userdetailsdec').set('IsUserDetails',true)
             this.controllerFor('userdetailsdec').set('IsUserDetailsApproves',false)
              this.controllerFor('userdetailsdec').set('isApprove',true)
-             this.controllerFor('userdetailsdec').set('isReject',true)
+             this.controllerFor('userdetailsdec').set('isReject',false)
         }else if(statusForCreditRequest==="Legalverifier approved"||statusForCreditRequest==="Legalverifier rejected"){
             this.controllerFor('userdetailsdec').set('isLegalDisableButton',true)
             this.controllerFor('userdetailsdec').set('IsUserDetails',false)
