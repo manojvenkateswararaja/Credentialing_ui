@@ -31,21 +31,21 @@
       <br>
       
       <div class="row" style="">
-         <div class="col-xs-3 col-lg-3 col-sm-3" style="background-color:lightcyan;"><i style="margin-left:5%">Request Id:</i><i id="req">{{lastdetails.requestid}}</i></div>
+         <div class="col-xs-3 col-lg-3 col-sm-3" style="background-color:lightcyan;"><i style="margin-left:5%">RequestId:</i><i id="req">{{lastdetails.requestid}}</i></div>
          <div class="col-xs-3 col-lg-3 col-md-3 col-sm-3" style="background-color:lightcyan;">
             <div class="vl5">
-               <div style="margin-left:8%">Firstname:{{lastdetails.fname}}
+               <div style="margin-left:8%">FirstName:{{lastdetails.fname}}
                </div>
             </div>
          </div>
          <div class="col-xs-3 col-lg-3 col-md-3 col-sm-3" style="background-color:lightcyan;">
             <div class="vl5">
-               <div style="margin-left:8%">Propertytype:{{lastdetails.propertyType}}</div>
+               <div style="margin-left:8%">Property Type:{{lastdetails.propertyType}}</div>
             </div>
          </div>
          <div class="col-xs-3 col-lg-3 col-md-3 col-sm-3" style="background-color:lightcyan;">
             <div class="vl5">
-               <div style="margin-left:8%">Loanamount:{{lastdetails.amount}}</div>
+               <div style="margin-left:8%">Loan Amount:{{lastdetails.amount}}</div>
             </div>
          </div>
       </div>
@@ -58,8 +58,8 @@
       </style>
       {{!-- ro1 --}}
       <div class="row">
-         <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6" style="background-color:grey;">Personal information</div>
-         <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6" style="background-color:grey;">Property information</div>
+         <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6" style="background-color:grey;">Personal Information</div>
+         <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6" style="background-color:grey;">Property Information</div>
       </div>
       {{!-- ro1 --}}
       <br> 
@@ -69,15 +69,15 @@
            
             <table>
                <tr>
-                  <td>First name:</td>
+                  <td>FirstName:</td>
                   <td style="color:gray;">{{lastdetails.fname}}</td>
                </tr>
                <tr>
-                  <td>Last name:</td>
+                  <td>LastName:</td>
                   <td style="color:gray;">{{lastdetails.lname}}</td>
                </tr>
                <tr>
-                  <td>Contact number:</td>
+                  <td>Mobile Number:</td>
                   <td style="color:gray;">{{lastdetails.phone}}</td>
                </tr>
                <tr>
@@ -99,15 +99,15 @@
            
             <table>
                <tr>
-                  <td>Mortgage type</td>
+                  <td>Mortgage Type:</td>
                   <td style="color:gray;">{{lastdetails.propertyType}}</td>
                </tr>
                <tr>
-                  <td>Need amount:</td>
+                  <td>Need Amount:</td>
                   <td style="color:gray;">{{lastdetails.amount}}</td>
                </tr>
                <tr>
-                  <td>Location</td>
+                  <td>Location:</td>
                   <td style="color:gray;">{{lastdetails.location}}</td>
                </tr>
              
@@ -142,7 +142,7 @@
                Date:{{date}}
             </div>
             <div class="col-xs-6 col-lg-6 col-sm-6">
-               Time{{time}}
+               Time:{{time}}
             </div>
             <br>
             <br>
@@ -157,7 +157,7 @@
       {{#paper-dialog class="flex-77" onClose=(action "closeDialog" "cancel") origin=dialogOrigin clickOutsideToClose=true}}
       {{#paper-toolbar}}
       {{#paper-toolbar-tools}}
-      Your response sent to bank sucessfully!!
+      Your Response Sent To Bank Sucessfully!!
       {{#paper-button iconButton=true onClick=(action "closeDialog" "cancel")}}{{paper-icon icon="close"}}{{/paper-button}}
       {{/paper-toolbar-tools}}
       {{/paper-toolbar}}

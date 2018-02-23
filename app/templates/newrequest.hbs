@@ -18,24 +18,23 @@
          <p style="background-color:;margin-top:-29px; margin-left:2px;">
             <br>
             <br>
-            {{paper-input label="Firstname" value=fname onChange=(action (mut fname)) icon="person"}}
-            {{paper-input label="Last name" value=lname onChange=(action (mut lname)) icon="person"}}
+            {{paper-input label="FirstName" value=fname onChange=(action (mut fname)) icon="person"}}
+            {{paper-input label="LastName" value=lname onChange=(action (mut lname)) icon="person"}}
             {{paper-input label="Age" type="number" value=age
             icon="person" onChange=(action (mut age))  }}
             <br>
-            {{paper-input label="Phone number" type="number" 
+            {{paper-input label="Mobile Number" type="number" 
             value=phone onChange=(action (mut phone)) icon="phone" maxlength="10"}}
-            {{paper-input label="E-mail" type="email" value=email onChange=(action (mut email))  required=true
+            {{paper-input label="Email Id" type="email" value=email onChange=(action (mut email))  required=true
             icon="email"  customValidations=emailValidation}}
             {{paper-input label="Address"  value=address icon="streetview" onChange=(action (mut address))  }}
             {{paper-input label="Country"  value=country icon="add location" onChange=(action (mut country))  }}
-              {{paper-input label="Occupation"  value=occupation icon="work" onChange=(action (mut occupation))  }}
             <br>
             Occupation Type 
          <div class="drop3" style="margin-left:300px; margin-top:-28px">
             {{!-- {{select-component listitem=occupationlist selecteditemlist=occupationType}} --}}
-            <input type="radio" id="showform" value="salaried" name="showform" onchange="showhideForm(this.value);"/>salaried
-            <input type="radio" id="showform" value="non-salaried" name="showform" onchange="showhideForm(this.value);"/>Non-salaried
+            <input type="radio" id="showform" value="salaried" name="showform" onchange="showhideForm(this.value);"/>Salaried
+            <input type="radio" id="showform" value="non-salaried" name="showform" onchange="showhideForm(this.value);"/>Non-Salaried
             <script type="text/javascript">
                function showhideForm(showform) {
                    if (showform == "salaried") {
@@ -48,25 +47,33 @@
                    }
                }
             </script>
+
             <div id="div1" style="display:none">
-               {{paper-input label="Employer name" value=Employename onChange=(action (mut Employename)) icon="person"}}
+               {{paper-input label="EmployerName" value=Employename onChange=(action (mut Employename)) icon="person"}}
                <br>
-               {{paper-input label="Total work experience" value=experience onChange=(action (mut experience)) icon="work"}}
+               {{paper-input label="Total Work Experience in (yrs)" value=experience onChange=(action (mut experience)) icon="work"}}
                <br>
-               {{paper-input label="Monthly take home salary" value=salary onChange=(action (mut salary)) icon="work"}}
+               {{paper-input label="Monthly Take Home Salary (Rs)" value=salary onChange=(action (mut salary)) icon="work"}}
             </div>
             <div id="div2" style="display:none">
-               {{paper-input label="Start date of current business" value=startdate type="date" onChange=(action (mut startdate)) icon="work"}}
+               {{paper-input label="Start Date Of Current Business" value=startdate type="date" onChange=(action (mut startdate)) icon="work"}}
                <br>
                <label>Companytype</label>
                {{select-component listitem=companylist selecteditemlist=companyType}}
                <br>
-               {{paper-input label="Last Year's business PAT as per ITR" value=pat onChange=(action (mut pat)) icon="work"}}
+               {{paper-input label="Last Year's Business PAT as per ITR" value=pat onChange=(action (mut pat)) icon="work"}}
                <br>
-               {{paper-input label="Last Year's depreciation" value=depreciation onChange=(action (mut depreciation)) icon="work"}}
+               {{paper-input label="Last Year's Depreciation" value=depreciation onChange=(action (mut depreciation)) icon="work"}}
             </div>
          </div>
          <br>
+            Occupation
+            {{!-- {{paper-input label="Occupation"  value=occupation icon="work" onChange=(action (mut occupation))  }} --}}  
+            <div class="drop1" style="margin-left:300px; margin-top:-28px">
+            {{select-component listitem=Occupationlist selecteditemlist=OccupationType}}
+         </div>
+         <br>
+            <br>
          Gender
          <div class="drop1" style="margin-left:300px; margin-top:-28px">
             {{select-component listitem=genderlist selecteditemlist=genderType}}
@@ -84,7 +91,7 @@
       </div>
       {{#step.actions as |nextStep previousStep|}}
       {{#paper-button primary=true raised=true onClick=(action nextStep)}}
-      next
+      Next
       {{/paper-button}}
       {{#paper-button primary=true raised=true onClick=(action previousStep)}}
       Back
@@ -99,15 +106,15 @@
          cols="1 md-2 gt-md-6"
          rowHeight="gt-md-1:1 2:2"
          gutter="12px gt-sm-8px" as |grid|}} 
-         <h2 style="margin-top:-30px !important;;padding-top: 0px;margin-left:0"><i>Tell us what your looking for?</i></h2>
+         <h2 style="margin-top:-30px !important;;padding-top: 0px;margin-left:0"><i>Tell Us What Your Looking For?</i></h2>
          <br>
          <br>
          <br>
          <div style="background-color;margin-top:-82px;padding-top: 64px;">
-            {{paper-input label="Purpose of loan" value=loan onChange=(action (mut loan)) icon="account balance" }}
-            {{paper-input label="Required amount" value=amount onChange=(action (mut amount)) icon="attach money" }}
+            {{paper-input label="Purpose Of Loan" value=loan onChange=(action (mut loan)) icon="account balance" }}
+            {{paper-input label="Required Amount" value=amount onChange=(action (mut amount)) icon="attach money" }}
             <br>
-            Asset type
+            Asset Type
             <div class="drop2" style="margin-left:299px; margin-top:-28px"> 
                {{select-component listitem=mylist selecteditemlist=propertyType}}
             </div>
@@ -123,14 +130,14 @@
       </div>
       {{#step.actions as |nextStep previousStep|}}
       {{#paper-button primary=true raised=true onClick=(action nextStep)}}
-      next
+      Next
       {{/paper-button}}
       {{#paper-button primary=true raised=true onClick=(action previousStep)}}
       Back
       {{/paper-button}}
       {{/step.actions}}
       {{/stepper.step}}
-      {{#stepper.step label="Properties" as |step|}}
+      {{#stepper.step label="Assets" as |step|}}
       <div class="container" style="margin-left:442px; margin-top:-1cm; background-color:lightgrey">
          {{#step.body}}
      
@@ -138,15 +145,15 @@
          cols="1 md-2 gt-md-6"
          rowHeight="gt-md-1:1 2:2"
          gutter="12px gt-sm-8px" as |grid|}}   
-         <h2 style="margin-top:-30px !important;;padding-top: 0px;margin-left:0">Tell us about your property</h2>
+         <h2 style="margin-top:-30px !important;;padding-top: 0px;margin-left:0">Tell Us About Your Property</h2>
          <p style="background-color:;margin-top:-20px">
             <br>
             <br>
             <br>
-            {{paper-input label="Year purchased" type="date" value=year onChange=(action (mut year)) icon="date range" }}
+            {{paper-input label="Year Purchased" type="date" value=year onChange=(action (mut year)) icon="date range" }}
             <br>
-            {{paper-input label="Loaction/Address"  value=location onChange=(action (mut location)) icon="location on" }}
-            {{paper-input label="Property size"  value=size onChange=(action (mut size)) icon="home"}}  
+            {{paper-input label="Location/Address"  value=location onChange=(action (mut location)) icon="location on" }}
+            {{paper-input label="Property Size(Sqft)"  value=size onChange=(action (mut size)) icon="home"}}  
             <br>
             {{#paper-button raised=true warn=true onClick=(action "targetButton")}}Submit{{/paper-button}}
          </p>
@@ -157,7 +164,7 @@
          {{#paper-toolbar-tools}}
          {{message}}
          <br>
-         your request id:{{requestid}}
+         Your RequestId:{{requestid}}
          {{#paper-button iconButton=true onClick=(action "closeDialog" "cancel")}}{{paper-icon icon="close"}}{{/paper-button}}
          {{/paper-toolbar-tools}}
          {{/paper-toolbar}}

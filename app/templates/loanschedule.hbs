@@ -10,7 +10,7 @@
    </div>
    <div class="row" style="">
       <div class="col-xs-2 col-lg-2 col-md-2 col-sm-2">
-         <label>Request iD:</label>
+         <label>RequestID:</label>
       </div>
       <div class="col-xs-2 col-lg-2 col-md-2 col-sm-2" style="color:blue">
          {{!-- {{validated-input  type="text" class="form-group" model=this  valuePath='requestid' placeholder="Request Id" required=""}} --}}
@@ -26,7 +26,7 @@
          Date:{{date}}
       </div>
       <div class="col-xs-6 col-lg-6 col-sm-6">
-         Time{{time}}
+         Time:{{time}}
       </div>
    </div>
    <br>
@@ -37,9 +37,9 @@
   
    <div class="row" style="">
        
-        <h2>Enter loan information</h2>
+        <h2>Enter Loan Information</h2>
       <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6">
-         <label for="pwd">Amount of the loan:</label>
+         <label for="pwd">Amount Of The Loan(Rs)</label>
       </div>
       <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6">
          {{validated-input  type="text"  class="form-group" model=this  valuePath='loanamount' placeholder="loanamount" required=""}}
@@ -47,7 +47,7 @@
    </div>
    <div class="row" style="">
       <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6">
-         <label>Repayment period in months</label>
+         <label>Repayment Period In Months</label>
       </div>
       <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6">
          {{validated-input  type="text"  class="form-group"  model=this  valuePath='loanterms' placeholder="loanterms" required=""}}
@@ -55,7 +55,7 @@
    </div>
    <div class="row" style="">
       <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6">
-         <label>Annual rate of interest</label>
+         <label>Annual Rate Of Interest(%)</label>
       </div>
       <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6">
          {{validated-input  type="number"  class="form-group"  model=this  valuePath='interestrate' placeholder="interestrate" required=""}}
@@ -65,10 +65,10 @@
       <button type="button" class="btn btn-primary btn-block"{{action "compute" }}>Compute</button>
       {{!-- <button type="button" id="myButton" class="btn btn-primary" {{action "ApproveUpdate" details record.Key creditscore}}>Approve</button> --}}
    </div>
-   <h2>Payment information</h2>
+   <h2>Payment Information</h2>
    <div class="row" style="">
       <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6">
-         <label >Monthly(EMI) payment :</label>
+         <label >Monthly(EMI) Payment:</label>
       </div>
       <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6">
          {{emi}}
@@ -76,7 +76,7 @@
    </div>
    <div class="row" style="">
       <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6">
-         <label >Total payment:</label>
+         <label >Total Payment:</label>
       </div>
       <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6">
          {{total}}
@@ -84,7 +84,7 @@
    </div>
    <div class="row" style="">
       <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6">
-         <label >Total interest payment:</label>
+         <label >Total Interest Payment:</label>
       </div>
       <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6">
          {{tot}}

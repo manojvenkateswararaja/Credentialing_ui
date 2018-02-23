@@ -12,15 +12,16 @@ export default Controller.extend({
     }
   }],
   selectedOption: null,
-    mylist: ["house","condo","land"],
-    mortgaugeTypeList:["home","car"],
+    mylist: ["House","Condo","Land"],
+    mortgaugeTypeList:["Home","Car"],
     downPaymentList:["Not Applicable","0% - 5%","6% - 10%","11%-15%"],
     jobOption:["First choice","Second choice","Third choice"],
     CompanytList:["Company One","Company Two"],
-    genderlist:["male","female"],
-    nationalitylist:["indian","other"],
-    occupationlist:["salaried","non-salaried"],
-    companylist:["Partnership","Prioprietorship","Pvt Ltd company"],
+    genderlist:["Male","Female"],
+    nationalitylist:["Indian","Other"],
+    occupationlist:["Salaried","Non-Salaried"],
+    companylist:["Partnership","Prioprietorship","Pvt Ltd Company"],
+    Occupationlist:["IT Professionals","Others"],
  
   actions:{
     

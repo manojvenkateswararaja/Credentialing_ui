@@ -10,7 +10,7 @@
          <br>
          <div class="row" style="">
         <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6" style="">
-      <label>Request iD:</label>
+      <label>RequestId:</label>
       </div>
         {{!-- <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6" style=""> --}}
         <i style="color:blue; margin-left:-11cm;">{{record.Records.requestid}}</i>
@@ -19,7 +19,7 @@
          <div class="row" >
           
            <br>
-        <div class="col-xs-6 col-lg-6 col-sm-6" >EMI remaining</div>
+        <div class="col-xs-6 col-lg-6 col-sm-6" >EMI Remaining</div>
         <div class="col-xs-6 col-lg-6 col-sm-6">
             {{validated-input  type="number"   class="form-group"  model=this  valuePath='EMI' placeholder="number of emi" required=""}}
         {{!-- <input type="number"  class="form-group" id="exampleInputEmail1" value='EMI' placeholder="number of emi" required=""> --}}
@@ -27,20 +27,20 @@
                 </div><br>
 
              <div class="row">
-                <div class="col-xs-6 col-lg-6 col-sm-6">Installment per month</div>
+                <div class="col-xs-6 col-lg-6 col-sm-6">Installment Per Month</div>
                <div class="col-xs-6 col-lg-6 col-sm-6"> 
                   {{validated-input  type="number"   class="form-group"  model=this  valuePath='installment' placeholder="installment per month" required=""}}
                      {{!-- <input type="number"  class="form-group" value='installment' placeholder="installment per month"> --}}
                      </div> 
                      </div><br>
                      <div class="row">
-                   <div class="col-xs-6 col-lg-6 col-sm-6">Document required for closing</div>
+                   <div class="col-xs-6 col-lg-6 col-sm-6">Document Required For Closing</div>
                      <div class="col-xs-6 col-lg-6 col-sm-6">
     {{#if Notshow_fileupload}}
     <div id="NR-reactangle">
       {{#pl-uploader  for="upload_file6" runtimes="html5 flash silverlight" onfileadd="uploadDoc" as |queue|}}
             <a id="upload_file6" style="font-size:18px">
-               <p style="margin-top:3mm"> <img src="assets/images/upload.svg" alt="Smiley face" width="20" height="20" style="margin-bottom:3mm">&nbsp; Choose File to Upload</p>
+               <p style="margin-top:3mm"> <img src="assets/images/upload.svg" alt="Smiley face" width="20" height="20" style="margin-bottom:3mm">&nbsp; Choose File To Upload</p>
             </a>
             {{/pl-uploader}}  
              </div>
@@ -54,7 +54,7 @@
                    </div>
                    <br>
                     <div class="row">
-                    <div class="col-xs-6 col-lg-6 col-sm-6">Payment mode</div>
+                    <div class="col-xs-6 col-lg-6 col-sm-6">Payment Mode</div>
                     <div class="" style="margin-left:47%;"> {{select-component  listitem=PaymentMode selecteditemlist=Payment}}</div>
                     </div>
                     <br>
@@ -65,7 +65,7 @@
       {{#paper-dialog class="flex-77" onClose=(action "closeDialog" "cancel") origin=dialogOrigin clickOutsideToClose=true}}
       {{#paper-toolbar}}
       {{#paper-toolbar-tools}}
-      Your response has been successfully sent to Bank for preclosing...!!
+      Your Response Has Been Successfully Sent To Bank For Preclosing...!!
       {{#paper-button iconButton=true onClick=(action "closeDialog" "cancel")}}{{paper-icon icon="close"}}{{/paper-button}}
       {{/paper-toolbar-tools}}
       {{/paper-toolbar}}
