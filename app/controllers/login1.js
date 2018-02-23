@@ -31,8 +31,8 @@ export default Controller.extend(Validations,{
    
    actions:{
         login:function(){  
-            console.log("115")
-       var email = this.get('email');
+        console.log("115")
+        var email = this.get('email');
         console.log(email);
         var password = this.get('password');
         console.log(password);
@@ -40,6 +40,7 @@ export default Controller.extend(Validations,{
        
       
     // end
+ 
         if (email === null || email === undefined || email === "" || password === null || password === undefined || password === "") {
                 // swal("please fill details for login");
                 swal("Something Went Wrong", "please fill details for login!", "error");
@@ -91,7 +92,7 @@ export default Controller.extend(Validations,{
             
     }    
     })
-
+  
            
            
             }
@@ -105,49 +106,103 @@ export default Controller.extend(Validations,{
 
     okay:function(){
         var mycontroller=this
-        var usertype=mycontroller.get('usertype')
-       var ShowRequest= mycontroller.get('ShowRequest')
-       mycontroller.set('ShowRequest',ShowRequest)
-       console.log("ShowRequest?????",ShowRequest)
-        mycontroller.set('usertype',usertype)
-          //mycontroller.set('showLogin',false)
-          console.log("usertype in ui",usertype)
-          
-          this.set('showDialog',true)
-           if(usertype =="user"){
-            var RequestidOfuser=mycontroller.get('userid') 
-           
-            console.log("RequestidOfuser>>>>>",RequestidOfuser)
-            mycontroller.set('RequestidOfuser',RequestidOfuser)
-          
-            if(RequestidOfuser==null){
+        var userid= mycontroller.get('userid') 
+        return $.ajax({
+            url: 'http://localhost:8082/getHistory',
+            type: 'GET',
+            contentType: 'application/json',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+                'Authorization': userid
+            },
+            success: function(response) {
+                var showrecords = response.result;
                
-                this.transitionToRoute('home');
+                console.log("Allrequest", showrecords)
+                var usertype=mycontroller.get('usertype')
+                var ShowRequest= mycontroller.get('ShowRequest')
+                mycontroller.set('ShowRequest',ShowRequest)
+                console.log("ShowRequest>>>>>>",ShowRequest)
+                 mycontroller.set('usertype',usertype)
+                  
+                   console.log("usertype in ui",usertype)
+                   console.log("changes for updated demo",showrecords)
+                   mycontroller.set('showDialog',true)
+                   
+                    if(usertype =="user"){
+                     if(showrecords[0]==null){
+                        swal("New Request!", "way to", "success");
+                        console.log("kheteshin loop1")
+                        mycontroller.transitionToRoute('newrequest');
+         
+                     }else if(showrecords[0].Records.statusForUser!=null){
+                        console.log("kheteshin loop2")
+                        mycontroller.set('ShowRequest',true)
+                        mycontroller.set('showUser',true);
+                        mycontroller.transitionToRoute('home'); 
+                     }
+                
+               }else if(usertype =="bank"){
+                 
+                 mycontroller.set('showDialog',true)
+                 mycontroller.set('showUser',true);
+                 mycontroller.transitionToRoute('bankdashboard');
+               }else if(usertype=="creditscoregenerator"){
+                mycontroller.set('showDialog',true)
+                mycontroller.transitionToRoute('creditscore2');
+                mycontroller.set('showUser',true);
+               }else if(usertype=="legalactor"){
+                mycontroller.set('showDialog',true)
+                 mycontroller.transitionToRoute('legalverification2');
+                 mycontroller.set('showUser',true);
+               }   
+               mycontroller.set('showDialog',false)   
+               },
+                 
+           })
+    
+    
+    //     var usertype=mycontroller.get('usertype')
+    //    var ShowRequest= mycontroller.get('ShowRequest')
+    //    mycontroller.set('ShowRequest',ShowRequest)
+    //    console.log("ShowRequest>>>>>>",ShowRequest)
+    //     mycontroller.set('usertype',usertype)
+    //       //mycontroller.set('showLogin',false)
+    //       console.log("usertype in ui",usertype)
+    //       console.log("changes for updated demo",showrecords)
+    //       this.set('showDialog',true)
+    //        if(usertype =="user"){
+    //         var RequestidOfuser=mycontroller.get('userid') 
+           
+    //         console.log("RequestidOfuser>>>>>",RequestidOfuser)
+    //         mycontroller.set('RequestidOfuser',RequestidOfuser)
+          
+    //         if(showrecords==null){
+               
+    //             this.transitionToRoute('newrequest');
 
-            }else if(RequestidOfuser!=null){
-                this.set('ShowRequest',true)
-                this.set('showUser',true);
-                this.transitionToRoute('home'); 
-            }
-      }else if(usertype =="bank"){
-        // mycontroller.set('showLogin',false)
-        this.set('showDialog',true)
-        this.set('showUser',true);
-         this.transitionToRoute('bankdashboard');
-      }else if(usertype=="creditscoregenerator"){
-          this.set('showDialog',true)
-          this.transitionToRoute('creditscore2');
-          this.set('showUser',true);
-      }else if(usertype=="legalactor"){
-        this.set('showDialog',true)
-        this.transitionToRoute('legalverification2');
-        this.set('showUser',true);
-      }   
-      this.set('showDialog',false)   
-      }, 
+    //         }else if(showrecords!=null){
+    //             this.set('ShowRequest',true)
+    //             this.set('showUser',true);
+    //             this.transitionToRoute('home'); 
+    //         }
+    //   }else if(usertype =="bank"){
+    //     // mycontroller.set('showLogin',false)
+    //     this.set('showDialog',true)
+    //     this.set('showUser',true);
+    //      this.transitionToRoute('bankdashboard');
+    //   }else if(usertype=="creditscoregenerator"){
+    //       this.set('showDialog',true)
+    //       this.transitionToRoute('creditscore2');
+    //       this.set('showUser',true);
+    //   }else if(usertype=="legalactor"){
+    //     this.set('showDialog',true)
+    //     this.transitionToRoute('legalverification2');
+    //     this.set('showUser',true);
+    //   }   
+    //   this.set('showDialog',false)   
+    //   }, 
+        }
 },
 });
-
-
-
-

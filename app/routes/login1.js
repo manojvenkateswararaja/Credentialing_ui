@@ -7,9 +7,8 @@ export default Route.extend({
          var status="Processing"
          this.controllerFor('login1').set('status',status)
          console.log("status>>>>>>property",status)
-       
-         
-     
+        
+        
      
     }
 });
