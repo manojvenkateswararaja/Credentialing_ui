@@ -41,6 +41,7 @@ Router.map(function() {
   this.route('bankdashboard2');
   this.route('home2');
   this.route('notify');
+  this.route('paymentgateway');
 });
 
 export default Router;

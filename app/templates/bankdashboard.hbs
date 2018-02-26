@@ -36,8 +36,7 @@
       <h2><b>ALL Request</b></h2>
       <br>
       <div class ="container" style="margin-left:-14px;">
-         {{#each showrecords   as |item|}}
-          <table class="table table-bordered">
+                  <table class="table table-bordered">
     <thead>
       <tr>
         <th>USERID</th>
@@ -45,6 +44,8 @@
         <th>TIME</th>
       </tr>
        </thead>
+         {{#each showrecords   as |item|}}
+
     <tbody>
       <tr>
         <td> <a href="" {{action 'userdetails'  item }}><b style="color:blue">{{item.Key}}</b></a></td>
@@ -52,8 +53,8 @@
         <td> <small  class="text-muted">{{item.Record.time}}</small></td>
      </tr>
     </tbody>
-  </table>
-  <br>
+
+
 
          {{!-- <div class="row">
             <div class="col-xs-3 col-lg-3 col-sm-3">USERID<a href="" {{action 'userdetails'  item }}><b style="color:blue">{{item.Key}}</b></a></div>
@@ -78,6 +79,8 @@
                   </div>
          <br> --}}
          {{/each}}
+           </table>
+           <br>
       </div>
     </div>
     <!-- /.container -->
