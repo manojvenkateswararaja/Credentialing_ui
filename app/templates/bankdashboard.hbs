@@ -37,14 +37,32 @@
       <br>
       <div class ="container" style="margin-left:-14px;">
          {{#each showrecords   as |item|}}
-         <div class="row">
+          <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>USERID</th>
+        <th>DATE</th>
+        <th>TIME</th>
+      </tr>
+       </thead>
+    <tbody>
+      <tr>
+        <td> <a href="" {{action 'userdetails'  item }}><b style="color:blue">{{item.Key}}</b></a></td>
+        <td> <small  class="text-muted">{{item.Record.date}}</small></td>
+        <td> <small  class="text-muted">{{item.Record.time}}</small></td>
+     </tr>
+    </tbody>
+  </table>
+  <br>
+
+         {{!-- <div class="row">
             <div class="col-xs-3 col-lg-3 col-sm-3">USERID<a href="" {{action 'userdetails'  item }}><b style="color:blue">{{item.Key}}</b></a></div>
             <div class="row">
                <div class="col-xs-3 col-lg-3 col-sm-3"><b>Data Published Time</b></div>
                <div class="col-xs-3 col-lg-3 col-sm-3"> Date:<small  class="text-muted">{{item.Record.date}}</small></div>
                <div class="col-xs-3 col-lg-3 col-sm-3">Time:<small  class="text-muted">{{item.Record.time}}</small></div>
             </div>
-          <div class="row">
+          <div class="row"> --}}
                   {{!-- <div class="col-xs-3 col-lg-3 col-sm-3"><a href="" {{action 'timestamp' }}><b style="color:#db5945">Track Timestamp</b></a></div> --}}
                   {{!-- <div class="col-xs-9 col-lg-9 col-sm-9">
                         Status:<i style="color:DeepSkyBlue;">{{#if precloselink}}{{#link-to 'requestpreclose' disabled=""}}{{details.statuspreclose}}{{/link-to}}{{/if}}</i>
@@ -56,9 +74,9 @@
                                {{item.Record.bankpreclose}}</b>
                              <b style="color:skyblue;"><a href="" {{action 'postPrecoseRequest'  item }}>{{item.Record.statuspreclose}}</a></b> 
                      </div> --}}
-                  </div> 
+                  {{!-- </div> 
                   </div>
-         <br>
+         <br> --}}
          {{/each}}
       </div>
     </div>

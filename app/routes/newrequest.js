@@ -5,7 +5,7 @@ export default Route.extend({
     model(){
        
         this.controllerFor('newrequest').set('usertype',usertype);
-        var userid= this.controllerFor('home').get('userid');
+        var userid= this.controllerFor('login1').get('userid');
         this.controllerFor('newrequest').set('userid',userid)
         console.log("route userid",userid)
         this.controllerFor('newrequest').set('showLogin',true);

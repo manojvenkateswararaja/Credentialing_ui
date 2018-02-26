@@ -130,10 +130,11 @@
             
          </div>
          <div class= "col-xs-6 col-lg-6 col-md-6 col-sm-6 ">  
-            <button type="button" class="btn btn-primary btn-block"{{action "creditscore" record.Key}}>Generate Creditscore </button>
+            <button type="button" class="btn btn-primary btn-block" disabled={{creditscoreButton}} {{action "creditscore" record.Key}}>Generate Creditscore </button>
            
          </div>
       </div>
+      <br>
       <div style="background-color:lightgrey;">
         <div class="row">
             <b>  Creditscore Generation  Data Publish Time</b>

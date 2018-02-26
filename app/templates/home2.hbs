@@ -15,9 +15,39 @@
           </div>
        <br>
        <br>
+        <div class="row">
+                         <div class="col-xs-6 col-lg-6 col-sm-6"><span class="glyphicon glyphicon-eye-open"></span> check your response by clicking on requestid</div>
+                        </div> 
+          <table class="table table-bordered">
+      <thead>
+      <tr>
+        <th>REQUEST ID</th>
+        <th>DATE</th>
+        <th>TIME</th>
+        <th>STATUS</th>
+      </tr>
+       </thead>
           {{#each showrecords   as |item|}}  
-         <div class="row">
-            <div class="col-xs-3 col-lg-3 col-sm-3">RequestId:<a href="" {{action 'userloanschedule'  item}}><b style="color:blue">{{item.Records.requestid}}</b></a></div>
+           <tbody>
+      <tr>
+        <td> <a href="" {{action 'userloanschedule'  item }}><b style="color:blue">{{item.Records.requestid}} </b></a></td>
+        <td> <small  class="text-muted">{{item.Records.date}}</small></td>
+        <td> <small  class="text-muted">{{item.Records.time}}</small></td>
+        <td> <b style="color:green">{{#if isBankPreclose}}{{status}}{{/if}}</b>
+               <b style="color:green">{{item.Records.statusForUser}}
+                      {{item.Records.statusForBankLegal}}
+                      {{item.Records.statusForCreditRequest}}
+                      {{item.Records.statuspreclose}}
+                      {{item.Records.userpreclosestatus}}
+                 
+                  </b></td>
+     </tr>
+    </tbody>
+     {{/each}}
+  </table>
+
+         {{!-- <div class="row">
+            <div class="col-xs-3 col-lg-3 col-sm-3">Requestid<a href="" {{action 'userloanschedule'  item}}><b style="color:blue">{{item.Records.requestid}}</b></a></div>
             {{!-- <div class="col-xs-6 col-lg-6 col-sm-6"><span class="glyphicon glyphicon-eye-open"></span>check your response by clicking on requestid</div> --}}
             <div class="row">
                <div class="col-xs-3 col-lg-3 col-sm-3"><b>Data Published Time</b></div>
@@ -26,7 +56,7 @@
             </div>
           <div class="row">
                   {{!-- <div class="col-xs-3 col-lg-3 col-sm-3"><a href="" {{action 'timestamp' }}><b style="color:#db5945">Track Timestamp</b></a></div> --}}
-                  <div class="col-xs-9 col-lg-9 col-sm-9">
+                  {{!-- <div class="col-xs-9 col-lg-9 col-sm-9">
                         Status:
                            <b style="color:green">{{#if isBankPreclose}}{{status}}{{/if}}</b>
 
@@ -41,11 +71,9 @@
                         </div>
                   </div> 
                   </div>
-                  <div class="row">
-                         <div class="col-xs-6 col-lg-6 col-sm-6"><span class="glyphicon glyphicon-eye-open"></span> check your response by clicking on requestid</div>
-                        </div>
-         <br>
-         {{/each}}
+                 --}}
+         <br> 
+        
      </div>
-     
+     </div>
 </div>

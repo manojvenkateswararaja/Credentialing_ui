@@ -6,6 +6,27 @@ export default Controller.extend({
   showCreditscore:true,
   isCreditGen:false,
   actions: {
+    signUp(event){ 
+      // Only when assigning the action to an inline handler, the event object
+      // is passed to the action as the first parameter.
+      swal("Sorry,You already done with this!", "status", "info");
+      event.click("hiiiii")
+    },
+    click_button()
+    {
+      $('#my_button').mousedown(function(event){
+           event.preventDefault();
+           if(event.button == 0)
+          console.log('Left button')
+         if(event.button == 2)
+                console.log('Rigth button')
+
+
+
+
+                
+    });               
+    },
     // ApproveUpdate:function (showrecords,records,creditscore)
     ApproveUpdate:function (lastdetails,records,creditscore) {
       var modalvalue = this.get('showDialog')
@@ -55,7 +76,6 @@ export default Controller.extend({
             "address":lastdetails.address,
             "bank":"applied",
             "creditscore":creditscore,
-            // "creditscorestatus":"creditscore has been generated successfully ",
             "statusForCreditRequest":"Creditscore Generated",
             "legal":"",
             "date":date,
@@ -106,11 +126,13 @@ export default Controller.extend({
           contentType:'application/json',
           data:JSON.stringify(requestid),
           success: function(response) {
-          console.log("service creditscore")   
+          console.log("service creditscore") 
+         
           var creditscore=response.creditscore
           mycontroller.set('creditscore',creditscore)
-          //myroute.controllerFor('bankdashboard').set('creditscore',creditscore)
+         
           console.log(creditscore);
+      
             }
             })
       

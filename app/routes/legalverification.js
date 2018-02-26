@@ -23,12 +23,15 @@ export default Route.extend({
         var time=lastdetails.time
         this.controllerFor('legalverification').set('date',date);
         this.controllerFor('legalverification').set('time',time);
-        //getting generated cresitscore  
-        // var GetBankCredit = this.controllerFor('creditscore')
-        // var creditscore= GetBankCredit.get('creditscore');
-        // this.controllerFor('userdetails').set('creditscore',creditscore);
-        // console.log("creditscore",creditscore)
-        //score
+        var legal=loanID.Record.legal
+        console.log("creditscore route ",legal)
+        if(legal==null){
+            this.controllerFor('legalverification').set('legalButton',false)
+        }else if(legal!=null){
+            swal("Sorry,You already done with this!", "status", "info");
+            this.controllerFor('legalverification').set('legalButton',true)
+        }
+        
         
         
    }

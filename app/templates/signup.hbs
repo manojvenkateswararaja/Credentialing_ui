@@ -91,10 +91,7 @@
  <br>
  <br>
    <div class="container">
-      {{!-- <h4 class="text-left"><em>Sign Up</em></h4>
-       --}}
-        <legend><em>Sign Up</em></legend>
-       
+      <legend><em>Sign Up</em></legend>  
       <b><em>Please fill in this form to create an account.</em></b>
       <hr>
       <label for="fname"><b>First Name</b></label> <br>
@@ -103,17 +100,17 @@
       <label for="lname"><b>Last Name</b></label> <br>
       {{validated-input type="text"  model=this  valuePath='lname' placeholder="lname" required=true}}
       
-      <label for="email"><b>Emailid</b></label> <br>
-     {{validated-input type="email"  model=this  valuePath='email' placeholder="email" required=true}}
+      <label for="email"><b>Email id</b></label> <br>
+      {{validated-input type="email"  model=this  valuePath='email' placeholder="email" required=true}}
      
-        <label for="number"><b>Mobile number</b></label> <br>
-       {{validated-input type="number"  model=this  valuePath='number' placeholder="mobile number" required=true}}
+      <label for="number"><b>Mobile number</b></label> <br>
+      {{validated-input type="number"  model=this  valuePath='number' placeholder="mobile number" required=true}}
       
        
-       <label for="Paw"><b>Password</b></label> <br>
+      <label for="Paw"><b>Password</b></label> <br>
       {{validated-input type="password"  model=this  valuePath='password' placeholder="password" required=true}}
       
-    <label for="re-Paw"><b>Retype Password</b></label> <br>
+      <label for="re-Paw"><b>Retype Password</b></label> <br>
       {{validated-input type="password"  model=this  valuePath='re-password' placeholder="re-password" required=true}}
       <div class="clearfix">
          <button type="button" class="cancelbtn">Cancel</button>
