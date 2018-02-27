@@ -107,6 +107,9 @@ export default Controller.extend({
                   }   
                 }) 
               },
+              pay:function(){
+                this.transitionToRoute('paymentgateway');
+              },
               closeDialog1:function(){
               this.set('showDialog',false)
               },
