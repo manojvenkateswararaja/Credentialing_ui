@@ -101,7 +101,7 @@ export default Controller.extend({
         var empname=this.get('Employename');
         this.set("empname",empname);
         console.log(empname);
-        var occupation=this.get('occupation')
+        var occupation=this.get('OccupationType')
         this.set('occupation',occupation);
         console.log('occupation',occupation)
         var experience=this.get('experience')
