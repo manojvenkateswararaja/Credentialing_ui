@@ -19,6 +19,7 @@ export default Controller.extend({
                 swal("User Applied for loan sucessfully!!", "status", "info");
             }else if(showrecords.Records.statusForCreditRequest=="Requested For Creditscore"){
                 swal("Bank have Requested For Creditscore!! ", "status", "info");
+                
             }else if(showrecords.Records.statusForCreditRequest=="Creditscore Generated"){
                 swal(" Creditscore Generated!! ", "status", "info");
             }else if(showrecords.Records.statusForCreditRequest=="Requested for Legalverifier"){
@@ -35,18 +36,19 @@ export default Controller.extend({
             //  if(statuspreclose!==null||statusForCreditRequest!==null || statusForCreditRequest!==null || record.Records.statusForBankLegal!==null ||bankpreclose!==null|| statusForCreditRequest!==null){
             //     swal("sorry!", "Already made desicion!", "info");
             //  }
+            
              if(bankpreclose=="Loan Closed"){
                 
-                $(document).ready(function() {
-        swal({ 
-      title: "Sorry",
-       text: "Loan Alredy schedule!",
-      type: "info" 
-    },
-    function(){
-      window.location.href = 'bankdashboard2';
-  });
-  });
+//                 $(document).ready(function() {
+//         swal({ 
+//       title: "Sorry",
+//        text: "Loan Alredy schedule!",
+//       type: "info" 
+//     },
+//     function(){
+//       window.location.href = 'bankdashboard2';
+//   });
+//   });
             
                 swal("Sorry!", "Loan Alredy schedule!", "info");
               }

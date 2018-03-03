@@ -15,19 +15,19 @@ export default Route.extend({
         console.log("record",loanID)
         var lastdetails= loanID.Records
          console.log("hi.....",lastdetails)
+         if(lastdetails.statusForCreditRequest=="Requested For Creditscore"){
+            this.controllerFor('userdetails').set('isDetailsDisableButton',true)
+            swal("Bank have Requested For Creditscore!! ", "status", "info");
+         } 
         this.controllerFor('userdetails').set('lastdetails',lastdetails);
          console.log("updates",lastdetails)
-         if(lastdetails.creditscore == null){
-            this.controllerFor('userdetails').set('isDetailsDisableButton',false)
-        }else if(lastdetails.creditscore!=null){
-            this.controllerFor('userdetails').set('isDetailsDisableButton',true)
-            }
-        // console.log("userdetails page00",loanID)
-        // var date=lastdetails.date
-        // var time=lastdetails.time
-        // this.controllerFor('userdetails').set('date',date);
-        // this.controllerFor('userdetails').set('time',time);
-        //getting generated cresitscore  
+         
+        //  if(lastdetails.creditscore == null){
+        //     this.controllerFor('userdetails').set('isDetailsDisableButton',false)
+        // }else if(lastdetails.creditscore!=null){
+        //     this.controllerFor('userdetails').set('isDetailsDisableButton',true)
+        //     }
+      
         var GetBankCredit = this.controllerFor('creditscore')
         var creditscore= GetBankCredit.get('creditscore');
         this.controllerFor('userdetails').set('creditscore',creditscore);
