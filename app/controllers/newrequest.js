@@ -130,6 +130,7 @@ export default Controller.extend({
         "size":size,
         "fname":fname,
         "lname":lname,
+        "income":income,
         "pat":pat,
         "depreciation":depreciation,
         "empname":empname,
