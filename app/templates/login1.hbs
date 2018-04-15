@@ -1,7 +1,7 @@
 {{partial 'head'}}
 <div class="user-up-container">
-{{#if showLogin}}
-{{/if}}
+   {{#if showLogin}}
+   {{/if}}
 </div>
 <style>
    form {
@@ -73,18 +73,14 @@
    <br>
    <br>
    <div style="border-bottom: 1px solid #c5c5c5;">
-    <i class="glyphicon glyphicon-user">
-    </i>
-    Account Access
-  </div>
-  
+      <i class="glyphicon glyphicon-user">
+      </i>
+      Account Access
+   </div>
    <label><b>Username</b> <i class="fa fa-envelope-o fa-fw"></i></label>
    {{validated-input type="email"  model=this  valuePath='email' placeholder="Email Id" required=true}}
-  
    <label><b>Password</b><i class="fa fa-key fa-fw"></i></label>
    {{validated-input  type="password"  model=this  valuePath='password' placeholder="password" required=true}}
-  
-   
    <button type="submit" {{action "login"}}>Login</button>
    <label>
    <input type="checkbox" checked="checked"> Remember me
@@ -94,9 +90,7 @@
    {{!-- <button type="button" class="cancelbtn">Cancel</button> --}}
    <br>New User? {{#link-to 'signup'}}<i style="color:#2d8cff "> sign up </i>{{/link-to}}
    {{!-- <span class="psw">Forgot <a href="#">password?</a></span> --}}
-  
 </div>
-
 {{#if showDialog}}
 {{#paper-dialog class="flex-77" onClose=(action "closeDialog" "cancel") origin=dialogOrigin clickOutsideToClose=true}}
 {{#paper-toolbar}}

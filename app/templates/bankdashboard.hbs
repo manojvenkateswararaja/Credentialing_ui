@@ -2,40 +2,16 @@
 {{#if showLogin }}
 {{/if}}
 
-
-<script>
-   $(document).ready(function() {
-       // Show or hide the sticky footer button
-       $(window).scroll(function() {
-           if ($(this).scrollTop() > 200) {
-               $('.go-top').fadeIn(200);
-           } else {
-               $('.go-top').fadeOut(200);
-           }
-       });
-       // Animate the scroll to top
-       $('.go-top').click(function(event) {
-           event.preventDefault();
-           $('html, body').animate({
-               scrollTop: 0
-           }, 300);
-       }); 
-   });
-</script>
-
-
-
-    <!-- Page Content -->
-    <div class="container">
-
-      <!-- Jumbotron Header -->
+          <div class="container-fluid">
+            <br>
       <header class="jumbotron my-4">
-        <h1 style="margin-left:-15cm;margin-bottom:-1cm;"><span class="glyphicon glyphicon-dashboard"></span><em>Bank Dashboard</em></h1>
+        <h1 style="margin-left:-20cm;margin-bottom:-1cm;"><span class="glyphicon glyphicon-dashboard"></span><em>Bank Dashboard</em></h1>
       </header>
+      </div>
       <p style="text-align:center;color:black"><b>TOTAL REQUEST FOR MORTGAGE LOAN</b></p>
       <h2><b>ALL Request</b></h2>
-      <br>
-      <div class ="container" style="margin-left:-14px;">
+    
+      <div class ="container-fluid">
                   <table class="table table-bordered">
     <thead>
       <tr>
@@ -53,40 +29,12 @@
         <td> <small  class="text-muted">{{item.Record.time}}</small></td>
      </tr>
     </tbody>
-
-
-
-         {{!-- <div class="row">
-            <div class="col-xs-3 col-lg-3 col-sm-3">USERID<a href="" {{action 'userdetails'  item }}><b style="color:blue">{{item.Key}}</b></a></div>
-            <div class="row">
-               <div class="col-xs-3 col-lg-3 col-sm-3"><b>Data Published Time</b></div>
-               <div class="col-xs-3 col-lg-3 col-sm-3"> Date:<small  class="text-muted">{{item.Record.date}}</small></div>
-               <div class="col-xs-3 col-lg-3 col-sm-3">Time:<small  class="text-muted">{{item.Record.time}}</small></div>
-            </div>
-          <div class="row"> --}}
-                  {{!-- <div class="col-xs-3 col-lg-3 col-sm-3"><a href="" {{action 'timestamp' }}><b style="color:#db5945">Track Timestamp</b></a></div> --}}
-                  {{!-- <div class="col-xs-9 col-lg-9 col-sm-9">
-                        Status:<i style="color:DeepSkyBlue;">{{#if precloselink}}{{#link-to 'requestpreclose' disabled=""}}{{details.statuspreclose}}{{/link-to}}{{/if}}</i>
-                           <i style="color:DeepSkyBlue;">{{#if isBankpreclose}}{{bankpreclose}}{{/if}}</i> 
-                           <i style="color:DeepSkyBlue;">{{#if isLoanReject}}{{loanReject}}{{/if}}</i>
-                        <b style="color:green;"> {{#if isStatus}}{{item.Record.status}}{{/if}}</b>
-                           <b style="color:green;">{{#if IsCreditStatus}}{{item.Record.statusForCreditRequest}}{{/if}}
-                               {{#if IsLegalValidated}}{{item.Record.statusForBankLegal}}{{/if}}
-                               {{item.Record.bankpreclose}}</b>
-                             <b style="color:skyblue;"><a href="" {{action 'postPrecoseRequest'  item }}>{{item.Record.statuspreclose}}</a></b> 
-                     </div> --}}
-                  {{!-- </div> 
-                  </div>
-         <br> --}}
-         {{/each}}
+        {{/each}}
            </table>
            <br>
       </div>
-    </div>
-    <!-- /.container -->
-
-    <!-- Footer -->
-   
+    
+       
 
 
 
@@ -95,26 +43,3 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-{{!-- <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< --}}
-  {{!-- <div class="jumbotron"> --}}
-{{!-- <div class="jumbotron" style="background-color:lightgrey"> --}}
-     {{!-- <header class="w3-container " style=""><h2>Bank Dashboard</h2></header> --}}
-   {{!-- <h1><b style="margin-left:-32cm">Bank Dashboard</b></h1> --}}
-   
-  {{!-- </div> --}}
-  {{!-- </div> --}}
-<a href="#" class="go-top">Scroll to Top</a>

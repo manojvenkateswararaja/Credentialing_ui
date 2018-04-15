@@ -2,7 +2,6 @@
 {{#if showLogin}}
 {{/if}}
 <div class="container-fluid" >
-   
    <div class="container" style="margin-top:2cm;">
       {{#paper-stepper   currentStep=currentStep onStepChange=(action (mut currentStep))
       onStepperCompleted=(action "saveModel") as |stepper|}}
@@ -47,42 +46,59 @@
                    }
                }
             </script>
-
             <div id="div1" style="display:none">
-               {{paper-input label="EmployerName" value=Employename onChange=(action (mut Employename)) icon="person"}}
-               <br>
-               {{paper-input label="Total Work Experience in (yrs)" value=experience onChange=(action (mut experience)) icon="work"}}
-               <br>
-               {{paper-input label="Monthly Take Home Salary (Rs)" value=salary onChange=(action (mut salary)) icon="work"}}
+               <div class="row">
+                  <label>Employer Name</label>
+                  {{paper-input label="name" value=Employename onChange=(action (mut Employename)) icon="person"}}
+               </div>
+               <div class="row">
+                  <label>Total Work Experience</label>
+                  {{paper-input label="Experience(yrs)" value=experience onChange=(action (mut experience)) icon="work"}}
+               </div>
+               <div class="row">
+                  <label>Monthly Take Home Salary</label>
+                  {{paper-input label="Salary (Rs)" value=salary onChange=(action (mut salary)) icon="work"}}
+               </div>
             </div>
             <div id="div2" style="display:none">
-               {{paper-input label="Start Date Of Current Business" value=startdate type="date" onChange=(action (mut startdate)) icon="work"}}
-               <br>
-               <label>Companytype</label>
-               {{select-component listitem=companylist selecteditemlist=companyType}}
-               <br>
-               {{paper-input label="Last Year's Business PAT as per ITR" value=pat onChange=(action (mut pat)) icon="work"}}
-               <br>
-               {{paper-input label="Last Year's Depreciation" value=depreciation onChange=(action (mut depreciation)) icon="work"}}
+               <div class="row">
+                  <label>Start Date Of Current Business</label>
+                  {{paper-input label="Enter Date" value=startdate type="date" onChange=(action (mut startdate)) icon="work"}}
+               </div>
+               <div class="row">
+                  <div class="col-lg-4">
+                     <label>Company type</label>
+                  </div>
+                  <div class="col-lg-8">
+                     {{select-component listitem=companylist selecteditemlist=companyType}}
+                  </div>
+               </div>
+               <div class="row">
+                  <label>Last Year's Business PAT as per ITR</label>
+                  {{paper-input label="Enter here" value=pat onChange=(action (mut pat)) icon="work"}}
+               </div>
+               <div class="row">
+                  <label>Last Year's Depreciation</label>
+                  {{paper-input label="" value=depreciation onChange=(action (mut depreciation)) icon="work"}}
+               </div>
             </div>
          </div>
          <br>
-            Occupation
-            {{!-- {{paper-input label="Occupation"  value=occupation icon="work" onChange=(action (mut occupation))  }} --}}  
-            <div class="drop1" style="margin-left:300px; margin-top:-28px">
-            {{select-component listitem=Occupationlist selecteditemlist=OccupationType}}
+         <div class="row">
+            <div class="col-lg-3">Occupation</div>
+            <div class="col-lg-9">{{select-component listitem=Occupationlist selecteditemlist=OccupationType}}</div>
          </div>
          <br>
-            <br>
-         Gender
-         <div class="drop1" style="margin-left:300px; margin-top:-28px">
-            {{select-component listitem=genderlist selecteditemlist=genderType}}
+         <div class="row">
+            <div class="col-lg-3">Gender</div>
+            <div class="col-lg-9">{{select-component listitem=genderlist selecteditemlist=genderType}}
+            </div>
          </div>
          <br>
-         <br>
-         Nationality 
-         <div class="drop2" style="margin-left:299px; margin-top:-28px">
-            {{select-component listitem=nationalitylist selecteditemlist=nationalityType}}
+         <div class="row">
+            <div class="col-lg-3">Nationality</div>
+            <div class="col-lg-3">{{select-component listitem=nationalitylist selecteditemlist=nationalityType}}
+            </div>
          </div>
          <br>
          </p>
@@ -119,7 +135,6 @@
                {{select-component listitem=mylist selecteditemlist=propertyType}}
             </div>
             <br>
-         
          </div>
          {{/paper-grid-list}}
          <br>
@@ -140,7 +155,6 @@
       {{#stepper.step label="Assets" as |step|}}
       <div class="container" style="margin-left:442px; margin-top:-1cm; background-color:lightgrey">
          {{#step.body}}
-     
          {{#paper-grid-list
          cols="1 md-2 gt-md-6"
          rowHeight="gt-md-1:1 2:2"
@@ -180,18 +194,15 @@
          <br>
          {{/step.body}}
       </div>
-     
       {{#step.actions as |nextStep previousStep|}}
       {{#paper-button primary=true raised=true onClick=(action previousStep)}}
       Back
       {{/paper-button}}
       {{/step.actions}}
       {{/stepper.step}}
-      
-         <br>
-         <br>
-         <br>
-        
+      <br>
+      <br>
+      <br>
       {{/paper-stepper}}
    </div>
 </div>

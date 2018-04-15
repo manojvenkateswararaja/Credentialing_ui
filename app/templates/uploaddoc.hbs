@@ -10,37 +10,18 @@
    <a {{action "goToemployment"}}>Employment details</a>
 </div>
 <div class="container-fluid" style="background-color:">
-    <br>
-    <br>
-    <br>
-      <h4 style="text-align:center;">Upload Document</h4>
- 
+   <br>
+   <br>
+   <br>
+   <h4 style="text-align:center;">Upload Document</h4>
    <div class="container" style="magint-top:52px;">
       <div class="row">
          <div class="col-xs-8 col-lg-8 col-md-8 col-sm-8">
-           <b><em>Please Fill Your Documents Details?</em></b>
+            <b><em>Please Fill Your Documents Details?</em></b>
          </div>
          <div class="col-xs-4 col-lg-4 col-md-4 col-sm-4">
-            <style id="link">
-               /* unvisited link */
-               a:link {
-               color: red;
-               }
-               /* visited link */
-               a:visited {
-               color: green;
-               }
-               /* mouse over link */
-               a:hover {
-               color: hotpink;
-               }
-               /* selected link */
-               a:active {
-               color: blue;
-               }
-            </style>
-            <button type="button" class="btn btn-default btn-number qtyplus" data-type="plus" field='quantity'{{action "home"}} ><span class="glyphicon glyphicon-home"></span>Go Back To Main Menu</button>
-           {{!-- <b id="link"> <button {{action "home"}}>Go Back To Main Menu</button></b> --}}
+            <button type="button" class="btn btn-default btn-number qtyplus" data-type="plus" field='quantity'{{action "home"}} >
+            <span class="glyphicon glyphicon-home"></span> Go Back To Main Menu</button>
          </div>
       </div>
       <br>  
@@ -146,16 +127,14 @@
                {{/pl-uploader}}
             </div>
             {{/if}}
-            
-         {{#if isShow_fileupload}}
-         <div id="NR-reactangle-ok">
-            <p style="color:#68DC83,margin-top:3mm"><b>File Uploaded Sucessfully 1111!!!</b></p>
+            {{#if isShow_fileupload}}
+            <div id="NR-reactangle-ok">
+               <p style="color:#68DC83,margin-top:3mm"><b>File Uploaded Sucessfully 1111!!!</b></p>
+            </div>
+            {{/if}}
          </div>
-         {{/if}}
       </div>
+      <br>
+      {{#paper-button raised=true warn=true onClick=(action "targetButton")}}Submit{{/paper-button}}
    </div>
-   <br>
-   {{#paper-button raised=true warn=true onClick=(action "targetButton")}}Submit{{/paper-button}}
-
-</div>
 </div>

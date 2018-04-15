@@ -58,10 +58,10 @@ export default Controller.extend({
                 "amountinterestrate":details.Records.amountinterestrate,
                 "paymentperyear": details.Records.paymentperyear,
                 "installmentpermonth": details.Records.installmentpermonth,
+                "payments":details.Records.payments,
                 "statusForBankLegal":"Loan successfully accepted by user",
                 "time":time,
                 "date":date
-                
               }
           }
 

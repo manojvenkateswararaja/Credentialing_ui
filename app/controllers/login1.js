@@ -132,7 +132,7 @@ export default Controller.extend(Validations,{
                    
                     if(usertype =="user"){
                      if(showrecords[0]==null){
-                        swal("New Request!", "way to", "success");
+                        // swal("New Request!", "way to", "success");
                         console.log("kheteshin loop1")
                         mycontroller.transitionToRoute('newrequest');
          
@@ -162,47 +162,6 @@ export default Controller.extend(Validations,{
                  
            })
     
-    
-    //     var usertype=mycontroller.get('usertype')
-    //    var ShowRequest= mycontroller.get('ShowRequest')
-    //    mycontroller.set('ShowRequest',ShowRequest)
-    //    console.log("ShowRequest>>>>>>",ShowRequest)
-    //     mycontroller.set('usertype',usertype)
-    //       //mycontroller.set('showLogin',false)
-    //       console.log("usertype in ui",usertype)
-    //       console.log("changes for updated demo",showrecords)
-    //       this.set('showDialog',true)
-    //        if(usertype =="user"){
-    //         var RequestidOfuser=mycontroller.get('userid') 
-           
-    //         console.log("RequestidOfuser>>>>>",RequestidOfuser)
-    //         mycontroller.set('RequestidOfuser',RequestidOfuser)
-          
-    //         if(showrecords==null){
-               
-    //             this.transitionToRoute('newrequest');
-
-    //         }else if(showrecords!=null){
-    //             this.set('ShowRequest',true)
-    //             this.set('showUser',true);
-    //             this.transitionToRoute('home'); 
-    //         }
-    //   }else if(usertype =="bank"){
-    //     // mycontroller.set('showLogin',false)
-    //     this.set('showDialog',true)
-    //     this.set('showUser',true);
-    //      this.transitionToRoute('bankdashboard');
-    //   }else if(usertype=="creditscoregenerator"){
-    //       this.set('showDialog',true)
-    //       this.transitionToRoute('creditscore2');
-    //       this.set('showUser',true);
-    //   }else if(usertype=="legalactor"){
-    //     this.set('showDialog',true)
-    //     this.transitionToRoute('legalverification2');
-    //     this.set('showUser',true);
-    //   }   
-    //   this.set('showDialog',false)   
-    //   }, 
         }
 },
 });

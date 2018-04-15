@@ -3,94 +3,114 @@
 {{/if}}
 <br>
 <br>
-<div class="jumbotron">
-   <div class="container" style="background-color:Lavender ">
+<div class="jumbotron-fluid text-left">
       <h2 style="text-align:left;"><b>Loan Quotation</b></h2>
-      <br>
-      {{#if IsAlreadyDone}}
-      <div class="alert alert-info">
-         <strong>Info!</strong>Already made decision.
       </div>
-      {{/if}}
-      <br>
-      <div class="row" style="">
-         <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6" style="">
-            <label>RequestID:</label>
+ 
+         {{#if IsAlreadyDone}}
+         <div class="alert alert-info">
+            <strong>Info!</strong>Already made decision.
          </div>
-            <i style="color:blue; margin-left:-11cm;"> {{record.Records.requestid}}</i>
-      </div>
-      <br>
-      <div class="row" style="">
-         <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6" style="">
-            <label>Amount Of The Loan:</label>
-         </div>
-         <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6" style="">
-            {{record.Records.loanamount}}Rs
-         </div>
-      </div>
-      <br>
-      <div class="row" style="">
-         <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6" style="">
-            <label>Repayment Period In Months:</label>
-         </div>
-         <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6" style="">
-            {{record.Records.loanterms}} months
-         </div>
-      </div>
-      <br>
-      <div class="row" style="">
-         <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6" style="">
-            <label>Annual Rate Of Interest:</label>
-         </div>
-         <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6" style="">
-            {{record.Records.amountinterestrate}} %
-         </div>
-      </div>
-      <br>
-      <div class="row" style="">
-         <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6" style="">
-            <label>Monthly(EMI) Payment:</label>
-         </div>
-         <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6" style="">
-            {{record.Records.emi}} Rs
-         </div>
-      </div>
-      <br>
-      <div class="row" style="">
-         <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6" style="">
-            <label>Total Payment:</label>
-         </div>
-         <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6" style="">
-            {{record.Records.tot}} Rs
-         </div>
-      </div>
-      <br>
-      <br>
-      <br>
-      
-      <div style="margin-top:0cm;">
-         <button type="button" class="btn btn-primary btn-block" disabled={{IsAlreadyDone}} {{action "userschedule" record}}> agree & next</button>   
-         <br>
-         <br>
-         <small>Click Here For Applying Preclosure Request</small>
-         <button type="button" id="myButton" class="btn btn-primary btn-block" disabled={{DisablePrecoleButton}} {{action "gotoPreclose" item}}>Pre-closure</button>
-         {{#if showDialog}}
-         {{#paper-dialog class="flex-77" onClose=(action "closeDialog" "cancel") origin=dialogOrigin clickOutsideToClose=true}}
-         {{#paper-toolbar}}
-         {{#paper-toolbar-tools}}
-         Loan Has Been Successfully Accepted ...!! 
-         {{#paper-button iconButton=true onClick=(action "closeDialog" "cancel")}}{{paper-icon icon="close"}}{{/paper-button}}
-         {{/paper-toolbar-tools}}
-         {{/paper-toolbar}}
-         {{#paper-dialog-actions class="layout-row"}}
-         {{#paper-button onClick=(action "closeDialog" "cancel")}}Cancel{{/paper-button}}
-         {{#paper-button onClick=(action "okay" "ok")}}OK{{/paper-button}}
-         {{/paper-dialog-actions}}
-         {{/paper-dialog}}
          {{/if}}
-      </div>
-     <br>
-     <br>
-   </div>
-   
-</div>
+ 
+         <br>
+         <div class="row" style="">
+            <div class="col-xs-1 col-lg-1 col-md-1 col-sm-1">
+            </div>
+             <div class="col-xs-2 col-lg-2 col-md-2 col-sm-2">
+               <label>RequestID:</label>
+            </div>
+            <div class="col-xs-4 col-lg-4 col-md-4 col-sm-4" style="color:blue;">{{record.Records.requestid}}</div>
+         </div>
+         <br>
+         <div class="row" style="">
+            <div class="col-xs-1 col-lg-1 col-md-1 col-sm-1">
+               
+            </div>
+             <div class="col-xs-2 col-lg-2 col-md-2 col-sm-2" >
+               <label>Amount Of The Loan:</label>
+            </div>
+            <div class="col-xs-4 col-lg-4 col-md-4 col-sm-4" >
+               {{record.Records.loanamount}}Rs
+            </div>
+         </div>
+         <br>
+         <div class="row">
+         <table class="table table-striped">
+            <thead>
+               <tr>
+                  <th class="text-center">Payment</th>
+                  <th class="text-center">Principal</th>
+                  <th class="text-center">Starting</th>
+                  <th class="text-right">+</th>
+                  <th class="text-center">Interest</th>
+                  <th class="text-right">-</th>
+                  <th class="text-center">Payment</th>
+                  <th class="text-right">-</th>
+                  <th class="text-center">Extra</th>
+                  <th class="text-right">=</th>
+                  <th class="text-right">Ending Balance</th>
+               </tr>
+            </thead>
+            <tbody>
+               {{#each payments as |payment|}}
+               <tr>
+                  <td class="text-center">{{payment.id}}</td>
+                  <td class="text-center">Rs{{format-number payment.principalAmt format="0,0.00"}}</td>
+                  <td class="text-right">Rs{{format-number payment.startingPrinciple format="0,0.00"}}</td>
+                  <td>&nbsp;</td>
+                  <td class="text-right">Rs{{format-number payment.interest format="0,0.00"}}</td>
+                  <td>&nbsp;</td>
+                  <td class="text-right">Rs{{format-number payment.payment format="0,0.00"}}</td>
+                  <td>&nbsp;</td>
+                  <td class="text-right">Rs{{format-number payment.extra format="0,0.00"}}</td>
+                  <td>&nbsp;</td>
+                  <td class="text-right">Rs{{format-number payment.principle format="0,0.00"}}</td>
+                  
+               </tr>
+               {{/each}}
+            </tbody>
+         </table>
+         </div>
+         <br>
+         <div class="row">
+           <div class="col-xs-1 col-lg-1 col-md-1 col-sm-1">
+            </div>
+            <button type="button" class="btn btn-primary btn-block" style="width: 83%;" disabled={{IsAlreadyDone}} {{action "userschedule" record}}> agree & next</button>   
+           <div class="col-xs-1 col-lg-1 col-md-1 col-sm-1">
+            </div>
+            </div>
+            <br>
+            <br>
+             <div class="row">
+               <div class="col-xs-1 col-lg-1 col-md-1 col-sm-1" style="">
+            </div>
+          <small>Click Here For Applying Preclosure Request</small>
+          </div>  
+            <div class="row">
+               <div class="col-xs-1 col-lg-1 col-md-1 col-sm-1" style="">
+            </div>
+            <button type="button" id="myButton" class="btn btn-primary btn-block" style="width: 83%;" disabled={{DisablePrecoleButton}} {{action "gotoPreclose" item}}>Pre-closure</button>
+            <div class="col-xs-1 col-lg-1 col-md-1 col-sm-1">
+            </div>
+            </div>
+            {{#if showDialog}}
+            {{#paper-dialog class="flex-77" onClose=(action "closeDialog" "cancel") origin=dialogOrigin clickOutsideToClose=true}}
+            {{#paper-toolbar}}
+            {{#paper-toolbar-tools}}
+            Loan Has Been Successfully Accepted ...!! 
+            {{#paper-button iconButton=true onClick=(action "closeDialog" "cancel")}}{{paper-icon icon="close"}}{{/paper-button}}
+            {{/paper-toolbar-tools}}
+            {{/paper-toolbar}}
+            {{#paper-dialog-actions class="layout-row"}}
+            {{#paper-button onClick=(action "closeDialog" "cancel")}}Cancel{{/paper-button}}
+            {{#paper-button onClick=(action "okay" "ok")}}OK{{/paper-button}}
+            {{/paper-dialog-actions}}
+            {{/paper-dialog}}
+            {{/if}}
+         
+         <br>
+         <br>
+      
+      {{!-- <button {{action "print"}}>Take your Print</button> --}}
+ 

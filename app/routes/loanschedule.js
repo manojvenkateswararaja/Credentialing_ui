@@ -20,8 +20,6 @@ export default Route.extend({
          this.controllerFor('loanschedule').set('loanamount',loanamount) 
          console.log("loan amount",loanamount)
         
-        
-      
-        
+
     }
 });

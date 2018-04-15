@@ -14,6 +14,8 @@ export default Route.extend({
         this.controllerFor('userloanschedule').set("userid",userid);
     var LoanController=this.controllerFor('home2').get('record')
     this.controllerFor('userloanschedule').set('record',LoanController)
+    var payments=LoanController.Records.payments
+    this.controllerFor('userloanschedule').set('payments',payments)
     console.log("userloanschedule>>>>",LoanController)
     console.log("userloanschedule>>>>details",LoanController.Records.statusForCreditRequest)
     if(LoanController.Records.statusForCreditRequest=="Loan Scheduled"){

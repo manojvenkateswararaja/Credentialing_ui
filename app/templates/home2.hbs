@@ -1,54 +1,56 @@
 {{partial 'head'}}
 {{#if showLogin}}
-
 {{/if}}
+   <div class="container-fluid" style="background-color:">
+      <br>
 <br>
 <br>
- <div class="jumbotron" style="background-color:;">
-     
-    <div class="container" style="background-color:">
-
-          <div class="row">
-               <div class="col-xs-3 col-lg-3 col-sm-3"><b><em><span class="glyphicon glyphicon-tasks"></span>My Account</em></b></div>
-          <div class="col-xs-5 col-lg-5 col-sm-5"></div>
-          <div class="col-xs-4 col-lg-4 col-sm-4"  {{action 'steps'}}><span class="glyphicon glyphicon-hand-right" style=""></span><em class="text-muted"> you can also preclose loan, click here to know steps</em></div>
-          </div>
-       <br>
-       <br>
-        <div class="row">
-                         <div class="col-xs-6 col-lg-6 col-sm-6"><span class="glyphicon glyphicon-eye-open"></span> check your response by clicking on requestid</div>
-                        </div> 
-          <table class="table table-bordered">
+<br>
+      <div class="row">
+         <div class="col-xs-3 col-lg-3 col-sm-3">
+            <b>
+               <em>
+                  <span class="glyphicon glyphicon-tasks"></span> 
+                  <div class="col-xs-1 col-lg-1 col-sm-1"></div>
+                  My Account
+               </em>
+            </b>
+         </div>
+         <div class="col-xs-4 col-lg-4 col-sm-4"></div>
+         <div class="col-xs-4 col-lg-4 col-sm-4"  {{action 'steps'}}><span class="glyphicon glyphicon-hand-right" style=""></span><em class="text-muted"> you can also preclose loan, click here to know steps</em>
+      </div>
+   </div>
+   <div class="row">
+      <span class="glyphicon glyphicon-eye-open" style="margin-left:1cm"></span> check your response by clicking on RequestID
+   </div>
+   <br>
+   <table class="table table-bordered">
       <thead>
-      <tr>
-        <th>REQUEST ID</th>
-        <th>DATE</th>
-        <th>TIME</th>
-        <th>STATUS</th>
-      </tr>
-       </thead>
-          {{#each showrecords   as |item|}}  
-           <tbody>
-      <tr>
-        <td> <a href="" {{action 'userloanschedule'  item }}><b style="color:blue">{{item.Records.requestid}} </b></a></td>
-        <td> <small  class="text-muted">{{item.Records.date}}</small></td>
-        <td> <small  class="text-muted">{{item.Records.time}}</small></td>
-        <td> <b style="color:green">{{#if isBankPreclose}}{{status}}{{/if}}</b>
+         <tr>
+            <th>REQUEST ID</th>
+            <th>DATE</th>
+            <th>TIME</th>
+            <th>STATUS</th>
+         </tr>
+      </thead>
+      {{#each showrecords   as |item|}}  
+      <tbody>
+         <tr>
+            <td> <a href="" {{action 'userloanschedule'  item }}><b style="color:blue">{{item.Records.requestid}} </b></a></td>
+            <td> <small  class="text-muted">{{item.Records.date}}</small></td>
+            <td> <small  class="text-muted">{{item.Records.time}}</small></td>
+            <td> <b style="color:green">{{#if isBankPreclose}}{{status}}{{/if}}</b>
                <b style="color:green">{{item.Records.statusForUser}}
-                      {{item.Records.statusForBankLegal}}
-                      {{item.Records.statusForCreditRequest}}
-                      {{item.Records.statuspreclose}}
-                      {{item.Records.userpreclosestatus}}
-                 
-                  </b></td>
-     </tr>
-    </tbody>
-     {{/each}}
-  </table>
+               {{item.Records.statusForBankLegal}}
+               {{item.Records.statusForCreditRequest}}
+               {{item.Records.statuspreclose}}
+               {{item.Records.userpreclosestatus}}
+               </b>
+            </td>
+         </tr>
+      </tbody>
+      {{/each}}
+   </table>
+   <br> 
 
-        
-         <br> 
-        
-     </div>
-     </div>
-
+</div>

@@ -3,66 +3,49 @@
 {{/if}}
 <div class="container-fluid">
    <br>
-   <script>
-      $(document).ready(function() {
-          // Show or hide the sticky footer button
-          $(window).scroll(function() {
-              if ($(this).scrollTop() > 200) {
-                  $('.go-top').fadeIn(200);
-              } else {
-                  $('.go-top').fadeOut(200);
-              }
-          });
-          // Animate the scroll to top
-          $('.go-top').click(function(event) {
-              event.preventDefault();
-              $('html, body').animate({
-                  scrollTop: 0
-              }, 300);
-          });
-         
-      });
-   </script>
- 
    <div class="container" >
-       <br>
-       <br>
-         <h4 style="text-align:center;"><em>USER DETAILS VERIFICATION</em></h4>
-       {{#if IsUserDetails}}
-   <div class="alert alert-success">
-      <strong>Successfully creditscore generated!</strong><br>
-      Please Also Get Verified By Legal Validator
-   </div>
-   {{/if}}
-   {{#if IsUserDetailsApproves}}
-   <div class="alert alert-success">
-      <strong>Legal Verification Successfully Done !</strong><br>
-      Proceed Further For Approve Or Reject
-   </div>
-   {{/if}}
-   {{#if IsAlreadyDone}}
-   <div class="alert alert-info">
-      <strong>Info!</strong>Already made decision.
-   </div>
-   {{/if}}
-      <div class="row" style="">
-         <div class="col-xs-3 col-lg-3 col-sm-3" style="background-color:lightcyan;"><i style="margin-left:5%">RequestId:</i><i id="req">{{record.Record.requestid}}</i></div>
-         <div class="col-xs-3 col-lg-3 col-md-3 col-sm-3" style="background-color:lightcyan;">
+      <br>
+      <br>
+      <h4 style="text-align:center;"><em>USER DETAILS VERIFICATION</em></h4>
+      {{#if IsUserDetails}}
+      <div class="alert alert-success">
+         <strong>Successfully creditscore generated!</strong><br>
+         Please Also Get Verified By Legal Validator
+      </div>
+      {{/if}}
+      {{#if IsUserDetailsApproves}}
+      <div class="alert alert-success">
+         <strong>Legal Verification Successfully Done !</strong><br>
+         Proceed Further For Approve Or Reject
+      </div>
+      {{/if}}
+      {{#if IsAlreadyDone}}
+      <div class="alert alert-info">
+         <strong>Info!</strong>Already made decision.
+      </div>
+      {{/if}}
+        <div class="well">
+     <div class="row" style="">
+         <div class="col-xs-2 col-lg-2 col-sm-2" style="background-color:;"><i style="margin-left:-15%">RequestId:</i><i id="req">{{record.Record.requestid}}</i></div>
+         <div class="col-xs-3 col-lg-3 col-md-3 col-sm-3" style="background-color:;">
             <div class="vl5">
-               <div style="margin-left:8%"><i style="margin-left:5%">First Name:</i>{{record.Record.fname}}
+               <div style="padding: 0.3em;"><i style="">First Name:</i>{{record.Record.fname}}
                </div>
             </div>
          </div>
-         <div class="col-xs-3 col-lg-3 col-md-3 col-sm-3" style="background-color:lightcyan;">
+         <div class="col-xs-4 col-lg-4 col-md-4 col-sm-4" style="background-color:;">
             <div class="vl5">
-               <div style="margin-left:8%"><i style="margin-left:5%">Property Type:</i>{{record.Record.propertyType}}</div>
+               <div style="padding: 0.3em;"><i style="">Property Type:</i>{{record.Record.propertyType}}</div>
             </div>
          </div>
-         <div class="col-xs-3 col-lg-3 col-md-3 col-sm-3" style="background-color:lightcyan;">
+         <div class="col-xs-3 col-lg-3 col-md-3 col-sm-3" style="background-color:;">
             <div class="vl5">
-               <div style="margin-left:8%"><i style="margin-left:5%">Loan :</i>{{record.Record.amount}}</div>
+               <div style="padding: 0.3em;"><i style="">Loan:</i>{{record.Record.amount}}</div>
             </div>
          </div>
+      </div>
+      </div>
+
          <br>
          <br>
          <style>
@@ -133,7 +116,6 @@
                </table>
             </div>
          </div>
-         
          <br>
          <div style=" margin-top:1cm;">
          </div>
@@ -189,9 +171,7 @@
             {{/paper-dialog}}
             {{/if}}
          </div>
-        
          <br>
       </div>
-   </div>
+   
 </div>
-<a href="#" class="go-top">Scroll to Top</a>

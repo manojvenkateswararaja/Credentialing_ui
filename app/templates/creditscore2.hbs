@@ -1,24 +1,5 @@
 {{partial 'head'}}
 {{#if showDashboard }}
-<script>
-   $(document).ready(function() {
-       // Show or hide the sticky footer button
-       $(window).scroll(function() {
-           if ($(this).scrollTop() > 200) {
-               $('.go-top').fadeIn(200);
-           } else {
-               $('.go-top').fadeOut(200);
-           }
-       });
-       // Animate the scroll to top
-       $('.go-top').click(function(event) {
-           event.preventDefault();
-           $('html, body').animate({
-               scrollTop: 0
-           }, 300);
-       }); 
-   });
-</script>
 <div id="mySidenav" class="sidenav">
    <a href="javascript:void(0)" class="closebtn" {{action "closeNav"}}>&times;</a>
    <a >Home</a>
@@ -29,38 +10,34 @@
 </div>
 <br>
 <br>
- {{!-- <header class="w3-container " style="margin-left:1cm:"></header><h4><em>CreditScore Generator</em></h4></header>   --}}
-   <div class="container-fluid" style="margin-top:">
-       <br>
-       <h4 style="margin-left:1cm:"><img src="assets/images/score.jpg" alt="Smiley face"  id="check-image-2"  height="70" width="90"><em> CreditScore Generator</em></h4>
-       <br> 
-      <p style="text-align:center;color:black"><b>TOTAL REQUEST</b></p>
-      <div class="container" style="background-color:"><b>ALL Request</b></div>
-      <br>
-      <div class ="container">
-        
+<div class="container-fluid" style="margin-top:">
+   <br>
+   <h4 style="margin-left:1cm:"><img src="assets/images/score.jpg" alt="Smiley face"  id="check-image-2"  height="70" width="90"><em> CreditScore Generator</em></h4>
+   <br> 
+   <p style="text-align:center;color:black"><b>TOTAL REQUEST</b></p>
+   <div class="container" style="background-color:"><b>ALL Request</b></div>
+   <br>
+   <div class ="container">
+      <div class="row">
+         <div class="col-xs-3 col-lg-3 col-sm-3">RequestId: <a href="" {{action 'userdetails'  details }}><b style="color:blue">{{details.Record.requestid}}</b></a></div>
          <div class="row">
-            <div class="col-xs-3 col-lg-3 col-sm-3">RequestId: <a href="" {{action 'userdetails'  details }}><b style="color:blue">{{details.Record.requestid}}</b></a></div>
-            <div class="row">
-               <div class="col-xs-3 col-lg-3 col-sm-3"><b>Creditscore Request Published Time</b></div>
-               <div class="col-xs-3 col-lg-3 col-sm-3"> Date: <small  class="text-muted">{{details.Record.date}}</small></div>
-               <div class="col-xs-3 col-lg-3 col-sm-3">Time: <small  class="text-muted">{{details.Record.time}}</small></div>
-            </div>
+            <div class="col-xs-3 col-lg-3 col-sm-3"><b>Creditscore Request Published Time</b></div>
+            <div class="col-xs-3 col-lg-3 col-sm-3"> Date: <small  class="text-muted">{{details.Record.date}}</small></div>
+            <div class="col-xs-3 col-lg-3 col-sm-3">Time: <small  class="text-muted">{{details.Record.time}}</small></div>
          </div>
-         <div class="row">
-            <div class="col-xs-9 col-lg-9 col-sm-9">
-               <div >Status:<b style="color:green;">{{#if IsStatusForCreditRequest}}{{details.Record.statusForCreditRequest}}{{/if}}
-                  {{#if IsDefaultStatus}} {{status}}{{/if}}</b>
-               </div>
-            </div>
-         </div>
-         <br>
-     
       </div>
+      <div class="row">
+         <div class="col-xs-9 col-lg-9 col-sm-9">
+            <div >Status:<b style="color:green;">{{#if IsStatusForCreditRequest}}{{details.Record.statusForCreditRequest}}{{/if}}
+               {{#if IsDefaultStatus}} {{status}}{{/if}}</b>
+            </div>
+         </div>
+      </div>
+      <br>
    </div>
+</div>
 {{!-- </div> --}}
 <div>
-   
 </div>
 <a href="#" class="go-top">Scroll to Top</a>
 {{/if}}

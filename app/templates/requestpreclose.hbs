@@ -3,12 +3,11 @@
 {{/if}}
 <div class="container-fluid">
    <br>
-  
    <br>
    <div class="container">
-        <div class="jumbotron" style="text-align:center;background-color:lightgrey;padding-bottom: 0cm;padding-top: 0cm;">
-        <h2 style="text-align:center;">PRECLOSING REQUEST OF USER</h2>
-   </div>
+      <div class="jumbotron" style="text-align:center;background-color:lightgrey;padding-bottom: 0cm;padding-top: 0cm;">
+         <h2 style="text-align:center;">PRECLOSING REQUEST OF USER</h2>
+      </div>
       <div class="row">
          <i style="color:black"> {{notify}}</i>
       </div>
@@ -61,8 +60,6 @@
       <br>
       <div style="margin-top:0cm;">
          <button type="button" class="btn btn-primary btn-block"{{action "finalPreclose" record }}> agree & close the loan</button>   
-        
-        
          {{#if showDialog}}
          {{#paper-dialog class="flex-77" onClose=(action "closeDialog" "cancel") origin=dialogOrigin clickOutsideToClose=true}}
          {{#paper-toolbar}}

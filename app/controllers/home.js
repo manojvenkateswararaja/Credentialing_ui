@@ -10,7 +10,7 @@ export default Controller.extend({
    if(showrecords==""){
        swal("Sorry!", "You haven,t made any request!", "error");
    }else if((showrecords!=null)) {
-    swal("Good job!", "User Account!", "success");
+    // swal("Good job!", "User Account!", "success");
    this.transitionToRoute('home2');
  
    }

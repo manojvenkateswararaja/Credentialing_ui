@@ -26,29 +26,31 @@
    <div class="container">
       <br>
       <br>
-        <h4 style="text-align:center;">USER DATA FOR LEGAL VERIFICATION</h4>
+      <h4 style="text-align:center;">USER DATA FOR LEGAL VERIFICATION</h4>
       {{!-- <b style="margin-left:12cm;">USER DATA FOR LEGAL VERIFICATION</b> --}}
-      <br>
-      
-      <div class="row" style="">
-         <div class="col-xs-3 col-lg-3 col-sm-3" style="background-color:lightcyan;"><i style="margin-left:5%">RequestId:</i><i id="req">{{lastdetails.requestid}}</i></div>
-         <div class="col-xs-3 col-lg-3 col-md-3 col-sm-3" style="background-color:lightcyan;">
+
+       <div class="well">
+     <div class="row" style="">
+         <div class="col-xs-2 col-lg-2 col-sm-2" style="background-color:;"><i style="margin-left:-15%">RequestId:</i><i id="req">{{lastdetails.requestid}}</i></div>
+         <div class="col-xs-3 col-lg-3 col-md-3 col-sm-3" style="background-color:;">
             <div class="vl5">
-               <div style="margin-left:8%">FirstName:{{lastdetails.fname}}
+               <div style="padding: 0.3em;"><i style="">First Name:</i>{{lastdetails.fname}}
                </div>
             </div>
          </div>
-         <div class="col-xs-3 col-lg-3 col-md-3 col-sm-3" style="background-color:lightcyan;">
+         <div class="col-xs-4 col-lg-4 col-md-4 col-sm-4" style="background-color:;">
             <div class="vl5">
-               <div style="margin-left:8%">Property Type:{{lastdetails.propertyType}}</div>
+               <div style="padding: 0.3em;"><i style="">Property Type:</i>{{lastdetails.propertyType}}</div>
             </div>
          </div>
-         <div class="col-xs-3 col-lg-3 col-md-3 col-sm-3" style="background-color:lightcyan;">
+         <div class="col-xs-3 col-lg-3 col-md-3 col-sm-3" style="background-color:;">
             <div class="vl5">
-               <div style="margin-left:8%">Loan :{{lastdetails.amount}}</div>
+               <div style="padding: 0.3em;"><i style="">Loan:</i>{{lastdetails.amount}}</div>
             </div>
          </div>
       </div>
+      </div>
+     
       <br>
       <br>
       <style>
@@ -66,7 +68,6 @@
       {{!-- r2 --}}
       <div class="row" style="">
          <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6">
-           
             <table>
                <tr>
                   <td>First Name:</td>
@@ -93,10 +94,8 @@
                   <td style="color:gray;">{{lastdetails.income}}</td>
                </tr>
             </table>
-           
          </div>
          <div class= "col-xs-6 col-lg-6 col-md-6 col-sm-6 ">
-           
             <table>
                <tr>
                   <td>Mortgage Type:</td>
@@ -110,14 +109,11 @@
                   <td>Location:</td>
                   <td style="color:gray;">{{lastdetails.location}}</td>
                </tr>
-             
                <tr>
                   <td>Country:</td>
                   <td style="color:gray;">{{lastdetails.country}}</td>
                </tr>
-              
             </table>
-        
          </div>
       </div>
       {{!-- r2 --}}
@@ -125,14 +121,14 @@
       <div class="row">
          <div class= "col-xs-6 col-lg-6 col-md-6 col-sm-6 ">  
             <button type="button" class="btn btn-primary btn-block" disabled={{legalButton}} {{action "reject" lastdetails record.Key creditscore}}>Reject</button>
-           
          </div>
          <div class= "col-xs-6 col-lg-6 col-md-6 col-sm-6 ">  
             <button type="button" class="btn btn-primary btn-block" disabled={{legalButton}} {{action "approved"lastdetails record.Key creditscore }}>Approve</button>
-         
          </div>
          <br>
-             {{!-- <h3>Time Stamp</h3> --}}
+         {{!-- 
+         <h3>Time Stamp</h3>
+         --}}
          {{#if isCreditGen}}
          <div class="row">
             <b>Legal approval/rejected published Time</b>
@@ -150,9 +146,10 @@
          {{/if}}
          <br>
       </div>
-      {{!-- <div style="background-color:lightgrey;">
-     
-      </div> --}}
+      {{!-- 
+      <div style="background-color:lightgrey;">
+      </div>
+      --}}
       {{#if showDialog}}
       {{#paper-dialog class="flex-77" onClose=(action "closeDialog" "cancel") origin=dialogOrigin clickOutsideToClose=true}}
       {{#paper-toolbar}}
@@ -171,5 +168,3 @@
       <br>
    </div>
 </div>
-
-<a href="#" class="go-top">Scroll to Top</a>
