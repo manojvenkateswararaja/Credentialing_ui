@@ -12,19 +12,19 @@
       <br>
       <div class="well">
      <div class="row" style="">
-         <div class="col-xs-2 col-lg-2 col-sm-2" style="background-color:;"><i style="margin-left:-15%">RequestId:</i><i id="req">{{lastdetails.requestid}}</i></div>
-         <div class="col-xs-3 col-lg-3 col-md-3 col-sm-3" style="background-color:;">
+         <div class="col-md-2"><i style="margin-left:-10%">RequestId:</i><i id="req">{{lastdetails.requestid}}</i></div>
+         <div class="col-md-3">
             <div class="vl5">
                <div style="padding: 0.3em;"><i style="">First Name:</i>{{lastdetails.fname}}
                </div>
             </div>
          </div>
-         <div class="col-xs-4 col-lg-4 col-md-4 col-sm-4" style="background-color:;">
+         <div class="col-md-4">
             <div class="vl5">
                <div style="padding: 0.3em;"><i style="">Property Type:</i>{{lastdetails.propertyType}}</div>
             </div>
          </div>
-         <div class="col-xs-3 col-lg-3 col-md-3 col-sm-3" style="background-color:;">
+         <div class="col-md-3">
             <div class="vl5">
                <div style="padding: 0.3em;"><i style="">Loan:</i>{{lastdetails.amount}}</div>
             </div>
@@ -46,7 +46,7 @@
       {{!-- ro1 --}}
       <br> 
       {{!-- r2 --}}
-      <div class="row" style="">
+      <div class="row">
          <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6">
             {{!-- {{#each record.Record.transactionlist   as |item1|}} --}}
             <table>
@@ -70,16 +70,11 @@
                   <td>Occupation:</td>
                   <td style="color:gray;">{{lastdetails.occupation}}</td>
                </tr>
-               {{!-- 
-               <tr>
-                  <td>Income:</td>
-                  <td style="color:gray;">{{lastdetails.income}}</td>
-               </tr>
-               --}}
+              
             </table>
             {{!-- {{/each}} --}}
          </div>
-         <div class= "col-xs-6 col-lg-6 col-md-6 col-sm-6 ">
+         <div class= "col-md-6">
             {{!-- {{#each record.Record.transactionlist   as |item1|}} --}}
             <table>
                <tr>
@@ -94,22 +89,11 @@
                   <td>Location:</td>
                   <td style="color:gray;">{{lastdetails.location}}</td>
                </tr>
-               {{!-- 
-               <tr>
-                  <td>Price:</td>
-                  <td style="color:gray;">{{lastdetails.price}}</td>
-               </tr>
-               --}}
                <tr>
                   <td>Country:</td>
                   <td style="color:gray;">{{lastdetails.country}}</td>
                </tr>
-               {{!-- 
-               <tr>
-                  <td>PaymentPercentage:</td>
-                  <td style="color:gray;">{{lastdetails.paymentPercentage}}</td>
-               </tr>
-               --}}
+               
             </table>
             {{!-- {{/each}} --}}
          </div>
@@ -125,10 +109,10 @@
                <b> Requested For Creditscore Time</b>
             </div>
             <div class="row">
-               <div class="col-xs-6 col-lg-6 col-sm-6">
+               <div class="col-md-6">
                   Date:{{date}}
                </div>
-               <div class="col-xs-6 col-lg-6 col-sm-6">
+               <div class="col-md-6">
                   Time:{{time}}
                </div>
                <br>
@@ -140,7 +124,7 @@
          {{#paper-dialog class="flex-77" onClose=(action "closeDialog" "cancel") origin=dialogOrigin clickOutsideToClose=true}}
          {{#paper-toolbar}}
          {{#paper-toolbar-tools}}
-         Your Response Has Been Successfully Sent To Creditscore Validator...!!
+         Your Request Has Been Successfully Sent To Creditscore Validator...!!
          {{#paper-button iconButton=true onClick=(action "closeDialog" "cancel")}}{{paper-icon icon="close"}}{{/paper-button}}
          {{/paper-toolbar-tools}}
          {{/paper-toolbar}}
@@ -154,6 +138,5 @@
          <br>
       </div>
    </div>
-   {{!-- r3 --}}
+   
 </div>
-<a href="#" class="go-top">Scroll to Top</a>

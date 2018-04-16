@@ -2,42 +2,34 @@
 {{#if showPreclosure}}
 <div class="container-fluid">
    <br>
-   <br>
    <div class="container">
       <br>
       <h4 style="text-align:center;">PRE-CLOSURE</h4>
-      {{!-- 
-      <div style="text-align:center;"><b>PRE-CLOSURE</b></div>
-      --}}
       <br>
       <div class="row" style="">
-         <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6" style="">
+             {{!-- <div class="col-xs-1 col-lg-1 col-md-1 col-sm-1"></div> --}}
+         <div class="col-xs-2 col-lg-2 col-md-2 col-sm-2" >
             <label>RequestId:</label>
          </div>
-         {{!-- 
-         <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6" style=""> --}}
-            <i style="color:blue; margin-left:-11cm;">{{record.Records.requestid}}</i>
-            {{!-- 
-         </div>
-         --}}
+           <div class="col-xs-1 col-lg-1 col-md-1 col-sm-1">
+            <i style="color:blue;">{{record.Records.requestid}}</i>
+       </div>
       </div>
       <div class="row" >
-         <br>
          <div class="col-xs-6 col-lg-6 col-sm-6" >EMI Remaining</div>
          <div class="col-xs-6 col-lg-6 col-sm-6">
             {{validated-input  type="number"   class="form-group"  model=this  valuePath='EMI' placeholder="number of emi" required=""}}
-            {{!-- <input type="number"  class="form-group" id="exampleInputEmail1" value='EMI' placeholder="number of emi" required=""> --}}
          </div>
       </div>
-      <br>
+      
       <div class="row">
          <div class="col-xs-6 col-lg-6 col-sm-6">Installment Per Month</div>
          <div class="col-xs-6 col-lg-6 col-sm-6"> 
             {{validated-input  type="number"   class="form-group"  model=this  valuePath='installment' placeholder="installment per month" required=""}}
-            {{!-- <input type="number"  class="form-group" value='installment' placeholder="installment per month"> --}}
+           
          </div>
       </div>
-      <br>
+      
       <div class="row">
          <div class="col-xs-6 col-lg-6 col-sm-6">Document Required For Closing</div>
          <div class="col-xs-6 col-lg-6 col-sm-6">
@@ -60,14 +52,24 @@
       <br>
       <div class="row">
          <div class="col-xs-6 col-lg-6 col-sm-6">Payment Mode</div>
-         <div class="" style="margin-left:47%;"> {{select-component  listitem=PaymentMode selecteditemlist=Payment}}</div>
+          <div class="col-xs-6 col-lg-6 col-sm-6">{{select-component  listitem=PaymentMode selecteditemlist=Payment}}</div>
       </div>
-      <br>
+<br>
       <div class="row"> 
-         <button type="button" type="button" class="btn btn-primary btn-block" disabled={{paybutton}} {{action "pay"  record}}>Pay EMI</button>
-         <br>
-         <br>
+          <div class="col-md-1"></div>
+          <div class="col-md-10">
+           <button type="button" class="btn btn-color" style="width: 100%;" disabled={{paybutton}} {{action "pay"  record}}>Pay EMI</button>
+         </div>
+          <div class="col-md-1"></div>
+      </div>
+<br>
+          <div class="row"> 
+               <div class="col-md-1"></div>
+               <div class="col-md-10">
          <button type="button" type="button" class="btn btn-primary btn-block" {{action "preclose"  record}}>Apply</button>
+        </div>
+        <div class="col-md-1"></div>
+        </div>
          {{#if showDialog}}
          {{#paper-dialog class="flex-77" onClose=(action "closeDialog" "cancel") origin=dialogOrigin clickOutsideToClose=true}}
          {{#paper-toolbar}}
@@ -82,11 +84,11 @@
          {{/paper-dialog-actions}}
          {{/paper-dialog}}
          {{/if}} 
-      </div>
+      
       <br>
       <br>
    </div>
    <br>
-   <br>
+   
 </div>
 {{/if}}

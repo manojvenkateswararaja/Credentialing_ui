@@ -186,7 +186,7 @@ export default Controller.extend({
   },
   okay:function(){
       this.set('IsSuccess',true);
-      swal("Good job!", "your details has been uploaded successfully! Move Forward to upload documents", "success");
+      // swal("Good job!", "your details has been uploaded successfully! Move Forward to upload documents", "success");
       this.transitionToRoute('uploaddoc');
   },
     openNav:function(){

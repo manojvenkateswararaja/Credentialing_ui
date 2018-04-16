@@ -4,6 +4,9 @@ export default Controller.extend({
     showUserSchedule:true,
     isLoanSchedule:false,
     actions:{
+        print:function(){
+       
+        },
         
         userschedule:function(details,record){
             var modalvalue = this.get('showDialog')

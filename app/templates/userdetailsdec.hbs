@@ -26,7 +26,7 @@
       {{/if}}
         <div class="well">
      <div class="row" style="">
-         <div class="col-xs-2 col-lg-2 col-sm-2" style="background-color:;"><i style="margin-left:-15%">RequestId:</i><i id="req">{{record.Record.requestid}}</i></div>
+         <div class="col-xs-2 col-lg-2 col-sm-2" ><i style="margin-left:-10%">RequestId:</i><i id="req">{{record.Record.requestid}}</i></div>
          <div class="col-xs-3 col-lg-3 col-md-3 col-sm-3" style="background-color:;">
             <div class="vl5">
                <div style="padding: 0.3em;"><i style="">First Name:</i>{{record.Record.fname}}
@@ -126,7 +126,7 @@
             {{#paper-dialog class="flex-77" onClose=(action "closeDialog" "cancel") origin=dialogOrigin clickOutsideToClose=true}}
             {{#paper-toolbar}}
             {{#paper-toolbar-tools}}
-            Your Response Has Been Successfully Sent To Legal Validator...!!
+            Your Request Has Been Successfully Sent To Legal Validator...!!
             {{#paper-button iconButton=true onClick=(action "closeDialog" "cancel")}}{{paper-icon icon="close"}}{{/paper-button}}
             {{/paper-toolbar-tools}}
             {{/paper-toolbar}}
