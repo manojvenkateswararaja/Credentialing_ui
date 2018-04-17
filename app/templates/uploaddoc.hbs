@@ -1,35 +1,28 @@
 {{partial 'head'}}
 {{#if showRequest}}
 {{/if}}
-<div id="mySidenav" class="sidenav">
-   <a href="javascript:void(0)" class="closebtn" {{action "closeNav"}}>&times;</a>
-   <a >Home</a>
-   <a {{action "goTonewrequest"}}>Personal details</a>
-   <a {{action "goToloan"}}>Loan details</a>
-   <a {{action "goToproperty"}}>Property details</a>
-   <a {{action "goToemployment"}}>Employment details</a>
-</div>
-<div class="container-fluid" style="background-color:">
-   <br>
-   <br>
+
+<div class="container-fluid">
    <br>
    <h4 style="text-align:center;">Upload Document</h4>
-   <div class="container" style="magint-top:52px;">
+   
       <div class="row">
-         <div class="col-xs-8 col-lg-8 col-md-8 col-sm-8">
+           <div class="col-md-1"></div>
+         <div class="col-md-7">
             <b><em>Please Fill Your Documents Details?</em></b>
          </div>
-         <div class="col-xs-4 col-lg-4 col-md-4 col-sm-4">
+         <div class="col-md-4">
             <button type="button" class="btn btn-default btn-number qtyplus" data-type="plus" field='quantity'{{action "home"}} >
             <span class="glyphicon glyphicon-home"></span> Go Back To Main Menu</button>
          </div>
       </div>
       <br>  
       <div class="row">
-         <div class="col-xs-4 col-lg-4col-md-4 col-sm-4">
+           <div class="col-md-1"></div>
+         <div class="col-md-3">
             <label >Id Proof </label>
          </div>
-         <div class="col-xs-3 col-lg-3 col-md-3 col-sm-3">
+         <div class="col-md-3">
             {{#if Notshow_fileupload}}
             <div id="NR-reactangle">
                {{#pl-uploader  for="upload_file" runtimes="html5 flash silverlight" multiple=true onfileadd="uploadDoc" as |queue|}}
@@ -48,10 +41,11 @@
       </div>
       <br>
       <div class="row">
-         <div class="col-xs-4 col-lg-4col-md-4 col-sm-4">
+           <div class="col-md-1"></div>
+         <div class="col-md-3">
             <label> Bank Statement</label>
          </div>
-         <div class="col-xs-4 col-lg-4col-md-4 col-sm-4">
+         <div class="col-md-4">
             {{#if Notshow_fileupload}}
             <div id="NR-reactangle">
                {{#pl-uploader  for="upload_file" runtimes="html5 flash silverlight" multiple=true onfileadd="uploadDoc" as |queue|}}
@@ -70,10 +64,11 @@
       </div>
       <br>
       <div class="row">
-         <div class="col-xs-4 col-lg-4col-md-4 col-sm-4">
+           <div class="col-md-1"></div>
+         <div class="col-md-3">
             <label > Address Proof  </label>
          </div>
-         <div class="col-xs-4 col-lg-4col-md-4 col-sm-4">
+         <div class="col-md-4">
             {{#if Notshow_fileupload}}
             <div id="NR-reactangle">
                {{#pl-uploader  for="upload_file" runtimes="html5 flash silverlight" multiple=true onfileadd="uploadDoc" as |queue|}}
@@ -92,10 +87,11 @@
       </div>
       <br>
       <div class="row">
-         <div class="col-xs-4 col-lg-4col-md-4 col-sm-4">
+           <div class="col-md-1"></div>
+         <div class="col-md-3">
             <label>Property</label>
          </div>
-         <div class="col-xs-4 col-lg-4col-md-4 col-sm-4">
+         <div class="col-md-4">
             {{#if Notshow_fileupload}}
             <div id="NR-reactangle">
                {{#pl-uploader  for="upload_file" runtimes="html5 flash silverlight"  multiple="true" onfileadd="uploadDoc" as |queue|}}
@@ -114,10 +110,11 @@
       </div>
       <br>
       <div class="row">
-         <div class="col-xs-4 col-lg-4col-md-4 col-sm-4">
+           <div class="col-md-1"></div>
+         <div class="col-md-3">
             <label> ITR\Form 16 </label>
          </div>
-         <div class="col-xs-4 col-lg-4col-md-4 col-sm-4">
+         <div class="col-md-4">
             {{#if Notshow_fileupload}}
             <div id="NR-reactangle">
                {{#pl-uploader  for="upload_file" runtimes="html5 flash silverlight" multiple="true" onfileadd="uploadDoc" as |queue|}}
@@ -137,4 +134,3 @@
       <br>
       {{#paper-button raised=true warn=true onClick=(action "targetButton")}}Submit{{/paper-button}}
    </div>
-</div>

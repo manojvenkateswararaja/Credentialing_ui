@@ -5,17 +5,17 @@
    <br>
    <div class="container" >
       <br>
-      <br>
+    
       <h4 style="text-align:center;"><em>USER DETAILS VERIFICATION</em></h4>
       {{#if IsUserDetails}}
       <div class="alert alert-success">
-         <strong>Successfully creditscore generated!</strong><br>
+         <strong>Successfully creditscore generated</strong><br>
          Please Also Get Verified By Legal Validator
       </div>
       {{/if}}
       {{#if IsUserDetailsApproves}}
       <div class="alert alert-success">
-         <strong>Legal Verification Successfully Done !</strong><br>
+         <strong>Legal Verification Successfully Done </strong><br>
          Proceed Further For Approve Or Reject
       </div>
       {{/if}}
@@ -26,27 +26,25 @@
       {{/if}}
         <div class="well">
      <div class="row" style="">
-         <div class="col-xs-2 col-lg-2 col-sm-2" ><i style="margin-left:-10%">RequestId:</i><i id="req">{{record.Record.requestid}}</i></div>
-         <div class="col-xs-3 col-lg-3 col-md-3 col-sm-3" style="background-color:;">
+         <div class="col-md-2" ><i style="margin-left:-10%">RequestId:</i><i id="req">{{record.Record.requestid}}</i></div>
+         <div class="col-md-3" style="background-color:;">
             <div class="vl5">
                <div style="padding: 0.3em;"><i style="">First Name:</i>{{record.Record.fname}}
                </div>
             </div>
          </div>
-         <div class="col-xs-4 col-lg-4 col-md-4 col-sm-4" style="background-color:;">
+         <div class="col-md-4" style="background-color:;">
             <div class="vl5">
                <div style="padding: 0.3em;"><i style="">Property Type:</i>{{record.Record.propertyType}}</div>
             </div>
          </div>
-         <div class="col-xs-3 col-lg-3 col-md-3 col-sm-3" style="background-color:;">
+         <div class="col-md-3" style="background-color:;">
             <div class="vl5">
                <div style="padding: 0.3em;"><i style="">Loan:</i>{{record.Record.amount}}</div>
             </div>
          </div>
       </div>
       </div>
-
-         <br>
          <br>
          <style>
             table, th, {
@@ -54,12 +52,12 @@
             }
          </style>
          <div class="row">
-            <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6" style="background-color:grey;">Personal Information</div>
-            <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6" style="background-color:grey;">Property Information</div>
+            <div class="col-md-6" style="background-color:grey;">Personal Information</div>
+            <div class="col-md-6" style="background-color:grey;">Property Information</div>
          </div>
          <br> 
          <div class="row">
-            <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6">
+            <div class="col-md-6">
                <table>
                   <tr>
                      <td>First Name:</td>
@@ -87,7 +85,7 @@
                   </tr>
                </table>
             </div>
-            <div class= "col-xs-6 col-lg-6 col-md-6 col-sm-6 ">
+            <div class= "col-md-6">
                <table>
                   <tr>
                      <td>Mortgage Type:</td>
@@ -117,16 +115,16 @@
             </div>
          </div>
          <br>
-         <div style=" margin-top:1cm;">
+         {{!-- <div style=" margin-top:1cm;">
          </div>
-         <div style=" margin-top:1cm;">
+         <div style=" margin-top:1cm;"> --}}
             <button type="button" class="btn btn-primary btn-block" disabled={{isLegalDisableButton}} {{action "LegalValidater" record details}}>Get verify from legal validator</button>
             {{!-- <button  id="user-btn3" {{action "credit" records showrecords}}>Get verify from legal validator</button> --}}
             {{#if showDialog}}
             {{#paper-dialog class="flex-77" onClose=(action "closeDialog" "cancel") origin=dialogOrigin clickOutsideToClose=true}}
             {{#paper-toolbar}}
             {{#paper-toolbar-tools}}
-            Your Request Has Been Successfully Sent To Legal Validator...!!
+            Request Has Been Successfully Sent To Legal Validator
             {{#paper-button iconButton=true onClick=(action "closeDialog" "cancel")}}{{paper-icon icon="close"}}{{/paper-button}}
             {{/paper-toolbar-tools}}
             {{/paper-toolbar}}
@@ -135,15 +133,15 @@
             {{#paper-button onClick=(action "okay1" "ok")}}OK{{/paper-button}}
             {{/paper-dialog-actions}}
             {{/paper-dialog}}
-            {{/if}}
-         </div>
-         <div style=" margin-top:1cm;">
+            {{/if}}<br>
+         {{!-- </div> --}}
+         {{!-- <div style=" margin-top:1cm;"> --}}
             <button type="button" class="btn btn-primary btn-block"  disabled={{isApprove}} {{action "LoanApprove" record details}}> Approve Loan </button>
             {{#if showDialogApprove}}
             {{#paper-dialog class="flex-77" onClose=(action "closeDialog" "cancel") origin=dialogOrigin clickOutsideToClose=true}}
             {{#paper-toolbar}}
             {{#paper-toolbar-tools}}
-            Your Response Has Been Successfully Approve...!!
+            Request Has Been Successfully Approve
             {{#paper-button iconButton=true onClick=(action "closeDialog2" "cancel")}}{{paper-icon icon="close"}}{{/paper-button}}
             {{/paper-toolbar-tools}}
             {{/paper-toolbar}}
@@ -152,15 +150,15 @@
             {{#paper-button onClick=(action "okay2" "ok")}}OK{{/paper-button}}
             {{/paper-dialog-actions}}
             {{/paper-dialog}}
-            {{/if}}
-         </div>
-         <div style=" margin-top:1cm;">
+            {{/if}}<br>
+         {{!-- </div> --}}
+         {{!-- <div style=" margin-top:1cm;"> --}}
             <button type="button" class="btn btn-primary btn-block" disabled={{isReject}} {{action "LegalValidaterRejected" record details}}>Reject</button>
             {{#if showDialogForReject}}
             {{#paper-dialog class="flex-77" onClose=(action "closeDialog" "cancel") origin=dialogOrigin clickOutsideToClose=true}}
             {{#paper-toolbar}}
             {{#paper-toolbar-tools}}
-            Loan has been rejected ...!!{{showDialogForReject}}
+            Loan has been rejected
             {{#paper-button iconButton=true onClick=(action "closeDialog" "cancel")}}{{paper-icon icon="close"}}{{/paper-button}}
             {{/paper-toolbar-tools}}
             {{/paper-toolbar}}
@@ -169,8 +167,7 @@
             {{#paper-button onClick=(action "okay" "ok")}}OK{{/paper-button}}
             {{/paper-dialog-actions}}
             {{/paper-dialog}}
-            {{/if}}
-         </div>
+            {{/if}}         
          <br>
       </div>
    

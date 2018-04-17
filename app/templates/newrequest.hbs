@@ -168,7 +168,7 @@
             {{paper-input label="Year Purchased" type="date" value=year onChange=(action (mut year)) icon="date range" }}
             <br>
             {{paper-input label="Location/Address"  value=location onChange=(action (mut location)) icon="location on" }}
-            {{paper-input label="Property Size(Sqft)"  value=size onChange=(action (mut size)) icon="home"}}  
+            {{paper-input label="Property(sqft)" value=size onChange=(action (mut size)) icon="home"}}  
             <br>
             {{#paper-button raised=true warn=true onClick=(action "targetButton")}}Submit{{/paper-button}}
          </p>

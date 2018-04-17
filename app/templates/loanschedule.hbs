@@ -47,17 +47,16 @@
          <table class="table table-striped">
             <thead>
                <tr>
-                  <th class="text-center">Payment</th>
+                  <th class="text-center">Installment Term</th>
                   <th class="text-center">Principal</th>
                   <th class="text-center">Starting</th>
                   <th class="text-right">+</th>
                   <th class="text-center">Interest</th>
                   <th class="text-right">-</th>
                   <th class="text-center">Payment</th>
-                  <th class="text-right">-</th>
-                  <th class="text-center">Extra</th>
+                
                   <th class="text-right">=</th>
-                  <th class="text-right">Ending Balance</th>
+                  <th class="text-right">Outstanding Balance</th>
                </tr>
             </thead>
             <tbody>
@@ -70,8 +69,7 @@
                   <td class="text-right">Rs{{format-number payment.interest format="0,0.00"}}</td>
                   <td>&nbsp;</td>
                   <td class="text-right">Rs{{format-number payment.payment format="0,0.00"}}</td>
-                  <td>&nbsp;</td>
-                  <td class="text-right">Rs{{format-number payment.extra format="0,0.00"}}</td>
+                 
                   <td>&nbsp;</td>
                   <td class="text-right">Rs{{format-number payment.principle format="0,0.00"}}</td>
                   
@@ -101,7 +99,7 @@
 {{#paper-dialog class="flex-77" onClose=(action "closeDialog" "cancel") origin=dialogOrigin clickOutsideToClose=true}}
 {{#paper-toolbar}}
 {{#paper-toolbar-tools}}
-Loan Quotation for requested user   ...!!
+Loan Quotation for requested user
 {{#paper-button iconButton=true onClick=(action "closeDialog" "cancel")}}{{paper-icon icon="close"}}{{/paper-button}}
 {{/paper-toolbar-tools}}
 {{/paper-toolbar}}

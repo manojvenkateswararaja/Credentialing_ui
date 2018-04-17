@@ -31,27 +31,25 @@
 
        <div class="well">
      <div class="row" style="">
-         <div class="col-xs-2 col-lg-2 col-sm-2" style="background-color:;"><i style="margin-left:-15%">RequestId:</i><i id="req">{{lastdetails.requestid}}</i></div>
-         <div class="col-xs-3 col-lg-3 col-md-3 col-sm-3" style="background-color:;">
+         <div class="col-md-2"><i style="margin-left:-10%">RequestId:</i><i id="req">{{lastdetails.requestid}}</i></div>
+         <div class="col-md-3">
             <div class="vl5">
                <div style="padding: 0.3em;"><i style="">First Name:</i>{{lastdetails.fname}}
                </div>
             </div>
          </div>
-         <div class="col-xs-4 col-lg-4 col-md-4 col-sm-4" style="background-color:;">
+         <div class="col-md-4">
             <div class="vl5">
                <div style="padding: 0.3em;"><i style="">Property Type:</i>{{lastdetails.propertyType}}</div>
             </div>
          </div>
-         <div class="col-xs-3 col-lg-3 col-md-3 col-sm-3" style="background-color:;">
+         <div class="col-md-3">
             <div class="vl5">
                <div style="padding: 0.3em;"><i style="">Loan:</i>{{lastdetails.amount}}</div>
             </div>
          </div>
       </div>
       </div>
-     
-      <br>
       <br>
       <style>
          table, th, {
@@ -60,14 +58,14 @@
       </style>
       {{!-- ro1 --}}
       <div class="row">
-         <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6" style="background-color:grey;">Personal Information</div>
-         <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6" style="background-color:grey;">Property Information</div>
+         <div class="col-md-6" style="background-color:grey;">Personal Information</div>
+         <div class="col-md-6" style="background-color:grey;">Property Information</div>
       </div>
       {{!-- ro1 --}}
       <br> 
       {{!-- r2 --}}
-      <div class="row" style="">
-         <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6">
+      <div class="row">
+         <div class="col-md-6">
             <table>
                <tr>
                   <td>First Name:</td>
@@ -95,7 +93,7 @@
                </tr>
             </table>
          </div>
-         <div class= "col-xs-6 col-lg-6 col-md-6 col-sm-6 ">
+         <div class= "col-md-6">
             <table>
                <tr>
                   <td>Mortgage Type:</td>
@@ -126,35 +124,29 @@
             <button type="button" class="btn btn-primary btn-block" disabled={{legalButton}} {{action "approved"lastdetails record.Key creditscore }}>Approve</button>
          </div>
          <br>
-         {{!-- 
-         <h3>Time Stamp</h3>
-         --}}
+         
          {{#if isCreditGen}}
          <div class="row">
+               <div class="col-md-1"></div>
             <b>Legal approval/rejected published Time</b>
          </div>
          <div class="row">
-            <div class="col-xs-6 col-lg-6 col-sm-6">
+            <div class="col-md-6">
                Date:{{date}}
             </div>
-            <div class="col-xs-6 col-lg-6 col-sm-6">
+            <div class="col-md-6">
                Time:{{time}}
             </div>
-            <br>
             <br>
          </div>
          {{/if}}
          <br>
       </div>
-      {{!-- 
-      <div style="background-color:lightgrey;">
-      </div>
-      --}}
       {{#if showDialog}}
       {{#paper-dialog class="flex-77" onClose=(action "closeDialog" "cancel") origin=dialogOrigin clickOutsideToClose=true}}
       {{#paper-toolbar}}
       {{#paper-toolbar-tools}}
-      Your Response Sent To Bank Sucessfully!!
+       Response Sent To Bank Sucessfully
       {{#paper-button iconButton=true onClick=(action "closeDialog" "cancel")}}{{paper-icon icon="close"}}{{/paper-button}}
       {{/paper-toolbar-tools}}
       {{/paper-toolbar}}

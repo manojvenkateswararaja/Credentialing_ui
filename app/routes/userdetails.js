@@ -17,23 +17,13 @@ export default Route.extend({
          console.log("hi.....",lastdetails)
          if(lastdetails.statusForCreditRequest=="Requested For Creditscore"){
             this.controllerFor('userdetails').set('isDetailsDisableButton',true)
-            swal("Bank have Requested For Creditscore!! ", "status", "info");
+            // swal("Bank have Requested For Creditscore!! ", "status", "info");
          } 
         this.controllerFor('userdetails').set('lastdetails',lastdetails);
          console.log("updates",lastdetails)
-         
-        //  if(lastdetails.creditscore == null){
-        //     this.controllerFor('userdetails').set('isDetailsDisableButton',false)
-        // }else if(lastdetails.creditscore!=null){
-        //     this.controllerFor('userdetails').set('isDetailsDisableButton',true)
-        //     }
-      
         var GetBankCredit = this.controllerFor('creditscore')
         var creditscore= GetBankCredit.get('creditscore');
         this.controllerFor('userdetails').set('creditscore',creditscore);
         console.log("creditscore",creditscore)
-        //score
-        
-        
    }
 })

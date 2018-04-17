@@ -9,29 +9,29 @@
       </div>
       <br>  
       <div class="row">
-         <div class="col-xs-6 col-lg-6 col-sm-6" >
+         <div class="col-md-6" >
             Request ID:
          </div>
-         <div class="col-xs-6 col-lg-6 col-sm-6" >
+         <div class="col-md-6" >
             {{validated-input  type="text" model=this  valuePath='requestid' placeholder="Request Id" required=""}}
            
          </div>
       </div>
       <br>
       <div class="row">
-         <div class="col-xs-6 col-lg-6 col-sm-6" >
+         <div class="col-md-6" >
             Loan Amount in Rs
          </div>
-         <div class="col-xs-6 col-lg-6 col-sm-6" >
+         <div class="col-md-6" >
             {{validated-input  type="text" model=this  valuePath='loanamount' placeholder="amount" required=""}}
          </div>
       </div>
       <br>
       <div class="row">
-         <div class="col-xs-6 col-lg-6 col-sm-6" >
+         <div class="col-md-6" >
             Loan Terms
          </div>
-         <div class="col-xs-6 col-lg-6 col-sm-6" >
+         <div class="col-md-6" >
             {{validated-input  type="number" model=this  valuePath='loanterms' placeholder="loan terms" required=""}} 
          </div>
       </div>
@@ -66,10 +66,8 @@
       </div>
       <br>
       <button type="button"  style="width:20%;margin-left:8cm;margin-top:1cm;"  id="myButton" class="btn btn-primary" {{action "loanschedule"}}>Schedule</button>
-    
       <br>
-      <br>
-      <br>
+      
    </div>
 </div>
 {{/if}}
