@@ -128,7 +128,7 @@
          <br>
          <div style="background-color;margin-top:-82px;padding-top: 64px;">
             {{paper-input label="Purpose Of Loan" value=loan onChange=(action (mut loan)) icon="account balance" }}
-            {{paper-input label="Amount" value=amount onChange=(action (mut amount)) icon="attach money" }}
+            <i class="fa fa-rupee" style="font-size:30px"></i>{{paper-input type=number label="Amount" value=amount onChange=(action (mut amount)) }}
             <br>
             Asset Type
             <div class="drop2" style="margin-left:299px; margin-top:-28px"> 

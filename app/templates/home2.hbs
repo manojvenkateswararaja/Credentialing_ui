@@ -14,10 +14,29 @@
                   <div class="col-xs-1 col-lg-1 col-sm-1"></div>
                   My Account
                </em>
+
+ {{#if isCommitAuthorize}}
+<div class="modal-body">
+      step1)After Agreeing Loan schedule<br>
+      step2)check response<br>
+      step3)you can see button called as preclose<br>
+      step4)you can apply by click on it.
+            </div>
+            {{/if}}
             </b>
          </div>
          <div class="col-xs-4 col-lg-4 col-sm-4"></div>
-         <div class="col-xs-4 col-lg-4 col-sm-4"  {{action 'steps'}}><span class="glyphicon glyphicon-hand-right" style=""></span><em class="text-muted"> you can also preclose loan, click here to know steps</em>
+         <div class="col-xs-5 col-lg-5 col-sm-5"> <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                   Loan preclosure procedure, click here to know steps
+                <button type="button"  {{action "dismissModal"}}>click</button>
+                 <button type="button" class="close" {{action "dismissModal1"}}>×</button>
+            </div>
+            
+        </div>
+    </div>
       </div>
    </div>
    <div class="row">

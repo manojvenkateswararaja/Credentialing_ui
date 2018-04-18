@@ -2,15 +2,16 @@ import Route from '@ember/routing/route';
 export default Route.extend({
 isStatus:true,
 model(){
+    var firstname=this.controllerFor('login1').get('firstname');
+    console.log(">>>user",firstname)
+    this.controllerFor('home2').set('firstname',firstname);
 var userid= this.controllerFor('login1').get('userid');
 console.log("route userid",userid)
 this.controllerFor('home2').set("userid",userid);
 this.controllerFor('home2').set('showLogin',true);
 this.controllerFor('home2').set('showUser',true);
-var usertype=this.controllerFor('login1').get('usertype');
-console.log(">>>user",usertype)
+
 var myroute = this
-this.controllerFor('home2').set('usertype',usertype);
 this.controllerFor('home2').set('ShowRequest',true);
 // usertype
 return $.ajax({
