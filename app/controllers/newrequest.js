@@ -21,7 +21,7 @@ export default Controller.extend({
     nationalitylist:["Indian","Other"],
     occupationlist:["Salaried","Non-Salaried"],
     companylist:["Partnership","Prioprietorship","Pvt Ltd Company"],
-    Occupationlist:["IT Professionals","Others"],
+    Occupationlist:["IT Professional","Others"],
  
   actions:{
     

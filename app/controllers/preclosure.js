@@ -3,7 +3,7 @@ import Controller from '@ember/controller';
 export default Controller.extend({
     showPreclosure:true,
     isPreclosed:false,
-    PaymentMode:["offline","online"],
+    PaymentMode:["Cash/Check","NEFT/RTGS/IMPS"],
     actions:{
             preclose:function(record){
               var modalvalue = this.get('showDialog')     

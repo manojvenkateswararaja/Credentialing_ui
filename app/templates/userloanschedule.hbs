@@ -28,10 +28,10 @@
                
             </div>
              <div class="col-md-2" >
-               <label>Amount Of The Loan:</label>
+               <label>Amount Of Loan:</label>
             </div>
             <div class="col-md-4" >
-               {{record.Records.loanamount}}Rs
+               Rs {{record.Records.loanamount}}
             </div>
          </div>
          <br>
@@ -42,30 +42,28 @@
             <thead>
                <tr>
                   <th class="text-center">Installment Term</th>
-                  <th class="text-center">Principal</th>
-                  <th class="text-center">Starting</th>
+                  <th class="text-center">Principal(Rs)</th>
+                  <th class="text-center">Starting(Rs)</th>
                   <th class="text-right">+</th>
-                  <th class="text-center">Interest</th>
+                  <th class="text-center">Interest(Rs)</th>
                   <th class="text-right">-</th>
-                  <th class="text-center">Payment</th>
-                  <th class="text-right">-</th>
-                  <th class="text-center">Extra</th>
+                  <th class="text-center">Payment(Rs)</th>              
                   <th class="text-right">=</th>
-                  <th class="text-right">Outstanding Balance</th>
+                  <th class="text-right">Outstanding Balance(Rs)</th>
                </tr>
             </thead>
             <tbody>
                {{#each payments as |payment|}}
                <tr>
                   <td class="text-center">{{payment.id}}</td>
-                  <td class="text-center">Rs{{format-number payment.principalAmt format="0,0.00"}}</td>
-                  <td class="text-right">Rs{{format-number payment.startingPrinciple format="0,0.00"}}</td>
+                  <td class="text-center">{{format-number payment.principalAmt format="0,0.00"}}</td>
+                  <td class="text-right">{{format-number payment.startingPrinciple format="0,0.00"}}</td>
                   <td>&nbsp;</td>
-                  <td class="text-right">Rs{{format-number payment.interest format="0,0.00"}}</td>
+                  <td class="text-right">{{format-number payment.interest format="0,0.00"}}</td>
                   <td>&nbsp;</td>
-                  <td class="text-right">Rs{{format-number payment.payment format="0,0.00"}}</td>
+                  <td class="text-right">{{format-number payment.payment format="0,0.00"}}</td>
                   <td>&nbsp;</td>
-                  <td class="text-right">Rs{{format-number payment.principle format="0,0.00"}}</td>
+                  <td class="text-right">{{format-number payment.principle format="0,0.00"}}</td>
                </tr>
                {{/each}}
             </tbody>

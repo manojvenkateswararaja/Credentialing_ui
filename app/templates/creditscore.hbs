@@ -45,23 +45,23 @@
          <div class="col-md-6">
             <table>
                <tr>
-                  <td>First Name:</td>
+                  <td>First Name</td>:
                   <td style="color:gray;">{{lastdetails.fname}}</td>
                </tr>
                <tr>
-                  <td>Last Name:</td>
+                  <td>Last Name</td>:
                   <td style="color:gray;">{{lastdetails.lname}}</td>
                </tr>
                <tr>
-                  <td>Mobile Number:</td>
+                  <td>Mobile Number</td>:
                   <td style="color:gray;">{{lastdetails.phone}}</td>
                </tr>
                <tr>
-                  <td>Country:</td>
+                  <td>Country</td>:
                   <td style="color:gray;">{{lastdetails.country}}</td>
                </tr>
                <tr>
-                  <td>Occupation:</td>
+                  <td>Occupation</td>:
                   <td style="color:gray;">{{lastdetails.occupation}}</td>
                </tr>
                
@@ -70,23 +70,23 @@
          <div class="col-md-6">
             <table>
                <tr>
-                  <td>Mortgage Type</td>
+                  <td>Mortgage Type</td>:
                   <td style="color:gray;">{{lastdetails.propertyType}}</td>
                </tr>
                <tr>
-                  <td>Need Amount:</td>
+                  <td>Need Amount</td>:
                   <td style="color:gray;">{{lastdetails.amount}}</td>
                </tr>
                <tr>
-                  <td>Location:</td>
+                  <td>Location</td>:
                   <td style="color:gray;">{{lastdetails.location}}</td>
                </tr>
                <tr>
-                  <td>Country:</td>
+                  <td>Country</td>:
                   <td style="color:gray;">{{lastdetails.country}}</td>
                </tr>
                <tr>
-                  <td>Creditscore:</td>
+                  <td>Creditscore</td>:
                   <td style="color:black;">{{creditscore}}</td>
                </tr>
             </table>
@@ -94,7 +94,7 @@
       </div>
       <div class="row">
          <div class= "col-md-6">  
-            <button type="button" class="btn btn-primary btn-block"{{action "ApproveUpdate" lastdetails record.Key creditscore}}>Creditscore Generated & Forward</button>
+            <button type="button" class="btn btn-primary btn-block" disabled={{creditscoreForwardButton}} {{action "ApproveUpdate" lastdetails record.Key creditscore}}>Creditscore Generated & Forward</button>
          </div>
          <div class="col-md-6">  
             <button type="button" class="btn btn-primary btn-block" disabled={{creditscoreButton}} {{action "creditscore" record.Key}}>Generate Creditscore </button>
@@ -108,10 +108,11 @@
          </div>
          {{#if isCreditGen}}
          <div class="row">
-            <div class="col-md-6">
+               <div class="col-md-1"></div>
+            <div class="col-md-5">
                Date: {{date}}
             </div>
-            <div class="col-md-6">
+            <div class="col-md-5">
                Time: {{time}}
             </div>
             <br>

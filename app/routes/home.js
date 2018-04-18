@@ -11,12 +11,11 @@ export default Route.extend({
         var userid= this.controllerFor('login1').get('userid');
         console.log("route userid",userid)
         this.controllerFor('home').set("userid",userid);
-       
         this.controllerFor('home').set('showLogin',true);
         this.controllerFor('home').set('showUser',true);
-        var usertype=this.controllerFor('login1').get('usertype');
-        console.log(">>>user",usertype)
-        this.controllerFor('home').set('usertype',usertype);
+        var firstname=this.controllerFor('login1').get('firstname');
+        console.log(">>>user",firstname)
+        this.controllerFor('home').set('firstname',firstname);
         var myroute = this
         var token = sessionStorage.getItem('token');
         console.log("manoj",token);

@@ -5,6 +5,7 @@ export default Controller.extend({
   shoUserInfo:false,
   showCreditscore:true,
   isCreditGen:false,
+  creditscoreForwardButton:true,
   actions: {
     signUp(event){ 
       // Only when assigning the action to an inline handler, the event object
@@ -127,9 +128,14 @@ export default Controller.extend({
           data:JSON.stringify(requestid),
           success: function(response) {
           console.log("service creditscore") 
-         
+         if(response!=null){
+          mycontroller.set('creditscoreForwardButton',false)
+         }else{
+          mycontroller.set('creditscoreForwardButton',true)
+         }
           var creditscore=response.creditscore
           mycontroller.set('creditscore',creditscore)
+          
          
           console.log(creditscore);
       

@@ -8,7 +8,6 @@
       onStepperCompleted=(action "saveModel") as |stepper|}}
       {{#stepper.step label="Personal Info" as |step|}}
       <div class="container" style="margin-left:442px; background-color:lightgrey">
-         +
          {{#step.body}}
          {{#paper-grid-list
          cols="1 md-2 gt-md-6"
@@ -50,7 +49,7 @@
             <div id="div1" style="display:none">
                <div class="row">
                   <label>Employer Name</label>
-                  {{paper-input label="name" value=Employename onChange=(action (mut Employename)) icon="person"}}
+                  {{paper-input label="Name" value=Employename onChange=(action (mut Employename)) icon="person"}}
                </div>
                <div class="row">
                   <label>Total Work Experience</label>
@@ -123,13 +122,13 @@
          cols="1 md-2 gt-md-6"
          rowHeight="gt-md-1:1 2:2"
          gutter="12px gt-sm-8px" as |grid|}} 
-         <h2 style="margin-top:-30px !important;;padding-top: 0px;margin-left:0"><i>Tell Us What Your Looking For?</i></h2>
+         <h2 style="margin-top:-30px !important;;padding-top: 0px;margin-left:0"><i>Tell Us What Are Your Looking For?</i></h2>
          <br>
          <br>
          <br>
          <div style="background-color;margin-top:-82px;padding-top: 64px;">
             {{paper-input label="Purpose Of Loan" value=loan onChange=(action (mut loan)) icon="account balance" }}
-            {{paper-input label="Required Amount" value=amount onChange=(action (mut amount)) icon="attach money" }}
+            {{paper-input label="Amount" value=amount onChange=(action (mut amount)) icon="attach money" }}
             <br>
             Asset Type
             <div class="drop2" style="margin-left:299px; margin-top:-28px"> 

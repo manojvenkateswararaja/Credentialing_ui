@@ -1,33 +1,7 @@
 {{partial 'head'}}
 {{#if showUserDetails}}
 {{/if}}
-<script>
-   $(document).ready(function() {
-       // Show or hide the sticky footer button
-       $(window).scroll(function() {
-           if ($(this).scrollTop() > 200) {
-               $('.go-top').fadeIn(200);
-           } else {
-               $('.go-top').fadeOut(200);
-           }
-       });
-       // Animate the scroll to top
-       $('.go-top').click(function(event) {
-           event.preventDefault();
-           $('html, body').animate({
-               scrollTop: 0
-           }, 300);
-       }); 
-   });
-</script>
-<div id="mySidenav" class="sidenav">
-   <a href="javascript:void(0)" class="closebtn" {{action "closeNav"}}>&times;</a>
-   <a >Home</a>
-   <a {{action "goTonewrequest"}}>User</a>
-   <a {{action "goToloan"}}>Bank</a>
-   <a {{action "goToproperty"}}>Creditscoregenerator</a>
-   <a {{action "goToemployment"}}>LegalPerson</a>
-</div>
+
 <div class="container-fluid" style="background-color:lightgrey">
    <br>
    <br>
