@@ -77,7 +77,7 @@ export default Controller.extend({
             "address":lastdetails.address,
             "bank":"applied",
             "creditscore":creditscore,
-            "statusForCreditRequest":"Creditscore Generated",
+            "statusForCreditRequest":"Score Generated",
             "legal":"",
             "date":date,
             "time":time
@@ -88,7 +88,7 @@ export default Controller.extend({
         var token = sessionStorage.getItem('token');
         console.log("manoj",token);
           return $.ajax({
-          url:'http://localhost:8082/updatetransaction',//web service for credit score
+          url:'http://206.189.138.133:8082/updatetransaction',//web service for credit score
           type: 'POST',
           contentType:'application/json',
           headers: {
@@ -122,7 +122,7 @@ export default Controller.extend({
         console.log("creditscore---request id--->",requestid);
         var mycontroller=this
           return $.ajax({
-          url:'http://localhost:8082/creditscore',//web service for credit score
+          url:'http://206.189.138.133:8082/creditscore',//web service for credit score
           type: 'POST',
           contentType:'application/json',
           data:JSON.stringify(requestid),

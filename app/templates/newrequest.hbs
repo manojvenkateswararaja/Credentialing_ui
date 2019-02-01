@@ -2,9 +2,9 @@
 {{#if showLogin}}
 {{/if}}
 
-<div class="container-fluid" >
+<div class="container-fluid">
    <div class="container" style="margin-top:2cm;">
-      {{#paper-stepper   currentStep=currentStep onStepChange=(action (mut currentStep))
+      {{#paper-stepper currentStep=currentStep onStepChange=(action (mut currentStep))
       onStepperCompleted=(action "saveModel") as |stepper|}}
       {{#stepper.step label="Personal Info" as |step|}}
       <div class="container" style="margin-left:442px; background-color:lightgrey">
@@ -12,95 +12,91 @@
          {{#paper-grid-list
          cols="1 md-2 gt-md-6"
          rowHeight="gt-md-1:1 2:2"
-         gutter="12px gt-sm-8px" as |grid|}} 
+         gutter="12px gt-sm-8px" as |grid|}}
          <h2 style="margin-top:-30px !important;padding-top: 0px;margin-left:0"><i>Tell us about your Personal details</i></h2>
          <p style="background-color:;margin-top:-29px; margin-left:2px;">
             <br>
             <br>
             {{paper-input label="First Name" value=fname onChange=(action (mut fname)) icon="person"}}
             {{paper-input label="Last Name" value=lname onChange=(action (mut lname)) icon="person"}}
-            {{paper-input label="Age" type="number" value=age
-            icon="person" onChange=(action (mut age))  }}
+            {{paper-input label="Suffix" value=age
+            icon="person" onChange=(action (mut age)) }}
             <br>
-            {{paper-input label="Mobile Number" type="number" 
+            {{paper-input label="Mobile Number" type="number"
             value=phone onChange=(action (mut phone)) icon="phone" maxlength="10"}}
-            {{paper-input label="Email Id" type="email" value=email onChange=(action (mut email))  required=true
-            icon="email"  customValidations=emailValidation}}
-            {{paper-input label="Address"  value=address icon="streetview" onChange=(action (mut address))  }}
-            {{paper-input label="Country"  value=country icon="add location" onChange=(action (mut country))  }}
+            {{paper-input label="Email Id" type="email" value=email onChange=(action (mut email)) required=true
+            icon="email" customValidations=emailValidation}}
+            {{paper-input label="Address" value=address icon="streetview" onChange=(action (mut address)) }}
+            {{paper-input label="Country" value=country icon="add location" onChange=(action (mut country)) }}
+            {{paper-input label="Enter SSN" value=ssn onChange=(action (mut ssn)) icon="work"}}
+
             <br>
-            Occupation Type 
-         <div class="drop3" style="margin-left:300px; margin-top:-28px">
-            {{!-- {{select-component listitem=occupationlist selecteditemlist=occupationType}} --}}
-            <input type="radio" id="showform" value="salaried" name="showform" onchange="showhideForm(this.value);"/>Salaried
-            <input type="radio" id="showform" value="non-salaried" name="showform" onchange="showhideForm(this.value);"/>Non-Salaried
-            <script type="text/javascript">
-               function showhideForm(showform) {
-                   if (showform == "salaried") {
-                       document.getElementById("div1").style.display = 'block';
-                       document.getElementById("div2").style.display = 'none';
-                   } 
-                   if (showform == "non-salaried") {
-                       document.getElementById("div2").style.display = 'block';
-                       document.getElementById("div1").style.display = 'none';
-                   }
-               }
-            </script>
-            <div id="div1" style="display:none">
-               <div class="row">
-                  <label>Employer Name</label>
-                  {{paper-input label="Name" value=Employename onChange=(action (mut Employename)) icon="person"}}
-               </div>
-               <div class="row">
-                  <label>Total Work Experience</label>
-                  {{paper-input label="Experience(yrs)" value=experience onChange=(action (mut experience)) icon="work"}}
-               </div>
-               <div class="row">
-                  <label>Monthly Take Home Salary</label>
-                  {{paper-input label="Salary (Rs)" value=salary onChange=(action (mut salary)) icon="work"}}
-               </div>
-            </div>
-            <div id="div2" style="display:none">
-               <div class="row">
-                  <label>Start Date Of Current Business</label>
-                  {{paper-input label="Enter Date" value=startdate type="date" onChange=(action (mut startdate)) icon="work"}}
-               </div>
-               <div class="row">
-                  <div class="col-lg-4">
-                     <label>Company type</label>
+            Practice State
+            <div class="drop3" style="margin-left:300px; margin-top:-28px">
+               {{!-- {{select-component listitem=occupationlist selecteditemlist=occupationType}} --}}
+               <input type="radio" id="showform" value="salaried" name="showform" onchange="showhideForm(this.value);" />MA
+               <input type="radio" id="showform" value="non-salaried" name="showform" onchange="showhideForm(this.value);" />Others
+               <script type="text/javascript">
+                  function showhideForm(showform) {
+                     if (showform == "salaried") {
+                        document.getElementById("div1").style.display = 'block';
+                        document.getElementById("div2").style.display = 'none';
+                     }
+                     if (showform == "non-salaried") {
+                        document.getElementById("div2").style.display = 'block';
+                        document.getElementById("div1").style.display = 'none';
+                     }
+                  }
+               </script>
+               <div id="div1" style="display:none">
+                  <div class="row">
+                     <label>State License Number</label>
+                     {{paper-input label="License Number" value=Employename onChange=(action (mut Employename))
+                     icon="person"}}
                   </div>
-                  <div class="col-lg-8">
-                     {{select-component listitem=companylist selecteditemlist=companyType}}
+                  <div class="row">
+                     <label>License Issue Date</label>
+                     {{paper-input label="Date" type="date" value=experience onChange=(action (mut experience))
+                     icon="work"}}
+                  </div>
+                  <div class="row">
+                     <label>Region Code</label>
+                     {{paper-input value="MA" onChange=(action (mut salary)) icon="work"}}
                   </div>
                </div>
-               <div class="row">
-                  <label>Last Year's Business PAT as per ITR</label>
-                  {{paper-input label="Enter here" value=pat onChange=(action (mut pat)) icon="work"}}
+               <div id="div2" style="display:none">
+                  <div class="row">
+                     <label>State License Number</label>
+                     {{paper-input label="Number" value=Employename onChange=(action (mut Employename))
+                     icon="work"}}
+                  </div>
+                  <div class="row">
+                     <label>License Issue Date</label>
+                     {{paper-input label="Date" value=issuedate onChange=(action (mut issuedate))}}
+                  </div>
+                  <div class="row">
+                     <label>Region Code</label>
+                     {{paper-input label="Enter Code" value=pat onChange=(action (mut pat)) icon="work"}}
+                  </div>
+
                </div>
-               <div class="row">
-                  <label>Last Year's Depreciation</label>
-                  {{paper-input label="" value=depreciation onChange=(action (mut depreciation)) icon="work"}}
+            </div>
+            <br>
+            <div class="row">
+               <div class="col-lg-3">Provider Type</div>
+               <div class="col-lg-9">{{select-component listitem=Occupationlist selecteditemlist=OccupationType}}</div>
+            </div>
+            <br>
+            <div class="row">
+               <div class="col-lg-3">Gender</div>
+               <div class="col-lg-9">{{select-component listitem=genderlist selecteditemlist=genderType}}
                </div>
             </div>
-         </div>
-         <br>
-         <div class="row">
-            <div class="col-lg-3">Occupation</div>
-            <div class="col-lg-9">{{select-component listitem=Occupationlist selecteditemlist=OccupationType}}</div>
-         </div>
-         <br>
-         <div class="row">
-            <div class="col-lg-3">Gender</div>
-            <div class="col-lg-9">{{select-component listitem=genderlist selecteditemlist=genderType}}
-            </div>
-         </div>
-         <br>
-         <div class="row">
-            <div class="col-lg-3">Nationality</div>
-            <div class="col-lg-3">{{select-component listitem=nationalitylist selecteditemlist=nationalityType}}
-            </div>
-         </div>
-         <br>
+            <br>
+
+
+
+            <br>
          </p>
          {{/paper-grid-list}}
          {{/step.body}}
@@ -115,23 +111,28 @@
       {{/step.actions}}
       {{/stepper.step}}
       {{!-- add as many steps as necessary --}}
-      {{#stepper.step label="Mortgage info" as |step|}}
+      {{#stepper.step label="Practice info" as |step|}}
       <div class="container" style="margin-left:442px; margin-top:-1cm; background-color:lightgrey">
-         {{#step.body}} 
+         {{#step.body}}
          {{#paper-grid-list
          cols="1 md-2 gt-md-6"
          rowHeight="gt-md-1:1 2:2"
-         gutter="12px gt-sm-8px" as |grid|}} 
-         <h2 style="margin-top:-30px !important;;padding-top: 0px;margin-left:0"><i>Tell Us What Are Your Looking For?</i></h2>
+         gutter="12px gt-sm-8px" as |grid|}}
+         <h2 style="margin-top:-30px !important;;padding-top: 0px;margin-left:0"><i>Tell Usabout your practice info</i></h2>
          <br>
          <br>
          <br>
          <div style="background-color;margin-top:-82px;padding-top: 64px;">
-            {{paper-input label="Purpose Of Loan" value=loan onChange=(action (mut loan)) icon="account balance" }}
-            <i class="fa fa-rupee" style="font-size:30px"></i>{{paper-input type=number label="Amount" value=amount onChange=(action (mut amount)) }}
+            {{paper-input label="Contract/Legal Entity Name" value=loan onChange=(action (mut loan)) icon="account
+            balance"
+            }}
+            {{paper-input type=number label="Mailing Address"
+            value=amount
+            onChange=(action (mut amount)) icon="home"}}
             <br>
-            Asset Type
-            <div class="drop2" style="margin-left:299px; margin-top:-28px"> 
+            Is the group medicare participating
+            <br>
+            <div class="drop2" style="margin-left:299px; margin-top:-28px">
                {{select-component listitem=mylist selecteditemlist=propertyType}}
             </div>
             <br>
@@ -152,34 +153,38 @@
       {{/paper-button}}
       {{/step.actions}}
       {{/stepper.step}}
-      {{#stepper.step label="Assets" as |step|}}
+      {{#stepper.step label="Payment Info" as |step|}}
       <div class="container" style="margin-left:442px; margin-top:-1cm; background-color:lightgrey">
          {{#step.body}}
          {{#paper-grid-list
          cols="1 md-2 gt-md-6"
          rowHeight="gt-md-1:1 2:2"
-         gutter="12px gt-sm-8px" as |grid|}}   
-         <h2 style="margin-top:-30px !important;;padding-top: 0px;margin-left:0">Tell Us About Your Property</h2>
+         gutter="12px gt-sm-8px" as |grid|}}
+         <h2 style="margin-top:-30px !important;;padding-top: 0px;margin-left:0">Tell Us About Your Payment info</h2>
          <p style="background-color:;margin-top:-20px">
             <br>
             <br>
             <br>
-            {{paper-input label="Year Purchased" type="date" value=year onChange=(action (mut year)) icon="date range" }}
+            {{paper-input label="Payee NPI" value=year onChange=(action (mut year)) icon="date range"
+            }}
             <br>
-            {{paper-input label="Location/Address"  value=location onChange=(action (mut location)) icon="location on" }}
-            {{paper-input label="Property(sqft)" value=size onChange=(action (mut size)) icon="home"}}  
+            {{paper-input label="Tax IDE" value=location onChange=(action (mut location))
+            }}
+            {{paper-input label="Payment Address" value=size onChange=(action (mut size)) icon="home"}}
             <br>
             {{#paper-button raised=true warn=true onClick=(action "targetButton")}}Submit{{/paper-button}}
          </p>
          {{!-- {{#paper-button raised=true warn=true onClick=(action previousStep)}} --}}
          {{#if showDialog}}
-         {{#paper-dialog class="flex-77" onClose=(action "closeDialog" "cancel") origin=dialogOrigin clickOutsideToClose=true}}
+         {{#paper-dialog class="flex-77" onClose=(action "closeDialog" "cancel") origin=dialogOrigin
+         clickOutsideToClose=true}}
          {{#paper-toolbar}}
          {{#paper-toolbar-tools}}
          {{message}}
          <br>
          Your RequestId:{{requestid}}
-         {{#paper-button iconButton=true onClick=(action "closeDialog" "cancel")}}{{paper-icon icon="close"}}{{/paper-button}}
+         {{#paper-button iconButton=true onClick=(action "closeDialog" "cancel")}}{{paper-icon
+         icon="close"}}{{/paper-button}}
          {{/paper-toolbar-tools}}
          {{/paper-toolbar}}
          {{#paper-dialog-actions class="layout-row"}}

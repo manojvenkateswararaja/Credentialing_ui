@@ -10,27 +10,27 @@
       <b style="margin-left:12cm;"><em>USER DETAILS</em></b>
       <br>
       <div class="well">
-     <div class="row" style="">
-         <div class="col-md-2"><i style="margin-left:-10%">RequestId:</i><i id="req">{{lastdetails.requestid}}</i></div>
-         <div class="col-md-3">
-            <div class="vl5">
-               <div style="padding: 0.3em;"><i style="">First Name:</i>{{lastdetails.fname}}
+         <div class="row" style="">
+            <div class="col-md-2"><i style="margin-left:-10%">RequestId:</i><i id="req">{{lastdetails.requestid}}</i></div>
+            <div class="col-md-3">
+               <div class="vl5">
+                  <div style="padding: 0.3em;"><i style="">First Name:</i>{{lastdetails.fname}}
+                  </div>
+               </div>
+            </div>
+            <div class="col-md-4">
+               <div class="vl5">
+                  <div style="padding: 0.3em;"><i style="">Practice Type:</i>{{lastdetails.propertyType}}</div>
+               </div>
+            </div>
+            <div class="col-md-3">
+               <div class="vl5">
+                  <div style="padding: 0.3em;"><i style="">Provider Type:</i>{{lastdetails.occupation}}</div>
                </div>
             </div>
          </div>
-         <div class="col-md-4">
-            <div class="vl5">
-               <div style="padding: 0.3em;"><i style="">Property Type:</i>{{lastdetails.propertyType}}</div>
-            </div>
-         </div>
-         <div class="col-md-3">
-            <div class="vl5">
-               <div style="padding: 0.3em;"><i style="">Loan:</i>{{lastdetails.amount}}</div>
-            </div>
-         </div>
       </div>
-      </div>
- <br>
+      <br>
       <br>
       <style>
          table, th, {
@@ -40,14 +40,14 @@
       {{!-- ro1 --}}
       <div class="row">
          <div class="col-md-6" style="background-color:grey;">Personal Information</div>
-         <div class="col-md-6" style="background-color:grey;">Property Information</div>
+         <div class="col-md-6" style="background-color:grey;">Practice Information</div>
       </div>
       {{!-- ro1 --}}
-      <br> 
+      <br>
       {{!-- r2 --}}
       <div class="row">
          <div class="col-md-6">
-            {{!-- {{#each record.Record.transactionlist   as |item1|}} --}}
+            {{!-- {{#each record.Record.transactionlist as |item1|}} --}}
             <table>
                <tr>
                   <td>First Name</td>:
@@ -65,34 +65,26 @@
                   <td>Country</td>:
                   <td style="color:gray;">{{lastdetails.country}}</td>
                </tr>
-               <tr>
-                  <td>Occupation</td>:
-                  <td style="color:gray;">{{lastdetails.occupation}}</td>
-               </tr>
-              
             </table>
             {{!-- {{/each}} --}}
          </div>
-         <div class= "col-md-6">
-            {{!-- {{#each record.Record.transactionlist   as |item1|}} --}}
+         <div class="col-md-6">
+            {{!-- {{#each record.Record.transactionlist as |item1|}} --}}
             <table>
                <tr>
-                  <td>Mortgage Type</td>:
-                  <td style="color:gray;">{{lastdetails.propertyType}}</td>
+                  <td>ProviderType</td>:
+                  <td style="color:gray;">{{lastdetails.occupation}}</td>
                </tr>
                <tr>
-                  <td>Need Amount</td>:
+                  <td>State License Number</td>:
+                  <td style="color:gray;">{{lastdetails.empname}}</td>
+               </tr>
+               <tr>
+                  <td>Practice Address</td>:
                   <td style="color:gray;">{{lastdetails.amount}}</td>
                </tr>
-               <tr>
-                  <td>Location</td>:
-                  <td style="color:gray;">{{lastdetails.location}}</td>
-               </tr>
-               <tr>
-                  <td>Country</td>:
-                  <td style="color:gray;">{{lastdetails.country}}</td>
-               </tr>
-               
+
+
             </table>
             {{!-- {{/each}} --}}
          </div>
@@ -100,13 +92,14 @@
       {{!-- r2 --}}
       {{!-- r3 --}}
       {{!-- <div style=" margin-top:1cm;"> --}}
-         <button type="button" class="btn btn-primary btn-block" disabled={{isDetailsDisableButton}} {{action "credit" record lastdetails}}>Get Credit Score</button>
+         <button type="button" class="btn btn-primary btn-block" disabled={{isDetailsDisableButton}}
+            {{action "credit" record lastdetails}}>Approval Level 1</button>
          <div style="background-color:lightgrey;">
             <h3>Data Published Date & Time</h3>
             {{#if isCreditRequested}}
             <div class="row">
-                <div class="col-md-1"></div>
-               <b> Requested For Creditscore On</b>
+               <div class="col-md-1"></div>
+               <b> Requested For Score </b>
             </div>
             <div class="row">
                <div class="col-md-6">
@@ -121,11 +114,13 @@
             {{/if}}
          </div>
          {{#if showDialog}}
-         {{#paper-dialog class="flex-77" onClose=(action "closeDialog" "cancel") origin=dialogOrigin clickOutsideToClose=true}}
+         {{#paper-dialog class="flex-77" onClose=(action "closeDialog" "cancel") origin=dialogOrigin
+         clickOutsideToClose=true}}
          {{#paper-toolbar}}
          {{#paper-toolbar-tools}}
-         Your Request Has Been Successfully Sent To Creditscore Validator
-         {{#paper-button iconButton=true onClick=(action "closeDialog" "cancel")}}{{paper-icon icon="close"}}{{/paper-button}}
+         Your Request Has Been Successfully Sent To APP Level 1 Approval
+         {{#paper-button iconButton=true onClick=(action "closeDialog" "cancel")}}{{paper-icon
+         icon="close"}}{{/paper-button}}
          {{/paper-toolbar-tools}}
          {{/paper-toolbar}}
          {{#paper-dialog-actions class="layout-row"}}
@@ -133,9 +128,10 @@
          {{#paper-button onClick=(action "okay" "ok")}}OK{{/paper-button}}
          {{/paper-dialog-actions}}
          {{/paper-dialog}}
-         {{/if}} 
+         {{/if}}
          <br>
          <br>
-      {{!-- </div> --}}
+         {{!--
+      </div> --}}
    </div>
 </div>
